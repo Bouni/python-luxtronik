@@ -12,9 +12,10 @@ class Luxtronik(object):
         self._port = port
         self._lut = lut
         self._data = {}
-        self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self._socket = None
 
     def __connect(self):
+        self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self._socket.connect((self._host,self._port))
 
     def __disconnect(self):
