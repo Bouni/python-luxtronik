@@ -92,7 +92,7 @@ class Luxtronik(object):
                 elif l["conversion"] == "speed":
                     self._data[target][i] = {"id":l["id"], "unit":"rpm", "value":raw}
                 elif l["conversion"] == "kwh":
-                    self._data[target][i] = {"id":l["id"], "unit":"kWh", "value":raw}
+                    self._data[target][i] = {"id":l["id"], "unit":"kWh", "value":raw/10}
                 elif l["conversion"] == "voltage":
                     self._data[target][i] = {"id":l["id"], "unit":"volt", "value":raw/10}
                 elif l["conversion"] == "version":
