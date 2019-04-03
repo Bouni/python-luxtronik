@@ -11,3 +11,9 @@ l.get_data()
 ```
 
 You'll get a huge dict as result with already parsed and converted data.
+
+```
+l.set_data("ID_Einst_BWS_akt", 48)
+```
+
+Sets the hot-water target temperature to 48 degrees Celsius.
