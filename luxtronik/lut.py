@@ -247,7 +247,7 @@ LUT = {
     "parameters": {
         0: {"id":"ID_Transfert_LuxNet","conversion":"unknown"},
         1: {"id":"ID_Einst_WK_akt","conversion":"unknown"},
-        2: {"id":"ID_Einst_BWS_akt","conversion":"unknown"},
+        2: {"id":"ID_Einst_BWS_akt","conversion":"celsius","writable":True},
         3: {"id":"ID_Ba_Hz_akt","conversion":"unknown"},
         4: {"id":"ID_Ba_Bw_akt","conversion":"unknown"},
         5: {"id":"ID_Ba_Al_akt","conversion":"unknown"},

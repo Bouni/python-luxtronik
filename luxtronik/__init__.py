@@ -3,6 +3,7 @@
 import socket
 import struct
 import datetime
+import ipaddress
 from luxtronik.lut import LUT as lut
 
 class Luxtronik(object):
@@ -29,6 +30,11 @@ class Luxtronik(object):
         self.__disconnect()
         return self._data
 
+    def set_data(self, id, value):
+        self.__connect()
+        self.__write_parameter(id,value)
+        self.__disconnect()
+
     def __read_parameters(self):
         data = []
         self._socket.sendall(struct.pack('>ii',3003,0))
@@ -37,6 +43,13 @@ class Luxtronik(object):
         for i in range(0,len):
             data.append(struct.unpack('>i',self._socket.recv(4))[0])
         self.__parse(data, "parameters")
+
+    def __write_parameter(self, id, value):
+        (i, raw) = self.__compose(id, value, "parameters")
+        self._socket.sendall(struct.pack('>iii',3002,i,raw))
+        cmd = struct.unpack('>i',self._socket.recv(4))[0]
+        ret = struct.unpack('>i',self._socket.recv(4))[0]
+        assert(cmd == 3002 and ret == i)
 
     def __read_calculations(self):
         data = []
@@ -99,4 +112,31 @@ class Luxtronik(object):
                     self._data[target][i] = {"id":l["id"], "unit":"version", "value":"".join([chr(c) for c in data[i:i+9]]).strip('\x00')}
                 else:
                     self._data[target][i] = {"id":l["id"], "unit":"unknown", "value":raw}
+
+    def __compose(self, id, value, target):
+        for (i, item) in self._lut[target].items():
+            if item["id"] == id:
+                if item["conversion"] in ["celsius", "kelvin", "percent", "kWh", "volt"]:
+                    raw = int(value * 10)
+                elif item["conversion"] in ["bar"]:
+                    raw = int(value * 100)
+                elif item["conversion"] == "ipaddress":
+                    raw = struct.unpack('>i',ipaddress.ip_address(value).packed)[0]
+                elif item["conversion"] == "datetime":
+                    raw = int(datetime.datetime.timestamp(value))
+                else:
+                    assert(item["conversion"] not in ["version"])
+                    raw = int(value)
+                if "writable" not in item:
+                    raise ValueError(
+                        "Writing value for '%s' not not yet tested. If you are sure to write value %d for ID %d, " % (id, raw, i) +
+                        "please add 'writable':True to the corresponding dictionary in the lut.py file. " +
+                        "Please contribute to this project whether writing was successful or not by setting 'writable' explicitly to " +
+                        "True or False. Thanks!")
+                if not item["writable"]:
+                    raise ValueError("Value not writable.")
+                return (i, raw)
+        else:
+            raise ValueError("Invalid id string.")
+
 
