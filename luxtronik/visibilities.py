@@ -338,7 +338,7 @@ class Visibilities:
             if not id:
                 continue
             else:
-                setattr(self, id, conv(d))
+                setattr(self, id, conv(i, d))
 
     def get(self, id):
         return getattr(self, id, None)

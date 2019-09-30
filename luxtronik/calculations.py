@@ -235,12 +235,12 @@ class Calculations:
                 continue
             if i == 81:
                 # Version string spans multiple bytes
-                setattr(self, id, conv(data[i : i + 9]))
+                setattr(self, id, conv(i, data[i : i + 9]))
             elif i > 81 and i < 91:
                 # skip other version bytes
                 continue
             else:
-                setattr(self, id, conv(d))
+                setattr(self, id, conv(i, d))
 
     def get(self, id):
         return getattr(self, id, None)

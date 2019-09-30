@@ -5,7 +5,8 @@ class Base:
 
     unit = None
 
-    def __init__(self, v):
+    def __init__(self, n, v):
+        self.number = n
         self._convert(v)
 
     def _convert(self, v):
