@@ -27,6 +27,22 @@ class Luxtronik(object):
         self._read_visibilities()
         self._disconnect()
 
+    def write(self, id, value):
+        if not self.parameters:
+            self.read()
+        if id is None or value is None:
+            return False
+        if not self.parameters.get(id):
+            return False
+        if not self.parameters.get(id).writeable:
+            return False
+        data = struct.pack(">iii", 3002, self.parameters.get(id).number, value)
+        self._connect()
+        self._socket.sendall(data)
+        cmd = struct.unpack(">i", self._socket.recv(4))[0]
+        val = struct.unpack(">i", self._socket.recv(4))[0]
+        self._disconnect()
+
     def _read_parameters(self):
         data = []
         self._socket.sendall(struct.pack(">ii", 3003, 0))
@@ -35,7 +51,6 @@ class Luxtronik(object):
         for i in range(0, len):
             data.append(struct.unpack(">i", self._socket.recv(4))[0])
         self.parameters = Parameters(data)
-        
 
     def _read_calculations(self):
         data = []
