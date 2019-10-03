@@ -1,3 +1,4 @@
+import ipaddress
 import datetime
 
 
@@ -5,29 +6,34 @@ class Base:
 
     unit = None
 
-    def __init__(self, n, v, w=False):
-        self.number = n
+    def __init__(self, n, w=False):
+        self._value = None
+        self.name = n
         self.writeable = w
-        self.raw_to_value(v)
 
-    def raw_to_value(self, v):
-        self.value = v
+    def _from(self, v):
+        return v
 
-    def value_to_raw(self, v):
+    def _to(self, v):
         return v
 
     def __repr__(self):
-        return str(self.value)
+        return str(self._value)
 
     def __str__(self):
-        return str(self.value)
+        return str(self._value)
 
 
 class SelectionBase(Base):
-    def raw_to_value(self, v):
-        self.value = self.codes.get(v, None)
+    @property
+    def options(self):
+        return [v for k, v in self.codes.items()]
 
-    def value_to_raw(self, v):
+    def _to(self, v):
+        if v in self.codes:
+            return self.codes.get(v)
+
+    def _from(self, v):
         for i, c in self.codes.items():
             if c == v:
                 return i
@@ -38,128 +44,144 @@ class Celsius(Base):
 
     unit = "°C"
 
-    def raw_to_value(self, v):
-        self.value = v / 10
+    def _to(self, v):
+        return v / 10
 
-    def value_to_raw(self, v):
+    def _from(self, v):
         return int(float(v) * 10)
 
 
 class Bool(Base):
-    def raw_to_value(self, v):
-        self.value = bool(v)
+    def _to(self, v):
+        return bool(v)
+
+    def _from(self, v):
+        return int(v)
 
 
 class Seconds(Base):
-
     unit = "s"
-
-    def raw_to_value(self, v):
-        self.value = v
 
 
 class Pulses(Base):
-    def raw_to_value(self, v):
-        self.value = v
+    pass
 
 
 class IPAddress(Base):
-    def raw_to_value(self, v):
-        self.value = f"{v >> 24 & 0xFF}.{v >> 16 & 0xFF}.{v >> 8 & 0xFF}.{v & 0xFF}"
+    def _to(self, v):
+        print(v)
+        return str(ipaddress.IPv4Address(v + 2**32))
+
+    def _from(self, v):
+        return int(ipaddress.IPv4Address(v)) - 2**32
 
 
 class Timestamp(Base):
-    def raw_to_value(self, v):
-        self.value = datetime.datetime.fromtimestamp(v)
+    def _to(self, v):
+        return datetime.datetime.fromtimestamp(v)
+
+    def _from(self, v):
+        return datetime.datetime.timestamp(v)
 
 
 class Errorcode(Base):
-    def raw_to_value(self, v):
-        self.value = v
+    pass
 
 
 class Kelvin(Base):
 
     unit = "K"
 
-    def raw_to_value(self, v):
-        self.value = v / 10
+    def _to(self, v):
+        return v / 10
+
+    def _from(self, v):
+        return int(v * 10)
 
 
 class Pressure(Base):
 
     unit = "bar"
 
-    def raw_to_value(self, v):
-        self.value = v / 100
+    def _to(self, v):
+        return v / 100
+
+    def _from(self, v):
+        return int(v * 100)
 
 
 class Percent(Base):
 
     unit = "%"
 
-    def raw_to_value(self, v):
-        self.value = v / 10
+    def _to(self, v):
+        return v / 10
+
+    def _from(self, v):
+        return int(v * 10)
 
 
 class Speed(Base):
 
     unit = "rpm"
 
-    def raw_to_value(self, v):
-        self.value = v
-
 
 class Energy(Base):
 
     unit = "kWh"
 
-    def raw_to_value(self, v):
-        self.value = v / 10
+    def _to(self, v):
+        return v / 10
+
+    def _from(self, v):
+        return int(v * 10)
 
 
 class Voltage(Base):
 
     unit = "V"
 
-    def raw_to_value(self, v):
-        self.value = v / 10
+    def _to(self, v):
+        return v / 10
+
+    def _from(self, v):
+        return int(v * 10)
 
 
 class Hours(Base):
 
     unit = "h"
 
-    def raw_to_value(self, v):
-        self.value = v / 10
+    def _to(self, v):
+        return v / 10
+
+    def _from(self, v):
+        return int(v * 10)
 
 
 class Flow(Base):
 
     unit = "l/h"
 
-    def raw_to_value(self, v):
-        self.value = v
-
 
 class Level(Base):
-    def raw_to_value(self, v):
-        self.value = v
+    pass
 
 
 class Count(Base):
-    def raw_to_value(self, v):
-        self.value = v
+    pass
 
 
 class Version(Base):
-    def raw_to_value(self, v):
-        self.value = "".join([chr(c) for c in v]).strip("\x00")
+    def _to(self, v):
+        return "".join([chr(c) for c in v]).strip("\x00")
+
+    def _from(self):
+        return None
 
 
 class Icon(Base):
-    def raw_to_value(self, v):
-        self.value = v
+    pass
 
 
 class HeatingMode(SelectionBase):
@@ -176,7 +198,7 @@ class CoolingMode(SelectionBase):
     codes = {0: "Off", 1: "Automatic"}
 
 
-class HotWaterMode(Base):
+class HotWaterMode(SelectionBase):
     codes = {
         0: "Automatic",
         1: "Second heatsource",
@@ -354,7 +376,7 @@ class MainMenuStatusLine3(SelectionBase):
     }
 
 
-class SecOperationMode(Base):
+class SecOperationMode(SelectionBase):
     codes = {
         0: "off",
         1: "cooling",
@@ -373,5 +395,4 @@ class SecOperationMode(Base):
 
 
 class Unknown(Base):
-    def raw_to_value(self, v):
-        self.value = v
+    pass
