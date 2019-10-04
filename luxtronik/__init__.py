@@ -12,23 +12,23 @@ LOGGER = logging.getLogger("Luxtronik")
 
 
 class Luxtronik:
-    def __init__(self, host, port):
+    def __init__(self, host, port, safe=True):
         self._host = host
         self._port = port
         self._socket = None
         self.calculations = Calculations()
-        self.parameters = Parameters()
+        self.parameters = Parameters(safe=safe)
         self.visibilities = Visibilities()
         self.read()
 
     def _connect(self):
         self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self._socket.connect((self._host, self._port))
-        LOGGER.info("Connected to Luxtronik heatpump")
+        LOGGER.info(f"Connected to Luxtronik heatpump {self._host}:{self._port}")
 
     def _disconnect(self):
         self._socket.close()
-        LOGGER.info("Disconnected from Luxtronik heatpump")
+        LOGGER.info(f"Disconnected from Luxtronik heatpump {self._host}:{self._port}")
 
     def read(self):
         self._connect()
@@ -41,13 +41,13 @@ class Luxtronik:
         self._connect()
         for id, value in self.parameters._queue.items():
             if not isinstance(id, int) or not isinstance(value, int):
-                LOGGER.warn(f"Write: id '{id}' or value '{value}' invalid!")
+                LOGGER.warn(f"Parameter id '{id}' or value '{value}' invalid!")
                 continue
-            LOGGER.info(f"Write: id '{id}' set to '{value}'")
-            # data = struct.pack(">iii", 3002, id, value)
-            # self._socket.sendall(data)
-            # cmd = struct.unpack(">i", self._socket.recv(4))[0]
-            # val = struct.unpack(">i", self._socket.recv(4))[0]
+            LOGGER.info(f"Parameter '{id}' set to '{value}'")
+            data = struct.pack(">iii", 3002, id, value)
+            self._socket.sendall(data)
+            cmd = struct.unpack(">i", self._socket.recv(4))[0]
+            val = struct.unpack(">i", self._socket.recv(4))[0]
         self._disconnect()
         # flush queue after writing all values
         self.parameters._queue = {}
