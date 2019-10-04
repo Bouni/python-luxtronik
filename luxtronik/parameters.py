@@ -1,13 +1,19 @@
+import logging
 from luxtronik.datatypes import *
+
+logging.basicConfig(level="INFO")
+LOGGER = logging.getLogger("Luxtronik.Parameters")
 
 
 class Parameters:
+    """Class that holds all parameters."""
+
     parameters = {
         0: Unknown("ID_Transfert_LuxNet"),
         1: Celsius("ID_Einst_WK_akt"),
         2: Unknown("ID_Einst_BWS_akt"),
         3: HeatingMode("ID_Ba_Hz_akt", True),
-        4: HotWaterMode("ID_Ba_Bw_akt"),
+        4: HotWaterMode("ID_Ba_Bw_akt", True),
         5: Unknown("ID_Ba_Al_akt"),
         6: Unknown("ID_SU_FrkdHz"),
         7: Unknown("ID_SU_FrkdBw"),
@@ -1089,18 +1095,59 @@ class Parameters:
         1083: Unknown("ID_Einst_SmartMinusMK2"),
         1084: Unknown("ID_Einst_SmartPlusMK3"),
         1085: Unknown("ID_Einst_SmartMinusMK3"),
+        1085: Unknown("Unknown_Parameter_1085"),
+        1086: Unknown("Unknown_Parameter_1086"),
+        1087: Unknown("Unknown_Parameter_1087"),
+        1088: Unknown("Unknown_Parameter_1088"),
+        1089: Unknown("Unknown_Parameter_1089"),
+        1090: Unknown("Unknown_Parameter_1090"),
+        1091: Unknown("Unknown_Parameter_1091"),
+        1092: Unknown("Unknown_Parameter_1092"),
+        1093: Unknown("Unknown_Parameter_1093"),
+        1094: Unknown("Unknown_Parameter_1094"),
+        1095: Unknown("Unknown_Parameter_1095"),
+        1096: Unknown("Unknown_Parameter_1096"),
+        1097: Unknown("Unknown_Parameter_1097"),
+        1098: Unknown("Unknown_Parameter_1098"),
+        1099: Unknown("Unknown_Parameter_1099"),
+        1100: Unknown("Unknown_Parameter_1100"),
+        1101: Unknown("Unknown_Parameter_1101"),
+        1102: Unknown("Unknown_Parameter_1102"),
+        1103: Unknown("Unknown_Parameter_1103"),
+        1104: Unknown("Unknown_Parameter_1104"),
+        1105: Unknown("Unknown_Parameter_1105"),
+        1106: Unknown("Unknown_Parameter_1106"),
+        1107: Unknown("Unknown_Parameter_1107"),
+        1108: Unknown("Unknown_Parameter_1108"),
+        1109: Unknown("Unknown_Parameter_1109"),
+        1110: Unknown("Unknown_Parameter_1110"),
+        1111: Unknown("Unknown_Parameter_1111"),
+        1112: Unknown("Unknown_Parameter_1112"),
+        1113: Unknown("Unknown_Parameter_1113"),
+        1114: Unknown("Unknown_Parameter_1114"),
+        1115: Unknown("Unknown_Parameter_1115"),
+        1116: Unknown("Unknown_Parameter_1116"),
+        1117: Unknown("Unknown_Parameter_1117"),
+        1118: Unknown("Unknown_Parameter_1118"),
+        1119: Unknown("Unknown_Parameter_1119")
     }
 
-    def __init__(self):
+    def __init__(self, safe=True):
+        """Initialize parameters class."""
+        self.safe = safe
         self._queue = {}
 
     def _parse(self, data):
+        """Parse raw parameter data."""
         for i, d in enumerate(data):
             p = self.parameters.get(i, None)
             if p:
                 p._value = p._to(d)
+            else:
+                LOGGER.warn(f"Parameter '{i}' not in list of parameters")
 
     def _lookup(self, p):
+        """Lookup parameter by either id or name."""
         if isinstance(p, int):
             return p, self.parameters.get(p, None)
         if isinstance(p, str):
@@ -1111,14 +1158,19 @@ class Parameters:
                 for k, v in self.parameters.items():
                     if v.name == p:
                         return k, v
+        LOGGER.warn(f"Parameter '{p}' not found")
         return None, None
 
     def get(self, p):
+        """Get parameter by id or name."""
         id, parameter = self._lookup(p)
         return parameter
 
     def set(self, p, v):
+        """Set parameter to new value."""
         id, parameter = self._lookup(p)
         if id:
-            self._queue[id] = parameter._from(v)
-
+            if parameter.writeable or not self.safe:
+                self._queue[id] = parameter._from(v)
+            else:
+                LOGGER.warn(f"Parameter {parameter.name} not safe for writing!")

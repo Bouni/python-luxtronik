@@ -1,17 +1,24 @@
+import logging
 from luxtronik.datatypes import *
+
+logging.basicConfig(level="INFO")
+LOGGER = logging.getLogger("Luxtronik.Calculations")
 
 
 class Calculations:
+    """Class that holds all calculations."""
+
     calculations = {
-        1: Unknown("Unknown_1"),
-        2: Unknown("Unknown_2"),
-        3: Unknown("Unknown_3"),
-        4: Unknown("Unknown_4"),
-        5: Unknown("Unknown_5"),
-        6: Unknown("Unknown_6"),
-        7: Unknown("Unknown_7"),
-        8: Unknown("Unknown_8"),
-        9: Unknown("Unknown_9"),
+        0: Unknown("Unknown_Calculation_0"),
+        1: Unknown("Unknown_Calculation_1"),
+        2: Unknown("Unknown_Calculation_2"),
+        3: Unknown("Unknown_Calculation_3"),
+        4: Unknown("Unknown_Calculation_4"),
+        5: Unknown("Unknown_Calculation_5"),
+        6: Unknown("Unknown_Calculation_6"),
+        7: Unknown("Unknown_Calculation_7"),
+        8: Unknown("Unknown_Calculation_8"),
+        9: Unknown("Unknown_Calculation_9"),
         10: Celsius("ID_WEB_Temperatur_TVL"),
         11: Celsius("ID_WEB_Temperatur_TRL"),
         12: Celsius("ID_WEB_Sollwert_TRL_HZ"),
@@ -224,17 +231,50 @@ class Calculations:
         229: Celsius("ID_WEB_Temperatur_BW_oben"),
         230: Code_WP("ID_WEB_Code_WP_akt_2"),
         231: Celsius("ID_WEB_Freq_VD"),
+        232: Unknown("Unknown_Calculation_232"),
+        233: Unknown("Unknown_Calculation_233"),
+        234: Unknown("Unknown_Calculation_234"),
+        235: Unknown("Unknown_Calculation_235"),
+        236: Unknown("Unknown_Calculation_236"),
+        237: Unknown("Unknown_Calculation_237"),
+        238: Unknown("Unknown_Calculation_238"),
+        239: Unknown("Unknown_Calculation_239"),
+        240: Unknown("Unknown_Calculation_240"),
+        241: Unknown("Unknown_Calculation_241"),
+        242: Unknown("Unknown_Calculation_242"),
+        243: Unknown("Unknown_Calculation_243"),
+        244: Unknown("Unknown_Calculation_244"),
+        245: Unknown("Unknown_Calculation_245"),
+        246: Unknown("Unknown_Calculation_246"),
+        247: Unknown("Unknown_Calculation_247"),
+        248: Unknown("Unknown_Calculation_248"),
+        249: Unknown("Unknown_Calculation_249"),
+        250: Unknown("Unknown_Calculation_250"),
+        251: Unknown("Unknown_Calculation_251"),
+        252: Unknown("Unknown_Calculation_252"),
+        253: Unknown("Unknown_Calculation_253"),
+        254: Unknown("Unknown_Calculation_254"),
+        255: Unknown("Unknown_Calculation_255"),
+        256: Unknown("Unknown_Calculation_256"),
+        257: Unknown("Unknown_Calculation_257"),
+        258: Unknown("Unknown_Calculation_258")
     }
 
     def _parse(self, data):
+        """Parse raw calculations data."""
         for i, d in enumerate(data):
             c = self.calculations.get(i, None)
             if c and i < 81 and i > 90:
                 c._value = c._to(d)
-            elif c and i > 80 and i < 91:
-                c._value = c._to(data[i:i+9])
+                continue
+            elif c and i in range(80,91):
+                c._value = c._to(data[i : i + 9])
+                continue
+            if not c and i not in range(80,91):
+                LOGGER.warn(f"Calculation '{i}' not in list of calculationss")
 
     def _lookup(self, c):
+        """Lookup calculation by either id or name."""
         if isinstance(c, int):
             return c, self.calculations.get(c, None)
         if isinstance(c, str):
@@ -245,11 +285,10 @@ class Calculations:
                 for k, v in self.calculations.items():
                     if v.name == c:
                         return k, v
+        LOGGER.warn(f"Calculation '{p}' not found")
         return None, None
 
     def get(self, c):
+        """Get calculation by id or name."""
         id, calculation = self._lookup(c)
         return calculation
-
-    def set(self, c, v):
-        pass

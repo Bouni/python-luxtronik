@@ -1,7 +1,14 @@
+import logging
 from luxtronik.datatypes import Unknown
 
 
+logging.basicConfig(level="INFO")
+LOGGER = logging.getLogger("Luxtronik.Visibilities")
+
+
 class Visibilities:
+    """Class that holds all visibilities."""
+
     visibilities = {
         0: Unknown("ID_Visi_NieAnzeigen"),
         1: Unknown("ID_Visi_ImmerAnzeigen"),
@@ -328,15 +335,40 @@ class Visibilities:
         322: Unknown("ID_Visi_Einst_Vorl_akt_Kuehl"),
         323: Unknown("ID_Visi_Einst_Abtauen_im_Warmwasser"),
         324: Unknown("ID_Visi_Waermemenge_ZWE"),
+        325: Unknown("Unknown_Visibility_325"),
+        326: Unknown("Unknown_Visibility_326"),
+        327: Unknown("Unknown_Visibility_327"),
+        328: Unknown("Unknown_Visibility_328"),
+        329: Unknown("Unknown_Visibility_329"),
+        330: Unknown("Unknown_Visibility_330"),
+        331: Unknown("Unknown_Visibility_331"),
+        332: Unknown("Unknown_Visibility_332"),
+        333: Unknown("Unknown_Visibility_333"),
+        334: Unknown("Unknown_Visibility_334"),
+        335: Unknown("Unknown_Visibility_335"),
+        336: Unknown("Unknown_Visibility_336"),
+        337: Unknown("Unknown_Visibility_337"),
+        338: Unknown("Unknown_Visibility_338"),
+        339: Unknown("Unknown_Visibility_339"),
+        340: Unknown("Unknown_Visibility_340"),
+        341: Unknown("Unknown_Visibility_341"),
+        342: Unknown("Unknown_Visibility_342"),
+        343: Unknown("Unknown_Visibility_343"),
+        344: Unknown("Unknown_Visibility_344"),
+        345: Unknown("Unknown_Visibility_345")
     }
 
     def _parse(self, data):
+        """Parse raw visibility data."""
         for i, d in enumerate(data):
             v = self.visibilities.get(i, None)
             if v:
                 v._value = v._to(d)
+            else:
+                LOGGER.warn(f"Visibility '{i}' not in list of visibilities")
 
     def _lookup(self, v):
+        """Lookup visibility by either id or name."""
         if isinstance(v, int):
             return v, self.visibilities.get(v, None)
         if isinstance(v, str):
@@ -347,11 +379,10 @@ class Visibilities:
                 for k, v in self.visibilities.items():
                     if v.name == v:
                         return k, v
+        LOGGER.warn(f"Visibility '{p}' not found")
         return None, None
 
     def get(self, v):
+        """Get visibility by id or name."""
         id, visibility = self._lookup(v)
         return visibility
-
-    def set(self, v, _v):
-        pass

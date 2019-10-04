@@ -2,9 +2,13 @@
 
 import socket
 import struct
+import logging
 from luxtronik.calculations import Calculations
 from luxtronik.parameters import Parameters
 from luxtronik.visibilities import Visibilities
+
+logging.basicConfig(level="INFO")
+LOGGER = logging.getLogger("Luxtronik")
 
 
 class Luxtronik:
@@ -20,9 +24,11 @@ class Luxtronik:
     def _connect(self):
         self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self._socket.connect((self._host, self._port))
+        LOGGER.info("Connected to Luxtronik heatpump")
 
     def _disconnect(self):
         self._socket.close()
+        LOGGER.info("Disconnected from Luxtronik heatpump")
 
     def read(self):
         self._connect()
@@ -34,14 +40,17 @@ class Luxtronik:
     def write(self):
         self._connect()
         for id, value in self.parameters._queue.items():
-            if not id or not value:
+            if not isinstance(id, int) or not isinstance(value, int):
+                LOGGER.warn(f"Write: id '{id}' or value '{value}' invalid!")
                 continue
-            data = struct.pack(">iii", 3002, id, value)
-            self._socket.sendall(data)
-            cmd = struct.unpack(">i", self._socket.recv(4))[0]
-            val = struct.unpack(">i", self._socket.recv(4))[0]
-            self.parameters._queue.pop(id, None)
+            LOGGER.info(f"Write: id '{id}' set to '{value}'")
+            # data = struct.pack(">iii", 3002, id, value)
+            # self._socket.sendall(data)
+            # cmd = struct.unpack(">i", self._socket.recv(4))[0]
+            # val = struct.unpack(">i", self._socket.recv(4))[0]
         self._disconnect()
+        # flush queue after writing all values
+        self.parameters._queue = {}
 
     def _read_parameters(self):
         data = []
@@ -50,6 +59,7 @@ class Luxtronik:
         len = struct.unpack(">i", self._socket.recv(4))[0]
         for i in range(0, len):
             data.append(struct.unpack(">i", self._socket.recv(4))[0])
+        LOGGER.info(f"Read {len} parameters")
         self.parameters._parse(data)
 
     def _read_calculations(self):
@@ -60,6 +70,7 @@ class Luxtronik:
         len = struct.unpack(">i", self._socket.recv(4))[0]
         for i in range(0, len):
             data.append(struct.unpack(">i", self._socket.recv(4))[0])
+        LOGGER.info(f"Read {len} calculations")
         self.calculations._parse(data)
 
     def _read_visibilities(self):
@@ -69,4 +80,5 @@ class Luxtronik:
         len = struct.unpack(">i", self._socket.recv(4))[0]
         for i in range(0, len):
             data.append(struct.unpack(">b", self._socket.recv(1))[0])
+        LOGGER.info(f"Read {len} visibilities")
         self.visibilities._parse(data)
