@@ -47,3 +47,13 @@ l.write()
 print(l.parameters.get("ID_Ba_Hz_akt").options) # returns a list of possible values to write, ['Automatic', 'Second heatsource', 'Party', 'Holidays', 'Off'] for example
 
 ```
+
+By default a safeguard is enabled that prevents writing of parameters whose purpose is unknown.
+You can disable that safeguard by passing `safe=False` to the Luxtronik class.
+
+```
+from luxtronik import Luxtronik
+
+l = Luxtronik('192.168.1.23', 8889, safe=False)
+
+```
