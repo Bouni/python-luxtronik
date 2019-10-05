@@ -1,7 +1,7 @@
 import logging
 from luxtronik.datatypes import *
 
-logging.basicConfig(level="INFO")
+logging.basicConfig(level="WARNING")
 LOGGER = logging.getLogger("Luxtronik.Parameters")
 
 
@@ -1140,8 +1140,8 @@ class Parameters:
     def _parse(self, data):
         """Parse raw parameter data."""
         for i, d in enumerate(data):
-            p = self.parameters.get(i, None)
-            if p:
+            p = self.parameters.get(i, False)
+            if p is not False:
                 p._value = p._to(d)
             else:
                 LOGGER.warn(f"Parameter '{i}' not in list of parameters")

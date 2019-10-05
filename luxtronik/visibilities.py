@@ -2,7 +2,7 @@ import logging
 from luxtronik.datatypes import Unknown
 
 
-logging.basicConfig(level="INFO")
+logging.basicConfig(level="WARNING")
 LOGGER = logging.getLogger("Luxtronik.Visibilities")
 
 
@@ -361,8 +361,8 @@ class Visibilities:
     def _parse(self, data):
         """Parse raw visibility data."""
         for i, d in enumerate(data):
-            v = self.visibilities.get(i, None)
-            if v:
+            v = self.visibilities.get(i, False)
+            if v is not False:
                 v._value = v._to(d)
             else:
                 LOGGER.warn(f"Visibility '{i}' not in list of visibilities")

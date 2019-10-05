@@ -7,7 +7,7 @@ from luxtronik.calculations import Calculations
 from luxtronik.parameters import Parameters
 from luxtronik.visibilities import Visibilities
 
-logging.basicConfig(level="INFO")
+logging.basicConfig(level="WARNING")
 LOGGER = logging.getLogger("Luxtronik")
 
 

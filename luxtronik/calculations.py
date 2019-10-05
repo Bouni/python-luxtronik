@@ -1,7 +1,7 @@
 import logging
 from luxtronik.datatypes import *
 
-logging.basicConfig(level="INFO")
+logging.basicConfig(level="WARNING")
 LOGGER = logging.getLogger("Luxtronik.Calculations")
 
 
@@ -263,14 +263,14 @@ class Calculations:
     def _parse(self, data):
         """Parse raw calculations data."""
         for i, d in enumerate(data):
-            c = self.calculations.get(i, None)
-            if c and i < 81 and i > 90:
+            c = self.calculations.get(i, False)
+            if c is not False and i not in range(80,91):
                 c._value = c._to(d)
                 continue
-            elif c and i in range(80,91):
+            elif c is not False and i in range(80,91):
                 c._value = c._to(data[i : i + 9])
                 continue
-            if not c and i not in range(80,91):
+            if c is False and i not in range(80,91):
                 LOGGER.warn(f"Calculation '{i}' not in list of calculationss")
 
     def _lookup(self, c):
