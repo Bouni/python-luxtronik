@@ -4,7 +4,7 @@ import datetime
 
 class Base:
 
-    unit = None
+    measurement_type = None
 
     def __init__(self, n, w=False):
         self._value = None
@@ -42,7 +42,7 @@ class SelectionBase(Base):
 
 class Celsius(Base):
 
-    unit = "°C"
+    measurement_type = "celsius"
 
     def _to(self, v):
         return v / 10
@@ -52,6 +52,9 @@ class Celsius(Base):
 
 
 class Bool(Base):
+
+    measurement_type = "boolean"
+
     def _to(self, v):
         return bool(v)
 
@@ -60,23 +63,30 @@ class Bool(Base):
 
 
 class Seconds(Base):
-    unit = "s"
+
+    measurement_type = "seconds"
 
 
 class Pulses(Base):
-    pass
+
+    measurement_type = "pulses"
 
 
 class IPAddress(Base):
+
+    measurement_type = "ipaddress"
+
     def _to(self, v):
-        print(v)
-        return str(ipaddress.IPv4Address(v + 2**32))
+        return str(ipaddress.IPv4Address(v + 2 ** 32))
 
     def _from(self, v):
-        return int(ipaddress.IPv4Address(v)) - 2**32
+        return int(ipaddress.IPv4Address(v)) - 2 ** 32
 
 
 class Timestamp(Base):
+
+    measurement_type = "timestamp"
+
     def _to(self, v):
         return datetime.datetime.fromtimestamp(v)
 
@@ -85,12 +95,13 @@ class Timestamp(Base):
 
 
 class Errorcode(Base):
-    pass
+
+    measurement_type = "errorcode"
 
 
 class Kelvin(Base):
 
-    unit = "K"
+    measurement_type = "kelvin"
 
     def _to(self, v):
         return v / 10
@@ -101,7 +112,7 @@ class Kelvin(Base):
 
 class Pressure(Base):
 
-    unit = "bar"
+    measurement_type = "bar"
 
     def _to(self, v):
         return v / 100
@@ -112,7 +123,7 @@ class Pressure(Base):
 
 class Percent(Base):
 
-    unit = "%"
+    measurement_type = "percent"
 
     def _to(self, v):
         return v / 10
@@ -123,12 +134,12 @@ class Percent(Base):
 
 class Speed(Base):
 
-    unit = "rpm"
+    measurement_type = "rpm"
 
 
 class Energy(Base):
 
-    unit = "kWh"
+    measurement_type = "energy"
 
     def _to(self, v):
         return v / 10
@@ -139,7 +150,7 @@ class Energy(Base):
 
 class Voltage(Base):
 
-    unit = "V"
+    measurement_type = "voltage"
 
     def _to(self, v):
         return v / 10
@@ -150,7 +161,7 @@ class Voltage(Base):
 
 class Hours(Base):
 
-    unit = "h"
+    measurement_type = "hours"
 
     def _to(self, v):
         return v / 10
@@ -161,18 +172,23 @@ class Hours(Base):
 
 class Flow(Base):
 
-    unit = "l/h"
+    measurement_type = "flow"
 
 
 class Level(Base):
-    pass
+
+    measurement_type = "level"
 
 
 class Count(Base):
-    pass
+
+    measurement_type = "count"
 
 
 class Version(Base):
+
+    measurement_type = "version"
+
     def _to(self, v):
         return "".join([chr(c) for c in v]).strip("\x00")
 
@@ -181,10 +197,14 @@ class Version(Base):
 
 
 class Icon(Base):
-    pass
+
+    measurement_type = "icon"
 
 
 class HeatingMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         0: "Automatic",
         1: "Second heatsource",
@@ -195,10 +215,16 @@ class HeatingMode(SelectionBase):
 
 
 class CoolingMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {0: "Off", 1: "Automatic"}
 
 
 class HotWaterMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         0: "Automatic",
         1: "Second heatsource",
@@ -209,14 +235,23 @@ class HotWaterMode(SelectionBase):
 
 
 class PoolMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
 
 class MixedCircuitMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
 
 class SolarMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         0: "Automatic",
         1: "Second heatsource",
@@ -227,10 +262,16 @@ class SolarMode(SelectionBase):
 
 
 class VentilationMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {0: "Automatic", 1: "Party", 2: "Holidays", 3: "Off"}
 
 
 class Code_WP(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         0: "ERC",
         1: "SW1",
@@ -304,6 +345,9 @@ class Code_WP(SelectionBase):
 
 
 class BivalenceLevel(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         1: "one compressor allowed to run",
         2: "two compressors allowed to run",
@@ -312,6 +356,9 @@ class BivalenceLevel(SelectionBase):
 
 
 class OperationMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         0: "heating",
         1: "hot water",
@@ -325,6 +372,9 @@ class OperationMode(SelectionBase):
 
 
 class SwitchoffFile(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         1: "heatpump error",
         2: "system error",
@@ -339,6 +389,9 @@ class SwitchoffFile(SelectionBase):
 
 
 class MainMenuStatusLine1(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         0: "heatpump running",
         1: "heatpump idle",
@@ -352,10 +405,16 @@ class MainMenuStatusLine1(SelectionBase):
 
 
 class MainMenuStatusLine2(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {0: "since", 1: "in"}
 
 
 class MainMenuStatusLine3(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         0: "heating",
         1: "no request",
@@ -377,6 +436,9 @@ class MainMenuStatusLine3(SelectionBase):
 
 
 class SecOperationMode(SelectionBase):
+
+    measurement_type = "selection"
+
     codes = {
         0: "off",
         1: "cooling",
@@ -395,4 +457,5 @@ class SecOperationMode(SelectionBase):
 
 
 class Unknown(Base):
-    pass
+
+    measurement_type = None
