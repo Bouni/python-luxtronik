@@ -89,6 +89,7 @@ class Calculations:
         77: Seconds("ID_WEB_Time_SBW_akt"),
         78: Code_WP("ID_WEB_Code_WP_akt"),
         79: BivalenceLevel("ID_WEB_BIV_Stufe_akt"),
+        80: OperationMode("ID_WEB_WP_BZ_akt"),
         81: Version("ID_WEB_SoftStand"),
         91: IPAddress("ID_WEB_AdresseIP_akt"),
         92: IPAddress("ID_WEB_SubNetMask_akt"),

@@ -677,8 +677,8 @@ class Parameters:
         665: Unknown("ID_Einst_SuSwbTg_zeit_1_13"),
         666: Unknown("ID_Einst_SuSwbTg_zeit_2_12"),
         667: Unknown("ID_Einst_SuSwbTg_zeit_2_13"),
-        668: Unknown("ID_Zaehler_BetrZeitWP"),  # <------
-        669: Unknown("ID_Zaehler_BetrZeitVD1"),  # <------
+        668: Unknown("ID_Zaehler_BetrZeitWP"),
+        669: Unknown("ID_Zaehler_BetrZeitVD1"),
         670: Unknown("ID_Zaehler_BetrZeitVD2"),
         671: Unknown("ID_Zaehler_BetrZeitZWE1"),
         672: Unknown("ID_Zaehler_BetrZeitZWE2"),
