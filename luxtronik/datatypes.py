@@ -62,6 +62,11 @@ class Bool(Base):
         return int(v)
 
 
+class Frequency(Base):
+
+    measurement_type = "Hz"
+
+
 class Seconds(Base):
 
     measurement_type = "seconds"
@@ -135,6 +140,11 @@ class Percent(Base):
 class Speed(Base):
 
     measurement_type = "rpm"
+
+
+class Power(Base):
+
+    measurement_type = "W"
 
 
 class Energy(Base):

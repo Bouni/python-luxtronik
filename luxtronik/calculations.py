@@ -231,7 +231,7 @@ class Calculations:
         228: Celsius("ID_WEB_RBE_RT_Soll"),
         229: Celsius("ID_WEB_Temperatur_BW_oben"),
         230: Code_WP("ID_WEB_Code_WP_akt_2"),
-        231: Celsius("ID_WEB_Freq_VD"),
+        231: Frequency("ID_WEB_Freq_VD"),
         232: Unknown("Unknown_Calculation_232"),
         233: Unknown("Unknown_Calculation_233"),
         234: Unknown("Unknown_Calculation_234"),
@@ -241,7 +241,7 @@ class Calculations:
         238: Unknown("Unknown_Calculation_238"),
         239: Unknown("Unknown_Calculation_239"),
         240: Unknown("Unknown_Calculation_240"),
-        241: Unknown("Unknown_Calculation_241"),
+        241: Percent("Circulation_Pump"),
         242: Unknown("Unknown_Calculation_242"),
         243: Unknown("Unknown_Calculation_243"),
         244: Unknown("Unknown_Calculation_244"),
@@ -257,22 +257,22 @@ class Calculations:
         254: Unknown("Unknown_Calculation_254"),
         255: Unknown("Unknown_Calculation_255"),
         256: Unknown("Unknown_Calculation_256"),
-        257: Unknown("Unknown_Calculation_257"),
-        258: Unknown("Unknown_Calculation_258")
+        257: Power("Heat_Output"),
+        258: Unknown("Unknown_Calculation_258"),
     }
 
     def _parse(self, data):
         """Parse raw calculations data."""
         for i, d in enumerate(data):
             c = self.calculations.get(i, False)
-            if c is not False and i not in range(81,91):
+            if c is not False and i not in range(81, 91):
                 c._value = c._to(d)
                 continue
-            elif c is not False and i in range(81,91):
+            elif c is not False and i in range(81, 91):
                 print(data[i : i + 9])
                 c._value = c._to(data[i : i + 9])
                 continue
-            if c is False and i not in range(81,91):
+            if c is False and i not in range(81, 91):
                 LOGGER.warn(f"Calculation '{i}' not in list of calculationss")
 
     def _lookup(self, c):
