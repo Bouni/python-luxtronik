@@ -11,7 +11,7 @@ class Parameters:
     parameters = {
         0: Unknown("ID_Transfert_LuxNet"),
         1: Celsius("ID_Einst_WK_akt"),
-        2: Unknown("ID_Einst_BWS_akt"),
+        2: Celsius("ID_Einst_BWS_akt", True),
         3: HeatingMode("ID_Ba_Hz_akt", True),
         4: HotWaterMode("ID_Ba_Bw_akt", True),
         5: Unknown("ID_Ba_Al_akt"),
@@ -88,7 +88,7 @@ class Parameters:
         76: Unknown("ID_Einst_ABT1_akt"),
         77: Unknown("ID_Einst_LABTpaus_akt"),
         78: Unknown("ID_AHZ_state_akt"),
-        79: Unknown("ID_Sollwert_TRL_HZ_AHZ"),
+        79: Celsius("ID_Sollwert_TRL_HZ_AHZ", True),
         80: Unknown("ID_AHP_valid_records"),
         81: Unknown("ID_Timer_AHZ_akt"),
         82: Unknown("ID_Einst_BWTINP_akt"),
