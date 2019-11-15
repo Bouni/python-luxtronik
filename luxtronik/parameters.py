@@ -1,4 +1,5 @@
 import logging
+
 from luxtronik.datatypes import *
 
 logging.basicConfig(level="WARNING")
@@ -1142,7 +1143,7 @@ class Parameters:
         for i, d in enumerate(data):
             p = self.parameters.get(i, False)
             if p is not False:
-                p._value = p._to(d)
+                p.value = p._to(d)
             else:
                 LOGGER.warn(f"Parameter '{i}' not in list of parameters")
 

@@ -1,4 +1,5 @@
 import logging
+
 from luxtronik.datatypes import *
 
 logging.basicConfig(level="WARNING")
@@ -266,11 +267,11 @@ class Calculations:
         for i, d in enumerate(data):
             c = self.calculations.get(i, False)
             if c is not False and i not in range(81, 91):
-                c._value = c._to(d)
+                c.value = c._to(d)
                 continue
             elif c is not False and i in range(81, 91):
                 print(data[i : i + 9])
-                c._value = c._to(data[i : i + 9])
+                c.value = c._to(data[i : i + 9])
                 continue
             if c is False and i not in range(81, 91):
                 LOGGER.warn(f"Calculation '{i}' not in list of calculationss")

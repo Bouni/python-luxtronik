@@ -1,5 +1,5 @@
-import ipaddress
 import datetime
+import ipaddress
 
 
 class Base:
@@ -7,7 +7,7 @@ class Base:
     measurement_type = None
 
     def __init__(self, n, w=False):
-        self._value = None
+        self.value = None
         self.name = n
         self.writeable = w
 
@@ -18,10 +18,10 @@ class Base:
         return v
 
     def __repr__(self):
-        return str(self._value)
+        return str(self.value)
 
     def __str__(self):
-        return str(self._value)
+        return str(self.value)
 
 
 class SelectionBase(Base):
