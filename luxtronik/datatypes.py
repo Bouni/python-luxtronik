@@ -82,11 +82,15 @@ class IPAddress(Base):
     measurement_type = "ipaddress"
 
     def _to(self, v):
-        return str(ipaddress.IPv4Address(v + 2 ** 32))
+        if v<0:
+            return str(ipaddress.IPv4Address(v + 2 ** 32))
+        return str(ipaddress.IPv4Address(v))
 
     def _from(self, v):
-        return int(ipaddress.IPv4Address(v)) - 2 ** 32
-
+        result = int(ipaddress.IPv4Address(v))
+        if result > 2 ** 32:
+            return result - 2 ** 32
+        return result
 
 class Timestamp(Base):
 
