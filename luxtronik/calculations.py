@@ -184,7 +184,7 @@ class Calculations:
         180: Pressure("ID_WEB_LIN_HD"),
         181: Pressure("ID_WEB_LIN_ND"),
         182: Bool("ID_WEB_LIN_VDH_out"),
-        183: Percent("ID_WEB_HZIO_PWM"),
+        183: Percent2("ID_WEB_HZIO_PWM"),
         184: Speed("ID_WEB_HZIO_VEN"),
         185: Unknown("ID_WEB_HZIO_EVU2"),
         186: Bool("ID_WEB_HZIO_STB"),
