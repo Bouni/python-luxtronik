@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="luxtronik",
-    version="0.2.6",
+    version="0.2.8",
     author="Bouni",
     author_email="bouni@owee.de",
     description="A luxtronik heatpump controller interface",
