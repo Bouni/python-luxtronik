@@ -84,6 +84,8 @@ class IPAddress(Base):
     def _to(self, v):
         if v<0:
             return str(ipaddress.IPv4Address(v + 2 ** 32))
+        if v>2**32:
+            return str(ipaddress.IPv4Address(v - 2 ** 32))
         return str(ipaddress.IPv4Address(v))
 
     def _from(self, v):
@@ -139,6 +141,19 @@ class Percent(Base):
 
     def _from(self, v):
         return int(v * 10)
+
+
+class Percent2(Base):
+
+    measurement_type = "percent"
+
+    def _to(self, v):
+        return v
+
+    def _from(self, v):
+        return int(v)
+
+
 
 
 class Speed(Base):
