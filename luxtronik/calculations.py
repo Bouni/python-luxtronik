@@ -242,7 +242,7 @@ class Calculations:
         238: Unknown("Unknown_Calculation_238"),
         239: Unknown("Unknown_Calculation_239"),
         240: Unknown("Unknown_Calculation_240"),
-        241: Percent("Circulation_Pump"),
+        241: Percent2("Circulation_Pump"),
         242: Unknown("Unknown_Calculation_242"),
         243: Unknown("Unknown_Calculation_243"),
         244: Unknown("Unknown_Calculation_244"),
