@@ -270,7 +270,6 @@ class Calculations:
                 c.value = c._to(d)
                 continue
             elif c is not False and i in range(81, 91):
-                print(data[i : i + 9])
                 c.value = c._to(data[i : i + 9])
                 continue
             if c is False and i not in range(81, 91):
