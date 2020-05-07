@@ -287,7 +287,7 @@ class Calculations:
                 for k, v in self.calculations.items():
                     if v.name == c:
                         return k, v
-        LOGGER.warn(f"Calculation '{p}' not found")
+        LOGGER.warn(f"Calculation '{c}' not found")
         return None, None
 
     def get(self, c):
