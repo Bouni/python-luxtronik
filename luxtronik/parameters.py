@@ -2,7 +2,6 @@ import logging
 
 from luxtronik.datatypes import *
 
-logging.basicConfig(level="WARNING")
 LOGGER = logging.getLogger("Luxtronik.Parameters")
 
 
