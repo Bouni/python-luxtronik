@@ -2,7 +2,6 @@ import logging
 
 from luxtronik.datatypes import Unknown
 
-logging.basicConfig(level="WARNING")
 LOGGER = logging.getLogger("Luxtronik.Visibilities")
 
 
