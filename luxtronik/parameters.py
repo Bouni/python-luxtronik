@@ -1130,6 +1130,9 @@ class Parameters:
         1117: Unknown("Unknown_Parameter_1117"),
         1118: Unknown("Unknown_Parameter_1118"),
         1119: Unknown("Unknown_Parameter_1119"),
+        1120: Unknown("Unknown_Parameter_1120"),
+        1121: Unknown("Unknown_Parameter_1121"),
+        1122: Unknown("Unknown_Parameter_1122"),
     }
 
     def __init__(self, safe=True):
