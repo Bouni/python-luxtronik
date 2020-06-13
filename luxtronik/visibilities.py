@@ -355,6 +355,9 @@ class Visibilities:
         343: Unknown("Unknown_Visibility_343"),
         344: Unknown("Unknown_Visibility_344"),
         345: Unknown("Unknown_Visibility_345"),
+        346: Unknown("Unknown_Visibility_346"),
+        347: Unknown("Unknown_Visibility_347"),
+        348: Unknown("Unknown_Visibility_348"),
     }
 
     def _parse(self, data):
