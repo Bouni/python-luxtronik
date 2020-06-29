@@ -259,6 +259,7 @@ class Calculations:
         256: Unknown("Unknown_Calculation_256"),
         257: Power("Heat_Output"),
         258: Unknown("Unknown_Calculation_258"),
+        259: Unknown("Unknown_Calculation_259"),
     }
 
     def _parse(self, data):
