@@ -1,21 +1,25 @@
+"""datatype conversions."""
 import datetime
 import ipaddress
 
 
 class Base:
+    """Base datatype, no conversions."""
 
     measurement_type = None
 
-    def __init__(self, n, w=False):
+    def __init__(self, name, writeable=False):
         self.value = None
-        self.name = n
-        self.writeable = w
+        self.name = name
+        self.writeable = writeable
 
-    def _from(self, v):
-        return v
+    def to_heatpump(self, value):
+        """Convert a value into heatpump units."""
+        return value
 
-    def _to(self, v):
-        return v
+    def from_heatpump(self, value):
+        """Convert a value from heatpump units."""
+        return value
 
     def __repr__(self):
         return str(self.value)
@@ -25,211 +29,237 @@ class Base:
 
 
 class SelectionBase(Base):
+    """Selection base datatype, converts from an to list of codes."""
+
+    codes = {}
+
     @property
     def options(self):
-        return [v for k, v in self.codes.items()]
+        """Return List of all available options."""
+        return [value for _, value in self.codes.items()]
 
-    def _to(self, v):
-        if v in self.codes:
-            return self.codes.get(v)
+    def from_heatpump(self, value):
+        if value in self.codes:
+            return self.codes.get(value)
+        return None
 
-    def _from(self, v):
-        for i, c in self.codes.items():
-            if c == v:
-                return i
+    def to_heatpump(self, value):
+        for index, code in self.codes.items():
+            if code == value:
+                return index
         return None
 
 
 class Celsius(Base):
+    """Celsius datatype, converts from and to Celsius."""
 
     measurement_type = "celsius"
 
-    def _to(self, v):
-        return v / 10
+    def from_heatpump(self, value):
+        return value / 10
 
-    def _from(self, v):
-        return int(float(v) * 10)
+    def to_heatpump(self, value):
+        return int(float(value) * 10)
 
 
 class Bool(Base):
+    """Boolean datatype, converts from and to Boolean."""
 
     measurement_type = "boolean"
 
-    def _to(self, v):
-        return bool(v)
+    def from_heatpump(self, value):
+        return bool(value)
 
-    def _from(self, v):
-        return int(v)
+    def to_heatpump(self, value):
+        return int(value)
 
 
 class Frequency(Base):
+    """Frequency datatype, converts from and to Frequency in Hz."""
 
     measurement_type = "Hz"
 
 
 class Seconds(Base):
+    """Seconds datatype, converts from and to Seconds."""
 
     measurement_type = "seconds"
 
 
 class Pulses(Base):
+    """Pulses datatype, converts from and to Pulses."""
 
     measurement_type = "pulses"
 
 
 class IPAddress(Base):
+    """IP Address datatype, converts from and to an IP Address."""
 
     measurement_type = "ipaddress"
 
-    def _to(self, v):
-        if v < 0:
-            return str(ipaddress.IPv4Address(v + 2 ** 32))
-        if v > 2 ** 32:
-            return str(ipaddress.IPv4Address(v - 2 ** 32))
-        return str(ipaddress.IPv4Address(v))
+    def from_heatpump(self, value):
+        if value < 0:
+            return str(ipaddress.IPv4Address(value + 2 ** 32))
+        if value > 2 ** 32:
+            return str(ipaddress.IPv4Address(value - 2 ** 32))
+        return str(ipaddress.IPv4Address(value))
 
-    def _from(self, v):
-        result = int(ipaddress.IPv4Address(v))
+    def to_heatpump(self, value):
+        result = int(ipaddress.IPv4Address(value))
         if result > 2 ** 32:
             return result - 2 ** 32
         return result
 
 
 class Timestamp(Base):
+    """Timestamp datatype, converts from and to Timestamp."""
 
     measurement_type = "timestamp"
 
-    def _to(self, v):
-        return datetime.datetime.fromtimestamp(v)
+    def from_heatpump(self, value):
+        return datetime.datetime.fromtimestamp(value)
 
-    def _from(self, v):
-        return datetime.datetime.timestamp(v)
+    def to_heatpump(self, value):
+        return datetime.datetime.timestamp(value)
 
 
 class Errorcode(Base):
+    """Errorcode datatype, converts from and to Errorcode."""
 
     measurement_type = "errorcode"
 
 
 class Kelvin(Base):
+    """Kelvin datatype, converts from and to Kelvin."""
 
     measurement_type = "kelvin"
 
-    def _to(self, v):
-        return v / 10
+    def from_heatpump(self, value):
+        return value / 10
 
-    def _from(self, v):
-        return int(v * 10)
+    def to_heatpump(self, value):
+        return int(value * 10)
 
 
 class Pressure(Base):
+    """Preassure datatype, converts from and to Pressure."""
 
     measurement_type = "bar"
 
-    def _to(self, v):
-        return v / 100
+    def from_heatpump(self, value):
+        return value / 100
 
-    def _from(self, v):
-        return int(v * 100)
+    def to_heatpump(self, value):
+        return int(value * 100)
 
 
 class Percent(Base):
+    """Percent datatype, converts from and to Percent."""
 
     measurement_type = "percent"
 
-    def _to(self, v):
-        return v / 10
+    def from_heatpump(self, value):
+        return value / 10
 
-    def _from(self, v):
-        return int(v * 10)
+    def to_heatpump(self, value):
+        return int(value * 10)
 
 
 class Percent2(Base):
+    """Percent datatype, converts from and to Percent with a differnet scale factor."""
 
     measurement_type = "percent"
 
-    def _to(self, v):
-        return v
+    def from_heatpump(self, value):
+        return value
 
-    def _from(self, v):
-        return int(v)
+    def to_heatpump(self, value):
+        return int(value)
 
 
 class Speed(Base):
+    """Speed datatype, converts from and to Speed."""
 
     measurement_type = "rpm"
 
 
 class Power(Base):
+    """Power datatype, converts from and to Power."""
 
     measurement_type = "W"
 
 
 class Energy(Base):
+    """Energy datatype, converts from and to Energy."""
 
     measurement_type = "energy"
 
-    def _to(self, v):
-        return v / 10
+    def from_heatpump(self, value):
+        return value / 10
 
-    def _from(self, v):
-        return int(v * 10)
+    def to_heatpump(self, value):
+        return int(value * 10)
 
 
 class Voltage(Base):
+    """Voltage datatype, converts from and to Voltage."""
 
     measurement_type = "voltage"
 
-    def _to(self, v):
-        return v / 10
+    def from_heatpump(self, value):
+        return value / 10
 
-    def _from(self, v):
-        return int(v * 10)
+    def to_heatpump(self, value):
+        return int(value * 10)
 
 
 class Hours(Base):
+    """Hours datatype, converts from and to Hours."""
 
     measurement_type = "hours"
 
-    def _to(self, v):
-        return v / 10
+    def from_heatpump(self, value):
+        return value / 10
 
-    def _from(self, v):
-        return int(v * 10)
+    def to_heatpump(self, value):
+        return int(value * 10)
 
 
 class Flow(Base):
+    """Flow datatype, converts from and to Flow."""
 
     measurement_type = "flow"
 
 
 class Level(Base):
+    """Level datatype, converts from and to Level."""
 
     measurement_type = "level"
 
 
 class Count(Base):
+    """Count datatype, converts from and to Count."""
 
     measurement_type = "count"
 
 
 class Version(Base):
+    """Version datatype, converts from and to a Heatpump Version."""
 
     measurement_type = "version"
 
-    def _to(self, v):
-        return "".join([chr(c) for c in v]).strip("\x00")
-
-    def _from(self):
-        return None
+    def from_heatpump(self, value):
+        return "".join([chr(c) for c in value]).strip("\x00")
 
 
 class Icon(Base):
+    """Icon datatype, converts from and to Icon."""
 
     measurement_type = "icon"
 
 
 class HeatingMode(SelectionBase):
+    """HeatingMode datatype, converts from an to list of HeatingMode codes."""
 
     measurement_type = "selection"
 
@@ -243,6 +273,7 @@ class HeatingMode(SelectionBase):
 
 
 class CoolingMode(SelectionBase):
+    """CoolingMode datatype, converts from an to list of CoolingMode codes."""
 
     measurement_type = "selection"
 
@@ -250,6 +281,7 @@ class CoolingMode(SelectionBase):
 
 
 class HotWaterMode(SelectionBase):
+    """HotWaterMode datatype, converts from an to list of HotWaterMode codes."""
 
     measurement_type = "selection"
 
@@ -263,6 +295,7 @@ class HotWaterMode(SelectionBase):
 
 
 class PoolMode(SelectionBase):
+    """PoolMode datatype, converts from an to list of PoolMode codes."""
 
     measurement_type = "selection"
 
@@ -270,6 +303,7 @@ class PoolMode(SelectionBase):
 
 
 class MixedCircuitMode(SelectionBase):
+    """MixCircuitMode datatype, converts from an to list of MixCircuitMode codes."""
 
     measurement_type = "selection"
 
@@ -277,6 +311,7 @@ class MixedCircuitMode(SelectionBase):
 
 
 class SolarMode(SelectionBase):
+    """SolarMode datatype, converts from an to list of SolarMode codes."""
 
     measurement_type = "selection"
 
@@ -290,13 +325,15 @@ class SolarMode(SelectionBase):
 
 
 class VentilationMode(SelectionBase):
+    """VentilationMode datatype, converts from an to list of VentilationMode codes."""
 
     measurement_type = "selection"
 
     codes = {0: "Automatic", 1: "Party", 2: "Holidays", 3: "Off"}
 
 
-class Code_WP(SelectionBase):
+class HeatpumpCode(SelectionBase):
+    """HeatpumpCode datatype, converts from an to list of Heatpump codes."""
 
     measurement_type = "selection"
 
@@ -373,6 +410,7 @@ class Code_WP(SelectionBase):
 
 
 class BivalenceLevel(SelectionBase):
+    """BivalanceLevel datatype, converts from an to list of BivalanceLevel codes."""
 
     measurement_type = "selection"
 
@@ -384,6 +422,7 @@ class BivalenceLevel(SelectionBase):
 
 
 class OperationMode(SelectionBase):
+    """OperationMode datatype, converts from an to list of OperationMode codes."""
 
     measurement_type = "selection"
 
@@ -400,6 +439,7 @@ class OperationMode(SelectionBase):
 
 
 class SwitchoffFile(SelectionBase):
+    """SwitchOff datatype, converts from an to list of SwitchOff codes."""
 
     measurement_type = "selection"
 
@@ -417,6 +457,7 @@ class SwitchoffFile(SelectionBase):
 
 
 class MainMenuStatusLine1(SelectionBase):
+    """MenuStatusLine datatype, converts from an to list of MenuStatusLine codes."""
 
     measurement_type = "selection"
 
@@ -433,6 +474,7 @@ class MainMenuStatusLine1(SelectionBase):
 
 
 class MainMenuStatusLine2(SelectionBase):
+    """MenuStatusLine datatype, converts from an to list of MenuStatusLine codes."""
 
     measurement_type = "selection"
 
@@ -440,6 +482,7 @@ class MainMenuStatusLine2(SelectionBase):
 
 
 class MainMenuStatusLine3(SelectionBase):
+    """MenuStatusLine datatype, converts from an to list of MenuStatusLine codes."""
 
     measurement_type = "selection"
 
@@ -464,6 +507,7 @@ class MainMenuStatusLine3(SelectionBase):
 
 
 class SecOperationMode(SelectionBase):
+    """SecOperationMode datatype, converts from an to list of SecOperationMode codes."""
 
     measurement_type = "selection"
 
@@ -485,5 +529,6 @@ class SecOperationMode(SelectionBase):
 
 
 class Unknown(Base):
+    """Unknown datatype, fallback for unknown data."""
 
     measurement_type = None

@@ -1,3 +1,4 @@
+"""Parse luxtonik visibilities."""
 import logging
 
 from luxtronik.datatypes import Unknown
@@ -365,31 +366,31 @@ class Visibilities:
         353: Unknown("Unknown_Visibility_353"),
     }
 
-    def _parse(self, data):
+    def parse(self, raw_data):
         """Parse raw visibility data."""
-        for i, d in enumerate(data):
-            v = self.visibilities.get(i, False)
-            if v is not False:
-                v.value = v._to(d)
+        for index, data in enumerate(raw_data):
+            visibility = self.visibilities.get(index, False)
+            if visibility is not False:
+                visibility.value = visibility.from_heatpump(data)
             else:
-                LOGGER.warn(f"Visibility '{i}' not in list of visibilities")
+                LOGGER.warning("Visibility '%d' not in list of visibilities", index)
 
-    def _lookup(self, v):
+    def _lookup(self, target):
         """Lookup visibility by either id or name."""
-        if isinstance(v, int):
-            return v, self.visibilities.get(v, None)
-        if isinstance(v, str):
+        if isinstance(target, int):
+            return target, self.visibilities.get(target, None)
+        if isinstance(target, str):
             try:
-                v = int(v)
-                return v, self.visibilities.get(v, None)
+                target = int(target)
+                return target, self.visibilities.get(target, None)
             except ValueError:
-                for k, v in self.visibilities.items():
-                    if v.name == v:
-                        return k, v
-        LOGGER.warn(f"Visibility '{v}' not found")
+                for index, visibility in self.visibilities.items():
+                    if visibility.name == target:
+                        return index, visibility
+        LOGGER.warning("Visibility '%s' not found", target)
         return None, None
 
-    def get(self, v):
+    def get(self, target):
         """Get visibility by id or name."""
-        id, visibility = self._lookup(v)
-        return visibility
+        index, visibility = self._lookup(target)
+        return index, visibility

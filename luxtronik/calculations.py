@@ -1,6 +1,37 @@
+"""Parse luxtonik calculations."""
 import logging
 
-from luxtronik.datatypes import *
+from luxtronik.datatypes import (
+    BivalenceLevel,
+    Bool,
+    Celsius,
+    Count,
+    Energy,
+    Errorcode,
+    Flow,
+    Frequency,
+    HeatpumpCode,
+    Icon,
+    IPAddress,
+    Kelvin,
+    Level,
+    MainMenuStatusLine1,
+    MainMenuStatusLine2,
+    MainMenuStatusLine3,
+    OperationMode,
+    Percent2,
+    Power,
+    Pressure,
+    Pulses,
+    Seconds,
+    SecOperationMode,
+    Speed,
+    SwitchoffFile,
+    Timestamp,
+    Unknown,
+    Version,
+    Voltage,
+)
 
 LOGGER = logging.getLogger("Luxtronik.Calculations")
 
@@ -87,7 +118,7 @@ class Calculations:
         75: Seconds("ID_WEB_Time_HRW_akt"),
         76: Seconds("ID_WEB_Time_LGS_akt"),
         77: Seconds("ID_WEB_Time_SBW_akt"),
-        78: Code_WP("ID_WEB_Code_WP_akt"),
+        78: HeatpumpCode("ID_WEB_Code_WP_akt"),
         79: BivalenceLevel("ID_WEB_BIV_Stufe_akt"),
         80: OperationMode("ID_WEB_WP_BZ_akt"),
         81: Version("ID_WEB_SoftStand"),
@@ -230,7 +261,7 @@ class Calculations:
         227: Celsius("ID_WEB_RBE_RT_Ist"),
         228: Celsius("ID_WEB_RBE_RT_Soll"),
         229: Celsius("ID_WEB_Temperatur_BW_oben"),
-        230: Code_WP("ID_WEB_Code_WP_akt_2"),
+        230: HeatpumpCode("ID_WEB_Code_WP_akt_2"),
         231: Frequency("ID_WEB_Freq_VD"),
         232: Unknown("Unknown_Calculation_232"),
         233: Unknown("Unknown_Calculation_233"),
@@ -262,35 +293,35 @@ class Calculations:
         259: Unknown("Unknown_Calculation_259"),
     }
 
-    def _parse(self, data):
+    def parse(self, raw_data):
         """Parse raw calculations data."""
-        for i, d in enumerate(data):
-            c = self.calculations.get(i, False)
-            if c is not False and i not in range(81, 91):
-                c.value = c._to(d)
+        for index, data in enumerate(raw_data):
+            calculation = self.calculations.get(index, False)
+            if calculation is not False and index not in range(81, 91):
+                calculation.value = calculation.from_heatpump(data)
                 continue
-            elif c is not False and i in range(81, 91):
-                c.value = c._to(data[i : i + 9])
+            if calculation is not False and index in range(81, 91):
+                calculation.value = calculation.from_heatpump(raw_data[index : index + 9])
                 continue
-            if c is False and i not in range(81, 91):
-                LOGGER.warn(f"Calculation '{i}' not in list of calculationss")
+            if calculation is False and index not in range(81, 91):
+                LOGGER.warning("Calculation '%d' not in list of calculationss", index)
 
-    def _lookup(self, c):
+    def _lookup(self, target):
         """Lookup calculation by either id or name."""
-        if isinstance(c, int):
-            return c, self.calculations.get(c, None)
-        if isinstance(c, str):
+        if isinstance(target, int):
+            return target, self.calculations.get(target, None)
+        if isinstance(target, str):
             try:
-                c = int(c)
-                return c, self.calculations.get(c, None)
+                target = int(target)
+                return target, self.calculations.get(target, None)
             except ValueError:
-                for k, v in self.calculations.items():
-                    if v.name == c:
-                        return k, v
-        LOGGER.warn(f"Calculation '{c}' not found")
+                for index, calculation in self.calculations.items():
+                    if calculation.name == target:
+                        return index, calculation
+        LOGGER.warning("Calculation '%s' not found", target)
         return None, None
 
-    def get(self, c):
+    def get(self, target):
         """Get calculation by id or name."""
-        id, calculation = self._lookup(c)
-        return calculation
+        index, calculation = self._lookup(target)
+        return index, calculation

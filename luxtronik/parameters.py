@@ -1,6 +1,18 @@
+"""Parse luxtonik parameters."""
 import logging
 
-from luxtronik.datatypes import *
+from luxtronik.datatypes import (
+    Celsius,
+    CoolingMode,
+    HeatingMode,
+    HotWaterMode,
+    Hours,
+    MixedCircuitMode,
+    PoolMode,
+    SolarMode,
+    Unknown,
+    VentilationMode,
+)
 
 LOGGER = logging.getLogger("Luxtronik.Parameters")
 
@@ -1095,7 +1107,6 @@ class Parameters:
         1083: Unknown("ID_Einst_SmartMinusMK2"),
         1084: Unknown("ID_Einst_SmartPlusMK3"),
         1085: Unknown("ID_Einst_SmartMinusMK3"),
-        1085: Unknown("Unknown_Parameter_1085"),
         1086: Unknown("Unknown_Parameter_1086"),
         1087: Unknown("Unknown_Parameter_1087"),
         1088: Unknown("Unknown_Parameter_1088"),
@@ -1140,42 +1151,42 @@ class Parameters:
     def __init__(self, safe=True):
         """Initialize parameters class."""
         self.safe = safe
-        self._queue = {}
+        self.queue = {}
 
-    def _parse(self, data):
+    def parse(self, raw_data):
         """Parse raw parameter data."""
-        for i, d in enumerate(data):
-            p = self.parameters.get(i, False)
-            if p is not False:
-                p.value = p._to(d)
+        for index, data in enumerate(raw_data):
+            parameter = self.parameters.get(index, False)
+            if parameter is not False:
+                parameter.value = parameter.from_heatpump(data)
             else:
-                LOGGER.warn(f"Parameter '{i}' not in list of parameters")
+                LOGGER.warning("Parameter '%d' not in list of parameters", index)
 
-    def _lookup(self, p):
+    def _lookup(self, target):
         """Lookup parameter by either id or name."""
-        if isinstance(p, int):
-            return p, self.parameters.get(p, None)
-        if isinstance(p, str):
+        if isinstance(target, int):
+            return target, self.parameters.get(target, None)
+        if isinstance(target, str):
             try:
-                p = int(p)
-                return p, self.parameters.get(p, None)
+                target = int(target)
+                return target, self.parameters.get(target, None)
             except ValueError:
-                for k, v in self.parameters.items():
-                    if v.name == p:
-                        return k, v
-        LOGGER.warn(f"Parameter '{p}' not found")
+                for index, parameter in self.parameters.items():
+                    if parameter.name == target:
+                        return index, parameter
+        LOGGER.warning("Parameter '%s' not found", target)
         return None, None
 
-    def get(self, p):
+    def get(self, target):
         """Get parameter by id or name."""
-        id, parameter = self._lookup(p)
-        return parameter
+        index, parameter = self._lookup(target)
+        return index, parameter
 
-    def set(self, p, v):
+    def set(self, target, value):
         """Set parameter to new value."""
-        id, parameter = self._lookup(p)
-        if id:
+        index, parameter = self._lookup(target)
+        if index:
             if parameter.writeable or not self.safe:
-                self._queue[id] = parameter._from(v)
+                self.queue[index] = parameter.to_heatpump(value)
             else:
-                LOGGER.warn(f"Parameter {parameter.name} not safe for writing!")
+                LOGGER.warning("Parameter '%s' not safe for writing!", parameter.name)
