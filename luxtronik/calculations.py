@@ -309,19 +309,19 @@ class Calculations:
     def _lookup(self, target):
         """Lookup calculation by either id or name."""
         if isinstance(target, int):
-            return target, self.calculations.get(target, None)
+            return self.calculations.get(target, None)
         if isinstance(target, str):
             try:
                 target = int(target)
-                return target, self.calculations.get(target, None)
+                return self.calculations.get(target, None)
             except ValueError:
-                for index, calculation in self.calculations.items():
+                for _, calculation in self.calculations.items():
                     if calculation.name == target:
-                        return index, calculation
+                        return calculation
         LOGGER.warning("Calculation '%s' not found", target)
-        return None, None
+        return None
 
     def get(self, target):
         """Get calculation by id or name."""
-        index, calculation = self._lookup(target)
-        return index, calculation
+        calculation = self._lookup(target)
+        return calculation

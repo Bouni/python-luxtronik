@@ -378,19 +378,19 @@ class Visibilities:
     def _lookup(self, target):
         """Lookup visibility by either id or name."""
         if isinstance(target, int):
-            return target, self.visibilities.get(target, None)
+            return self.visibilities.get(target, None)
         if isinstance(target, str):
             try:
                 target = int(target)
-                return target, self.visibilities.get(target, None)
+                return self.visibilities.get(target, None)
             except ValueError:
-                for index, visibility in self.visibilities.items():
+                for _, visibility in self.visibilities.items():
                     if visibility.name == target:
-                        return index, visibility
+                        return visibility
         LOGGER.warning("Visibility '%s' not found", target)
-        return None, None
+        return None
 
     def get(self, target):
         """Get visibility by id or name."""
-        index, visibility = self._lookup(target)
-        return index, visibility
+        visibility = self._lookup(target)
+        return visibility

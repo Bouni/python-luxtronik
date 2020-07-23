@@ -1177,14 +1177,16 @@ class Parameters:
         LOGGER.warning("Parameter '%s' not found", target)
         return None, None
 
-    def get(self, target):
+    def get(self, target, with_index=False):
         """Get parameter by id or name."""
         index, parameter = self._lookup(target)
-        return index, parameter
+        if with_index:
+            return index, parameter
+        return parameter
 
     def set(self, target, value):
         """Set parameter to new value."""
-        index, parameter = self._lookup(target)
+        index, parameter = self._lookup(target, with_index=True)
         if index:
             if parameter.writeable or not self.safe:
                 self.queue[index] = parameter.to_heatpump(value)

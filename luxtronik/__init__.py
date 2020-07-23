@@ -46,10 +46,10 @@ class Luxtronik:
         self._connect()
         for index, value in self.parameters.queue.items():
             if not isinstance(index, int) or not isinstance(value, int):
-                LOGGER.warning("Parameter id '%d' or value '%s' invalid!", index, value)
+                LOGGER.warning("Parameter id '%s' or value '%s' invalid!", index, value)
                 continue
             LOGGER.info("Parameter '%d' set to '%s'", index, value)
-            data = struct.pack(">iii", 3002, id, value)
+            data = struct.pack(">iii", 3002, index, value)
             LOGGER.debug("Data %s", data)
             self._socket.sendall(data)
             cmd = struct.unpack(">i", self._socket.recv(4))[0]
