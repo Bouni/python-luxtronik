@@ -22,7 +22,7 @@ class Parameters:
 
     parameters = {
         0: Unknown("ID_Transfert_LuxNet"),
-        1: Celsius("ID_Einst_WK_akt"),
+        1: Celsius("ID_Einst_WK_akt", True),
         2: Celsius("ID_Einst_BWS_akt", True),
         3: HeatingMode("ID_Ba_Hz_akt", True),
         4: HotWaterMode("ID_Ba_Bw_akt", True),
@@ -1162,26 +1162,32 @@ class Parameters:
             else:
                 LOGGER.warning("Parameter '%d' not in list of parameters", index)
 
-    def _lookup(self, target):
+    def _lookup(self, target, with_index=False):
         """Lookup parameter by either id or name."""
         if isinstance(target, int):
-            return target, self.parameters.get(target, None)
+            if with_index:
+                return target, self.parameters.get(target, None)
+            return self.parameters.get(target, None)
         if isinstance(target, str):
             try:
                 target = int(target)
-                return target, self.parameters.get(target, None)
+                if with_index:
+                    return target, self.parameters.get(target, None)
+                return self.parameters.get(target, None)
             except ValueError:
                 for index, parameter in self.parameters.items():
                     if parameter.name == target:
-                        return index, parameter
+                        if with_index:
+                            return index, parameter
+                        return parameter
         LOGGER.warning("Parameter '%s' not found", target)
-        return None, None
-
-    def get(self, target, with_index=False):
-        """Get parameter by id or name."""
-        index, parameter = self._lookup(target)
         if with_index:
-            return index, parameter
+            return None, None
+        return None
+
+    def get(self, target):
+        """Get parameter by id or name."""
+        parameter = self._lookup(target)
         return parameter
 
     def set(self, target, value):
@@ -1192,3 +1198,5 @@ class Parameters:
                 self.queue[index] = parameter.to_heatpump(value)
             else:
                 LOGGER.warning("Parameter '%s' not safe for writing!", parameter.name)
+        else:
+            LOGGER.warning("Parameter '%s' not found", target)
