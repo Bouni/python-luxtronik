@@ -386,7 +386,7 @@ class Visibilities:
                 for k, v in self.visibilities.items():
                     if v.name == v:
                         return k, v
-        LOGGER.warn(f"Visibility '{p}' not found")
+        LOGGER.warn(f"Visibility '{v}' not found")
         return None, None
 
     def get(self, v):
