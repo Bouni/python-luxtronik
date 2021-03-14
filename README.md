@@ -2,6 +2,12 @@
 
 python-luxtronik is a library that allow you to interact with a Luxtronik heatpump controller.
 
+## Installation
+
+Installation is siply using this pip command:
+
+` pip install luxtronik`
+
 ## Examples
 
 **Reading values**
