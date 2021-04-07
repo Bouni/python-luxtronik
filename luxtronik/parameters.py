@@ -2,6 +2,7 @@
 import logging
 
 from luxtronik.datatypes import (
+    Kelvin,
     Celsius,
     CoolingMode,
     HeatingMode,
