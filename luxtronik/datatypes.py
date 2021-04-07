@@ -117,7 +117,10 @@ class Timestamp(Base):
     measurement_type = "timestamp"
 
     def from_heatpump(self, value):
-        return datetime.datetime.fromtimestamp(value)
+        if value > 0:
+            return datetime.datetime.fromtimestamp(value)
+        return datetime.datetime.fromtimestamp(0)
+
 
     def to_heatpump(self, value):
         return datetime.datetime.timestamp(value)
