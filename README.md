@@ -1,8 +1,6 @@
 # Luxtronik
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I364QTM)
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/bouni)
-[![Github Sponsors](https://img.shields.io/badge/-Sponsor-fafbfc?style=for-the-badge&logo=GitHub%20Sponsors)](https://github.com/sponsors/Bouni)
+<a href="https://ko-fi.com/I3I364QTM" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" height="30px"/></a> <a href="https://www.buymeacoffee.com/bouni" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" height="30px"/></a> <a href="https://github.com/sponsors/Bouni" target="_blank"><img src="https://img.shields.io/badge/-Github Sponsor-fafbfc?style=flat&logo=GitHub%20Sponsors" height="30px"/></a>
 
 python-luxtronik is a library that allow you to interact with a Luxtronik heatpump controller.
 
