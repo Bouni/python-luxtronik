@@ -360,11 +360,12 @@ class Visibilities:
         347: Unknown("Unknown_Visibility_347"),
         348: Unknown("Unknown_Visibility_348"),
         349: Unknown("Unknown_Visibility_349"),
-        350: Unknown("Unknown_Visibility_350"),
-        351: Unknown("Unknown_Visibility_351"),
-        352: Unknown("Unknown_Visibility_352"),
-        353: Unknown("Unknown_Visibility_353"),
-        354: Unknown("Unknown_Visibility_354"),
+        350: Unknown("Unknown_Visibility_350"),                                 
+        351: Unknown("Unknown_Visibility_351"),                                 
+        352: Unknown("Unknown_Visibility_352"),                                 
+        353: Unknown("Unknown_Visibility_353"),                                 
+        354: Unknown("Unknown_Visibility_354"),                                 
+        355: Unknown("Unknown_Visibility_355"),  
     }
 
     def parse(self, raw_data):
