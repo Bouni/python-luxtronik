@@ -31,7 +31,9 @@ class Luxtronik:
 
     def _disconnect(self):
         self._socket.close()
-        LOGGER.info("Disconnected from Luxtronik heatpump  %s:%s", self._host, self._port)
+        LOGGER.info(
+            "Disconnected from Luxtronik heatpump  %s:%s", self._host, self._port
+        )
 
     def read(self):
         """Read data from heatpump."""
@@ -68,7 +70,11 @@ class Luxtronik:
         length = struct.unpack(">i", self._socket.recv(4))[0]
         LOGGER.debug("Length %s", length)
         for _ in range(0, length):
-            data.append(struct.unpack(">i", self._socket.recv(4))[0])
+            try:
+                data.append(struct.unpack(">i", self._socket.recv(4))[0])
+            except struct.error as e:
+                # not logging this as error as it would be logged on every read cycle
+                LOGGER.debug(e)
         LOGGER.info("Read %d parameters", length)
         self.parameters.parse(data)
 
@@ -82,7 +88,11 @@ class Luxtronik:
         length = struct.unpack(">i", self._socket.recv(4))[0]
         LOGGER.debug("Length %s", length)
         for _ in range(0, length):
-            data.append(struct.unpack(">i", self._socket.recv(4))[0])
+            try:
+                data.append(struct.unpack(">i", self._socket.recv(4))[0])
+            except struct.error as e:
+                # not logging this as error as it would be logged on every read cycle
+                LOGGER.debug(e)
         LOGGER.info("Read %d calculations", length)
         self.calculations.parse(data)
 
@@ -94,6 +104,10 @@ class Luxtronik:
         length = struct.unpack(">i", self._socket.recv(4))[0]
         LOGGER.debug("Length %s", length)
         for _ in range(0, length):
-            data.append(struct.unpack(">b", self._socket.recv(1))[0])
+            try:
+                data.append(struct.unpack(">b", self._socket.recv(1))[0])
+            except struct.error as e:
+                # not logging this as error as it would be logged on every read cycle
+                LOGGER.debug(e)
         LOGGER.info("Read %d visibilities", length)
         self.visibilities.parse(data)
