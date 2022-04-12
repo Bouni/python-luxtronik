@@ -99,15 +99,15 @@ class IPAddress(Base):
 
     def from_heatpump(self, value):
         if value < 0:
-            return str(ipaddress.IPv4Address(value + 2 ** 32))
-        if value > 2 ** 32:
-            return str(ipaddress.IPv4Address(value - 2 ** 32))
+            return str(ipaddress.IPv4Address(value + 2**32))
+        if value > 2**32:
+            return str(ipaddress.IPv4Address(value - 2**32))
         return str(ipaddress.IPv4Address(value))
 
     def to_heatpump(self, value):
         result = int(ipaddress.IPv4Address(value))
-        if result > 2 ** 32:
-            return result - 2 ** 32
+        if result > 2**32:
+            return result - 2**32
         return result
 
 
@@ -120,7 +120,6 @@ class Timestamp(Base):
         if value > 0:
             return datetime.datetime.fromtimestamp(value)
         return datetime.datetime.fromtimestamp(0)
-
 
     def to_heatpump(self, value):
         return datetime.datetime.timestamp(value)
