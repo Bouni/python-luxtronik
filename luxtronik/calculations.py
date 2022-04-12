@@ -301,7 +301,9 @@ class Calculations:
                 calculation.value = calculation.from_heatpump(data)
                 continue
             if calculation is not False and index in range(81, 91):
-                calculation.value = calculation.from_heatpump(raw_data[index : index + 9])
+                calculation.value = calculation.from_heatpump(
+                    raw_data[index : index + 9]
+                )
                 continue
             if calculation is False and index not in range(81, 91):
                 LOGGER.warning("Calculation '%d' not in list of calculationss", index)
