@@ -96,7 +96,7 @@ class Parameters:
         71: Unknown("ID_Einst_TVL_Std_8"),
         72: Unknown("ID_Einst_TVL_Std_9"),
         73: Unknown("ID_Einst_TVL_Std_10"),
-        74: Unknown("ID_Einst_BWS_Hyst_akt"),
+        74: Kelvin("ID_Einst_BWS_Hyst_akt", True),
         75: Unknown("ID_Temp_TBW_BwHD_saved"),
         76: Unknown("ID_Einst_ABT1_akt"),
         77: Unknown("ID_Einst_LABTpaus_akt"),
