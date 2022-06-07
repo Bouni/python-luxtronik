@@ -297,16 +297,22 @@ class Calculations:
         """Parse raw calculations data."""
         for index, data in enumerate(raw_data):
             calculation = self.calculations.get(index, False)
+            # index is not version info (index 81 up to 91), proceed normally
             if calculation is not False and index not in range(81, 91):
                 calculation.value = calculation.from_heatpump(data)
                 continue
+            # index is version info, parse entire range from 81 up to 91 as version string
             if calculation is not False and index in range(81, 91):
                 calculation.value = calculation.from_heatpump(
                     raw_data[index : index + 9]
                 )
                 continue
+            # index is outside the known range, create it as unknown
             if calculation is False and index not in range(81, 91):
-                LOGGER.warning("Calculation '%d' not in list of calculationss", index)
+                #LOGGER.warning("Calculation '%d' not in list of calculationss", index)
+                calculation = Unknown(f"Unknown_Calculation_{index}")
+                calculation.value = calculation.from_heatpump(data)
+                self.calculations[index] = calculation
 
     def _lookup(self, target):
         """Lookup calculation by either id or name."""

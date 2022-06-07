@@ -1162,7 +1162,10 @@ class Parameters:
             if parameter is not False:
                 parameter.value = parameter.from_heatpump(data)
             else:
-                LOGGER.warning("Parameter '%d' not in list of parameters", index)
+                #LOGGER.warning("Parameter '%d' not in list of parameters", index)
+                parameter = Unknown(f"Unknown_Parameter_{index}")
+                parameter.value = parameter.from_heatpump(data)
+                self.parameters[index] = parameter
 
     def _lookup(self, target, with_index=False):
         """Lookup parameter by either id or name."""
