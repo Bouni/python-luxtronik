@@ -1,4 +1,4 @@
-"""luxtonik heatpump interface."""
+"""luxtronik heatpump interface."""
 # -*- coding: utf-8 -*-
 
 import logging
@@ -44,7 +44,7 @@ class Luxtronik:
         self._disconnect()
 
     def write(self):
-        """Write patameter to heatpump."""
+        """Write parameter to heatpump."""
         self._connect()
         for index, value in self.parameters.queue.items():
             if not isinstance(index, int) or not isinstance(value, int):

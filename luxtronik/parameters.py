@@ -1,6 +1,6 @@
 # pylint: disable=too-many-lines
 
-"""Parse luxtonik parameters."""
+"""Parse luxtronik parameters."""
 import logging
 
 from luxtronik.datatypes import (
