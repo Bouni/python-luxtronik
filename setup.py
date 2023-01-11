@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 import setuptools
 
 with open("README.md", "r", encoding="utf8") as fh:
