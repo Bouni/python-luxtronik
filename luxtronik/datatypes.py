@@ -14,11 +14,11 @@ class Base:
         self.writeable = writeable
 
     def to_heatpump(self, value):
-        """Convert a value into heatpump units."""
+        """Converts value into heatpump units."""
         return value
 
     def from_heatpump(self, value):
-        """Convert a value from heatpump units."""
+        """Converts value from heatpump units."""
         return value
 
     def __repr__(self):
@@ -29,13 +29,13 @@ class Base:
 
 
 class SelectionBase(Base):
-    """Selection base datatype, converts from an to list of codes."""
+    """Selection base datatype, converts from and to list of codes."""
 
     codes = {}
 
     @property
     def options(self):
-        """Return List of all available options."""
+        """Return list of all available options."""
         return [value for _, value in self.codes.items()]
 
     def from_heatpump(self, value):
@@ -144,7 +144,7 @@ class Kelvin(Base):
 
 
 class Pressure(Base):
-    """Preassure datatype, converts from and to Pressure."""
+    """Pressure datatype, converts from and to Pressure."""
 
     measurement_type = "bar"
 
@@ -168,7 +168,7 @@ class Percent(Base):
 
 
 class Percent2(Base):
-    """Percent datatype, converts from and to Percent with a differnet scale factor."""
+    """Percent datatype, converts from and to Percent with a different scale factor."""
 
     measurement_type = "percent"
 
@@ -261,7 +261,7 @@ class Icon(Base):
 
 
 class HeatingMode(SelectionBase):
-    """HeatingMode datatype, converts from an to list of HeatingMode codes."""
+    """HeatingMode datatype, converts from and to list of HeatingMode codes."""
 
     measurement_type = "selection"
 
@@ -275,7 +275,7 @@ class HeatingMode(SelectionBase):
 
 
 class CoolingMode(SelectionBase):
-    """CoolingMode datatype, converts from an to list of CoolingMode codes."""
+    """CoolingMode datatype, converts from and to list of CoolingMode codes."""
 
     measurement_type = "selection"
 
@@ -283,7 +283,7 @@ class CoolingMode(SelectionBase):
 
 
 class HotWaterMode(SelectionBase):
-    """HotWaterMode datatype, converts from an to list of HotWaterMode codes."""
+    """HotWaterMode datatype, converts from and to list of HotWaterMode codes."""
 
     measurement_type = "selection"
 
@@ -297,7 +297,7 @@ class HotWaterMode(SelectionBase):
 
 
 class PoolMode(SelectionBase):
-    """PoolMode datatype, converts from an to list of PoolMode codes."""
+    """PoolMode datatype, converts from and to list of PoolMode codes."""
 
     measurement_type = "selection"
 
@@ -305,7 +305,7 @@ class PoolMode(SelectionBase):
 
 
 class MixedCircuitMode(SelectionBase):
-    """MixCircuitMode datatype, converts from an to list of MixCircuitMode codes."""
+    """MixCircuitMode datatype, converts from and to list of MixCircuitMode codes."""
 
     measurement_type = "selection"
 
@@ -313,7 +313,7 @@ class MixedCircuitMode(SelectionBase):
 
 
 class SolarMode(SelectionBase):
-    """SolarMode datatype, converts from an to list of SolarMode codes."""
+    """SolarMode datatype, converts from and to list of SolarMode codes."""
 
     measurement_type = "selection"
 
@@ -327,7 +327,7 @@ class SolarMode(SelectionBase):
 
 
 class VentilationMode(SelectionBase):
-    """VentilationMode datatype, converts from an to list of VentilationMode codes."""
+    """VentilationMode datatype, converts from and to list of VentilationMode codes."""
 
     measurement_type = "selection"
 
@@ -335,7 +335,7 @@ class VentilationMode(SelectionBase):
 
 
 class HeatpumpCode(SelectionBase):
-    """HeatpumpCode datatype, converts from an to list of Heatpump codes."""
+    """HeatpumpCode datatype, converts from and to list of Heatpump codes."""
 
     measurement_type = "selection"
 
@@ -412,7 +412,7 @@ class HeatpumpCode(SelectionBase):
 
 
 class BivalenceLevel(SelectionBase):
-    """BivalanceLevel datatype, converts from an to list of BivalanceLevel codes."""
+    """BivalanceLevel datatype, converts from and to list of BivalanceLevel codes."""
 
     measurement_type = "selection"
 
@@ -424,7 +424,7 @@ class BivalenceLevel(SelectionBase):
 
 
 class OperationMode(SelectionBase):
-    """OperationMode datatype, converts from an to list of OperationMode codes."""
+    """OperationMode datatype, converts from and to list of OperationMode codes."""
 
     measurement_type = "selection"
 
@@ -441,7 +441,7 @@ class OperationMode(SelectionBase):
 
 
 class SwitchoffFile(SelectionBase):
-    """SwitchOff datatype, converts from an to list of SwitchOff codes."""
+    """SwitchOff datatype, converts from and to list of SwitchOff codes."""
 
     measurement_type = "selection"
 
@@ -459,7 +459,7 @@ class SwitchoffFile(SelectionBase):
 
 
 class MainMenuStatusLine1(SelectionBase):
-    """MenuStatusLine datatype, converts from an to list of MenuStatusLine codes."""
+    """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
 
     measurement_type = "selection"
 
@@ -469,14 +469,14 @@ class MainMenuStatusLine1(SelectionBase):
         2: "heatpump coming",
         3: "errorcode slot 0",
         4: "defrost",
-        5: "witing on LIN connection",
+        5: "waiting on LIN connection",
         6: "compressor heating up",
         7: "pump forerun",
     }
 
 
 class MainMenuStatusLine2(SelectionBase):
-    """MenuStatusLine datatype, converts from an to list of MenuStatusLine codes."""
+    """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
 
     measurement_type = "selection"
 
@@ -484,7 +484,7 @@ class MainMenuStatusLine2(SelectionBase):
 
 
 class MainMenuStatusLine3(SelectionBase):
-    """MenuStatusLine datatype, converts from an to list of MenuStatusLine codes."""
+    """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
 
     measurement_type = "selection"
 
@@ -509,7 +509,7 @@ class MainMenuStatusLine3(SelectionBase):
 
 
 class SecOperationMode(SelectionBase):
-    """SecOperationMode datatype, converts from an to list of SecOperationMode codes."""
+    """SecOperationMode datatype, converts from and to list of SecOperationMode codes."""
 
     measurement_type = "selection"
 
