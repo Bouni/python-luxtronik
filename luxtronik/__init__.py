@@ -72,9 +72,9 @@ class Luxtronik:
         for _ in range(0, length):
             try:
                 data.append(struct.unpack(">i", self._socket.recv(4))[0])
-            except struct.error as e:
+            except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug(e)
+                LOGGER.debug(err)
         LOGGER.info("Read %d parameters", length)
         self.parameters.parse(data)
 
@@ -90,9 +90,9 @@ class Luxtronik:
         for _ in range(0, length):
             try:
                 data.append(struct.unpack(">i", self._socket.recv(4))[0])
-            except struct.error as e:
+            except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug(e)
+                LOGGER.debug(err)
         LOGGER.info("Read %d calculations", length)
         self.calculations.parse(data)
 
@@ -106,8 +106,8 @@ class Luxtronik:
         for _ in range(0, length):
             try:
                 data.append(struct.unpack(">b", self._socket.recv(1))[0])
-            except struct.error as e:
+            except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug(e)
+                LOGGER.debug(err)
         LOGGER.info("Read %d visibilities", length)
         self.visibilities.parse(data)
