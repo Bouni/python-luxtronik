@@ -1,4 +1,4 @@
-"""Parse luxtonik visibilities."""
+"""Parse luxtronik visibilities."""
 import logging
 
 from luxtronik.datatypes import Unknown
