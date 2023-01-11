@@ -1,3 +1,5 @@
+# pylint: disable=too-many-lines
+
 """Parse luxtonik parameters."""
 import logging
 
@@ -1168,6 +1170,9 @@ class Parameters:
                 self.parameters[index] = parameter
 
     def _lookup(self, target, with_index=False):
+        # pylint: disable=too-many-return-statements,fixme
+        # TODO Evaluate whether logic can be re-arranged to get rid of the
+        # pylint error regarding too many return statements.
         """Lookup parameter by either id or name."""
         if isinstance(target, int):
             if with_index:
