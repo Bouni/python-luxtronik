@@ -227,6 +227,12 @@ class Hours(Base):
         return int(value * 10)
 
 
+class Minutes(Base):
+    """Minutes datatype, converts from and to Minutes."""
+
+    measurement_type = "Minutes"
+
+
 class Flow(Base):
     """Flow datatype, converts from and to Flow."""
 
