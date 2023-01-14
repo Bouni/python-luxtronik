@@ -115,7 +115,7 @@ class Parameters:
         87: Unknown("ID_Einst_TRBegr_akt"),
         88: Kelvin("ID_Einst_HRHyst_akt", True),
         89: Kelvin("ID_Einst_TRErhmax_akt", True),
-        90: Unknown("ID_Einst_ZWEFreig_akt"),
+        90: Celsius("ID_Einst_ZWEFreig_akt", True),
         91: Unknown("ID_Einst_TAmax_akt"),
         92: Unknown("ID_Einst_TAmin_akt"),
         93: Unknown("ID_Einst_TWQmin_akt"),
