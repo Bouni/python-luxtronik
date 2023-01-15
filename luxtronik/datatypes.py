@@ -536,6 +536,19 @@ class SecOperationMode(SelectionBase):
     }
 
 
+class AccessLevel(SelectionBase):
+    """AccessLevel datatype, converts from and to list of AccessLevel codes"""
+
+    measurement_type = "selection"
+
+    codes = {
+        0: "user",
+        1: "after sales service",
+        2: "manufacturer",
+        3: "installer",
+    }
+
+
 class Unknown(Base):
     """Unknown datatype, fallback for unknown data."""
 
