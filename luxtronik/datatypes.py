@@ -461,6 +461,7 @@ class SwitchoffFile(SelectionBase):
         7: "minimal usage temperature",
         8: "lower usage limit",
         9: "no request",
+        11: "flow rate",
     }
 
 
