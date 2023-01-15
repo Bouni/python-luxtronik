@@ -4,6 +4,7 @@
 import logging
 
 from luxtronik.datatypes import (
+    AccessLevel,
     Kelvin,
     Celsius,
     CoolingMode,
@@ -132,7 +133,7 @@ class Parameters:
         104: Unknown("ID_Einst_AhpM_akt"),
         105: Celsius("ID_Soll_BWS_akt", True),
         106: Unknown("ID_Timer_Password"),
-        107: Unknown("ID_Einst_Zugangscode"),
+        107: AccessLevel("ID_Einst_Zugangscode", True),
         108: CoolingMode("ID_Einst_BA_Kuehl_akt", True),
         109: Unknown("ID_Sollwert_Kuehl1_akt"),
         110: Celsius("ID_Einst_KuehlFreig_akt", True),
