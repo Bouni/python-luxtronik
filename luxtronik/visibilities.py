@@ -192,7 +192,7 @@ class Visibilities:
         179: Unknown("ID_Visi_Heizung_Betriebsart"),
         180: Unknown("ID_Visi_Heizung_TemperaturPlusMinus"),
         181: Unknown("ID_Visi_Heizung_Heizkurven"),
-        182: Unknown("ID_Visi_Heizung_Zeitschlaltprogramm"),
+        182: Unknown("ID_Visi_Heizung_Zeitschaltprogramm"),
         183: Unknown("ID_Visi_Heizung_Heizgrenze"),
         184: Unknown("ID_Visi_Mitteltemperatur"),
         185: Unknown("ID_Visi_Dataenlogger"),
