@@ -30,7 +30,7 @@ engineering**.
 
 This library can be installed via pip by issuing the following command:
 
-```
+```shell
 pip install luxtronik
 ```
 
@@ -49,7 +49,7 @@ can be found in the [luxtronik](luxtronik/) directory.
 
 The following example reads in data from the heat pump:
 
-```
+```python
 from luxtronik import Luxtronik
 
 l = Luxtronik('192.168.1.23', 8889)
@@ -77,7 +77,7 @@ print(t_forerun.unit) # gives you the unit of the value if known, °C for exampl
 
 The following example writes data to the heat pump:
 
-```
+```python
 from luxtronik import Luxtronik
 
 l = Luxtronik('192.168.1.23', 8889)
@@ -97,7 +97,7 @@ writing parameters that are not (yet) understood.
 You can disable that safeguard by passing `safe=False` to the Luxtronik class
 during initialization:
 
-```
+```python
 from luxtronik import Luxtronik
 
 l = Luxtronik('192.168.1.23', 8889, safe=False)
@@ -120,25 +120,23 @@ The fastest way to provide improvements to the code is is to use
 
 ## LICENSE
 
-```
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the “Software”),
-to deal in the Software without restriction, including without limitation
-the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-DEALINGS IN THE SOFTWARE.
-```
+> Permission is hereby granted, free of charge, to any person obtaining a
+> copy of this software and associated documentation files (the “Software”),
+> to deal in the Software without restriction, including without limitation
+> the rights to use, copy, modify, merge, publish, distribute, sublicense,
+> and/or sell copies of the Software, and to permit persons to whom the
+> Software is furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in
+> all copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+> THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+> DEALINGS IN THE SOFTWARE.
 
 [github-repo]: https://github.com/Bouni/python-luxtronik
 [issue-tracker]: https://github.com/Bouni/python-luxtronik/issues
