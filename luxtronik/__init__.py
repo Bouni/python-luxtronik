@@ -17,19 +17,21 @@ from luxtronik.visibilities import Visibilities
 
 LOGGER = logging.getLogger("Luxtronik")
 
-# Wait time (in seconds) after writing parameters to give controller some time to re-calculate values, etc.
+# Wait time (in seconds) after writing parameters to give controller
+# some time to re-calculate values, etc.
 WAIT_TIME_BETWEEN_WRITE_READ_PARAMETER = 1
 
 
 def is_socket_closed(sock: socket.socket) -> bool:
+    """Check is socket closed."""
     try:
-        # this will try to read bytes without blocking and also without removing them from buffer (peek only)
+        # this will try to read bytes without blocking and also without removing them from buffer
         data = sock.recv(16, socket.MSG_DONTWAIT | socket.MSG_PEEK)
         if len(data) == 0:
             return True
     except BlockingIOError:
         return False  # socket is open and reading from it would block
-    except ConnectionResetError:
+    except ConnectionResetError: # pylint: disable=W0703
         return True  # socket was closed for some other reason
     except Exception as err:
         LOGGER.exception(
@@ -81,7 +83,8 @@ class Luxtronik:
         prior to reading back in all data from the heat pump. If write is
         false, no data will be written, but all available data will be read
         from the heat pump.
-        :param bool write Indicates whether parameters should be written to heat pump prior to reading in all available data from heatpump
+        :param bool write Indicates whether parameters should be written to heatpump
+                          prior to reading in all available data from heatpump
         """
 
         with self._lock:
@@ -94,7 +97,8 @@ class Luxtronik:
                     "Connected to Luxtronik heatpump %s:%s", self._host, self._port
                 )
             if write:
-                return self._write()
+                self._write()
+                return
             self._read()
 
     def _read(self):
