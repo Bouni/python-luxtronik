@@ -425,7 +425,7 @@ class BivalenceLevel(SelectionBase):
     codes = {
         1: "one compressor allowed to run",
         2: "two compressors allowed to run",
-        3: "additional compressor allowed to run",
+        3: "additional heat generator allowed to run",
     }
 
 
