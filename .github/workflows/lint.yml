@@ -1,5 +1,6 @@
+---
 name: Lint source files
-on: [push]
+on: [push] # yamllint disable-line rule:truthy
 jobs:
   markdownlint:
     runs-on: ubuntu-latest
