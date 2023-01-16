@@ -42,7 +42,7 @@ def is_socket_closed(sock: socket.socket) -> bool:
 class Luxtronik:
     """Main luxtronik class."""
 
-    def __init__(self, host, port, safe=True):
+    def __init__(self, host, port=8889, safe=True):
         self._lock = threading.Lock()
         self._host = host
         self._port = port
