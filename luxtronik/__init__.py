@@ -35,7 +35,7 @@ def is_socket_closed(sock: socket.socket) -> bool:
         return True  # socket was closed for some other reason
     except Exception as err: # pylint: disable=W0703
         LOGGER.exception(
-            "Unexpected exception when checking if a socket is closed", exc_info=err
+            "Unexpected exception when checking if socket is closed", exc_info=err
         )
         return False
     return False
