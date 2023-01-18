@@ -126,7 +126,6 @@ class Luxtronik:
         # Read the new values based on our parameter changes:
         self._read_parameters()
         self._read_calculations()
-        LOGGER.warning("New: '%s'", self.calculations.get(12))
         self._read_visibilities()
 
     def _read_parameters(self):
