@@ -140,7 +140,7 @@ class Kelvin(Base):
         return value / 10
 
     def to_heatpump(self, value):
-        return int(value * 10)
+        return int(float(value) * 10)
 
 
 class Pressure(Base):
