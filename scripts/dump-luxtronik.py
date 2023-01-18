@@ -4,9 +4,27 @@
 
 """Script to dump all values from Luxtronik controller"""
 
+import argparse
+
 from luxtronik import Luxtronik
 
-l = Luxtronik('192.168.88.11', 8889)
+parser = argparse.ArgumentParser(
+        description="Dumps all values from Luxtronik controller"
+    )
+parser.add_argument(
+        "ip",
+        help="IP address of Luxtronik controller to connect to"
+    )
+parser.add_argument(
+        "port",
+        nargs="?",
+        type=int,
+        default=8889,
+        help="Port to use to connect to Luxtronik controller"
+    )
+args = parser.parse_args()
+
+l = Luxtronik(args.ip, args.port)
 
 print("="*80)
 print(f"{' Parameter ': ^80}")
