@@ -1,5 +1,7 @@
 """Test suite for datatypes module"""
 
+# pylint: disable=too-few-public-methods,invalid-name
+
 import datetime
 import pytest
 
@@ -261,6 +263,7 @@ class TestTimestamp:
         assert a.from_heatpump(-1) == datetime.datetime.fromtimestamp(0)
         assert a.from_heatpump(0) == datetime.datetime.fromtimestamp(0)
         assert a.from_heatpump(1) == datetime.datetime.fromtimestamp(1)
+        # pylint: disable=fixme
         # TODO Consider to drop microseconds when dealing with this datatype?
         b = datetime.datetime.now()
         assert a.from_heatpump(datetime.datetime.timestamp(b)) == b
@@ -271,6 +274,7 @@ class TestTimestamp:
         a = Timestamp("")
         assert a.to_heatpump(datetime.datetime.fromtimestamp(0)) == 0
         assert a.to_heatpump(datetime.datetime.fromtimestamp(1)) == 1
+        # pylint: disable=fixme
         # TODO Consider to drop microseconds when dealing with this datatype?
         b = datetime.datetime.now()
         assert a.to_heatpump(b) == datetime.datetime.timestamp(b)
