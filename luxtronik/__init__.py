@@ -65,13 +65,13 @@ class Luxtronik:
 
     def read(self):
         """Read data from heatpump."""
-        self._read_write(write=False)
+        self._read_after_write(write=False)
 
     def write(self):
         """Write parameter to heatpump."""
-        self._read_write(write=True)
+        self._read_after_write(write=True)
 
-    def _read_write(self, write=False):
+    def _read_after_write(self, write=False):
         """
         Read and/or write value from and/or to heatpump.
         This method is essentially a wrapper for the _read() and _write()
