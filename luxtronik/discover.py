@@ -52,3 +52,5 @@ def discover() -> list[(str, int)]:
             # if the timeout triggers, go on an use the other broadcast port
             except socket.timeout:
                 break
+
+    return results
