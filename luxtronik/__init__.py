@@ -19,7 +19,7 @@ LOGGER = logging.getLogger("Luxtronik")
 
 # Wait time (in seconds) after writing parameters to give controller
 # some time to re-calculate values, etc.
-WAIT_TIME_BETWEEN_WRITE_READ_PARAMETER = 1
+WAIT_TIME_AFTER_PARAMETER_WRITE = 1
 
 
 def is_socket_closed(sock: socket.socket) -> bool:
@@ -31,9 +31,9 @@ def is_socket_closed(sock: socket.socket) -> bool:
             return True
     except BlockingIOError:
         return False  # socket is open and reading from it would block
-    except ConnectionResetError: # pylint: disable=W0703
+    except ConnectionResetError: # pylint: disable=broad-except
         return True  # socket was closed for some other reason
-    except Exception as err: # pylint: disable=W0703
+    except Exception as err: # pylint: disable=broad-except
         LOGGER.exception(
             "Unexpected exception when checking if socket is closed", exc_info=err
         )
@@ -65,13 +65,13 @@ class Luxtronik:
 
     def read(self):
         """Read data from heatpump."""
-        self._read_write(write=False)
+        self._read_after_write(write=False)
 
     def write(self):
         """Write parameter to heatpump."""
-        self._read_write(write=True)
+        self._read_after_write(write=True)
 
-    def _read_write(self, write=False):
+    def _read_after_write(self, write=False):
         """
         Read and/or write value from and/or to heatpump.
         This method is essentially a wrapper for the _read() and _write()
@@ -122,7 +122,7 @@ class Luxtronik:
         # Flush queue after writing all values
         self.parameters.queue = {}
         # Give the heatpump a short time to handle the value changes/calculations:
-        time.sleep(WAIT_TIME_BETWEEN_WRITE_READ_PARAMETER)
+        time.sleep(WAIT_TIME_AFTER_PARAMETER_WRITE)
         # Read the new values based on our parameter changes:
         self._read_parameters()
         self._read_calculations()
