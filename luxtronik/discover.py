@@ -2,6 +2,8 @@
 import logging
 import socket
 
+LUXTRONIK_DISCOVERY_PORTS = (4444, 47808)
+
 LOGGER = logging.getLogger("Luxtronik.Discover")
 
 
@@ -10,7 +12,7 @@ def discover() -> list[(str, int)]:
 
     results: list[(str, int)] = []
 
-    for magic_port in (4444, 47808):
+    for magic_port in LUXTRONIK_DISCOVERY_PORTS:
         LOGGER.debug("Send discovery packets to port %s", magic_port)
         server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         server.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
