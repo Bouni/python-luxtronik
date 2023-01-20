@@ -1,4 +1,4 @@
-"""Discovery funtion for Luxtronik2 heatpump controllers."""
+"""Discovery function for Luxtronik heat pump controllers"""
 import logging
 import socket
 
