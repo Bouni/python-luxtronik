@@ -8,7 +8,7 @@ LOGGER = logging.getLogger("Luxtronik.Discover")
 def discover() -> list[(str, int)]:
     """Broadcast discovery for luxtronik heatpumps."""
 
-    results: list[(str, int)] = list()
+    results: list[(str, int)] = []
 
     for magic_port in (4444, 47808):
         LOGGER.debug("Send discovery packets to port %s", magic_port)
