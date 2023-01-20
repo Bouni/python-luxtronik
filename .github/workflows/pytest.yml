@@ -23,8 +23,8 @@ jobs:
           PYTHONPATH=. pytest --junitxml=pytest.xml
           --cov-report=term-missing:skip-covered
           --cov=luxtronik tests/ | tee pytest-coverage.txt
-      - name: Publish pytest coverage as comment
-        uses: MishaKav/pytest-coverage-comment@main
-        with:
-          pytest-coverage-path: ./pytest-coverage.txt
-          junitxml-path: ./pytest.xml
+      # - name: Publish pytest coverage as comment
+      #   uses: MishaKav/pytest-coverage-comment@main
+      #   with:
+      #     pytest-coverage-path: ./pytest-coverage.txt
+      #     junitxml-path: ./pytest.xml
