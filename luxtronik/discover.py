@@ -5,8 +5,10 @@ import socket
 LOGGER = logging.getLogger("Luxtronik.Discover")
 
 
-def discover():
+def discover() -> list[(str, int)]:
     """Broadcast discovery for luxtronik heatpumps."""
+
+    results: list[(str, int)] = list()
 
     for magic_port in (4444, 47808):
         LOGGER.debug("Send discovery packets to port %s", magic_port)
@@ -40,7 +42,7 @@ def discover():
                             "an old Luxtronic software version might be the reason."
                         )
                         port = None
-                    return (ip_address, port)
+                    results.append((ip_address, port))
                 LOGGER.debug(
                     "Received answer, but with wrong magic bytes,"
                     "from %s skip this one",
