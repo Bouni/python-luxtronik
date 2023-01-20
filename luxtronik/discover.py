@@ -4,6 +4,7 @@ import socket
 
 LOGGER = logging.getLogger("Luxtronik.Discover")
 
+
 def discover():
     """Broadcast discovery for luxtronik heatpumps."""
 
@@ -30,7 +31,7 @@ def discover():
                 # if the response starts with the magic nonsense
                 if res.startswith("2500;111;"):
                     res = res.split(";")
-                    LOGGER.debug("Received answer from %s:%d", ip_address, res)
+                    LOGGER.debug("Received answer from %s %s", ip_address, str(res))
                     try:
                         port = int(res[2])
                     except ValueError:
@@ -42,7 +43,8 @@ def discover():
                     return (ip_address, port)
                 LOGGER.debug(
                     "Received answer, but with wrong magic bytes,"
-                    "from %s skip this one", ip_address
+                    "from %s skip this one",
+                    ip_address,
                 )
                 continue
             # if the timeout triggers, go on an use the other broadcast port
