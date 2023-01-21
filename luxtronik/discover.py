@@ -48,6 +48,9 @@ def discover() -> list[(str, int)]:
                     try:
                         port = int(res[2])
                         if port < 1 or port > 65535:
+                            LOGGER.debug(
+                                    "Response contained an invalid port, ignoring"
+                                    )
                             port = None
                     except ValueError:
                         port = None
