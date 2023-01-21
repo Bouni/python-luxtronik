@@ -11,7 +11,7 @@ LOGGER = logging.getLogger("Luxtronik.Discover")
 
 
 def discover() -> list[(str, int)]:
-    """Broadcast discovery for Luxtronik2 heat pumps"""
+    """Broadcast discovery for Luxtronik heat pumps"""
 
     results: list[(str, int)] = []
 
