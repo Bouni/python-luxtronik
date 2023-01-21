@@ -51,8 +51,7 @@ def discover() -> list[(str, int)]:
                         )
                     results.append((ip_address, port))
                 LOGGER.debug(
-                    "Received answer from %s, but with wrong content,"
-                    "skipping",
+                    "Received answer from %s, but with wrong content, skipping",
                     ip_address,
                 )
                 continue
