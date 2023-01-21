@@ -12,6 +12,7 @@ import time
 from luxtronik.calculations import Calculations
 from luxtronik.parameters import Parameters
 from luxtronik.visibilities import Visibilities
+from luxtronik.discover import discover
 
 # endregion Imports
 
