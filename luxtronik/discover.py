@@ -22,6 +22,7 @@ def discover() -> list[(str, int)]:
 
     results: list[(str, int)] = []
 
+    # pylint: disable=too-many-nested-blocks
     for port in LUXTRONIK_DISCOVERY_PORTS:
         LOGGER.debug("Send discovery packets to port %s", port)
         server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
