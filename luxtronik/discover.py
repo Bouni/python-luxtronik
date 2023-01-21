@@ -44,7 +44,7 @@ def discover() -> list[(str, int)]:
                 # if the response starts with the magic nonsense
                 if res.startswith(LUXTRONIK_DISCOVERY_RESPONSE_PREFIX):
                     res = res.split(";")
-                    LOGGER.debug("Received answer from %s %s", ip_address, str(res))
+                    LOGGER.debug("Received response from %s %s", ip_address, str(res))
                     try:
                         port = int(res[2])
                         if port < 1 or port > 65535:
@@ -58,7 +58,7 @@ def discover() -> list[(str, int)]:
                         )
                     results.append((ip_address, port))
                 LOGGER.debug(
-                    "Received answer from %s, but with wrong content, skipping",
+                    "Received response from %s, but with wrong content, skipping",
                     ip_address,
                 )
                 continue
