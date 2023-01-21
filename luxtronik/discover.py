@@ -15,15 +15,15 @@ def discover() -> list[(str, int)]:
 
     results: list[(str, int)] = []
 
-    for magic_port in LUXTRONIK_DISCOVERY_PORTS:
-        LOGGER.debug("Send discovery packets to port %s", magic_port)
+    for port in LUXTRONIK_DISCOVERY_PORTS:
+        LOGGER.debug("Send discovery packets to port %s", port)
         server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         server.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-        server.bind(("", magic_port))
+        server.bind(("", port))
         server.settimeout(LUXTRONIK_DISCOVERY_TIMEOUT)
 
         # send AIT magic broadcast packet
-        server.sendto(LUXTRONIK_DISCOVERY_MAGIC_PACKET.encode(), ("<broadcast>", magic_port))
+        server.sendto(LUXTRONIK_DISCOVERY_MAGIC_PACKET.encode(), ("<broadcast>", port))
         LOGGER.debug("Sending broadcast request %s", LUXTRONIK_DISCOVERY_MAGIC_PACKET.encode())
 
         while True:
