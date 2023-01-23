@@ -1,6 +1,7 @@
 """datatype conversions."""
 import datetime
-import ipaddress
+import socket
+import struct
 
 
 class Base:
@@ -98,17 +99,10 @@ class IPAddress(Base):
     measurement_type = "ipaddress"
 
     def from_heatpump(self, value):
-        if value < 0:
-            return str(ipaddress.IPv4Address(value + 2**32))
-        if value > 2**32:
-            return str(ipaddress.IPv4Address(value - 2**32))
-        return str(ipaddress.IPv4Address(value))
+        return socket.inet_ntoa(struct.pack(">i", value))
 
     def to_heatpump(self, value):
-        result = int(ipaddress.IPv4Address(value))
-        if result > 2**32:
-            return result - 2**32
-        return result
+        return struct.unpack(">i", socket.inet_aton(value))[0]
 
 
 class Timestamp(Base):
