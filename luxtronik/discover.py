@@ -1,4 +1,6 @@
 """Discovery function for Luxtronik heat pump controllers."""
+from __future__ import annotations
+
 import logging
 import socket
 
