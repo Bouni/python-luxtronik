@@ -16,8 +16,8 @@ jobs:
         run: |
           # from refs/tags/2023.01.01 get 2023.01.01
           VERSION=$(echo $GITHUB_REF | sed 's#.*/##')
-          sed -i "s#version=.*#version=\"${VERSION}\",#" "setup.py"
-          cat setup.py
+          sed -i "s#version = .*#version = \"${VERSION}\",#" "pyproject.toml"
+          cat pyproject.toml
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
