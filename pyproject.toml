@@ -55,3 +55,6 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 include = ["luxtronik*"]
+
+[tool.ruff]
+line-length = 120

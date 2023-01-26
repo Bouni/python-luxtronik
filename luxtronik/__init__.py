@@ -12,7 +12,7 @@ import time
 from luxtronik.calculations import Calculations
 from luxtronik.parameters import Parameters
 from luxtronik.visibilities import Visibilities
-from luxtronik.discover import discover
+from luxtronik.discover import discover # noqa: F401
 
 # endregion Imports
 
