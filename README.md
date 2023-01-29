@@ -73,6 +73,18 @@ print(t_forerun.unit) # gives you the unit of the value if known, °C for exampl
 # check https://github.com/Bouni/luxtronik/blob/master/luxtronik/visibilities.py for values you might need
 ```
 
+In order to dump all known values from the Luxtronik controller, you can use
+the `dump-luxtronik.py` script in the following way:
+
+```python
+PYTHONPATH=. ./scripts/dump-luxtronik.py 192.168.1.5
+```
+
+The output of this script can be used to backup all values (e.g. before
+modifying them) and to get a better understanding about parameters (e.g. by
+looking for differences when comparing the output after doing some changes
+locally, etc.).
+
 ### WRITING VALUES TO HEAT PUMP
 
 The following example writes data to the heat pump:
