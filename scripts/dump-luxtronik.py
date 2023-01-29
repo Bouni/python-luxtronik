@@ -24,25 +24,25 @@ parser.add_argument(
     )
 args = parser.parse_args()
 
-l = Luxtronik(args.ip, args.port)
+client = Luxtronik(args.ip, args.port)
 
 print("="*80)
 print(f"{' Parameter ': ^80}")
 print("="*80)
 
-for n, p in l.parameters.parameters.items():
-    print(f"Number: {n:<5} Name: {p.name:<60} Type: {p.__class__.__name__:<20} Value: {p.value}")
+for number, param in client.parameters.parameters.items():
+    print(f"Number: {number:<5} Name: {param.name:<60} Type: {param.__class__.__name__:<20} Value: {param.value}")
 
 print("="*80)
 print(f"{' Calculations ': ^80}")
 print("="*80)
 
-for n, c in l.calculations.calculations.items():
-    print(f"Number: {n:<5} Name: {c.name:<60} Type: {c.__class__.__name__:<20} Value: {c.value}")
+for number, calc in client.calculations.calculations.items():
+    print(f"Number: {number:<5} Name: {calc.name:<60} Type: {calc.__class__.__name__:<20} Value: {calc.value}")
 
 print("="*80)
 print(f"{' Visibilities ': ^80}")
 print("="*80)
 
-for n, v in l.visibilities.visibilities.items():
-    print(f"Number: {n:<5} Name: {v.name:<60} Type: {v.__class__.__name__:<20} Value: {v.value}")
+for number, visi in client.visibilities.visibilities.items():
+    print(f"Number: {number:<5} Name: {visi.name:<60} Type: {visi.__class__.__name__:<20} Value: {visi.value}")
