@@ -374,7 +374,7 @@ class Visibilities:
             if visibility is not False:
                 visibility.value = visibility.from_heatpump(data)
             else:
-                #LOGGER.warning("Visibility '%d' not in list of visibilities", index)
+                # LOGGER.warning("Visibility '%d' not in list of visibilities", index)
                 visibility = Unknown(f"Unknown_Parameter_{index}")
                 visibility.value = visibility.from_heatpump(data)
                 self.visibilities[index] = visibility

@@ -106,7 +106,7 @@ class TestSelectionBase:
         """Test cases for options property"""
 
         a = SelectionBase("")
-        a.codes = {0: 'a', 1: 'b', 2: 'c'}
+        a.codes = {0: "a", 1: "b", 2: "c"}
         assert len(a.options) == 3
         assert a.options == list(a.codes.values())
 
@@ -114,23 +114,23 @@ class TestSelectionBase:
         """Test cases for from_heatpump function"""
 
         a = SelectionBase("")
-        a.codes = {0: 'a', 1: 'b', 2: 'c'}
+        a.codes = {0: "a", 1: "b", 2: "c"}
         assert len(a.codes) == 3
-        assert a.from_heatpump(0) == 'a'
-        assert a.from_heatpump(1) == 'b'
-        assert a.from_heatpump(2) == 'c'
+        assert a.from_heatpump(0) == "a"
+        assert a.from_heatpump(1) == "b"
+        assert a.from_heatpump(2) == "c"
         assert a.from_heatpump(3) is None
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
         a = SelectionBase("")
-        a.codes = {0: 'a', 1: 'b', 2: 'c'}
+        a.codes = {0: "a", 1: "b", 2: "c"}
         assert len(a.codes) == 3
-        assert a.to_heatpump('a') == 0
-        assert a.to_heatpump('b') == 1
-        assert a.to_heatpump('c') == 2
-        assert a.to_heatpump('d') is None
+        assert a.to_heatpump("a") == 0
+        assert a.to_heatpump("b") == 1
+        assert a.to_heatpump("c") == 2
+        assert a.to_heatpump("d") is None
 
 
 class TestCelsius:
@@ -195,6 +195,7 @@ class TestFrequency:
         assert a.name == "frequency"
         assert a.measurement_type == "Hz"
 
+
 class TestSeconds:
     """Test suite for Seconds datatype"""
 
@@ -230,20 +231,20 @@ class TestIPAddress:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert IPAddress("").from_heatpump(0) == '0.0.0.0'
-        assert IPAddress("").from_heatpump(16909060) == '1.2.3.4'
-        assert IPAddress("").from_heatpump(-1062731775) == '192.168.0.1'
-        assert IPAddress("").from_heatpump(-256) == '255.255.255.0'
-        assert IPAddress("").from_heatpump(-1) == '255.255.255.255'
+        assert IPAddress("").from_heatpump(0) == "0.0.0.0"
+        assert IPAddress("").from_heatpump(16909060) == "1.2.3.4"
+        assert IPAddress("").from_heatpump(-1062731775) == "192.168.0.1"
+        assert IPAddress("").from_heatpump(-256) == "255.255.255.0"
+        assert IPAddress("").from_heatpump(-1) == "255.255.255.255"
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert IPAddress("").to_heatpump('0.0.0.0') == 0
-        assert IPAddress("").to_heatpump('1.2.3.4') == 16909060
-        assert IPAddress("").to_heatpump('192.168.0.1') == -1062731775
-        assert IPAddress("").to_heatpump('255.255.255.0') == -256
-        assert IPAddress("").to_heatpump('255.255.255.255') == -1
+        assert IPAddress("").to_heatpump("0.0.0.0") == 0
+        assert IPAddress("").to_heatpump("1.2.3.4") == 16909060
+        assert IPAddress("").to_heatpump("192.168.0.1") == -1062731775
+        assert IPAddress("").to_heatpump("255.255.255.0") == -256
+        assert IPAddress("").to_heatpump("255.255.255.255") == -1
 
 
 class TestTimestamp:

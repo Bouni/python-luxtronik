@@ -12,7 +12,7 @@ import time
 from luxtronik.calculations import Calculations
 from luxtronik.parameters import Parameters
 from luxtronik.visibilities import Visibilities
-from luxtronik.discover import discover # noqa: F401
+from luxtronik.discover import discover  # noqa: F401
 
 # endregion Imports
 
@@ -32,9 +32,9 @@ def is_socket_closed(sock: socket.socket) -> bool:
             return True
     except BlockingIOError:
         return False  # socket is open and reading from it would block
-    except ConnectionResetError: # pylint: disable=broad-except
+    except ConnectionResetError:  # pylint: disable=broad-except
         return True  # socket was closed for some other reason
-    except Exception as err: # pylint: disable=broad-except
+    except Exception as err:  # pylint: disable=broad-except
         LOGGER.exception(
             "Unexpected exception when checking if socket is closed", exc_info=err
         )
