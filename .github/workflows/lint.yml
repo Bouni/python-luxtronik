@@ -28,7 +28,7 @@ jobs:
         run: pip install --user yamllint
       - name: Run yamllint
         run: yamllint .
-  vlack:
+  black:
     runs-on: ubuntu-latest
     strategy:
       matrix:
