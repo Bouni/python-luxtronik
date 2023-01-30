@@ -1,0 +1,30 @@
+---
+name: Run unit tests
+on: # yamllint disable-line rule:truthy
+  push:
+  pull_request:
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install pytest
+        run: pip install pytest pytest-cov
+      - name: Run pytest
+        run: >
+          PYTHONPATH=. pytest --junitxml=pytest.xml
+          --cov-report=term-missing:skip-covered
+          --cov=luxtronik tests/ | tee pytest-coverage.txt
+      # - name: Publish pytest coverage as comment
+      #   uses: MishaKav/pytest-coverage-comment@main
+      #   with:
+      #     pytest-coverage-path: ./pytest-coverage.txt
+      #     junitxml-path: ./pytest.xml
