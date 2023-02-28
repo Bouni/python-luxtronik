@@ -50,9 +50,9 @@ class Luxtronik:
         self._host = host
         self._port = port
         self._socket = None
-        self.calculations = Calculations()
-        self.parameters = Parameters(safe=safe)
-        self.visibilities = Visibilities()
+        self._calculations = Calculations()
+        self._parameters = Parameters(safe=safe)
+        self._visibilities = Visibilities()
         self.read()
 
     def __del__(self):
@@ -63,6 +63,21 @@ class Luxtronik:
             LOGGER.info(
                 "Disconnected from Luxtronik heatpump %s:%s", self._host, self._port
             )
+
+    @property
+    def calculations(self):
+        LOGGER.info("'calculations' is outdated. Please use the return value of 'read()' instead")
+        return self._calculations
+
+    @property
+    def parameters(self):
+        LOGGER.info("'parameters' is outdated. Please use the return value of 'read()' or 'write(param_queue)' instead")
+        return self._parameters
+
+    @property
+    def visibilities(self):
+        LOGGER.info("'visibilities' is outdated. Please use the return value of 'read()' instead")
+        return self._visibilities
 
     def read(self):
         """Read data from heatpump."""
@@ -108,7 +123,7 @@ class Luxtronik:
         self._read_visibilities()
 
     def _write(self):
-        for index, value in self.parameters.queue.items():
+        for index, value in self._parameters.queue.items():
             if not isinstance(index, int) or not isinstance(value, int):
                 LOGGER.warning("Parameter id '%s' or value '%s' invalid!", index, value)
                 continue
@@ -121,7 +136,7 @@ class Luxtronik:
             val = struct.unpack(">i", self._socket.recv(4))[0]
             LOGGER.debug("Value %s", val)
         # Flush queue after writing all values
-        self.parameters.queue = {}
+        self._parameters.queue = {}
         # Give the heatpump a short time to handle the value changes/calculations:
         time.sleep(WAIT_TIME_AFTER_PARAMETER_WRITE)
         # Read the new values based on our parameter changes:
@@ -143,7 +158,7 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d parameters", length)
-        self.parameters.parse(data)
+        self._parameters.parse(data)
 
     def _read_calculations(self):
         data = []
@@ -161,7 +176,7 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d calculations", length)
-        self.calculations.parse(data)
+        self._calculations.parse(data)
 
     def _read_visibilities(self):
         data = []
@@ -177,4 +192,4 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d visibilities", length)
-        self.visibilities.parse(data)
+        self._visibilities.parse(data)
