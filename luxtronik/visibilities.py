@@ -9,7 +9,7 @@ LOGGER = logging.getLogger("Luxtronik.Visibilities")
 class Visibilities:
     """Class that holds all visibilities."""
 
-    def __init__():
+    def __init__(self):
         self._data = {
             0: Unknown("ID_Visi_NieAnzeigen"),
             1: Unknown("ID_Visi_ImmerAnzeigen"),

@@ -39,7 +39,7 @@ LOGGER = logging.getLogger("Luxtronik.Calculations")
 class Calculations:
     """Class that holds all calculations."""
 
-    def __init__():
+    def __init__(self):
         self._data = {
             0: Unknown("Unknown_Calculation_0"),
             1: Unknown("Unknown_Calculation_1"),
