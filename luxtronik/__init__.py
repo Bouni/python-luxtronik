@@ -49,10 +49,8 @@ class Luxtronik:
         self._lock = threading.Lock()
         self._host = host
         self._port = port
+        self._safe = safe
         self._socket = None
-        self.calculations = Calculations()
-        self.parameters = Parameters(safe=safe)
-        self.visibilities = Visibilities()
         self.read()
 
     def __del__(self):
@@ -66,13 +64,13 @@ class Luxtronik:
 
     def read(self):
         """Read data from heatpump."""
-        self._read_after_write(write=False)
+        return self._read_after_write(parameters=None)
 
-    def write(self):
+    def write(self, parameters):
         """Write parameter to heatpump."""
-        self._read_after_write(write=True)
+        return self._read_after_write(parameters=parameters)
 
-    def _read_after_write(self, write=False):
+    def _read_after_write(self, parameters):
         """
         Read and/or write value from and/or to heatpump.
         This method is essentially a wrapper for the _read() and _write()
@@ -84,8 +82,9 @@ class Luxtronik:
         prior to reading back in all data from the heat pump. If write is
         false, no data will be written, but all available data will be read
         from the heat pump.
-        :param bool write Indicates whether parameters should be written to heatpump
-                          prior to reading in all available data from heatpump
+        :param Parameters() parameters  Parameter dictionary to be written
+                          to the heatpump before reading all available data 
+                          from the heatpump. At 'None' it is read only.
         """
 
         with self._lock:
@@ -97,18 +96,18 @@ class Luxtronik:
                 LOGGER.info(
                     "Connected to Luxtronik heatpump %s:%s", self._host, self._port
                 )
-            if write:
-                self._write()
-                return
-            self._read()
+            if parameters is not None:
+                return self._write(parameters)
+            return self._read()
 
     def _read(self):
-        self._read_parameters()
-        self._read_calculations()
-        self._read_visibilities()
+        parameters = self._read_parameters()
+        calculations = self._read_calculations()
+        visibilities = self._read_visibilities()
+        return calculations, parameters, visibilities
 
-    def _write(self):
-        for index, value in self.parameters.queue.items():
+    def _write(self, parameters):
+        for index, value in parameters.queue.items():
             if not isinstance(index, int) or not isinstance(value, int):
                 LOGGER.warning("Parameter id '%s' or value '%s' invalid!", index, value)
                 continue
@@ -121,13 +120,11 @@ class Luxtronik:
             val = struct.unpack(">i", self._socket.recv(4))[0]
             LOGGER.debug("Value %s", val)
         # Flush queue after writing all values
-        self.parameters.queue = {}
+        parameters.queue = {}
         # Give the heatpump a short time to handle the value changes/calculations:
         time.sleep(WAIT_TIME_AFTER_PARAMETER_WRITE)
         # Read the new values based on our parameter changes:
-        self._read_parameters()
-        self._read_calculations()
-        self._read_visibilities()
+        return self._read()
 
     def _read_parameters(self):
         data = []
@@ -143,7 +140,9 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d parameters", length)
-        self.parameters.parse(data)
+        parameters = Parameters(safe=self._safe)
+        parameters.parse(data)
+        return parameters
 
     def _read_calculations(self):
         data = []
@@ -161,7 +160,9 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d calculations", length)
-        self.calculations.parse(data)
+        calculations = Calculations()
+        calculations.parse(data)
+        return calculations
 
     def _read_visibilities(self):
         data = []
@@ -177,4 +178,6 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d visibilities", length)
-        self.visibilities.parse(data)
+        visibilities = Visibilities()
+        visibilities.parse(data)
+        return visibilities
