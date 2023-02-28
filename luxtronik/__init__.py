@@ -49,9 +49,13 @@ class Luxtronik:
         self._lock = threading.Lock()
         self._host = host
         self._port = port
+        self._safe = safe
         self._socket = None
+        # TODO: Field will be removed in future
         self._calculations = Calculations()
+        # TODO: Field will be removed in future
         self._parameters = Parameters(safe=safe)
+        # TODO: Field will be removed in future
         self._visibilities = Visibilities()
         self.read()
 
@@ -81,11 +85,11 @@ class Luxtronik:
 
     def read(self):
         """Read data from heatpump."""
-        self._read_after_write(write=False)
+        return self._read_after_write(write=False)
 
     def write(self):
         """Write parameter to heatpump."""
-        self._read_after_write(write=True)
+        return self._read_after_write(write=True)
 
     def _read_after_write(self, write=False):
         """
@@ -113,14 +117,14 @@ class Luxtronik:
                     "Connected to Luxtronik heatpump %s:%s", self._host, self._port
                 )
             if write:
-                self._write()
-                return
-            self._read()
+                return self._write()
+            return self._read()
 
     def _read(self):
-        self._read_parameters()
-        self._read_calculations()
-        self._read_visibilities()
+        parameters = self._read_parameters()
+        calculations = self._read_calculations()
+        visibilities = self._read_visibilities()
+        return calculations, parameters, visibilities
 
     def _write(self):
         for index, value in self._parameters.queue.items():
@@ -140,9 +144,10 @@ class Luxtronik:
         # Give the heatpump a short time to handle the value changes/calculations:
         time.sleep(WAIT_TIME_AFTER_PARAMETER_WRITE)
         # Read the new values based on our parameter changes:
-        self._read_parameters()
-        self._read_calculations()
-        self._read_visibilities()
+        parameters = self._read_parameters()
+        calculations = self._read_calculations()
+        visibilities = self._read_visibilities()
+        return calculations, parameters, visibilities
 
     def _read_parameters(self):
         data = []
@@ -158,7 +163,11 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d parameters", length)
+        # TODO: Update of the private field will be removed in future
         self._parameters.parse(data)
+        parameters = Parameters(safe=self._safe)
+        parameters.parse(data)
+        return parameters
 
     def _read_calculations(self):
         data = []
@@ -176,7 +185,11 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d calculations", length)
+        # TODO: Update of the private field will be removed in future
         self._calculations.parse(data)
+        calculations = Calculations()
+        calculations.parse(data)
+        return calculations
 
     def _read_visibilities(self):
         data = []
@@ -192,4 +205,8 @@ class Luxtronik:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug(err)
         LOGGER.info("Read %d visibilities", length)
+        # TODO: Update of the private field will be removed in future
         self._visibilities.parse(data)
+        visibilities = Visibilities()
+        visibilities.parse(data)
+        return visibilities
