@@ -75,7 +75,7 @@ class Luxtronik:
 
     @property
     def parameters(self):
-        LOGGER.info("'parameters' is outdated. Please use the return value of 'read()' or 'write(param_queue)' instead")
+        LOGGER.info("'parameters' is outdated. Please use the return value of 'read()' or 'write(params)' instead")
         return self._parameters
 
     @property
@@ -85,13 +85,13 @@ class Luxtronik:
 
     def read(self):
         """Read data from heatpump."""
-        return self._read_after_write(write=False)
+        return self._read_after_write(write=False, parameters=None)
 
-    def write(self):
+    def write(self, parameters=None):
         """Write parameter to heatpump."""
-        return self._read_after_write(write=True)
+        return self._read_after_write(write=True, parameters=parameters)
 
-    def _read_after_write(self, write=False):
+    def _read_after_write(self, write=False, parameters=None):
         """
         Read and/or write value from and/or to heatpump.
         This method is essentially a wrapper for the _read() and _write()
@@ -117,7 +117,7 @@ class Luxtronik:
                     "Connected to Luxtronik heatpump %s:%s", self._host, self._port
                 )
             if write:
-                return self._write()
+                return self._write(parameters)
             return self._read()
 
     def _read(self):
@@ -126,8 +126,13 @@ class Luxtronik:
         visibilities = self._read_visibilities()
         return calculations, parameters, visibilities
 
-    def _write(self):
-        for index, value in self._parameters.queue.items():
+    def _write(self, parameters):
+        # TODO: Remove switch to local field in future. Also change the parameters input to mandatory
+        if parameters is None:
+          queue = self._parameters.queue
+        else:
+          queue = parameters.queue
+        for index, value in queue.items():
             if not isinstance(index, int) or not isinstance(value, int):
                 LOGGER.warning("Parameter id '%s' or value '%s' invalid!", index, value)
                 continue
@@ -140,7 +145,7 @@ class Luxtronik:
             val = struct.unpack(">i", self._socket.recv(4))[0]
             LOGGER.debug("Value %s", val)
         # Flush queue after writing all values
-        self._parameters.queue = {}
+        queue = {}
         # Give the heatpump a short time to handle the value changes/calculations:
         time.sleep(WAIT_TIME_AFTER_PARAMETER_WRITE)
         # Read the new values based on our parameter changes:
