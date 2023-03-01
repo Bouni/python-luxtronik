@@ -70,17 +70,17 @@ class Luxtronik:
 
     @property
     def calculations(self):
-        LOGGER.info("'calculations' is outdated. Please use the return value of 'read()' instead")
+        LOGGER.debug("%s: 'calculations' is outdated. Please use the return value of 'read()' instead", self._host)
         return self._calculations
 
     @property
     def parameters(self):
-        LOGGER.info("'parameters' is outdated. Please use the return value of 'read()' or 'write(params)' instead")
+        LOGGER.debug("%s: 'parameters' is outdated. Please use the return value of 'read()' or 'write(params)' instead", self._host)
         return self._parameters
 
     @property
     def visibilities(self):
-        LOGGER.info("'visibilities' is outdated. Please use the return value of 'read()' instead")
+        LOGGER.debug("%s: 'visibilities' is outdated. Please use the return value of 'read()' instead", self._host)
         return self._visibilities
 
     def read(self):
@@ -134,16 +134,16 @@ class Luxtronik:
           queue = parameters.queue
         for index, value in queue.items():
             if not isinstance(index, int) or not isinstance(value, int):
-                LOGGER.warning("Parameter id '%s' or value '%s' invalid!", index, value)
+                LOGGER.warning("%s: Parameter id '%s' or value '%s' invalid!", self._host, index, value)
                 continue
-            LOGGER.info("Parameter '%d' set to '%s'", index, value)
+            LOGGER.info("%s: Parameter '%d' set to '%s'", self._host, index, value)
             data = struct.pack(">iii", 3002, index, value)
-            LOGGER.debug("Data %s", data)
+            LOGGER.debug("%s: Data %s", self._host, data)
             self._socket.sendall(data)
             cmd = struct.unpack(">i", self._socket.recv(4))[0]
-            LOGGER.debug("Command %s", cmd)
+            LOGGER.debug("%s: Command %s", self._host, cmd)
             val = struct.unpack(">i", self._socket.recv(4))[0]
-            LOGGER.debug("Value %s", val)
+            LOGGER.debug("%s: Value %s", self._host, val)
         # Flush queue after writing all values
         queue = {}
         # Give the heatpump a short time to handle the value changes/calculations:
@@ -158,16 +158,16 @@ class Luxtronik:
         data = []
         self._socket.sendall(struct.pack(">ii", 3003, 0))
         cmd = struct.unpack(">i", self._socket.recv(4))[0]
-        LOGGER.debug("Command %s", cmd)
+        LOGGER.debug("%s: Command %s", self._host, cmd)
         length = struct.unpack(">i", self._socket.recv(4))[0]
-        LOGGER.debug("Length %s", length)
+        LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
             try:
                 data.append(struct.unpack(">i", self._socket.recv(4))[0])
             except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug(err)
-        LOGGER.info("Read %d parameters", length)
+                LOGGER.debug("%s: %s", self._host, err)
+        LOGGER.info("%s: Read %d parameters", self._host, length)
         # TODO: Update of the private field will be removed in future
         self._parameters.parse(data)
         parameters = Parameters(safe=self._safe)
@@ -178,18 +178,18 @@ class Luxtronik:
         data = []
         self._socket.sendall(struct.pack(">ii", 3004, 0))
         cmd = struct.unpack(">i", self._socket.recv(4))[0]
-        LOGGER.debug("Command %s", cmd)
+        LOGGER.debug("%s: Command %s", self._host, cmd)
         stat = struct.unpack(">i", self._socket.recv(4))[0]
-        LOGGER.debug("Stat %s", stat)
+        LOGGER.debug("%s: Stat %s", self._host, stat)
         length = struct.unpack(">i", self._socket.recv(4))[0]
-        LOGGER.debug("Length %s", length)
+        LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
             try:
                 data.append(struct.unpack(">i", self._socket.recv(4))[0])
             except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug(err)
-        LOGGER.info("Read %d calculations", length)
+                LOGGER.debug("%s: %s", self._host, err)
+        LOGGER.info("%s: Read %d calculations", self._host, length)
         # TODO: Update of the private field will be removed in future
         self._calculations.parse(data)
         calculations = Calculations()
@@ -200,16 +200,16 @@ class Luxtronik:
         data = []
         self._socket.sendall(struct.pack(">ii", 3005, 0))
         cmd = struct.unpack(">i", self._socket.recv(4))[0]
-        LOGGER.debug("Command %s", cmd)
+        LOGGER.debug("%s: Command %s", self._host, cmd)
         length = struct.unpack(">i", self._socket.recv(4))[0]
-        LOGGER.debug("Length %s", length)
+        LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
             try:
                 data.append(struct.unpack(">b", self._socket.recv(1))[0])
             except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug(err)
-        LOGGER.info("Read %d visibilities", length)
+                LOGGER.debug("%s: %s", self._host, err)
+        LOGGER.info("%s: Read %d visibilities", self._host, length)
         # TODO: Update of the private field will be removed in future
         self._visibilities.parse(data)
         visibilities = Visibilities()
