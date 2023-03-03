@@ -70,17 +70,23 @@ class Luxtronik:
 
     @property
     def calculations(self):
-        LOGGER.debug("%s: 'calculations' is outdated. Please use the return value of 'read()' instead", self._host)
+        """ Property to get the internal calculations data buffer (outdated)"""
+        LOGGER.debug("%s: 'calculations' is outdated. " \
+            "Please use the return value of 'read()' instead", self._host)
         return self._calculations
 
     @property
     def parameters(self):
-        LOGGER.debug("%s: 'parameters' is outdated. Please use the return value of 'read()' or 'write(params)' instead", self._host)
+        """ Property to get the internal parameters data buffer (outdated)"""
+        LOGGER.debug("%s: 'parameters' is outdated. " \
+            "Please use the return value of 'read()' or 'write(params)' instead", self._host)
         return self._parameters
 
     @property
     def visibilities(self):
-        LOGGER.debug("%s: 'visibilities' is outdated. Please use the return value of 'read()' instead", self._host)
+        """ Property to get the internal visibilities data buffer (outdated)"""
+        LOGGER.debug("%s: 'visibilities' is outdated. " \
+            "Please use the return value of 'read()' instead", self._host)
         return self._visibilities
 
     def read(self):
@@ -127,14 +133,17 @@ class Luxtronik:
         return calculations, parameters, visibilities
 
     def _write(self, parameters):
-        # TODO: Remove switch to local field in future. Also change the parameters input to mandatory
+        # TODO: Remove switch to local field in future.
+        # Also change the parameters input to mandatory
         if parameters is None:
-          queue = self._parameters.queue
+            queue = self._parameters.queue
         else:
-          queue = parameters.queue
+            queue = parameters.queue
         for index, value in queue.items():
             if not isinstance(index, int) or not isinstance(value, int):
-                LOGGER.warning("%s: Parameter id '%s' or value '%s' invalid!", self._host, index, value)
+                LOGGER.warning(
+                    "%s: Parameter id '%s' or value '%s' invalid!", self._host, index, value
+                )
                 continue
             LOGGER.info("%s: Parameter '%d' set to '%s'", self._host, index, value)
             data = struct.pack(">iii", 3002, index, value)

@@ -27,7 +27,7 @@ print("=" * 80)
 print(f"{' Parameter ': ^80}")
 print("=" * 80)
 
-for number, param in client.parameters.parameters.items():
+for number, param in client.parameters._data.items():
     print(
         f"Number: {number:<5} Name: {param.name:<60} "
         + f"Type: {param.__class__.__name__:<20} Value: {param.value}"
@@ -37,7 +37,7 @@ print("=" * 80)
 print(f"{' Calculations ': ^80}")
 print("=" * 80)
 
-for number, calc in client.calculations.calculations.items():
+for number, calc in client.calculations._data.items():
     print(
         f"Number: {number:<5} Name: {calc.name:<60} "
         + f"Type: {calc.__class__.__name__:<20} Value: {calc.value}"
@@ -47,7 +47,7 @@ print("=" * 80)
 print(f"{' Visibilities ': ^80}")
 print("=" * 80)
 
-for number, visi in client.visibilities.visibilities.items():
+for number, visi in client.visibilities._data.items():
     print(
         f"Number: {number:<5} Name: {visi.name:<60} "
         + f"Type: {visi.__class__.__name__:<20} Value: {visi.value}"
