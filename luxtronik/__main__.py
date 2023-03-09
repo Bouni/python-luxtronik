@@ -13,10 +13,6 @@ def discover():
         print(f"Heat pump #{count} -> IP address: {result[0]} port: {result[1]}")
 
 
-def test():
-    print("Yo")
-
-
 def main() -> int:
     """Entry point to parse CLI arguments."""
     parser = argparse.ArgumentParser(
