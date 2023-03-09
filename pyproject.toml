@@ -57,7 +57,7 @@ include-package-data = true
 include = ["luxtronik*"]
 
 [tool.pylint.format]
-max-line-length = 120 # Set a better lin length limit, 80 chars is just archaic
+max-line-length = 120 # Set a better line length limit, 80 chars is just archaic
 max-attributes = 10 # Allow more than 7 attributes in a class
 
 [tool.pylint.MASTER]
