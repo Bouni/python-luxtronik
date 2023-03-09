@@ -56,5 +56,22 @@ include-package-data = true
 [tool.setuptools.packages.find]
 include = ["luxtronik*"]
 
+[tool.pylint.format]
+max-line-length = 120 # Set a better lin length limit, 80 chars is just archaic
+max-attributes = 10 # Allow more than 7 attributes in a class
+
+[tool.pylint.MASTER]
+# Pickle collected data for later comparisons.
+persistent = 'yes'
+
+# When enabled, pylint would attempt to guess common misconfiguration and emit
+# user-friendly hints instead of false-positive error messages.
+suggestion-mode = 'yes'
+
+[tool.pylint.messages_control]
+disable = [
+  "W0511", # Allow TODO comments
+]
+
 [tool.ruff]
 line-length = 120
