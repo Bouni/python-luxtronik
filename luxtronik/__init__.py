@@ -83,7 +83,7 @@ class Luxtronik:
         false, no data will be written, but all available data will be read
         from the heat pump.
         :param Parameters() parameters  Parameter dictionary to be written
-                          to the heatpump before reading all available data 
+                          to the heatpump before reading all available data
                           from the heatpump. At 'None' it is read only.
         """
 
