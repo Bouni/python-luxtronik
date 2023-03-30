@@ -456,6 +456,7 @@ class SwitchoffFile(SelectionBase):
         8: "lower usage limit",
         9: "no request",
         11: "flow rate",
+        19: "PV max",
     }
 
 
