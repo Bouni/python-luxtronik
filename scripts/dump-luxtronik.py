@@ -8,6 +8,7 @@ import argparse
 
 from luxtronik import Luxtronik
 
+# pylint: disable=duplicate-code
 parser = argparse.ArgumentParser(
     description="Dumps all values from Luxtronik controller"
 )
@@ -23,6 +24,7 @@ args = parser.parse_args()
 
 client = Luxtronik(args.ip, args.port)
 calculations, parameters, visibilities = client.read()
+# pylint: enable=duplicate-code
 
 print("=" * 80)
 print(f"{' Parameter ': ^80}")

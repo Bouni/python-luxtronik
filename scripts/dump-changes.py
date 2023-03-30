@@ -9,6 +9,7 @@ import argparse
 
 from luxtronik import Luxtronik
 
+# pylint: disable=duplicate-code
 parser = argparse.ArgumentParser(
     description="Dumps all value changes from Luxtronik controller"
 )
@@ -23,8 +24,8 @@ parser.add_argument(
 args = parser.parse_args()
 
 client = Luxtronik(args.ip, args.port)
-
 prev_calcs, prev_params, prev_visis = client.read()
+# pylint: enable=duplicate-code
 changes = {}
 
 while True:
