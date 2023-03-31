@@ -10,7 +10,10 @@ class Base:
     measurement_type = None
 
     def __init__(self, name, writeable=False):
-        self.value = None
+        """Initialize the base data field class. Set the initial raw value to None"""
+        # save the raw value only since the user value
+        # could be build at any time
+        self._raw = None
         self.name = name
         self.writeable = writeable
 
@@ -22,11 +25,34 @@ class Base:
         """Converts value from heatpump units."""
         return value
 
+    @property
+    def value(self):
+        """Return the stored value converted from heatpump units."""
+        return self.from_heatpump(self._raw)
+
+    @value.setter
+    def value(self, value):
+        """Converts the value into heatpump units and store it."""
+        self._raw = self.to_heatpump(value)
+
+    @property
+    def raw(self):
+        """Return the stored raw data."""
+        return self._raw
+
+    @raw.setter
+    def raw(self, raw):
+        """Store the raw data."""
+        self._raw = raw
+
     def __repr__(self):
         return str(self.value)
 
     def __str__(self):
-        return str(self.value)
+        value = self.value
+        if value is not None:
+            return str(value)
+        return str(self.raw)
 
 
 class SelectionBase(Base):
