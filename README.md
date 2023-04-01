@@ -53,23 +53,24 @@ The following example reads in data from the heat pump:
 from luxtronik import Luxtronik
 
 l = Luxtronik('192.168.1.23', 8889)
+calculations, parameters, visibilities = l.read()
 
-t_forerun = l.calculations.get("ID_WEB_Temperatur_TVL")
+t_forerun = calculations.get("ID_WEB_Temperatur_TVL")
 
 # alternatively get also works with numerical ID values
 
-t_forerun = l.calculations.get(10)
+t_forerun = calculations.get(10)
 
 print(t_forerun) # this returns the temperature value of the forerun, 22.7 for example
 print(t_forerun.unit) # gives you the unit of the value if known, °C for example
 
-# l.calculations holds measurement values
+# calculations holds measurement values
 # check https://github.com/Bouni/luxtronik/blob/master/luxtronik/calculations.py for values you might need
 
-# l.parameters holds parameter values
+# parameters holds parameter values
 # check https://github.com/Bouni/luxtronik/blob/master/luxtronik/parameters.py for values you might need
 
-# l.visibilitys holds visibility values, the function of visibilities is not clear at this point
+# visibilitys holds visibility values, the function of visibilities is not clear at this point
 # check https://github.com/Bouni/luxtronik/blob/master/luxtronik/visibilities.py for values you might need
 ```
 
@@ -85,21 +86,28 @@ modifying them) and to get a better understanding about parameters (e.g. by
 looking for differences when comparing the output after doing some changes
 locally, etc.).
 
+Alternatively, you can use the `dump-changes.py` script to output only changed values:
+
+```python
+PYTHONPATH=. ./scripts/dump-changes.py 192.168.1.5
+```
+
 ### WRITING VALUES TO HEAT PUMP
 
 The following example writes data to the heat pump:
 
 ```python
-from luxtronik import Luxtronik
+from luxtronik import Luxtronik, Parameters
 
 l = Luxtronik('192.168.1.23', 8889)
 
-heating_mode = l.parameters.set("ID_Ba_Hz_akt", "Party")
-l.write()
+parameters = Parameters()
+heating_mode = parameters.set("ID_Ba_Hz_akt", "Party")
+l.write(parameters)
 
 # If you're not sure what values to write, you can get all available options:
 
-print(l.parameters.get("ID_Ba_Hz_akt").options) # returns a list of possible values to write, ['Automatic', 'Second heatsource', 'Party', 'Holidays', 'Off'] for example
+print(parameters.get("ID_Ba_Hz_akt").options) # returns a list of possible values to write, ['Automatic', 'Second heatsource', 'Party', 'Holidays', 'Off'] for example
 ```
 
 **NOTE:** Writing values to the heat pump is particulary dangerous as this is
