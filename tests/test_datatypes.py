@@ -747,13 +747,13 @@ class TestSwitchoffFile:
         a = SwitchoffFile("switchoff_file")
         assert a.name == "switchoff_file"
         assert a.measurement_type == "selection"
-        assert len(a.codes) == 10
+        assert len(a.codes) == 11
 
     def test_options(self):
         """Test cases for options property"""
 
         a = SwitchoffFile("")
-        assert len(a.options) == 10
+        assert len(a.options) == 11
         assert a.options == list(a.codes.values())
 
 
