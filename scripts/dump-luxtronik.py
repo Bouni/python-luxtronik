@@ -33,7 +33,7 @@ print("=" * 80)
 for number, param in parameters:
     print(
         f"Number: {number:<5} Name: {param.name:<60} "
-        + f"Type: {param.__class__.__name__:<20} Value: {param.value}"
+        + f"Type: {param.__class__.__name__:<20} Value: {param}"
     )
 
 print("=" * 80)
@@ -43,7 +43,7 @@ print("=" * 80)
 for number, calc in calculations:
     print(
         f"Number: {number:<5} Name: {calc.name:<60} "
-        + f"Type: {calc.__class__.__name__:<20} Value: {calc.value}"
+        + f"Type: {calc.__class__.__name__:<20} Value: {calc}"
     )
 
 print("=" * 80)
@@ -53,5 +53,5 @@ print("=" * 80)
 for number, visi in visibilities:
     print(
         f"Number: {number:<5} Name: {visi.name:<60} "
-        + f"Type: {visi.__class__.__name__:<20} Value: {visi.value}"
+        + f"Type: {visi.__class__.__name__:<20} Value: {visi}"
     )
