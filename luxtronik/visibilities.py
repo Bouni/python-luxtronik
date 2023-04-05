@@ -376,11 +376,11 @@ class Visibilities:
         for index, data in enumerate(raw_data):
             visibility = self._visibilities.get(index, False)
             if visibility is not False:
-                visibility.value = visibility.from_heatpump(data)
+                visibility.raw = data
             else:
                 # LOGGER.warning("Visibility '%d' not in list of visibilities", index)
                 visibility = Unknown(f"Unknown_Parameter_{index}")
-                visibility.value = visibility.from_heatpump(data)
+                visibility.raw = data
                 self._visibilities[index] = visibility
 
     def _lookup(self, target):

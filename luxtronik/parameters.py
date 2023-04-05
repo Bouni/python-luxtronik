@@ -1167,11 +1167,11 @@ class Parameters:
         for index, data in enumerate(raw_data):
             parameter = self._parameters.get(index, False)
             if parameter is not False:
-                parameter.value = parameter.from_heatpump(data)
+                parameter.raw = data
             else:
                 # LOGGER.warning("Parameter '%d' not in list of parameters", index)
                 parameter = Unknown(f"Unknown_Parameter_{index}")
-                parameter.value = parameter.from_heatpump(data)
+                parameter.raw = data
                 self._parameters[index] = parameter
 
     def _lookup(self, target, with_index=False):
