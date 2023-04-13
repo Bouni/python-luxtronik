@@ -37,43 +37,43 @@ while True:
     for number, param in this_params:
         key = f"para_{number}"
         prev_param = prev_params.get(number)
-        if param.value != prev_param.value:
+        if param.raw != prev_param.raw:
             changes[key] = (
                 f"para: Number: {number:<5} Name: {prev_param.name:<60} "
-                + f"Value: {prev_param.value} -> {param.value}"
+                + f"Value: {prev_param} -> {param}"
             )
         elif key in changes:
             changes[key] = (
                 f"para: Number: {number:<5} Name: {prev_param.name:<60} "
-                + f"Value: {prev_param.value} -> reverted"
+                + f"Value: {prev_param} -> reverted"
             )
 
     for number, calc in this_calcs:
         key = f"calc_{number}"
         prev_calc = prev_calcs.get(number)
-        if calc.value != prev_calc.value:
+        if calc.raw != prev_calc.raw:
             changes[key] = (
                 f"calc: Number: {number:<5} Name: {prev_calc.name:<60} "
-                + f"Value: {prev_calc.value} -> {calc.value}"
+                + f"Value: {prev_calc} -> {calc}"
             )
         elif key in changes:
             changes[key] = (
                 f"calc: Number: {number:<5} Name: {prev_calc.name:<60} "
-                + f"Value: {prev_calc.value} -> reverted"
+                + f"Value: {prev_calc} -> reverted"
             )
 
     for number, visi in this_visis:
         key = f"visi_{number}"
         prev_visi = prev_visis.get(number)
-        if visi.value != prev_visi.value:
+        if visi.raw != prev_visi.raw:
             changes[key] = (
                 f"visi: Number: {number:<5} Name: {prev_visi.name:<60} "
-                + f"Value: {prev_visi.value} -> {visi.value}"
+                + f"Value: {prev_visi} -> {visi}"
             )
         elif key in changes:
             changes[key] = (
                 f"visi: Number: {number:<5} Name: {prev_visi.name:<60} "
-                + f"Value: {prev_visi.value} -> reverted"
+                + f"Value: {prev_visi} -> reverted"
             )
 
     # Print changes
