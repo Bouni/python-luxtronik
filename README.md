@@ -107,7 +107,7 @@ l.write(parameters)
 
 # If you're not sure what values to write, you can get all available options:
 
-print(parameters.get("ID_Ba_Hz_akt").options) # returns a list of possible values to write, ['Automatic', 'Second heatsource', 'Party', 'Holidays', 'Off'] for example
+print(parameters.get("ID_Ba_Hz_akt").options()) # returns a list of possible values to write, ['Automatic', 'Second heatsource', 'Party', 'Holidays', 'Off'] for example
 ```
 
 **NOTE:** Writing values to the heat pump is particulary dangerous as this is
