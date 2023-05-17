@@ -83,6 +83,8 @@ class Celsius(Base):
     measurement_type = "celsius"
 
     def from_heatpump(self, value):
+        if value is None:
+            return None
         return value / 10
 
     def to_heatpump(self, value):
@@ -137,6 +139,8 @@ class Timestamp(Base):
     measurement_type = "timestamp"
 
     def from_heatpump(self, value):
+        if value is None:
+            return None
         if value > 0:
             return datetime.datetime.fromtimestamp(value)
         return datetime.datetime.fromtimestamp(0)
@@ -157,6 +161,8 @@ class Kelvin(Base):
     measurement_type = "kelvin"
 
     def from_heatpump(self, value):
+        if value is None:
+            return None
         return value / 10
 
     def to_heatpump(self, value):
@@ -169,6 +175,8 @@ class Pressure(Base):
     measurement_type = "bar"
 
     def from_heatpump(self, value):
+        if value is None:
+            return None
         return value / 100
 
     def to_heatpump(self, value):
@@ -181,6 +189,8 @@ class Percent(Base):
     measurement_type = "percent"
 
     def from_heatpump(self, value):
+        if value is None:
+            return None
         return value / 10
 
     def to_heatpump(self, value):
@@ -217,6 +227,8 @@ class Energy(Base):
     measurement_type = "energy"
 
     def from_heatpump(self, value):
+        if value is None:
+            return None
         return value / 10
 
     def to_heatpump(self, value):
@@ -229,6 +241,8 @@ class Voltage(Base):
     measurement_type = "voltage"
 
     def from_heatpump(self, value):
+        if value is None:
+            return None
         return value / 10
 
     def to_heatpump(self, value):
@@ -241,6 +255,8 @@ class Hours(Base):
     measurement_type = "hours"
 
     def from_heatpump(self, value):
+        if value is None:
+            return None
         return value / 10
 
     def to_heatpump(self, value):
