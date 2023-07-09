@@ -6,6 +6,7 @@ import logging
 from luxtronik.datatypes import (
     AccessLevel,
     Bool,
+    Energy,
     Kelvin,
     Celsius,
     CoolingMode,
@@ -1092,7 +1093,7 @@ class Parameters:
             1056: Unknown("ID_WP_SN3_INDEX"),
             1057: Unknown("ID_Einst_Vorlauf_ZUP"),
             1058: Unknown("ID_Einst_Abtauen_im_Warmwasser"),
-            1059: Unknown("ID_Waermemenge_ZWE"),
+            1059: Energy("ID_Waermemenge_ZWE"),
             1060: Unknown("ID_Waermemenge_Reset"),
             1061: Unknown("ID_Waermemenge_Reset_2"),
             1062: Unknown("ID_Einst_Brunnenpumpe_min"),
