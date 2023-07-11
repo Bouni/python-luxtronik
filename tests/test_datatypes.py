@@ -178,7 +178,8 @@ class TestCelsius:
 
         a = Celsius("celsius")
         assert a.name == "celsius"
-        assert a.measurement_type == "celsius"
+        assert a.datatype_class is "temperature"
+        assert a.datatype_unit == "°C"
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -209,7 +210,8 @@ class TestBool:
 
         a = Bool("bool")
         assert a.name == "bool"
-        assert a.measurement_type == "boolean"
+        assert a.datatype_class is "boolean"
+        assert a.datatype_unit is None
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -232,7 +234,8 @@ class TestFrequency:
 
         a = Frequency("frequency")
         assert a.name == "frequency"
-        assert a.measurement_type == "Hz"
+        assert a.datatype_class is "frequency"
+        assert a.datatype_unit is "Hz"
 
 
 class TestSeconds:
@@ -243,7 +246,8 @@ class TestSeconds:
 
         a = Seconds("seconds")
         assert a.name == "seconds"
-        assert a.measurement_type == "seconds"
+        assert a.datatype_class is "timespan"
+        assert a.datatype_unit is "s"
 
 
 class TestPulses:
@@ -265,7 +269,8 @@ class TestIPAddress:
 
         a = IPAddress("ipaddress")
         assert a.name == "ipaddress"
-        assert a.measurement_type == "ipaddress"
+        assert a.datatype_class is "ipv4"
+        assert a.datatype_unit is None
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -294,7 +299,8 @@ class TestTimestamp:
 
         a = Timestamp("timestamp")
         assert a.name == "timestamp"
-        assert a.measurement_type == "timestamp"
+        assert a.datatype_class is "timestamp"
+        assert a.datatype_unit is None
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -330,7 +336,8 @@ class TestErrorcode:
 
         a = Errorcode("errorcode")
         assert a.name == "errorcode"
-        assert a.measurement_type == "errorcode"
+        assert a.datatype_class is "errorcode"
+        assert a.datatype_unit is None
 
 
 class TestKelvin:
@@ -341,7 +348,8 @@ class TestKelvin:
 
         a = Kelvin("kelvin")
         assert a.name == "kelvin"
-        assert a.measurement_type == "kelvin"
+        assert a.datatype_class is "temperature"
+        assert a.datatype_unit == "K"
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -366,7 +374,8 @@ class TestPressure:
 
         a = Pressure("pressure")
         assert a.name == "pressure"
-        assert a.measurement_type == "bar"
+        assert a.datatype_class is "pressure"
+        assert a.datatype_unit is "bar"
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -391,7 +400,8 @@ class TestPercent:
 
         a = Percent("percent")
         assert a.name == "percent"
-        assert a.measurement_type == "percent"
+        assert a.datatype_class is "percent"
+        assert a.datatype_unit is "%"
 
     def test_percent_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -416,7 +426,8 @@ class TestPercent2:
 
         a = Percent2("percent2")
         assert a.name == "percent2"
-        assert a.measurement_type == "percent"
+        assert a.datatype_class is "percent"
+        assert a.datatype_unit is "%"
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -439,7 +450,8 @@ class TestSpeed:
 
         a = Speed("speed")
         assert a.name == "speed"
-        assert a.measurement_type == "rpm"
+        assert a.datatype_class is "speed"
+        assert a.datatype_unit is "rpm"
 
 
 class TestPower:
@@ -450,7 +462,8 @@ class TestPower:
 
         a = Power("power")
         assert a.name == "power"
-        assert a.measurement_type == "W"
+        assert a.datatype_class is "power"
+        assert a.datatype_unit is "W"
 
 
 class TestEnergy:
@@ -461,7 +474,8 @@ class TestEnergy:
 
         a = Energy("energy")
         assert a.name == "energy"
-        assert a.measurement_type == "energy"
+        assert a.datatype_class is "energy"
+        assert a.datatype_unit is "kWh"
 
     def test_energy_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -486,7 +500,8 @@ class TestVoltage:
 
         a = Voltage("voltage")
         assert a.name == "voltage"
-        assert a.measurement_type == "voltage"
+        assert a.datatype_class is "voltage"
+        assert a.datatype_unit is "V"
 
     def test_voltage_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -511,7 +526,8 @@ class TestHours:
 
         a = Hours("hours")
         assert a.name == "hours"
-        assert a.measurement_type == "hours"
+        assert a.datatype_class is "timespan"
+        assert a.datatype_unit is "h"
 
     def test_hours_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -536,7 +552,8 @@ class TestHours2:
 
         a = Hours2("hours2")
         assert a.name == "hours2"
-        assert a.measurement_type == "hours"
+        assert a.datatype_class is "timespan"
+        assert a.datatype_unit is "h"
 
     def test_hours2_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -561,7 +578,8 @@ class TestMinutes:
 
         a = Minutes("minutes")
         assert a.name == "minutes"
-        assert a.measurement_type == "Minutes"
+        assert a.datatype_class is "timespan"
+        assert a.datatype_unit is "min"
 
 
 class TestFlow:
@@ -572,7 +590,8 @@ class TestFlow:
 
         a = Flow("flow")
         assert a.name == "flow"
-        assert a.measurement_type == "flow"
+        assert a.datatype_class is "flow"
+        assert a.datatype_unit == "l/h"
 
 
 class TestLevel:
@@ -583,7 +602,8 @@ class TestLevel:
 
         a = Level("level")
         assert a.name == "level"
-        assert a.measurement_type == "level"
+        assert a.datatype_class is "level"
+        assert a.datatype_unit is None
 
 
 class TestCount:
@@ -594,7 +614,8 @@ class TestCount:
 
         a = Count("count")
         assert a.name == "count"
-        assert a.measurement_type == "count"
+        assert a.datatype_class is "count"
+        assert a.datatype_unit is None
 
 
 class TestVersion:
@@ -605,7 +626,8 @@ class TestVersion:
 
         a = Version("version")
         assert a.name == "version"
-        assert a.measurement_type == "version"
+        assert a.datatype_class is "version"
+        assert a.datatype_unit is None
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -624,7 +646,8 @@ class TestIcon:
 
         a = Icon("icon")
         assert a.name == "icon"
-        assert a.measurement_type == "icon"
+        assert a.datatype_class is "icon"
+        assert a.datatype_unit is None
 
 
 class TestHeatingMode:
@@ -635,7 +658,8 @@ class TestHeatingMode:
 
         a = HeatingMode("heating_mode")
         assert a.name == "heating_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 5
 
     def test_options(self):
@@ -654,7 +678,8 @@ class TestCoolingMode:
 
         a = CoolingMode("cooling_mode")
         assert a.name == "cooling_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 2
 
     def test_options(self):
@@ -672,7 +697,8 @@ class TestHotWaterMode:
 
         a = HotWaterMode("hot_water_mode")
         assert a.name == "hot_water_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 5
 
     def test_options(self):
@@ -691,7 +717,8 @@ class TestPoolMode:
 
         a = PoolMode("hot_water_mode")
         assert a.name == "hot_water_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 4
 
     def test_options(self):
@@ -710,7 +737,8 @@ class TestMixedCircuitMode:
 
         a = MixedCircuitMode("mixed_circuit_mode")
         assert a.name == "mixed_circuit_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 4
 
     def test_options(self):
@@ -729,7 +757,8 @@ class TestSolarMode:
 
         a = SolarMode("solar_mode")
         assert a.name == "solar_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 5
 
     def test_options(self):
@@ -748,7 +777,8 @@ class TestVentilationMode:
 
         a = VentilationMode("ventilation_mode")
         assert a.name == "ventilation_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 4
 
     def test_options(self):
@@ -767,7 +797,8 @@ class TestHeatpumpCode:
 
         a = HeatpumpCode("heatpump_code")
         assert a.name == "heatpump_code"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 68
 
     def test_options(self):
@@ -786,7 +817,8 @@ class TestBivalenceLevel:
 
         a = BivalenceLevel("bivalence_level")
         assert a.name == "bivalence_level"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 3
 
     def test_options(self):
@@ -805,7 +837,8 @@ class TestOperationMode:
 
         a = OperationMode("operation_mode")
         assert a.name == "operation_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 8
 
     def test_options(self):
@@ -824,7 +857,8 @@ class TestSwitchoffFile:
 
         a = SwitchoffFile("switchoff_file")
         assert a.name == "switchoff_file"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 11
 
     def test_options(self):
@@ -843,7 +877,8 @@ class TestMainMenuStatusLine1:
 
         a = MainMenuStatusLine1("main_menu_status_line1")
         assert a.name == "main_menu_status_line1"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 8
 
     def test_options(self):
@@ -862,7 +897,8 @@ class TestMainMenuStatusLine2:
 
         a = MainMenuStatusLine2("main_menu_status_line2")
         assert a.name == "main_menu_status_line2"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 2
 
     def test_options(self):
@@ -881,7 +917,8 @@ class TestSecOperationMode:
 
         a = SecOperationMode("sec_operation_mode")
         assert a.name == "sec_operation_mode"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 13
 
     def test_options(self):
@@ -900,7 +937,8 @@ class TestAccessLevel:
 
         a = AccessLevel("access_level")
         assert a.name == "access_level"
-        assert a.measurement_type == "selection"
+        assert a.datatype_class is "selection"
+        assert a.datatype_unit is None
         assert len(a.codes) == 4
 
     def test_options(self):
@@ -919,4 +957,5 @@ class TestUnknown:
 
         a = Unknown("unknown")
         assert a.name == "unknown"
-        assert a.measurement_type is None
+        assert a.datatype_class is None
+        assert a.datatype_unit is None
