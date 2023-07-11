@@ -129,12 +129,6 @@ class Seconds(Base):
     datatype_unit = "s"
 
 
-class Pulses(Base):
-    """Pulses datatype, converts from and to Pulses."""
-
-    datatype_class = "pulses"
-
-
 class IPAddress(Base):
     """IP Address datatype, converts from and to an IP Address."""
 

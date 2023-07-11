@@ -12,7 +12,6 @@ from luxtronik.datatypes import (
     Bool,
     Frequency,
     Seconds,
-    Pulses,
     IPAddress,
     Timestamp,
     Errorcode,
@@ -248,17 +247,6 @@ class TestSeconds:
         assert a.name == "seconds"
         assert a.datatype_class is "timespan"
         assert a.datatype_unit is "s"
-
-
-class TestPulses:
-    """Test suite for Pulses datatype"""
-
-    def test_init(self):
-        """Test cases for initialization"""
-
-        a = Pulses("pulses")
-        assert a.name == "pulses"
-        assert a.measurement_type == "pulses"
 
 
 class TestIPAddress:
