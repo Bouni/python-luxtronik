@@ -107,8 +107,8 @@ class TestSelectionBase:
 
         a = SelectionBase("")
         a.codes = {0: "a", 1: "b", 2: "c"}
-        assert len(a.options) == 3
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 3
+        assert a.options() == list(a.codes.values())
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -263,7 +263,7 @@ class TestTimestamp:
         """Test cases for from_heatpump function"""
 
         a = Timestamp("")
-        assert a.from_heatpump(None) == None
+        assert a.from_heatpump(None) == datetime.datetime.fromtimestamp(0)
 
         assert a.from_heatpump(-1) == datetime.datetime.fromtimestamp(0)
         assert a.from_heatpump(0) == datetime.datetime.fromtimestamp(0)
@@ -580,8 +580,8 @@ class TestHeatingMode:
         """Test cases for options property"""
 
         a = HeatingMode("")
-        assert len(a.options) == 5
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 5
+        assert a.options() == list(a.codes.values())
 
 
 class TestCoolingMode:
@@ -599,7 +599,7 @@ class TestCoolingMode:
         """Test cases for options property"""
 
         a = CoolingMode("")
-        assert len(a.options) == 2
+        assert len(a.options()) == 2
 
 
 class TestHotWaterMode:
@@ -617,8 +617,8 @@ class TestHotWaterMode:
         """Test cases for options property"""
 
         a = HotWaterMode("")
-        assert len(a.options) == 5
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 5
+        assert a.options() == list(a.codes.values())
 
 
 class TestPoolMode:
@@ -636,8 +636,8 @@ class TestPoolMode:
         """Test cases for options property"""
 
         a = PoolMode("")
-        assert len(a.options) == 4
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 4
+        assert a.options() == list(a.codes.values())
 
 
 class TestMixedCircuitMode:
@@ -655,8 +655,8 @@ class TestMixedCircuitMode:
         """Test cases for options property"""
 
         a = MixedCircuitMode("")
-        assert len(a.options) == 4
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 4
+        assert a.options() == list(a.codes.values())
 
 
 class TestSolarMode:
@@ -674,8 +674,8 @@ class TestSolarMode:
         """Test cases for options property"""
 
         a = SolarMode("")
-        assert len(a.options) == 5
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 5
+        assert a.options() == list(a.codes.values())
 
 
 class TestVentilationMode:
@@ -693,8 +693,8 @@ class TestVentilationMode:
         """Test cases for options property"""
 
         a = VentilationMode("")
-        assert len(a.options) == 4
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 4
+        assert a.options() == list(a.codes.values())
 
 
 class TestHeatpumpCode:
@@ -712,8 +712,8 @@ class TestHeatpumpCode:
         """Test cases for options property"""
 
         a = HeatpumpCode("")
-        assert len(a.options) == 68
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 68
+        assert a.options() == list(a.codes.values())
 
 
 class TestBivalenceLevel:
@@ -731,8 +731,8 @@ class TestBivalenceLevel:
         """Test cases for options property"""
 
         a = BivalenceLevel("")
-        assert len(a.options) == 3
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 3
+        assert a.options() == list(a.codes.values())
 
 
 class TestOperationMode:
@@ -750,8 +750,8 @@ class TestOperationMode:
         """Test cases for options property"""
 
         a = OperationMode("")
-        assert len(a.options) == 8
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 8
+        assert a.options() == list(a.codes.values())
 
 
 class TestSwitchoffFile:
@@ -769,8 +769,8 @@ class TestSwitchoffFile:
         """Test cases for options property"""
 
         a = SwitchoffFile("")
-        assert len(a.options) == 11
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 11
+        assert a.options() == list(a.codes.values())
 
 
 class TestMainMenuStatusLine1:
@@ -788,8 +788,8 @@ class TestMainMenuStatusLine1:
         """Test cases for options property"""
 
         a = MainMenuStatusLine1("")
-        assert len(a.options) == 8
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 8
+        assert a.options() == list(a.codes.values())
 
 
 class TestMainMenuStatusLine2:
@@ -807,8 +807,8 @@ class TestMainMenuStatusLine2:
         """Test cases for options property"""
 
         a = MainMenuStatusLine2("")
-        assert len(a.options) == 2
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 2
+        assert a.options() == list(a.codes.values())
 
 
 class TestSecOperationMode:
@@ -826,8 +826,8 @@ class TestSecOperationMode:
         """Test cases for options property"""
 
         a = SecOperationMode("")
-        assert len(a.options) == 13
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 13
+        assert a.options() == list(a.codes.values())
 
 
 class TestAccessLevel:
@@ -845,8 +845,8 @@ class TestAccessLevel:
         """Test cases for options property"""
 
         a = AccessLevel("")
-        assert len(a.options) == 4
-        assert a.options == list(a.codes.values())
+        assert len(a.options()) == 4
+        assert a.options() == list(a.codes.values())
 
 
 class TestUnknown:

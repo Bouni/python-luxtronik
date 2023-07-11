@@ -17,11 +17,13 @@ class Base:
         self.name = name
         self.writeable = writeable
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         """Converts value into heatpump units."""
         return value
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         """Converts value from heatpump units."""
         return value
 
@@ -60,18 +62,20 @@ class SelectionBase(Base):
 
     codes = {}
 
-    @property
-    def options(self):
+    @classmethod
+    def options(cls):
         """Return list of all available options."""
-        return [value for _, value in self.codes.items()]
+        return [value for _, value in cls.codes.items()]
 
-    def from_heatpump(self, value):
-        if value in self.codes:
-            return self.codes.get(value)
+    @classmethod
+    def from_heatpump(cls, value):
+        if value in cls.codes:
+            return cls.codes.get(value)
         return None
 
-    def to_heatpump(self, value):
-        for index, code in self.codes.items():
+    @classmethod
+    def to_heatpump(cls, value):
+        for index, code in cls.codes.items():
             if code == value:
                 return index
         return None
@@ -82,12 +86,14 @@ class Celsius(Base):
 
     measurement_type = "celsius"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         if value is None:
             return None
         return value / 10
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(float(value) * 10)
 
 
@@ -96,10 +102,12 @@ class Bool(Base):
 
     measurement_type = "boolean"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         return bool(value)
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(value)
 
 
@@ -126,10 +134,12 @@ class IPAddress(Base):
 
     measurement_type = "ipaddress"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         return socket.inet_ntoa(struct.pack(">i", value))
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return struct.unpack(">i", socket.inet_aton(value))[0]
 
 
@@ -138,14 +148,14 @@ class Timestamp(Base):
 
     measurement_type = "timestamp"
 
-    def from_heatpump(self, value):
-        if value is None:
-            return None
-        if value > 0:
-            return datetime.datetime.fromtimestamp(value)
-        return datetime.datetime.fromtimestamp(0)
+    @classmethod
+    def from_heatpump(cls, value):
+        if value is None or value <= 0:
+            return datetime.datetime.fromtimestamp(0)
+        return datetime.datetime.fromtimestamp(value)
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return datetime.datetime.timestamp(value)
 
 
@@ -160,12 +170,14 @@ class Kelvin(Base):
 
     measurement_type = "kelvin"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         if value is None:
             return None
         return value / 10
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(float(value) * 10)
 
 
@@ -174,12 +186,14 @@ class Pressure(Base):
 
     measurement_type = "bar"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         if value is None:
             return None
         return value / 100
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(value * 100)
 
 
@@ -188,12 +202,14 @@ class Percent(Base):
 
     measurement_type = "percent"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         if value is None:
             return None
         return value / 10
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(value * 10)
 
 
@@ -202,10 +218,12 @@ class Percent2(Base):
 
     measurement_type = "percent"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         return value
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(value)
 
 
@@ -226,12 +244,14 @@ class Energy(Base):
 
     measurement_type = "energy"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         if value is None:
             return None
         return value / 10
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(value * 10)
 
 
@@ -240,12 +260,14 @@ class Voltage(Base):
 
     measurement_type = "voltage"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         if value is None:
             return None
         return value / 10
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(value * 10)
 
 
@@ -254,12 +276,14 @@ class Hours(Base):
 
     measurement_type = "hours"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         if value is None:
             return None
         return value / 10
 
-    def to_heatpump(self, value):
+    @classmethod
+    def to_heatpump(cls, value):
         return int(value * 10)
 
 
@@ -292,7 +316,8 @@ class Version(Base):
 
     measurement_type = "version"
 
-    def from_heatpump(self, value):
+    @classmethod
+    def from_heatpump(cls, value):
         return "".join([chr(c) for c in value]).strip("\x00")
 
 
