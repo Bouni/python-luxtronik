@@ -25,6 +25,7 @@ from luxtronik.datatypes import (
     Energy,
     Voltage,
     Hours,
+    Hours2,
     Minutes,
     Flow,
     Level,
@@ -489,6 +490,29 @@ class TestHours:
 
         assert Hours("").to_heatpump(1) == 10
         assert Hours("").to_heatpump(1.1) == 11
+
+
+class TestHours2:
+    """Test suite for Hours2 datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = Hours2("hours2")
+        assert a.name == "hours2"
+        assert a.measurement_type == "hours"
+
+    def test_hours2_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        assert Hours2("").from_heatpump(2) == 2
+        assert Hours2("").from_heatpump(8) == 5
+
+    def test_hours2_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        assert Hours2("").to_heatpump(2) == 2
+        assert Hours2("").to_heatpump(5) == 8
 
 
 class TestMinutes:

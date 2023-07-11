@@ -287,6 +287,20 @@ class Hours(Base):
         return int(value * 10)
 
 
+class Hours2(Base):
+    """Hours datatype, converts from and to Hours with a different scale factor."""
+
+    measurement_type = "hours"
+
+    @classmethod
+    def from_heatpump(cls, value):
+        return 1 + value / 2
+
+    @classmethod
+    def to_heatpump(cls, value):
+        return int((value - 1) * 2)
+
+
 class Minutes(Base):
     """Minutes datatype, converts from and to Minutes."""
 
