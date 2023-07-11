@@ -90,6 +90,16 @@ class TestBase:
         # unsure what to test and whether this method is needed at all
         pytest.skip("Not yet implemented")
 
+    def test_eq(self):
+        """Test cases for __eq__ function"""
+
+        pytest.skip("Not yet implemented")
+
+    def test_lt(self):
+        """Test cases for __lt__ function"""
+
+        pytest.skip("Not yet implemented")
+
 
 class TestSelectionBase:
     """Test suite for SelectionBase datatype"""
