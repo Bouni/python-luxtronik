@@ -294,6 +294,8 @@ class Hours2(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return 1 + value / 2
 
     @classmethod

@@ -505,6 +505,8 @@ class TestHours2:
     def test_hours2_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
+        assert Hours2("").from_heatpump(None) is None
+
         assert Hours2("").from_heatpump(2) == 2
         assert Hours2("").from_heatpump(8) == 5
 
