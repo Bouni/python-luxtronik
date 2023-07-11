@@ -8,6 +8,7 @@ class Base:
     """Base datatype, no conversions."""
 
     measurement_type = None
+    unit = None
 
     def __init__(self, name, writeable=False):
         """Initialize the base data field class. Set the initial raw value to None"""
