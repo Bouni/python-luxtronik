@@ -49,7 +49,7 @@ class Base:
         self._raw = raw
 
     def __repr__(self):
-        return f"{self.__class__.__name__} (name: {self.name}, writeable: {self.writeable}, raw: {self._raw}, value: {self.value}, class: {self.datatype_class}, unit: {self.datatype_unit})"
+        return f"{self.__class__.__name__} (name: {self.name}, writeable: {self.writeable}, value: {self.value}, raw: {self._raw}, data class: {self.datatype_class}, unit: {self.datatype_unit})"
 
     def __str__(self):
         value = self.value
