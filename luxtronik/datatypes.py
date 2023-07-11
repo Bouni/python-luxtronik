@@ -88,6 +88,8 @@ class Celsius(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return value / 10
 
     @classmethod
@@ -148,9 +150,11 @@ class Timestamp(Base):
 
     @classmethod
     def from_heatpump(cls, value):
-        if value > 0:
-            return datetime.datetime.fromtimestamp(value)
-        return datetime.datetime.fromtimestamp(0)
+        if value is None:
+            return None
+        if value <= 0:
+            return datetime.datetime.fromtimestamp(0)
+        return datetime.datetime.fromtimestamp(value)
 
     @classmethod
     def to_heatpump(cls, value):
@@ -170,6 +174,8 @@ class Kelvin(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return value / 10
 
     @classmethod
@@ -184,6 +190,8 @@ class Pressure(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return value / 100
 
     @classmethod
@@ -198,6 +206,8 @@ class Percent(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return value / 10
 
     @classmethod
@@ -238,6 +248,8 @@ class Energy(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return value / 10
 
     @classmethod
@@ -252,6 +264,8 @@ class Voltage(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return value / 10
 
     @classmethod
@@ -266,6 +280,8 @@ class Hours(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return value / 10
 
     @classmethod
@@ -280,6 +296,8 @@ class Hours2(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         return 1 + value / 2
 
     @classmethod
