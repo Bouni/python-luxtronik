@@ -72,12 +72,12 @@ class TestBase:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Base("").from_heatpump(1) == 1
+        assert Base.from_heatpump(1) == 1
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Base("").to_heatpump(1) == 1
+        assert Base.to_heatpump(1) == 1
 
     def test_repr(self):
         """Test cases for __repr__ function"""
@@ -147,22 +147,22 @@ class TestCelsius:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Celsius("").from_heatpump(None) is None
+        assert Celsius.from_heatpump(None) is None
 
-        assert Celsius("").from_heatpump(10) == 1
-        assert Celsius("").from_heatpump(11) == 1.1
+        assert Celsius.from_heatpump(10) == 1
+        assert Celsius.from_heatpump(11) == 1.1
 
-        assert Celsius("").from_heatpump(-10) == -1
-        assert Celsius("").from_heatpump(-11) == -1.1
+        assert Celsius.from_heatpump(-10) == -1
+        assert Celsius.from_heatpump(-11) == -1.1
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Celsius("").to_heatpump(1) == 10
-        assert Celsius("").to_heatpump(1.1) == 11
+        assert Celsius.to_heatpump(1) == 10
+        assert Celsius.to_heatpump(1.1) == 11
 
-        assert Celsius("").to_heatpump(-1) == -10
-        assert Celsius("").to_heatpump(-1.1) == -11
+        assert Celsius.to_heatpump(-1) == -10
+        assert Celsius.to_heatpump(-1.1) == -11
 
 
 class TestBool:
@@ -178,14 +178,14 @@ class TestBool:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Bool("").from_heatpump(0) is False
-        assert Bool("").from_heatpump(1) is True
+        assert Bool.from_heatpump(0) is False
+        assert Bool.from_heatpump(1) is True
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Bool("").to_heatpump(False) == 0
-        assert Bool("").to_heatpump(True) == 1
+        assert Bool.to_heatpump(False) == 0
+        assert Bool.to_heatpump(True) == 1
 
 
 class TestFrequency:
@@ -234,20 +234,20 @@ class TestIPAddress:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert IPAddress("").from_heatpump(0) == "0.0.0.0"
-        assert IPAddress("").from_heatpump(16909060) == "1.2.3.4"
-        assert IPAddress("").from_heatpump(-1062731775) == "192.168.0.1"
-        assert IPAddress("").from_heatpump(-256) == "255.255.255.0"
-        assert IPAddress("").from_heatpump(-1) == "255.255.255.255"
+        assert IPAddress.from_heatpump(0) == "0.0.0.0"
+        assert IPAddress.from_heatpump(16909060) == "1.2.3.4"
+        assert IPAddress.from_heatpump(-1062731775) == "192.168.0.1"
+        assert IPAddress.from_heatpump(-256) == "255.255.255.0"
+        assert IPAddress.from_heatpump(-1) == "255.255.255.255"
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert IPAddress("").to_heatpump("0.0.0.0") == 0
-        assert IPAddress("").to_heatpump("1.2.3.4") == 16909060
-        assert IPAddress("").to_heatpump("192.168.0.1") == -1062731775
-        assert IPAddress("").to_heatpump("255.255.255.0") == -256
-        assert IPAddress("").to_heatpump("255.255.255.255") == -1
+        assert IPAddress.to_heatpump("0.0.0.0") == 0
+        assert IPAddress.to_heatpump("1.2.3.4") == 16909060
+        assert IPAddress.to_heatpump("192.168.0.1") == -1062731775
+        assert IPAddress.to_heatpump("255.255.255.0") == -256
+        assert IPAddress.to_heatpump("255.255.255.255") == -1
 
 
 class TestTimestamp:
@@ -310,16 +310,16 @@ class TestKelvin:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Kelvin("").from_heatpump(None) is None
+        assert Kelvin.from_heatpump(None) is None
 
-        assert Kelvin("").from_heatpump(10) == 1
-        assert Kelvin("").from_heatpump(11) == 1.1
+        assert Kelvin.from_heatpump(10) == 1
+        assert Kelvin.from_heatpump(11) == 1.1
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Kelvin("").to_heatpump(1) == 10
-        assert Kelvin("").to_heatpump(1.1) == 11
+        assert Kelvin.to_heatpump(1) == 10
+        assert Kelvin.to_heatpump(1.1) == 11
 
 
 class TestPressure:
@@ -335,16 +335,16 @@ class TestPressure:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Pressure("").from_heatpump(None) is None
+        assert Pressure.from_heatpump(None) is None
 
-        assert Pressure("").from_heatpump(100) == 1
-        assert Pressure("").from_heatpump(101) == 1.01
+        assert Pressure.from_heatpump(100) == 1
+        assert Pressure.from_heatpump(101) == 1.01
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Pressure("").to_heatpump(1) == 100
-        assert Pressure("").to_heatpump(1.01) == 101
+        assert Pressure.to_heatpump(1) == 100
+        assert Pressure.to_heatpump(1.01) == 101
 
 
 class TestPercent:
@@ -360,16 +360,16 @@ class TestPercent:
     def test_percent_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Percent("").from_heatpump(None) is None
+        assert Percent.from_heatpump(None) is None
 
-        assert Percent("").from_heatpump(10) == 1
-        assert Percent("").from_heatpump(11) == 1.1
+        assert Percent.from_heatpump(10) == 1
+        assert Percent.from_heatpump(11) == 1.1
 
     def test_percent_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Percent("").to_heatpump(1) == 10
-        assert Percent("").to_heatpump(1.1) == 11
+        assert Percent.to_heatpump(1) == 10
+        assert Percent.to_heatpump(1.1) == 11
 
 
 class TestPercent2:
@@ -385,14 +385,14 @@ class TestPercent2:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Percent2("").from_heatpump(10) == 10
-        assert Percent2("").from_heatpump(11) == 11
+        assert Percent2.from_heatpump(10) == 10
+        assert Percent2.from_heatpump(11) == 11
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Percent2("").to_heatpump(10) == 10
-        assert Percent2("").to_heatpump(11) == 11
+        assert Percent2.to_heatpump(10) == 10
+        assert Percent2.to_heatpump(11) == 11
 
 
 class TestSpeed:
@@ -430,16 +430,16 @@ class TestEnergy:
     def test_energy_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Energy("").from_heatpump(None) is None
+        assert Energy.from_heatpump(None) is None
 
-        assert Energy("").from_heatpump(10) == 1
-        assert Energy("").from_heatpump(11) == 1.1
+        assert Energy.from_heatpump(10) == 1
+        assert Energy.from_heatpump(11) == 1.1
 
     def test_energy_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Energy("").to_heatpump(1) == 10
-        assert Energy("").to_heatpump(1.1) == 11
+        assert Energy.to_heatpump(1) == 10
+        assert Energy.to_heatpump(1.1) == 11
 
 
 class TestVoltage:
@@ -455,16 +455,16 @@ class TestVoltage:
     def test_voltage_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Voltage("").from_heatpump(None) is None
+        assert Voltage.from_heatpump(None) is None
 
-        assert Voltage("").from_heatpump(10) == 1
-        assert Voltage("").from_heatpump(11) == 1.1
+        assert Voltage.from_heatpump(10) == 1
+        assert Voltage.from_heatpump(11) == 1.1
 
     def test_voltage_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Voltage("").to_heatpump(1) == 10
-        assert Voltage("").to_heatpump(1.1) == 11
+        assert Voltage.to_heatpump(1) == 10
+        assert Voltage.to_heatpump(1.1) == 11
 
 
 class TestHours:
@@ -480,16 +480,16 @@ class TestHours:
     def test_hours_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Hours("").from_heatpump(None) is None
+        assert Hours.from_heatpump(None) is None
 
-        assert Hours("").from_heatpump(10) == 1
-        assert Hours("").from_heatpump(11) == 1.1
+        assert Hours.from_heatpump(10) == 1
+        assert Hours.from_heatpump(11) == 1.1
 
     def test_hours_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Hours("").to_heatpump(1) == 10
-        assert Hours("").to_heatpump(1.1) == 11
+        assert Hours.to_heatpump(1) == 10
+        assert Hours.to_heatpump(1.1) == 11
 
 
 class TestHours2:
@@ -505,16 +505,16 @@ class TestHours2:
     def test_hours2_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Hours2("").from_heatpump(None) is None
+        assert Hours2.from_heatpump(None) is None
 
-        assert Hours2("").from_heatpump(2) == 2
-        assert Hours2("").from_heatpump(8) == 5
+        assert Hours2.from_heatpump(2) == 2
+        assert Hours2.from_heatpump(8) == 5
 
     def test_hours2_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Hours2("").to_heatpump(2) == 2
-        assert Hours2("").to_heatpump(5) == 8
+        assert Hours2.to_heatpump(2) == 2
+        assert Hours2.to_heatpump(5) == 8
 
 
 class TestMinutes:
@@ -574,10 +574,10 @@ class TestVersion:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Version("").from_heatpump(bytes([51, 46, 56, 56])) == "3.88"
-        assert Version("").from_heatpump(bytes([51, 46, 56, 56, 00])) == "3.88"
-        assert Version("").from_heatpump(bytes([00, 51, 46, 56, 56, 00])) == "3.88"
-        assert Version("").from_heatpump(bytes([48])) == "0"
+        assert Version.from_heatpump(bytes([51, 46, 56, 56])) == "3.88"
+        assert Version.from_heatpump(bytes([51, 46, 56, 56, 00])) == "3.88"
+        assert Version.from_heatpump(bytes([00, 51, 46, 56, 56, 00])) == "3.88"
+        assert Version.from_heatpump(bytes([48])) == "0"
 
 
 class TestIcon:
