@@ -81,13 +81,11 @@ class TestBase:
     def test_repr(self):
         """Test cases for __repr__ function"""
 
-        # unsure what to test and whether this method is needed at all
         pytest.skip("Not yet implemented")
 
     def test_str(self):
         """Test cases for __str__ function"""
 
-        # unsure what to test and whether this method is needed at all
         pytest.skip("Not yet implemented")
 
     def test_eq(self):
