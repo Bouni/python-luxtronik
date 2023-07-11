@@ -107,16 +107,54 @@ class TestSelectionBase:
         """Test cases for options property"""
 
         a = SelectionBase("")
-        a.codes = {0: "a", 1: "b", 2: "c"}
-        assert len(a.options()) == 3
+        assert len(a.options()) == 0
         assert a.options() == list(a.codes.values())
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
         a = SelectionBase("")
-        a.codes = {0: "a", 1: "b", 2: "c"}
+        assert a.from_heatpump(0) is None
+
+    def test_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        a = SelectionBase("")
+        assert a.to_heatpump("a") is None
+
+
+class SelectionBaseChild(SelectionBase):
+    """Child class of SelectionBase containing codes to test it in the context of TestSelectionBaseChild"""
+
+    codes = {
+        0: "a",
+        1: "b",
+        2: "c",
+    }
+
+
+class TestSelectionBaseChild:
+    """Test suite for SelectionBase datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = SelectionBaseChild("selection_base_child")
+        assert a.name == "selection_base_child"
+        assert a.codes
         assert len(a.codes) == 3
+
+    def test_options(self):
+        """Test cases for options property"""
+
+        a = SelectionBaseChild("")
+        assert len(a.options()) == 3
+        assert a.options() == list(a.codes.values())
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        a = SelectionBaseChild("")
         assert a.from_heatpump(0) == "a"
         assert a.from_heatpump(1) == "b"
         assert a.from_heatpump(2) == "c"
@@ -125,9 +163,7 @@ class TestSelectionBase:
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        a = SelectionBase("")
-        a.codes = {0: "a", 1: "b", 2: "c"}
-        assert len(a.codes) == 3
+        a = SelectionBaseChild("")
         assert a.to_heatpump("a") == 0
         assert a.to_heatpump("b") == 1
         assert a.to_heatpump("c") == 2
