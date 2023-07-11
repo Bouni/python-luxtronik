@@ -146,7 +146,7 @@ class TestCelsius:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Celsius("").from_heatpump(None) == None
+        assert Celsius("").from_heatpump(None) is None
 
         assert Celsius("").from_heatpump(10) == 1
         assert Celsius("").from_heatpump(11) == 1.1
@@ -309,7 +309,7 @@ class TestKelvin:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Kelvin("").from_heatpump(None) == None
+        assert Kelvin("").from_heatpump(None) is None
 
         assert Kelvin("").from_heatpump(10) == 1
         assert Kelvin("").from_heatpump(11) == 1.1
@@ -334,7 +334,7 @@ class TestPressure:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Pressure("").from_heatpump(None) == None
+        assert Pressure("").from_heatpump(None) is None
 
         assert Pressure("").from_heatpump(100) == 1
         assert Pressure("").from_heatpump(101) == 1.01
@@ -359,7 +359,7 @@ class TestPercent:
     def test_percent_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Percent("").from_heatpump(None) == None
+        assert Percent("").from_heatpump(None) is None
 
         assert Percent("").from_heatpump(10) == 1
         assert Percent("").from_heatpump(11) == 1.1
@@ -429,7 +429,7 @@ class TestEnergy:
     def test_energy_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Energy("").from_heatpump(None) == None
+        assert Energy("").from_heatpump(None) is None
 
         assert Energy("").from_heatpump(10) == 1
         assert Energy("").from_heatpump(11) == 1.1
@@ -454,7 +454,7 @@ class TestVoltage:
     def test_voltage_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Voltage("").from_heatpump(None) == None
+        assert Voltage("").from_heatpump(None) is None
 
         assert Voltage("").from_heatpump(10) == 1
         assert Voltage("").from_heatpump(11) == 1.1
@@ -479,7 +479,7 @@ class TestHours:
     def test_hours_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Hours("").from_heatpump(None) == None
+        assert Hours("").from_heatpump(None) is None
 
         assert Hours("").from_heatpump(10) == 1
         assert Hours("").from_heatpump(11) == 1.1
