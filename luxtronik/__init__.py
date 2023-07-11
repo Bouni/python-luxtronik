@@ -25,20 +25,30 @@ WAIT_TIME_AFTER_PARAMETER_WRITE = 1
 # Default port to be used to connect to Luxtronik controller.
 LUXTRONIK_DEFAULT_PORT = 8889
 
-LUXTRONIK_PARAMETER_WRITE = 3002
-LUXTRONIK_PARAMETER_READ = 3003
+LUXTRONIK_PARAMETERS_WRITE = 3002
+LUXTRONIK_PARAMETERS_READ = 3003
 LUXTRONIK_CALCULATIONS_READ = 3004
 LUXTRONIK_VISIBILITIES_READ = 3005
 
 LUXTRONIK_SOCKET_READ_SIZE_PEEK = 16
-LUXTRONIK_SOCKET_READ_SIZE = 4
+
+LUXTRONIK_SOCKET_READ_SIZE_COMMAND = 4
+LUXTRONIK_SOCKET_READ_SIZE_LENGTH = 4
+LUXTRONIK_SOCKET_READ_SIZE_VALUE = 4
+LUXTRONIK_SOCKET_READ_SIZE_STAT = 4
+
+LUXTRONIK_SOCKET_READ_SIZE_PARAMETER = 4
+LUXTRONIK_SOCKET_READ_SIZE_CALCULATION = 4
 LUXTRONIK_SOCKET_READ_SIZE_VISIBILITY = 1
+
 
 def is_socket_closed(sock: socket.socket) -> bool:
     """Check is socket closed."""
     try:
         # this will try to read bytes without blocking and also without removing them from buffer
-        data = sock.recv(LUXTRONIK_SOCKET_READ_SIZE_PEEK, socket.MSG_DONTWAIT | socket.MSG_PEEK)
+        data = sock.recv(
+            LUXTRONIK_SOCKET_READ_SIZE_PEEK, socket.MSG_DONTWAIT | socket.MSG_PEEK
+        )
         if len(data) == 0:
             return True
     except BlockingIOError:
@@ -128,12 +138,16 @@ class Luxtronik:
                 )
                 continue
             LOGGER.info("%s: Parameter '%d' set to '%s'", self._host, index, value)
-            data = struct.pack(">iii", LUXTRONIK_PARAMETER_WRITE, index, value)
+            data = struct.pack(">iii", LUXTRONIK_PARAMETERS_WRITE, index, value)
             LOGGER.debug("%s: Data %s", self._host, data)
             self._socket.sendall(data)
-            cmd = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+            cmd = struct.unpack(
+                ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_COMMAND)
+            )[0]
             LOGGER.debug("%s: Command %s", self._host, cmd)
-            val = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+            val = struct.unpack(
+                ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_VALUE)
+            )[0]
             LOGGER.debug("%s: Value %s", self._host, val)
         # Flush queue after writing all values
         parameters.queue = {}
@@ -144,14 +158,22 @@ class Luxtronik:
 
     def _read_parameters(self):
         data = []
-        self._socket.sendall(struct.pack(">ii", LUXTRONIK_PARAMETER_READ, 0))
-        cmd = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+        self._socket.sendall(struct.pack(">ii", LUXTRONIK_PARAMETERS_READ, 0))
+        cmd = struct.unpack(
+            ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_COMMAND)
+        )[0]
         LOGGER.debug("%s: Command %s", self._host, cmd)
-        length = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+        length = struct.unpack(
+            ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_LENGTH)
+        )[0]
         LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
             try:
-                data.append(struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0])
+                data.append(
+                    struct.unpack(
+                        ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_PARAMETER)
+                    )[0]
+                )
             except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug("%s: %s", self._host, err)
@@ -163,15 +185,25 @@ class Luxtronik:
     def _read_calculations(self):
         data = []
         self._socket.sendall(struct.pack(">ii", LUXTRONIK_CALCULATIONS_READ, 0))
-        cmd = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+        cmd = struct.unpack(
+            ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_COMMAND)
+        )[0]
         LOGGER.debug("%s: Command %s", self._host, cmd)
-        stat = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+        stat = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_STAT))[
+            0
+        ]
         LOGGER.debug("%s: Stat %s", self._host, stat)
-        length = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+        length = struct.unpack(
+            ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_LENGTH)
+        )[0]
         LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
             try:
-                data.append(struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0])
+                data.append(
+                    struct.unpack(
+                        ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_CALCULATION)
+                    )[0]
+                )
             except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug("%s: %s", self._host, err)
@@ -183,13 +215,21 @@ class Luxtronik:
     def _read_visibilities(self):
         data = []
         self._socket.sendall(struct.pack(">ii", LUXTRONIK_VISIBILITIES_READ, 0))
-        cmd = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+        cmd = struct.unpack(
+            ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_COMMAND)
+        )[0]
         LOGGER.debug("%s: Command %s", self._host, cmd)
-        length = struct.unpack(">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE))[0]
+        length = struct.unpack(
+            ">i", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_LENGTH)
+        )[0]
         LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
             try:
-                data.append(struct.unpack(">b", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_VISIBILITY))[0])
+                data.append(
+                    struct.unpack(
+                        ">b", self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_VISIBILITY)
+                    )[0]
+                )
             except struct.error as err:
                 # not logging this as error as it would be logged on every read cycle
                 LOGGER.debug("%s: %s", self._host, err)
