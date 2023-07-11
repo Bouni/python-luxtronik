@@ -150,7 +150,9 @@ class Timestamp(Base):
 
     @classmethod
     def from_heatpump(cls, value):
-        if value is None or value <= 0:
+        if value is None:
+            return None
+        if value <= 0:
             return datetime.datetime.fromtimestamp(0)
         return datetime.datetime.fromtimestamp(value)
 

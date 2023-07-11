@@ -264,7 +264,7 @@ class TestTimestamp:
         """Test cases for from_heatpump function"""
 
         a = Timestamp("")
-        assert a.from_heatpump(None) == datetime.datetime.fromtimestamp(0)
+        assert a.from_heatpump(None) is None
 
         assert a.from_heatpump(-1) == datetime.datetime.fromtimestamp(0)
         assert a.from_heatpump(0) == datetime.datetime.fromtimestamp(0)
