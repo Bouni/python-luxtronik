@@ -3,7 +3,10 @@ import datetime
 import socket
 import struct
 
+from functools import total_ordering
 
+
+@total_ordering
 class Base:
     """Base datatype, no conversions."""
 
@@ -60,6 +63,13 @@ class Base:
     def __eq__(self, other):
         return (
             self.value == other.value
+            and self.datatype_class == other.datatype_class
+            and self.datatype_unit == other.datatype_unit
+        )
+
+    def __lt__(self, other):
+        return (
+            self.value < other.value
             and self.datatype_class == other.datatype_class
             and self.datatype_unit == other.datatype_unit
         )
