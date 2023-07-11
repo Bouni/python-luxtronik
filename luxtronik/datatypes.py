@@ -57,6 +57,13 @@ class Base:
             return str(value)
         return str(self.raw)
 
+    def __eq__(self, other):
+        return (
+            self.value == other.value
+            and self.datatype_class == other.datatype_class
+            and self.datatype_unit == other.datatype_unit
+        )
+
 
 class SelectionBase(Base):
     """Selection base datatype, converts from and to list of codes."""
