@@ -98,6 +98,9 @@ class TestBase:
 
         pytest.skip("Not yet implemented")
 
+    # TODO: Test stability of converting back and forth, i.e.
+    # luxtronik.datatypes.Celsius("").from_heatpump(luxtronik.datatypes.Celsius("").to_heatpump(0.11))
+
 
 class TestSelectionBase:
     """Test suite for SelectionBase datatype"""
