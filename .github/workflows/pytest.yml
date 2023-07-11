@@ -16,10 +16,11 @@ jobs:
       - name: Install pytest
         run: pip install pytest pytest-cov
       - name: Run pytest
-        run: >
-          PYTHONPATH=. pytest --junitxml=pytest.xml
-          --cov-report=term-missing:skip-covered
-          --cov=luxtronik tests/ | tee pytest-coverage.txt
+        # yamllint disable rule:line-length
+        run: |
+          set -o pipefail
+          PYTHONPATH=. pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=luxtronik tests/ | tee pytest-coverage.txt
+        # yamllint enable rule:line-length
       # - name: Publish pytest coverage as comment
       #   uses: MishaKav/pytest-coverage-comment@main
       #   with:
