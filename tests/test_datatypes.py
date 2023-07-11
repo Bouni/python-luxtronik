@@ -12,7 +12,7 @@ from luxtronik.datatypes import (
     Bool,
     Frequency,
     Seconds,
-    IPAddress,
+    IPv4Address,
     Timestamp,
     Errorcode,
     Kelvin,
@@ -249,34 +249,34 @@ class TestSeconds:
         assert a.datatype_unit is "s"
 
 
-class TestIPAddress:
-    """Test suite for IPAddress datatype"""
+class TestIPv4Address:
+    """Test suite for IPv4Address datatype"""
 
     def test_init(self):
         """Test cases for initialization"""
 
-        a = IPAddress("ipaddress")
-        assert a.name == "ipaddress"
-        assert a.datatype_class is "ipv4"
+        a = IPv4Address("ipv4_address")
+        assert a.name == "ipv4_address"
+        assert a.datatype_class == "ipv4_address"
         assert a.datatype_unit is None
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert IPAddress.from_heatpump(0) == "0.0.0.0"
-        assert IPAddress.from_heatpump(16909060) == "1.2.3.4"
-        assert IPAddress.from_heatpump(-1062731775) == "192.168.0.1"
-        assert IPAddress.from_heatpump(-256) == "255.255.255.0"
-        assert IPAddress.from_heatpump(-1) == "255.255.255.255"
+        assert IPv4Address.from_heatpump(0) == "0.0.0.0"
+        assert IPv4Address.from_heatpump(16909060) == "1.2.3.4"
+        assert IPv4Address.from_heatpump(-1062731775) == "192.168.0.1"
+        assert IPv4Address.from_heatpump(-256) == "255.255.255.0"
+        assert IPv4Address.from_heatpump(-1) == "255.255.255.255"
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert IPAddress.to_heatpump("0.0.0.0") == 0
-        assert IPAddress.to_heatpump("1.2.3.4") == 16909060
-        assert IPAddress.to_heatpump("192.168.0.1") == -1062731775
-        assert IPAddress.to_heatpump("255.255.255.0") == -256
-        assert IPAddress.to_heatpump("255.255.255.255") == -1
+        assert IPv4Address.to_heatpump("0.0.0.0") == 0
+        assert IPv4Address.to_heatpump("1.2.3.4") == 16909060
+        assert IPv4Address.to_heatpump("192.168.0.1") == -1062731775
+        assert IPv4Address.to_heatpump("255.255.255.0") == -256
+        assert IPv4Address.to_heatpump("255.255.255.255") == -1
 
 
 class TestTimestamp:

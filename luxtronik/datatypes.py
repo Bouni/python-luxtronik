@@ -129,10 +129,10 @@ class Seconds(Base):
     datatype_unit = "s"
 
 
-class IPAddress(Base):
-    """IP Address datatype, converts from and to an IP Address."""
+class IPv4Address(Base):
+    """IPv4 address datatype, converts from and to an IPv4 address."""
 
-    datatype_class = "ipv4"
+    datatype_class = "ipv4_address"
 
     @classmethod
     def from_heatpump(cls, value):
