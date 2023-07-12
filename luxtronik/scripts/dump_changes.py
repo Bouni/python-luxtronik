@@ -9,6 +9,7 @@ import time
 import argparse
 
 from luxtronik import Luxtronik
+from luxtronik.constants import LUXTRONIK_DEFAULT_PORT
 
 
 def dump_changes():
@@ -22,7 +23,7 @@ def dump_changes():
         "port",
         nargs="?",
         type=int,
-        default=8889,
+        default=LUXTRONIK_DEFAULT_PORT,
         help="Port to use to connect to Luxtronik controller",
     )
     args = parser.parse_args()
