@@ -82,13 +82,13 @@ commands from the command line.
 
 ### DISCOVERY OF AVAILABLE HEATPUMPS WITHIN THE NETWORK
 
-Heat pumps can be discovered in a network by sending broadcast packages that the Luxtronik controller will reply to. This can be done with the `discover` sub command in the following way:
+Heat pumps can be discovered in a network by sending broadcast packages that the
+Luxtronik controller will reply to. This can be done with the `discover`
+sub command in the following way:
 
 ```sh
 luxtronik discover
 ```
-
-
 
 ```sh
 1 heatpump(s) reported back                                                                                                                                                                                      │
@@ -142,7 +142,13 @@ Number: 16    Name: ID_Einst_HzMK1ABS_akt                                       
 
 ### SHOW CHANGED VALUES ONLY
 
-There is another sub-command (`changes`) and/or script (`dump-changes.py`) that will only show values that have recently changed. This is meant to be used interactively, i.e. the current value of specific settings will be shown. This is especially useful to identify yet unknown parameters. You can closely monitor the output while changing values on the Luxtronik controller itself.
+There is another sub-command (`changes`) and/or script (`dump-changes.py`) that
+will only show values that have recently changed. This is meant to be used
+interactively, i.e. the current value of specific settings will be shown.
+This is especially useful to identify yet unknown parameters.
+You can closely monitor the output while changing values on the Luxtronik
+controller itself.
+
 This can be invoked in the following ways:
 
 ```sh
