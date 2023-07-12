@@ -80,7 +80,7 @@ Once installed, the luxtronik package provides several scripts that can be used
 to interact with your heatpump. Those scripts can be invoked like regular
 commands from the command line.
 
-### DISCOVER
+### DISCOVERY OF AVAILABLE HEATPUMPS WITHIN THE NETWORK
 
 Heat pumps can be discovered in a network by sending broadcast packages that the Luxtronik controller will reply to. This can be done with the `discover` sub command in the following way:
 
