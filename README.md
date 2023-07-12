@@ -74,7 +74,7 @@ print(t_forerun.unit) # gives you the unit of the value if known, °C for exampl
 # check https://github.com/Bouni/luxtronik/blob/master/luxtronik/visibilities.py for values you might need
 ```
 
-### COMMAND LINE INTERFACE
+### SCRIPTS AND COMMAND LINE INTERFACE (CLI)
 
 The luxtonik package provides several scripts that can be used to interact with
 your heatpump.
