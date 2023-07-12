@@ -3,7 +3,10 @@ import argparse
 import sys
 from luxtronik.discover import discover as _discover
 from luxtronik.scripts.dump_luxtronik import (
-    dump,
+    dump_luxtronik,
+)  # pylint: disable=unused-import # noqa: F401
+from luxtronik.scripts.dump_changes import (
+    dump_changes,
 )  # pylint: disable=unused-import # noqa: F401
 
 
@@ -22,6 +25,7 @@ def main() -> int:
         usage="""luxtronik <command> [<args>]
         The supported commands are:
         dump       Dump all available data from the Luxtronik controller 
+        changes    Dump all value changes from Luxtronik controller  
         discover   Discover Luxtronik controllers on the network (via magic packet) and output results
         """,
     )
@@ -30,7 +34,8 @@ def main() -> int:
     # exclude the rest of the args too, or validation will fail
     args = parser.parse_args(sys.argv[1:2])
     commands = {
-        "dump": dump,
+        "dump": dump_luxtronik,
+        "changes": dump_changes,
         "discover": discover,
     }
     if args.command not in commands:
