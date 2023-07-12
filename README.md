@@ -74,11 +74,37 @@ print(t_forerun.unit) # gives you the unit of the value if known, °C for exampl
 # check https://github.com/Bouni/luxtronik/blob/master/luxtronik/visibilities.py for values you might need
 ```
 
-In order to dump all known values from the Luxtronik controller, you can use
-the `dump-luxtronik.py` script in the following way:
+### COMMAND LINE INTERFACE
+
+The luxtonik package provides several scripts that can be used to interact with your heatpump.
+
+### DISCOVER
+
+To discover all heatpumps in your network, you can use this CLI command:
+
+```sh
+luxtronik discover
+```
+
+It will send magic broadcast packages and all heatpumps will respond like this:
+
+```sh
+1 heatpump(s) reported back                                                                                                                                                                                      │
+Heat pump #0 -> IP address: 192.168.178.123 port: 8889
+```
+
+### DUMP ALL DATA
+
+To get all data available you can either use the CLI:
+
+```sh
+luxtronik dump 192.168.178.123 8889
+```
+
+or call the script that comes with the python package:
 
 ```python
-PYTHONPATH=. ./scripts/dump-luxtronik.py 192.168.1.5
+PYTHONPATH=. ./scripts/dump_luxtronik.py 192.168.178.123 8889
 ```
 
 The output of this script can be used to backup all values (e.g. before
@@ -86,11 +112,64 @@ modifying them) and to get a better understanding about parameters (e.g. by
 looking for differences when comparing the output after doing some changes
 locally, etc.).
 
-Alternatively, you can use the `dump-changes.py` script to output only changed values:
+You'll get a long list of all data, like this (truncated):
+
+```txt
+================================================================================                                                                                                                                 │
+                                   Parameter                                                                                                                                                                     │
+================================================================================                                                                                                                                 │
+Number: 0     Name: ID_Transfert_LuxNet                                          Type: Unknown              Value: 0                                                                                             │
+Number: 1     Name: ID_Einst_WK_akt                                              Type: Celsius              Value: 1.0                                                                                           │
+Number: 2     Name: ID_Einst_BWS_akt                                             Type: Celsius              Value: 50.0                                                                                          │
+Number: 3     Name: ID_Ba_Hz_akt                                                 Type: HeatingMode          Value: Off                                                                                           │
+Number: 4     Name: ID_Ba_Bw_akt                                                 Type: HotWaterMode         Value: Automatic                                                                                     │
+Number: 5     Name: ID_Ba_Al_akt                                                 Type: Unknown              Value: 4                                                                                             │
+Number: 6     Name: ID_SU_FrkdHz                                                 Type: Unknown              Value: 1167609600                                                                                    │
+Number: 7     Name: ID_SU_FrkdBw                                                 Type: Unknown              Value: 1167609600                                                                                    │
+Number: 8     Name: ID_SU_FrkdAl                                                 Type: Unknown              Value: 0                                                                                             │
+Number: 9     Name: ID_Einst_HReg_akt                                            Type: Unknown              Value: 0                                                                                             │
+Number: 10    Name: ID_Einst_HzHwMAt_akt                                         Type: Unknown              Value: -200                                                                                          │
+Number: 11    Name: ID_Einst_HzHwHKE_akt                                         Type: Celsius              Value: 33.0                                                                                          │
+Number: 12    Name: ID_Einst_HzHKRANH_akt                                        Type: Celsius              Value: 22.0                                                                                          │
+Number: 13    Name: ID_Einst_HzHKRABS_akt                                        Type: Celsius              Value: 0.0                                                                                           │
+Number: 14    Name: ID_Einst_HzMK1E_akt                                          Type: Unknown              Value: 330                                                                                           │
+Number: 15    Name: ID_Einst_HzMK1ANH_akt                                        Type: Unknown              Value: 220                                                                                           │
+Number: 16    Name: ID_Einst_HzMK1ABS_akt                                        Type: Unknown              Value: 0
+...
+```
+
+### SHOW CHANGES
+
+To get all values that change live diplayed you can either use the CLI:
+
+```sh
+luxtronik changes 192.168.178.123 8889
+```
+
+or call the script that comes with the python package:
 
 ```python
-PYTHONPATH=. ./scripts/dump-changes.py 192.168.1.5
+PYTHONPATH=. ./scripts/dump_changes.py 192.168.178.123 8889
 ```
+
+You'll get a list of all values as they change:
+
+```txt
+================================================================================                                                                                                                                 │
+calc: Number: 15    Name: ID_WEB_Temperatur_TA                                         Value: 27.2 -> 27.0                                                                                                       │
+calc: Number: 73    Name: ID_WEB_Time_VDStd_akt                                        Value: 47189 -> 47192                                                                                                     │
+calc: Number: 75    Name: ID_WEB_Time_HRW_akt                                          Value: 353732 -> 353735                                                                                                   │
+calc: Number: 134   Name: ID_WEB_AktuelleTimeStamp                                     Value: 2023-07-12 11:47:43 -> 2023-07-12 11:47:46                                                                         │
+calc: Number: 20    Name: ID_WEB_Temperatur_TWA                                        Value: 24.8 -> reverted                                                                                                   │
+calc: Number: 178   Name: ID_WEB_LIN_UH                                                Value: 3.1 -> reverted                                                                                                    │
+calc: Number: 180   Name: ID_WEB_LIN_HD                                                Value: 15.46 -> reverted                                                                                                  │
+calc: Number: 181   Name: ID_WEB_LIN_ND                                                Value: 15.67 -> reverted                                                                                                  │
+calc: Number: 232   Name: Vapourisation_Temperature                                    Value: 25.2 -> reverted                                                                                                   │
+calc: Number: 233   Name: Liquefaction_Temperature                                     Value: 24.8 -> reverted                                                                                                   │
+calc: Number: 10    Name: ID_WEB_Temperatur_TVL                                        Value: 32.7 -> 32.8                                                                                                       │
+calc: Number: 13    Name: ID_WEB_Temperatur_TRL_ext                                    Value: 26.2 -> 26.1
+```
+
 
 ### WRITING VALUES TO HEAT PUMP
 
