@@ -140,7 +140,7 @@ Number: 16    Name: ID_Einst_HzMK1ABS_akt                                       
 ...
 ```
 
-### SHOW CHANGES
+### SHOW CHANGED VALUES ONLY
 
 To get all values that change live diplayed you can either use the CLI:
 
