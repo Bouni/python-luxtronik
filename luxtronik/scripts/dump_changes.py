@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-# pylint: disable=invalid-name
+# pylint: disable=invalid-name, disable=too-many-locals
 
 """Script to dump all value changes from Luxtronik controller"""
 
