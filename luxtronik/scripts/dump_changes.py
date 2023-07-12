@@ -5,6 +5,7 @@
 """Script to dump all value changes from Luxtronik controller"""
 
 import os
+import time
 import argparse
 
 from luxtronik import Luxtronik
@@ -84,6 +85,7 @@ def dump_changes():
         print("=" * 80)
         for key, values in changes.items():
             print(values)
+        time.sleep(1)
 
 
 if __name__ == "__main__":
