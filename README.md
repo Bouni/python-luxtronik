@@ -76,7 +76,8 @@ print(t_forerun.unit) # gives you the unit of the value if known, °C for exampl
 
 ### COMMAND LINE INTERFACE
 
-The luxtonik package provides several scripts that can be used to interact with your heatpump.
+The luxtonik package provides several scripts that can be used to interact with
+your heatpump.
 
 ### DISCOVER
 
@@ -169,7 +170,6 @@ calc: Number: 233   Name: Liquefaction_Temperature                              
 calc: Number: 10    Name: ID_WEB_Temperatur_TVL                                        Value: 32.7 -> 32.8                                                                                                       │
 calc: Number: 13    Name: ID_WEB_Temperatur_TRL_ext                                    Value: 26.2 -> 26.1
 ```
-
 
 ### WRITING VALUES TO HEAT PUMP
 
