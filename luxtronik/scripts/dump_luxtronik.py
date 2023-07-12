@@ -7,7 +7,8 @@ import argparse
 
 from luxtronik import Luxtronik
 
-def dump():
+
+def dump_luxtronik():
     # pylint: disable=duplicate-code
     """Dump all available data from the Luxtronik controller."""
     parser = argparse.ArgumentParser(
@@ -45,7 +46,6 @@ def dump():
         print(
             f"Number: {number:<5} Name: {calc.name:<60} "
             + f"Type: {calc.__class__.__name__:<20} Value: {calc}"
-
         )
 
     print("=" * 80)
@@ -58,5 +58,6 @@ def dump():
             + f"Type: {visi.__class__.__name__:<20} Value: {visi}"
         )
 
+
 if __name__ == "__main__":
-    dump()
+    dump_luxtronik()

@@ -2,7 +2,9 @@
 import argparse
 import sys
 from luxtronik.discover import discover as _discover
-from luxtronik.scripts.dump import dump  # pylint: disable=unused-import # noqa: F401
+from luxtronik.scripts.dump_luxtronik import (
+    dump,
+)  # pylint: disable=unused-import # noqa: F401
 
 
 def discover():
