@@ -149,7 +149,7 @@ This can be invoked in the following ways:
 luxtronik changes 192.168.178.123 8889
 ```
 
-or call the script that comes with the python package:
+Alternatively, it can be invoked directly:
 
 ```python
 PYTHONPATH=. ./scripts/dump_changes.py 192.168.178.123 8889
