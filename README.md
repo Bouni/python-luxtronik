@@ -81,7 +81,7 @@ your heatpump.
 
 ### DISCOVER
 
-To discover all heatpumps in your network, you can use this CLI command:
+Heat pumps can be discovered in a network by sending broadcast packages that the Luxtronik controller will reply to. This can be done with the `discover` sub command in the following way:
 
 ```sh
 luxtronik discover
