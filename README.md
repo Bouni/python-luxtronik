@@ -88,7 +88,7 @@ Heat pumps can be discovered in a network by sending broadcast packages that the
 luxtronik discover
 ```
 
-It will send magic broadcast packages and all heatpumps will respond like this:
+
 
 ```sh
 1 heatpump(s) reported back                                                                                                                                                                                      │
