@@ -143,7 +143,7 @@ Number: 16    Name: ID_Einst_HzMK1ABS_akt                                       
 ### SHOW CHANGED VALUES ONLY
 
 There is another sub-command (`changes`) and/or script (`dump-changes.py`) that will only show values that have recently changed. This is meant to be used interactively, i.e. the current value of specific settings will be shown. This is especially useful to identify yet unknown parameters. You can closely monitor the output while changing values on the Luxtronik controller itself.
-To get all values that change live diplayed you can either use the CLI:
+This can be invoked in the following ways:
 
 ```sh
 luxtronik changes 192.168.178.123 8889
