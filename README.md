@@ -76,8 +76,9 @@ print(t_forerun.unit) # gives you the unit of the value if known, °C for exampl
 
 ### SCRIPTS AND COMMAND LINE INTERFACE (CLI)
 
-The luxtonik package provides several scripts that can be used to interact with
-your heatpump.
+Once installed, the luxtronik package provides several scripts that can be used
+to interact with your heatpump. Those scripts can be invoked like regular
+commands from the command line.
 
 ### DISCOVER
 
