@@ -8,6 +8,7 @@ import pytest
 from luxtronik.datatypes import (
     Base,
     SelectionBase,
+    ScalingBase,
     Celsius,
     Bool,
     Frequency,
@@ -178,6 +179,67 @@ class TestSelectionBaseChild:
         assert a.to_heatpump("b") == 1
         assert a.to_heatpump("c") == 2
         assert a.to_heatpump("d") is None
+
+
+class TestScalingBase:
+    """Test suite for ScalingBase datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = ScalingBase("scaling_base")
+        assert a.name == "scaling_base"
+        assert a.factor == 1
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        a = ScalingBase("")
+        assert a.from_heatpump(1) == 1
+        assert a.from_heatpump(42) == 42
+        assert a.from_heatpump(None) is None
+
+    def test_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        a = ScalingBase("")
+        assert a.to_heatpump(1) == 1
+        assert a.to_heatpump(42) == 42
+
+
+class ScalingBaseChild(ScalingBase):
+    """Child class of ScalingBase containing a factor to test it in the context of TestScalingBaseChild"""
+
+    factor = 13
+
+
+class TestScalingBaseChild:
+    """Test suite for ScalingBase datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = ScalingBaseChild("scaling_base_child")
+        assert a.name == "scaling_base_child"
+        assert a.factor == 13
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        a = ScalingBaseChild("")
+        assert a.from_heatpump(0) == 0
+        assert a.from_heatpump(1) == 13
+        assert a.from_heatpump(2) == 26
+        assert a.from_heatpump(-4) == -52
+
+    def test_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        a = ScalingBaseChild("")
+        assert a.to_heatpump(0) == 0
+        assert a.to_heatpump(26) == 2
+        assert a.to_heatpump(40) == 3
+        assert a.to_heatpump(-100) == -7
 
 
 class TestCelsius:

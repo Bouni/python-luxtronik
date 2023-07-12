@@ -111,21 +111,32 @@ class SelectionBase(Base):
         return None
 
 
-class Celsius(Base):
+class ScalingBase(Base):
+    """Scaling base datatype, converts via a scaling factor."""
+
+    datatype_class = "scaling"
+
+    factor = 1
+
+    @classmethod
+    def from_heatpump(cls, raw):
+        if raw is None:
+            return None
+        value = raw * cls.factor
+        return value
+
+    @classmethod
+    def to_heatpump(cls, value):
+        raw = int(float(value) / cls.factor)
+        return raw
+
+
+class Celsius(ScalingBase):
     """Celsius datatype, converts from and to Celsius."""
 
     datatype_class = "temperature"
     datatype_unit = "°C"
-
-    @classmethod
-    def from_heatpump(cls, value):
-        if value is None:
-            return None
-        return value / 10
-
-    @classmethod
-    def to_heatpump(cls, value):
-        return int(float(value) * 10)
+    factor = 0.1
 
 
 class Bool(Base):
@@ -194,55 +205,28 @@ class Errorcode(Base):
     datatype_class = "errorcode"
 
 
-class Kelvin(Base):
+class Kelvin(ScalingBase):
     """Kelvin datatype, converts from and to Kelvin."""
 
     datatype_class = "temperature"
     datatype_unit = "K"
-
-    @classmethod
-    def from_heatpump(cls, value):
-        if value is None:
-            return None
-        return value / 10
-
-    @classmethod
-    def to_heatpump(cls, value):
-        return int(float(value) * 10)
+    factor = 0.1
 
 
-class Pressure(Base):
+class Pressure(ScalingBase):
     """Pressure datatype, converts from and to Pressure."""
 
     datatype_class = "pressure"
     datatype_unit = "bar"
-
-    @classmethod
-    def from_heatpump(cls, value):
-        if value is None:
-            return None
-        return value / 100
-
-    @classmethod
-    def to_heatpump(cls, value):
-        return int(value * 100)
+    factor = 0.01
 
 
-class Percent(Base):
+class Percent(ScalingBase):
     """Percent datatype, converts from and to Percent."""
 
     datatype_class = "percent"
     datatype_unit = "%"
-
-    @classmethod
-    def from_heatpump(cls, value):
-        if value is None:
-            return None
-        return value / 10
-
-    @classmethod
-    def to_heatpump(cls, value):
-        return int(value * 10)
+    factor = 0.1
 
 
 class Percent2(Base):
@@ -250,14 +234,6 @@ class Percent2(Base):
 
     datatype_class = "percent"
     datatype_unit = "%"
-
-    @classmethod
-    def from_heatpump(cls, value):
-        return value
-
-    @classmethod
-    def to_heatpump(cls, value):
-        return int(value)
 
 
 class Speed(Base):
@@ -274,55 +250,28 @@ class Power(Base):
     datatype_unit = "W"
 
 
-class Energy(Base):
+class Energy(ScalingBase):
     """Energy datatype, converts from and to Energy."""
 
     datatype_class = "energy"
     datatype_unit = "kWh"
-
-    @classmethod
-    def from_heatpump(cls, value):
-        if value is None:
-            return None
-        return value / 10
-
-    @classmethod
-    def to_heatpump(cls, value):
-        return int(value * 10)
+    factor = 0.1
 
 
-class Voltage(Base):
+class Voltage(ScalingBase):
     """Voltage datatype, converts from and to Voltage."""
 
     datatype_class = "voltage"
     datatype_unit = "V"
-
-    @classmethod
-    def from_heatpump(cls, value):
-        if value is None:
-            return None
-        return value / 10
-
-    @classmethod
-    def to_heatpump(cls, value):
-        return int(value * 10)
+    factor = 0.1
 
 
-class Hours(Base):
+class Hours(ScalingBase):
     """Hours datatype, converts from and to Hours."""
 
     datatype_class = "timespan"
     datatype_unit = "h"
-
-    @classmethod
-    def from_heatpump(cls, value):
-        if value is None:
-            return None
-        return value / 10
-
-    @classmethod
-    def to_heatpump(cls, value):
-        return int(value * 10)
+    factor = 0.1
 
 
 class Hours2(Base):
