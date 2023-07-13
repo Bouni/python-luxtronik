@@ -1,6 +1,6 @@
 """Test suite for datatypes module"""
 
-# pylint: disable=too-few-public-methods,invalid-name
+# pylint: disable=too-few-public-methods,invalid-name,too-many-lines
 
 import datetime
 import pytest
@@ -189,7 +189,7 @@ class TestScalingBase:
 
         a = ScalingBase("scaling_base")
         assert a.name == "scaling_base"
-        assert a.factor == 1
+        assert a.scaling_factor == 1
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
@@ -208,9 +208,9 @@ class TestScalingBase:
 
 
 class ScalingBaseChild(ScalingBase):
-    """Child class of ScalingBase containing a factor to test it in the context of TestScalingBaseChild"""
+    """Child class of ScalingBase containing a scaling_factor to test it in the context of TestScalingBaseChild"""
 
-    factor = 13
+    scaling_factor = 13
 
 
 class TestScalingBaseChild:
@@ -221,7 +221,7 @@ class TestScalingBaseChild:
 
         a = ScalingBaseChild("scaling_base_child")
         assert a.name == "scaling_base_child"
-        assert a.factor == 13
+        assert a.scaling_factor == 13
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""

@@ -116,18 +116,18 @@ class ScalingBase(Base):
 
     datatype_class = "scaling"
 
-    factor = 1
+    scaling_factor = 1
 
     @classmethod
-    def from_heatpump(cls, raw):
-        if raw is None:
+    def from_heatpump(cls, value):
+        if value is None:
             return None
-        value = raw * cls.factor
+        value = value * cls.scaling_factor
         return value
 
     @classmethod
     def to_heatpump(cls, value):
-        raw = int(float(value) / cls.factor)
+        raw = int(float(value) / cls.scaling_factor)
         return raw
 
 
@@ -136,7 +136,7 @@ class Celsius(ScalingBase):
 
     datatype_class = "temperature"
     datatype_unit = "°C"
-    factor = 0.1
+    scaling_factor = 0.1
 
 
 class Bool(Base):
@@ -210,7 +210,7 @@ class Kelvin(ScalingBase):
 
     datatype_class = "temperature"
     datatype_unit = "K"
-    factor = 0.1
+    scaling_factor = 0.1
 
 
 class Pressure(ScalingBase):
@@ -218,7 +218,7 @@ class Pressure(ScalingBase):
 
     datatype_class = "pressure"
     datatype_unit = "bar"
-    factor = 0.01
+    scaling_factor = 0.01
 
 
 class Percent(ScalingBase):
@@ -226,11 +226,11 @@ class Percent(ScalingBase):
 
     datatype_class = "percent"
     datatype_unit = "%"
-    factor = 0.1
+    scaling_factor = 0.1
 
 
 class Percent2(Base):
-    """Percent datatype, converts from and to Percent with a different scale factor."""
+    """Percent datatype, converts from and to Percent with a different scaling factor."""
 
     datatype_class = "percent"
     datatype_unit = "%"
@@ -255,7 +255,7 @@ class Energy(ScalingBase):
 
     datatype_class = "energy"
     datatype_unit = "kWh"
-    factor = 0.1
+    scaling_factor = 0.1
 
 
 class Voltage(ScalingBase):
@@ -263,7 +263,7 @@ class Voltage(ScalingBase):
 
     datatype_class = "voltage"
     datatype_unit = "V"
-    factor = 0.1
+    scaling_factor = 0.1
 
 
 class Hours(ScalingBase):
@@ -271,11 +271,11 @@ class Hours(ScalingBase):
 
     datatype_class = "timespan"
     datatype_unit = "h"
-    factor = 0.1
+    scaling_factor = 0.1
 
 
 class Hours2(Base):
-    """Hours datatype, converts from and to Hours with a different scale factor."""
+    """Hours datatype, converts from and to Hours with a different scaling factor."""
 
     datatype_class = "timespan"
     datatype_unit = "h"
