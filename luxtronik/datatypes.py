@@ -71,6 +71,9 @@ class Base:
         return str(self.raw)
 
     def __eq__(self, other):
+        if not isinstance(other, Base):
+            return False
+
         return (
             self.value == other.value
             and self.datatype_class == other.datatype_class
