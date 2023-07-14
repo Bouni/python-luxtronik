@@ -31,6 +31,7 @@ from luxtronik.datatypes import (
     Level,
     Count,
     Version,
+    MajorMinorVersion,
     Icon,
     HeatingMode,
     CoolingMode,
@@ -697,6 +698,31 @@ class TestVersion:
         assert Version.from_heatpump(bytes([51, 46, 56, 56, 00])) == "3.88"
         assert Version.from_heatpump(bytes([00, 51, 46, 56, 56, 00])) == "3.88"
         assert Version.from_heatpump(bytes([48])) == "0"
+
+
+class TestMajorMinorVersion:
+    """Test suite for MajorMinorVersion datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = MajorMinorVersion("numeric_version")
+        assert a.name == "numeric_version"
+        assert a.datatype_class == "version"
+        assert a.datatype_unit is None
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        # Reported value from https://github.com/Bouni/python-luxtronik/issues/99
+        assert MajorMinorVersion.from_heatpump(112) == "1.12"
+
+        # Reported value when RBE is not installed
+        assert MajorMinorVersion.from_heatpump(0) == "0"
+
+        # Other values (not seen in the wild yet)
+        assert MajorMinorVersion.from_heatpump(12) == "0.12"
+        assert MajorMinorVersion.from_heatpump(-1) == "0"
 
 
 class TestIcon:

@@ -29,6 +29,7 @@ from luxtronik.datatypes import (
     Timestamp,
     Unknown,
     Version,
+    MajorMinorVersion,
     Voltage,
 )
 
@@ -289,7 +290,7 @@ class Calculations:
             255: Unknown("Unknown_Calculation_255"),
             256: Unknown("Unknown_Calculation_256"),
             257: Power("Heat_Output"),
-            258: Unknown("Unknown_Calculation_258"),
+            258: MajorMinorVersion("RBE_Version"),
             259: Unknown("Unknown_Calculation_259"),
         }
 

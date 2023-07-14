@@ -338,6 +338,20 @@ class Version(Base):
         return "".join([chr(c) for c in value]).strip("\x00")
 
 
+class MajorMinorVersion(Base):
+    """MajorMinorVersion datatype, converts from and to a RBEVersion"""
+
+    datatype_class = "version"
+
+    @classmethod
+    def from_heatpump(cls, value):
+        if value > 0:
+            major = value // 100
+            minor = value % 100
+            return f"{major}.{minor}"
+        return "0"
+
+
 class Icon(Base):
     """Icon datatype, converts from and to Icon."""
 
