@@ -52,6 +52,8 @@ class Base:
         self._raw = raw
 
     def __repr__(self):
+        """Returns a printable representation of the datatype object"""
+
         return (
             f"{self.__class__.__name__} "
             f"("
@@ -65,12 +67,19 @@ class Base:
         )
 
     def __str__(self):
+        """Returns a human-readable string representation of the datatype object"""
+
         value = self.value
         if value is not None:
             return str(value)
         return str(self.raw)
 
     def __eq__(self, other):
+        """Tests for equality of two datatype objects"""
+
+        if not isinstance(other, Base):
+            return False
+
         return (
             self.value == other.value
             and self.datatype_class == other.datatype_class
@@ -78,6 +87,8 @@ class Base:
         )
 
     def __lt__(self, other):
+        """Compares two datatype objects and returns which one contains the lower value"""
+
         return (
             self.value < other.value
             and self.datatype_class == other.datatype_class
