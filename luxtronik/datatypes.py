@@ -388,7 +388,7 @@ class MajorMinorVersion(Base):
         if value > 0:
             major = value // 100
             minor = value % 100
-            return ".".join(str(x) for x in [major, minor])
+            return f"{major}.{minor}"
         return "0"
 
 
