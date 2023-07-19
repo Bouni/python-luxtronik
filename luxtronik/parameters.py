@@ -1178,32 +1178,29 @@ class Parameters:
                 self._parameters[index] = parameter
 
     def _lookup(self, target, with_index=False):
-        # pylint: disable=too-many-return-statements,fixme
-        # TODO Evaluate whether logic can be re-arranged to get rid of the
-        # pylint error regarding too many return statements.
         """Lookup parameter by either id or name."""
-        # Get parameter by id
-        if isinstance(target, int):
-            if with_index:
-                return target, self._parameters.get(target, None)
-            return self._parameters.get(target, None)
-        # Get parameter by name
         if isinstance(target, str):
             try:
-                target = int(target)
-                if with_index:
-                    return target, self._parameters.get(target, None)
-                return self._parameters.get(target, None)
+                # Try to get parameter by id
+                target_index = int(target)
             except ValueError:
+                # Get parameter by name
+                target_index = None
                 for index, parameter in self._parameters.items():
                     if parameter.name == target:
-                        if with_index:
-                            return index, parameter
-                        return parameter
-        LOGGER.warning("Parameter '%s' not found", target)
+                        target_index = index
+        elif isinstance(target, int):
+            # Get parameter by id
+            target_index = target
+        else:
+            target_index = None
+
+        target_parameter = self._parameters.get(target_index, None)
+        if target_parameter is None:
+            LOGGER.warning("Parameter '%s' not found", target)
         if with_index:
-            return None, None
-        return None
+            return target_index, target_parameter
+        return target_parameter
 
     def get(self, target):
         """Get parameter by id or name."""
