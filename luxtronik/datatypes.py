@@ -328,14 +328,16 @@ class Count(Base):
     datatype_class = "count"
 
 
-class Version(Base):
-    """Version datatype, converts from and to a Heatpump Version."""
+class Character(Base):
+    """Character datatype, converts from and to a Character."""
 
-    datatype_class = "version"
+    datatype_class = "character"
 
     @classmethod
     def from_heatpump(cls, value):
-        return "".join([chr(c) for c in value]).strip("\x00")
+        if value == 0:
+            return ""
+        return chr(value)
 
 
 class MajorMinorVersion(Base):

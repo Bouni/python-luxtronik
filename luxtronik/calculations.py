@@ -5,6 +5,7 @@ from luxtronik.datatypes import (
     BivalenceLevel,
     Bool,
     Celsius,
+    Character,
     Count,
     Energy,
     Errorcode,
@@ -28,7 +29,6 @@ from luxtronik.datatypes import (
     SwitchoffFile,
     Timestamp,
     Unknown,
-    Version,
     MajorMinorVersion,
     Voltage,
 )
@@ -122,7 +122,16 @@ class Calculations:
             78: HeatpumpCode("ID_WEB_Code_WP_akt"),
             79: BivalenceLevel("ID_WEB_BIV_Stufe_akt"),
             80: OperationMode("ID_WEB_WP_BZ_akt"),
-            81: Version("ID_WEB_SoftStand"),
+            81: Character("ID_WEB_SoftStand_0"),
+            82: Character("ID_WEB_SoftStand_1"),
+            83: Character("ID_WEB_SoftStand_2"),
+            84: Character("ID_WEB_SoftStand_3"),
+            85: Character("ID_WEB_SoftStand_4"),
+            86: Character("ID_WEB_SoftStand_5"),
+            87: Character("ID_WEB_SoftStand_6"),
+            88: Character("ID_WEB_SoftStand_7"),
+            89: Character("ID_WEB_SoftStand_8"),
+            90: Character("ID_WEB_SoftStand_9"),
             91: IPv4Address("ID_WEB_AdresseIP_akt"),
             92: IPv4Address("ID_WEB_SubNetMask_akt"),
             93: IPv4Address("ID_WEB_Add_Broadcast"),
@@ -301,16 +310,9 @@ class Calculations:
         """Parse raw calculations data."""
         for index, data in enumerate(raw_data):
             calculation = self._calculations.get(index, False)
-            # index is not version info (index 81 up to 91), proceed normally
-            if calculation is not False and index not in range(81, 91):
+            if calculation is not False:
                 calculation.raw = data
-                continue
-            # index is version info, parse entire range from 81 up to 91 as version string
-            if calculation is not False and index in range(81, 91):
-                calculation.raw = raw_data[index : index + 9]
-                continue
-            # index is outside the known range, create it as unknown
-            if calculation is False and index not in range(81, 91):
+            else:
                 # LOGGER.warning("Calculation '%d' not in list of calculations", index)
                 calculation = Unknown(f"Unknown_Calculation_{index}")
                 calculation.raw = data
