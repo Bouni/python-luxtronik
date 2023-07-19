@@ -30,7 +30,7 @@ from luxtronik.datatypes import (
     Flow,
     Level,
     Count,
-    Version,
+    Character,
     MajorMinorVersion,
     Icon,
     HeatingMode,
@@ -680,24 +680,25 @@ class TestCount:
         assert a.datatype_unit is None
 
 
-class TestVersion:
-    """Test suite for Version datatype"""
+class TestCharacter:
+    """Test suite for Character datatype"""
 
     def test_init(self):
         """Test cases for initialization"""
 
-        a = Version("version")
-        assert a.name == "version"
-        assert a.datatype_class == "version"
+        a = Character("my_name")
+        assert a.name == "my_name"
+        assert a.datatype_class == "character"
         assert a.datatype_unit is None
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Version.from_heatpump(bytes([51, 46, 56, 56])) == "3.88"
-        assert Version.from_heatpump(bytes([51, 46, 56, 56, 00])) == "3.88"
-        assert Version.from_heatpump(bytes([00, 51, 46, 56, 56, 00])) == "3.88"
-        assert Version.from_heatpump(bytes([48])) == "0"
+        assert Character.from_heatpump(0) == ""
+        assert Character.from_heatpump(51) == "3"
+        assert Character.from_heatpump(46) == "."
+        assert Character.from_heatpump(56) == "8"
+        assert Character.from_heatpump(48) == "0"
 
 
 class TestMajorMinorVersion:
