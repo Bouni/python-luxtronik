@@ -225,16 +225,16 @@ submitting feature requests via the [issue tracker][issue-tracker] is helpful.
 The fastest way to provide improvements to the code is is to use
 [pull requests][pull-request-doc].
 
-The use of [pre-commit](https://pre-commit.com/) is highly recommended in order to keep
-the quality of your contribution as high as possible.
+The use of [pre-commit](https://pre-commit.com/) is highly recommended in
+order to keep the quality of your contribution as high as possible.
 
-After cloning this repo, cd into it and simply type `pre-commit` in order to install the
-pre-commit hooks.
+After cloning this repo, cd into it and simply type `pre-commit` in order
+to install the pre-commit hooks.
 
-For that to work you need python (which you most likely already have installed) and the
-`pre-commit` package. If not already installed you can install it with `pip install -U pre-commit`.
-Furthermore you need a recent version of `nodejs` on your system because some of the hooks are
-js based.
+For that to work you need python (which you most likely already have installed)
+and the `pre-commit` package. If not already installed you can install it with
+`pip install -U pre-commit`. Furthermore you need a recent version of `nodejs`
+on your system because some of the hooks are js based.
 
 ## LICENSE
 
