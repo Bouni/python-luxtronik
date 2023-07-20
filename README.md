@@ -40,7 +40,7 @@ be imported via `import luxtronik` from your Python scripts.
 ## DOCUMENTATION
 
 There is no automatically rendered documentation of this library available yet,
-so you'll have to fall back to use the source code itself as documentation. It
+so you'll have to fall back to using the source code itself as documentation. It
 can be found in the [luxtronik](luxtronik/) directory.
 
 ## EXAMPLE USAGE
