@@ -63,9 +63,23 @@ class Luxtronik:
         self._port = port
         self._safe = safe
         self._socket = None
-        self.read()
+        self._connect()
 
     def __del__(self):
+        self._disconnect()
+
+    def _connect(self):
+        """Connect the socket if not already done."""
+        is_none = self._socket is None
+        if is_none:
+            self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        if is_none or is_socket_closed(self._socket):
+            self._socket.connect((self._host, self._port))
+            LOGGER.info(
+                "Connected to Luxtronik heat pump %s:%s", self._host, self._port
+            )
+
+    def _disconnect(self):
         if self._socket is not None:
             if not is_socket_closed(self._socket):
                 self._socket.close()
@@ -74,43 +88,50 @@ class Luxtronik:
                 "Disconnected from Luxtronik heatpump %s:%s", self._host, self._port
             )
 
-    def read(self):
-        """Read data from heatpump."""
-        return self._read_after_write(parameters=None)
-
-    def write(self, parameters):
-        """Write parameter to heatpump."""
-        return self._read_after_write(parameters=parameters)
-
-    def _read_after_write(self, parameters):
+    def _with_lock_and_connect(self, func, *args, **kwargs):
         """
-        Read and/or write value from and/or to heatpump.
-        This method is essentially a wrapper for the _read() and _write()
-        methods.
+        Decorator around various read/write functions to connect first.
+
+        This method is essentially a wrapper for the _read() and _write() methods.
         Locking is being used to ensure that only a single socket operation is
         performed at any point in time. This helps to avoid issues with the
         Luxtronik controller, which seems unstable otherwise.
-        If write is true, all parameters will be written to the heat pump
-        prior to reading back in all data from the heat pump. If write is
-        false, no data will be written, but all available data will be read
-        from the heat pump.
+        """
+        with self._lock:
+            self._connect()
+            ret_val = func(*args, **kwargs)
+            # self._disconnect()
+            return ret_val
+
+    def read(self):
+        """
+        Read data from heat pump.
+        All available data will be read from the heat pump.
+        """
+        return self._with_lock_and_connect(self._read)
+
+    def read_parameters(self):
+        """Read parameters from heat pump."""
+        return self._with_lock_and_connect(self._read_parameters)
+
+    def read_calculations(self):
+        """Read calculations from heat pump."""
+        return self._with_lock_and_connect(self._read_calculations)
+
+    def read_visibilities(self):
+        """Read visibilities from heat pump."""
+        return self._with_lock_and_connect(self._read_visibilities)
+
+    def write(self, parameters):
+        """
+        Write parameter to heat pump.
+        All parameters will be written to the heat pump
+        prior to reading back in all data from the heat pump.
         :param Parameters() parameters  Parameter dictionary to be written
                           to the heatpump before reading all available data
-                          from the heatpump. At 'None' it is read only.
+                          from the heat pump.
         """
-
-        with self._lock:
-            is_none = self._socket is None
-            if is_none:
-                self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            if is_none or is_socket_closed(self._socket):
-                self._socket.connect((self._host, self._port))
-                LOGGER.info(
-                    "Connected to Luxtronik heatpump %s:%s", self._host, self._port
-                )
-            if parameters is not None:
-                return self._write(parameters)
-            return self._read()
+        return self._with_lock_and_connect(self._write, parameters)
 
     def _read(self):
         parameters = self._read_parameters()
