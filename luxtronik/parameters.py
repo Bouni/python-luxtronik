@@ -3,6 +3,8 @@
 """Parse luxtronik parameters."""
 import logging
 
+from luxtronik.data_vector import DataVector
+
 from luxtronik.datatypes import (
     AccessLevel,
     Bool,
@@ -22,18 +24,20 @@ from luxtronik.datatypes import (
     VentilationMode,
 )
 
-LOGGER = logging.getLogger("Luxtronik.Parameters")
 
-
-class Parameters:
+class Parameters(DataVector):
     """Class that holds all parameters."""
+
+    logger = logging.getLogger("Luxtronik.Parameters")
+    name = "Parameter"
 
     def __init__(self, safe=True):
         """Initialize parameters class."""
+        super().__init__()
         self.safe = safe
         self.queue = {}
 
-        self._parameters = {
+        self._data = {
             0: Unknown("ID_Transfert_LuxNet"),
             1: Celsius("ID_Einst_WK_akt", True),
             2: Celsius("ID_Einst_BWS_akt", True),
@@ -1162,51 +1166,6 @@ class Parameters:
             1125: Unknown("Unknown_Parameter_1125"),
         }
 
-    def __iter__(self):
-        return iter(self._parameters.items())
-
-    def parse(self, raw_data):
-        """Parse raw parameter data."""
-        for index, data in enumerate(raw_data):
-            parameter = self._parameters.get(index, False)
-            if parameter is not False:
-                parameter.raw = data
-            else:
-                # LOGGER.warning("Parameter '%d' not in list of parameters", index)
-                parameter = Unknown(f"Unknown_Parameter_{index}")
-                parameter.raw = data
-                self._parameters[index] = parameter
-
-    def _lookup(self, target, with_index=False):
-        """Lookup parameter by either id or name."""
-        if isinstance(target, str):
-            try:
-                # Try to get parameter by id
-                target_index = int(target)
-            except ValueError:
-                # Get parameter by name
-                target_index = None
-                for index, parameter in self._parameters.items():
-                    if parameter.name == target:
-                        target_index = index
-        elif isinstance(target, int):
-            # Get parameter by id
-            target_index = target
-        else:
-            target_index = None
-
-        target_parameter = self._parameters.get(target_index, None)
-        if target_parameter is None:
-            LOGGER.warning("Parameter '%s' not found", target)
-        if with_index:
-            return target_index, target_parameter
-        return target_parameter
-
-    def get(self, target):
-        """Get parameter by id or name."""
-        parameter = self._lookup(target)
-        return parameter
-
     def set(self, target, value):
         """Set parameter to new value."""
         index, parameter = self._lookup(target, with_index=True)
@@ -1214,6 +1173,8 @@ class Parameters:
             if parameter.writeable or not self.safe:
                 self.queue[index] = parameter.to_heatpump(value)
             else:
-                LOGGER.warning("Parameter '%s' not safe for writing!", parameter.name)
+                self.logger.warning(
+                    "Parameter '%s' not safe for writing!", parameter.name
+                )
         else:
-            LOGGER.warning("Parameter '%s' not found", target)
+            self.logger.warning("Parameter '%s' not found", target)
