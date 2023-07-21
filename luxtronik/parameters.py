@@ -1169,7 +1169,7 @@ class Parameters(DataVector):
     def set(self, target, value):
         """Set parameter to new value."""
         index, parameter = self._lookup(target, with_index=True)
-        if index:
+        if index is not None:
             if parameter.writeable or not self.safe:
                 self.queue[index] = parameter.to_heatpump(value)
             else:
