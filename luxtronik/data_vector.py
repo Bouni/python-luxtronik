@@ -15,6 +15,7 @@ class DataVector:
         self._data = {}
 
     def __iter__(self):
+        """Iterator for the data entries."""
         return iter(self._data.items())
 
     def parse(self, raw_data):
@@ -30,7 +31,13 @@ class DataVector:
                 self._data[index] = entry
 
     def _lookup(self, target, with_index=False):
-        """Lookup entry by either id or name."""
+        """
+        Lookup an entry
+
+        "target" could either be its id or its name.
+
+        In case "with_index" is set, also the index is returned.
+        """
         if isinstance(target, str):
             try:
                 # Try to get entry by id
