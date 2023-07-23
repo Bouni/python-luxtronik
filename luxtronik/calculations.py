@@ -1,6 +1,8 @@
 """Parse luxtronik calculations."""
 import logging
 
+from luxtronik.data_vector import DataVector
+
 from luxtronik.datatypes import (
     BivalenceLevel,
     Bool,
@@ -33,14 +35,16 @@ from luxtronik.datatypes import (
     Voltage,
 )
 
-LOGGER = logging.getLogger("Luxtronik.Calculations")
 
-
-class Calculations:
+class Calculations(DataVector):
     """Class that holds all calculations."""
 
+    logger = logging.getLogger("Luxtronik.Calculations")
+    name = "Calculation"
+
     def __init__(self):
-        self._calculations = {
+        super().__init__()
+        self._data = {
             0: Unknown("Unknown_Calculation_0"),
             1: Unknown("Unknown_Calculation_1"),
             2: Unknown("Unknown_Calculation_2"),
@@ -302,40 +306,3 @@ class Calculations:
             258: MajorMinorVersion("RBE_Version"),
             259: Unknown("Unknown_Calculation_259"),
         }
-
-    def __iter__(self):
-        return iter(self._calculations.items())
-
-    def parse(self, raw_data):
-        """Parse raw calculations data."""
-        for index, data in enumerate(raw_data):
-            calculation = self._calculations.get(index, False)
-            if calculation is not False:
-                calculation.raw = data
-            else:
-                # LOGGER.warning("Calculation '%d' not in list of calculations", index)
-                calculation = Unknown(f"Unknown_Calculation_{index}")
-                calculation.raw = data
-                self._calculations[index] = calculation
-
-    def _lookup(self, target):
-        """Lookup calculation by either id or name."""
-        # Get calculation by id
-        if isinstance(target, int):
-            return self._calculations.get(target, None)
-        # Get calculation by name
-        if isinstance(target, str):
-            try:
-                target = int(target)
-                return self._calculations.get(target, None)
-            except ValueError:
-                for _, calculation in self._calculations.items():
-                    if calculation.name == target:
-                        return calculation
-        LOGGER.warning("Calculation '%s' not found", target)
-        return None
-
-    def get(self, target):
-        """Get calculation by id or name."""
-        calculation = self._lookup(target)
-        return calculation

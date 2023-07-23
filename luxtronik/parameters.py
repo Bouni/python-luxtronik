@@ -3,6 +3,8 @@
 """Parse luxtronik parameters."""
 import logging
 
+from luxtronik.data_vector import DataVector
+
 from luxtronik.datatypes import (
     AccessLevel,
     Bool,
@@ -22,18 +24,20 @@ from luxtronik.datatypes import (
     VentilationMode,
 )
 
-LOGGER = logging.getLogger("Luxtronik.Parameters")
 
-
-class Parameters:
+class Parameters(DataVector):
     """Class that holds all parameters."""
+
+    logger = logging.getLogger("Luxtronik.Parameters")
+    name = "Parameter"
 
     def __init__(self, safe=True):
         """Initialize parameters class."""
+        super().__init__()
         self.safe = safe
         self.queue = {}
 
-        self._parameters = {
+        self._data = {
             0: Unknown("ID_Transfert_LuxNet"),
             1: Celsius("ID_Einst_WK_akt", True),
             2: Celsius("ID_Einst_BWS_akt", True),
@@ -1162,61 +1166,15 @@ class Parameters:
             1125: Unknown("Unknown_Parameter_1125"),
         }
 
-    def __iter__(self):
-        return iter(self._parameters.items())
-
-    def parse(self, raw_data):
-        """Parse raw parameter data."""
-        for index, data in enumerate(raw_data):
-            parameter = self._parameters.get(index, False)
-            if parameter is not False:
-                parameter.raw = data
-            else:
-                # LOGGER.warning("Parameter '%d' not in list of parameters", index)
-                parameter = Unknown(f"Unknown_Parameter_{index}")
-                parameter.raw = data
-                self._parameters[index] = parameter
-
-    def _lookup(self, target, with_index=False):
-        # pylint: disable=too-many-return-statements,fixme
-        # TODO Evaluate whether logic can be re-arranged to get rid of the
-        # pylint error regarding too many return statements.
-        """Lookup parameter by either id or name."""
-        # Get parameter by id
-        if isinstance(target, int):
-            if with_index:
-                return target, self._parameters.get(target, None)
-            return self._parameters.get(target, None)
-        # Get parameter by name
-        if isinstance(target, str):
-            try:
-                target = int(target)
-                if with_index:
-                    return target, self._parameters.get(target, None)
-                return self._parameters.get(target, None)
-            except ValueError:
-                for index, parameter in self._parameters.items():
-                    if parameter.name == target:
-                        if with_index:
-                            return index, parameter
-                        return parameter
-        LOGGER.warning("Parameter '%s' not found", target)
-        if with_index:
-            return None, None
-        return None
-
-    def get(self, target):
-        """Get parameter by id or name."""
-        parameter = self._lookup(target)
-        return parameter
-
     def set(self, target, value):
         """Set parameter to new value."""
         index, parameter = self._lookup(target, with_index=True)
-        if index:
+        if index is not None:
             if parameter.writeable or not self.safe:
                 self.queue[index] = parameter.to_heatpump(value)
             else:
-                LOGGER.warning("Parameter '%s' not safe for writing!", parameter.name)
+                self.logger.warning(
+                    "Parameter '%s' not safe for writing!", parameter.name
+                )
         else:
-            LOGGER.warning("Parameter '%s' not found", target)
+            self.logger.warning("Parameter '%s' not found", target)

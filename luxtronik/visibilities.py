@@ -1,16 +1,20 @@
 """Parse luxtronik visibilities."""
 import logging
 
+from luxtronik.data_vector import DataVector
+
 from luxtronik.datatypes import Unknown
 
-LOGGER = logging.getLogger("Luxtronik.Visibilities")
 
-
-class Visibilities:
+class Visibilities(DataVector):
     """Class that holds all visibilities."""
 
+    logger = logging.getLogger("Luxtronik.Visibilities")
+    name = "Visibility"
+
     def __init__(self):
-        self._visibilities = {
+        super().__init__()
+        self._data = {
             0: Unknown("ID_Visi_NieAnzeigen"),
             1: Unknown("ID_Visi_ImmerAnzeigen"),
             2: Unknown("ID_Visi_Heizung"),
@@ -367,40 +371,3 @@ class Visibilities:
             353: Unknown("Unknown_Visibility_353"),
             354: Unknown("Unknown_Visibility_354"),
         }
-
-    def __iter__(self):
-        return iter(self._visibilities.items())
-
-    def parse(self, raw_data):
-        """Parse raw visibility data."""
-        for index, data in enumerate(raw_data):
-            visibility = self._visibilities.get(index, False)
-            if visibility is not False:
-                visibility.raw = data
-            else:
-                # LOGGER.warning("Visibility '%d' not in list of visibilities", index)
-                visibility = Unknown(f"Unknown_Parameter_{index}")
-                visibility.raw = data
-                self._visibilities[index] = visibility
-
-    def _lookup(self, target):
-        """Lookup visibility by either id or name."""
-        # Get visibility by id
-        if isinstance(target, int):
-            return self._visibilities.get(target, None)
-        # Get visibility by name
-        if isinstance(target, str):
-            try:
-                target = int(target)
-                return self._visibilities.get(target, None)
-            except ValueError:
-                for _, visibility in self._visibilities.items():
-                    if visibility.name == target:
-                        return visibility
-        LOGGER.warning("Visibility '%s' not found", target)
-        return None
-
-    def get(self, target):
-        """Get visibility by id or name."""
-        visibility = self._lookup(target)
-        return visibility
