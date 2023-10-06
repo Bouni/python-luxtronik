@@ -305,4 +305,12 @@ class Calculations(DataVector):
             257: Power("Heat_Output"),
             258: MajorMinorVersion("RBE_Version"),
             259: Unknown("Unknown_Calculation_259"),
+            260: Unknown("Unknown_Calculation_260"),
+            261: Unknown("Unknown_Calculation_261"),
+            262: Unknown("Unknown_Calculation_262"),
+            263: Unknown("Unknown_Calculation_263"),
+            264: Unknown("Unknown_Calculation_264"),
+            265: Unknown("Unknown_Calculation_265"),
+            266: Unknown("Unknown_Calculation_266"),
+            267: Unknown("Unknown_Calculation_267"),
         }
