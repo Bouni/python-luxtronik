@@ -138,7 +138,7 @@ class ScalingBase(Base):
 
     @classmethod
     def to_heatpump(cls, value):
-        raw = int(float(value) / cls.scaling_factor)
+        raw = round(float(value) / cls.scaling_factor)
         return raw
 
 
@@ -299,7 +299,7 @@ class Hours2(Base):
 
     @classmethod
     def to_heatpump(cls, value):
-        return int((value - 1) * 2)
+        return round((value - 1) * 2)
 
 
 class Minutes(Base):
