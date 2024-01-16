@@ -100,7 +100,6 @@ class Luxtronik:
         with self._lock:
             self._connect()
             ret_val = func(*args, **kwargs)
-            # self._disconnect()
             return ret_val
 
     def read(self):
