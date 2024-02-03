@@ -1,4 +1,5 @@
 """Luxtronik CLI."""
+
 import argparse
 import sys
 from luxtronik.discover import discover as _discover

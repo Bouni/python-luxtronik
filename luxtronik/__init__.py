@@ -1,4 +1,5 @@
 """Luxtronik heatpump interface."""
+
 # -*- coding: utf-8 -*-
 # region Imports
 from __future__ import annotations
