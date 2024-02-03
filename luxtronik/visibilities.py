@@ -1,4 +1,5 @@
 """Parse luxtronik visibilities."""
+
 import logging
 
 from luxtronik.data_vector import DataVector

@@ -1,4 +1,5 @@
 """Provides a base class for parameters, calculations, visibilities."""
+
 import logging
 
 from luxtronik.datatypes import Unknown

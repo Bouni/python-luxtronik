@@ -1,4 +1,5 @@
 """Parse luxtronik calculations."""
+
 import logging
 
 from luxtronik.data_vector import DataVector

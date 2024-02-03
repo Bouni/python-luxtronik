@@ -1,4 +1,5 @@
 """datatype conversions."""
+
 import datetime
 import socket
 import struct
