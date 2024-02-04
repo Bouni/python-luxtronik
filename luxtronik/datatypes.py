@@ -646,6 +646,74 @@ class AccessLevel(SelectionBase):
     }
 
 
+class TimerProgram(SelectionBase):
+    """TimerProgram datatype, converts from and to list of TimerProgram codes"""
+
+    datatype_class = "selection"
+
+    codes = {
+        0: "week",
+        1: "5+2",
+        2: "days",
+    }
+
+
+class TimeOfDay(Base):
+    """TimeOfDay datatype, converts from and to TimeOfDay."""
+
+    datatype_class = "timeofday"
+
+    @classmethod
+    def from_heatpump(cls, value):
+        if value is None:
+            return None
+        hours = value // 3600
+        minutes = (value // 60) % 60
+        seconds = value % 60
+
+        return f"{hours}:{minutes:02d}" + (f":{seconds:02d}" if seconds > 0 else "")
+
+    @classmethod
+    def to_heatpump(cls, value):
+        d = [int(v) for v in value.split(":")]
+
+        val = d[0] * 3600 + d[1] * 60
+        if len(d) == 3:
+            val += d[2]
+
+        return val
+
+
+class TimeOfDay2(Base):
+    """TimeOfDay2 datatype, converts from and to a range of two times of day."""
+
+    datatype_class = "timeofday2"
+
+    @classmethod
+    def from_heatpump(cls, value):
+        if value is None:
+            return None
+
+        value_low = value & 0xFFFF
+        value_high = value >> 16
+        hours1 = value_low // 60
+        minutes1 = value_low % 60
+        hours2 = value_high // 60
+        minutes2 = value_high % 60
+
+        return f"{hours1}:{minutes1:02d}-{hours2}:{minutes2:02d}"
+
+    @classmethod
+    def to_heatpump(cls, value):
+        d = value.split("-")
+        low = [int(v) for v in d[0].split(":")]
+        high = [int(v) for v in d[1].split(":")]
+
+        val = ((high[0] * 60 + high[1]) << 16) + low[0] * 60 + low[1]
+
+        return val
+
+
 class Unknown(Base):
     """Unknown datatype, fallback for unknown data."""
 

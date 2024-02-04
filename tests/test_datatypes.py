@@ -49,7 +49,21 @@ from luxtronik.datatypes import (
     SecOperationMode,
     AccessLevel,
     Unknown,
+    TimerProgram,
+    TimeOfDay,
+    TimeOfDay2,
 )
+
+
+def check_pair(datatype, raw_value, value):
+    """Checks whether a pair of values are converted to each other."""
+    assert datatype.from_heatpump(raw_value) == value
+    assert datatype.to_heatpump(value) == raw_value
+
+
+def check_round_trip(datatype, val):
+    """Check whether a raw value is persistent under a round-trip."""
+    assert datatype.to_heatpump(datatype.from_heatpump(val)) == val
 
 
 class TestBase:
@@ -1047,3 +1061,70 @@ class TestUnknown:
         assert a.name == "unknown"
         assert a.datatype_class is None
         assert a.datatype_unit is None
+
+
+class TestTimerProgram:
+    """Test suite for TimerProgram datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = TimerProgram("timer_program")
+        assert a.name == "timer_program"
+        assert a.datatype_class == "selection"
+        assert a.datatype_unit is None
+        assert len(a.codes) == 3
+
+    def test_options(self):
+        """Test cases for options property"""
+
+        a = TimerProgram("")
+        assert len(a.options()) == 3
+        assert a.options() == list(a.codes.values())
+
+
+class TestTimeOfDay:
+    """Test suite for TimeOfDay datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = TimeOfDay("timeofday")
+        assert a.name == "timeofday"
+        assert a.datatype_class == "timeofday"
+        assert a.datatype_unit is None
+
+    def test_timeofday_conversion(self):
+        """Test cases for from_heatpump function"""
+
+        assert TimeOfDay.from_heatpump(None) is None
+
+        check_pair(TimeOfDay, 7 * 3600 + 30 * 60, "7:30")
+        check_pair(TimeOfDay, 7 * 3600 + 30 * 60 + 50, "7:30:50")
+        check_pair(TimeOfDay, 19 * 3600 + 30 * 60 + 50, "19:30:50")
+
+        for val in [12495, 34099, 82148]:
+            check_round_trip(TimeOfDay, val)
+
+
+class TestTimeOfDay2:
+    """Test suite for TimeOfDay2 datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = TimeOfDay2("timeofday2")
+        assert a.name == "timeofday2"
+        assert a.datatype_class == "timeofday2"
+        assert a.datatype_unit is None
+
+    def test_timeofday_conversion(self):
+        """Test cases for from_heatpump function"""
+
+        assert TimeOfDay2.from_heatpump(None) is None
+
+        check_pair(TimeOfDay2, ((19 * 60) << 16) + 7 * 60 + 30, "7:30-19:00")
+        check_pair(TimeOfDay2, ((19 * 60 + 30) << 16) + 5 * 60 + 23, "5:23-19:30")
+
+        for val in [0x02520143, 0x04160318, 0x05120445]:
+            check_round_trip(TimeOfDay2, val)
