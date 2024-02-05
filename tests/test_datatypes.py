@@ -254,7 +254,7 @@ class TestScalingBaseChild:
         assert a.to_heatpump(0) == 0
         assert a.to_heatpump(26) == 2
         assert a.to_heatpump(40) == 3
-        assert a.to_heatpump(-100) == -7
+        assert a.to_heatpump(-100) == -8
 
 
 class TestCelsius:
