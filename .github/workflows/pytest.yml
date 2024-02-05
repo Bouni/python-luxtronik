@@ -4,13 +4,15 @@ on: # yamllint disable-line rule:truthy
   push:
     branches:
       - main
-  pull_request_target:
+  pull_request:
 jobs:
   pytest:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Print branch name
+        run: echo The current branch is ${GITHUB_REF##*/}
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
