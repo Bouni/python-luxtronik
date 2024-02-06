@@ -5,11 +5,13 @@ on: # yamllint disable-line rule:truthy
     branches:
       - main
   pull_request:
+    branches:
+      - main
 jobs:
   pytest:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
+    # permissions:
+    #   pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -30,5 +32,6 @@ jobs:
       - name: Publish pytest coverage as comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           pytest-coverage-path: ./pytest-coverage.txt
           junitxml-path: ./pytest.xml
