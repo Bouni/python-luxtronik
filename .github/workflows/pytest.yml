@@ -32,6 +32,6 @@ jobs:
       - name: Publish pytest coverage as comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           pytest-coverage-path: ./pytest-coverage.txt
           junitxml-path: ./pytest.xml
