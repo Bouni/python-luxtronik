@@ -5,18 +5,12 @@ on: # yamllint disable-line rule:truthy
     branches:
       - main
   pull_request:
-    branches:
-      - main
 jobs:
   pytest:
     runs-on: ubuntu-latest
-    # permissions:
-    #   pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Print branch name
-        run: echo The current branch is ${GITHUB_REF##*/}
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -29,9 +23,13 @@ jobs:
           set -o pipefail
           PYTHONPATH=. pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=luxtronik tests/ | tee pytest-coverage.txt
         # yamllint enable rule:line-length
-      - name: Publish pytest coverage as comment
-        uses: MishaKav/pytest-coverage-comment@main
+      - name: Save PR number and coverage results
+        run: |
+          mkdir -p ./pr
+          echo ${{ github.event.number }} > ./pr/PR-number.txt
+          cp ./pytest-coverage.txt ./pr/pytest-coverage.txt
+          cp ./pytest.xml ./pr/pytest.xml
+      - uses: actions/upload-artifact@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          pytest-coverage-path: ./pytest-coverage.txt
-          junitxml-path: ./pytest.xml
+          name: pr
+          path: pr/
