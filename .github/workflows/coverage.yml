@@ -1,0 +1,50 @@
+---
+name: Comment coverage report on the pull request
+on: # yamllint disable-line rule:truthy
+  workflow_run:
+    workflows: ["pytest"]
+    types:
+      - completed
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success'
+    steps:
+      - name: 'Download artifact'
+        uses: actions/github-script@v3.1.0
+        # yamllint disable rule:line-length
+        with:
+          script: |
+            var artifacts = await github.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: ${{github.event.workflow_run.id }},
+            });
+            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr"
+            })[0];
+            var download = await github.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: matchArtifact.id,
+               archive_format: 'zip',
+            });
+            var fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(download.data));
+        # yamllint enable rule:line-length
+      - name: Unzip artifact
+        run: unzip pr.zip
+      - name: Read the PR number from file
+        id: pr_number
+        uses: juliangruber/read-file-action@v1.1.7
+        with:
+          path: ./PR-number.txt
+      - name: Publish pytest coverage as comment
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          issue-number: ${{ steps.pr_number.outputs.content }}
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest.xml
