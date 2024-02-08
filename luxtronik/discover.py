@@ -5,17 +5,12 @@ from __future__ import annotations
 import logging
 import socket
 
-# List of ports that are known to respond to discovery packets
-LUXTRONIK_DISCOVERY_PORTS = [4444, 47808]
-
-# Time (in seconds) to wait for response after sending discovery broadcast
-LUXTRONIK_DISCOVERY_TIMEOUT = 2
-
-# Content of packet that will be sent for discovering heat pumps
-LUXTRONIK_DISCOVERY_MAGIC_PACKET = "2000;111;1;\x00"
-
-# Content of response that is contained in responses to discovery broadcast
-LUXTRONIK_DISCOVERY_RESPONSE_PREFIX = "2500;111;"
+from constants import (
+    LUXTRONIK_DISCOVERY_PORTS,
+    LUXTRONIK_DISCOVERY_TIMEOUT,
+    LUXTRONIK_DISCOVERY_MAGIC_PACKET,
+    LUXTRONIK_DISCOVERY_RESPONSE_PREFIX,
+)
 
 LOGGER = logging.getLogger("Luxtronik.Discover")
 
@@ -35,9 +30,7 @@ def discover() -> list[tuple[str, int | None]]:
 
         # send AIT magic broadcast packet
         server.sendto(LUXTRONIK_DISCOVERY_MAGIC_PACKET.encode(), ("<broadcast>", port))
-        LOGGER.debug(
-            "Sending broadcast request %s", LUXTRONIK_DISCOVERY_MAGIC_PACKET.encode()
-        )
+        LOGGER.debug("Sending broadcast request %s", LUXTRONIK_DISCOVERY_MAGIC_PACKET.encode())
 
         while True:
             try:
@@ -50,9 +43,7 @@ def discover() -> list[tuple[str, int | None]]:
                 # if the response starts with the magic nonsense
                 if res.startswith(LUXTRONIK_DISCOVERY_RESPONSE_PREFIX):
                     res_list = res.split(";")
-                    LOGGER.debug(
-                        "Received response from %s %s", ip_address, str(res_list)
-                    )
+                    LOGGER.debug("Received response from %s %s", ip_address, str(res_list))
                     try:
                         res_port: int | None = int(res_list[2])
                         if res_port is None or res_port < 1 or res_port > 65535:
