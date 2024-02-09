@@ -153,7 +153,9 @@ class TestBase:
     def test_eq(self):
         """Test cases for __eq__ function"""
 
-        pytest.skip("Not yet implemented")
+        a = Base("base")
+        b = Base("base")
+        assert a == b
 
     def test_lt(self):
         """Test cases for __lt__ function"""
