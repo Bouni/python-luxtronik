@@ -116,6 +116,20 @@ class TestBase:
         a.value = 1
         assert a._raw == 1
 
+    def test_raw_property(self):
+        """Test case for raw property"""
+
+        a = Base("base")
+        a._raw = 1
+        assert a.raw == 1
+
+    def test_raw_setter(self):
+        """Test case for the raw setter"""
+
+        a = Base("base")
+        a.raw = 1
+        assert a._raw == 1
+
     def test_repr(self):
         """Test cases for __repr__ function"""
 
