@@ -142,7 +142,13 @@ class TestBase:
     def test_str(self):
         """Test cases for __str__ function"""
 
-        pytest.skip("Not yet implemented")
+        a = Base("base")
+        a.value = 1
+        assert a.__str__() == "1"
+
+        b = Base("base")
+        b.value = None
+        assert b.__str__() == "None"
 
     def test_eq(self):
         """Test cases for __eq__ function"""
