@@ -156,6 +156,10 @@ class TestBase:
         b = Base("base")
         assert a == b
 
+        c = Base("base")
+        d = Bool("bool")
+        assert c != d
+
     def test_lt(self):
         """Test cases for __lt__ function"""
 
