@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 import socket
 
-from constants import (
+from luxtronik.constants import (
     LUXTRONIK_DISCOVERY_PORTS,
     LUXTRONIK_DISCOVERY_TIMEOUT,
     LUXTRONIK_DISCOVERY_MAGIC_PACKET,
