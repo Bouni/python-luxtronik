@@ -94,7 +94,7 @@ class TestBase:
 
         assert Base.to_heatpump(1) == 1
 
-    def test_value(self):
+    def test_value_property(self):
         """Test case for raw value property"""
 
         a = Base("base")
@@ -108,6 +108,13 @@ class TestBase:
         c = Base("base")
         c._raw = "c"
         assert c.value == "c"
+
+    def test_value_setter(self):
+        """Test case for the value setter"""
+
+        a = Base("base")
+        a.value = 1
+        assert a._raw == 1
 
     def test_repr(self):
         """Test cases for __repr__ function"""
