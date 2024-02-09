@@ -95,7 +95,7 @@ class TestBase:
         assert Base.to_heatpump(1) == 1
 
     def test_value_property(self):
-        """Test case for raw value property"""
+        """Test case for value property"""
 
         a = Base("base")
         a._raw = 1
