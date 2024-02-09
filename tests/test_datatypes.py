@@ -3,7 +3,6 @@
 # pylint: disable=too-few-public-methods,invalid-name,too-many-lines
 
 import datetime
-import pytest
 
 from luxtronik.datatypes import (
     Base,
@@ -160,7 +159,12 @@ class TestBase:
     def test_lt(self):
         """Test cases for __lt__ function"""
 
-        pytest.skip("Not yet implemented")
+        a = Base("base")
+        a.value = 1
+        b = Base("base")
+        b.value = 2
+        assert a < b
+        assert not (b < a)
 
     # TODO: Test stability of converting back and forth, i.e.
     # luxtronik.datatypes.Celsius("").from_heatpump(luxtronik.datatypes.Celsius("").to_heatpump(0.11))
