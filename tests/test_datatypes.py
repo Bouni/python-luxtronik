@@ -94,6 +94,21 @@ class TestBase:
 
         assert Base.to_heatpump(1) == 1
 
+    def test_value(self):
+        """Test case for raw value property"""
+
+        a = Base("base")
+        a._raw = 1
+        assert a.value == 1
+
+        b = Base("base")
+        b._raw = True
+        assert b.value is True
+
+        c = Base("base")
+        c._raw = "c"
+        assert c.value == "c"
+
     def test_repr(self):
         """Test cases for __repr__ function"""
 
