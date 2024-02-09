@@ -133,7 +133,11 @@ class TestBase:
     def test_repr(self):
         """Test cases for __repr__ function"""
 
-        pytest.skip("Not yet implemented")
+        a = Base("base")
+        a.value = 1
+        a.raw = 1
+
+        assert a.__repr__() == "Base (name: base, writeable: False, value: 1, raw: 1, class: None, unit: None)"
 
     def test_str(self):
         """Test cases for __str__ function"""
