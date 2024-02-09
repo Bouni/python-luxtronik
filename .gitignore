@@ -108,3 +108,6 @@ tmp
 notes.txt
 
 pypi.sh
+
+pytest.xml
+pytest-coverage.txt
