@@ -53,26 +53,37 @@ The following example reads in data from the heat pump:
 from luxtronik import Luxtronik
 
 l = Luxtronik('192.168.1.23', 8889)
-calculations, parameters, visibilities = l.read()
+heating_limit = l.parameters.get("ID_Einst_Heizgrenze_Temp")
 
-t_forerun = calculations.get("ID_WEB_Temperatur_TVL")
+# Do something else here...
+
+# Read the values again
+l.read()
+t_forerun = l.calculations.get("ID_WEB_Temperatur_TVL")
+t_outside = l.calculations.get("ID_WEB_Temperatur_TA")
 
 # alternatively get also works with numerical ID values
-
-t_forerun = calculations.get(10)
+t_forerun = l.calculations.get(10)
 
 print(t_forerun) # this returns the temperature value of the forerun, 22.7 for example
 print(t_forerun.unit) # gives you the unit of the value if known, °C for example
 
 # calculations holds measurement values
-# check https://github.com/Bouni/luxtronik/blob/master/luxtronik/calculations.py for values you might need
+# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/calculations.py for values you might need
 
 # parameters holds parameter values
-# check https://github.com/Bouni/luxtronik/blob/master/luxtronik/parameters.py for values you might need
+# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/parameters.py for values you might need
 
 # visibilitys holds visibility values, the function of visibilities is not clear at this point
-# check https://github.com/Bouni/luxtronik/blob/master/luxtronik/visibilities.py for values you might need
+# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/visibilities.py for values you might need
 ```
+
+The method `read()` reads the calculations, parameters and
+visibilities from the heat pump.
+Alternatively `read_parameters()`, `read_calculations()` or `read_visibilities()`
+can be used.
+
+Note that an initial read operation is carried out in the constructor.
 
 ### SCRIPTS AND COMMAND LINE INTERFACE (CLI)
 
@@ -188,8 +199,16 @@ from luxtronik import Luxtronik, Parameters
 
 l = Luxtronik('192.168.1.23', 8889)
 
+# Queue a parameter change
+# In this example, the domestic hot water temperature is set to 45 degrees.
+l.parameters.set("ID_Soll_BWS_akt", 45.0)
+
+# Write all queued changes to the heat pump
+l.write()
+
+# Another possibility to write parameters
 parameters = Parameters()
-heating_mode = parameters.set("ID_Ba_Hz_akt", "Party")
+parameters.set("ID_Ba_Hz_akt", "Party")
 l.write(parameters)
 
 # If you're not sure what values to write, you can get all available options:
