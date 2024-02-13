@@ -210,12 +210,11 @@ from luxtronik import Luxtronik
 l = Luxtronik('192.168.1.23', 8889, safe=False)
 ```
 
-**CAUTION:** The heat pump controller uses a NAND memory chip which has a
-limited number of erase cycles.
-Since every change of the parameter induces some file changes on the
-controller, frequent parameter changes
-may limit the lifetime of your heat pump, see the discussions in
-[issue 158](https://github.com/Bouni/python-luxtronik/issues/158).
+**NOTE:** The heat pump controller uses a NAND memory chip as persistent storage.
+This technology has only a limited number of erase cycles.
+Every change of a parameter will eventually induce some file changes on the controller,
+hence **frequent parameter changes may limit the lifetime of your heat pump**.
+For further details refer to [this discussion](https://github.com/Bouni/python-luxtronik/issues/158).
 
 ## CONTRIBUTION
 
