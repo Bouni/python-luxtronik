@@ -3,7 +3,6 @@
 # pylint: disable=too-few-public-methods,invalid-name,too-many-lines
 
 import datetime
-import pytest
 
 from luxtronik.datatypes import (
     Base,
@@ -87,32 +86,81 @@ class TestBase:
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        assert Base.from_heatpump(1) == 1
+        assert Base.from_heatpump(23) == 23
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Base.to_heatpump(1) == 1
+        assert Base.to_heatpump(42) == 42
+
+    def test_value_property(self):
+        """Test case for value property"""
+
+        a = Base("base")
+        a._raw = 19
+        assert a.value == 19
+
+    def test_value_setter(self):
+        """Test case for the value setter"""
+
+        a = Base("base")
+        a.value = 33
+        assert a._raw == 33
+
+    def test_raw_property(self):
+        """Test case for raw property"""
+
+        a = Base("base")
+        a._raw = 45
+        assert a.raw == 45
+
+    def test_raw_setter(self):
+        """Test case for the raw setter"""
+
+        a = Base("base")
+        a.raw = 6699
+        assert a._raw == 6699
 
     def test_repr(self):
         """Test cases for __repr__ function"""
 
-        pytest.skip("Not yet implemented")
+        a = Base("base")
+        a.value = 123
+        a.raw = 123
+
+        assert a.__repr__() == "Base (name: base, writeable: False, value: 123, raw: 123, class: None, unit: None)"
 
     def test_str(self):
         """Test cases for __str__ function"""
 
-        pytest.skip("Not yet implemented")
+        a = Base("base")
+        a.value = 99
+        assert a.__str__() == "99"
+
+        b = Base("base")
+        b.value = None
+        assert b.__str__() == "None"
 
     def test_eq(self):
         """Test cases for __eq__ function"""
 
-        pytest.skip("Not yet implemented")
+        a = Base("base")
+        b = Base("base")
+        assert a == b
+
+        c = Base("base")
+        d = Bool("bool")
+        assert c != d
 
     def test_lt(self):
         """Test cases for __lt__ function"""
 
-        pytest.skip("Not yet implemented")
+        a = Base("base")
+        a.value = 1
+        b = Base("base")
+        b.value = 2
+        assert a < b
+        assert not (b < a)
 
     # TODO: Test stability of converting back and forth, i.e.
     # luxtronik.datatypes.Celsius("").from_heatpump(luxtronik.datatypes.Celsius("").to_heatpump(0.11))
