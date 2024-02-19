@@ -106,7 +106,7 @@ luxtronik dump 192.168.178.123 8889
 or call the script that comes with the python package:
 
 ```python
-PYTHONPATH=. ./scripts/dump_luxtronik.py 192.168.178.123 8889
+PYTHONPATH=. ./luxtronik/scripts/dump_luxtronik.py 192.168.178.123 8889
 ```
 
 The output of this script can be used to backup all values (e.g. before
@@ -158,7 +158,7 @@ luxtronik changes 192.168.178.123 8889
 Alternatively, it can be invoked directly:
 
 ```python
-PYTHONPATH=. ./scripts/dump_changes.py 192.168.178.123 8889
+PYTHONPATH=. ./luxtronik/scripts/dump_changes.py 192.168.178.123 8889
 ```
 
 You'll get a list of all values as they change:
