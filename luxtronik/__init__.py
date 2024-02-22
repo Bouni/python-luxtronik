@@ -62,6 +62,9 @@ class LuxtronikData:
         self.calculations = Calculations() if calculations is None else calculations
         self.visibilities = Visibilities() if visibilities is None else visibilities
 
+    def get_firmware_version(self):
+        return "".join([self.calculations.get(i).value for i in range(81, 91)])
+
 
 class LuxtronikSocketInterface:
     """Luxtronik read/write interface via socket."""
