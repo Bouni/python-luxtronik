@@ -3,6 +3,11 @@
 import logging
 
 from luxtronik.datatypes import Unknown
+from luxtronik.compatibilities import LUXTRONIK_COMPATIBILITIES, LUXTRONIK_OBSOLETE
+
+
+class ObsoleteKeyError(Exception):
+    pass
 
 
 class DataVector:
@@ -46,6 +51,14 @@ class DataVector:
             except ValueError:
                 # Get entry by name
                 target_index = None
+
+            if target_index is None:
+                # Resolve compatibility mapping
+                target = LUXTRONIK_COMPATIBILITIES.get(target, target)
+
+                if target in LUXTRONIK_OBSOLETE:
+                    raise ObsoleteKeyError(LUXTRONIK_OBSOLETE[target])
+
                 for index, entry in self._data.items():
                     if entry.name == target:
                         target_index = index
