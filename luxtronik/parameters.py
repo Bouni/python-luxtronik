@@ -1206,8 +1206,6 @@ class Parameters(DataVector):
             if parameter.writeable or not self.safe:
                 self.queue[index] = parameter.to_heatpump(value)
             else:
-                self.logger.warning(
-                    "Parameter '%s' not safe for writing!", parameter.name
-                )
+                self.logger.warning("Parameter '%s' not safe for writing!", parameter.name)
         else:
             self.logger.warning("Parameter '%s' not found", target)
