@@ -289,7 +289,7 @@ class Luxtronik(LuxtronikData):
         return self.interface.read_calculations(self.calculations)
 
     def read_visibilities(self):
-        return self.interface.read_visibilities(self.visibilites)
+        return self.interface.read_visibilities(self.visibilities)
 
     def write(self, parameters=None):
         if parameters is None:
