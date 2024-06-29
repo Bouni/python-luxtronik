@@ -4,7 +4,11 @@ import logging
 
 from luxtronik.data_vector import DataVector
 
-from luxtronik.datatypes import Unknown
+from luxtronik.datatypes import (
+    Unknown,
+    Celsius
+)
+
 
 
 class Visibilities(DataVector):
@@ -39,24 +43,24 @@ class Visibilities(DataVector):
             20: Unknown("ID_Visi_Service_Anlagenkonfiguration"),
             21: Unknown("ID_Visi_Service_IBNAssistant"),
             22: Unknown("ID_Visi_Service_ParameterIBNZuruck"),
-            23: Unknown("ID_Visi_Temp_Vorlauf"),
-            24: Unknown("ID_Visi_Temp_Rucklauf"),
-            25: Unknown("ID_Visi_Temp_RL_Soll"),
-            26: Unknown("ID_Visi_Temp_Ruecklext"),
-            27: Unknown("ID_Visi_Temp_Heissgas"),
-            28: Unknown("ID_Visi_Temp_Aussent"),
-            29: Unknown("ID_Visi_Temp_BW_Ist"),
-            30: Unknown("ID_Visi_Temp_BW_Soll"),
-            31: Unknown("ID_Visi_Temp_WQ_Ein"),
-            32: Unknown("ID_Visi_Temp_Kaltekreis"),
-            33: Unknown("ID_Visi_Temp_MK1_Vorlauf"),
-            34: Unknown("ID_Visi_Temp_MK1VL_Soll"),
-            35: Unknown("ID_Visi_Temp_Raumstation"),
-            36: Unknown("ID_Visi_Temp_MK2_Vorlauf"),
-            37: Unknown("ID_Visi_Temp_MK2VL_Soll"),
-            38: Unknown("ID_Visi_Temp_Solarkoll"),
-            39: Unknown("ID_Visi_Temp_Solarsp"),
-            40: Unknown("ID_Visi_Temp_Ext_Energ"),
+            23: Celsius("ID_Visi_Temp_Vorlauf"),
+            24: Celsius("ID_Visi_Temp_Rucklauf"),
+            25: Celsius("ID_Visi_Temp_RL_Soll"),
+            26: Celsius("ID_Visi_Temp_Ruecklext"),
+            27: Celsius("ID_Visi_Temp_Heissgas"),
+            28: Celsius("ID_Visi_Temp_Aussent"),
+            29: Celsius("ID_Visi_Temp_BW_Ist"),
+            30: Celsius("ID_Visi_Temp_BW_Soll"),
+            31: Celsius("ID_Visi_Temp_WQ_Ein"),
+            32: Celsius("ID_Visi_Temp_Kaltekreis"),
+            33: Celsius("ID_Visi_Temp_MK1_Vorlauf"),
+            34: Celsius("ID_Visi_Temp_MK1VL_Soll"),
+            35: Celsius("ID_Visi_Temp_Raumstation"),
+            36: Celsius("ID_Visi_Temp_MK2_Vorlauf"),
+            37: Celsius("ID_Visi_Temp_MK2VL_Soll"),
+            38: Celsius("ID_Visi_Temp_Solarkoll"),
+            39: Celsius("ID_Visi_Temp_Solarsp"),
+            40: Celsius("ID_Visi_Temp_Ext_Energ"),
             41: Unknown("ID_Visi_IN_ASD"),
             42: Unknown("ID_Visi_IN_BWT"),
             43: Unknown("ID_Visi_IN_EVU"),
