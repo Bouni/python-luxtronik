@@ -205,11 +205,7 @@ class LuxtronikSocketInterface:
         length = self._read_int()
         LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
-            try:
-                data.append(self._read_int())
-            except struct.error as err:
-                # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug("%s: %s", self._host, err)
+            data.append(self._read_int())
         LOGGER.info("%s: Read %d parameters", self._host, length)
         parameters.parse(data)
         return parameters
@@ -224,11 +220,7 @@ class LuxtronikSocketInterface:
         length = self._read_int()
         LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
-            try:
-                data.append(self._read_int())
-            except struct.error as err:
-                # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug("%s: %s", self._host, err)
+            data.append(self._read_int())
         LOGGER.info("%s: Read %d calculations", self._host, length)
         calculations.parse(data)
         return calculations
@@ -241,11 +233,7 @@ class LuxtronikSocketInterface:
         length = self._read_int()
         LOGGER.debug("%s: Length %s", self._host, length)
         for _ in range(0, length):
-            try:
-                data.append(self._read_char())
-            except struct.error as err:
-                # not logging this as error as it would be logged on every read cycle
-                LOGGER.debug("%s: %s", self._host, err)
+            data.append(self._read_char())
         LOGGER.info("%s: Read %d visibilities", self._host, length)
         visibilities.parse(data)
         return visibilities
@@ -256,14 +244,29 @@ class LuxtronikSocketInterface:
         LOGGER.debug("%s: sending %s", self._host, data)
         self._socket.sendall(data)
 
+    def _read_bytes(self, count):
+        "Low-level helper to receive a precise number of bytes"
+        total_reading = b""
+
+        while len(total_reading) is not count:
+            missing = count - len(total_reading)
+
+            reading = self._socket.recv( missing )
+            total_reading += reading
+
+            if len(reading) is not missing:
+                LOGGER.debug("%s: received %s bytes out of %s bytes. Will read again.", self._host, len(reading), missing)
+
+        return total_reading
+
     def _read_int(self):
         "Low-level helper to receive an int"
-        reading = self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_INTEGER)
+        reading = self._read_bytes(LUXTRONIK_SOCKET_READ_SIZE_INTEGER)
         return struct.unpack(">i", reading)[0]
 
     def _read_char(self):
         "Low-level helper to receive a signed int"
-        reading = self._socket.recv(LUXTRONIK_SOCKET_READ_SIZE_CHAR)
+        reading = self._read_bytes(LUXTRONIK_SOCKET_READ_SIZE_CHAR)
         return struct.unpack(">b", reading)[0]
 
 
