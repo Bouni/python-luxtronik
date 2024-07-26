@@ -252,6 +252,11 @@ class LuxtronikSocketInterface:
             missing = count - len(total_reading)
 
             reading = self._socket.recv( missing )
+
+            if len(reading) == 0:
+                LOGGER.error("%s: Connection died.", self._host)
+                raise ConnectionError("Connection to %s died." % self._host)
+
             total_reading += reading
 
             if len(reading) is not missing:
