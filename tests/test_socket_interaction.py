@@ -152,11 +152,11 @@ class TestSocketInteraction:
             return not cp and not cc and not cv
 
     def check_data_vector(self, data_vector):
-        if type(data_vector) == Parameters:
+        if type(data_vector) is Parameters:
             fct = fake_parameter_value
-        elif type(data_vector) == Calculations:
+        elif type(data_vector) is Calculations:
             fct = fake_calculation_value
-        elif type(data_vector) == Visibilities:
+        elif type(data_vector) is Visibilities:
             fct = fake_visibility_value
         for idx, entry in data_vector:
             if entry.raw != fct(idx):
@@ -188,7 +188,7 @@ class TestSocketInteraction:
 
             # Read parameters
             p = lux.read_parameters()
-            assert type(p) == Parameters
+            assert type(p) is Parameters
             assert len(s._buffer) == 0
             assert self.check_data_vector(p)
 
@@ -197,7 +197,7 @@ class TestSocketInteraction:
 
             # Read parameters
             c = lux.read_calculations()
-            assert type(c) == Calculations
+            assert type(c) is Calculations
             assert len(s._buffer) == 0
             assert self.check_data_vector(c)
 
@@ -206,7 +206,7 @@ class TestSocketInteraction:
 
             # Read parameters
             v = lux.read_visibilities()
-            assert type(v) == Visibilities
+            assert type(v) is Visibilities
             assert len(s._buffer) == 0
             assert self.check_data_vector(v)
 
