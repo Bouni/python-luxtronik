@@ -666,17 +666,31 @@ class SwitchoffFile(SelectionBase):
     datatype_class = "selection"
 
     codes = {
-        1: "heatpump error",
-        2: "system error",
+        0: "heatpump error",
+        1: "system error",
+        2: "operation mode second heat generator",
         3: "evu lock",
-        4: "operation mode second heat generator",
         5: "air defrost",
         6: "maximal usage temperature",
         7: "minimal usage temperature",
         8: "lower usage limit",
         9: "no request",
+        10 : "external energy source",
         11: "flow rate",
+        12 : "low pressure pause",
+        13 : "superheating pause",
+        14 : "inverter pause",
+        15 : "desuperheater pause",
+        16 : "operation mode for switching over",
+        17 : "other shutdown",
+        18 : "min.flow cooling",
         19: "PV max",
+        20 : "hot gas pause",
+        21 : "overheating hot gas pause",
+        22 : "no request",
+        23 : "min. heat source out cooling",
+        24 : "LPC",
+        25 : "restart",
     }
 
 

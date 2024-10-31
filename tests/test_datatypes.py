@@ -1009,13 +1009,13 @@ class TestSwitchoffFile:
         assert a.name == "switchoff_file"
         assert a.datatype_class == "selection"
         assert a.datatype_unit is None
-        assert len(a.codes) == 11
+        assert len(a.codes) == 25
 
     def test_options(self):
         """Test cases for options property"""
 
         a = SwitchoffFile("")
-        assert len(a.options()) == 11
+        assert len(a.options()) == 25
         assert a.options() == list(a.codes.values())
 
 
