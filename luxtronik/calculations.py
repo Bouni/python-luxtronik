@@ -318,13 +318,17 @@ class Calculations(DataVector):
         }
 
     def get_firmware_version(self):
+        """Get the firmware version as string."""
         return "".join([super(Calculations, self).get(i).value for i in range(81, 91)])
 
     def _get_firmware_version(self):
+        """Get the firmware version as string like in previous versions."""
         return self.get_firmware_version().strip("\x00") 
 
     def get(self, target):
+        """Treats certain names specially. For all others, the function of the base class is called."""
         if target == "ID_WEB_SoftStand":
+            self.logger.debug("The name 'ID_WEB_SoftStand' is obsolete! Use 'get_firmware_version()' instead.")
             entry = Base("ID_WEB_SoftStand")
             entry.raw = self._get_firmware_version()
             return entry

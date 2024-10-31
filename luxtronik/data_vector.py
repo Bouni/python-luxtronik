@@ -47,8 +47,11 @@ class DataVector:
                 # Get entry by name
                 target_index = None
                 for index, entry in self._data.items():
-                    if target in entry.get_supported_names():
+                    check_result = entry.check_name(target)
+                    if check_result in ["preferred", "obsolete"]:
                         target_index = index
+                    if check_result == "obsolete":
+                        self.logger.debug(f"The name '{target}' is obsolete! Use '{entry.name}' instead.")
         elif isinstance(target, int):
             # Get entry by id
             target_index = target

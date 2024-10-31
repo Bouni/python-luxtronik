@@ -47,6 +47,18 @@ class Base:
         else:
             return [self._name]
 
+    def check_name(self, name):
+        """
+        Check whether a name matches one of the supported entry names. 
+        The result string can be used to trigger a debug message for obsolete names.
+        """
+        if name == self.name:
+            return "preferred"
+        elif name in self.get_supported_names():
+            return "obsolete"
+        else:
+            return "none"
+
     @property
     def value(self):
         """Return the stored value converted from heatpump units."""
