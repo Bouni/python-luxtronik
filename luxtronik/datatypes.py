@@ -19,7 +19,7 @@ class Base:
         # save the raw value only since the user value
         # could be build at any time
         self._raw = None
-        self.name = name
+        self._name = name
         self.writeable = writeable
 
     @classmethod
@@ -31,6 +31,33 @@ class Base:
     def from_heatpump(cls, value):
         """Converts value from heatpump units."""
         return value
+
+    @property
+    def name(self):
+        """Return the (most common) name of the entry."""
+        if isinstance(self._name, list):
+            return self._name[0]
+        else:
+            return self._name
+
+    def get_supported_names(self):
+        """Return a list of all supported entry names."""
+        if isinstance(self._name, list):
+            return self._name
+        else:
+            return [self._name]
+
+    def check_name(self, name):
+        """
+        Check whether a name matches one of the supported entry names. 
+        The result string can be used to trigger a debug message for obsolete names.
+        """
+        if name == self.name:
+            return "preferred"
+        elif name in self.get_supported_names():
+            return "obsolete"
+        else:
+            return "none"
 
     @property
     def value(self):
