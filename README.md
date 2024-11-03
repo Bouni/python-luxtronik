@@ -37,7 +37,7 @@ pip install luxtronik
 Afterwards the module can be used like any other Python module, i.e. it can
 be imported via `import luxtronik` from your Python scripts.
 
-If you want to install he latest version from the git repo you can do that
+If you want to install the latest version from the git repo you can do that
 with the following command:
 
 ```shell
