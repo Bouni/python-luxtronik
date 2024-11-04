@@ -1,0 +1,42 @@
+"""Compatibility mappings for the luxtronik module"""
+
+LUXTRONIK_COMPATIBILITIES = {
+    "Unknown_Parameter_1092": "ID_Einst_SuSilence",
+    "Unknown_Parameter_1093": "ID_Einst_SilenceTimer_0",
+    "Unknown_Parameter_1094": "ID_Einst_SilenceTimer_1",
+    "Unknown_Parameter_1095": "ID_Einst_SilenceTimer_2",
+    "Unknown_Parameter_1096": "ID_Einst_SilenceTimer_3",
+    "Unknown_Parameter_1097": "ID_Einst_SilenceTimer_4",
+    "Unknown_Parameter_1098": "ID_Einst_SilenceTimer_5",
+    "Unknown_Parameter_1099": "ID_Einst_SilenceTimer_6",
+    "Unknown_Parameter_1100": "ID_Einst_SilenceTimer_7",
+    "Unknown_Parameter_1101": "ID_Einst_SilenceTimer_8",
+    "Unknown_Parameter_1102": "ID_Einst_SilenceTimer_9",
+    "Unknown_Parameter_1103": "ID_Einst_SilenceTimer_10",
+    "Unknown_Parameter_1104": "ID_Einst_SilenceTimer_11",
+    "Unknown_Parameter_1105": "ID_Einst_SilenceTimer_12",
+    "Unknown_Parameter_1106": "ID_Einst_SilenceTimer_13",
+    "Unknown_Parameter_1107": "ID_Einst_SilenceTimer_14",
+    "Unknown_Parameter_1108": "ID_Einst_SilenceTimer_15",
+    "Unknown_Parameter_1109": "ID_Einst_SilenceTimer_16",
+    "Unknown_Parameter_1110": "ID_Einst_SilenceTimer_17",
+    "Unknown_Parameter_1111": "ID_Einst_SilenceTimer_18",
+    "Unknown_Parameter_1112": "ID_Einst_SilenceTimer_19",
+    "Unknown_Parameter_1113": "ID_Einst_SilenceTimer_20",
+    "Unknown_Calculation_232": "Vapourisation_Temperature",
+    "Unknown_Calculation_233": "Liquefaction_Temperature",
+    "Unknown_Calculation_236": "ID_WEB_Freq_VD_Soll",
+    "Unknown_Calculation_237": "ID_WEB_Freq_VD_Min",
+    "Unknown_Calculation_238": "ID_WEB_Freq_VD_Max",
+    "Unknown_Calculation_239": "VBO_Temp_Spread_Soll",
+    "Unknown_Calculation_240": "VBO_Temp_Spread_Ist",
+    "Circulation_Pump": "HUP_PWM",
+    "Unknown_Calculation_242": "HUP_Temp_Spread_Soll",
+    "Unknown_Calculation_243": "HUP_Temp_Spread_Ist",
+    "Unknown_Calculation_258": "RBE_Version",
+    "ID_Visi_Heizung_Zeitschlaltprogramm": "ID_Visi_Heizung_Zeitschaltprogramm",
+}
+
+LUXTRONIK_OBSOLETE = {
+    "ID_WEB_SoftStand": '"ID_WEB_SoftStand" is deprecated. Use "get_firmware_version()" of Luxtronik class.',
+}
