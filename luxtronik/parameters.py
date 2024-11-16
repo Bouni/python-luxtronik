@@ -1199,6 +1199,10 @@ class Parameters(DataVector):
             1152: Unknown("Unknown_Parameter_1152"),
         }
 
+    @property
+    def parameters(self):
+        return self._data
+
     def set(self, target, value):
         """Set parameter to new value."""
         index, parameter = self._lookup(target, with_index=True)

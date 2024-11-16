@@ -397,3 +397,7 @@ class Visibilities(DataVector):
             378: Unknown(["Unknown_Visibility_378", "Unknown_Parameter_378"]),
             379: Unknown(["Unknown_Visibility_379", "Unknown_Parameter_379"]),
         }
+
+    @property
+    def visibilities(self):
+        return self._data
