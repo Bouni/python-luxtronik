@@ -63,7 +63,7 @@ class LuxtronikData:
         self.visibilities = Visibilities() if visibilities is None else visibilities
 
     def get_firmware_version(self):
-        return "".join([self.calculations.get(i).value for i in range(81, 91)])
+        return self.calculations.get_firmware_version()
 
 
 class LuxtronikSocketInterface:

@@ -19,7 +19,11 @@ class Base:
         # save the raw value only since the user value
         # could be build at any time
         self._raw = None
-        self.name = name
+        if isinstance(name, list):
+            self._names = name
+        else:
+            self._names = [name]
+        assert len(self._names) > 0 , "At least one name is required"
         self.writeable = writeable
 
     @classmethod
@@ -31,6 +35,27 @@ class Base:
     def from_heatpump(cls, value):
         """Converts value from heatpump units."""
         return value
+
+    @property
+    def name(self):
+        """Return the (most common) name of the entry."""
+        return self._names[0]
+
+    def get_supported_names(self):
+        """Return a list of all supported entry names."""
+        return self._names
+
+    def check_name(self, name):
+        """
+        Check whether a name matches one of the supported entry names. 
+        The result string can be used to trigger a debug message for obsolete names.
+        """
+        if name == self.name:
+            return "preferred"
+        elif name in self.get_supported_names():
+            return "obsolete"
+        else:
+            return "none"
 
     @property
     def value(self):
