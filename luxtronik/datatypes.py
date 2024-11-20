@@ -4,6 +4,12 @@ import datetime
 import socket
 import struct
 
+from luxtronik.constants import (
+    LUXTRONIK_NAME_CHECK_NONE,
+    LUXTRONIK_NAME_CHECK_PREFERRED,
+    LUXTRONIK_NAME_CHECK_OBSOLETE,
+)
+
 from functools import total_ordering
 
 
@@ -14,12 +20,17 @@ class Base:
     datatype_class = None
     datatype_unit = None
 
-    def __init__(self, name, writeable=False):
+    def __init__(self, names, writeable=False):
         """Initialize the base data field class. Set the initial raw value to None"""
         # save the raw value only since the user value
         # could be build at any time
         self._raw = None
-        self.name = name
+        if isinstance(names, list):
+            self._names = names
+        else:
+            self._names = [names]
+        assert len(self._names) > 0, "At least one name is required"
+        assert all(isinstance(name, str) for name in self._names), "Names must be strings"
         self.writeable = writeable
 
     @classmethod
@@ -31,6 +42,23 @@ class Base:
     def from_heatpump(cls, value):
         """Converts value from heatpump units."""
         return value
+
+    @property
+    def name(self):
+        """Return the (most common) name of the entry."""
+        return self._names[0]
+
+    def check_name(self, name):
+        """
+        Check whether a name matches one of the supported entry names.
+        The result string can be used to trigger a exception for obsolete names.
+        """
+        if name == self.name:
+            return LUXTRONIK_NAME_CHECK_PREFERRED
+        elif name in self._names:
+            return LUXTRONIK_NAME_CHECK_OBSOLETE
+        else:
+            return LUXTRONIK_NAME_CHECK_NONE
 
     @property
     def value(self):
