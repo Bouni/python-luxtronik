@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>python-luxtronik docs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-body">
+          <p class="title">python-luxtronik docs</p>
+          <p class="subtitle">
+            Latest info about calculations, parameters and visibilities of
+            python-luxtronik
+          </p>
+        </div>
+      </section>
+      <section>
+        <input class="input search" type="text" placeholder="Search" />
+      </section>
+      {% for group, items in data.items() %}
+      <section class="section">
+        <h1 class="title" id="{{ group }}">
+          <a href="#{{group}}">{{ group.capitalize() }}</a>
+        </h1>
+        <div class="columns is-multiline">
+          {% for item in items %}
+          <div
+            class="column is-full item"
+            data-name="{{ item.name }}"
+            data-number="{{ item.number }}"
+            data-type="{{ item.type }}"
+          >
+            <div class="card" id="{{ group }}-{{ item.name }}">
+              <div class="card-content">
+                <p class="title is-4">
+                  <a href="#{{ group }}-{{ item.name }}">{{ item.name }}</a>
+                </p>
+                <div class="content">
+                  <p>Group: {{ group }}</p>
+                  <p>Name: {{ item.name }}</p>
+                  <p>Number: {{ item.number }}</p>
+                  <p>Type: {{ item.type }}</p>
+                  <div>
+                    <p class="title is-6">
+                      Usage example in Home-Assitant config:
+                    </p>
+                    <pre>
+<!--               -->sensor:
+<!--               -->  - platform: luxtronik
+<!--               -->    sensors:
+<!--               -->      - group: {{ group }}
+<!--               -->        id: {{ item.name }}
+                    </pre>
+
+                    <p>or</p>
+
+                    <pre>
+<!--               -->sensor:
+<!--               -->  - platform: luxtronik
+<!--               -->    sensors:
+<!--               -->      - group: {{ group }}
+<!--               -->        id: {{ item.number }}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    <script lang="javascript">
+      const searchbar = document.querySelector(".search");
+
+      searchbar.addEventListener("keyup", () => {
+        let searchword = searchbar.value.toString().toLowerCase();
+        if (searchword.length < 1) {
+          let items = document.querySelectorAll(".item");
+          Array.from(items, (el) => {
+            el.style.display = "block";
+          });
+        } else {
+          let items = document.querySelectorAll(".item");
+          Array.from(items, (el) => {
+            if (
+              !el.dataset.type.toLowerCase().includes(searchword) &&
+              !el.dataset.number.toString().toLowerCase().includes(searchword) &&
+              !el.dataset.name.toLowerCase().includes(searchword)
+            ) {
+              el.style.display = "none";
+            } else {
+              el.style.display = "block";
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
