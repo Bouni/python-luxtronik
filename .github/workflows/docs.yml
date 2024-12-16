@@ -31,6 +31,7 @@ jobs:
         run: |
           uv venv
           uv pip install jinja2
+          uv pip install -e .
       - name: Generate docs
         run: uv run python .github/workflows/scripts/docs/gen-docs.py
       - name: Setup Pages
