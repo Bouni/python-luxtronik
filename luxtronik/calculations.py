@@ -314,4 +314,5 @@ class Calculations(DataVector):
             265: Unknown("Unknown_Calculation_265"),
             266: Unknown("Unknown_Calculation_266"),
             267: Celsius("Desired_Room_Temperature"),
+            268: Power("AC_Power_Input")
         }
