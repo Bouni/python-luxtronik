@@ -846,6 +846,105 @@ class TimeOfDay2(Base):
 
         return val
 
+class HeatPumpState(SelectionBase):
+    """HeatPumpState datatype, converts from and to list of HeatPumpState codes."""
+
+    datatype_class = "selection"
+
+    codes = {
+        0: "Idle",     # Heatpump is idle
+        1: "Running",  # Heatpump is running
+    }
+
+class ModeState(SelectionBase):
+    """ModeState datatype, converts from and to list of ModeState codes."""
+
+    datatype_class = "selection"
+
+    codes = {
+        0: "Disabled",    # Heating / Hot water is disabled
+        1: "No request",  # Heating / Hot water currently not requested
+        2: "Requested",   # Heating / Hot water requested but currently not running
+        3: "Running",     # Heating / Hot water running
+    }
+
+class ControlMode(SelectionBase):
+    """ControlMode datatype, converts from and to list of ControlMode codes."""
+
+    datatype_class = "selection"
+
+    codes = {
+        0: "Off",       # System value is used
+        1: "Setpoint",  # Setpoint register value is used
+        2: "Offset",    # System values + offset register value is used
+        3: "Level",
+    }
+
+
+class LpcMode(SelectionBase):
+    """LpcMode datatype, converts from and to list of LpcMode codes."""
+
+    datatype_class = "selection"
+
+    codes = {
+        0: "No-Limit",
+        1: "Soft-Limit",
+        2: "Hard-Limit",
+    }
+
+
+class LockMode(SelectionBase):
+    """LockMode datatype, converts from and to list of LockMode codes."""
+
+    datatype_class = "selection"
+
+    codes = {
+        0: "Unlocked / Off",
+        1: "Locked / On",
+    }
+
+class OnOffMode(SelectionBase):
+    """OnOffMode datatype, converts from and to list of OnOffMode codes."""
+
+    datatype_class = "selection"
+
+    codes = {
+        0: "Off",       # Function deactivated
+        1: "On",        # Function activated
+    }
+
+class LevelMode(SelectionBase):
+    """LevelMode datatype, converts from and to list of LevelMode codes."""
+
+    datatype_class = "selection"
+
+    codes = {
+        0: "Normal",     # No correction
+        1: "Increased",  # Increase the temperature by the values within the SHI-settings
+        2: "Increased",  # Increase the temperature by the values within the SHI-settings
+        3: "Decreased",  # Decrease the temperature by the values within the SHI-settings
+    }
+
+class PowerLimit(ScalingBase):
+    """PowerLimit datatype, converts from and to PowerLimit."""
+
+    datatype_class = "power"
+    datatype_unit = "kW"
+    scaling_factor = 0.1
+
+
+class FullVersion(Base):
+    """FullVersion datatype, converts from and to a RBEVersion"""
+
+    datatype_class = "version"
+
+    @classmethod
+    def from_heatpump(cls, value):
+        if isinstance(value, list) and len(value) >= 3:
+            return f"{value[0]}.{value[1]}.{value[2]}"
+        else:
+            return "0"
+
 
 class Unknown(Base):
     """Unknown datatype, fallback for unknown data."""
