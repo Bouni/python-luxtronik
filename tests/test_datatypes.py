@@ -21,6 +21,7 @@ from luxtronik.datatypes import (
     Percent2,
     Speed,
     Power,
+    PowerLimit,
     Energy,
     Voltage,
     Hours,
@@ -31,6 +32,7 @@ from luxtronik.datatypes import (
     Count,
     Character,
     MajorMinorVersion,
+    FullVersion,
     Icon,
     HeatingMode,
     CoolingMode,
@@ -589,6 +591,32 @@ class TestPower:
         assert a.datatype_class == "power"
         assert a.datatype_unit == "W"
 
+class TestPowerLimit:
+    """Test suite for PowerLimit datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = PowerLimit("power_limit")
+        assert a.name == "power_limit"
+        assert a.datatype_class == "power"
+        assert a.datatype_unit == "kW"
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        a = PowerLimit("")
+        assert a.from_heatpump(15) == 1.5
+        assert a.from_heatpump(525) == 52.5
+        assert a.from_heatpump(None) is None
+
+    def test_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        a = PowerLimit("")
+        assert a.to_heatpump(1.5) == 15
+        assert a.to_heatpump(5.6) == 56
+
 
 class TestEnergy:
     """Test suite for Energy datatype"""
@@ -787,6 +815,24 @@ class TestMajorMinorVersion:
         assert MajorMinorVersion.from_heatpump(12) == "0.12"
         assert MajorMinorVersion.from_heatpump(-1) == "0"
 
+class TestFullVersion:
+    """Test suite for FullVersion datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = FullVersion("full_version")
+        assert a.name == "full_version"
+        assert a.datatype_class == "version"
+        assert a.datatype_unit is None
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        assert FullVersion.from_heatpump(112) == "0"
+        assert FullVersion.from_heatpump(0) == "0"
+        assert FullVersion.from_heatpump([0, 12]) == "0"
+        assert FullVersion.from_heatpump([0, 12, 3]) == "0.12.3"
 
 class TestIcon:
     """Test suite for Icon datatype"""
