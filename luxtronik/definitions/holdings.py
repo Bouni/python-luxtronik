@@ -1,5 +1,10 @@
 """
-Constant list containing the complete holdings definitions.
+Constant list containing all 'holdings' definitions
+used by the Smart Home Interface (SHI) of the Luxtronik controller.
+
+Unlike the setting registers, these SHI register are volatile and intended for
+communication with smart home systems. 'Holding' registers are readable
+and writable and are used to control the heat pump externally.
 """
 from luxtronik.datatypes import (
     Celsius,
