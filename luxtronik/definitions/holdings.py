@@ -6,6 +6,8 @@ Unlike the setting registers, these SHI register are volatile and intended for
 communication with smart home systems. 'Holding' registers are readable
 and writable and are used to control the heat pump externally.
 """
+from typing import Final
+
 from luxtronik.datatypes import (
     Celsius,
     ControlMode,
@@ -17,7 +19,11 @@ from luxtronik.datatypes import (
     PowerLimit,
 )
 
-HOLDINGS_DEFINITIONS_LIST = [
+# Offset which must be added to the indices
+# to obtain the correct address of the data fields
+HOLDINGS_OFFSET: Final = 10000
+
+HOLDINGS_DEFINITIONS_LIST: Final = [
     {
         "index": 0,
         "count": 1,
