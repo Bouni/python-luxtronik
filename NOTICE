@@ -1,0 +1,19 @@
+NOTICE
+
+This project contains software released under the MIT License.
+
+---
+
+Project: luxtronik
+License: MIT License
+Copyright (c) 2018 Bouni
+
+---
+
+Third-party libraries:
+
+- pyModbusTCP
+  License: MIT License
+  Copyright (c) 2014 l.lefebvre
+
+The full text of the MIT License is provided in the LICENSE file(s).
