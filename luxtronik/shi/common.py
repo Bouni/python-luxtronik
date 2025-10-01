@@ -22,7 +22,17 @@ class LuxtronikSmartHomeReadTelegram:
         """
         self.addr = addr
         self.count = count
+        self.prepare()
+
+    def prepare(self):
+        "Prepare the telegram for a (repeat) read operation"
         self.data = []
+
+class LuxtronikSmartHomeReadHoldingsTelegram(LuxtronikSmartHomeReadTelegram):
+    pass
+
+class LuxtronikSmartHomeReadInputsTelegram(LuxtronikSmartHomeReadTelegram):
+    pass
 
 
 class LuxtronikSmartHomeWriteTelegram:
@@ -44,5 +54,19 @@ class LuxtronikSmartHomeWriteTelegram:
                 the telegram will be initialized with an empty payload.
         """
         self.addr = addr
-        self.data = data if isinstance(data, list) else []
+        self.data = data
+        self.prepare()
+
+    def prepare(self):
+        "Prepare the telegram for a (repeat) read operation"
+        self.data = self.data if isinstance(self.data, list) else []
         self.count = len(self.data)
+
+class LuxtronikSmartHomeWriteHoldingsTelegram(LuxtronikSmartHomeWriteTelegram):
+    pass
+
+LuxtronikSmartHomeTelegrams = (
+    LuxtronikSmartHomeReadHoldingsTelegram,
+    LuxtronikSmartHomeReadInputsTelegram,
+    LuxtronikSmartHomeWriteHoldingsTelegram,
+)
