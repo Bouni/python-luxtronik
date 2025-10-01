@@ -21,6 +21,9 @@ classifiers = [
     "Topic :: Heatpump interface",
 ]
 requires-python = ">=3.9.0"
+dependencies = [
+    "pyModbusTCP>=0.3.0"
+]
 
 [project.urls]
 "Source Code" = "https://github.com/bouni/python-luxtronik/"

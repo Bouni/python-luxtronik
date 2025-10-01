@@ -6,6 +6,8 @@ Unlike the setting registers, these SHI register are volatile and intended for
 communication with smart home systems. 'Input' register are read-only
 and are used for display or to control other devices.
 """
+from typing import Final
+
 from luxtronik.datatypes import (
     Celsius,
     Energy,
@@ -16,7 +18,11 @@ from luxtronik.datatypes import (
     Unknown,
 )
 
-INPUTS_DEFINITIONS_LIST = [
+# Offset which must be added to the indices
+# to obtain the correct address of the data fields
+INPUTS_OFFSET: Final = 10000
+
+INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 0,
         "count": 1,
