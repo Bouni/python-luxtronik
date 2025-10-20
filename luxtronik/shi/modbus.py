@@ -34,7 +34,7 @@ class LuxtronikModbusTcpInterface:
         self,
         host,
         port=LUXTRONIK_DEFAULT_MODBUS_PORT,
-        timeout_in_s=LUXTRONIK_DEFAULT_MODBUS_TIMEOUT
+        timeout=LUXTRONIK_DEFAULT_MODBUS_TIMEOUT
     ):
         """
         Initialize the Modbus TCP interface for a Luxtronik host.
@@ -43,7 +43,7 @@ class LuxtronikModbusTcpInterface:
             host (str): Hostname or IP address of the heat pump.
             port (int): TCP port for the Modbus connection
                   (default: LUXTRONIK_DEFAULT_MODBUS_PORT).
-            timeout_in_s (float): Timeout in seconds for communication
+            timeout (float): Timeout in seconds for communication
                      (default: LUXTRONIK_DEFAULT_MODBUS_TIMEOUT).
         """
         # Acquire a lock object for this host to ensure thread safety
@@ -53,7 +53,7 @@ class LuxtronikModbusTcpInterface:
         self._client = ModbusClient(
             host=host,
             port=port,
-            timeout=timeout_in_s,
+            timeout=timeout,
             auto_open=False,
             auto_close=False,
         )
