@@ -278,7 +278,7 @@ class LuxtronikModbusTcpInterface:
             or not all(isinstance(t, tuple(LuxtronikSmartHomeTelegrams)) for t in _telegrams)
         ):
             LOGGER.warning(f"Invalid argument '{telegrams}': expected a " \
-                + f"LuxtronikSmartHomeTelegram or a list of them.")
+                + "LuxtronikSmartHomeTelegram or a list of them.")
             return False
 
         # Prepare data arrays and count total registers

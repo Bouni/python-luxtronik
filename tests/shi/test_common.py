@@ -38,7 +38,7 @@ class TestReadTelegram:
         telegram.data = [2, 1]
         assert telegram.addr == 10
         assert telegram.count == 3
-        assert telegram.data == None
+        assert telegram.data is None
 
 class TestWriteTelegram:
 
