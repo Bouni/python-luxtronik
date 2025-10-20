@@ -5,5 +5,5 @@
 # third‑party license texts stored in the licenses/ directory.
 
 include LICENSE.md
-include NOTICE
+include NOTICE.md
 recursive-include licenses *
