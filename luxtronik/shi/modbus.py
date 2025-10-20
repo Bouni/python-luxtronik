@@ -27,7 +27,7 @@ class LuxtronikModbusTcpInterface:
     There are functions to read or write individual register blocks,
     or multiple blocks in a row using a list of telegrams.
     The connection is established only for reading and writing purposes.
-    This class is implemented as thread-safe.
+    This class was implemented with thread-safety in mind.
     """
 
     def __init__(
@@ -69,7 +69,8 @@ class LuxtronikModbusTcpInterface:
         Establish a connection to the heat pump.
 
         Returns:
-            bool: True if the connection was successfully established, False otherwise.
+            bool: True if the connection was successfully established,
+                False otherwise.
         """
         # Do nothing if client is already opened
         if self._client.is_open:
@@ -90,7 +91,8 @@ class LuxtronikModbusTcpInterface:
         Close the connection to the heat pump.
 
         Returns:
-            bool: True if the connection was successfully closed, False otherwise.
+            bool: True if the connection was successfully closed,
+                False otherwise.
         """
         # Do nothing if already closed
         if not self._client.is_open:
@@ -123,8 +125,10 @@ class LuxtronikModbusTcpInterface:
         If a non-existent register is read, the entire single read operation fails.
 
         Args:
-            read_reg_cb (Callable): Callback used to perform the actual register read.
-            telegrams (LuxtronikSmartHomeReadTelegram): A single `LuxtronikSmartHomeReadTelegram`.
+            read_reg_cb (Callable):
+                Callback used to perform the actual register read.
+            telegrams (LuxtronikSmartHomeReadTelegram):
+                A single `LuxtronikSmartHomeReadTelegram`.
 
         Returns:
             bool: True if the read succeeded, False otherwise.
@@ -133,14 +137,16 @@ class LuxtronikModbusTcpInterface:
         # A erroneous read usually always leads to data == None
         try:
             data = read_reg_cb(telegram.addr, telegram.count)
-            valid = data is not None and isinstance(data, list) and len(data) == telegram.count
+            valid = data is not None \
+                and isinstance(data, list) \
+                and len(data) == telegram.count
         except Exception as e:
             LOGGER.error(f"Modbus exception: {e}")
             valid = False
         telegram.data = data if valid else None
         if not valid:
-            LOGGER.error(f"Modbus read failed: addr={telegram.addr}, count={telegram.count}, " \
-                + f"{self._client.last_error_as_txt}")
+            LOGGER.error(f"Modbus read failed: addr={telegram.addr}, " \
+                + f"count={telegram.count}, {self._client.last_error_as_txt}")
         return valid
 
     def _write_register(self, write_reg_cb, telegram):
@@ -158,7 +164,8 @@ class LuxtronikModbusTcpInterface:
 
         Args:
             write_reg_cb: Callback used to perform the register write.
-            telegrams (LuxtronikSmartHomeWriteTelegram): A single `LuxtronikSmartHomeWriteTelegram`.
+            telegrams (LuxtronikSmartHomeWriteTelegram):
+                A single `LuxtronikSmartHomeWriteTelegram`.
 
         Returns:
             bool: True if the write succeeded, False otherwise.
@@ -170,8 +177,8 @@ class LuxtronikModbusTcpInterface:
             LOGGER.error(f"Modbus exception: {e}")
             valid = False
         if not valid:
-            LOGGER.error(f"Modbus write error: addr={telegram.addr}, data={telegram.data}, " \
-                + f"{self._client.last_error_as_txt}")
+            LOGGER.error(f"Modbus write error: addr={telegram.addr}, " \
+                + f"data={telegram.data}, {self._client.last_error_as_txt}")
         return valid
 
 
@@ -179,8 +186,8 @@ class LuxtronikModbusTcpInterface:
 
     def read_holdings(self, addr, count):
         """
-        Read `count` holding 16-bit registers starting at the given Modbus address `addr`.
-        The address is used directly without additional offsets.
+        Read `count` holding 16-bit registers starting at the given Modbus
+        address `addr`. The address is used directly without additional offsets.
 
         If a non-existent register is read, the entire single read operation fails.
 
@@ -198,8 +205,9 @@ class LuxtronikModbusTcpInterface:
 
     def write_holdings(self, addr, data):
         """
-        Write all values in `data` to 16-bit holding registers starting at the given Modbus address `addr`.
-        The address is used directly without additional offsets.
+        Write all values in `data` to 16-bit holding registers starting at the
+        given Modbus address `addr`. The address is used directly without
+        additional offsets.
 
         If a non-existent register is written, all data up to this register is written.
 
@@ -218,8 +226,8 @@ class LuxtronikModbusTcpInterface:
 
     def read_inputs(self, addr, count):
         """
-        Read `count` input 16-bit registers starting at the given Modbus address `addr`.
-        The address is used directly without additional offsets.
+        Read `count` input 16-bit registers starting at the given Modbus
+        address `addr`. The address is used directly without additional offsets.
 
         If a non-existent register is read, the entire single read operation fails.
 

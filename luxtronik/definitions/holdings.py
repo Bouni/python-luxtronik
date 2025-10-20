@@ -19,7 +19,7 @@ from luxtronik.datatypes import (
     PowerLimit,
 )
 
-# Offset which must be added to the indices
+# Offset which must be added to the holding indices
 # to obtain the correct address of the data fields
 HOLDINGS_OFFSET: Final = 10000
 

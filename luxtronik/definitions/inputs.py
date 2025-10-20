@@ -18,7 +18,7 @@ from luxtronik.datatypes import (
     Unknown,
 )
 
-# Offset which must be added to the indices
+# Offset which must be added to the input indices
 # to obtain the correct address of the data fields
 INPUTS_OFFSET: Final = 10000
 
