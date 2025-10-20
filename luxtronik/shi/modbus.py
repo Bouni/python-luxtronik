@@ -1,4 +1,3 @@
-import logging
 import time
 from pyModbusTCP.client import ModbusClient
 
@@ -9,13 +8,13 @@ from luxtronik.shi.constants import (
     LUXTRONIK_WAIT_TIME_AFTER_HOLDING_WRITE,
 )
 from luxtronik.shi.common import (
+    LOGGER,
     LuxtronikSmartHomeTelegrams,
     LuxtronikSmartHomeReadHoldingsTelegram,
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
 )
 
-LOGGER = logging.getLogger("Luxtronik.SmartHomeInterface")
 
 ###############################################################################
 # Modbus TCP interface
@@ -262,17 +261,16 @@ class LuxtronikModbusTcpInterface:
         Returns:
             bool: True if all reads/writes succeeded, False otherwise.
         """
-        # Normalize to a list of telegrams
+        # Normalize to a list of telegrams or validate input
         _telegrams = telegrams
-        if isinstance(_telegrams, LuxtronikSmartHomeTelegrams):
+        if isinstance(_telegrams, tuple(LuxtronikSmartHomeTelegrams)):
             _telegrams = [_telegrams]
-
-        # Validate input
-        if (
+        elif (
             not isinstance(_telegrams, list)
-            or not all(isinstance(t, LuxtronikSmartHomeTelegrams) for t in _telegrams)
+            or not all(isinstance(t, tuple(LuxtronikSmartHomeTelegrams)) for t in _telegrams)
         ):
-            LOGGER.warning(f"Invalid argument '{telegrams}': expected a LuxtronikSmartHomeTelegram or a list of them.")
+            LOGGER.warning(f"Invalid argument '{telegrams}': expected a " \
+                + f"LuxtronikSmartHomeTelegram or a list of them.")
             return False
 
         # Prepare data arrays and count total registers

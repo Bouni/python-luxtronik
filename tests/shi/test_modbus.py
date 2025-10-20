@@ -1,4 +1,5 @@
 import pytest
+from pyModbusTCP.client import ModbusClient
 
 from luxtronik.shi.common import (
     LuxtronikSmartHomeReadTelegram,
@@ -13,7 +14,7 @@ from luxtronik.shi.modbus import LuxtronikModbusTcpInterface
 # Fake modbus client
 ###############################################################################
 
-class FakeModbusClient:
+class FakeModbusClient(ModbusClient):
     can_connect = True
     can_disconnect = True
 
@@ -105,6 +106,7 @@ class TestModbusInterface:
 
     def test_connect(self):
         FakeModbusClient.can_connect = True
+        FakeModbusClient.can_disconnect = True
 
         result = self.modbus_interface._connect()
         assert result
@@ -151,6 +153,9 @@ class TestModbusInterface:
         result = self.modbus_interface._disconnect()
         assert result
         assert not self.modbus_interface._client._connected
+
+        FakeModbusClient.can_connect = True
+        FakeModbusClient.can_disconnect = True
 
     def test_no_connection(self):
         FakeModbusClient.can_connect = False
@@ -314,9 +319,9 @@ class TestModbusInterface:
         assert list[1].data == [11, 21]
         assert list[2].data == [2, 3, 4]
 
-        list[0].addr = 2
-        list[0].count = 2
-        list[2].count = 0
+        list[0]._addr = 2
+        list[0]._count = 2
+        list[2]._count = 0
 
         result = self.modbus_interface.send(list)
         assert result
