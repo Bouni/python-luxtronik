@@ -1,0 +1,9 @@
+# MANIFEST.in
+# This file tells setuptools which additional non‑Python files should be
+# included in the source distribution (sdist) and wheel.
+# We explicitly include our own LICENSE and NOTICE files, as well as
+# third‑party license texts stored in the licenses/ directory.
+
+include LICENSE.md
+include NOTICE.md
+recursive-include licenses *
