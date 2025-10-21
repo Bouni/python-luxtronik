@@ -3,6 +3,7 @@ import re
 from luxtronik.datatypes import Base
 from luxtronik.definitions.holdings import HOLDINGS_DEFINITIONS_LIST
 from luxtronik.definitions.inputs import INPUTS_DEFINITIONS_LIST
+from luxtronik.shi.common import parse_version
 
 KEY_IDX = "index"
 KEY_COUNT = "count"
@@ -14,7 +15,7 @@ KEY_UNTIL = "until"
 KEY_DESC = "description"
 
 
-class RunTestDefinitions:
+class RunTestDefinitionList:
 
     # override this
     definitions = None
@@ -27,15 +28,19 @@ class RunTestDefinitions:
 
     def test_structure(self):
         for definition in self.definitions:
+
+            # index
             assert KEY_IDX in definition, \
                 f"{KEY_IDX} not defined: {definition}"
             assert isinstance(definition[KEY_IDX], int), \
                 f"{KEY_IDX} must be of type 'int': {definition}"
 
+            # count
             if KEY_COUNT in definition:
                 assert isinstance(definition[KEY_COUNT], int), \
                     f"{KEY_COUNT} must be of type 'int': {definition}"
 
+            # names
             if KEY_NAMES in definition:
                 assert isinstance(definition[KEY_NAMES], list) \
                         or isinstance(definition[KEY_NAMES], str), \
@@ -45,22 +50,27 @@ class RunTestDefinitions:
                         assert isinstance(name, str), f"Entry of {KEY_NAMES} " \
                             f"must be of type 'int': {definition}"
 
+            # data_type
             if KEY_TYPE in definition:
                 assert issubclass(definition[KEY_TYPE], Base), \
                     f"{KEY_TYPE} must be inherit from 'Base': {definition}"
 
+            # writeable
             if KEY_WRT in definition:
                 assert isinstance(definition[KEY_WRT], bool), \
                     f"{KEY_WRT} must be of type 'bool': {definition}"
 
+            # since
             if KEY_SINCE in definition:
                 assert isinstance(definition[KEY_SINCE], str), \
                     f"{KEY_SINCE} must be of type 'str': {definition}"
 
+            # until
             if KEY_UNTIL in definition:
                 assert isinstance(definition[KEY_UNTIL], str), \
                     f"{KEY_UNTIL} must be of type 'str': {definition}"
 
+            # description
             if KEY_DESC in definition:
                 assert isinstance(definition[KEY_DESC], str), \
                     f"{KEY_DESC} must be of type 'str': {definition}"
@@ -99,6 +109,11 @@ class RunTestDefinitions:
                     f"The name may only contain a-z0-9_ {definition}"
                 assert sanitized != "", \
                     f"Name must not be empty. {definition}"
+                try:
+                    int(name)
+                    assert False, "Name must not be a number."
+                except Exception:
+                    pass
 
     def test_name_unique(self):
         length = len(self.definitions)
@@ -123,15 +138,31 @@ class RunTestDefinitions:
                 assert data_type is not None, \
                     f"Type must be set: {definition}"
 
+    def test_since(self):
+        for definition in self.definitions:
+            if KEY_SINCE in definition:
+                since = definition.get(KEY_SINCE, "")
+                parsed = parse_version(since)
+                assert parsed is not None, \
+                    f"Since must be a valid version instead of {since}: {definition}"
+
+    def test_until(self):
+        for definition in self.definitions:
+            if KEY_UNTIL in definition:
+                until = definition.get(KEY_UNTIL, "")
+                parsed = parse_version(until)
+                assert parsed is not None, \
+                    f"Until must be a valid version instead of {until}: {definition}"
+
 ###############################################################################
 # Tests
 ###############################################################################
 
-class TestHoldingsDefinitions(RunTestDefinitions):
+class TestHoldingsDefinitionList(RunTestDefinitionList):
 
     definitions = HOLDINGS_DEFINITIONS_LIST
 
 
-class TestInputsDefinitions(RunTestDefinitions):
+class TestInputsDefinitionList(RunTestDefinitionList):
 
     definitions = INPUTS_DEFINITIONS_LIST
