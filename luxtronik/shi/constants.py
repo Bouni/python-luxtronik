@@ -15,7 +15,8 @@ LUXTRONIK_DEFAULT_DEFINITION_OFFSET: Final = 10000
 # to give the controller time to recalculate values, etc.
 LUXTRONIK_WAIT_TIME_AFTER_HOLDING_WRITE: Final = 1
 
-# Since version 3.92.0, all unavailable data fields have been returning this value
+# Since version 3.92.0, all unavailable data fields
+# have been returning this value (0x7FFF)
 LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE: Final = 32767
 
 # First Luxtronik firmware version that supports the Smart Home Interface (SHI)
