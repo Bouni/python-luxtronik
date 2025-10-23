@@ -203,8 +203,10 @@ class LuxtronikDefinitionsDictionary:
     def __getitem__(self, name_or_idx):
         return self.get(name_or_idx)
 
-    def __contains__(self, name_or_idx):
-        return self._get(name_or_idx) is not None
+    def __contains__(self, def_name_or_idx):
+        if isinstance(def_name_or_idx, LuxtronikDefinition):
+            return any(def_name_or_idx is d for d in self._index_dict.values())
+        return self._get(def_name_or_idx) is not None
 
     def _add_alias(self, definition, alias):
         """
@@ -410,10 +412,14 @@ class LuxtronikDefinitionsList:
         # The correct sorting has already been ensured by the pytest
         for item in definitions_list:
             d = LuxtronikDefinition(item, name, offset)
-            self._add(d)
+            if d.valid:
+                self._add(d)
 
     def __getitem__(self, name_or_idx):
         return self.get(name_or_idx)
+
+    def __contains__(self, def_name_or_idx):
+        return def_name_or_idx in self._lookup
 
     def __len__(self):
         return len(self._definitions)
@@ -488,13 +494,12 @@ class LuxtronikDefinitionsList:
         Args:
             definition (LuxtronikDefinition): Definition to add
         """
-        if definition.valid:
-            self._definitions.append(definition)
-            self._lookup.add(definition)
+        self._definitions.append(definition)
+        self._lookup.add(definition)
 
     def add(self, data_dict):
         """
-        Add a custom (valid) definition
+        Add a custom (valid) definition. Existing definitions will not be overwritten.
 
         Args:
             data_dict (dict): Data for the definition to add
@@ -506,9 +511,11 @@ class LuxtronikDefinitionsList:
             If multiple definitions added for the same index/name, the last added takes precedence.
         """
         definition = LuxtronikDefinition(data_dict, self._name, self._offset)
+        if not definition.valid:
+            return None
         self._add(definition)
         self._definitions.sort(key=lambda item: item.index)
-        return definition if definition.valid else None
+        return definition
 
 
 ###############################################################################
