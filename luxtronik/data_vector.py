@@ -2,6 +2,11 @@
 
 import logging
 
+from luxtronik.constants import (
+    LUXTRONIK_NAME_CHECK_PREFERRED,
+    LUXTRONIK_NAME_CHECK_OBSOLETE,
+)
+
 from luxtronik.datatypes import Unknown
 
 
@@ -10,6 +15,8 @@ class DataVector:
 
     logger = logging.getLogger("Luxtronik.DataVector")
     name = "DataVector"
+
+    _obsolete = {}
 
     def __init__(self):
         """Initialize DataVector class."""
@@ -46,9 +53,15 @@ class DataVector:
             except ValueError:
                 # Get entry by name
                 target_index = None
+                obsolete_entry = self._obsolete.get(target, None)
+                if obsolete_entry:
+                    raise KeyError(f"The name '{target}' is obsolete! Use '{obsolete_entry}' instead.")
                 for index, entry in self._data.items():
-                    if entry.name == target:
+                    check_result = entry.check_name(target)
+                    if check_result == LUXTRONIK_NAME_CHECK_PREFERRED:
                         target_index = index
+                    elif check_result == LUXTRONIK_NAME_CHECK_OBSOLETE:
+                        raise KeyError(f"The name '{target}' is obsolete! Use '{entry.name}' instead.")
         elif isinstance(target, int):
             # Get entry by id
             target_index = target
