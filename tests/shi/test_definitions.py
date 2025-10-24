@@ -331,6 +331,9 @@ class TestDefinitionsList:
         assert len(definitions) == 4
         assert definitions.name == 'foo'
         assert definitions.offset == 100
+        assert 5 in definitions
+        assert 'field_9a' in definitions
+        assert definitions[7] in definitions
 
         # correct fields
         assert definitions[5].name == "field_5"
