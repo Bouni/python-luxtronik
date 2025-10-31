@@ -163,7 +163,7 @@ class TestBase:
         a.value = 123
         a.raw = 123
 
-        assert a.__repr__() == "Base (name: base, writeable: False, value: 123, raw: 123, class: None, unit: None)"
+        assert a.__repr__() == "Base (name: base, writeable: False, value: 123, raw: 123, set_by_user: False, class: None, unit: None)"
 
     def test_str(self):
         """Test cases for __str__ function"""
