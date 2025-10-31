@@ -108,6 +108,11 @@ class TestDefinition:
         field = definition.create_field()
         assert field is None
 
+    def test_repr(self):
+        definition = LuxtronikDefinition.unknown(2, 'Foo', 30)
+        text = repr(definition)
+        assert text
+
 
 class TestDefinitionsDict:
 
@@ -427,6 +432,11 @@ class TestDefinitionsList:
         })
         assert added_4 is None
 
+    def test_repr(self):
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+        text = repr(definitions)
+        assert text
+
 
 class TestDefinitionFieldPair:
 
@@ -452,8 +462,8 @@ class TestDefinitionFieldPair:
         definition._count = 2
         field.raw = [4, 8, 1]
         arr = get_data_arr(definition, field)
-        assert arr == [4, 8]
-        assert check_data(definition, field)
+        assert arr is None
+        assert not check_data(definition, field)
 
         # insufficient data
         definition._count = 2

@@ -531,12 +531,12 @@ def get_data_arr(definition, field):
         field (Base): Field object that contains data to get.
 
     Returns:
-        list[int] | None: List of length `definition.count`, or None if insufficient.
+        list[int] | None: List of length `definition.count`,
+            or None if the data size does not match.
     """
     data = field.raw
     if not isinstance(data, list):
         data = [data]
-    data = data[:definition.count]
     return data if len(data) == definition.count else None
 
 def check_data(definition, field):
