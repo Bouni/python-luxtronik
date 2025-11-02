@@ -968,7 +968,7 @@ class LuxtronikSmartHomeInterface:
         self.send()
         return data
 
-    def write_data(self, data=None):
+    def write_data(self, data):
         """
         Write the data of all fields within the data vector collection
         that are supported by the controller.

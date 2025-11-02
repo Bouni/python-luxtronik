@@ -69,6 +69,37 @@ def determine_version(interface):
         + "Switch to trial-and-error mode.")
     return None
 
+def resolve_version(interface, version=VERSION_DETECT):
+    """
+    Resolve the version input.
+
+    Args:
+        interface (LuxtronikModbusTcpInterface):
+            Simple read/write interface to read out the version.
+        version (tuple[int] | str | None): Version used to initialize the interface.
+            If VERSION_DETECT is passed, the function will attempt to determine the version.
+            If a str is passed, the string will be parsed into a version tuple.
+            If None is passed, trial-and-error mode is activated.
+            (default: VERSION_DETECT)
+
+    Returns:
+        tuple[int] | None: The version of the controller on success,
+            or None if no version could be determined.
+    """
+    resolved_version = version
+    if resolved_version == VERSION_DETECT:
+        # return None in case of an error -> trial-and-error mode
+        resolved_version = determine_version(interface)
+    elif isinstance(resolved_version, str):
+        if resolved_version.lower() == VERSION_LATEST:
+            resolved_version = LUXTRONIK_LATEST_SHI_VERSION
+        else:
+            # return None in case of an error -> trial-and-error mode
+            resolved_version = parse_version(resolved_version)
+    else:
+        resolved_version = parse_version(resolved_version)
+    return resolved_version
+
 
 ###############################################################################
 # Factory methods
@@ -105,20 +136,7 @@ def create_modbus_tcp(
             Initialized interface instance bound to the Modbus TCP connection.
     """
     modbus_interface = LuxtronikModbusTcpInterface(host, port, timeout)
-
-    resolved_version = version
-    if resolved_version == VERSION_DETECT:
-        # return None in case of an error -> trial-and-error mode
-        resolved_version = determine_version(modbus_interface)
-    elif isinstance(resolved_version, str):
-        if resolved_version.lower() == VERSION_LATEST:
-            resolved_version = LUXTRONIK_LATEST_SHI_VERSION
-        else:
-            # return None in case of an error -> trial-and-error mode
-            resolved_version = parse_version(resolved_version)
-    else:
-        resolved_version = parse_version(resolved_version)
-
+    resolved_version = resolve_version(modbus_interface, version)
     LOGGER.info(f"Create smart-home-interface via modbus-TCP on {host}:{port}"
         + f" for version {resolved_version}")
     return LuxtronikSmartHomeInterface(modbus_interface, resolved_version)
