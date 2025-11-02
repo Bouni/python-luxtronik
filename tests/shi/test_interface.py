@@ -1,4 +1,5 @@
 import pytest
+from unittest.mock import patch
 
 from luxtronik.datatypes import Base, Unknown
 
@@ -24,6 +25,7 @@ from luxtronik.shi.interface import (
     LuxtronikSmartHomeData,
     LuxtronikSmartHomeInterface,
 )
+from luxtronik.shi import create_modbus_tcp
 
 ###############################################################################
 # Fake modbus client
@@ -33,6 +35,15 @@ class FakeInterface:
     telegram_list = []
     result = True
 
+    def __init__(self, host="", port="", timeout=0):
+        pass
+
+    def _get_data(self, addr, count):
+        return [addr - 10000 + i for i in range(count)]
+
+    def read_inputs(self, addr, count):
+        return self._get_data(addr, count) if self.result else None
+
     def send(self, telegrams):
         if not isinstance(telegrams, list):
             telegrams = [telegrams]
@@ -40,7 +51,7 @@ class FakeInterface:
 
         for t in telegrams:
             if isinstance(t, LuxtronikSmartHomeReadTelegram):
-                t.data = [t.addr - 10000 + i for i in range(t.count)]
+                t.data = self._get_data(t.addr, t.count)
         return self.result
 
 
@@ -73,6 +84,7 @@ class TestLuxtronikSmartHomeData:
         assert data.inputs.version == (1, 2, 0, 0)
 
 
+@patch("luxtronik.shi.LuxtronikModbusTcpInterface", FakeInterface)
 class TestLuxtronikSmartHomeInterface:
 
     @classmethod
@@ -1246,3 +1258,26 @@ class TestLuxtronikSmartHomeInterface:
         assert FakeInterface.telegram_list[7].addr == offset + 4
         assert FakeInterface.telegram_list[7].count == 1
         assert FakeInterface.telegram_list[7].data == [16]
+
+    def test_create_modbus(self):
+        interface = create_modbus_tcp('host', version=None)
+        assert interface.version is None
+
+        interface = create_modbus_tcp('host', version=1)
+        assert interface.version is None
+
+        interface = create_modbus_tcp('host', version="1.2.3")
+        assert interface.version == (1, 2, 3, 0)
+
+        interface = create_modbus_tcp('host', version="latest")
+        assert interface.version == LUXTRONIK_LATEST_SHI_VERSION
+
+        interface = create_modbus_tcp('host')
+        assert interface.version == (400, 401, 402, 0)
+
+        FakeInterface.result = False
+
+        interface = create_modbus_tcp('host')
+        assert interface.version is None
+
+        FakeInterface.result = True
