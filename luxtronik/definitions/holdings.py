@@ -17,6 +17,7 @@ from luxtronik.datatypes import (
     LpcMode,
     OnOffMode,
     PowerLimit,
+    Unknown,
 )
 
 # Offset which must be added to the holding indices
@@ -376,6 +377,15 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "writeable": True,
         "since": "3.90.1",
         "description": "Lock state for the swimming pool function",
+    },
+    {
+        "index": 60,
+        "count": 1,
+        "names": ["unknown_holding_60"],
+        "type": Unknown,
+        "writeable": False,
+        "since": "3.92.1",
+        "description": "TODO: Function unknown – requires further analysis",
     },
     {
         "index": 65,
