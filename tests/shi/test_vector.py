@@ -281,24 +281,24 @@ class TestDataVector:
         # set via property (writeable)
         data_vector['field_9'] = [2, 8]
         assert field_5.value is None
-        assert not field_5.set_by_user
+        assert not field_5.write_pending
         assert field_9.value == [2, 8]
-        assert field_9.set_by_user
+        assert field_9.write_pending
 
         # set via method (non-writeable)
         data_vector.set(5, 1)
         assert field_5.value == 1
-        assert field_5.set_by_user
+        assert field_5.write_pending
         assert field_9.value == [2, 8]
-        assert field_9.set_by_user
+        assert field_9.write_pending
 
         # set via field
         field_5.value = [4, 3]
         field_9.value = 6
         assert field_5.value == [4, 3]
-        assert field_5.set_by_user
+        assert field_5.write_pending
         assert field_9.value == 6
-        assert field_9.set_by_user
+        assert field_9.write_pending
 
     def test_parse(self):
         data_vector = DataVectorTest(parse_version("1.1.2"))

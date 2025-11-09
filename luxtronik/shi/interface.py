@@ -319,9 +319,9 @@ class LuxtronikSmartHomeInterface:
                     LOGGER.error(f"Failed to integrate read data into {block}")
                 success &= valid
             else:
-                # Reset set_by_user flag
+                # Reset write_pending flag
                 for part in block:
-                    part.field.set_by_user = False
+                    part.field.write_pending = False
         return success
 
 
@@ -369,7 +369,7 @@ class LuxtronikSmartHomeInterface:
             return False
 
         # Skip fields that do not carry user-data and not data is provided
-        if not field.set_by_user and data is None:
+        if not field.write_pending and data is None:
             return False
 
         # Abort if field is not writeable

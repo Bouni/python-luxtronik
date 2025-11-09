@@ -328,7 +328,7 @@ class TestLuxtronikSmartHomeInterface:
         telegram_data[0][1].data = [18, 4]
         telegram_data[1][1].data = [9]
         telegram_data[2][1].data = [27]
-        telegram_data[3][0][0].field.set_by_user = True
+        telegram_data[3][0][0].field.write_pending = True
         valid = self.interface._integrate_data(telegram_data)
         assert valid
         # [index data, index for blocks, index for part]
@@ -336,7 +336,7 @@ class TestLuxtronikSmartHomeInterface:
         assert telegram_data[0][0][1].field.raw == 4
         assert telegram_data[1][0][0].field.raw == 9
         assert telegram_data[2][0][0].field.raw == 27
-        assert not telegram_data[3][0][0].field.set_by_user
+        assert not telegram_data[3][0][0].field.write_pending
         assert telegram_data[3][0][0].field.raw == 17 # no update
 
         # integrate not available / None -> no error
@@ -377,37 +377,37 @@ class TestLuxtronikSmartHomeInterface:
 
         # supported valid write
         field.raw = 5
-        field.set_by_user = True
+        field.write_pending = True
         valid = self.interface._prepare_write_field(definition, field, False, None)
         assert valid
         assert field.raw == 5
 
         # supported invalid write via safe
         field.raw = 6
-        field.set_by_user = True
+        field.write_pending = True
         field.writeable = False
         valid = self.interface._prepare_write_field(definition, field, True, None)
         assert not valid
         assert field.raw == 6
         field.writeable = True
 
-        # supported invalid write via set_by_user
+        # supported invalid write via write_pending
         field.raw = 7
-        field.set_by_user = False
+        field.write_pending = False
         valid = self.interface._prepare_write_field(definition, field, False, None)
         assert not valid
         assert field.raw == 7
 
         # supported valid write with data
         field.raw = 8
-        field.set_by_user = False
+        field.write_pending = False
         valid = self.interface._prepare_write_field(definition, field, False, 9)
         assert valid
         assert field.value == 9
 
         # supported invalid write via data
         field.raw = []
-        field.set_by_user = True
+        field.write_pending = True
         valid = self.interface._prepare_write_field(definition, field, False, None)
         assert not valid
         assert field.raw == []
@@ -596,17 +596,17 @@ class TestLuxtronikSmartHomeInterface:
         assert field.raw == 2
 
         h2.raw = 2
-        h2.set_by_user = True
+        h2.write_pending = True
         field = self.interface.collect_holding_for_write(h2)
         assert len(self.interface._blocks_list) == 2
         assert self.interface._blocks_list[1].type_name == "holding"
         assert not self.interface._blocks_list[1].read_not_write
         assert field == h2
         assert field.raw == 2
-        assert field.set_by_user
+        assert field.write_pending
 
         h2.raw = 2
-        h2.set_by_user = True
+        h2.write_pending = True
         field = self.interface.collect_holding(h2)
         assert len(self.interface._blocks_list) == 4
         assert self.interface._blocks_list[2].type_name == "holding"
@@ -615,7 +615,7 @@ class TestLuxtronikSmartHomeInterface:
         assert self.interface._blocks_list[3].read_not_write
         assert field == h2
         assert field.raw == 2
-        assert field.set_by_user
+        assert field.write_pending
 
         i105.raw = 105
         field = self.interface.collect_input(i105)
@@ -633,20 +633,20 @@ class TestLuxtronikSmartHomeInterface:
         assert h3.raw is None
 
         h3.raw = 3
-        h3.set_by_user = True
+        h3.write_pending = True
         field = self.interface.collect_holding_for_write(h3)
         assert len(self.interface._blocks_list) == 5
         assert field is None
         assert h3.raw == 3
-        assert h3.set_by_user
+        assert h3.write_pending
 
         h3.raw = 3
-        h3.set_by_user = True
+        h3.write_pending = True
         field = self.interface.collect_holding(h3)
         assert len(self.interface._blocks_list) == 5
         assert field is None
         assert h3.raw == 3
-        assert h3.set_by_user
+        assert h3.write_pending
 
         i109.raw = 109
         field = self.interface.collect_input(i109)
@@ -1186,9 +1186,9 @@ class TestLuxtronikSmartHomeInterface:
 
         # add vector for write
         h1.raw = 10
-        h1.set_by_user = True
+        h1.write_pending = True
         h3.raw = 1
-        h3.set_by_user = True
+        h3.write_pending = True
         interface.collect_holdings_for_write(holdings)
         assert len(interface._blocks_list) == 2
         assert len(interface._blocks_list[1]) == 2
