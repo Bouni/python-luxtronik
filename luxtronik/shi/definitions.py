@@ -284,7 +284,7 @@ class LuxtronikDefinitionsDictionary:
         """
         d = self._get(name_or_idx)
         if d is None:
-            LOGGER.warning(f"Definition for '{name_or_idx}' not found", )
+            LOGGER.debug(f"Definition for '{name_or_idx}' not found", )
         return d if d is not None else default
 
     def _get(self, name_or_idx):

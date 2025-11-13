@@ -199,7 +199,7 @@ class ContiguousDataBlock:
         valid &= data_len == self.overall_count
 
         if not valid:
-            LOGGER.error(
+            LOGGER.debug(
                 f"Data to integrate not valid! Expected length {self.overall_count} " \
                 + f"but got {data_len}: data = {data_arr}, block = {self}"
             )
@@ -249,7 +249,7 @@ class ContiguousDataBlock:
                     data_arr[slot] = value
                 else:
                     valid = False
-                    LOGGER.error(
+                    LOGGER.debug(
                         f"Overlapping write detected for slot {slot}: " \
                         + f"existing={data_arr[slot]}, new={value}, part={part}"
                     )
