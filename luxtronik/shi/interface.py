@@ -9,7 +9,11 @@ from luxtronik.shi.common import (
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
 )
-from luxtronik.shi.definitions import LuxtronikDefinition, check_data
+from luxtronik.shi.definitions import (
+    LuxtronikDefinition,
+    LuxtronikDefinitionsList,
+    check_data
+)
 from luxtronik.shi.vector import DataVectorSmartHome
 from luxtronik.shi.holdings import Holdings, HOLDINGS_DEFINITIONS
 from luxtronik.shi.inputs import Inputs, INPUTS_DEFINITIONS
@@ -117,6 +121,8 @@ class LuxtronikSmartHomeInterface:
         self._interface = interface
         self._version = version
         self._blocks_list = []
+        self._filtered_holdings = LuxtronikDefinitionsList.filtered(HOLDINGS_DEFINITIONS, version)
+        self._filtered_inputs = LuxtronikDefinitionsList.filtered(INPUTS_DEFINITIONS, version)
 
     @property
     def version(self):
@@ -688,6 +694,23 @@ class LuxtronikSmartHomeInterface:
         """Returns the holdings dictionary containing all available holding definitions."""
         return HOLDINGS_DEFINITIONS
 
+    def get_holdings(self, full_not_filtered=False):
+        """
+        Returns either the holdings dictionary containing all available holding definitions
+        or a version-dependent variant of it, depending on the parameter `full_not_filtered`.
+
+        Args:
+            full_not_filtered (LuxtronikDefinition | str | int):
+                Parameter for selecting the returned definitions list.
+
+        Returns:
+            LuxtronikDefinitionsList: List of definitions.
+        """
+        if full_not_filtered:
+            return self.holdings
+        else:
+            return self._filtered_holdings
+
     def create_holding(self, def_name_or_idx):
         """
         Create a holding field if the related definition matches the stored version.
@@ -836,6 +859,23 @@ class LuxtronikSmartHomeInterface:
     def inputs(cls):
         """Returns the inputs dictionary containing all available input definitions."""
         return INPUTS_DEFINITIONS
+
+    def get_inputs(self, full_not_filtered=False):
+        """
+        Returns either the inputs dictionary containing all available input definitions
+        or a version-dependent variant of it, depending on the parameter `full_not_filtered`.
+
+        Args:
+            full_not_filtered (LuxtronikDefinition | str | int):
+                Parameter for selecting the returned definitions list.
+
+        Returns:
+            LuxtronikDefinitionsList: List of definitions.
+        """
+        if full_not_filtered:
+            return self.inputs
+        else:
+            return self._filtered_inputs
 
     def create_input(self, def_name_or_idx):
         """

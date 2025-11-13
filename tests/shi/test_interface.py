@@ -95,10 +95,16 @@ class TestLuxtronikSmartHomeInterface:
         assert isinstance(self.interface._interface, FakeInterface)
         assert self.interface._blocks_list == []
         assert self.interface.version == LUXTRONIK_FIRST_VERSION_WITH_SHI
+        assert len(self.interface._filtered_holdings) > 0
+        assert len(self.interface._filtered_inputs) > 0
 
     def test_get(self):
         assert self.interface.holdings is HOLDINGS_DEFINITIONS
+        assert self.interface.holdings is self.interface.get_holdings(True)
+        assert self.interface.holdings is not self.interface.get_holdings(False)
         assert self.interface.inputs is INPUTS_DEFINITIONS
+        assert self.interface.inputs is self.interface.get_inputs(True)
+        assert self.interface.inputs is not self.interface.get_inputs(False)
 
         # via index
         definition = self.interface._get_definition(2, HOLDINGS_DEFINITIONS)
@@ -1259,25 +1265,59 @@ class TestLuxtronikSmartHomeInterface:
         assert FakeInterface.telegram_list[7].count == 1
         assert FakeInterface.telegram_list[7].data == [16]
 
+
+    def check_definitions(self, interface):
+        definitions = interface.get_holdings(False)
+        vector = interface.create_holdings()
+        assert definitions._version == vector.version
+        assert len(definitions) <= len(interface.holdings)
+        for d in definitions:
+            assert d.name in vector
+            assert d in interface.holdings
+        for f in vector:
+            assert f.name in definitions
+            assert f.name in interface.holdings
+
+        definitions = interface.get_inputs(False)
+        vector = interface.create_inputs()
+        assert definitions._version == vector.version
+        assert len(definitions) <= len(interface.inputs)
+        for d in definitions:
+            assert d.name in vector
+            assert d in interface.inputs
+        for f in vector:
+            assert f.name in definitions
+            assert f.name in interface.inputs
+
     def test_create_modbus(self):
         interface = create_modbus_tcp('host', version=None)
         assert interface.version is None
+        self.check_definitions(interface)
 
         interface = create_modbus_tcp('host', version=1)
         assert interface.version is None
+        self.check_definitions(interface)
 
         interface = create_modbus_tcp('host', version="1.2.3")
         assert interface.version == (1, 2, 3, 0)
+        self.check_definitions(interface)
 
         interface = create_modbus_tcp('host', version="latest")
         assert interface.version == LUXTRONIK_LATEST_SHI_VERSION
+        self.check_definitions(interface)
+
+        interface = create_modbus_tcp('host', version=LUXTRONIK_FIRST_VERSION_WITH_SHI)
+        assert interface.version == LUXTRONIK_FIRST_VERSION_WITH_SHI
+        self.check_definitions(interface)
 
         interface = create_modbus_tcp('host')
         assert interface.version == (400, 401, 402, 0)
+        self.check_definitions(interface)
 
         FakeInterface.result = False
 
         interface = create_modbus_tcp('host')
         assert interface.version is None
+        self.check_definitions(interface)
 
         FakeInterface.result = True
