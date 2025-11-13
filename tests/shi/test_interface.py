@@ -126,14 +126,14 @@ class TestLuxtronikSmartHomeInterface:
         assert definition is None
         assert field is None
 
-        definition = self.interface.get_input(109)
+        definition = self.interface.inputs.get(109)
         assert definition is INPUTS_DEFINITIONS[109]
 
         # unsupported via name
         definition = self.interface._get_definition("mc1_heat_level", HOLDINGS_DEFINITIONS)
         assert definition is None
 
-        definition = self.interface.get_holding("mc1_heat_level")
+        definition = self.interface.holdings.get("mc1_heat_level")
         assert definition is HOLDINGS_DEFINITIONS["mc1_heat_level"]
 
         # unsupported via definition
@@ -581,10 +581,10 @@ class TestLuxtronikSmartHomeInterface:
     def test_collect_field2(self):
         self.interface._blocks_list = []
 
-        h2 = self.interface.get_holding(2).create_field()
-        h3 = self.interface.get_holding(3).create_field()
-        i105 = self.interface.get_input(105).create_field()
-        i109 = self.interface.get_input(109).create_field()
+        h2 = self.interface.holdings.get(2).create_field()
+        h3 = self.interface.holdings.get(3).create_field()
+        i105 = self.interface.inputs.get(105).create_field()
+        i109 = self.interface.inputs.get(109).create_field()
 
         # collect supported
         h2.raw = 2
@@ -751,20 +751,20 @@ class TestLuxtronikSmartHomeInterface:
     def test_create_holding(self):
 
         # supported
-        def_2 = self.interface.get_holding(2)
+        def_2 = self.interface.holdings.get(2)
         field_2 = self.interface.create_holding(2)
         assert isinstance(def_2, LuxtronikDefinition)
         assert isinstance(field_2, Base)
         assert def_2.name == field_2.name
 
         # not supported
-        def_3 = self.interface.get_holding(3)
+        def_3 = self.interface.holdings.get(3)
         field_3 = self.interface.create_holding(3)
         assert isinstance(def_3, LuxtronikDefinition)
         assert field_3 is None
 
         # not existing
-        def_4 = self.interface.get_holding(4)
+        def_4 = self.interface.holdings.get(4)
         field_4 = self.interface.create_holding(4)
         assert def_4 is None
         assert field_4 is None
@@ -892,20 +892,20 @@ class TestLuxtronikSmartHomeInterface:
     def test_create_input(self):
 
         # supported
-        def_105 = self.interface.get_input(105)
+        def_105 = self.interface.inputs.get(105)
         field_105 = self.interface.create_input(105)
         assert isinstance(def_105, LuxtronikDefinition)
         assert isinstance(field_105, Base)
         assert def_105.name == field_105.name
 
         # not supported
-        def_109 = self.interface.get_input(109)
+        def_109 = self.interface.inputs.get(109)
         field_109 = self.interface.create_input(109)
         assert isinstance(def_109, LuxtronikDefinition)
         assert field_109 is None
 
         # not existing
-        def_115 = self.interface.get_input(115)
+        def_115 = self.interface.inputs.get(115)
         field_115 = self.interface.create_input(115)
         assert def_115 is None
         assert field_115 is None

@@ -688,11 +688,6 @@ class LuxtronikSmartHomeInterface:
         """Returns the holdings dictionary containing all available holding definitions."""
         return HOLDINGS_DEFINITIONS
 
-    @classmethod
-    def get_holding(cls, name_or_idx):
-        """Get a field out of the holdings dictionary containing all available holding definitions."""
-        return cls.holdings[name_or_idx]
-
     def create_holding(self, def_name_or_idx):
         """
         Create a holding field if the related definition matches the stored version.
@@ -841,11 +836,6 @@ class LuxtronikSmartHomeInterface:
     def inputs(cls):
         """Returns the inputs dictionary containing all available input definitions."""
         return INPUTS_DEFINITIONS
-
-    @classmethod
-    def get_input(cls, name_or_idx):
-        """Get a field out of the inputs dictionary containing all available inputs definitions."""
-        return cls.inputs[name_or_idx]
 
     def create_input(self, def_name_or_idx):
         """
