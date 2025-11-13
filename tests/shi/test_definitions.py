@@ -336,6 +336,7 @@ class TestDefinitionsList:
         assert len(definitions) == 4
         assert definitions.name == 'foo'
         assert definitions.offset == 100
+        assert definitions._version is None
         assert 5 in definitions
         assert 'field_9a' in definitions
         assert definitions[7] in definitions
@@ -345,6 +346,27 @@ class TestDefinitionsList:
         assert definitions["field_7"].index == 7
         assert definitions.get(9).addr == 109
         assert definitions.get(9).name == "field_9"
+
+    def test_filtered(self):
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+
+        filtered1 = LuxtronikDefinitionsList.filtered(definitions, (1, 1, 0, 0))
+        assert filtered1.name == 'foo'
+        assert filtered1.offset == 100
+        assert filtered1._version == (1, 1, 0, 0)
+        assert 'field_5' in filtered1            # 1.1 - 1.2
+        assert 'field_7' not in filtered1        # 3.1 -
+        assert 'field_9a' in filtered1           #     - 1.3
+        assert 'field_9' in filtered1            #     - 3.3
+        assert 'field_invalid' not in filtered1  # invalid
+
+        filtered1 = LuxtronikDefinitionsList.filtered(definitions, (3, 2, 0, 0))
+        assert filtered1._version == (3, 2, 0, 0)
+        assert 'field_5' not in filtered1        # 1.1 - 1.2
+        assert 'field_7' in filtered1            # 3.1 -
+        assert 'field_9a' not in filtered1       #     - 1.3
+        assert 'field_9' in filtered1            #     - 3.3
+        assert 'field_invalid' not in filtered1  # invalid
 
     def test_iter(self):
         definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)

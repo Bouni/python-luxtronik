@@ -14,7 +14,8 @@ from luxtronik.shi.constants import (
 )
 from luxtronik.shi.common import (
     LOGGER,
-    parse_version
+    parse_version,
+    version_in_range
 )
 
 
@@ -384,6 +385,15 @@ class LuxtronikDefinitionsList:
     (locally = only valid for that dictionary).
     """
 
+    def _init_instance(self, name, offset, version):
+        """Re-usable method to initialize all instance variables."""
+        self._name = name
+        self._offset = offset
+        self._version = version
+        # sorted list of all definitions
+        self._definitions = []
+        self._lookup = LuxtronikDefinitionsDictionary()
+
     def __init__(self, definitions_list, name, offset=LUXTRONIK_DEFAULT_DEFINITION_OFFSET):
         """
         Initialize the (by index sorted) definitions list.
@@ -402,11 +412,7 @@ class LuxtronikDefinitionsList:
             - The value of count must always be greater than or equal to 1
             - All names should be unique
         """
-        self._name = name
-        self._offset = offset
-        # sorted list of all definitions
-        self._definitions = []
-        self._lookup = LuxtronikDefinitionsDictionary()
+        self._init_instance(name, offset, None)
 
         # Add definition objects only for valid items.
         # The correct sorting has already been ensured by the pytest
@@ -414,6 +420,27 @@ class LuxtronikDefinitionsList:
             d = LuxtronikDefinition(item, name, offset)
             if d.valid:
                 self._add(d)
+
+    @classmethod
+    def filtered(cls, definitions, version):
+        """
+        Filter an existing definitions list by the given version
+        and return the new (by index sorted) definitions list.
+
+        Args:
+            definitions (LuxtronikDefinitionsList): List of definitions to filter.
+            version (tuple[int] | None):
+                Only definitions that match this version are added to the list.
+                If None is passed, all available fields are added.
+        """
+        obj = cls.__new__(cls) # this don't call __init__()
+        obj._init_instance(definitions.name, definitions.offset, version)
+
+        for d in definitions:
+            if d.valid and version_in_range(obj._version, d.since, d.until):
+                obj._add(d)
+
+        return obj
 
     def __getitem__(self, name_or_idx):
         return self.get(name_or_idx)
