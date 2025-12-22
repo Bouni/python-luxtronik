@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import logging
 from pathlib import Path
-
+from datetime import datetime
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from luxtronik.calculations import Calculations
@@ -40,7 +40,7 @@ def render_docs():
     group_data = gather_data()
     (BASEPATH.parents[3] / "docs").mkdir(exist_ok=True)
     with open(BASEPATH.parents[3] / "docs/index.html", "w", encoding="UTF-8") as f:
-        f.write(template.render(data=group_data))
+        f.write(template.render(data=group_data, now=datetime.now()))
 
 
 if __name__ == "__main__":
