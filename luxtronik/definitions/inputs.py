@@ -350,7 +350,7 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 163,
         "count": 1,
-        "names": ["mc3_heat_max"],
+        "names": ["mc3_max"],
         "type": Celsius,
         "writeable": False,
         "since": "3.90.1",

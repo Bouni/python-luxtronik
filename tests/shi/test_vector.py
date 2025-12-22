@@ -85,6 +85,8 @@ class TestDataVector:
         data_vector = DataVectorTest(parse_version("1.2"))
         assert data_vector.version == (1, 2, 0, 0)
         assert len(data_vector) == 3
+        assert not data_vector._read_blocks_up_to_date
+        assert len(data_vector._read_blocks) == 0
 
         # create version-dependent field
         field = data_vector.create_field(5)
@@ -116,6 +118,8 @@ class TestDataVector:
         data_vector = DataVectorTest(parse_version("3.0"))
         assert data_vector.version == (3, 0, 0, 0)
         assert len(data_vector) == 1
+        assert not data_vector._read_blocks_up_to_date
+        assert len(data_vector._read_blocks) == 0
 
         # create not available field (invalid version)
         field = data_vector.create_field(5)
@@ -143,6 +147,8 @@ class TestDataVector:
         data_vector = DataVectorTest.empty(parse_version("3.0"))
         assert data_vector.version == (3, 0, 0, 0)
         assert len(data_vector) == 0
+        assert not data_vector._read_blocks_up_to_date
+        assert len(data_vector._read_blocks) == 0
 
         # create not available field (not available)
         field = data_vector.create_field(9)
@@ -151,12 +157,14 @@ class TestDataVector:
     def test_add(self):
         data_vector = DataVectorTest.empty(parse_version("1.1.2"))
         assert len(data_vector) == 0
+        data_vector._read_blocks_up_to_date
 
         # Add available index
         field = data_vector.add(5)
         assert len(data_vector) == 1
         assert 5 in data_vector
         assert field.name == 'field_5'
+        assert not data_vector._read_blocks_up_to_date
 
         # Add not available index (not existing)
         field = data_vector.add(6)
@@ -273,18 +281,24 @@ class TestDataVector:
         # set via property (writeable)
         data_vector['field_9'] = [2, 8]
         assert field_5.value is None
+        assert not field_5.write_pending
         assert field_9.value == [2, 8]
+        assert field_9.write_pending
 
         # set via method (non-writeable)
         data_vector.set(5, 1)
         assert field_5.value == 1
+        assert field_5.write_pending
         assert field_9.value == [2, 8]
+        assert field_9.write_pending
 
         # set via field
         field_5.value = [4, 3]
         field_9.value = 6
         assert field_5.value == [4, 3]
+        assert field_5.write_pending
         assert field_9.value == 6
+        assert field_9.write_pending
 
     def test_parse(self):
         data_vector = DataVectorTest(parse_version("1.1.2"))
@@ -362,6 +376,39 @@ class TestDataVector:
         assert def_9a is not None
         assert field_9a is not None
         assert field_9a.name == 'field_9a'
+
+    def test_read_blocks(self):
+        data_vector = DataVectorTest(parse_version("1.1.2"))
+        assert not data_vector._read_blocks_up_to_date
+        assert len(data_vector._read_blocks) == 0
+
+        # update blocks
+        data_vector.update_read_blocks()
+        assert data_vector._read_blocks_up_to_date
+        assert len(data_vector._read_blocks) == 2
+        assert data_vector._read_blocks[0].first_index == 5
+        assert data_vector._read_blocks[0].overall_count == 1
+        assert data_vector._read_blocks[1].first_index == 9
+        assert data_vector._read_blocks[1].overall_count == 2
+
+        # reset updated
+        def_10 = TEST_DEFINITIONS.add({
+            "index": 10,
+            "count": 3,
+            "names": "foo"
+        })
+        data_vector.add(def_10)
+        assert not data_vector._read_blocks_up_to_date
+        assert len(data_vector._read_blocks) == 2
+
+        # update blocks again
+        data_vector.update_read_blocks()
+        assert data_vector._read_blocks_up_to_date
+        assert len(data_vector._read_blocks) == 2
+        assert data_vector._read_blocks[0].first_index == 5
+        assert data_vector._read_blocks[0].overall_count == 1
+        assert data_vector._read_blocks[1].first_index == 9
+        assert data_vector._read_blocks[1].overall_count == 4
 
     def test_version_none(self):
         data_vector = DataVectorTest.empty(None)
