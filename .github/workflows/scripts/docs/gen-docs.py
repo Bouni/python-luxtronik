@@ -36,7 +36,7 @@ def gather_data() -> dict:
 def render_docs():
     logger.info("render docs")
     env = Environment(loader=FileSystemLoader(str(BASEPATH / "templates")), autoescape=select_autoescape())
-    template = env.get_template("docs.jinja")
+    template = env.get_template("docs.html")
     group_data = gather_data()
     (BASEPATH.parents[3] / "docs").mkdir(exist_ok=True)
     with open(BASEPATH.parents[3] / "docs/index.html", "w", encoding="UTF-8") as f:
