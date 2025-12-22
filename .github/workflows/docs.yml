@@ -2,7 +2,7 @@ name: Generate and deploy docs to GH pages
 
 on:
   push:
-    # branches: ["main"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
