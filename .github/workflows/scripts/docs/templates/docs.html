@@ -78,8 +78,13 @@
       {% for group, items in data.items() %}
       <section class="section">
         <h1 class="title" id="{{ group }}">
-          <a href="#{{group}}">{{ group.capitalize() }}</a>
+          <a href="#{{group}}">{{ group.capitalize() }}</a><span class="ml-4 tag is-medium">{{items|length}}</span>
         </h1>
+        <div class="my-2">
+          {% for _group in data.keys() %}
+          <a href="#{{ _group }}"><button class="button is-small is-dark">Jump to {{ _group.capitalize() }}</button></a>
+          {% endfor %}
+        </div>
         <div class="columns is-multiline">
           {% for item in items %}
           <div
