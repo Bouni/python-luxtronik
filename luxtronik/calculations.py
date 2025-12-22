@@ -317,6 +317,6 @@ class Calculations(DataVector):
             264: Unknown("Unknown_Calculation_264"),
             265: Unknown("Unknown_Calculation_265"),
             266: Unknown("Unknown_Calculation_266"),
-            267: Celsius("Desired_Room_Temperature"),
-            268: Power("AC_Power_Input")
+            267: Celsius(["Desired_Room_Temperature", "Unknown_Calculation_267"]),
+            268: Power(["AC_Power_Input", "Unknown_Calculation_268"]),
         }

@@ -373,7 +373,7 @@ class Visibilities(DataVector):
             354: Unknown("Unknown_Visibility_354"),
             355: Unknown(["Unknown_Visibility_355", "Unknown_Parameter_355"]),
             356: Unknown(["Unknown_Visibility_356", "Unknown_Parameter_356"]),
-            357: Unknown(["Unknown_Visibility_357", "Unknown_Parameter_357"]),
+            357: Unknown(["ELECTRICAL_POWER_LIMITATION_SWITCH", "Unknown_Visibility_357", "Unknown_Parameter_357"]),
             358: Unknown(["Unknown_Visibility_358", "Unknown_Parameter_358"]),
             359: Unknown(["Unknown_Visibility_359", "Unknown_Parameter_359"]),
             360: Unknown(["Unknown_Visibility_360", "Unknown_Parameter_360"]),
