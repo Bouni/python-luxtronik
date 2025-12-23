@@ -174,8 +174,6 @@ class LuxtronikSocketInterface:
 
     def _write_and_read(self, parameters, data):
         self._write(parameters)
-        # Give the heatpump a short time to handle the value changes/calculations:
-        time.sleep(WAIT_TIME_AFTER_PARAMETER_WRITE)
         return self._read(data)
 
     def _write(self, parameters):
@@ -196,6 +194,8 @@ class LuxtronikSocketInterface:
             LOGGER.debug("%s: Value %s", self._host, val)
         # Flush queue after writing all values
         parameters.queue = {}
+        # Give the heatpump a short time to handle the value changes/calculations:
+        time.sleep(WAIT_TIME_AFTER_PARAMETER_WRITE)
 
     def _read_parameters(self, parameters):
         data = []
