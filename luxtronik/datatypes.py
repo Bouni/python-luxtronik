@@ -134,6 +134,8 @@ class SelectionBase(Base):
 
     datatype_class = "selection"
 
+    unknown_prefix = "Unknown"
+    unknown_delimiter = "_"
     codes = {}
 
     @classmethod
@@ -145,13 +147,15 @@ class SelectionBase(Base):
     def from_heatpump(cls, value):
         if value in cls.codes:
             return cls.codes.get(value)
-        return None
+        return f"{cls.unknown_prefix}{cls.unknown_delimiter}{value}"
 
     @classmethod
     def to_heatpump(cls, value):
         for index, code in cls.codes.items():
             if code == value:
                 return index
+        if value.startswith(cls.unknown_prefix):
+            return int(value.split(cls.unknown_delimiter)[1])
         return None
 
 

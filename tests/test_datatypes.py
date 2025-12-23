@@ -223,13 +223,14 @@ class TestSelectionBase:
         """Test cases for from_heatpump function"""
 
         a = SelectionBase("")
-        assert a.from_heatpump(0) is None
+        assert a.from_heatpump(0) == 'Unknown_0'
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
         a = SelectionBase("")
         assert a.to_heatpump("a") is None
+        assert a.to_heatpump("Unknown_214") == 214
 
 
 class SelectionBaseChild(SelectionBase):
@@ -267,7 +268,7 @@ class TestSelectionBaseChild:
         assert a.from_heatpump(0) == "a"
         assert a.from_heatpump(1) == "b"
         assert a.from_heatpump(2) == "c"
-        assert a.from_heatpump(3) is None
+        assert a.from_heatpump(3) == "Unknown_3"
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
