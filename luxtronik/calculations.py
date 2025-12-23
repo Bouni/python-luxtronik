@@ -320,3 +320,7 @@ class Calculations(DataVector):
             267: Celsius(["Desired_Room_Temperature", "Unknown_Calculation_267"]),
             268: Power(["AC_Power_Input", "Unknown_Calculation_268"]),
         }
+
+    @property
+    def calculations(self):
+        return self._data

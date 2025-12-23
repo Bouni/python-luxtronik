@@ -1207,6 +1207,10 @@ class Parameters(DataVector):
             1159: Unknown(["POWER_LIMIT_VALUE", "Unknown_Parameter_1159"]),
         }
 
+    @property
+    def parameters(self):
+        return self._data
+
     def set(self, target, value):
         """Set parameter to new value."""
         index, parameter = self._lookup(target, with_index=True)
