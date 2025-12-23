@@ -36,6 +36,7 @@ class FakeSocket:
         assert stream == socket.SOCK_STREAM
         self._connected = False
         self._buffer = b""
+        self._blocking = False
 
         # Offer some more entries
         self._num_paras = len(Parameters()._data) + 10
@@ -43,6 +44,9 @@ class FakeSocket:
         self._num_visis = len(Visibilities()._data) + 10
 
         self.written_values = {}
+
+    def setblocking(self, blocking):
+        self._blocking = blocking
 
     def connect(self, info):
         assert not self._connected
@@ -127,7 +131,7 @@ class FakeSocket:
     def recv(self, cnt, flag=0):
         assert self._connected
 
-        if (flag & socket.MSG_DONTWAIT) and len(self._buffer) < cnt:
+        if (not self._blocking) and len(self._buffer) < cnt:
             raise BlockingIOError("Not enough bytes in buffer.")
 
         assert len(self._buffer) >= cnt
