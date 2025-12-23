@@ -1216,7 +1216,7 @@ class Parameters(DataVector):
         index, parameter = self._lookup(target, with_index=True)
         if index is not None:
             if parameter.writeable or not self.safe:
-                self.queue[index] = parameter.to_heatpump(value)
+                self.queue[index] = int(parameter.to_heatpump(value))
             else:
                 self.logger.warning("Parameter '%s' not safe for writing!", parameter.name)
         else:
