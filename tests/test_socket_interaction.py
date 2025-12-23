@@ -144,6 +144,23 @@ class FakeSocket:
 
         return data
 
+class FakeModbus:
+
+    def __init__(
+        self,
+        host,
+        port=0,
+        timeout=0
+    ):
+        self._connected = False
+        self._blocking = False
+
+    def read_inputs(self, addr, count):
+        return [addr + i for i in range(count)]
+
+    def send(self, data):
+        return True
+
 
 class TestSocketInteraction:
     def check_luxtronik_data(self, lux, check_for_true=True):
@@ -239,6 +256,7 @@ class TestSocketInteraction:
             assert len(p.queue) == 0
             assert self.check_luxtronik_data(d)
 
+    @mock.patch("luxtronik.LuxtronikModbusTcpInterface", FakeModbus)
     def test_luxtronik(self):
         host = "my_heatpump"
         port = 4711
