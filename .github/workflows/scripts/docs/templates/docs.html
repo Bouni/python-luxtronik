@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>python-luxtronik docs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
+  </head>
+  <body>
+    <style>
+      pre {
+        all: unset;
+        display: block !important;
+        font-family: monospace !important;
+        overflow-x: auto !important;
+        font-size: 0 !important;
+      }
+
+      pre code {
+        display: block !important;
+        font-size: 0.875rem !important;
+        line-height: 1.5 !important;
+        padding: 1em !important;
+        white-space: pre !important;
+      }
+      .card {
+        --bulma-card-shadow: none;
+        border-color: rgb(53, 58, 70);
+        border-width: 1px;
+        border-style: solid;
+      }
+    </style>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-body">
+          <p class="title has-text-centered">python-luxtronik docs</p>
+          <p class="subtitle has-text-centered mt-2">
+            Latest info about calculations, parameters and visibilities of
+            python-luxtronik
+          </p>
+          <p class="has-text-centered mb-2" >Generated: {{ now.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+          <div class="has-text-centered">
+            <a
+              href="https://github.com/bouni/python-luxtronik"
+              aria-label="GitHub repo"
+              class="footer-octicon"
+              title="GitHub repo"
+            >
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-mark-github"
+                height="24"
+                version="1.1"
+                viewBox="0 0 16 16"
+                width="24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  fill="#FFF"
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section py-0">
+        <input class="input search" type="text" placeholder="Search" />
+      </section>
+      {% for group, items in data.items() %}
+      <section class="section">
+        <h1 class="title" id="{{ group }}">
+          <a href="#{{group}}">{{ group.capitalize() }}</a><span class="ml-4 tag is-medium">{{items|length}}</span>
+        </h1>
+        <div class="my-2">
+          {% for _group in data.keys() %}
+          <a href="#{{ _group }}"><button class="button is-small is-dark">Jump to {{ _group.capitalize() }}</button></a>
+          {% endfor %}
+        </div>
+        <div class="columns is-multiline">
+          {% for item in items %}
+          <div
+            class="column is-full item"
+            data-name="{{ item.name }}"
+            data-number="{{ item.number }}"
+            data-type="{{ item.type }}"
+          >
+            <div class="card" id="{{ group }}-{{ item.name }}">
+              <div class="card-content">
+                <p class="title is-4">
+                  <a href="#{{ group }}-{{ item.name }}">{{ item.name }}</a>
+                </p>
+                <div class="content">
+                  <div class="fixed-grid has-4-cols">
+                    <div class="grid">
+                      <div class="cell has-text-centered">
+                        <div class="is-size-5 mb-2">Group</div>
+                        <span
+                          class="tag is-medium"
+                          style="background-color: oklch(37.2% 0.044 257.287)"
+                          ><strong>{{ group }}</strong></span
+                        >
+                      </div>
+                      <div class="cell has-text-centered">
+                        <div class="is-size-5 mb-2">Name</div>
+                        <span
+                          class="tag is-medium"
+                          style="background-color: oklch(37.2% 0.044 257.287)"
+                          ><strong>{{ item.name }}</strong></span
+                        >
+                      </div>
+                      <div class="cell has-text-centered">
+                        <div class="is-size-5 mb-2">Number</div>
+                        <span
+                          class="tag is-medium"
+                          style="background-color: oklch(37.2% 0.044 257.287)"
+                          ><strong>{{ item.number }}</strong></span
+                        >
+                      </div>
+                      <div class="cell has-text-centered">
+                        <div class="is-size-5 mb-2">Type</div>
+                        <span
+                          class="tag is-medium"
+                          style="background-color: oklch(37.2% 0.044 257.287)"
+                          ><strong>{{ item.type }}</strong></span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="title is-6">
+                      Usage example in Home-Assitant config:
+                    </p>
+                    <div class="fixed-grid has-12-cols">
+                      <div class="grid">
+                        <div class="cell is-col-span-5">
+                          <pre class="theme-atom-one-dark">
+                            <code class="language-yaml">
+sensor:
+  - platform: luxtronik
+    sensors:
+      - group: {{ group }}
+        id: {{ item.name }}
+        friendly_name: my_parameter_name # Optional
+                            </code>
+                          </pre>
+                        </div>
+                        <div
+                          class="cell is-col-span-2 has-text-centered is-size-3"
+                        >
+                          <p>or</p>
+                        </div>
+                        <div class="cell is-col-span-5">
+                          <pre class="theme-atom-one-dark">
+                            <code class="language-yaml">
+sensor:
+  - platform: luxtronik
+    sensors:
+      - group: {{ group }}
+        id: {{ item.number }}
+        friendly_name: my_parameter_name # Optional
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    <script lang="javascript">
+      const searchbar = document.querySelector(".search");
+
+      searchbar.addEventListener("keyup", () => {
+        let searchword = searchbar.value.toString().toLowerCase();
+        if (searchword.length < 1) {
+          let items = document.querySelectorAll(".item");
+          Array.from(items, (el) => {
+            el.style.display = "block";
+          });
+        } else {
+          let items = document.querySelectorAll(".item");
+          Array.from(items, (el) => {
+            if (
+              !el.dataset.type.toLowerCase().includes(searchword) &&
+              !el.dataset.number
+                .toString()
+                .toLowerCase()
+                .includes(searchword) &&
+              !el.dataset.name.toLowerCase().includes(searchword)
+            ) {
+              el.style.display = "none";
+            } else {
+              el.style.display = "block";
+            }
+          });
+        }
+      });
+    </script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
