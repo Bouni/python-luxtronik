@@ -1207,12 +1207,16 @@ class Parameters(DataVector):
             1159: Unknown(["POWER_LIMIT_VALUE", "Unknown_Parameter_1159"]),
         }
 
+    @property
+    def parameters(self):
+        return self._data
+
     def set(self, target, value):
         """Set parameter to new value."""
         index, parameter = self._lookup(target, with_index=True)
         if index is not None:
             if parameter.writeable or not self.safe:
-                self.queue[index] = parameter.to_heatpump(value)
+                self.queue[index] = int(parameter.to_heatpump(value))
             else:
                 self.logger.warning("Parameter '%s' not safe for writing!", parameter.name)
         else:
