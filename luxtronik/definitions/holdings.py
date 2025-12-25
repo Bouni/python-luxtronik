@@ -456,8 +456,14 @@ Requires mc3_cool_mode = offset to apply."
         "since": "3.90.1",
         "description": "Configuration for limitation of power consumption: \
 0: no power limitation (normal operation) \
+Setpoint values are achieved with heat pump performance curve \
 1: Soft limitation (recommended for PV surplus) \
+Power recommendation for heat pump, i.e., heat pump attempts to \
+limit power demand according to data point pc_limit \
+If the actual value deviates too much from the setpoint (hysteresis), \
+the heat pump ignores the PC Limit power specification. \
 2: Hard limitation (recommended only for §14a EnWG). \
+The heat pump limits the power consumption according to pc_limit regardless of hysteresis. \
 Hard limitation may reduce comfort."
     },
     {
