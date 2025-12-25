@@ -36,19 +36,22 @@ WAIT_TIME_AFTER_PARAMETER_WRITE = 1
 
 def is_socket_closed(sock: socket.socket) -> bool:
     """Check is socket closed."""
+    # Alternative to socket.MSG_DONTWAIT in recv.
+    # Works on Windows and Linux.
+    sock.setblocking(False)
     try:
         # this will try to read bytes without blocking and also without removing them from buffer
-        data = sock.recv(LUXTRONIK_SOCKET_READ_SIZE_PEEK, socket.MSG_DONTWAIT | socket.MSG_PEEK)
-        if len(data) == 0:
-            return True
+        data = sock.recv(LUXTRONIK_SOCKET_READ_SIZE_PEEK, socket.MSG_PEEK)
+        is_closed = len(data) == 0
     except BlockingIOError:
-        return False  # socket is open and reading from it would block
+        is_closed = False  # socket is open and reading from it would block
     except ConnectionResetError:  # pylint: disable=broad-except
-        return True  # socket was closed for some other reason
+        is_closed = True  # socket was closed for some other reason
     except Exception as err:  # pylint: disable=broad-except
         LOGGER.exception("Unexpected exception when checking if socket is closed", exc_info=err)
-        return False
-    return False
+        is_closed = False
+    sock.setblocking(True)
+    return is_closed
 
 
 class LuxtronikData:

@@ -25,8 +25,8 @@ def main() -> int:
         description="CLI for Luxtronik controllers",
         usage="""luxtronik <command> [<args>]
         The supported commands are:
-        dump       Dump all available data from the Luxtronik controller 
-        changes    Dump all value changes from Luxtronik controller  
+        dump       Dump all available data from the Luxtronik controller
+        changes    Dump all value changes from Luxtronik controller
         discover   Discover Luxtronik controllers on the network (via magic packet) and output results
         """,
     )
@@ -47,3 +47,6 @@ def main() -> int:
     sys.argv.pop(1)
     # call the corresponding command
     commands[args.command]()
+
+if __name__ == "__main__":
+    main()
