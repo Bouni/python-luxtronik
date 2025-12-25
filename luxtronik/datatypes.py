@@ -54,9 +54,10 @@ class Base:
         Check whether a name matches one of the supported entry names.
         The result string can be used to trigger a exception for obsolete names.
         """
-        if name == self.name:
+        name_lower = name.lower()
+        if name_lower == self.name.lower():
             return LUXTRONIK_NAME_CHECK_PREFERRED
-        elif name in self._names:
+        elif name_lower in (n.lower() for n in self._names):
             return LUXTRONIK_NAME_CHECK_OBSOLETE
         else:
             return LUXTRONIK_NAME_CHECK_NONE
