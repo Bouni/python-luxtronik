@@ -13,8 +13,10 @@ from luxtronik.datatypes import (
     Energy,
     FullVersion,
     HeatPumpState,
+    Minutes,
     ModeState,
     OperationMode,
+    Power,
     Unknown,
 )
 
@@ -29,8 +31,17 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["heatpump_state"],
         "type": HeatPumpState,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "bitmask",
         "since": "3.90.1",
-        "description": "Current operating state of the heat pump",
+        "description": "Heat pump status bitmask: \
+1: VD1 \
+2: VD2 \
+4: ZWE1 \
+8: ZWE2 \
+16: ZWE3 \
+0: Heat pump inactive \
+>0: Heat pump or auxiliary heater active"
     },
     {
         "index": 2,
@@ -38,8 +49,20 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["operation_mode"],
         "type": OperationMode,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "enum",
+        "default": 5,
+        "range": {"min": 0, "max": 7},
         "since": "3.90.1",
-        "description": "Overall operation mode of the system",
+        "description": "Operating mode status: \
+0: Heating \
+1: DHW heating \
+2: Pool heating \
+3: Utility lockout \
+4: Defrost \
+5: No demand \
+6: Not used \
+7: Cooling"
     },
     {
         "index": 3,
@@ -47,35 +70,63 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["heating_state"],
         "type": ModeState,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "enum",
+        "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Current state of the heating function",
+        "description": "Heating status: \
+0: Off \
+1: No demand \
+2: Demand \
+3: Active"
     },
     {
         "index": 4,
         "count": 1,
-        "names": ["hot_water_state"],
+        "names": ["hot_water_state", "dhw_status"],
         "type": ModeState,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "enum",
+        "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Current state of the hot water system",
+        "description": "DHW status: \
+0: Off \
+1: No demand \
+2: Demand \
+3: Active"
     },
     {
         "index": 6,
         "count": 1,
-        "names": ["unknown_input_6"],
-        "type": Unknown,
+        "names": ["cooling_state"],
+        "type": ModeState,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "enum",
+        "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Cooling status: \
+0: Off \
+1: No demand \
+2: Demand \
+3: Active"
     },
     {
         "index": 7,
         "count": 1,
-        "names": ["unknown_input_7"],
-        "type": Unknown,
+        "names": ["pool_heating_state"],
+        "type": ModeState,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "enum",
+        "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Pool heating status: \
+0: Off \
+1: No demand \
+2: Demand \
+3: Active"
     },
     {
         "index": 100,
@@ -83,6 +134,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["return_line_temp"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Current return line temperature",
     },
@@ -92,6 +145,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["return_line_target"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Target return line temperature",
     },
@@ -101,6 +156,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["return_line_ext"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Current value of the external return temperature sensor",
     },
@@ -110,6 +167,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["return_line_limit"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Maximum allowed return line temperature",
     },
@@ -119,6 +178,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["return_line_min_target"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Minimum target return line temperature",
     },
@@ -128,26 +189,34 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["flow_line_temp"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Current flow line temperature",
     },
     {
         "index": 106,
         "count": 1,
-        "names": ["unknown_input_106"],
-        "type": Unknown,
+        "names": ["room_temperature"],
+        "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Current room temperature. \
+Requires accessory RBE+ room control unit."
     },
     {
         "index": 107,
         "count": 1,
-        "names": ["inside_temp"],
+        "names": ["heating_limit"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
-        "description": "Measured indoor temperature",
+        "description": "Heating limit temperature. \
+If undershot (heating curve setpoint - hysteresis), soft-limit power control is ignored."
     },
     {
         "index": 108,
@@ -155,6 +224,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["outside_temp"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Measured outdoor temperature",
     },
@@ -206,47 +277,58 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 120,
         "count": 1,
-        "names": ["hot_water_temp"],
+        "names": ["hot_water_temp", "dhw_temp"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Current hot water temperature",
     },
     {
         "index": 121,
         "count": 1,
-        "names": ["hot_water_target"],
+        "names": ["hot_water_target", "dhw_target"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Target hot water temperature",
     },
     {
         "index": 122,
         "count": 1,
-        "names": ["hot_water_min"],
+        "names": ["hot_water_min", "dhw_min"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
-        "description": "Minimum hot water temperature",
+        "description": "Minimum adjustable hot water temperature",
     },
     {
         "index": 123,
         "count": 1,
-        "names": ["hot_water_max"],
+        "names": ["hot_water_max", "dhw_max"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
-        "description": "Maximum hot water temperature",
+        "description": "Maximum adjustable hot water temperature",
     },
     {
         "index": 124,
         "count": 1,
-        "names": ["unknown_input_124"],
-        "type": Unknown,
+        "names": ["hot_water_limit", "dhw_limit"],
+        "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – possibly hot water idle/running indicator",
+        "description": "DHW limit temperature. \
+If undershot (desired regulation value), soft-limit power control is ignored."
     },
     {
         "index": 140,
@@ -254,8 +336,10 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc1_temp"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
-        "description": "Current temperature of mixing circuit 1",
+        "description": "Current flow temperature of mixing circuit 1",
     },
     {
         "index": 141,
@@ -263,6 +347,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc1_target"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Desired target temperature of mixing circuit 1",
     },
@@ -272,6 +358,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc1_min"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Minimum temperature of mixing circuit 1",
     },
@@ -281,6 +369,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc1_max"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Maximum temperature of mixing circuit 1",
     },
@@ -290,8 +380,10 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc2_temp"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
-        "description": "Current temperature of mixing circuit 2",
+        "description": "Current flow temperature of mixing circuit 2",
     },
     {
         "index": 151,
@@ -299,6 +391,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc2_target"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Desired target temperature of mixing circuit 2",
     },
@@ -308,6 +402,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc2_min"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Minimum temperature of mixing circuit 2",
     },
@@ -317,6 +413,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc2_max"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Maximum temperature of mixing circuit 2",
     },
@@ -326,8 +424,10 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc3_temp"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
-        "description": "Current temperature of mixing circuit 3",
+        "description": "Current flow temperature of mixing circuit 3",
     },
     {
         "index": 161,
@@ -335,6 +435,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc3_target"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Desired target temperature of mixing circuit 3",
     },
@@ -344,6 +446,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc3_min"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Minimum temperature of mixing circuit 3",
     },
@@ -353,107 +457,145 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "names": ["mc3_max"],
         "type": Celsius,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.90.1",
         "description": "Maximum temperature of mixing circuit 3",
     },
     {
         "index": 201,
         "count": 1,
-        "names": ["unknown_input_201"],
+        "names": ["error_number"],
         "type": Unknown,
         "writeable": False,
+        "datatype": "UINT16",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Current error number: \
+0: no error \
+X: error code."
     },
     {
         "index": 202,
         "count": 1,
-        "names": ["unknown_input_202"],
+        "names": ["buffer_type"],
         "type": Unknown,
         "writeable": False,
+        "datatype": "UINT16",
+        "range": {"min": 0, "max": 2},
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Buffer tank configuration: \
+0: series buffer \
+1: separation buffer \
+2: multifunction buffer."
     },
     {
         "index": 203,
         "count": 1,
-        "names": ["unknown_input_203"],
-        "type": Unknown,
+        "names": ["min_off_time"],
+        "type": Minutes,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "minute",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Minimum off-time before heat pump may restart."
     },
     {
         "index": 204,
         "count": 1,
-        "names": ["unknown_input_204"],
-        "type": Unknown,
+        "names": ["min_run_time"],
+        "type": Minutes,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "minute",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Minimum runtime of the heat pump."
     },
     {
         "index": 205,
         "count": 1,
-        "names": ["unknown_input_205"],
+        "names": ["cooling_configured"],
         "type": Unknown,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "bool",
+        "range": {"min": 0, "max": 1},
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Indicates whether cooling mode is configured: \
+0: no \
+1: yes."
     },
     {
         "index": 206,
         "count": 1,
-        "names": ["unknown_input_206"],
+        "names": ["pool_heating_configured"],
         "type": Unknown,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "bool",
+        "range": {"min": 0, "max": 1},
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Indicates whether pool heating is configured: \
+0: no \
+1: yes."
     },
     {
         "index": 207,
         "count": 1,
-        "names": ["unknown_input_207"],
+        "names": ["cooling_release"],
         "type": Unknown,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "bool",
+        "range": {"min": 0, "max": 1},
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Cooling release condition fulfilled: \
+0: no \
+1: yes. \
+Cooling release only valid if cooling is enabled (see cooling_configured)."
     },
     {
         "index": 300,
         "count": 1,
-        "names": ["unknown_input_300"],
-        "type": Unknown,
+        "names": ["heating_power_actual"],
+        "type": Power,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "kW/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Current heating power."
     },
     {
         "index": 301,
         "count": 1,
-        "names": ["unknown_input_301"],
-        "type": Unknown,
+        "names": ["electric_power_actual"],
+        "type": Power,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "kW/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Current electrical power consumption."
     },
     {
         "index": 302,
         "count": 1,
-        "names": ["unknown_input_302"],
-        "type": Unknown,
+        "names": ["electric_power_min_predicted"],
+        "type": Power,
         "writeable": False,
+        "datatype": "UINT16",
+        "unit": "kW/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Minimum predicted electrical power consumption."
     },
     {
         "index": 310,
         "count": 1,
-        "names": ["unknown_input_310"],
-        "type": Unknown,
+        "names": ["electric_energy_total"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total electrical energy consumption (all modes)."
     },
     {
         "index": 311,
@@ -467,11 +609,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 312,
         "count": 1,
-        "names": ["unknown_input_312"],
-        "type": Unknown,
+        "names": ["electric_energy_heating"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total electrical energy consumption for heating."
     },
     {
         "index": 313,
@@ -485,11 +629,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 314,
         "count": 1,
-        "names": ["unknown_input_314"],
-        "type": Unknown,
+        "names": ["electric_energy_dhw"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total electrical energy consumption for DHW."
     },
     {
         "index": 315,
@@ -503,11 +649,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 316,
         "count": 1,
-        "names": ["unknown_input_316"],
-        "type": Unknown,
+        "names": ["electric_energy_cooling"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total electrical energy consumption for cooling."
     },
     {
         "index": 317,
@@ -521,11 +669,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 318,
         "count": 1,
-        "names": ["unknown_input_318"],
-        "type": Unknown,
+        "names": ["electric_energy_pool"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.90.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total electrical energy consumption for pool heating."
     },
     {
         "index": 319,
