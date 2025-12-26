@@ -689,11 +689,13 @@ Cooling release only valid if cooling is enabled (see cooling_configured)."
     {
         "index": 320,
         "count": 1,
-        "names": ["unknown_input_320"],
-        "type": Unknown,
+        "names": ["thermal_energy_total"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total thermal energy production (all modes)."
     },
     {
         "index": 321,
@@ -707,11 +709,13 @@ Cooling release only valid if cooling is enabled (see cooling_configured)."
     {
         "index": 322,
         "count": 1,
-        "names": ["unknown_input_322"],
-        "type": Unknown,
+        "names": ["thermal_energy_heating"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total thermal energy production for heating."
     },
     {
         "index": 323,
@@ -725,11 +729,13 @@ Cooling release only valid if cooling is enabled (see cooling_configured)."
     {
         "index": 324,
         "count": 1,
-        "names": ["unknown_input_324"],
-        "type": Unknown,
+        "names": ["thermal_energy_dhw"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total thermal energy production for DHW."
     },
     {
         "index": 325,
@@ -743,11 +749,13 @@ Cooling release only valid if cooling is enabled (see cooling_configured)."
     {
         "index": 326,
         "count": 1,
-        "names": ["unknown_input_326"],
-        "type": Unknown,
+        "names": ["thermal_energy_cooling"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total thermal energy production for cooling."
     },
     {
         "index": 327,
@@ -761,11 +769,13 @@ Cooling release only valid if cooling is enabled (see cooling_configured)."
     {
         "index": 328,
         "count": 1,
-        "names": ["unknown_input_328"],
-        "type": Unknown,
+        "names": ["thermal_energy_pool"],
+        "type": Energy,
         "writeable": False,
+        "datatype": "INT32",
+        "unit": "kWh/10",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Total thermal energy production for pool heating."
     },
     {
         "index": 329,
