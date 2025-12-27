@@ -289,20 +289,25 @@ class TestSelectionBaseChild:
         assert a.to_heatpump("3") == 3
 
 
+class ScalingBaseTest(ScalingBase):
+    """Class to test ScalingBase. Required because of __init_subclass__"""
+    pass
+
+
 class TestScalingBase:
     """Test suite for ScalingBase datatype"""
 
     def test_init(self):
         """Test cases for initialization"""
 
-        a = ScalingBase("scaling_base")
+        a = ScalingBaseTest("scaling_base")
         assert a.name == "scaling_base"
         assert a.scaling_factor == 1
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        a = ScalingBase("")
+        a = ScalingBaseTest("")
         assert a.from_heatpump(1) == 1
         assert a.from_heatpump(42) == 42
         assert a.from_heatpump(None) is None
@@ -310,7 +315,7 @@ class TestScalingBase:
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        a = ScalingBase("")
+        a = ScalingBaseTest("")
         assert a.to_heatpump(1) == 1
         assert a.to_heatpump(42) == 42
 
@@ -348,6 +353,38 @@ class TestScalingBaseChild:
         assert a.to_heatpump(26) == 2
         assert a.to_heatpump(40) == 3
         assert a.to_heatpump(-100) == -8
+
+
+class ScalingBaseInt4Child(ScalingBase):
+    """Child class of ScalingBase containing a scaling_factor to test it in the context of TestScalingBaseChild"""
+
+    data_width = 4 # bits
+
+
+class TestScalingBaseInt4Child:
+    """Test suite for 16-bit ScalingBase datatype"""
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        a = ScalingBaseInt4Child("")
+        assert a.from_heatpump(None) is None
+        assert a.from_heatpump(0) == 0
+        assert a.from_heatpump(1) == 1
+        assert a.from_heatpump(8) == -8
+        assert a.from_heatpump(10) == -6
+        assert a.from_heatpump(15) == -1
+        assert a.from_heatpump(17) == 1
+
+    def test_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        a = ScalingBaseInt4Child("")
+        assert a.to_heatpump(None) is None
+        assert a.to_heatpump(0) == 0
+        assert a.to_heatpump(26) == 26
+        assert a.to_heatpump(40) == 40
+        assert a.to_heatpump(-100) == -100
 
 
 class TestCelsius:
