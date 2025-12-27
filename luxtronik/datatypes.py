@@ -170,6 +170,75 @@ class SelectionBase(Base):
         return None
 
 
+class BitMaskBase(Base):
+
+    datatype_class = "bitmask"
+    unknown_prefix = "Unknown"
+    unknown_delimiter = "_"
+
+    # Dictionary with the bit-index as key (2 means bit-index 2, 0b100 in binary notation)
+    bit_values = {}
+    value_zero = "None"
+    value_delim = ", "
+    values_postfix = ""
+
+    @classmethod
+    def bits(cls):
+        """Return list of all available bits."""
+        return [value for _, value in cls.bit_values.items()]
+
+    @classmethod
+    def _get_unknown(cls, bit_index):
+        return f"{cls.unknown_prefix}{cls.unknown_delimiter}{bit_index}"
+
+    @classmethod
+    def _get_bit_value(cls, bit_index):
+        if bit_index in cls.bit_values:
+            return f"{cls.bit_values[bit_index]}"
+        else:
+            return cls._get_unknown(bit_index)
+
+    @classmethod
+    def from_heatpump(cls, value):
+        if not isinstance(value, int):
+            return None
+        # Check for zero
+        if value == 0:
+            return cls.value_zero
+        # We support up to 32 bits
+        result = []
+        for bit_index in range(0, 32):
+            if value & (1 << bit_index):
+                bit_value = cls._get_bit_value(bit_index)
+                result.append(bit_value)
+        result = cls.value_delim.join(result)
+        # Add postfix
+        return result + cls.values_postfix
+
+    @classmethod
+    def to_heatpump(cls, value):
+        if not isinstance(value, str) or not value:
+            return None
+        # Remove postfix and split
+        if cls.values_postfix and value.endswith(cls.values_postfix):
+            value = value[0:-len(cls.values_postfix)]
+        # Check for zero
+        if value == cls.value_zero:
+            return 0
+        # We support up to 32 bits
+        values = value.split(cls.value_delim)
+        raw = 0
+        count = 0
+        for bit_index in range(0, 32):
+            bit_value = cls._get_bit_value(bit_index)
+            if bit_value in values:
+                raw += 1 << bit_index
+                count += 1
+        if count != len(values):
+            return None
+        return raw
+
+
 class ScalingBase(Base):
     """Scaling base datatype, converts via a scaling factor."""
 
