@@ -17,9 +17,9 @@ from luxtronik.datatypes import (
     Energy,
     Errorcode,
     FullVersion,
-    HeatPumpState,
+    HeatPumpStatus,
     Minutes,
-    ModeState,
+    ModeStatus,
     OnOffMode,
     OperationMode,
     Power,
@@ -34,8 +34,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 0,
         "count": 1,
-        "names": ["heatpump_state"],
-        "type": HeatPumpState,
+        "names": ["heatpump_status"],
+        "type": HeatPumpStatus,
         "writeable": False,
         "datatype": "UINT16",
         "unit": "bitmask",
@@ -63,7 +63,7 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "description": "Operating mode status: \
 0: Heating \
 1: DHW heating \
-2: Pool heating \
+2: Pool heating / Solar\
 3: Utility lockout \
 4: Defrost \
 5: No demand \
@@ -73,8 +73,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 3,
         "count": 1,
-        "names": ["heating_state"],
-        "type": ModeState,
+        "names": ["heating_status"],
+        "type": ModeStatus,
         "writeable": False,
         "datatype": "UINT16",
         "unit": "enum",
@@ -89,8 +89,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 4,
         "count": 1,
-        "names": ["hot_water_state", "dhw_status"],
-        "type": ModeState,
+        "names": ["hot_water_status", "dhw_status"],
+        "type": ModeStatus,
         "writeable": False,
         "datatype": "UINT16",
         "unit": "enum",
@@ -105,8 +105,8 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 6,
         "count": 1,
-        "names": ["cooling_state"],
-        "type": ModeState,
+        "names": ["cooling_status"],
+        "type": ModeStatus,
         "writeable": False,
         "datatype": "UINT16",
         "unit": "enum",
@@ -121,14 +121,14 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 7,
         "count": 1,
-        "names": ["pool_heating_state"],
-        "type": ModeState,
+        "names": ["pool_heating_status"],
+        "type": ModeStatus,
         "writeable": False,
         "datatype": "UINT16",
         "unit": "enum",
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Pool heating status: \
+        "description": "Pool heating / Solar status: \
 0: Off \
 1: No demand \
 2: Demand \
@@ -651,7 +651,7 @@ Cooling release only valid if cooling is enabled (see cooling_configured)."
         "datatype": "INT32",
         "unit": "kWh/10",
         "since": "3.90.1",
-        "description": "Total electrical energy consumption for pool heating."
+        "description": "Total electrical energy consumption for pool heating / solar."
     },
     {
         "index": 320,
@@ -706,7 +706,7 @@ Cooling release only valid if cooling is enabled (see cooling_configured)."
         "datatype": "INT32",
         "unit": "kWh/10",
         "since": "3.92.0",
-        "description": "Total thermal energy production for pool heating."
+        "description": "Total thermal energy production for pool heating / solar."
     },
     {
         "index": 350,
