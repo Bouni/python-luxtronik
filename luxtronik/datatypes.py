@@ -159,6 +159,8 @@ class SelectionBase(Base):
                 return index
         if isinstance(value, str) and value.startswith(cls.unknown_prefix):
             return int(value.split(cls.unknown_delimiter)[1])
+        if isinstance(value, (int, float)) or (isinstance(value, str) and value.isdigit()):
+            return int(value)
         return None
 
 
