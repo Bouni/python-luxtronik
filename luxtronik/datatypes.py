@@ -146,6 +146,8 @@ class SelectionBase(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         if value in cls.codes:
             return cls.codes.get(value)
         return f"{cls.unknown_prefix}{cls.unknown_delimiter}{value}"
