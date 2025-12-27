@@ -8,6 +8,13 @@ from luxtronik.shi.contiguous import (
     ContiguousDataBlockList,
 )
 
+"""
+The test was originally written for "False".
+Since "True" is already checked in "test_definitions.py",
+we continue to use "False" consistently here.
+"""
+Base.concatenate_multiple_data_chunks = False
+
 
 def_a1 = LuxtronikDefinition({
     'index': 1,
