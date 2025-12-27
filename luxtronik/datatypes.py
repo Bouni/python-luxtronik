@@ -157,7 +157,7 @@ class SelectionBase(Base):
         for index, code in cls.codes.items():
             if code == value:
                 return index
-        if value.startswith(cls.unknown_prefix):
+        if isinstance(value, str) and value.startswith(cls.unknown_prefix):
             return int(value.split(cls.unknown_delimiter)[1])
         return None
 
