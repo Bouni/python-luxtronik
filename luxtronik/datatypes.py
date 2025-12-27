@@ -20,6 +20,12 @@ class Base:
     datatype_class = None
     datatype_unit = None
 
+    # If True, multiple data chucks should be combined externally into a single value.
+    # Otherwise, they are passed on "raw" as they are (list of chunks).
+    # Currently only necessary for the smart home interface,
+    # as 4-byte values are always transferred via the normal socket interface.
+    concatenate_multiple_data_chunks = True
+
     def __init__(self, names, writeable=False):
         """Initialize the base data field class. Set the initial raw value to None"""
         # save the raw value only since the user value
@@ -938,6 +944,7 @@ class FullVersion(Base):
     """FullVersion datatype, converts from and to a RBEVersion"""
 
     datatype_class = "version"
+    concatenate_multiple_data_chunks = False
 
     @classmethod
     def from_heatpump(cls, value):

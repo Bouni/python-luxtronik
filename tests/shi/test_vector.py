@@ -4,6 +4,12 @@ from luxtronik.shi.common import parse_version
 from luxtronik.shi.vector import DataVectorSmartHome
 from luxtronik.shi.definitions import LuxtronikDefinitionsList
 
+"""
+The test was originally written for "False".
+Since "True" is already checked in "test_definitions.py",
+we continue to use "False" consistently here.
+"""
+Base.concatenate_multiple_data_chunks = False
 
 ###############################################################################
 # Tests
