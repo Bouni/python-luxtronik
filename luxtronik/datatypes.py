@@ -215,6 +215,19 @@ class Celsius(ScalingBase):
     scaling_factor = 0.1
 
 
+class CelsiusInt16(Celsius):
+    """Celsius 16-bit signed, converts from and to Celsius."""
+
+    data_width = 16
+
+
+class CelsiusUInt16(Celsius):
+    """Celsius 16-bit unsigned, converts from and to Celsius."""
+
+    data_width = 16
+    data_type = "unsigned"
+
+
 class Bool(Base):
     """Boolean datatype, converts from and to Boolean."""
 
@@ -385,6 +398,12 @@ class Kelvin(ScalingBase):
     datatype_class = "temperature"
     datatype_unit = "K"
     scaling_factor = 0.1
+
+
+class KelvinInt16(Kelvin):
+    """Kelvin 16-bit signed, converts from and to Kelvin."""
+
+    data_width = 16
 
 
 class Pressure(ScalingBase):
