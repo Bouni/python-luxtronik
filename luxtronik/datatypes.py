@@ -503,8 +503,6 @@ class Icon(Base):
 class HeatingMode(SelectionBase):
     """HeatingMode datatype, converts from and to list of HeatingMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "Automatic",
         1: "Second heatsource",
@@ -517,15 +515,11 @@ class HeatingMode(SelectionBase):
 class CoolingMode(SelectionBase):
     """CoolingMode datatype, converts from and to list of CoolingMode codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "Off", 1: "Automatic"}
 
 
 class HotWaterMode(SelectionBase):
     """HotWaterMode datatype, converts from and to list of HotWaterMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Automatic",
@@ -539,23 +533,17 @@ class HotWaterMode(SelectionBase):
 class PoolMode(SelectionBase):
     """PoolMode datatype, converts from and to list of PoolMode codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
 
 class MixedCircuitMode(SelectionBase):
     """MixCircuitMode datatype, converts from and to list of MixCircuitMode codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
 
 class SolarMode(SelectionBase):
     """SolarMode datatype, converts from and to list of SolarMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Automatic",
@@ -569,15 +557,11 @@ class SolarMode(SelectionBase):
 class VentilationMode(SelectionBase):
     """VentilationMode datatype, converts from and to list of VentilationMode codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "Automatic", 1: "Party", 2: "Holidays", 3: "Off"}
 
 
 class HeatpumpCode(SelectionBase):
     """HeatpumpCode datatype, converts from and to list of Heatpump codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "ERC",
@@ -675,8 +659,6 @@ class HeatpumpCode(SelectionBase):
 class BivalenceLevel(SelectionBase):
     """BivalanceLevel datatype, converts from and to list of BivalanceLevel codes."""
 
-    datatype_class = "selection"
-
     codes = {
         1: "one compressor allowed to run",
         2: "two compressors allowed to run",
@@ -686,8 +668,6 @@ class BivalenceLevel(SelectionBase):
 
 class OperationMode(SelectionBase):
     """OperationMode datatype, converts from and to list of OperationMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "heating",
@@ -703,8 +683,6 @@ class OperationMode(SelectionBase):
 
 class SwitchoffFile(SelectionBase):
     """SwitchOff datatype, converts from and to list of SwitchOff codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "heatpump error",
@@ -738,8 +716,6 @@ class SwitchoffFile(SelectionBase):
 class MainMenuStatusLine1(SelectionBase):
     """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "heatpump running",
         1: "heatpump idle",
@@ -755,15 +731,11 @@ class MainMenuStatusLine1(SelectionBase):
 class MainMenuStatusLine2(SelectionBase):
     """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "since", 1: "in"}
 
 
 class MainMenuStatusLine3(SelectionBase):
     """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "heating",
@@ -788,8 +760,6 @@ class MainMenuStatusLine3(SelectionBase):
 class SecOperationMode(SelectionBase):
     """SecOperationMode datatype, converts from and to list of SecOperationMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "off",
         1: "cooling",
@@ -810,8 +780,6 @@ class SecOperationMode(SelectionBase):
 class AccessLevel(SelectionBase):
     """AccessLevel datatype, converts from and to list of AccessLevel codes"""
 
-    datatype_class = "selection"
-
     codes = {
         0: "user",
         1: "after sales service",
@@ -822,8 +790,6 @@ class AccessLevel(SelectionBase):
 
 class TimerProgram(SelectionBase):
     """TimerProgram datatype, converts from and to list of TimerProgram codes"""
-
-    datatype_class = "selection"
 
     codes = {
         0: "week",
@@ -890,8 +856,6 @@ class TimeOfDay2(Base):
 class HeatPumpState(SelectionBase):
     """HeatPumpState datatype, converts from and to list of HeatPumpState codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "Idle",     # Heatpump is idle
         1: "Running",  # Heatpump is running
@@ -899,8 +863,6 @@ class HeatPumpState(SelectionBase):
 
 class ModeState(SelectionBase):
     """ModeState datatype, converts from and to list of ModeState codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Disabled",    # Heating / Hot water is disabled
@@ -911,8 +873,6 @@ class ModeState(SelectionBase):
 
 class ControlMode(SelectionBase):
     """ControlMode datatype, converts from and to list of ControlMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Off",       # System value is used
@@ -926,8 +886,6 @@ class ControlMode(SelectionBase):
 class LpcMode(SelectionBase):
     """LpcMode datatype, converts from and to list of LpcMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "No limit",
         1: "Soft limit",
@@ -938,8 +896,6 @@ class LpcMode(SelectionBase):
 class LockMode(SelectionBase):
     """LockMode datatype, converts from and to list of LockMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "Off",       # Function is not locked
         1: "On",        # Function is locked
@@ -948,17 +904,14 @@ class LockMode(SelectionBase):
 class OnOffMode(SelectionBase):
     """OnOffMode datatype, converts from and to list of OnOffMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "Off",       # Function deactivated
         1: "On",        # Function activated
     }
 
+
 class LevelMode(SelectionBase):
     """LevelMode datatype, converts from and to list of LevelMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Normal",     # No correction
