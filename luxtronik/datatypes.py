@@ -175,19 +175,36 @@ class ScalingBase(Base):
 
     datatype_class = "scaling"
 
+    data_width = 32 # bits
+    data_type = "signed"
+
     scaling_factor = 1
+
+    def __init_subclass__(cls):
+        super().__init_subclass__()
+        cls.num_values = (1 << cls.data_width)
+        num_unsigned_bits = cls.data_width - 1 if cls.data_type == "signed" else cls.data_width
+        cls.max_value = (1 << num_unsigned_bits) - 1
 
     @classmethod
     def from_heatpump(cls, value):
-        if value is None:
+        if not isinstance(value, int):
             return None
+        while cls.data_type == "signed" and value > cls.max_value:
+            # correction for negative numbers
+            value -= cls.num_values
         value = value * cls.scaling_factor
         return value
 
     @classmethod
     def to_heatpump(cls, value):
-        raw = round(float(value) / cls.scaling_factor)
-        return raw
+        # Limitations due to the data_width are handled automatically.
+        # No need to add additional code here.
+        try:
+            raw = round(float(value) / cls.scaling_factor)
+            return raw
+        except Exception:
+            return None
 
 
 class Celsius(ScalingBase):
