@@ -537,7 +537,7 @@ class PoolMode(SelectionBase):
 
 
 class MixedCircuitMode(SelectionBase):
-    """MixCircuitMode datatype, converts from and to list of MixCircuitMode codes."""
+    """MixedCircuitMode datatype, converts from and to list of MixedCircuitMode codes."""
 
     codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
