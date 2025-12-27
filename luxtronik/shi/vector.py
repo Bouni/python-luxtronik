@@ -16,7 +16,7 @@ from luxtronik.shi.contiguous import ContiguousDataBlockList
 
 class DataVectorSmartHome(DataVector):
     """
-    Specialized DataVector for Luxtronik Smart Home fields.
+    Specialized DataVector for Luxtronik smart home fields.
 
     Provides access to fields by name, index or alias.
     To use aliases, they must first be registered here (locally = only valid

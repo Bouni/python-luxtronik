@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # pylint: disable=invalid-name
 """
-Script to measure different access methods of the Smart-Home-Interface.
+Script to measure different access methods of the smart home interface.
 """
 
 import time
@@ -28,7 +28,7 @@ class TimeMeasurement:
 
 def performance_shi():
     parser = create_default_args_parser(
-        "Measure different access methods of the Smart-Home-Interface.",
+        "Measure different access methods of the smart home interface.",
         LUXTRONIK_DEFAULT_MODBUS_PORT
     )
     args = parser.parse_args()

@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # pylint: disable=invalid-name, disable=too-many-locals
 """
-Script to watch all value changes from the Smart-Home-Interface of the Luxtronik controller
+Script to watch all value changes from the smart home interface of the Luxtronik controller
 """
 
 from collections import OrderedDict
@@ -36,7 +36,7 @@ def update_changes(changes, this_data_vector, prev_data_vector):
 
 def watch_shi():
     parser = create_default_args_parser(
-        "Watch all value changes from the Smart-Home-Interface of the Luxtronik controller.",
+        "Watch all value changes from the smart home interface of the Luxtronik controller.",
         LUXTRONIK_DEFAULT_MODBUS_PORT
     )
     args = parser.parse_args()

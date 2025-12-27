@@ -361,7 +361,7 @@ class LuxtronikInterface(LuxtronikSocketInterface, LuxtronikSmartHomeInterface):
             host (str): Hostname or IP address of the heat pump.
             port_config (int): TCP port for the config interface
                   (default: LUXTRONIK_DEFAULT_PORT).
-            port_shi (int): TCP port for the smart-home interface (via modbusTCP)
+            port_shi (int): TCP port for the smart home interface (via modbusTCP)
                   (default: LUXTRONIK_DEFAULT_MODBUS_PORT).
         """
         self._lock = get_host_lock(host)

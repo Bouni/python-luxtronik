@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # pylint: disable=invalid-name
 """
-Script to scan all inputs/holdings of the Smart-Home-Interface.
+Script to scan all inputs/holdings of the smart home interface.
 Only undefined but existing fields will be dumped.
 """
 
@@ -70,7 +70,7 @@ def discontinue_fields(definitions, read_cb):
 
 def discover_shi():
     parser = create_default_args_parser(
-        "Dumps all undefined but existing fields of the Smart-Home-Interface.",
+        "Dumps all undefined but existing fields of the smart home interface.",
         LUXTRONIK_DEFAULT_MODBUS_PORT
     )
     parser.add_argument(

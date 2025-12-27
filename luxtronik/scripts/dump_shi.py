@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # pylint: disable=invalid-name
 """
-Script to dump all available Smart-Home-Interface values from Luxtronik controller.
+Script to dump all available smart home interface values from Luxtronik controller.
 """
 
 import logging
@@ -24,7 +24,7 @@ def dump_fields(read_cb):
 
 def dump_shi():
     parser = create_default_args_parser(
-        "Dumps all Smart-Home-Interface values from Luxtronik controller.",
+        "Dumps all smart home interface values from Luxtronik controller.",
         LUXTRONIK_DEFAULT_MODBUS_PORT
     )
     args = parser.parse_args()

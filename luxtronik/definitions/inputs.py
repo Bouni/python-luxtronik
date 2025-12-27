@@ -1,6 +1,6 @@
 """
 Constant list containing all 'inputs' definitions
-used by the Smart Home Interface (SHI) of the Luxtronik controller.
+used by the smart home interface (SHI) of the Luxtronik controller.
 
 Unlike the setting registers, these SHI register are volatile and intended for
 communication with smart home systems. 'Input' register are read-only

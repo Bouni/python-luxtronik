@@ -141,6 +141,6 @@ def create_modbus_tcp(
     """
     modbus_interface = LuxtronikModbusTcpInterface(host, port, timeout)
     resolved_version = resolve_version(modbus_interface, version)
-    LOGGER.info(f"Create smart-home-interface via modbus-TCP on {host}:{port}"
+    LOGGER.info(f"Create smart home interface via modbus-TCP on {host}:{port}"
         + f" for version {resolved_version}")
     return LuxtronikSmartHomeInterface(modbus_interface, resolved_version)
