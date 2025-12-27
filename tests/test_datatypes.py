@@ -232,6 +232,10 @@ class TestSelectionBase:
         a = SelectionBase("")
         assert a.to_heatpump("a") is None
         assert a.to_heatpump("Unknown_214") == 214
+        assert a.to_heatpump(0) == 0
+        assert a.to_heatpump("1") == 1
+        assert a.to_heatpump(2.3) == 2
+        assert a.to_heatpump("3.1") is None
 
 
 class SelectionBaseChild(SelectionBase):
@@ -280,6 +284,9 @@ class TestSelectionBaseChild:
         assert a.to_heatpump("b") == 1
         assert a.to_heatpump("c") == 2
         assert a.to_heatpump("d") is None
+        assert a.to_heatpump(None) is None
+        assert a.to_heatpump(2) == 2
+        assert a.to_heatpump("3") == 3
 
 
 class TestScalingBase:
