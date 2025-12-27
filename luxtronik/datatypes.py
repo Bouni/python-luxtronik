@@ -294,6 +294,7 @@ class Errorcode(SelectionBase):
     datatype_class = "errorcode"
 
     codes = {
+          0: "no error",
         700: "sensor external return",
         701: "error low pressure",
         702: "low pressure blockade",
