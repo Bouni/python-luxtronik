@@ -965,8 +965,8 @@ class TimeOfDay2(Base):
 
         return val
 
-class HeatPumpState(BitMaskBase):
-    """HeatPumpState datatype, converts from and to list of HeatPumpState codes."""
+class HeatPumpStatus(BitMaskBase):
+    """HeatPumpStatus datatype, converts from and to list of HeatPumpStatus codes."""
 
     bit_values = {
         0: "VD1",
@@ -980,8 +980,8 @@ class HeatPumpState(BitMaskBase):
     values_postfix = " running"
 
 
-class ModeState(SelectionBase):
-    """ModeState datatype, converts from and to list of ModeState codes."""
+class ModeStatus(SelectionBase):
+    """ModeStatus datatype, converts from and to list of ModeStatus codes."""
 
     codes = {
         0: "Disabled",    # Heating / Hot water is disabled
