@@ -562,6 +562,8 @@ def get_data_arr(definition, field):
             or None if the data size does not match.
     """
     data = field.raw
+    if data is None:
+        return None
     if not isinstance(data, list):
         data = [data]
     return data if len(data) == definition.count else None
