@@ -968,6 +968,17 @@ class LevelMode(SelectionBase):
                          # TODO: Function unknown – requires further analysis
     }
 
+
+class BufferType(SelectionBase):
+    """BufferType datatype, converts from and to list of BufferType codes."""
+
+    codes = {
+        0: "series buffer",
+        1: "separation buffer",
+        2: "multifunction buffer",
+    }
+
+
 class PowerLimit(ScalingBase):
     """PowerLimit datatype, converts from and to PowerLimit."""
 
