@@ -28,7 +28,7 @@ from luxtronik.datatypes import (
     Percent2,
     Speed,
     Power,
-    PowerLimit,
+    PowerKW,
     Energy,
     Voltage,
     Hours,
@@ -770,21 +770,21 @@ class TestPower:
         assert a.datatype_class == "power"
         assert a.datatype_unit == "W"
 
-class TestPowerLimit:
-    """Test suite for PowerLimit datatype"""
+class TestPowerKW:
+    """Test suite for PowerKW datatype"""
 
     def test_init(self):
         """Test cases for initialization"""
 
-        a = PowerLimit("power_limit")
-        assert a.name == "power_limit"
+        a = PowerKW("power_kW")
+        assert a.name == "power_kW"
         assert a.datatype_class == "power"
         assert a.datatype_unit == "kW"
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        a = PowerLimit("")
+        a = PowerKW("")
         assert a.from_heatpump(15) == 1.5
         assert a.from_heatpump(525) == 52.5
         assert a.from_heatpump(None) is None
@@ -792,7 +792,7 @@ class TestPowerLimit:
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        a = PowerLimit("")
+        a = PowerKW("")
         assert a.to_heatpump(1.5) == 15
         assert a.to_heatpump(5.6) == 56
 

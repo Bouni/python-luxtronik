@@ -1056,7 +1056,7 @@ class BufferType(SelectionBase):
     }
 
 
-class PowerLimit(ScalingBase):
+class PowerKW(ScalingBase):
     """PowerLimit datatype, converts from and to PowerLimit."""
 
     datatype_class = "power"

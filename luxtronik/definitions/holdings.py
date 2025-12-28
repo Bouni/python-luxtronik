@@ -18,7 +18,7 @@ from luxtronik.datatypes import (
     LockMode,
     LpcMode,
     OnOffMode,
-    PowerLimit,
+    PowerKW,
     Unknown,
 )
 
@@ -472,7 +472,7 @@ Hard limitation may reduce comfort."
         "index": 41,
         "count": 1,
         "names": ["pc_limit"],
-        "type": PowerLimit,
+        "type": PowerKW,
         "writeable": True,
         "datatype": "UINT16",
         "unit": "kW/10",
