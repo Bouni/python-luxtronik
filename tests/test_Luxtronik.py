@@ -25,12 +25,6 @@ class FakeSocketInterface(LuxtronikSocketInterface):
         FakeSocketInterface.write_counter = 0
         FakeSocketInterface.read_counter = 0
 
-    def _connect(self):
-        pass
-
-    def _disconnect(self):
-        pass
-
     def read(self, data):
         FakeSocketInterface.read_parameters(self, data.parameters)
         FakeSocketInterface.read_visibilities(self, data.visibilities)
@@ -88,8 +82,6 @@ def fake_resolve_version(modbus_interface):
 ###############################################################################
 
 @patch("luxtronik.LuxtronikSocketInterface", FakeSocketInterface)
-@patch("luxtronik.LuxtronikSocketInterface._connect", FakeSocketInterface._connect)
-@patch("luxtronik.LuxtronikSocketInterface._disconnect", FakeSocketInterface._disconnect)
 @patch("luxtronik.LuxtronikSocketInterface.read_parameters", FakeSocketInterface.read_parameters)
 @patch("luxtronik.LuxtronikSocketInterface.read_visibilities", FakeSocketInterface.read_visibilities)
 @patch("luxtronik.LuxtronikSocketInterface.read_calculations", FakeSocketInterface.read_calculations)

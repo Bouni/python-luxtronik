@@ -20,7 +20,6 @@ from luxtronik.constants import (
     LUXTRONIK_PARAMETERS_READ,
     LUXTRONIK_CALCULATIONS_READ,
     LUXTRONIK_VISIBILITIES_READ,
-    LUXTRONIK_SOCKET_READ_SIZE_PEEK,
     LUXTRONIK_SOCKET_READ_SIZE_INTEGER,
     LUXTRONIK_SOCKET_READ_SIZE_CHAR,
 )
@@ -39,26 +38,6 @@ LOGGER = logging.getLogger("Luxtronik")
 # Wait time (in seconds) after writing parameters to give controller
 # some time to re-calculate values, etc.
 WAIT_TIME_AFTER_PARAMETER_WRITE = 1
-
-
-def is_socket_closed(sock: socket.socket) -> bool:
-    """Check is socket closed."""
-    # Alternative to socket.MSG_DONTWAIT in recv.
-    # Works on Windows and Linux.
-    sock.setblocking(False)
-    try:
-        # this will try to read bytes without blocking and also without removing them from buffer
-        data = sock.recv(LUXTRONIK_SOCKET_READ_SIZE_PEEK, socket.MSG_PEEK)
-        is_closed = len(data) == 0
-    except BlockingIOError:
-        is_closed = False  # socket is open and reading from it would block
-    except ConnectionResetError:  # pylint: disable=broad-except
-        is_closed = True  # socket was closed for some other reason
-    except Exception as err:  # pylint: disable=broad-except
-        LOGGER.exception("Unexpected exception when checking if socket is closed", exc_info=err)
-        is_closed = False
-    sock.setblocking(True)
-    return is_closed
 
 
 class LuxtronikData:
@@ -86,31 +65,10 @@ class LuxtronikSocketInterface:
         self._host = host
         self._port = port
         self._socket = None
-        self._connect()
-
-    def __del__(self):
-        self._disconnect()
 
     @property
     def lock(self):
         return self._lock
-
-    def _connect(self):
-        """Connect the socket if not already done."""
-        is_none = self._socket is None
-        if is_none:
-            self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        if is_none or is_socket_closed(self._socket):
-            self._socket.connect((self._host, self._port))
-            LOGGER.info("Connected to Luxtronik heat pump %s:%s", self._host, self._port)
-
-    def _disconnect(self):
-        """Disconnect the socket if not already done."""
-        if self._socket is not None:
-            if not is_socket_closed(self._socket):
-                self._socket.close()
-            self._socket = None
-            LOGGER.info("Disconnected from Luxtronik heatpump %s:%s", self._host, self._port)
 
     def _with_lock_and_connect(self, func, *args, **kwargs):
         """
@@ -122,9 +80,29 @@ class LuxtronikSocketInterface:
         Luxtronik controller, which seems unstable otherwise.
         """
         with self.lock:
-            self._connect()
-            ret_val = func(*args, **kwargs)
-            return ret_val
+            try:
+                ret_val = None
+                with socket.create_connection((self._host, self._port)) as sock:
+                    self._socket = sock
+                    LOGGER.info("Connected to Luxtronik heat pump %s:%s", self._host, self._port)
+                    ret_val = func(*args, **kwargs)
+            except socket.gaierror as e:
+                LOGGER.error("Failed to connect to Luxtronik heat pump %s:%s. %s.",
+                    self._host, self._port, f"Address-related error: {e}")
+            except socket.timeout as e:
+                LOGGER.error("Failed to connect to Luxtronik heat pump %s:%s. %s.",
+                    self._host, self._port, f"Connection timed out: {e}")
+            except ConnectionRefusedError as e:
+                LOGGER.error("Failed to connect to Luxtronik heat pump %s:%s. %s.",
+                    self._host, self._port, f"Connection refused: {e}")
+            except OSError as e:
+                LOGGER.error("Failed to connect to Luxtronik heat pump %s:%s. %s.",
+                    self._host, self._port, f"OS error during connect: {e}")
+            except Exception as e:
+                LOGGER.error("Failed to connect to Luxtronik heat pump %s:%s. %s.",
+                    self._host, self._port, f"Unknown exception: {e}")
+        self._socket = None
+        return ret_val
 
     def read(self, data=None):
         """
