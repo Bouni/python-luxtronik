@@ -32,7 +32,7 @@ class LuxtronikSmartHomeData:
     Data-vector collection for all smart home interface data vectors.
 
     Holds both the `holdings` and `inputs` data structures that represent
-    the smart-home data exposed by the Luxtronik controller.
+    the smart home data exposed by the Luxtronik controller.
     """
 
     def __init__(

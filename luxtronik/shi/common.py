@@ -1,6 +1,6 @@
 """
 Commonly used methods and classes throughout
-the Luxtronik Smart Home Interface (SHI) module.
+the Luxtronik smart home interface (SHI) module.
 """
 
 import logging

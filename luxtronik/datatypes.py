@@ -914,7 +914,7 @@ class ControlMode(SelectionBase):
         0: "Off",       # System value is used
         1: "Setpoint",  # Setpoint register value is used
         2: "Offset",    # System values + offset register value is used
-        3: "Level",     # System values + smart-home-interface-settings
+        3: "Level",     # System values + smart home interface settings
                         # register value is used
     }
 
@@ -959,13 +959,13 @@ class LevelMode(SelectionBase):
     codes = {
         0: "Normal",     # No correction
         1: "Increased",  # Increase the temperature by the values
-                         # within the smart-home-interface-settings
+                         # within the smart home interface settings
                          # TODO: Function unknown – requires further analysis
         2: "Increased2", # Increase the temperature by the values
-                         # within the smart-home-interface-settings
+                         # within the smart home interface settings
                          # TODO: Function unknown – requires further analysis
         3: "Decreased",  # Decrease the temperature by the values
-                         # within the smart-home-interface-settings
+                         # within the smart home interface settings
                          # TODO: Function unknown – requires further analysis
     }
 

@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD013 -->
-# Smart-Home-Interface
+# Smart home interface
 
 ## Introduction
 

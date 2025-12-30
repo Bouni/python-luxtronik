@@ -10,7 +10,11 @@ from luxtronik.shi.constants import (
     LUXTRONIK_LATEST_SHI_VERSION,
 )
 from luxtronik.shi.common import LOGGER, parse_version
-from luxtronik.shi.inputs import INPUTS_DEFINITIONS
+# Skip ruff unused-import (F401) by using "as"
+from luxtronik.shi.inputs import Inputs as Inputs
+from luxtronik.shi.inputs import INPUTS_DEFINITIONS as INPUTS_DEFINITIONS
+from luxtronik.shi.holdings import Holdings as Holdings
+from luxtronik.shi.holdings import HOLDINGS_DEFINITIONS as HOLDINGS_DEFINITIONS
 from luxtronik.shi.modbus import LuxtronikModbusTcpInterface
 from luxtronik.shi.interface import LuxtronikSmartHomeInterface
 
@@ -137,6 +141,6 @@ def create_modbus_tcp(
     """
     modbus_interface = LuxtronikModbusTcpInterface(host, port, timeout)
     resolved_version = resolve_version(modbus_interface, version)
-    LOGGER.info(f"Create smart-home-interface via modbus-TCP on {host}:{port}"
+    LOGGER.info(f"Create smart home interface via modbus-TCP on {host}:{port}"
         + f" for version {resolved_version}")
     return LuxtronikSmartHomeInterface(modbus_interface, resolved_version)
