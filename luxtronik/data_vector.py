@@ -38,6 +38,29 @@ class DataVector:
                 entry.raw = data
                 self._data[index] = entry
 
+    def _name_lookup(self, name):
+        """
+        Try to find the index using the given field name.
+
+        Args:
+            name (string): Field name.
+
+        Returns:
+            tuple[int | None, str | None]:
+                0: Index found or None
+                1: New preferred name, if available, otherwise None
+        """
+        obsolete_entry = self._obsolete.get(name, None)
+        if obsolete_entry:
+            return None, obsolete_entry
+        for index, entry in self._data.items():
+            check_result = entry.check_name(name)
+            if check_result == LUXTRONIK_NAME_CHECK_PREFERRED:
+                return index, None
+            elif check_result == LUXTRONIK_NAME_CHECK_OBSOLETE:
+                return index, entry.name
+        return None, None
+
     def _lookup(self, target, with_index=False):
         """
         Lookup an entry
@@ -52,16 +75,9 @@ class DataVector:
                 target_index = int(target)
             except ValueError:
                 # Get entry by name
-                target_index = None
-                obsolete_entry = self._obsolete.get(target, None)
-                if obsolete_entry:
-                    raise KeyError(f"The name '{target}' is obsolete! Use '{obsolete_entry}' instead.")
-                for index, entry in self._data.items():
-                    check_result = entry.check_name(target)
-                    if check_result == LUXTRONIK_NAME_CHECK_PREFERRED:
-                        target_index = index
-                    elif check_result == LUXTRONIK_NAME_CHECK_OBSOLETE:
-                        raise KeyError(f"The name '{target}' is obsolete! Use '{entry.name}' instead.")
+                target_index, new_name = self._name_lookup(target)
+                if new_name is not None:
+                    raise KeyError(f"The name '{target}' is obsolete! Use '{new_name}' instead.")
         elif isinstance(target, int):
             # Get entry by id
             target_index = target
