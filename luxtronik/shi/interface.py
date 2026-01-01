@@ -1,5 +1,6 @@
 """Main components of the Luxtronik smart home interface."""
 
+from luxtronik.common import classproperty
 from luxtronik.datatypes import Base
 from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
 from luxtronik.shi.common import (
@@ -85,12 +86,6 @@ class LuxtronikSmartHomeData:
 ###############################################################################
 # Smart home interface
 ###############################################################################
-
-class classproperty:
-    def __init__(self, fget):
-        self.fget = fget
-    def __get__(self, instance, owner):
-        return self.fget(owner)
 
 class LuxtronikSmartHomeInterface:
     """

@@ -22,3 +22,9 @@ def get_host_lock(host):
         if host not in _hosts_locks:
             _hosts_locks[host] = RLock()
         return _hosts_locks[host]
+
+class classproperty:
+    def __init__(self, fget):
+        self.fget = fget
+    def __get__(self, instance, owner):
+        return self.fget(owner)

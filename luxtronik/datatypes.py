@@ -9,6 +9,7 @@ from luxtronik.constants import (
     LUXTRONIK_NAME_CHECK_PREFERRED,
     LUXTRONIK_NAME_CHECK_OBSOLETE,
 )
+from luxtronik.common import classproperty
 
 from functools import total_ordering
 
@@ -43,6 +44,11 @@ class Base:
     def from_heatpump(cls, value):
         """Converts value from heatpump units."""
         return value
+
+    @classproperty
+    def unit(cls):
+        """Converts value from heatpump units."""
+        return cls.datatype_unit
 
     @property
     def name(self):
