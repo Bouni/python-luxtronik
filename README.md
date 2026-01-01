@@ -17,9 +17,10 @@ and written to the heat pump, essentially making it
 controllable from within a Python program.
 
 Additional (volatile) control and status registers are also available
-specifically for integration into a smart home system.
-These can be accessed via Modbus TCP (port 502, No BMS/GLT license required).
-More detailed documentation on this smart home interface (shi) can be found at
+specifically for integration into a smart home system. To use this, you must
+first activate the smart home interface (shi) in the settings, after which
+they can be accessed via Modbus TCP (port 502, No BMS/GLT license required).
+More detailed documentation on this API can be found at
 [luxtronik/shi/README.md](https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/shi/README.md).
 
 This allows you, for example, to change the temperature settings of your heat
