@@ -6,8 +6,14 @@ from luxtronik.discover import discover as _discover
 from luxtronik.scripts.dump_luxtronik import (
     dump_luxtronik,
 )  # pylint: disable=unused-import # noqa: F401
+from luxtronik.scripts.dump_shi import (
+    dump_shi,
+)  # pylint: disable=unused-import # noqa: F401
 from luxtronik.scripts.dump_changes import (
     dump_changes,
+)  # pylint: disable=unused-import # noqa: F401
+from luxtronik.scripts.watch_shi import (
+    watch_shi,
 )  # pylint: disable=unused-import # noqa: F401
 
 
@@ -26,7 +32,9 @@ def main() -> int:
         usage="""luxtronik <command> [<args>]
         The supported commands are:
         dump       Dump all available data from the Luxtronik controller
+        dump-shi   Dump all available data from the Luxtronik smart home interface
         changes    Dump all value changes from Luxtronik controller
+        watch-shi  Watch all value changes from Luxtronik smart home interface
         discover   Discover Luxtronik controllers on the network (via magic packet) and output results
         """,
     )
@@ -36,7 +44,9 @@ def main() -> int:
     args = parser.parse_args(sys.argv[1:2])
     commands = {
         "dump": dump_luxtronik,
+        "dump-shi": dump_shi,
         "changes": dump_changes,
+        "watch-shi": watch_shi,
         "discover": discover,
     }
     if args.command not in commands:
