@@ -8,7 +8,6 @@ are read-only and are used for control and display purposes.
 from typing import Final
 
 from luxtronik.datatypes import (
-    Base,
     BivalenceLevel,
     Bool,
     Celsius,
