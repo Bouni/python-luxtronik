@@ -233,6 +233,7 @@ class TestSelectionBase:
         a = SelectionBase("")
         assert a.to_heatpump("a") is None
         assert a.to_heatpump("Unknown_214") == 214
+        assert a.to_heatpump("unknown_215") == 215
         assert a.to_heatpump(0) == 0
         assert a.to_heatpump("1") == 1
         assert a.to_heatpump(2.3) == 2
@@ -244,8 +245,8 @@ class SelectionBaseChild(SelectionBase):
 
     codes = {
         0: "a",
-        1: "b",
-        2: "c",
+        1: "B",
+        2: "c_d",
     }
 
 
@@ -272,8 +273,8 @@ class TestSelectionBaseChild:
 
         a = SelectionBaseChild("")
         assert a.from_heatpump(0) == "a"
-        assert a.from_heatpump(1) == "b"
-        assert a.from_heatpump(2) == "c"
+        assert a.from_heatpump(1) == "B"
+        assert a.from_heatpump(2) == "c_d"
         assert a.from_heatpump(3) == "Unknown_3"
         assert a.from_heatpump(None) is None
 
@@ -281,9 +282,9 @@ class TestSelectionBaseChild:
         """Test cases for to_heatpump function"""
 
         a = SelectionBaseChild("")
-        assert a.to_heatpump("a") == 0
-        assert a.to_heatpump("b") == 1
-        assert a.to_heatpump("c") == 2
+        assert a.to_heatpump(" a") == 0
+        assert a.to_heatpump("b ") == 1
+        assert a.to_heatpump("c-D ") == 2
         assert a.to_heatpump("d") is None
         assert a.to_heatpump(None) is None
         assert a.to_heatpump(2) == 2

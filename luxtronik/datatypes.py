@@ -151,6 +151,13 @@ class SelectionBase(Base):
         return [value for _, value in cls.codes.items()]
 
     @classmethod
+    def sanitize_option(cls, option):
+        is_string = isinstance(option, str)
+        if is_string:
+            option = option.lower().replace('-', '_').strip()
+        return option, is_string
+
+    @classmethod
     def from_heatpump(cls, value):
         if value is None:
             return None
@@ -160,12 +167,14 @@ class SelectionBase(Base):
 
     @classmethod
     def to_heatpump(cls, value):
+        value, value_is_str = cls.sanitize_option(value)
         for index, code in cls.codes.items():
+            code, _ = cls.sanitize_option(code)
             if code == value:
                 return index
-        if isinstance(value, str) and value.startswith(cls.unknown_prefix):
-            return int(value.split(cls.unknown_delimiter)[1])
-        if isinstance(value, (int, float)) or (isinstance(value, str) and value.isdigit()):
+        if value_is_str and value.startswith(cls.unknown_prefix.lower()):
+            return int(value.split(cls.unknown_delimiter.lower())[1])
+        if isinstance(value, (int, float)) or (value_is_str and value.isdigit()):
             return int(value)
         return None
 
