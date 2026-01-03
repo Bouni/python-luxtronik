@@ -12,3 +12,4 @@ class TestVisibilities:
         """Test cases for initialization"""
         visibilities = Visibilities()
         assert visibilities.name == "Visibility"
+        assert visibilities.visibilities == visibilities._data

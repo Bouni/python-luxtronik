@@ -12,6 +12,7 @@ class TestParameters:
         """Test cases for initialization"""
         parameters = Parameters()
         assert parameters.name == "Parameter"
+        assert parameters.parameters == parameters._data
         assert parameters.safe
         assert len(parameters.queue) == 0
 
