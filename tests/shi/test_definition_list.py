@@ -1,8 +1,12 @@
 import re
 
 from luxtronik.datatypes import Base
+from luxtronik.definitions.calculations import CALCULATIONS_DEFINITIONS_LIST
 from luxtronik.definitions.holdings import HOLDINGS_DEFINITIONS_LIST
 from luxtronik.definitions.inputs import INPUTS_DEFINITIONS_LIST
+from luxtronik.definitions.parameters import PARAMETERS_DEFINITIONS_LIST
+from luxtronik.definitions.visibilities import VISIBILITIES_DEFINITIONS_LIST
+
 from luxtronik.shi.common import parse_version
 
 KEY_IDX = "index"
@@ -10,15 +14,26 @@ KEY_COUNT = "count"
 KEY_NAMES = "names"
 KEY_TYPE = "type"
 KEY_WRT = "writeable"
+KEY_DATATYPE = "datatype"
+KEY_UNIT = "unit"
+KEY_DEFAULT = "default"
+KEY_RANGE = "range"
+KEY_MIN = "min"
+KEY_MAX = "max"
 KEY_SINCE = "since"
 KEY_UNTIL = "until"
 KEY_DESC = "description"
+
+VALID_DATA_TYPES = ("", "UINT16", "UINT32", "INT16", "INT32")
 
 
 class RunTestDefinitionList:
 
     # override this
     definitions = None
+
+    # use True for SHI and false for CFI
+    do_lower_case_test = True
 
     def get_names(self, definition):
         names = definition.get(KEY_NAMES, [])
@@ -59,6 +74,36 @@ class RunTestDefinitionList:
             if KEY_WRT in definition:
                 assert isinstance(definition[KEY_WRT], bool), \
                     f"{KEY_WRT} must be of type 'bool': {definition}"
+
+            # data type
+            if KEY_DATATYPE in definition:
+                assert isinstance(definition[KEY_DATATYPE], str), \
+                    f"{KEY_DATATYPE} must be of type 'str': {definition}"
+
+            # unit
+            if KEY_UNIT in definition:
+                assert isinstance(definition[KEY_UNIT], str), \
+                    f"{KEY_UNIT} must be of type 'str': {definition}"
+
+            # default (raw value)
+            if KEY_DEFAULT in definition:
+                assert isinstance(definition[KEY_DEFAULT], int), \
+                    f"{KEY_DEFAULT} must be of type 'int': {definition}"
+
+            # range (raw value)
+            if KEY_RANGE in definition:
+                assert isinstance(definition[KEY_RANGE], dict), \
+                    f"{KEY_RANGE} must be of type 'dict': {definition}"
+
+            # range - min (raw value)
+            if KEY_RANGE in definition and KEY_MIN in definition[KEY_RANGE]:
+                assert isinstance(definition[KEY_RANGE][KEY_MIN], int), \
+                    f"{KEY_MIN} must be of type 'int': {definition}"
+
+            # range - max (raw value)
+            if KEY_RANGE in definition and KEY_MAX in definition[KEY_RANGE]:
+                assert isinstance(definition[KEY_RANGE][KEY_MAX], int), \
+                    f"{KEY_MAX} must be of type 'int': {definition}"
 
             # since
             if KEY_SINCE in definition:
@@ -105,7 +150,7 @@ class RunTestDefinitionList:
             names = self.get_names(definition)
             for name in names:
                 sanitized = re.sub(r"[^a-z0-9_]", "", name)
-                assert sanitized == name, \
+                assert not self.do_lower_case_test or sanitized == name, \
                     f"The name may only contain a-z0-9_ {definition}"
                 assert sanitized != "", \
                     f"Name must not be empty. {definition}"
@@ -133,15 +178,21 @@ class RunTestDefinitionList:
 
     def test_data_type(self):
         for definition in self.definitions:
-            if KEY_TYPE in definition:
-                data_type = definition.get(KEY_TYPE, Base)
-                assert data_type is not None, \
-                    f"Type must be set: {definition}"
+            data_type = definition.get(KEY_TYPE, None)
+            assert issubclass(data_type, Base), \
+                f"Type must be set: {definition}"
+
+    def test_data_types(self):
+        for definition in self.definitions:
+            if KEY_DATATYPE in definition:
+                data_type = definition[KEY_DATATYPE]
+                assert data_type in VALID_DATA_TYPES, \
+                    f"Datatype must be set correctly: {definition}"
 
     def test_since(self):
         for definition in self.definitions:
             if KEY_SINCE in definition:
-                since = definition.get(KEY_SINCE, "")
+                since = definition[KEY_SINCE]
                 parsed = parse_version(since)
                 assert parsed is not None, \
                     f"Since must be a valid version instead of {since}: {definition}"
@@ -149,7 +200,7 @@ class RunTestDefinitionList:
     def test_until(self):
         for definition in self.definitions:
             if KEY_UNTIL in definition:
-                until = definition.get(KEY_UNTIL, "")
+                until = definition[KEY_UNTIL]
                 parsed = parse_version(until)
                 assert parsed is not None, \
                     f"Until must be a valid version instead of {until}: {definition}"
@@ -158,11 +209,31 @@ class RunTestDefinitionList:
 # Tests
 ###############################################################################
 
+class TestCalculationsDefinitionList(RunTestDefinitionList):
+
+    definitions = CALCULATIONS_DEFINITIONS_LIST
+    do_lower_case_test = False
+
+
 class TestHoldingsDefinitionList(RunTestDefinitionList):
 
     definitions = HOLDINGS_DEFINITIONS_LIST
+    do_lower_case_test = True
 
 
 class TestInputsDefinitionList(RunTestDefinitionList):
 
     definitions = INPUTS_DEFINITIONS_LIST
+    do_lower_case_test = True
+
+
+class TestParametersDefinitionList(RunTestDefinitionList):
+
+    definitions = PARAMETERS_DEFINITIONS_LIST
+    do_lower_case_test = False
+
+
+class TestVisibilitiesDefinitionList(RunTestDefinitionList):
+
+    definitions = VISIBILITIES_DEFINITIONS_LIST
+    do_lower_case_test = False
