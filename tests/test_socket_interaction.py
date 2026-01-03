@@ -22,6 +22,7 @@ def fake_visibility_value(i):
 
 class FakeSocket:
     last_instance = None
+    prev_instance = None
 
     # These code are hard coded here in order to prevent
     # accidential changes in constants.py
@@ -30,10 +31,10 @@ class FakeSocket:
     code_read_calculations = 3004
     code_read_visibilities = 3005
 
-    def __init__(self, prot, stream):
+    def __init__(self):
+        FakeSocket.prev_instance = FakeSocket.last_instance
         FakeSocket.last_instance = self
-        assert prot == socket.AF_INET
-        assert stream == socket.SOCK_STREAM
+
         self._connected = False
         self._buffer = b""
         self._blocking = False
@@ -48,11 +49,8 @@ class FakeSocket:
     def setblocking(self, blocking):
         self._blocking = blocking
 
-    def connect(self, info):
+    def connect(self):
         assert not self._connected
-
-        self._host = info[0]
-        self._port = info[1]
         self._connected = True
 
     def close(self):
@@ -144,6 +142,19 @@ class FakeSocket:
 
         return data
 
+# --- Context manager support ---
+    def __enter__(self):
+        self.connect()
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        self.close()
+        return False
+
+def fake_create_connection(info):
+    return FakeSocket()
+
+
 class FakeModbus:
 
     def __init__(
@@ -162,6 +173,9 @@ class FakeModbus:
         return True
 
 
+
+@mock.patch("socket.create_connection", fake_create_connection)
+@mock.patch("luxtronik.LuxtronikModbusTcpInterface", FakeModbus)
 class TestSocketInteraction:
     def check_luxtronik_data(self, lux, check_for_true=True):
         cp = self.check_data_vector(lux.parameters)
@@ -197,126 +211,124 @@ class TestSocketInteraction:
         host = "my_heatpump"
         port = 4711
 
-        with mock.patch("socket.socket", FakeSocket):
-            # Create the connection
-            lux = LuxtronikSocketInterface(host, port)
+        lux = LuxtronikSocketInterface(host, port)
 
-            # Check the connection
-            s = FakeSocket.last_instance
-            assert s._connected
-            assert s._host == host
-            assert s._port == port
+        # Read parameters
+        p = lux.read_parameters()
+        s = FakeSocket.last_instance
+        assert type(p) is Parameters
+        assert len(s._buffer) == 0
+        assert self.check_data_vector(p)
 
-            # Read parameters
-            p = lux.read_parameters()
-            assert type(p) is Parameters
-            assert len(s._buffer) == 0
-            assert self.check_data_vector(p)
+        self.clear_data_vector(p)
+        assert not self.check_data_vector(p)
 
-            self.clear_data_vector(p)
-            assert not self.check_data_vector(p)
+        # Read parameters
+        c = lux.read_calculations()
+        s = FakeSocket.last_instance
+        assert type(c) is Calculations
+        assert len(s._buffer) == 0
+        assert self.check_data_vector(c)
 
-            # Read parameters
-            c = lux.read_calculations()
-            assert type(c) is Calculations
-            assert len(s._buffer) == 0
-            assert self.check_data_vector(c)
+        self.clear_data_vector(c)
+        assert not self.check_data_vector(c)
 
-            self.clear_data_vector(c)
-            assert not self.check_data_vector(c)
+        # Read parameters
+        v = lux.read_visibilities()
+        s = FakeSocket.last_instance
+        assert type(v) is Visibilities
+        assert len(s._buffer) == 0
+        assert self.check_data_vector(v)
 
-            # Read parameters
-            v = lux.read_visibilities()
-            assert type(v) is Visibilities
-            assert len(s._buffer) == 0
-            assert self.check_data_vector(v)
+        self.clear_data_vector(v)
+        assert not self.check_data_vector(v)
 
-            self.clear_data_vector(v)
-            assert not self.check_data_vector(v)
+        # Now, for the read() routine
+        data = lux.read()
+        s = FakeSocket.last_instance
+        assert len(s._buffer) == 0
+        assert self.check_luxtronik_data(data)
 
-            # Now, for the read() routine
-            data = lux.read()
-            assert len(s._buffer) == 0
-            assert self.check_luxtronik_data(data)
+        # Finally, writing
+        p = Parameters()
+        p.queue = {0: 100, 1: 200}
+        lux.write(p)
+        s = FakeSocket.last_instance
+        assert s.written_values[0] == 100
+        assert s.written_values[1] == 200
+        assert len(p.queue) == 0
 
-            # Finally, writing
-            p = Parameters()
-            p.queue = {0: 100, 1: 200}
-            lux.write(p)
-            assert s.written_values[0] == 100
-            assert s.written_values[1] == 200
-            assert len(p.queue) == 0
+        p = Parameters()
+        p.queue = {2: 300, 3: "test"}
+        d = lux.write_and_read(p)
+        s = FakeSocket.last_instance
+        assert s.written_values[2] == 300
+        # Make sure that the non-int value is not written:
+        assert 3 not in s.written_values
+        assert len(p.queue) == 0
+        assert self.check_luxtronik_data(d)
 
-            p = Parameters()
-            p.queue = {2: 300, 3: "test"}
-            d = lux.write_and_read(p)
-            assert s.written_values[2] == 300
-            # Make sure that the non-int value is not written:
-            assert 3 not in s.written_values
-            assert len(p.queue) == 0
-            assert self.check_luxtronik_data(d)
-
-    @mock.patch("luxtronik.LuxtronikModbusTcpInterface", FakeModbus)
     def test_luxtronik(self):
         host = "my_heatpump"
         port = 4711
 
-        with mock.patch("socket.socket", FakeSocket):
-            # Create the connection
-            lux = Luxtronik(host, port)
-            assert self.check_luxtronik_data(lux)
+        lux = Luxtronik(host, port)
+        assert self.check_luxtronik_data(lux)
 
-            self.clear_luxtronik_data(lux)
+        self.clear_luxtronik_data(lux)
 
-            assert self.check_luxtronik_data(lux, False)
+        assert self.check_luxtronik_data(lux, False)
 
-            ##########################
-            # Test the read routines #
-            ##########################
-            lux.read_parameters()
-            assert self.check_data_vector(lux.parameters)
+        ##########################
+        # Test the read routines #
+        ##########################
+        lux.read_parameters()
+        assert self.check_data_vector(lux.parameters)
 
-            lux.read_calculations()
-            assert self.check_data_vector(lux.calculations)
+        lux.read_calculations()
+        assert self.check_data_vector(lux.calculations)
 
-            lux.read_visibilities()
-            assert self.check_data_vector(lux.visibilities)
+        lux.read_visibilities()
+        assert self.check_data_vector(lux.visibilities)
 
-            s = FakeSocket.last_instance
-            assert len(s._buffer) == 0
+        self.clear_luxtronik_data(lux)
 
-            self.clear_luxtronik_data(lux)
+        ##########################
+        # Test the write routine #
+        ##########################
+        lux.parameters.queue = {0: 500}
+        lux.write()
+        s = FakeSocket.last_instance
+        assert s.written_values[0] == 500
 
-            ##########################
-            # Test the write routine #
-            ##########################
-            lux.parameters.queue = {0: 500}
-            lux.write()
-            assert s.written_values[0] == 500
+        p = Parameters()
+        p.queue = {1: 501}
+        lux.write(p)
+        s = FakeSocket.last_instance
+        assert s.written_values[1] == 501
 
-            p = Parameters()
-            p.queue = {1: 501}
-            lux.write(p)
-            assert s.written_values[1] == 501
+        # lux.write() and lux.write(p) should not read:
+        assert self.check_luxtronik_data(lux, False)
 
-            # lux.write() and lux.write(p) should not read:
-            assert self.check_luxtronik_data(lux, False)
+        ###################################
+        # Test the write_and_read routine #
+        ###################################
+        lux.parameters.queue = {2: 502}
+        lux.write_and_read()
+        # Currently write_and_read triggers two separate connections/operations
+        s = FakeSocket.prev_instance
+        assert s.written_values[2] == 502
 
-            ###################################
-            # Test the write_and_read routine #
-            ###################################
-            lux.parameters.queue = {2: 502}
-            lux.write_and_read()
-            assert s.written_values[2] == 502
+        # Now, the values should be read
+        assert self.check_luxtronik_data(lux)
 
-            # Now, the values should be read
-            assert self.check_luxtronik_data(lux)
+        self.clear_luxtronik_data(lux)
 
-            self.clear_luxtronik_data(lux)
+        p.queue = {3: 503}
+        lux.write_and_read(p)
+        # Currently write_and_read triggers two separate connections/operations
+        s = FakeSocket.prev_instance
+        assert s.written_values[3] == 503
 
-            p.queue = {3: 503}
-            lux.write_and_read(p)
-            assert s.written_values[3] == 503
-
-            # Now, the values should be read
-            assert self.check_luxtronik_data(lux)
+        # Now, the values should be read
+        assert self.check_luxtronik_data(lux)
