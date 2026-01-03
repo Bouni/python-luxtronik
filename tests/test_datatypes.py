@@ -12,6 +12,7 @@ from luxtronik.constants import (
 
 from luxtronik.datatypes import (
     Base,
+    BitMaskBase,
     SelectionBase,
     ScalingBase,
     Celsius,
@@ -27,7 +28,7 @@ from luxtronik.datatypes import (
     Percent2,
     Speed,
     Power,
-    PowerLimit,
+    PowerKW,
     Energy,
     Voltage,
     Hours,
@@ -224,6 +225,7 @@ class TestSelectionBase:
 
         a = SelectionBase("")
         assert a.from_heatpump(0) == 'Unknown_0'
+        assert a.from_heatpump(None) is None
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
@@ -231,6 +233,10 @@ class TestSelectionBase:
         a = SelectionBase("")
         assert a.to_heatpump("a") is None
         assert a.to_heatpump("Unknown_214") == 214
+        assert a.to_heatpump(0) == 0
+        assert a.to_heatpump("1") == 1
+        assert a.to_heatpump(2.3) == 2
+        assert a.to_heatpump("3.1") is None
 
 
 class SelectionBaseChild(SelectionBase):
@@ -269,6 +275,7 @@ class TestSelectionBaseChild:
         assert a.from_heatpump(1) == "b"
         assert a.from_heatpump(2) == "c"
         assert a.from_heatpump(3) == "Unknown_3"
+        assert a.from_heatpump(None) is None
 
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
@@ -278,6 +285,112 @@ class TestSelectionBaseChild:
         assert a.to_heatpump("b") == 1
         assert a.to_heatpump("c") == 2
         assert a.to_heatpump("d") is None
+        assert a.to_heatpump(None) is None
+        assert a.to_heatpump(2) == 2
+        assert a.to_heatpump("3") == 3
+
+
+class TestBitMaskBase:
+    """Test suite for BitMaskBase datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = BitMaskBase("bitmask_base")
+        assert a.name == "bitmask_base"
+        assert not a.bit_values
+        assert len(a.bit_values) == 0
+
+    def test_bits(self):
+        """Test cases for bits property"""
+
+        a = BitMaskBase("")
+        assert len(a.bits()) == 0
+        assert a.bits() == list(a.bit_values.values())
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        a = BitMaskBase("")
+        assert a.from_heatpump(0) == a.value_zero
+        assert a.from_heatpump(16) == "Unknown_4"
+        assert a.from_heatpump(5) == "Unknown_0, Unknown_2"
+        assert a.from_heatpump("Unknown_1") is None
+        assert a.from_heatpump(None) is None
+
+    def test_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        a = BitMaskBase("")
+        assert a.to_heatpump("a") is None
+        assert a.to_heatpump(1) is None
+        assert a.to_heatpump(None) is None
+        assert a.to_heatpump("Unknown_3") == 8
+        assert a.to_heatpump("Unknown_0, Unknown_2") == 5
+        assert a.to_heatpump("Unknown_0, 2") is None
+
+
+class BitMaskBaseChild(BitMaskBase):
+    """Child class of BitMaskBase containing codes to test it in the context of TestBitMaskBaseChild"""
+
+    bit_values = {
+        0: "a",
+        2: "b",
+        4: "c",
+    }
+    value_zero = "empty"
+    value_delim = "-"
+    values_postfix = "-z"
+
+
+class TestBitMaskBaseChild:
+    """Test suite for BitMaskBase datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = BitMaskBaseChild("bitmask_base_child")
+        assert a.name == "bitmask_base_child"
+        assert a.bit_values
+        assert len(a.bit_values) == 3
+
+    def test_bits(self):
+        """Test cases for bits property"""
+
+        a = BitMaskBaseChild("")
+        assert len(a.bits()) == 3
+        assert a.bits() == list(a.bit_values.values())
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        a = BitMaskBaseChild("")
+        assert a.from_heatpump(0) == "empty"
+        assert a.from_heatpump(1) == "a-z"
+        assert a.from_heatpump(2) == "Unknown_1-z"
+        assert a.from_heatpump(3) == "a-Unknown_1-z"
+        assert a.from_heatpump(4) == "b-z"
+        assert a.from_heatpump(5) == "a-b-z"
+        assert a.from_heatpump("Unknown_1") is None
+        assert a.from_heatpump(None) is None
+
+    def test_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        a = BitMaskBaseChild("")
+        assert a.to_heatpump("empty") == 0
+        assert a.to_heatpump("empty-z") == 0
+        assert a.to_heatpump("a") == 1
+        assert a.to_heatpump("b-z") == 4
+        assert a.to_heatpump("a-c-z") == 17
+        assert a.to_heatpump("Unknown_1-b-z") == 6
+        assert a.to_heatpump(1) is None
+        assert a.to_heatpump(None) is None
+
+
+class ScalingBaseTest(ScalingBase):
+    """Class to test ScalingBase. Required because of __init_subclass__"""
+    pass
 
 
 class TestScalingBase:
@@ -286,14 +399,14 @@ class TestScalingBase:
     def test_init(self):
         """Test cases for initialization"""
 
-        a = ScalingBase("scaling_base")
+        a = ScalingBaseTest("scaling_base")
         assert a.name == "scaling_base"
         assert a.scaling_factor == 1
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        a = ScalingBase("")
+        a = ScalingBaseTest("")
         assert a.from_heatpump(1) == 1
         assert a.from_heatpump(42) == 42
         assert a.from_heatpump(None) is None
@@ -301,7 +414,7 @@ class TestScalingBase:
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        a = ScalingBase("")
+        a = ScalingBaseTest("")
         assert a.to_heatpump(1) == 1
         assert a.to_heatpump(42) == 42
 
@@ -339,6 +452,38 @@ class TestScalingBaseChild:
         assert a.to_heatpump(26) == 2
         assert a.to_heatpump(40) == 3
         assert a.to_heatpump(-100) == -8
+
+
+class ScalingBaseInt4Child(ScalingBase):
+    """Child class of ScalingBase containing a scaling_factor to test it in the context of TestScalingBaseChild"""
+
+    data_width = 4 # bits
+
+
+class TestScalingBaseInt4Child:
+    """Test suite for 16-bit ScalingBase datatype"""
+
+    def test_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        a = ScalingBaseInt4Child("")
+        assert a.from_heatpump(None) is None
+        assert a.from_heatpump(0) == 0
+        assert a.from_heatpump(1) == 1
+        assert a.from_heatpump(8) == -8
+        assert a.from_heatpump(10) == -6
+        assert a.from_heatpump(15) == -1
+        assert a.from_heatpump(17) == 1
+
+    def test_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        a = ScalingBaseInt4Child("")
+        assert a.to_heatpump(None) is None
+        assert a.to_heatpump(0) == 0
+        assert a.to_heatpump(26) == 26
+        assert a.to_heatpump(40) == 40
+        assert a.to_heatpump(-100) == -100
 
 
 class TestCelsius:
@@ -625,21 +770,21 @@ class TestPower:
         assert a.datatype_class == "power"
         assert a.datatype_unit == "W"
 
-class TestPowerLimit:
-    """Test suite for PowerLimit datatype"""
+class TestPowerKW:
+    """Test suite for PowerKW datatype"""
 
     def test_init(self):
         """Test cases for initialization"""
 
-        a = PowerLimit("power_limit")
-        assert a.name == "power_limit"
+        a = PowerKW("power_kW")
+        assert a.name == "power_kW"
         assert a.datatype_class == "power"
         assert a.datatype_unit == "kW"
 
     def test_from_heatpump(self):
         """Test cases for from_heatpump function"""
 
-        a = PowerLimit("")
+        a = PowerKW("")
         assert a.from_heatpump(15) == 1.5
         assert a.from_heatpump(525) == 52.5
         assert a.from_heatpump(None) is None
@@ -647,7 +792,7 @@ class TestPowerLimit:
     def test_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        a = PowerLimit("")
+        a = PowerKW("")
         assert a.to_heatpump(1.5) == 15
         assert a.to_heatpump(5.6) == 56
 

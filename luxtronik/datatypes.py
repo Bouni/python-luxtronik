@@ -20,6 +20,12 @@ class Base:
     datatype_class = None
     datatype_unit = None
 
+    # If True, multiple data chucks should be combined externally into a single value.
+    # Otherwise, they are passed on "raw" as they are (list of chunks).
+    # Currently only necessary for the smart home interface,
+    # as 4-byte values are always transferred via the normal socket interface.
+    concatenate_multiple_data_chunks = True
+
     def __init__(self, names, writeable=False):
         """Initialize the base data field class. Set the initial raw value to None"""
         # save the raw value only since the user value
@@ -146,6 +152,8 @@ class SelectionBase(Base):
 
     @classmethod
     def from_heatpump(cls, value):
+        if value is None:
+            return None
         if value in cls.codes:
             return cls.codes.get(value)
         return f"{cls.unknown_prefix}{cls.unknown_delimiter}{value}"
@@ -155,9 +163,80 @@ class SelectionBase(Base):
         for index, code in cls.codes.items():
             if code == value:
                 return index
-        if value.startswith(cls.unknown_prefix):
+        if isinstance(value, str) and value.startswith(cls.unknown_prefix):
             return int(value.split(cls.unknown_delimiter)[1])
+        if isinstance(value, (int, float)) or (isinstance(value, str) and value.isdigit()):
+            return int(value)
         return None
+
+
+class BitMaskBase(Base):
+
+    datatype_class = "bitmask"
+    unknown_prefix = "Unknown"
+    unknown_delimiter = "_"
+
+    # Dictionary with the bit-index as key (2 means bit-index 2, 0b100 in binary notation)
+    bit_values = {}
+    value_zero = "None"
+    value_delim = ", "
+    values_postfix = ""
+
+    @classmethod
+    def bits(cls):
+        """Return list of all available bits."""
+        return [value for _, value in cls.bit_values.items()]
+
+    @classmethod
+    def _get_unknown(cls, bit_index):
+        return f"{cls.unknown_prefix}{cls.unknown_delimiter}{bit_index}"
+
+    @classmethod
+    def _get_bit_value(cls, bit_index):
+        if bit_index in cls.bit_values:
+            return f"{cls.bit_values[bit_index]}"
+        else:
+            return cls._get_unknown(bit_index)
+
+    @classmethod
+    def from_heatpump(cls, value):
+        if not isinstance(value, int):
+            return None
+        # Check for zero
+        if value == 0:
+            return cls.value_zero
+        # We support up to 32 bits
+        result = []
+        for bit_index in range(0, 32):
+            if value & (1 << bit_index):
+                bit_value = cls._get_bit_value(bit_index)
+                result.append(bit_value)
+        result = cls.value_delim.join(result)
+        # Add postfix
+        return result + cls.values_postfix
+
+    @classmethod
+    def to_heatpump(cls, value):
+        if not isinstance(value, str) or not value:
+            return None
+        # Remove postfix and split
+        if cls.values_postfix and value.endswith(cls.values_postfix):
+            value = value[0:-len(cls.values_postfix)]
+        # Check for zero
+        if value == cls.value_zero:
+            return 0
+        # We support up to 32 bits
+        values = value.split(cls.value_delim)
+        raw = 0
+        count = 0
+        for bit_index in range(0, 32):
+            bit_value = cls._get_bit_value(bit_index)
+            if bit_value in values:
+                raw += 1 << bit_index
+                count += 1
+        if count != len(values):
+            return None
+        return raw
 
 
 class ScalingBase(Base):
@@ -165,19 +244,36 @@ class ScalingBase(Base):
 
     datatype_class = "scaling"
 
+    data_width = 32 # bits
+    data_type = "signed"
+
     scaling_factor = 1
+
+    def __init_subclass__(cls):
+        super().__init_subclass__()
+        cls.num_values = (1 << cls.data_width)
+        num_unsigned_bits = cls.data_width - 1 if cls.data_type == "signed" else cls.data_width
+        cls.max_value = (1 << num_unsigned_bits) - 1
 
     @classmethod
     def from_heatpump(cls, value):
-        if value is None:
+        if not isinstance(value, int):
             return None
+        while cls.data_type == "signed" and value > cls.max_value:
+            # correction for negative numbers
+            value -= cls.num_values
         value = value * cls.scaling_factor
         return value
 
     @classmethod
     def to_heatpump(cls, value):
-        raw = round(float(value) / cls.scaling_factor)
-        return raw
+        # Limitations due to the data_width are handled automatically.
+        # No need to add additional code here.
+        try:
+            raw = round(float(value) / cls.scaling_factor)
+            return raw
+        except Exception:
+            return None
 
 
 class Celsius(ScalingBase):
@@ -186,6 +282,19 @@ class Celsius(ScalingBase):
     datatype_class = "temperature"
     datatype_unit = "°C"
     scaling_factor = 0.1
+
+
+class CelsiusInt16(Celsius):
+    """Celsius 16-bit signed, converts from and to Celsius."""
+
+    data_width = 16
+
+
+class CelsiusUInt16(Celsius):
+    """Celsius 16-bit unsigned, converts from and to Celsius."""
+
+    data_width = 16
+    data_type = "unsigned"
 
 
 class Bool(Base):
@@ -254,6 +363,7 @@ class Errorcode(SelectionBase):
     datatype_class = "errorcode"
 
     codes = {
+          0: "no error",
         700: "sensor external return",
         701: "error low pressure",
         702: "low pressure blockade",
@@ -358,6 +468,12 @@ class Kelvin(ScalingBase):
     datatype_class = "temperature"
     datatype_unit = "K"
     scaling_factor = 0.1
+
+
+class KelvinInt16(Kelvin):
+    """Kelvin 16-bit signed, converts from and to Kelvin."""
+
+    data_width = 16
 
 
 class Pressure(ScalingBase):
@@ -499,8 +615,6 @@ class Icon(Base):
 class HeatingMode(SelectionBase):
     """HeatingMode datatype, converts from and to list of HeatingMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "Automatic",
         1: "Second heatsource",
@@ -513,15 +627,11 @@ class HeatingMode(SelectionBase):
 class CoolingMode(SelectionBase):
     """CoolingMode datatype, converts from and to list of CoolingMode codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "Off", 1: "Automatic"}
 
 
 class HotWaterMode(SelectionBase):
     """HotWaterMode datatype, converts from and to list of HotWaterMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Automatic",
@@ -535,23 +645,17 @@ class HotWaterMode(SelectionBase):
 class PoolMode(SelectionBase):
     """PoolMode datatype, converts from and to list of PoolMode codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
 
 class MixedCircuitMode(SelectionBase):
-    """MixCircuitMode datatype, converts from and to list of MixCircuitMode codes."""
-
-    datatype_class = "selection"
+    """MixedCircuitMode datatype, converts from and to list of MixedCircuitMode codes."""
 
     codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
 
 class SolarMode(SelectionBase):
     """SolarMode datatype, converts from and to list of SolarMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Automatic",
@@ -565,15 +669,11 @@ class SolarMode(SelectionBase):
 class VentilationMode(SelectionBase):
     """VentilationMode datatype, converts from and to list of VentilationMode codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "Automatic", 1: "Party", 2: "Holidays", 3: "Off"}
 
 
 class HeatpumpCode(SelectionBase):
     """HeatpumpCode datatype, converts from and to list of Heatpump codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "ERC",
@@ -671,8 +771,6 @@ class HeatpumpCode(SelectionBase):
 class BivalenceLevel(SelectionBase):
     """BivalanceLevel datatype, converts from and to list of BivalanceLevel codes."""
 
-    datatype_class = "selection"
-
     codes = {
         1: "one compressor allowed to run",
         2: "two compressors allowed to run",
@@ -682,8 +780,6 @@ class BivalenceLevel(SelectionBase):
 
 class OperationMode(SelectionBase):
     """OperationMode datatype, converts from and to list of OperationMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "heating",
@@ -699,8 +795,6 @@ class OperationMode(SelectionBase):
 
 class SwitchoffFile(SelectionBase):
     """SwitchOff datatype, converts from and to list of SwitchOff codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "heatpump error",
@@ -734,8 +828,6 @@ class SwitchoffFile(SelectionBase):
 class MainMenuStatusLine1(SelectionBase):
     """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "heatpump running",
         1: "heatpump idle",
@@ -751,15 +843,11 @@ class MainMenuStatusLine1(SelectionBase):
 class MainMenuStatusLine2(SelectionBase):
     """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
 
-    datatype_class = "selection"
-
     codes = {0: "since", 1: "in"}
 
 
 class MainMenuStatusLine3(SelectionBase):
     """MenuStatusLine datatype, converts from and to list of MenuStatusLine codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "heating",
@@ -784,8 +872,6 @@ class MainMenuStatusLine3(SelectionBase):
 class SecOperationMode(SelectionBase):
     """SecOperationMode datatype, converts from and to list of SecOperationMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "off",
         1: "cooling",
@@ -806,8 +892,6 @@ class SecOperationMode(SelectionBase):
 class AccessLevel(SelectionBase):
     """AccessLevel datatype, converts from and to list of AccessLevel codes"""
 
-    datatype_class = "selection"
-
     codes = {
         0: "user",
         1: "after sales service",
@@ -818,8 +902,6 @@ class AccessLevel(SelectionBase):
 
 class TimerProgram(SelectionBase):
     """TimerProgram datatype, converts from and to list of TimerProgram codes"""
-
-    datatype_class = "selection"
 
     codes = {
         0: "week",
@@ -883,20 +965,23 @@ class TimeOfDay2(Base):
 
         return val
 
-class HeatPumpState(SelectionBase):
-    """HeatPumpState datatype, converts from and to list of HeatPumpState codes."""
+class HeatPumpStatus(BitMaskBase):
+    """HeatPumpStatus datatype, converts from and to list of HeatPumpStatus codes."""
 
-    datatype_class = "selection"
-
-    codes = {
-        0: "Idle",     # Heatpump is idle
-        1: "Running",  # Heatpump is running
+    bit_values = {
+        0: "VD1",
+        1: "VD2",
+        2: "ZWE1",
+        3: "ZWE2",
+        4: "ZWE3",
     }
+    value_zero = "Idle"
+    value_delim = ", "
+    values_postfix = " running"
 
-class ModeState(SelectionBase):
-    """ModeState datatype, converts from and to list of ModeState codes."""
 
-    datatype_class = "selection"
+class ModeStatus(SelectionBase):
+    """ModeStatus datatype, converts from and to list of ModeStatus codes."""
 
     codes = {
         0: "Disabled",    # Heating / Hot water is disabled
@@ -907,8 +992,6 @@ class ModeState(SelectionBase):
 
 class ControlMode(SelectionBase):
     """ControlMode datatype, converts from and to list of ControlMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Off",       # System value is used
@@ -922,8 +1005,6 @@ class ControlMode(SelectionBase):
 class LpcMode(SelectionBase):
     """LpcMode datatype, converts from and to list of LpcMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "No limit",
         1: "Soft limit",
@@ -934,8 +1015,6 @@ class LpcMode(SelectionBase):
 class LockMode(SelectionBase):
     """LockMode datatype, converts from and to list of LockMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "Off",       # Function is not locked
         1: "On",        # Function is locked
@@ -944,17 +1023,14 @@ class LockMode(SelectionBase):
 class OnOffMode(SelectionBase):
     """OnOffMode datatype, converts from and to list of OnOffMode codes."""
 
-    datatype_class = "selection"
-
     codes = {
         0: "Off",       # Function deactivated
         1: "On",        # Function activated
     }
 
+
 class LevelMode(SelectionBase):
     """LevelMode datatype, converts from and to list of LevelMode codes."""
-
-    datatype_class = "selection"
 
     codes = {
         0: "Normal",     # No correction
@@ -969,7 +1045,18 @@ class LevelMode(SelectionBase):
                          # TODO: Function unknown – requires further analysis
     }
 
-class PowerLimit(ScalingBase):
+
+class BufferType(SelectionBase):
+    """BufferType datatype, converts from and to list of BufferType codes."""
+
+    codes = {
+        0: "series buffer",
+        1: "separation buffer",
+        2: "multifunction buffer",
+    }
+
+
+class PowerKW(ScalingBase):
     """PowerLimit datatype, converts from and to PowerLimit."""
 
     datatype_class = "power"
@@ -981,6 +1068,7 @@ class FullVersion(Base):
     """FullVersion datatype, converts from and to a RBEVersion"""
 
     datatype_class = "version"
+    concatenate_multiple_data_chunks = False
 
     @classmethod
     def from_heatpump(cls, value):
