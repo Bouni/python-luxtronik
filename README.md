@@ -11,16 +11,21 @@ Luxtronik is a heat pump control system developed by Alpha Innotec that is used
 by several manufactures. Essentially it is the part of the heat pump system
 that the user can interact with locally via display and setting dial.
 
-This library uses a TCP socket that is exposed via network (typically on port
-8889). Values can be read from and written to the heat pump, essentially making
-it controllable from within a Python program.
+The (permanent) configuration of the heat pump is addressed via a TCP socket
+that is exposed via network (typically on port 8889). Values can be read from
+and written to the heat pump, essentially making it
+controllable from within a Python program.
+
+Additional (volatile) control and status registers are also available
+specifically for integration into a smart home system. To use this, you must
+first activate the smart home interface (shi) in the settings, after which
+they can be accessed via Modbus TCP (port 502, No BMS/GLT license required).
+More detailed documentation on this API can be found at
+[luxtronik/shi/README.md](luxtronik/shi/README.md).
 
 This allows you, for example, to change the temperature settings of your heat
 pump or get current temperature values from the heat pump, similar to what you
 can do when controlling the heat pump locally on-site.
-
-This TCP socket is meant to be used by the vendor to control the heat pump
-via various mobile apps and desktop applications.
 
 Unfortunately there is no official documentation of this API, and how to
 interact with it. As such, the **implementation is heavily based on reverse
@@ -47,8 +52,8 @@ pip install git+https://github.com/Bouni/python-luxtronik.git@main
 ## DOCUMENTATION
 
 There is no automatically rendered documentation of this library available yet,
-so you'll have to fall back to using the source code itself as documentation. It
-can be found in the [luxtronik](luxtronik/) directory.
+so you'll have to fall back to using the source code itself as documentation.
+It can be found in the [luxtronik](luxtronik/) directory.
 
 ## EXAMPLE USAGE
 
@@ -59,7 +64,7 @@ The following example reads in data from the heat pump:
 ```python
 from luxtronik import Luxtronik
 
-l = Luxtronik('192.168.1.23', 8889)
+l = Luxtronik('192.168.1.23', 8889, True, 502)
 heating_limit = l.parameters.get("ID_Einst_Heizgrenze_Temp")
 
 # Do something else here...
@@ -75,20 +80,31 @@ t_forerun = l.calculations.get(10)
 print(t_forerun) # this returns the temperature value of the forerun, 22.7 for example
 print(t_forerun.unit) # gives you the unit of the value if known, °C for example
 
-# calculations holds measurement values
+# or via Modbus TCP
+t_flowline = l.inputs["flow_line_temp"]
+
+print(t_flowline) # returns 22.7 for example again
+
+# calculations holds measurement values (config interface)
 # check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/calculations.py for values you might need
 
-# parameters holds parameter values
+# parameters holds parameter values (config interface)
 # check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/parameters.py for values you might need
 
-# visibilitys holds visibility values, the function of visibilities is not clear at this point
+# visibilitys holds visibility values (config interface), the function of visibilities is not clear at this point
 # check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/visibilities.py for values you might need
+
+# inputs holds read-only values (smart home interface)
+# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/definitions/inputs.py for values you might need
+
+# holdings holds read-and-writeable values (smart home interface)
+# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/definitions/holdings.py for values you might need
 ```
 
-The method `read()` reads the calculations, parameters and
-visibilities from the heat pump.
-Alternatively `read_parameters()`, `read_calculations()` or `read_visibilities()`
-can be used.
+The method `read()` reads all those data vectors (calculations, parameters,
+inputs, ...) from the heat pump. Alternatively `read_parameters()`,
+`read_calculations()`, `read_visibilities()`, `read_inputs()`
+or `read_holdings()` can be used.
 
 Note that an initial read operation is carried out in the constructor.
 
@@ -100,8 +116,8 @@ commands from the command line.
 
 ### DISCOVERY OF AVAILABLE HEATPUMPS WITHIN THE NETWORK
 
-Heat pumps can be discovered in a network by sending broadcast packages that the
-Luxtronik controller will reply to. This can be done with the `discover`
+Heat pumps can be discovered in a network by sending broadcast packages that
+the Luxtronik controller will reply to. This can be done with the `discover`
 sub command in the following way:
 
 ```sh
@@ -119,12 +135,18 @@ To get all data available you can either use the CLI:
 
 ```sh
 luxtronik dump 192.168.178.123 8889
+
+# or analog for Modbus TCP register
+luxtronik dump-shi 192.168.178.123 502
 ```
 
 or call the script that comes with the python package:
 
 ```python
 PYTHONPATH=. ./luxtronik/scripts/dump_luxtronik.py 192.168.178.123 8889
+
+# or from the base folder of luxtronik
+python -m luxtronik dump-shi 192.168.178.123 502
 ```
 
 The output of this script can be used to backup all values (e.g. before
@@ -160,9 +182,10 @@ Number: 16    Name: ID_Einst_HzMK1ABS_akt                                       
 
 ### SHOW CHANGED VALUES ONLY
 
-There is another sub-command (`changes`) and/or script (`dump-changes.py`) that
-will only show values that have recently changed. This is meant to be used
-interactively, i.e. the current value of specific settings will be shown.
+There is another sub-command (`changes`, `watch-shi`) and/or script
+(`dump-changes.py`, `watch_shi.py`) that will only show values that have
+recently changed. This is meant to be used interactively, i.e. the current
+value of specific settings will be shown.
 This is especially useful to identify yet unknown parameters.
 You can closely monitor the output while changing values on the Luxtronik
 controller itself.
@@ -171,12 +194,18 @@ This can be invoked in the following ways:
 
 ```sh
 luxtronik changes 192.168.178.123 8889
+
+# or
+luxtronik watch-shi 192.168.178.123
 ```
 
 Alternatively, it can be invoked directly:
 
 ```python
 PYTHONPATH=. ./luxtronik/scripts/dump_changes.py 192.168.178.123 8889
+
+# or
+PYTHONPATH=. ./luxtronik/scripts/watch_shi.py 192.168.178.123
 ```
 
 You'll get a list of all values as they change:
@@ -221,6 +250,12 @@ l.write(parameters)
 # If you're not sure what values to write, you can get all available options:
 
 print(parameters.get("ID_Ba_Hz_akt").options()) # returns a list of possible values to write, ['Automatic', 'Second heatsource', 'Party', 'Holidays', 'Off'] for example
+
+# Now we increase the heating controller target temperature by 2 Kelvin
+heating_offset = l.holdings.get(2)    # Get an object for the offset
+heating_offset.value = 2.0            # Set the desired value
+l.holdings["heating_mode"] = "Offset" # Set the value to activate the offset mode
+l.write()                             # Write down the values to the heatpump
 ```
 
 **NOTE:** Writing values to the heat pump is particulary dangerous as this is
@@ -236,7 +271,8 @@ from luxtronik import Luxtronik
 l = Luxtronik('192.168.1.23', 8889, safe=False)
 ```
 
-**NOTE:** The heat pump controller uses a NAND memory chip as persistent storage.
+**NOTE:** The heat pump controller uses a NAND memory chip as
+persistent storage for the permanent configuration.
 This technology has only a limited number of erase cycles.
 Every change of a parameter will eventually induce some file changes on the controller,
 hence **frequent parameter changes may limit the lifetime of your heat pump**.
