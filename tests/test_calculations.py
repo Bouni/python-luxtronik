@@ -11,5 +11,5 @@ class TestCalculations:
     def test_init(self):
         """Test cases for initialization"""
         calculations = Calculations()
-        assert calculations.name == "Calculation"
+        assert calculations.name == "calculation"
         assert calculations.calculations == calculations._data

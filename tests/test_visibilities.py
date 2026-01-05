@@ -11,5 +11,5 @@ class TestVisibilities:
     def test_init(self):
         """Test cases for initialization"""
         visibilities = Visibilities()
-        assert visibilities.name == "Visibility"
+        assert visibilities.name == "visibility"
         assert visibilities.visibilities == visibilities._data

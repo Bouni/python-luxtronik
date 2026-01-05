@@ -25,6 +25,15 @@ LUXTRONIK_DISCOVERY_MAGIC_PACKET = "2000;111;1;\x00"
 # Content of response that is contained in responses to discovery broadcast
 LUXTRONIK_DISCOVERY_RESPONSE_PREFIX = "2500;111;"
 
+# Identifier of calculation data-vectors and partial name for unknown calculation fields
+CALCULATIONS_FIELD_NAME = "calculation"
+
+# Identifier of parameter data-vectors and partial name for unknown parameter fields
+PARAMETERS_FIELD_NAME = "parameter"
+
+# Identifier of visibilities data-vectors and partial name for unknown visibility fields
+VISIBILITIES_FIELD_NAME = "visibility"
+
 LUXTRONIK_NAME_CHECK_NONE = "none"
 LUXTRONIK_NAME_CHECK_PREFERRED = "preferred"
 LUXTRONIK_NAME_CHECK_OBSOLETE = "obsolete"

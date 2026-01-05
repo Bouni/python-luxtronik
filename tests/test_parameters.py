@@ -11,7 +11,7 @@ class TestParameters:
     def test_init(self):
         """Test cases for initialization"""
         parameters = Parameters()
-        assert parameters.name == "Parameter"
+        assert parameters.name == "parameter"
         assert parameters.parameters == parameters._data
         assert parameters.safe
         assert len(parameters.queue) == 0
@@ -59,7 +59,7 @@ class TestParameters:
 
         p = parameters.get(n)
 
-        assert p.name == f"Unknown_Parameter_{n}"
+        assert p.name == f"unknown_parameter_{n}"
 
     def test___iter__(self):
         """Test cases for __iter__"""
