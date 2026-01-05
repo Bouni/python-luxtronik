@@ -400,7 +400,8 @@ class LuxtronikInterface(LuxtronikSocketInterface, LuxtronikSmartHomeInterface):
         that are supported by the controller.
 
         Args:
-            data (LuxtronikAllData | Parameters | Holdings): The data vector (collection) containing field data.
+            data (LuxtronikAllData | LuxtronikData | LuxtronikSmartHomeData |
+                Parameters | Holdings): The data vector (collection) containing field data.
                 If None is provided, the write is aborted.
 
         Returns:
@@ -417,6 +418,10 @@ class LuxtronikInterface(LuxtronikSocketInterface, LuxtronikSmartHomeInterface):
         elif type(data) is LuxtronikSmartHomeData:
             with self.lock:
                 shi_result = LuxtronikSmartHomeInterface.write(self, data)
+        elif type(data) is LuxtronikData:
+            with self.lock:
+                LuxtronikSocketInterface.write(self, data.parameters)
+                shi_result = True
         elif isinstance(data, LuxtronikAllData):
             with self.lock:
                 LuxtronikSocketInterface.write(self, data.parameters)
@@ -439,11 +444,14 @@ class LuxtronikInterface(LuxtronikSocketInterface, LuxtronikSmartHomeInterface):
         that are supported by the controller.
 
         Args:
-            data (LuxtronikAllData): The data vector collection containing field data.
-                If None is provided, the write and read is aborted.
+            write_data (LuxtronikAllData | LuxtronikData | LuxtronikSmartHomeData |
+                Parameters | Holdings): The data vector (collection) containing field data.
+                If None is provided, the write is aborted.
+            read_data (LuxtronikAllData | None): Optional existing data vector collection
+                for the read data. If None is provided, a new instance is created.
 
         Returns:
-            bool: True if no errors occurred, otherwise False.
+            LuxtronikAllData: The passed / created data vector collection for the read data.
         """
         with self.lock:
             self.write_all(write_data)

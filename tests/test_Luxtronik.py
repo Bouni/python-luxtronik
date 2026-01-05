@@ -3,6 +3,7 @@ from unittest.mock import patch
 from luxtronik.shi import LuxtronikSmartHomeInterface
 from luxtronik.shi.interface import LuxtronikSmartHomeData
 from luxtronik import (
+    LuxtronikData,
     Parameters,
     Holdings,
     LuxtronikSocketInterface,
@@ -165,16 +166,22 @@ class TestLuxtronik:
         assert FakeSocketInterface.write_counter == 2
         assert FakeShiInterface.write_counter == 2
 
+        a = LuxtronikData()
+        result = lux.write(a)
+        assert result
+        assert FakeSocketInterface.write_counter == 3
+        assert FakeShiInterface.write_counter == 2
+
         result = lux.write_all(None)
         assert not result
-        assert FakeSocketInterface.write_counter == 2
+        assert FakeSocketInterface.write_counter == 3
         assert FakeShiInterface.write_counter == 2
 
         d = LuxtronikAllData()
         data = lux.write_and_read(d, d)
         assert data == d
         assert data.inputs[0].raw == 3
-        assert FakeSocketInterface.write_counter == 3
+        assert FakeSocketInterface.write_counter == 4
         assert FakeShiInterface.write_counter == 3
 
     def test_lux_init(self):
