@@ -1,13 +1,13 @@
+from luxtronik.common import version_in_range
 from luxtronik.data_vector import DataVector
 from luxtronik.datatypes import Base, Unknown
-
-from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
-from luxtronik.shi.common import version_in_range
-from luxtronik.shi.definitions import (
-    integrate_data,
+from luxtronik.definitions import (
     LuxtronikDefinition,
     LuxtronikDefinitionsDictionary,
 )
+
+from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
+from luxtronik.shi.definitions import integrate_data
 from luxtronik.shi.contiguous import ContiguousDataBlockList
 
 ###############################################################################

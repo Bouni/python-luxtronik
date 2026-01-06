@@ -1,5 +1,6 @@
 import re
 
+from luxtronik.common import parse_version
 from luxtronik.datatypes import Base
 from luxtronik.definitions.calculations import CALCULATIONS_DEFINITIONS_LIST
 from luxtronik.definitions.holdings import HOLDINGS_DEFINITIONS_LIST
@@ -7,7 +8,6 @@ from luxtronik.definitions.inputs import INPUTS_DEFINITIONS_LIST
 from luxtronik.definitions.parameters import PARAMETERS_DEFINITIONS_LIST
 from luxtronik.definitions.visibilities import VISIBILITIES_DEFINITIONS_LIST
 
-from luxtronik.shi.common import parse_version
 
 KEY_IDX = "index"
 KEY_COUNT = "count"

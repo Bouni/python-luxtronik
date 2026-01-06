@@ -2,7 +2,7 @@
 
 # pylint: disable=too-few-public-methods
 
-from luxtronik.calculations import Calculations
+from luxtronik import Calculations
 
 
 class TestCalculations:

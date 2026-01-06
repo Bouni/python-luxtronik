@@ -1,8 +1,7 @@
-
+from luxtronik.common import parse_version
 from luxtronik.datatypes import Base, Unknown
-from luxtronik.shi.common import parse_version
+from luxtronik.definitions import LuxtronikDefinitionsList
 from luxtronik.shi.vector import DataVectorSmartHome
-from luxtronik.shi.definitions import LuxtronikDefinitionsList
 
 """
 The test was originally written for "False".

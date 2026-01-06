@@ -2,6 +2,7 @@ import pytest
 from unittest.mock import patch
 
 from luxtronik.datatypes import Base, Unknown
+from luxtronik.definitions import LuxtronikDefinition
 
 from luxtronik.shi.constants import (
     LUXTRONIK_LATEST_SHI_VERSION,
@@ -14,18 +15,18 @@ from luxtronik.shi.common import (
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
 )
-from luxtronik.shi.definitions import LuxtronikDefinition
-from luxtronik.shi.holdings import HOLDINGS_DEFINITIONS, Holdings
-from luxtronik.shi.inputs import INPUTS_DEFINITIONS
 from luxtronik.shi.contiguous import (
     ContiguousDataBlock,
     ContiguousDataBlockList,
 )
-from luxtronik.shi.interface import (
+from luxtronik.shi import (
+    HOLDINGS_DEFINITIONS,
+    Holdings,
+    INPUTS_DEFINITIONS,
     LuxtronikSmartHomeData,
     LuxtronikSmartHomeInterface,
+    create_modbus_tcp,
 )
-from luxtronik.shi import create_modbus_tcp
 
 ###############################################################################
 # Fake modbus client

@@ -1,7 +1,7 @@
 
 from luxtronik.datatypes import Base
+from luxtronik.definitions import LuxtronikDefinition
 from luxtronik.shi.constants import LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
-from luxtronik.shi.definitions import LuxtronikDefinition
 from luxtronik.shi.contiguous import (
     ContiguousDataPart,
     ContiguousDataBlock,

@@ -2,7 +2,7 @@
 
 # pylint: disable=too-few-public-methods,invalid-name,protected-access
 
-from luxtronik.parameters import Parameters
+from luxtronik import Parameters
 
 
 class TestParameters:

@@ -3,20 +3,18 @@ Python module for controlling a Luxtronik heat pump controller
 via the smart home interface. Powered by Guzz-T.
 """
 
+from luxtronik.common import parse_version
 from luxtronik.datatypes import FullVersion, MajorMinorVersion
 from luxtronik.shi.constants import (
     LUXTRONIK_DEFAULT_MODBUS_PORT,
     LUXTRONIK_DEFAULT_MODBUS_TIMEOUT,
     LUXTRONIK_LATEST_SHI_VERSION,
 )
-from luxtronik.shi.common import LOGGER, parse_version
-# Skip ruff unused-import (F401) by using "as"
-from luxtronik.shi.inputs import Inputs as Inputs
-from luxtronik.shi.inputs import INPUTS_DEFINITIONS as INPUTS_DEFINITIONS
-from luxtronik.shi.holdings import Holdings as Holdings
-from luxtronik.shi.holdings import HOLDINGS_DEFINITIONS as HOLDINGS_DEFINITIONS
+from luxtronik.shi.common import LOGGER
+from luxtronik.shi.inputs import INPUTS_DEFINITIONS, Inputs  # noqa: F401
+from luxtronik.shi.holdings import HOLDINGS_DEFINITIONS, Holdings  # noqa: F401
 from luxtronik.shi.modbus import LuxtronikModbusTcpInterface
-from luxtronik.shi.interface import LuxtronikSmartHomeInterface
+from luxtronik.shi.interface import LuxtronikSmartHomeData, LuxtronikSmartHomeInterface  # noqa: F401
 
 VERSION_DETECT = "detect"
 VERSION_LATEST = "latest"

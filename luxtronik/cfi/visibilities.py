@@ -3,10 +3,10 @@
 import logging
 from typing import Final
 
+from luxtronik.definitions import LuxtronikDefinitionsList
 from luxtronik.definitions.visibilities import VISIBILITIES_DEFINITIONS_LIST, VISIBILITIES_OFFSET
 
-from luxtronik.constants import VISIBILITIES_FIELD_NAME
-from luxtronik.shi.definitions import LuxtronikDefinitionsList
+from luxtronik.cfi.constants import VISIBILITIES_FIELD_NAME
 from luxtronik.data_vector import DataVector
 
 
