@@ -92,6 +92,8 @@
             data-name="{{ item.name }}"
             data-number="{{ item.number }}"
             data-type="{{ item.type }}"
+            data-unit="{{ item.unit }}"
+            data-desc="{{ item.description }}"
           >
             <div class="card" id="{{ group }}-{{ item.name }}">
               <div class="card-content">
@@ -99,7 +101,7 @@
                   <a href="#{{ group }}-{{ item.name }}">{{ item.name }}</a>
                 </p>
                 <div class="content">
-                  <div class="fixed-grid has-4-cols">
+                  <div class="fixed-grid has-5-cols">
                     <div class="grid">
                       <div class="cell has-text-centered">
                         <div class="is-size-5 mb-2">Group</div>
@@ -133,6 +135,35 @@
                           ><strong>{{ item.type }}</strong></span
                         >
                       </div>
+                      <div class="cell has-text-centered">
+                        <div class="is-size-5 mb-2">Unit</div>
+                        <span
+                          class="tag is-medium"
+                          style="background-color: oklch(37.2% 0.044 257.287)"
+                          ><strong>{{ item.unit }}</strong></span
+                        >
+                      </div>
+                    </div>
+                    <div class="grid">
+                      <div class="cell has-text-centered">
+                        <div class="is-size-5 mb-2">Description</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fixed-grid has-1-cols">
+                    <div class="grid">
+                      <div
+                        style="
+                          background-color: oklch(37.2% 0.044 257.287);
+                          padding: 0.25em 0.75em;
+                          border-radius: 4px;
+                          display: block;
+                          width: 100%;
+                          white-space: pre-line;
+                          text-align: left;
+                          min-height: 2em;
+                        "
+                      >{{ item.description }}</div>
                     </div>
                   </div>
                   <div>

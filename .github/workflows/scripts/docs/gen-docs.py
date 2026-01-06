@@ -4,11 +4,16 @@ from pathlib import Path
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from luxtronik.calculations import Calculations
-from luxtronik.parameters import Parameters
-from luxtronik.visibilities import Visibilities
-from luxtronik.holdings import Holdings
-from luxtronik.inputs import Inputs
+from luxtronik import (
+    Calculations,
+    Parameters,
+    Visibilities,
+    Holdings,
+    Inputs,
+)
+from luxtronik.datatypes import (
+    SelectionBase,
+)
 
 logging.basicConfig(level=logging.INFO)
 
@@ -21,7 +26,17 @@ BASEPATH = Path(__file__).resolve().parent
 def get_items(definitions):
     items = []
     for d in definitions:
-        items.append({"number": d.index, "type": definitions.name, "name": d.name})
+        desc = d.description
+        if issubclass(d.data_type, SelectionBase):
+            desc += "\nUser-Options: " + ", ".join(d.data_type.options())
+        items.append({
+            "number": d.index,
+            "type": definitions.name,
+            "name": d.name,
+            "unit": d.data_type.unit,
+            "description": desc,
+        })
+    return items
 
 
 def gather_data() -> dict:
