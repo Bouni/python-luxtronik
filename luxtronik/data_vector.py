@@ -34,7 +34,7 @@ class DataVector:
                 entry.raw = data
             else:
                 # self.logger.warning(f"Entry '%d' not in list of {self.name}", index)
-                entry = Unknown(f"Unknown_{self.name}_{index}")
+                entry = Unknown(f"unknown_{self.name}_{index}")
                 entry.raw = data
                 self._data[index] = entry
 

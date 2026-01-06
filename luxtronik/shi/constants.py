@@ -8,9 +8,6 @@ LUXTRONIK_DEFAULT_MODBUS_PORT: Final = 502
 # Default timeout (in seconds) for Modbus operations
 LUXTRONIK_DEFAULT_MODBUS_TIMEOUT: Final = 30
 
-# Default offset for the input or holding indices
-LUXTRONIK_DEFAULT_DEFINITION_OFFSET: Final = 10000
-
 # Identifier of holding data-vectors and partial name for unknown holding fields
 HOLDINGS_FIELD_NAME: Final = "holding"
 

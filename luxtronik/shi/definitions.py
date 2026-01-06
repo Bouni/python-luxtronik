@@ -9,7 +9,6 @@ but can be expanded by the user.
 
 from luxtronik.datatypes import Unknown
 from luxtronik.shi.constants import (
-    LUXTRONIK_DEFAULT_DEFINITION_OFFSET,
     LUXTRONIK_SHI_REGISTER_BIT_SIZE,
     LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
 )
@@ -42,15 +41,14 @@ class LuxtronikDefinition:
         "description": "",
     }
 
-    def __init__(self, data_dict, type_name, offset=LUXTRONIK_DEFAULT_DEFINITION_OFFSET):
+    def __init__(self, data_dict, type_name, offset):
         """
         Initialize a definition from a data-dictionary.
 
         Args:
             data_dict (dict): Definition values. Missing keys are filled with defaults.
-            type_name (str): The type name e.g. 'holding', 'input', ... .
+            type_name (str): The type name e.g. 'parameter', 'holding', 'input', ... .
             offset (str): Offset of the address from the specified index.
-                (Default: LUXTRONIK_DEFAULT_DEFINITION_OFFSET)
 
         Notes:
             - Only 'index' is strictly required within the `data_dict`.
@@ -89,7 +87,7 @@ class LuxtronikDefinition:
             LOGGER.error(f"Failed to create LuxtronikDefinition: '{e}' with {data_dict}")
 
     @classmethod
-    def unknown(cls, index, type_name, offset=LUXTRONIK_DEFAULT_DEFINITION_OFFSET):
+    def unknown(cls, index, type_name, offset):
         """
         Create an "unknown" definition.
 
@@ -97,7 +95,6 @@ class LuxtronikDefinition:
             index (int): The register index of the "unknown" definition.
             type_name (str): The type name e.g. 'holding', 'input', ... .
             offset (str): Offset of the address from the specified index.
-                (Default: LUXTRONIK_DEFAULT_DEFINITION_OFFSET)
 
         Returns:
             LuxtronikDefinition: A definition marked as unknown.
@@ -121,7 +118,7 @@ class LuxtronikDefinition:
 
     @property
     def type_name(self):
-        "Returns the type name (e.g. 'holding', 'input', ...)."
+        "Returns the type name (e.g. 'parameter', 'holding', 'input', ...)."
         return self._type_name
 
     @property
@@ -138,7 +135,7 @@ class LuxtronikDefinition:
 
     @property
     def count(self):
-        "Returns the assigned number of used bytes/words."
+        "Returns the assigned number of used registers."
         return self._count
 
     @property
@@ -177,7 +174,7 @@ class LuxtronikDefinition:
         Returns:
             Base | None: Field instance or None if invalid.
         """
-        return self.data_type(self.name, self.writeable) if self.valid else None
+        return self.data_type(self.names, self.writeable) if self.valid else None
 
 
 ###############################################################################
@@ -395,15 +392,14 @@ class LuxtronikDefinitionsList:
         self._definitions = []
         self._lookup = LuxtronikDefinitionsDictionary()
 
-    def __init__(self, definitions_list, name, offset=LUXTRONIK_DEFAULT_DEFINITION_OFFSET):
+    def __init__(self, definitions_list, name, offset):
         """
         Initialize the (by index sorted) definitions list.
 
         Args:
             definitions_list (list[dict]): Raw definition entries as list of data-dictionaries.
-            name (str): Name related to this type of definitions (e.g. "holding")
+            name (str): Name related to this type of definitions (e.g. "calculation", "holding", etc.)
             offset (int): Offset applied to register indices.
-                (Default: LUXTRONIK_DEFAULT_DEFINITION_OFFSET)
 
         Notes on the definitions_list:
             - Must be sorted by ascending index

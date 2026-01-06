@@ -55,6 +55,24 @@ There is no automatically rendered documentation of this library available yet,
 so you'll have to fall back to using the source code itself as documentation.
 It can be found in the [luxtronik](luxtronik/) directory.
 
+Discovered data fields:
+
+- Calculations holds measurement values (config interface): \
+[luxtronik/definitions/calculations.py](luxtronik/definitions/calculations.py)
+
+- Parameters holds parameter values (config interface): \
+[luxtronik/definitions/parameters.py](luxtronik/definitions/parameters.py)
+
+- Visibilities holds visibility values (config interface),
+the function of visibilities is not clear at this point: \
+[luxtronik/definitions/visibilities.py](luxtronik/definitions/visibilities.py)
+
+- Inputs holds read-only values (smart home interface): \
+[luxtronik/definitions/inputs.py](luxtronik/definitions/inputs.py)
+
+- Holdings holds read-and-writeable values (smart home interface): \
+[luxtronik/definitions/holdings.py](luxtronik/definitions/holdings.py)
+
 ## EXAMPLE USAGE
 
 ### READING VALUES FROM THE HEAT PUMP
@@ -84,21 +102,6 @@ print(t_forerun.unit) # gives you the unit of the value if known, °C for exampl
 t_flowline = l.inputs["flow_line_temp"]
 
 print(t_flowline) # returns 22.7 for example again
-
-# calculations holds measurement values (config interface)
-# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/calculations.py for values you might need
-
-# parameters holds parameter values (config interface)
-# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/parameters.py for values you might need
-
-# visibilitys holds visibility values (config interface), the function of visibilities is not clear at this point
-# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/visibilities.py for values you might need
-
-# inputs holds read-only values (smart home interface)
-# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/definitions/inputs.py for values you might need
-
-# holdings holds read-and-writeable values (smart home interface)
-# check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/definitions/holdings.py for values you might need
 ```
 
 The method `read()` reads all those data vectors (calculations, parameters,
