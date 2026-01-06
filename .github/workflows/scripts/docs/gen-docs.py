@@ -7,6 +7,8 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from luxtronik.calculations import Calculations
 from luxtronik.parameters import Parameters
 from luxtronik.visibilities import Visibilities
+from luxtronik.holdings import Holdings
+from luxtronik.inputs import Inputs
 
 logging.basicConfig(level=logging.INFO)
 
@@ -16,20 +18,20 @@ logger = logging.getLogger("docs generator")
 BASEPATH = Path(__file__).resolve().parent
 
 
+def get_items(definitions):
+    items = []
+    for d in definitions:
+        items.append({"number": d.index, "type": definitions.name, "name": d.name})
+
+
 def gather_data() -> dict:
     logger.info("gather docs data")
-    p = Parameters()
-    c = Calculations()
-    v = Visibilities()
-    data = {"parameters": [], "calculations": [], "visibilities": []}
-    for number, parameter in p._data.items():
-        data["parameters"].append({"number": number, "type": parameter.__class__.__name__, "name": parameter.name})
-    for number, calculation in c._data.items():
-        data["calculations"].append(
-            {"number": number, "type": calculation.__class__.__name__, "name": calculation.name}
-        )
-    for number, visibility in v._data.items():
-        data["visibilities"].append({"number": number, "type": visibility.__class__.__name__, "name": visibility.name})
+    data = {}
+    data["parameters"] = get_items(Parameters.definitions)
+    data["calculations"] = get_items(Calculations.definitions)
+    data["visibilities"] = get_items(Visibilities.definitions)
+    data["holdings"] = get_items(Holdings.definitions)
+    data["inputs"] = get_items(Inputs.definitions)
     return data
 
 
