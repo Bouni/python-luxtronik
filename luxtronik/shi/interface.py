@@ -1,20 +1,19 @@
 """Main components of the Luxtronik smart home interface."""
 
-from luxtronik.common import classproperty
+from luxtronik.common import classproperty, version_in_range
 from luxtronik.datatypes import Base
+from luxtronik.definitions import (
+    LuxtronikDefinition,
+    LuxtronikDefinitionsList,
+)
 from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
 from luxtronik.shi.common import (
     LOGGER,
-    version_in_range,
     LuxtronikSmartHomeReadHoldingsTelegram,
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
 )
-from luxtronik.shi.definitions import (
-    LuxtronikDefinition,
-    LuxtronikDefinitionsList,
-    check_data
-)
+from luxtronik.shi.definitions import check_data
 from luxtronik.shi.vector import DataVectorSmartHome
 from luxtronik.shi.holdings import Holdings, HOLDINGS_DEFINITIONS
 from luxtronik.shi.inputs import Inputs, INPUTS_DEFINITIONS

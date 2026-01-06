@@ -3,10 +3,10 @@
 import logging
 from typing import Final
 
+from luxtronik.definitions import LuxtronikDefinitionsList
 from luxtronik.definitions.parameters import PARAMETERS_DEFINITIONS_LIST, PARAMETERS_OFFSET
 
-from luxtronik.constants import PARAMETERS_FIELD_NAME
-from luxtronik.shi.definitions import LuxtronikDefinitionsList
+from luxtronik.cfi.constants import PARAMETERS_FIELD_NAME
 from luxtronik.data_vector import DataVector
 
 

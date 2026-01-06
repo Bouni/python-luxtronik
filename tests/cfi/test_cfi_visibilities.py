@@ -2,7 +2,7 @@
 
 # pylint: disable=too-few-public-methods
 
-from luxtronik.visibilities import Visibilities
+from luxtronik import Visibilities
 
 
 class TestVisibilities:
