@@ -5,6 +5,7 @@ used by the config interface (CFI) of the Luxtronik controller.
 The calculations holds values based on the currently measured values,
 are read-only and are used for control and display purposes.
 """
+
 from typing import Final
 
 from luxtronik.datatypes import (

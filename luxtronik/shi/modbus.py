@@ -1,3 +1,5 @@
+
+import logging
 import time
 from pyModbusTCP.client import ModbusClient
 
@@ -8,13 +10,14 @@ from luxtronik.shi.constants import (
     LUXTRONIK_WAIT_TIME_AFTER_HOLDING_WRITE,
 )
 from luxtronik.shi.common import (
-    LOGGER,
     LuxtronikSmartHomeTelegrams,
     LuxtronikSmartHomeReadHoldingsTelegram,
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
 )
 
+
+LOGGER = logging.getLogger(__name__)
 
 ###############################################################################
 # Modbus TCP interface

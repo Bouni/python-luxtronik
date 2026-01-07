@@ -11,6 +11,8 @@ from luxtronik.data_vector import DataVector
 from luxtronik.datatypes import Base
 
 
+LOGGER = logging.getLogger(__name__)
+
 CALCULATIONS_DEFINITIONS: Final = LuxtronikDefinitionsList(
     CALCULATIONS_DEFINITIONS_LIST,
     CALCULATIONS_FIELD_NAME,
@@ -20,7 +22,7 @@ CALCULATIONS_DEFINITIONS: Final = LuxtronikDefinitionsList(
 class Calculations(DataVector):
     """Class that holds all calculations."""
 
-    logger = logging.getLogger("Luxtronik.Calculations")
+    logger = LOGGER
     name = CALCULATIONS_FIELD_NAME
     definitions = CALCULATIONS_DEFINITIONS
 

@@ -5,6 +5,7 @@ used by the config interface (CFI) of the Luxtronik controller.
 The parameters represents the heat pump settings,
 are stored permanently and are readable and writable.
 """
+
 from typing import Final
 
 from luxtronik.datatypes import (

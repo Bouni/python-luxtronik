@@ -7,11 +7,15 @@ This usually contains only predefined definitions (generated out of
 but can be expanded by the user.
 """
 
+import logging
+
 from luxtronik.shi.constants import (
     LUXTRONIK_SHI_REGISTER_BIT_SIZE,
     LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
 )
 
+
+LOGGER = logging.getLogger(__name__)
 
 ###############################################################################
 # Definition-Field-Pair methods

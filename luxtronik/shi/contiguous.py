@@ -4,8 +4,12 @@ the number of read/write operations. They are necessary, because an invalid addr
 or a non-existent register within a read/write operation will result in a transmission error.
 """
 
-from luxtronik.shi.common import LOGGER
+import logging
+
 from luxtronik.shi.definitions import get_data_arr, integrate_data
+
+
+LOGGER = logging.getLogger(__name__)
 
 ###############################################################################
 # ContiguousDataPart

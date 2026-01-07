@@ -12,7 +12,8 @@ from luxtronik.constants import (
     LUXTRONIK_DISCOVERY_TIMEOUT,
 )
 
-LOGGER = logging.getLogger("Luxtronik.Discover")
+
+LOGGER = logging.getLogger(__name__)
 
 """Discovery function for Luxtronik heat pump controllers."""
 

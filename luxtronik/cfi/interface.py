@@ -20,7 +20,7 @@ from luxtronik.cfi.parameters import Parameters
 from luxtronik.cfi.visibilities import Visibilities
 
 
-LOGGER = logging.getLogger("Luxtronik")
+LOGGER = logging.getLogger(__name__)
 
 # Wait time (in seconds) after writing parameters to give controller
 # some time to re-calculate values, etc.

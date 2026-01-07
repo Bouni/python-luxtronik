@@ -3,10 +3,6 @@ Commonly used methods and classes throughout
 the Luxtronik smart home interface (SHI) module.
 """
 
-import logging
-
-LOGGER = logging.getLogger("Luxtronik.SmartHomeInterface")
-
 ###############################################################################
 # Smart home telegrams
 ###############################################################################

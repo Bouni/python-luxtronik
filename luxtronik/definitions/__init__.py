@@ -7,15 +7,16 @@ This usually contains only predefined definitions (generated out of
 but can be expanded by the user.
 """
 
+import logging
+
 from luxtronik.common import (
     parse_version,
     version_in_range
 )
 from luxtronik.datatypes import Unknown
 
-# TODO: Remove this LOGGER
-import logging
-LOGGER = logging.getLogger("Luxtronik.SmartHomeInterface")
+
+LOGGER = logging.getLogger(__name__)
 
 ###############################################################################
 # LuxtronikDefinition
