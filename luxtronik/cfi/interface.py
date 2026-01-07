@@ -14,6 +14,7 @@ from luxtronik.cfi.constants import (
     LUXTRONIK_VISIBILITIES_READ,
     LUXTRONIK_SOCKET_READ_SIZE_INTEGER,
     LUXTRONIK_SOCKET_READ_SIZE_CHAR,
+    WAIT_TIME_AFTER_PARAMETER_WRITE,
 )
 from luxtronik.cfi.calculations import Calculations
 from luxtronik.cfi.parameters import Parameters
@@ -21,10 +22,6 @@ from luxtronik.cfi.visibilities import Visibilities
 
 
 LOGGER = logging.getLogger(__name__)
-
-# Wait time (in seconds) after writing parameters to give controller
-# some time to re-calculate values, etc.
-WAIT_TIME_AFTER_PARAMETER_WRITE = 1
 
 ###############################################################################
 # Config interface data
