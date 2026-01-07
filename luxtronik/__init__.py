@@ -28,7 +28,8 @@ from luxtronik.shi import (
 )
 # endregion Imports
 
-LOGGER = logging.getLogger("Luxtronik")
+
+LOGGER = logging.getLogger(__name__)
 
 
 class LuxtronikAllData(LuxtronikData, LuxtronikSmartHomeData):

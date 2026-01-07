@@ -10,10 +10,12 @@ from luxtronik.constants import (
 from luxtronik.datatypes import Unknown
 
 
+LOGGER = logging.getLogger(__name__)
+
 class DataVector:
     """Class that holds a vector of data entries."""
 
-    logger = logging.getLogger("Luxtronik.DataVector")
+    logger = LOGGER
     name = "DataVector"
 
     _obsolete = {}

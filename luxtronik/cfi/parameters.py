@@ -10,6 +10,8 @@ from luxtronik.cfi.constants import PARAMETERS_FIELD_NAME
 from luxtronik.data_vector import DataVector
 
 
+LOGGER = logging.getLogger(__name__)
+
 PARAMETERS_DEFINITIONS: Final = LuxtronikDefinitionsList(
     PARAMETERS_DEFINITIONS_LIST,
     PARAMETERS_FIELD_NAME,
@@ -19,7 +21,7 @@ PARAMETERS_DEFINITIONS: Final = LuxtronikDefinitionsList(
 class Parameters(DataVector):
     """Class that holds all parameters."""
 
-    logger = logging.getLogger("Luxtronik.Parameters")
+    logger = LOGGER
     name = PARAMETERS_FIELD_NAME
     definitions = PARAMETERS_DEFINITIONS
 

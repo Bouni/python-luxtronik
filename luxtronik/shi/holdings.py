@@ -10,6 +10,8 @@ from luxtronik.shi.constants import HOLDINGS_FIELD_NAME
 from luxtronik.shi.vector import DataVectorSmartHome
 
 
+LOGGER = logging.getLogger(__name__)
+
 HOLDINGS_DEFINITIONS: Final = LuxtronikDefinitionsList(
     HOLDINGS_DEFINITIONS_LIST,
     HOLDINGS_FIELD_NAME,
@@ -19,6 +21,6 @@ HOLDINGS_DEFINITIONS: Final = LuxtronikDefinitionsList(
 class Holdings(DataVectorSmartHome):
     """Class that holds holding fields."""
 
-    logger = logging.getLogger("Luxtronik.Holdings")
+    logger = LOGGER
     name = HOLDINGS_FIELD_NAME
     definitions = HOLDINGS_DEFINITIONS

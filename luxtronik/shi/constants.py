@@ -19,7 +19,7 @@ INPUTS_FIELD_NAME: Final = "input"
 LUXTRONIK_WAIT_TIME_AFTER_HOLDING_WRITE: Final = 1
 
 # The data from the smart home interface are transmitted in 16-bit chunks.
-LUXTRONIK_SHI_REGISTER_BIT_SIZE = 16
+LUXTRONIK_SHI_REGISTER_BIT_SIZE: Final = 16
 
 # Since version 3.92.0, all unavailable data fields
 # have been returning this value (0x7FFF)

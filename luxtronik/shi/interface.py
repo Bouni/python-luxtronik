@@ -1,5 +1,7 @@
 """Main components of the Luxtronik smart home interface."""
 
+import logging
+
 from luxtronik.common import classproperty, version_in_range
 from luxtronik.datatypes import Base
 from luxtronik.definitions import (
@@ -8,7 +10,6 @@ from luxtronik.definitions import (
 )
 from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
 from luxtronik.shi.common import (
-    LOGGER,
     LuxtronikSmartHomeReadHoldingsTelegram,
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
@@ -18,6 +19,9 @@ from luxtronik.shi.vector import DataVectorSmartHome
 from luxtronik.shi.holdings import Holdings, HOLDINGS_DEFINITIONS
 from luxtronik.shi.inputs import Inputs, INPUTS_DEFINITIONS
 from luxtronik.shi.contiguous import ContiguousDataBlockList
+
+
+LOGGER = logging.getLogger(__name__)
 
 READ = True
 WRITE = False

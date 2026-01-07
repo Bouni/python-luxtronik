@@ -4,6 +4,7 @@ used by the config interface (CFI) of the Luxtronik controller.
 
 The visibilities holds values for display purposes and are read-only.
 """
+
 from typing import Final
 
 from luxtronik.datatypes import (

@@ -8,6 +8,7 @@ and writable and are used to control the heat pump externally.
 
 NOTE: Data fields that span multiple registers are typically in big-endian/MSB-first order.
 """
+
 from typing import Final
 
 from luxtronik.datatypes import (
