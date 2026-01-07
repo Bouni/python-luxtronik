@@ -24,3 +24,7 @@ class Inputs(DataVectorSmartHome):
     logger = LOGGER
     name = INPUTS_FIELD_NAME
     definitions = INPUTS_DEFINITIONS
+
+    @property
+    def inputs(self):
+        return self._data
