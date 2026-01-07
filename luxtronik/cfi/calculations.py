@@ -32,7 +32,8 @@ class Calculations(DataVector):
 
     def __init__(self):
         super().__init__()
-        self._data = {d.index: d.create_field() for d in CALCULATIONS_DEFINITIONS}
+        for d in CALCULATIONS_DEFINITIONS:
+            self._data.add(d, d.create_field())
 
     @property
     def calculations(self):

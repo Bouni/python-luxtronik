@@ -71,12 +71,13 @@ class TestParameters:
         parameters = Parameters()
 
         n = 2000
-        t = [0] * (n + 1)
+        t = list(range(0, n + 1))
         parameters.parse(t)
 
         p = parameters.get(n)
 
         assert p.name == f"unknown_parameter_{n}"
+        assert p.raw == n
 
     def test___iter__(self):
         """Test cases for __iter__"""

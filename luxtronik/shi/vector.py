@@ -2,12 +2,9 @@
 import logging
 
 from luxtronik.common import version_in_range
-from luxtronik.data_vector import DataVector
+from luxtronik.data_vector import LuxtronikFieldsDictionary, DataVector
 from luxtronik.datatypes import Base, Unknown
-from luxtronik.definitions import (
-    LuxtronikDefinition,
-    LuxtronikDefinitionsDictionary,
-)
+from luxtronik.definitions import LuxtronikDefinition
 
 from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
 from luxtronik.shi.definitions import integrate_data
@@ -94,14 +91,8 @@ class DataVectorSmartHome(DataVector):
         self.safe = safe
         self._version = version
 
-        # There may be several names or alias that points to one definition.
-        # So in order to spare memory we split the name/index-to-field-lookup
-        # into a name/index-to-definition-lookup and a definition-to-field-lookup
-        self._def_lookup = LuxtronikDefinitionsDictionary()
-        self._field_lookup = {}
-        # Furthermore stores the definition-to-field-lookup separate from the
-        # field-definition pairs to keep the index-sorted order when adding new entries
-        self._items = [] # list of tuples, 0: definition, 1: field
+        # Dictionary that holds all fields
+        self._data = LuxtronikFieldsDictionary()
 
         # Instead of re-create the block-list on every read, we just update it
         # on first time used or on next time used if some fields are added.
@@ -132,7 +123,7 @@ class DataVectorSmartHome(DataVector):
             if version_in_range(version, d.since, d.until):
                 # The definitions are already sorted correctly.
                 # So we can just add them one after the other.
-                self._add(d, d.create_field())
+                self._data.add(d, d.create_field())
 
     @classmethod
     def empty(cls, version=LUXTRONIK_LATEST_SHI_VERSION, safe=True):
@@ -159,11 +150,10 @@ class DataVectorSmartHome(DataVector):
         return self.set(def_name_or_idx, value)
 
     def __len__(self):
-        return len(self._items)
+        return len(self._data.def_items)
 
     def __iter__(self):
-        # _items is a list of tuples, 0: definition, 1: field
-        return iter([item[0] for item in self._items])
+        return iter([definition for definition, _ in self._data.def_items])
 
     def __contains__(self, def_field_name_or_idx):
         """
@@ -177,13 +167,7 @@ class DataVectorSmartHome(DataVector):
         Returns:
             True if the searched element was found, otherwise False.
         """
-        if isinstance(def_field_name_or_idx, Base):
-            return any(def_field_name_or_idx is field for field in self._field_lookup.values())
-        elif isinstance(def_field_name_or_idx, LuxtronikDefinition):
-            # speed-up the look-up by search only the name-dict
-            return def_field_name_or_idx.name in self._def_lookup._name_dict
-        else:
-            return def_field_name_or_idx in self._def_lookup
+        return def_field_name_or_idx in self._data
 
 
 # properties and access methods ###############################################
@@ -193,14 +177,10 @@ class DataVectorSmartHome(DataVector):
         return self._version
 
     def values(self):
-        # _items is a list of tuples, 0: definition, 1: field
-        return iter([item[1] for item in self._items])
+        return iter([field for _, field in self._data.def_items])
 
     def items(self):
-        """
-        Iterator for all definition-field-pairs (list of tuples with
-        0: definition, 1: field) contained herein."""
-        return iter(self._items)
+        return iter(self._data.def_items)
 
 
 # Find, add and alias methods #################################################
@@ -213,7 +193,7 @@ class DataVectorSmartHome(DataVector):
             def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
                 Definition object, field object, field name or register index.
             all_not_version_dependent (bool): If true, look up the definition
-                within the `cls.definitions` otherwise within `self._def_lookup` (which
+                within the `cls.definitions` otherwise within `self.def_dict` (which
                 contain all definitions related to all added fields)
 
         Returns:
@@ -231,22 +211,9 @@ class DataVectorSmartHome(DataVector):
             if all_not_version_dependent:
                 definition = self.definitions.get(definition)
             else:
-                # def_lookup contains only valid and addable definitions
-                definition = self._def_lookup.get(definition)
+                # def_dict contains only valid and addable definitions
+                definition = self._data.def_dict.get(definition)
         return definition, field
-
-    def _add(self, definition, field, alias=None):
-        """
-        Add a definition-field-pair to the internal dictionaries.
-
-        Args:
-            definition (LuxtronikDefinition): Definition related to the field.
-            field (Base): Field to add.
-            alias (Hashable | None): Alias, which can be used to access the field again.
-        """
-        self._def_lookup.add(definition, alias)
-        self._field_lookup[definition] = field
-        self._items.append((definition, field))
 
     def add(self, def_field_name_or_idx, alias=None):
         """
@@ -276,7 +243,7 @@ class DataVectorSmartHome(DataVector):
             return None
 
         # Check if the field already exists
-        existing_field = self._field_lookup.get(definition, None)
+        existing_field = self._data.get(definition, None)
         if existing_field is not None:
             return existing_field
 
@@ -285,10 +252,7 @@ class DataVectorSmartHome(DataVector):
             if field is None:
                 field = definition.create_field()
             self._read_blocks_up_to_date = False
-            self._add(definition, field, alias)
-            # sort _items by definition.index
-            # _items is a list of tuples, 0: definition, 1: field
-            self._items.sort(key=lambda item: item[0].index)
+            self._data.add_sorted(definition, field, alias)
             return field
         return None
 
@@ -307,15 +271,7 @@ class DataVectorSmartHome(DataVector):
             Base | None: The field to which the alias was added,
                 or None if not possible
         """
-        # Resolve a field input
-        def_name_or_idx = def_field_name_or_idx
-        if isinstance(def_name_or_idx, Base):
-            def_name_or_idx = def_name_or_idx.name
-        # register alias
-        definition = self._def_lookup.register_alias(def_name_or_idx, alias)
-        if definition is None:
-            return None
-        return self._field_lookup.get(definition, None)
+        return self._data.register_alias(def_field_name_or_idx, alias)
 
 
 # Data-blocks methods #########################################################
@@ -329,7 +285,7 @@ class DataVectorSmartHome(DataVector):
         """
         if not self._read_blocks_up_to_date:
             self._read_blocks.clear()
-            for definition, field in self._items:
+            for definition, field in self._data.def_items:
                 self._read_blocks.collect(definition, field)
         self._read_blocks_up_to_date = True
 
@@ -345,7 +301,7 @@ class DataVectorSmartHome(DataVector):
                 The raw data must start at register index 0.
         """
         raw_len = len(raw_data)
-        for definition, field in self._items:
+        for definition, field in self._data.def_items:
             if definition.index + definition.count >= raw_len:
                 continue
             integrate_data(definition, field, raw_data)
@@ -365,13 +321,7 @@ class DataVectorSmartHome(DataVector):
             If multiple fields added for the same index/name,
             the last added takes precedence.
         """
-        if isinstance(def_name_or_idx, LuxtronikDefinition):
-            definition = def_name_or_idx
-        else:
-            definition = self._def_lookup.get(def_name_or_idx)
-        if definition is not None:
-            return self._field_lookup.get(definition, default)
-        return default
+        return self._data.get(def_name_or_idx, default)
 
     def set(self, def_field_name_or_idx, value):
         """
