@@ -183,6 +183,16 @@ class TestDefinitionsDict:
         d_out = def_dict.get(1)
         assert d3 == d_out
 
+        # invalid float
+        assert 1.3 not in def_dict
+        d_out = def_dict.get(1.3)
+        assert d_out is None
+
+        # invalid list
+        assert list() not in def_dict
+        d_out = def_dict.get(list())
+        assert d_out is None
+
     def test_alias(self):
         def_dict = LuxtronikDefinitionsDictionary()
 
