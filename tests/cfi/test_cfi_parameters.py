@@ -3,6 +3,7 @@
 # pylint: disable=too-few-public-methods,invalid-name,protected-access
 
 from luxtronik import Parameters
+from luxtronik.datatypes import Base
 
 
 class TestParameters:
@@ -19,6 +20,22 @@ class TestParameters:
         parameters = Parameters(False)
         assert not parameters.safe
         assert len(parameters.queue) == 0
+
+    def test_data(self):
+        """Test cases for the data dictionary"""
+        parameters = Parameters()
+        data = parameters.parameters
+
+        # The Value must be a fields
+        # The key can be an index
+        assert isinstance(data[0], Base)
+        for k in data:
+            assert isinstance(k, int)
+        for v in data.values():
+            assert isinstance(v, Base)
+        for k, v in data.items():
+            assert isinstance(k, int)
+            assert isinstance(v, Base)
 
     def test_get(self):
         """Test cases for get"""
@@ -54,12 +71,13 @@ class TestParameters:
         parameters = Parameters()
 
         n = 2000
-        t = [0] * (n + 1)
+        t = list(range(0, n + 1))
         parameters.parse(t)
 
         p = parameters.get(n)
 
         assert p.name == f"unknown_parameter_{n}"
+        assert p.raw == n
 
     def test___iter__(self):
         """Test cases for __iter__"""

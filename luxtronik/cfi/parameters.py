@@ -30,7 +30,8 @@ class Parameters(DataVector):
         super().__init__()
         self.safe = safe
         self.queue = {}
-        self._data = {d.index: d.create_field() for d in PARAMETERS_DEFINITIONS}
+        for d in PARAMETERS_DEFINITIONS:
+            self._data.add(d, d.create_field())
 
     @property
     def parameters(self):

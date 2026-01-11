@@ -4,6 +4,10 @@ used by the config interface (CFI) of the Luxtronik controller.
 
 The parameters represents the heat pump settings,
 are stored permanently and are readable and writable.
+
+NOTES:
+- If there are multiple definitions for an index, the newest and
+preferred one should be inserted as the last one in the same index.
 """
 
 from typing import Final

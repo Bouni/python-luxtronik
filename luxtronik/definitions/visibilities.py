@@ -3,6 +3,10 @@ Constant list containing all 'visibility' definitions
 used by the config interface (CFI) of the Luxtronik controller.
 
 The visibilities holds values for display purposes and are read-only.
+
+NOTES:
+- If there are multiple definitions for an index, the newest and
+preferred one should be inserted as the last one in the same index.
 """
 
 from typing import Final

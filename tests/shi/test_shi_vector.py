@@ -2,6 +2,8 @@ from luxtronik.common import parse_version
 from luxtronik.datatypes import Base, Unknown
 from luxtronik.definitions import LuxtronikDefinitionsList
 from luxtronik.shi.vector import DataVectorSmartHome
+from luxtronik.shi.holdings import Holdings
+from luxtronik.shi.inputs import Inputs
 
 """
 The test was originally written for "False".
@@ -90,6 +92,7 @@ class TestDataVector:
         data_vector = DataVectorTest(parse_version("1.2"))
         assert data_vector.version == (1, 2, 0, 0)
         assert len(data_vector) == 3
+        assert len(data_vector._data._items) == 3
         assert not data_vector._read_blocks_up_to_date
         assert len(data_vector._read_blocks) == 0
 
@@ -213,6 +216,7 @@ class TestDataVector:
         field = data_vector.add(def_9a)
         assert def_9a in data_vector
         assert len(data_vector) == 3
+        assert len(data_vector.data._items) == 3
         assert field.name == 'field_9a'
 
         # Get via index (last added)
@@ -429,3 +433,24 @@ class TestDataVector:
         assert len(data_vector) == 3
         data_vector.add(10) # field_9a alias
         assert len(data_vector) == 4
+        assert len(data_vector._data._items) == 4
+
+
+class TestHoldings:
+    """Test suite for Holdings"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+        holdings = Holdings()
+        assert holdings.name == "holding"
+        assert holdings.holdings == holdings._data
+
+
+class TestInputs:
+    """Test suite for Inputs"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+        inputs = Inputs()
+        assert inputs.name == "input"
+        assert inputs.inputs == inputs._data

@@ -3,6 +3,7 @@
 # pylint: disable=too-few-public-methods
 
 from luxtronik import Visibilities
+from luxtronik.datatypes import Base
 
 
 class TestVisibilities:
@@ -13,3 +14,19 @@ class TestVisibilities:
         visibilities = Visibilities()
         assert visibilities.name == "visibility"
         assert visibilities.visibilities == visibilities._data
+
+    def test_data(self):
+        """Test cases for the data dictionary"""
+        visibilities = Visibilities()
+        data = visibilities.visibilities
+
+        # The Value must be a fields
+        # The key can be an index
+        assert isinstance(data[0], Base)
+        for k in data:
+            assert isinstance(k, int)
+        for v in data.values():
+            assert isinstance(v, Base)
+        for k, v in data.items():
+            assert isinstance(k, int)
+            assert isinstance(v, Base)
