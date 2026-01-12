@@ -4,6 +4,10 @@ used by the config interface (CFI) of the Luxtronik controller.
 
 The calculations holds values based on the currently measured values,
 are read-only and are used for control and display purposes.
+
+NOTES:
+- If there are multiple definitions for an index, the newest and
+preferred one should be inserted as the last one in the same index.
 """
 
 from typing import Final

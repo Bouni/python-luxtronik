@@ -6,7 +6,10 @@ Unlike the setting registers, these SHI register are volatile and intended for
 communication with smart home systems. 'Input' register are read-only
 and are used for display or to control other devices.
 
-NOTE: Data fields that span multiple registers are typically in big-endian/MSB-first order.
+NOTES:
+- If there are multiple definitions for an index, the newest and
+preferred one should be inserted as the last one in the same index.
+- Data fields that span multiple registers are typically in big-endian/MSB-first order.
 """
 
 from typing import Final

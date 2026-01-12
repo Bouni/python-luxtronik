@@ -24,3 +24,7 @@ class Holdings(DataVectorSmartHome):
     logger = LOGGER
     name = HOLDINGS_FIELD_NAME
     definitions = HOLDINGS_DEFINITIONS
+
+    @property
+    def holdings(self):
+        return self._data

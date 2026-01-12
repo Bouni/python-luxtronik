@@ -285,6 +285,13 @@ class LuxtronikDefinitionsDictionary:
             LOGGER.debug(f"Definition for '{name_or_idx}' not found", )
         return d if d is not None else default
 
+    def _is_hashable(self, x):
+        try:
+            hash(x)
+            return True
+        except TypeError:
+            return False
+
     def _get(self, name_or_idx):
         """
         Retrieve a definition by name or index.
@@ -298,7 +305,9 @@ class LuxtronikDefinitionsDictionary:
         Note:
             If multiple definitions added for the same index/name, the last added takes precedence.
         """
-        d = self._get_definition_by_alias(name_or_idx)
+        d = None
+        if self._is_hashable(name_or_idx):
+            d = self._get_definition_by_alias(name_or_idx)
         if d is None:
             if isinstance(name_or_idx, int):
                 d = self._get_definition_by_idx(name_or_idx)
