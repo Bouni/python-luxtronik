@@ -9,7 +9,7 @@ import time
 import argparse
 
 from luxtronik import LuxtronikSocketInterface
-from luxtronik.constants import LUXTRONIK_DEFAULT_PORT
+from luxtronik.cfi.constants import LUXTRONIK_DEFAULT_PORT
 
 
 def dump_changes():
