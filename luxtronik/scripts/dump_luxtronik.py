@@ -6,7 +6,7 @@
 import argparse
 
 from luxtronik import Luxtronik
-from luxtronik.constants import LUXTRONIK_DEFAULT_PORT
+from luxtronik.cfi.constants import LUXTRONIK_DEFAULT_PORT
 
 
 def dump_luxtronik():
