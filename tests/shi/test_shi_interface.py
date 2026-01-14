@@ -10,7 +10,6 @@ from luxtronik.shi.constants import (
     LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE,
 )
 from luxtronik.shi.common import (
-    LuxtronikSmartHomeReadTelegram,
     LuxtronikSmartHomeReadHoldingsTelegram,
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
@@ -27,38 +26,8 @@ from luxtronik.shi import (
     LuxtronikSmartHomeInterface,
     create_modbus_tcp,
 )
+from tests.fake import FakeModbus
 
-###############################################################################
-# Fake modbus client
-###############################################################################
-
-class FakeInterface:
-    telegram_list = []
-    result = True
-
-    def __init__(self, host="", port="", timeout=0):
-        pass
-
-    def _get_data(self, addr, count):
-        return [addr - 10000 + i for i in range(count)]
-
-    def read_inputs(self, addr, count):
-        return self._get_data(addr, count) if self.result else None
-
-    def send(self, telegrams):
-        if not isinstance(telegrams, list):
-            telegrams = [telegrams]
-        FakeInterface.telegram_list = telegrams
-
-        for t in telegrams:
-            if isinstance(t, LuxtronikSmartHomeReadTelegram):
-                t.data = self._get_data(t.addr, t.count)
-        return self.result
-
-
-###############################################################################
-# Tests
-###############################################################################
 
 class TestLuxtronikSmartHomeData:
 
@@ -85,15 +54,15 @@ class TestLuxtronikSmartHomeData:
         assert data.inputs.version == (1, 2, 0, 0)
 
 
-@patch("luxtronik.shi.LuxtronikModbusTcpInterface", FakeInterface)
+@patch("luxtronik.shi.LuxtronikModbusTcpInterface", FakeModbus)
 class TestLuxtronikSmartHomeInterface:
 
     @classmethod
     def setup_class(cls):
-        cls.interface = LuxtronikSmartHomeInterface(FakeInterface(), LUXTRONIK_FIRST_VERSION_WITH_SHI)
+        cls.interface = LuxtronikSmartHomeInterface(FakeModbus(), LUXTRONIK_FIRST_VERSION_WITH_SHI)
 
     def test_init(self):
-        assert isinstance(self.interface._interface, FakeInterface)
+        assert isinstance(self.interface._interface, FakeModbus)
         assert self.interface._blocks_list == []
         assert self.interface.version == LUXTRONIK_FIRST_VERSION_WITH_SHI
         assert len(self.interface._filtered_holdings) > 0
@@ -499,13 +468,13 @@ class TestLuxtronikSmartHomeInterface:
 
         valid = self.interface._send_and_integrate(blocks_list)
         assert valid
-        assert len(FakeInterface.telegram_list) == 2
-        assert type(FakeInterface.telegram_list[0]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[0].addr == 10000 + 2
-        assert FakeInterface.telegram_list[0].count == 1
-        assert type(FakeInterface.telegram_list[1]) is LuxtronikSmartHomeWriteHoldingsTelegram
-        assert FakeInterface.telegram_list[1].addr == 10000 + 1
-        assert FakeInterface.telegram_list[1].count == 1
+        assert len(FakeModbus.telegram_list) == 2
+        assert type(FakeModbus.telegram_list[0]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[0].addr == 10000 + 2
+        assert FakeModbus.telegram_list[0].count == 1
+        assert type(FakeModbus.telegram_list[1]) is LuxtronikSmartHomeWriteHoldingsTelegram
+        assert FakeModbus.telegram_list[1].addr == 10000 + 1
+        assert FakeModbus.telegram_list[1].count == 1
 
     def test_collect_fields(self):
         blocks_list = []
@@ -567,22 +536,22 @@ class TestLuxtronikSmartHomeInterface:
         assert blocks_list[1][1][1].field.value == 40
 
         self.interface._send_and_integrate(blocks_list)
-        assert len(FakeInterface.telegram_list) == 5
-        assert type(FakeInterface.telegram_list[0]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[0].addr == 10000 + 0
-        assert FakeInterface.telegram_list[0].count == 1
-        assert type(FakeInterface.telegram_list[1]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[1].addr == 10000 + 2
-        assert FakeInterface.telegram_list[1].count == 1
-        assert type(FakeInterface.telegram_list[2]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[2].addr == 10000 + 5
-        assert FakeInterface.telegram_list[2].count == 3
-        assert type(FakeInterface.telegram_list[3]) is LuxtronikSmartHomeWriteHoldingsTelegram
-        assert FakeInterface.telegram_list[3].addr == 10000 + 0
-        assert FakeInterface.telegram_list[3].count == 1
-        assert type(FakeInterface.telegram_list[4]) is LuxtronikSmartHomeWriteHoldingsTelegram
-        assert FakeInterface.telegram_list[4].addr == 10000 + 5
-        assert FakeInterface.telegram_list[4].count == 2
+        assert len(FakeModbus.telegram_list) == 5
+        assert type(FakeModbus.telegram_list[0]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[0].addr == 10000 + 0
+        assert FakeModbus.telegram_list[0].count == 1
+        assert type(FakeModbus.telegram_list[1]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[1].addr == 10000 + 2
+        assert FakeModbus.telegram_list[1].count == 1
+        assert type(FakeModbus.telegram_list[2]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[2].addr == 10000 + 5
+        assert FakeModbus.telegram_list[2].count == 3
+        assert type(FakeModbus.telegram_list[3]) is LuxtronikSmartHomeWriteHoldingsTelegram
+        assert FakeModbus.telegram_list[3].addr == 10000 + 0
+        assert FakeModbus.telegram_list[3].count == 1
+        assert type(FakeModbus.telegram_list[4]) is LuxtronikSmartHomeWriteHoldingsTelegram
+        assert FakeModbus.telegram_list[4].addr == 10000 + 5
+        assert FakeModbus.telegram_list[4].count == 2
 
 
     def test_collect_field2(self):
@@ -800,7 +769,7 @@ class TestLuxtronikSmartHomeInterface:
         assert field is None
 
     def test_read_holding(self):
-        FakeInterface.result = False
+        FakeModbus.result = False
 
         # read field with error
         field = self.interface.read_holding(2)
@@ -818,7 +787,7 @@ class TestLuxtronikSmartHomeInterface:
         assert not vector.safe
         assert vector[2] is None
 
-        FakeInterface.result = True
+        FakeModbus.result = True
 
         # read field
         field = self.interface.read_holding(2)
@@ -843,7 +812,7 @@ class TestLuxtronikSmartHomeInterface:
         field_2 = vector.add(2)
         assert len(vector) == 1
 
-        FakeInterface.result = False
+        FakeModbus.result = False
 
         # write field with error
         field = self.interface.write_holding(2, 19)
@@ -867,7 +836,7 @@ class TestLuxtronikSmartHomeInterface:
         success = self.interface.write_and_read_holdings(4)
         assert not success
 
-        FakeInterface.result = True
+        FakeModbus.result = True
 
         # write field
         field = self.interface.write_holding(2, 19)
@@ -938,7 +907,7 @@ class TestLuxtronikSmartHomeInterface:
         assert field is None
 
     def test_read_input(self):
-        FakeInterface.result = False
+        FakeModbus.result = False
 
         # read field with error
         field = self.interface.read_input(105)
@@ -956,7 +925,7 @@ class TestLuxtronikSmartHomeInterface:
         assert vector.safe
         assert vector[105] is None
 
-        FakeInterface.result = True
+        FakeModbus.result = True
 
         # read field
         field = self.interface.read_input(105)
@@ -1000,7 +969,7 @@ class TestLuxtronikSmartHomeInterface:
         assert field is None
 
     def test_read_data(self):
-        FakeInterface.result = False
+        FakeModbus.result = False
 
         # read data with error
         data = self.interface.read_data()
@@ -1019,7 +988,7 @@ class TestLuxtronikSmartHomeInterface:
         assert not data.holdings.safe
         assert data.holdings[2] is None
 
-        FakeInterface.result = True
+        FakeModbus.result = True
 
         # read data
         data = self.interface.read_data()
@@ -1043,7 +1012,7 @@ class TestLuxtronikSmartHomeInterface:
         field_2 = data.holdings.add(2)
         assert len(data.holdings) == 1
 
-        FakeInterface.result = False
+        FakeModbus.result = False
 
         # write data with error
         field_2.value = 20
@@ -1071,7 +1040,7 @@ class TestLuxtronikSmartHomeInterface:
         success = self.interface.write_and_read(None)
         assert not success
 
-        FakeInterface.result = True
+        FakeModbus.result = True
 
         # write vector
         field_2.value = 20
@@ -1106,7 +1075,7 @@ class TestLuxtronikSmartHomeInterface:
         assert not success
 
     def test_raw(self):
-        FakeInterface.result = False
+        FakeModbus.result = False
 
         data = self.interface.read_holding_raw(1, 3)
         assert data is None
@@ -1117,7 +1086,7 @@ class TestLuxtronikSmartHomeInterface:
         data = self.interface.read_input_raw(2, 5)
         assert data is None
 
-        FakeInterface.result = True
+        FakeModbus.result = True
 
         data = self.interface.read_holding_raw(1, 3)
         assert data == [1, 2, 3]
@@ -1139,10 +1108,10 @@ class TestLuxtronikSmartHomeInterface:
         assert field.value == 32
 
         self.interface.read_input(0)
-        assert len(FakeInterface.telegram_list) == 3
-        assert FakeInterface.telegram_list[0].data == [2]
-        assert FakeInterface.telegram_list[1].data == [32 * 10]
-        assert FakeInterface.telegram_list[2].data == [0]
+        assert len(FakeModbus.telegram_list) == 3
+        assert FakeModbus.telegram_list[0].data == [2]
+        assert FakeModbus.telegram_list[1].data == [32 * 10]
+        assert FakeModbus.telegram_list[2].data == [0]
 
         assert field.raw == 2
 
@@ -1158,17 +1127,17 @@ class TestLuxtronikSmartHomeInterface:
         field.value = 42
 
         self.interface.read_input(0)
-        assert len(FakeInterface.telegram_list) == 3
-        assert FakeInterface.telegram_list[0].data == [42 * 10]
-        assert FakeInterface.telegram_list[1].data == [2]
-        assert FakeInterface.telegram_list[2].data == [0]
+        assert len(FakeModbus.telegram_list) == 3
+        assert FakeModbus.telegram_list[0].data == [42 * 10]
+        assert FakeModbus.telegram_list[1].data == [2]
+        assert FakeModbus.telegram_list[2].data == [0]
 
         assert field.raw == 2
 
     def test_trial_and_error_mode(self):
 
         # prepare
-        interface = LuxtronikSmartHomeInterface(FakeInterface(), None)
+        interface = LuxtronikSmartHomeInterface(FakeModbus(), None)
 
         holdings = Holdings.empty(None)
         h0 = holdings.add(0) # 3.90.1
@@ -1237,34 +1206,34 @@ class TestLuxtronikSmartHomeInterface:
 
         interface.send()
         offset = interface.holdings.offset
-        assert len(FakeInterface.telegram_list) == 8
-        assert type(FakeInterface.telegram_list[0]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[0].addr == offset + 0
-        assert FakeInterface.telegram_list[0].count == 1
-        assert type(FakeInterface.telegram_list[1]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[1].addr == offset + 1
-        assert FakeInterface.telegram_list[1].count == 1
-        assert type(FakeInterface.telegram_list[2]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[2].addr == offset + 2
-        assert FakeInterface.telegram_list[2].count == 1
-        assert type(FakeInterface.telegram_list[3]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[3].addr == offset + 3
-        assert FakeInterface.telegram_list[3].count == 1
-        assert type(FakeInterface.telegram_list[4]) is LuxtronikSmartHomeWriteHoldingsTelegram
-        assert FakeInterface.telegram_list[4].addr == offset + 1
-        assert FakeInterface.telegram_list[4].count == 1
-        assert FakeInterface.telegram_list[4].data == [10]
-        assert type(FakeInterface.telegram_list[5]) is LuxtronikSmartHomeWriteHoldingsTelegram
-        assert FakeInterface.telegram_list[5].addr == offset + 3
-        assert FakeInterface.telegram_list[5].count == 1
-        assert FakeInterface.telegram_list[5].data == [1]
-        assert type(FakeInterface.telegram_list[6]) is LuxtronikSmartHomeReadHoldingsTelegram
-        assert FakeInterface.telegram_list[6].addr == offset + 4
-        assert FakeInterface.telegram_list[6].count == 1
-        assert type(FakeInterface.telegram_list[7]) is LuxtronikSmartHomeWriteHoldingsTelegram
-        assert FakeInterface.telegram_list[7].addr == offset + 4
-        assert FakeInterface.telegram_list[7].count == 1
-        assert FakeInterface.telegram_list[7].data == [16]
+        assert len(FakeModbus.telegram_list) == 8
+        assert type(FakeModbus.telegram_list[0]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[0].addr == offset + 0
+        assert FakeModbus.telegram_list[0].count == 1
+        assert type(FakeModbus.telegram_list[1]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[1].addr == offset + 1
+        assert FakeModbus.telegram_list[1].count == 1
+        assert type(FakeModbus.telegram_list[2]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[2].addr == offset + 2
+        assert FakeModbus.telegram_list[2].count == 1
+        assert type(FakeModbus.telegram_list[3]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[3].addr == offset + 3
+        assert FakeModbus.telegram_list[3].count == 1
+        assert type(FakeModbus.telegram_list[4]) is LuxtronikSmartHomeWriteHoldingsTelegram
+        assert FakeModbus.telegram_list[4].addr == offset + 1
+        assert FakeModbus.telegram_list[4].count == 1
+        assert FakeModbus.telegram_list[4].data == [10]
+        assert type(FakeModbus.telegram_list[5]) is LuxtronikSmartHomeWriteHoldingsTelegram
+        assert FakeModbus.telegram_list[5].addr == offset + 3
+        assert FakeModbus.telegram_list[5].count == 1
+        assert FakeModbus.telegram_list[5].data == [1]
+        assert type(FakeModbus.telegram_list[6]) is LuxtronikSmartHomeReadHoldingsTelegram
+        assert FakeModbus.telegram_list[6].addr == offset + 4
+        assert FakeModbus.telegram_list[6].count == 1
+        assert type(FakeModbus.telegram_list[7]) is LuxtronikSmartHomeWriteHoldingsTelegram
+        assert FakeModbus.telegram_list[7].addr == offset + 4
+        assert FakeModbus.telegram_list[7].count == 1
+        assert FakeModbus.telegram_list[7].data == [16]
 
 
     def check_definitions(self, interface):
@@ -1315,10 +1284,10 @@ class TestLuxtronikSmartHomeInterface:
         assert interface.version == (400, 401, 402, 0)
         self.check_definitions(interface)
 
-        FakeInterface.result = False
+        FakeModbus.result = False
 
         interface = create_modbus_tcp('host')
         assert interface.version is None
         self.check_definitions(interface)
 
-        FakeInterface.result = True
+        FakeModbus.result = True
