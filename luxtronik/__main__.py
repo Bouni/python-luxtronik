@@ -4,13 +4,13 @@ import argparse
 import sys
 from luxtronik.discover import discover as _discover
 from luxtronik.scripts.dump_luxtronik import (
-    dump_luxtronik,
+    dump_cfi,
 )  # pylint: disable=unused-import # noqa: F401
 from luxtronik.scripts.dump_shi import (
     dump_shi,
 )  # pylint: disable=unused-import # noqa: F401
 from luxtronik.scripts.dump_changes import (
-    dump_changes,
+    watch_cfi,
 )  # pylint: disable=unused-import # noqa: F401
 from luxtronik.scripts.watch_shi import (
     watch_shi,
@@ -31,10 +31,12 @@ def main() -> int:
         description="CLI for Luxtronik controllers",
         usage="""luxtronik <command> [<args>]
         The supported commands are:
-        dump       Dump all available data from the Luxtronik controller
-        dump-shi   Dump all available data from the Luxtronik smart home interface
-        changes    Dump all value changes from Luxtronik controller
-        watch-shi  Watch all value changes from Luxtronik smart home interface
+        dump       Dump all config interface values of the Luxtronik controller
+        dump-cfi   Dump all config interface values of the Luxtronik controller
+        dump-shi   Dump all smart home interface values of the Luxtronik controller
+        changes    Watch all config interface value changes of the Luxtronik controller
+        watch-cfi  Watch all config interface value changes of the Luxtronik controller
+        watch-shi  Watch all smart home interface value changes of the Luxtronik controller
         discover   Discover Luxtronik controllers on the network (via magic packet) and output results
         """,
     )
@@ -43,9 +45,11 @@ def main() -> int:
     # exclude the rest of the args too, or validation will fail
     args = parser.parse_args(sys.argv[1:2])
     commands = {
-        "dump": dump_luxtronik,
+        "dump": dump_cfi,
+        "dump-cfi": dump_cfi,
         "dump-shi": dump_shi,
-        "changes": dump_changes,
+        "changes": watch_cfi,
+        "watch-cfi": watch_cfi,
         "watch-shi": watch_shi,
         "discover": discover,
     }

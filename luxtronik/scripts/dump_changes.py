@@ -1,85 +1,60 @@
 #! /usr/bin/env python3
 
-# pylint: disable=invalid-name, disable=too-many-locals
+# pylint: disable=invalid-name
+"""
+Script to watch all config interface value changes of the Luxtronik controller
+"""
 
-"""Script to dump all value changes from Luxtronik controller"""
+from collections import OrderedDict
 
-import os
-import time
-import argparse
+from luxtronik import LuxtronikSocketInterface, LuxtronikData, LUXTRONIK_DEFAULT_PORT
+from luxtronik.scripts.update_screen import UpdateScreen
+from luxtronik.scripts import (
+    create_default_args_parser,
+    print_watch_header,
+    update_changes
+)
 
-from luxtronik import LuxtronikSocketInterface
-from luxtronik.cfi.constants import LUXTRONIK_DEFAULT_PORT
 
+def dump_all(screen, client, changes, prev_data, this_data):
+    # Get new data
+    client.read(this_data)
 
-def dump_changes():
-    """Dump all value changes from Luxtronik controller"""
-    # pylint: disable=duplicate-code
-    parser = argparse.ArgumentParser(description="Dumps all value changes from Luxtronik controller")
-    parser.add_argument("ip", help="IP address of Luxtronik controller to connect to")
-    parser.add_argument(
-        "port",
-        nargs="?",
-        type=int,
-        default=LUXTRONIK_DEFAULT_PORT,
-        help="Port to use to connect to Luxtronik controller",
+    # Compare this values with the initial values
+    # and add changes to dictionary
+    update_changes(changes, prev_data.parameters, this_data.parameters)
+    update_changes(changes, prev_data.calculations, this_data.calculations)
+    update_changes(changes, prev_data.visibilities, this_data.visibilities)
+
+    # Print changes
+    print_watch_header(screen, f"Watch CFI of {client._host}:{client._port}")
+    sorted_changes = OrderedDict(sorted(changes.items()))
+    for key, values in sorted_changes.items():
+        screen.write(values)
+
+def dump_repeated(client):
+    prev_data = client.read()
+    this_data = LuxtronikData()
+    changes = {}
+    screen = UpdateScreen(500)
+
+    screen.clear()
+    while True:
+        dump_all(screen, client, changes, prev_data, this_data)
+        screen.update()
+        if screen.process_keys(100):
+            break
+        screen.reset()
+
+def watch_cfi():
+    parser = create_default_args_parser(
+        "Watch all config interface value changes of the Luxtronik controller",
+        LUXTRONIK_DEFAULT_PORT
     )
     args = parser.parse_args()
-
     client = LuxtronikSocketInterface(args.ip, args.port)
-    prev_data = client.read()
-    # pylint: enable=duplicate-code
-    changes = {}
-
-    while True:
-        # Get new data
-        this_data = client.read()
-
-        # Compare this values with the initial values
-        # and add changes to dictionary
-        for number, param in this_data.parameters:
-            key = f"para_{number}"
-            prev_param = prev_data.parameters.get(number)
-            if param.raw != prev_param.raw:
-                changes[key] = (
-                    f"para: Number: {number:<5} Name: {prev_param.name:<60} " + f"Value: {prev_param} -> {param}"
-                )
-            elif key in changes:
-                changes[key] = (
-                    f"para: Number: {number:<5} Name: {prev_param.name:<60} " + f"Value: {prev_param} -> reverted"
-                )
-
-        for number, calc in this_data.calculations:
-            key = f"calc_{number}"
-            prev_calc = prev_data.calculations.get(number)
-            if calc.raw != prev_calc.raw:
-                changes[key] = (
-                    f"calc: Number: {number:<5} Name: {prev_calc.name:<60} " + f"Value: {prev_calc} -> {calc}"
-                )
-            elif key in changes:
-                changes[key] = (
-                    f"calc: Number: {number:<5} Name: {prev_calc.name:<60} " + f"Value: {prev_calc} -> reverted"
-                )
-
-        for number, visi in this_data.visibilities:
-            key = f"visi_{number}"
-            prev_visi = prev_data.visibilities.get(number)
-            if visi.raw != prev_visi.raw:
-                changes[key] = (
-                    f"visi: Number: {number:<5} Name: {prev_visi.name:<60} " + f"Value: {prev_visi} -> {visi}"
-                )
-            elif key in changes:
-                changes[key] = (
-                    f"visi: Number: {number:<5} Name: {prev_visi.name:<60} " + f"Value: {prev_visi} -> reverted"
-                )
-
-        # Print changes
-        os.system("clear")
-        print("=" * 80)
-        for key, values in changes.items():
-            print(values)
-        time.sleep(1)
+    dump_repeated(client)
 
 
 if __name__ == "__main__":
-    dump_changes()
+    watch_cfi()
