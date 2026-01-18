@@ -1,9 +1,9 @@
-from luxtronik.scripts.dump_changes import dump_all
+from luxtronik.scripts.watch_cfi import dump_all
 from luxtronik import LuxtronikData
 from tests.fake import FakeSocketInterface, FakeScreen
 
 
-class TestDumpChanges:
+class TestWatchCfi:
 
     def test_dump_all(self):
         client = FakeSocketInterface("host", 0)

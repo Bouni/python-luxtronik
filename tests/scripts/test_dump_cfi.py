@@ -1,8 +1,8 @@
-from luxtronik.scripts.dump_luxtronik import dump_all
+from luxtronik.scripts.dump_cfi import dump_all
 from tests.fake import FakeLuxtronik
 
 
-class TestDumpLuxtronik:
+class TestDumpCfi:
 
     def test_dump_all(self):
         client = FakeLuxtronik()

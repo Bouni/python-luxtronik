@@ -3,13 +3,13 @@
 import argparse
 import sys
 from luxtronik.discover import discover as _discover
-from luxtronik.scripts.dump_luxtronik import (
+from luxtronik.scripts.dump_cfi import (
     dump_cfi,
 )  # pylint: disable=unused-import # noqa: F401
 from luxtronik.scripts.dump_shi import (
     dump_shi,
 )  # pylint: disable=unused-import # noqa: F401
-from luxtronik.scripts.dump_changes import (
+from luxtronik.scripts.watch_cfi import (
     watch_cfi,
 )  # pylint: disable=unused-import # noqa: F401
 from luxtronik.scripts.watch_shi import (
