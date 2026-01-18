@@ -1,86 +1,20 @@
 from unittest.mock import patch
 
-from luxtronik.shi import LuxtronikSmartHomeInterface
 from luxtronik.shi.interface import LuxtronikSmartHomeData
 from luxtronik import (
     LuxtronikData,
     Parameters,
     Holdings,
-    LuxtronikSocketInterface,
     LuxtronikAllData,
     LuxtronikInterface,
     Luxtronik
 )
+from tests.fake import (
+    FakeSocketInterface,
+    FakeShiInterface,
+    fake_resolve_version
+)
 
-###############################################################################
-# Fake interfaces
-###############################################################################
-
-class FakeSocketInterface(LuxtronikSocketInterface):
-
-    write_counter = 0
-    read_counter = 0
-
-    @classmethod
-    def reset(cls):
-        FakeSocketInterface.write_counter = 0
-        FakeSocketInterface.read_counter = 0
-
-    def read(self, data):
-        FakeSocketInterface.read_parameters(self, data.parameters)
-        FakeSocketInterface.read_visibilities(self, data.visibilities)
-        FakeSocketInterface.read_calculations(self, data.calculations)
-
-    def read_parameters(self, parameters):
-        parameters.get(0).raw = 2
-        FakeSocketInterface.read_counter += 1
-
-    def read_visibilities(self, visibilities):
-        visibilities.get(0).raw = 4
-        FakeSocketInterface.read_counter += 1
-
-    def read_calculations(self, calculations):
-        calculations.get(0).raw = 6
-        FakeSocketInterface.read_counter += 1
-
-    def write(self, data):
-        FakeSocketInterface.write_counter += 1
-
-class FakeShiInterface(LuxtronikSmartHomeInterface):
-
-    write_counter = 0
-    read_counter = 0
-
-    @classmethod
-    def reset(cls):
-        FakeShiInterface.write_counter = 0
-        FakeShiInterface.read_counter = 0
-
-    def read(self, data):
-        FakeShiInterface.read_inputs(self, data.inputs)
-        FakeShiInterface.read_holdings(self, data.holdings)
-
-    def read_inputs(self, inputs):
-        inputs[0].raw = 3
-        FakeShiInterface.read_counter += 1
-
-    def read_holdings(self, holdings):
-        holdings[1].raw = 5
-        FakeShiInterface.read_counter += 1
-
-    def write(self, data):
-        return FakeShiInterface.write_holdings(self, data.holdings)
-
-    def write_holdings(self, holdings):
-        FakeShiInterface.write_counter += 1
-        return True
-
-def fake_resolve_version(modbus_interface):
-    return (3, 99, 11, 0)
-
-###############################################################################
-# Tests
-###############################################################################
 
 @patch("luxtronik.LuxtronikSocketInterface", FakeSocketInterface)
 @patch("luxtronik.LuxtronikSocketInterface.read_parameters", FakeSocketInterface.read_parameters)

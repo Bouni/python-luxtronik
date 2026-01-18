@@ -146,7 +146,7 @@ luxtronik dump-shi 192.168.178.123 502
 or call the script that comes with the python package:
 
 ```python
-PYTHONPATH=. ./luxtronik/scripts/dump_luxtronik.py 192.168.178.123 8889
+PYTHONPATH=. ./luxtronik/scripts/dump_cfi.py 192.168.178.123 8889
 
 # or from the base folder of luxtronik
 python -m luxtronik dump-shi 192.168.178.123 502
@@ -205,7 +205,7 @@ luxtronik watch-shi 192.168.178.123
 Alternatively, it can be invoked directly:
 
 ```python
-PYTHONPATH=. ./luxtronik/scripts/dump_changes.py 192.168.178.123 8889
+PYTHONPATH=. ./luxtronik/scripts/watch_cfi.py 192.168.178.123 8889
 
 # or
 PYTHONPATH=. ./luxtronik/scripts/watch_shi.py 192.168.178.123
