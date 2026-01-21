@@ -97,19 +97,6 @@ def get_data_arr(definition, field):
         data = [data]
     return data if len(data) == definition.count else None
 
-def check_data(definition, field):
-    """
-    Validate that the field contains sufficient raw data.
-
-    Args:
-        definition (LuxtronikDefinition): Meta-data of the field.
-        field (Base): Field object that contains the data to check.
-
-    Returns:
-        bool: True if valid, False otherwise.
-    """
-    return get_data_arr(definition, field) is not None
-
 def integrate_data(definition, field, raw_data, data_offset=-1):
     """
     Integrate raw values from a data array into the field.

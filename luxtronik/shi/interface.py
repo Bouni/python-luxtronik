@@ -2,7 +2,7 @@
 
 import logging
 
-from luxtronik.collections import check_data
+from luxtronik.collections import get_data_arr
 from luxtronik.common import classproperty, version_in_range
 from luxtronik.datatypes import Base
 from luxtronik.definitions import (
@@ -387,7 +387,7 @@ class LuxtronikSmartHomeInterface:
             field.value = data
 
         # Abort if insufficient data is provided
-        if not check_data(definition, field):
+        if get_data_arr(definition, field) is None:
             LOGGER.warning("Data error / insufficient data provided: " \
                 + f"name={definition.name}, data={field.raw}")
             return False

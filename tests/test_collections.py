@@ -1,7 +1,6 @@
 
 from luxtronik.collections import (
     get_data_arr,
-    check_data,
     integrate_data,
     LuxtronikDefFieldPair,
     LuxtronikFieldsDictionary,
@@ -44,7 +43,6 @@ class TestDefinitionFieldPair:
         arr = get_data_arr(definition, field)
         assert arr == [5]
         assert arr == pair.get_data_arr()
-        assert check_data(definition, field)
 
         # get from array
         definition._count = 2
@@ -52,7 +50,6 @@ class TestDefinitionFieldPair:
         arr = get_data_arr(definition, field)
         assert arr == [7, 3]
         assert arr == pair.get_data_arr()
-        assert check_data(definition, field)
 
         # too much data
         definition._count = 2
@@ -60,7 +57,6 @@ class TestDefinitionFieldPair:
         arr = get_data_arr(definition, field)
         assert arr is None
         assert arr == pair.get_data_arr()
-        assert not check_data(definition, field)
 
         # insufficient data
         definition._count = 2
@@ -68,7 +64,6 @@ class TestDefinitionFieldPair:
         arr = get_data_arr(definition, field)
         assert arr is None
         assert arr == pair.get_data_arr()
-        assert not check_data(definition, field)
 
         field.concatenate_multiple_data_chunks = True
 
@@ -78,7 +73,6 @@ class TestDefinitionFieldPair:
         arr = get_data_arr(definition, field)
         assert arr == [7, 3]
         assert arr == pair.get_data_arr()
-        assert check_data(definition, field)
 
         # too much data
         definition._count = 2
@@ -86,7 +80,6 @@ class TestDefinitionFieldPair:
         arr = get_data_arr(definition, field)
         assert arr == [8, 1]
         assert arr == pair.get_data_arr()
-        assert check_data(definition, field)
 
         # insufficient data
         definition._count = 2
@@ -94,7 +87,6 @@ class TestDefinitionFieldPair:
         arr = get_data_arr(definition, field)
         assert arr == [0, 9]
         assert arr == pair.get_data_arr()
-        assert check_data(definition, field)
 
     def test_integrate(self):
         definition = LuxtronikDefinition.unknown(2, 'Foo', 30)
