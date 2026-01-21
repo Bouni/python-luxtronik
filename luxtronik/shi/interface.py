@@ -466,12 +466,12 @@ class LuxtronikSmartHomeInterface:
             # Trial-and-error mode: Add a block for every field
             blocks = ContiguousDataBlockList(definitions.name, read_not_write)
             if (read_not_write == READ):
-                for definition, field in data_vector.data.def_items:
+                for definition, field in data_vector.data.pairs():
                     # _prepare_read_field will never fail, no need to call it
                     #if self._prepare_read_field(definition, field):
                     blocks.append_single(definition, field)
             else:
-                for definition, field in data_vector.data.def_items:
+                for definition, field in data_vector.data.pairs():
                     if self._prepare_write_field(definition, field, data_vector.safe, None):
                         blocks.append_single(definition, field)
             if len(blocks) > 0:
@@ -485,7 +485,7 @@ class LuxtronikSmartHomeInterface:
             else:
                 blocks = ContiguousDataBlockList(definitions.name, read_not_write)
                 # Organize data into contiguous blocks
-                for definition, field in data_vector.data.def_items:
+                for definition, field in data_vector.data.pairs():
                     if self._prepare_write_field(definition, field, data_vector.safe, None):
                         blocks.collect(definition, field)
                 if len(blocks) > 0:

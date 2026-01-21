@@ -151,10 +151,10 @@ class DataVectorSmartHome(DataVector):
         return self.set(def_name_or_idx, value)
 
     def __len__(self):
-        return len(self._data.def_items)
+        return len(self._data.pairs())
 
     def __iter__(self):
-        return iter([definition for definition, _ in self._data.def_items])
+        return iter([definition for definition, _ in self._data.pairs()])
 
     def __contains__(self, def_field_name_or_idx):
         """
@@ -178,10 +178,10 @@ class DataVectorSmartHome(DataVector):
         return self._version
 
     def values(self):
-        return iter([field for _, field in self._data.def_items])
+        return iter([field for _, field in self._data.pairs()])
 
     def items(self):
-        return iter(self._data.def_items)
+        return iter(self._data.pairs())
 
 
 # Find, add and alias methods #################################################
@@ -286,7 +286,7 @@ class DataVectorSmartHome(DataVector):
         """
         if not self._read_blocks_up_to_date:
             self._read_blocks.clear()
-            for definition, field in self._data.def_items:
+            for definition, field in self._data.pairs():
                 self._read_blocks.collect(definition, field)
         self._read_blocks_up_to_date = True
 
@@ -302,7 +302,7 @@ class DataVectorSmartHome(DataVector):
                 The raw data must start at register index 0.
         """
         raw_len = len(raw_data)
-        for definition, field in self._data.def_items:
+        for definition, field in self._data.pairs():
             if definition.index + definition.count >= raw_len:
                 continue
             integrate_data(definition, field, raw_data)

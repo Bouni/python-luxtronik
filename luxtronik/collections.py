@@ -28,7 +28,7 @@ class LuxtronikFieldsDictionary:
         self._field_lookup = {}
         # Furthermore stores the definition-to-field-lookup separate from the
         # field-definition pairs to keep the index-sorted order when adding new entries
-        self._items = [] # list of tuples, 0: definition, 1: field
+        self._pairs = [] # list of tuples, 0: definition, 1: field
 
     def __getitem__(self, def_field_name_or_idx):
         return self.get(def_field_name_or_idx)
@@ -44,9 +44,9 @@ class LuxtronikFieldsDictionary:
         Iterate over all non-obsolete indices. If an index is assigned multiple times,
         only the index of the preferred definition will be output.
         """
-        # _items is a list of tuples, 0: definition, 1: field
+        # _pairs is a list of tuples, 0: definition, 1: field
         all_related_defs = self._def_lookup._index_dict.values()
-        return iter([d.index for d in self._items if d in all_related_defs])
+        return iter([d.index for d in self._pairs if d in all_related_defs])
 
     def __contains__(self, def_field_name_or_idx):
         """
@@ -73,9 +73,9 @@ class LuxtronikFieldsDictionary:
         Iterator for all added non-obsolete fields. If an index is assigned multiple times,
         only the field of the preferred definition will be output.
         """
-        # _items is a list of tuples, 0: definition, 1: field
+        # _pairs is a list of tuples, 0: definition, 1: field
         all_related_defs = self._def_lookup._index_dict.values()
-        return iter([f for d, f in self._items if d in all_related_defs])
+        return iter([f for d, f in self._pairs if d in all_related_defs])
 
     def items(self):
         """
@@ -83,17 +83,16 @@ class LuxtronikFieldsDictionary:
         0: index, 1: field) contained herein. If an index is assigned multiple times,
         only the index-field-pair of the preferred definition will be output.
         """
-        # _items is a list of tuples, 0: definition, 1: field
+        # _pairs is a list of tuples, 0: definition, 1: field
         all_related_defs = self._def_lookup._index_dict.values()
-        return iter([(d.index, f) for d, f in self._items if d in all_related_defs])
+        return iter([(d.index, f) for d, f in self._pairs if d in all_related_defs])
 
-    @property
-    def def_items(self):
+    def pairs(self):
         """
-        Iterator for all definition-field-pairs (list of tuples with
+        Return all definition-field-pairs (list of tuples with
         0: definition, 1: field) contained herein.
         """
-        return self._items
+        return self._pairs
 
     @property
     def def_dict(self):
@@ -112,14 +111,14 @@ class LuxtronikFieldsDictionary:
         if definition.valid:
             self._def_lookup.add(definition, alias)
             self._field_lookup[definition] = field
-            self._items.append((definition, field))
+            self._pairs.append((definition, field))
 
     def add_sorted(self, definition, field, alias=None):
         if definition.valid:
             self.add(definition, field, alias)
-            # sort _items by definition.index
-            # _items is a list of tuples, 0: definition, 1: field
-            self._items.sort(key=lambda item: item[0].index)
+            # sort _pairs by definition.index
+            # _pairs is a list of tuples, 0: definition, 1: field
+            self._pairs.sort(key=lambda pair: pair[0].index)
 
     def register_alias(self, def_field_name_or_idx, alias):
         """
