@@ -164,24 +164,24 @@ class TestLuxtronikFieldsDictionary:
         d.add(u, f)
         assert len(d) == 1
         assert len(d._pairs) == 1
-        assert d._pairs[0][0] is u
-        assert d._pairs[0][1] is f
+        assert d._pairs[0].definition is u
+        assert d._pairs[0].field is f
 
         u = LuxtronikDefinition.unknown(2, "test", 0)
         f = u.create_field()
         d.add(u, f)
         assert len(d) == 2
         assert len(d._pairs) == 2
-        assert d._pairs[1][0] is u
-        assert d._pairs[1][1] is f
+        assert d._pairs[1].definition is u
+        assert d._pairs[1].field is f
 
         u = LuxtronikDefinition.unknown(0, "test", 0)
         f = u.create_field()
         d.add_sorted(u, f)
         assert len(d) == 3
         assert len(d._pairs) == 3
-        assert d._pairs[0][0] is u
-        assert d._pairs[0][1] is f
+        assert d._pairs[0].definition is u
+        assert d._pairs[0].field is f
 
     def create_instance(self):
         d = LuxtronikFieldsDictionary()

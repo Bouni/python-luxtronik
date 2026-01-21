@@ -9,8 +9,8 @@ from luxtronik.definitions import LuxtronikDefinition, LuxtronikDefinitionsDicti
 LUXTRONIK_SHI_REGISTER_BIT_SIZE = 16
 LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE = 0x7FFF
 
-
 LOGGER = logging.getLogger(__name__)
+
 
 ###############################################################################
 # Common methods
@@ -72,7 +72,6 @@ def unpack_values(packed, count, reverse=True):
         values.append(chunk)
 
     return values
-
 
 def get_data_arr(definition, field):
     """
@@ -197,7 +196,7 @@ class LuxtronikFieldsDictionary:
         self._field_lookup = {}
         # Furthermore stores the definition-to-field-lookup separate from the
         # field-definition pairs to keep the index-sorted order when adding new entries
-        self._pairs = [] # list of tuples, 0: definition, 1: field
+        self._pairs = [] # list of LuxtronikDefFieldPair
 
     def __getitem__(self, def_field_name_or_idx):
         return self.get(def_field_name_or_idx)
@@ -210,7 +209,6 @@ class LuxtronikFieldsDictionary:
         Iterate over all non-obsolete indices. If an index is assigned multiple times,
         only the index of the preferred definition will be output.
         """
-        # _pairs is a list of tuples, 0: definition, 1: field
         all_related_defs = self._def_lookup._index_dict.values()
         return iter([d.index for d in self._pairs if d in all_related_defs])
 
@@ -239,7 +237,6 @@ class LuxtronikFieldsDictionary:
         Iterator for all added non-obsolete fields. If an index is assigned multiple times,
         only the field of the preferred definition will be output.
         """
-        # _pairs is a list of tuples, 0: definition, 1: field
         all_related_defs = self._def_lookup._index_dict.values()
         return iter([f for d, f in self._pairs if d in all_related_defs])
 
@@ -249,14 +246,12 @@ class LuxtronikFieldsDictionary:
         0: index, 1: field) contained herein. If an index is assigned multiple times,
         only the index-field-pair of the preferred definition will be output.
         """
-        # _pairs is a list of tuples, 0: definition, 1: field
         all_related_defs = self._def_lookup._index_dict.values()
         return iter([(d.index, f) for d, f in self._pairs if d in all_related_defs])
 
     def pairs(self):
         """
-        Return all definition-field-pairs (list of tuples with
-        0: definition, 1: field) contained herein.
+        Return all definition-field-pairs contained herein.
         """
         return self._pairs
 
@@ -277,7 +272,7 @@ class LuxtronikFieldsDictionary:
         if definition.valid:
             self._def_lookup.add(definition, alias)
             self._field_lookup[definition] = field
-            self._pairs.append((definition, field))
+            self._pairs.append(LuxtronikDefFieldPair(definition, field))
 
     def add_sorted(self, definition, field, alias=None):
         """
@@ -291,8 +286,7 @@ class LuxtronikFieldsDictionary:
         if definition.valid:
             self.add(definition, field, alias)
             # sort _pairs by definition.index
-            # _pairs is a list of tuples, 0: definition, 1: field
-            self._pairs.sort(key=lambda pair: pair[0].index)
+            self._pairs.sort(key=lambda pair: pair.definition.index)
 
     def register_alias(self, def_field_name_or_idx, alias):
         """
