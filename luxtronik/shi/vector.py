@@ -2,7 +2,8 @@
 import logging
 
 from luxtronik.common import version_in_range
-from luxtronik.data_vector import LuxtronikFieldsDictionary, DataVector
+from luxtronik.collections import LuxtronikFieldsDictionary
+from luxtronik.data_vector import DataVector
 from luxtronik.datatypes import Base, Unknown
 from luxtronik.definitions import LuxtronikDefinition
 

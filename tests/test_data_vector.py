@@ -3,8 +3,9 @@
 # pylint: disable=too-few-public-methods,invalid-name,too-many-lines
 
 import pytest
+from luxtronik.collections import LuxtronikFieldsDictionary
 from luxtronik.definitions import LuxtronikDefinition, LuxtronikDefinitionsDictionary
-from luxtronik.data_vector import LuxtronikFieldsDictionary, DataVector
+from luxtronik.data_vector import DataVector
 
 from luxtronik.datatypes import (
     Base,
