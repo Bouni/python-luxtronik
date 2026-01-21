@@ -6,7 +6,7 @@ or a non-existent register within a read/write operation will result in a transm
 
 import logging
 
-from luxtronik.shi.definitions import get_data_arr, integrate_data
+from luxtronik.collections import LuxtronikDefFieldPair
 
 
 LOGGER = logging.getLogger(__name__)
@@ -15,56 +15,14 @@ LOGGER = logging.getLogger(__name__)
 # ContiguousDataPart
 ###############################################################################
 
-class ContiguousDataPart:
+class ContiguousDataPart(LuxtronikDefFieldPair):
     """
     Represents a single element of a contiguous data block.
     Each part references a `field` and its associated `definition`.
     """
 
-    def __init__(self, definition, field):
-        """
-        Initialize a contiguous data part.
-
-        Args:
-            field (Base): The field object to read or write.
-            definition (LuxtronikDefinition): The definition for this field.
-        """
-        self.field = field
-        self.definition = definition
-
     def __repr__(self):
         return f"({self.index}, {self.count})"
-
-    @property
-    def index(self):
-        return self.definition.index
-
-    @property
-    def addr(self):
-        return self.definition.addr
-
-    @property
-    def count(self):
-        return self.definition.count
-
-    def get_data_arr(self):
-        """
-        Normalize the field's data to a list of the correct size.
-
-        Returns:
-            list[int] | None: List of length `definition.count`, or None if insufficient.
-        """
-        return get_data_arr(self.definition, self.field)
-
-    def integrate_data(self, raw_data, data_offset=-1):
-        """
-        Integrate the related parts of the `raw_data` into the field
-
-        Args:
-            raw_data (list): Source array of bytes/words.
-            data_offset (int): Optional offset. Defaults to `definition.index`.
-        """
-        integrate_data(self.definition, self.field, raw_data, data_offset)
 
 
 ###############################################################################

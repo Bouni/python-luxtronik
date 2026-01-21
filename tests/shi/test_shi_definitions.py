@@ -1,10 +1,10 @@
-from luxtronik.definitions import LuxtronikDefinition
-from luxtronik.shi.constants import LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
-from luxtronik.shi.definitions import (
+from luxtronik.collections import (
     get_data_arr,
     check_data,
     integrate_data,
 )
+from luxtronik.definitions import LuxtronikDefinition
+from luxtronik.shi.constants import LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
 
 ###############################################################################
 # Tests

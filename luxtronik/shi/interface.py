@@ -2,6 +2,7 @@
 
 import logging
 
+from luxtronik.collections import check_data
 from luxtronik.common import classproperty, version_in_range
 from luxtronik.datatypes import Base
 from luxtronik.definitions import (
@@ -14,7 +15,6 @@ from luxtronik.shi.common import (
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
 )
-from luxtronik.shi.definitions import check_data
 from luxtronik.shi.vector import DataVectorSmartHome
 from luxtronik.shi.holdings import Holdings, HOLDINGS_DEFINITIONS
 from luxtronik.shi.inputs import Inputs, INPUTS_DEFINITIONS
