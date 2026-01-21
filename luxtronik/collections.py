@@ -202,9 +202,6 @@ class LuxtronikFieldsDictionary:
     def __getitem__(self, def_field_name_or_idx):
         return self.get(def_field_name_or_idx)
 
-    def __setitem__(self, def_name_or_idx, value):
-        assert False, "__setitem__ not implemented."
-
     def __len__(self):
         return len(self._def_lookup._index_dict)
 
