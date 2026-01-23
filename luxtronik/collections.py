@@ -47,7 +47,7 @@ def pack_values(values, reverse=True):
 
 def unpack_values(packed, count, reverse=True):
     """
-    Unpacks 'count' values from a packed integer.
+    Unpacks 'count' chunks from a packed integer.
 
     Args:
         packed (int): Packed raw data as a single integer value.
@@ -88,8 +88,9 @@ def get_data_arr(definition, field):
     data = field.raw
     if data is None:
         return None
-    if not isinstance(data, list) and definition.count > 1 \
-            and field.concatenate_multiple_data_chunks:
+    should_unpack = field.concatenate_multiple_data_chunks \
+        and definition.count > 1
+    if should_unpack and not isinstance(data, list):
         # Usually big-endian (reverse=True) is used
         data = unpack_values(data, definition.count)
     if not isinstance(data, list):
@@ -98,14 +99,15 @@ def get_data_arr(definition, field):
 
 def integrate_data(definition, field, raw_data, data_offset=-1):
     """
-    Integrate raw values from a data array into the field.
+    Integrate the related parts of the `raw_data` into the field.
 
     Args:
         definition (LuxtronikDefinition): Meta-data of the field.
         field (Base): Field object where to integrate the data.
-        raw_data (list): Source array of bytes/words.
+        raw_data (list): Source array of register values.
         data_offset (int): Optional offset. Defaults to `definition.index`.
     """
+    # Use data_offset if provided, otherwise the index
     data_offset = data_offset if data_offset >= 0 else definition.index
     # Use the information of the definition to extract the raw-value
     if (data_offset + definition.count - 1) >= len(raw_data):
@@ -117,7 +119,8 @@ def integrate_data(definition, field, raw_data, data_offset=-1):
         raw = raw_data[data_offset : data_offset + definition.count]
         raw = raw if len(raw) == definition.count and \
             not any(data == LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE for data in raw) else None
-        if field.concatenate_multiple_data_chunks and raw is not None:
+        should_pack = field.concatenate_multiple_data_chunks
+        if should_pack and raw is not None :
             # Usually big-endian (reverse=True) is used
             raw = pack_values(raw)
     field.raw = raw
@@ -143,37 +146,47 @@ class LuxtronikDefFieldPair:
         self.definition = definition
 
     def __iter__(self):
+        """
+        Yield the definition and the field to unpack the object like `d, f = pair`.
+        """
         yield self.definition
         yield self.field
 
     @property
     def index(self):
+        """
+        Forward the `LuxtronikDefinition.index` property.
+        Please check its documentation.
+        """
         return self.definition.index
 
     @property
     def addr(self):
+        """
+        Forward the `LuxtronikDefinition.addr` property.
+        Please check its documentation.
+        """
         return self.definition.addr
 
     @property
     def count(self):
+        """
+        Forward the `LuxtronikDefinition.count` property.
+        Please check its documentation.
+        """
         return self.definition.count
 
     def get_data_arr(self):
         """
-        Normalize the field's data to a list of the correct size.
-
-        Returns:
-            list[int] | None: List of length `definition.count`, or None if insufficient.
+        Forward the `get_data_arr` method with the stored objects.
+        Please check its documentation.
         """
         return get_data_arr(self.definition, self.field)
 
     def integrate_data(self, raw_data, data_offset=-1):
         """
-        Integrate the related parts of the `raw_data` into the field
-
-        Args:
-            raw_data (list): Source array of register values.
-            data_offset (int): Optional offset. Defaults to `definition.index`.
+        Forward the `integrate_data` method with the stored objects.
+        Please check its documentation.
         """
         integrate_data(self.definition, self.field, raw_data, data_offset)
 
@@ -189,7 +202,7 @@ class LuxtronikFieldsDictionary:
     """
 
     def __init__(self):
-        # There may be several names or alias that points to one definition.
+        # There may be several names or alias that points to one definition and field.
         # So in order to spare memory we split the name/index-to-field-lookup
         # into a name/index-to-definition-lookup and a definition-to-field-lookup
         self._def_lookup = LuxtronikDefinitionsDictionary()
@@ -199,6 +212,10 @@ class LuxtronikFieldsDictionary:
         self._pairs = [] # list of LuxtronikDefFieldPair
 
     def __getitem__(self, def_field_name_or_idx):
+        """
+        Array-style access to method `get`.
+        Please check its documentation.
+        """
         return self.get(def_field_name_or_idx)
 
     def __len__(self):
@@ -216,6 +233,12 @@ class LuxtronikFieldsDictionary:
         """
         Check whether the data vector contains a name, index,
         or definition matching an added field, or the field itself.
+
+        If `def_field_name_or_idx`
+        - is a definition -> check whether a field with this definition has been added
+        - is a field -> check whether this field has been added
+        - is a name -> check whether a field with this name has been added
+        - is a idx -> check whether a field with this index has been added
 
         Args:
             def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
@@ -257,8 +280,19 @@ class LuxtronikFieldsDictionary:
 
     @property
     def def_dict(self):
-        """Return the internal definition dictionary, containing all added definitions"""
+        """
+        Return the internal definition dictionary,
+        containing all definitions related to the added fields.
+        """
         return self._def_lookup
+
+    @property
+    def field_dict(self):
+        """
+        Return the internal field dictionary,
+        containing all added fields.
+        """
+        return self._field_lookup
 
     def add(self, definition, field, alias=None):
         """
@@ -268,6 +302,8 @@ class LuxtronikFieldsDictionary:
             definition (LuxtronikDefinition): Definition related to the field.
             field (Base): Field to add.
             alias (Hashable | None): Alias, which can be used to access the field again.
+
+        Note: Only use this method if the definitions order is already correct.
         """
         if definition.valid:
             self._def_lookup.add(definition, alias)
@@ -303,8 +339,8 @@ class LuxtronikFieldsDictionary:
             Base | None: The field to which the alias was added,
                 or None if not possible
         """
-        # Resolve a field input
         def_name_or_idx = def_field_name_or_idx
+        # Resolve a field argument
         if isinstance(def_name_or_idx, Base):
             def_name_or_idx = def_name_or_idx.name
         # register alias
@@ -315,7 +351,13 @@ class LuxtronikFieldsDictionary:
 
     def get(self, def_field_name_or_idx, default=None):
         """
-        Retrieve a field by definition, name or register index, or the field itself.
+        Retrieve an added field by definition, name or register index, or the field itself.
+
+        If `def_field_name_or_idx`
+        - is a definition -> lookup the field by the definition
+        - is a field -> lookup the field by the field's name
+        - is a name -> lookup the field by the name
+        - is a idx -> lookup the field by the index
 
         Args:
             def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
