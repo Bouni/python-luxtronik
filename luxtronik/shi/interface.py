@@ -2,6 +2,7 @@
 
 import logging
 
+from luxtronik.collections import get_data_arr
 from luxtronik.common import classproperty, version_in_range
 from luxtronik.datatypes import Base
 from luxtronik.definitions import (
@@ -14,7 +15,6 @@ from luxtronik.shi.common import (
     LuxtronikSmartHomeReadInputsTelegram,
     LuxtronikSmartHomeWriteHoldingsTelegram,
 )
-from luxtronik.shi.definitions import check_data
 from luxtronik.shi.vector import DataVectorSmartHome
 from luxtronik.shi.holdings import Holdings, HOLDINGS_DEFINITIONS
 from luxtronik.shi.inputs import Inputs, INPUTS_DEFINITIONS
@@ -387,7 +387,7 @@ class LuxtronikSmartHomeInterface:
             field.value = data
 
         # Abort if insufficient data is provided
-        if not check_data(definition, field):
+        if get_data_arr(definition, field) is None:
             LOGGER.warning("Data error / insufficient data provided: " \
                 + f"name={definition.name}, data={field.raw}")
             return False
@@ -466,12 +466,12 @@ class LuxtronikSmartHomeInterface:
             # Trial-and-error mode: Add a block for every field
             blocks = ContiguousDataBlockList(definitions.name, read_not_write)
             if (read_not_write == READ):
-                for definition, field in data_vector.data.def_items:
+                for definition, field in data_vector.data.pairs():
                     # _prepare_read_field will never fail, no need to call it
                     #if self._prepare_read_field(definition, field):
                     blocks.append_single(definition, field)
             else:
-                for definition, field in data_vector.data.def_items:
+                for definition, field in data_vector.data.pairs():
                     if self._prepare_write_field(definition, field, data_vector.safe, None):
                         blocks.append_single(definition, field)
             if len(blocks) > 0:
@@ -485,7 +485,7 @@ class LuxtronikSmartHomeInterface:
             else:
                 blocks = ContiguousDataBlockList(definitions.name, read_not_write)
                 # Organize data into contiguous blocks
-                for definition, field in data_vector.data.def_items:
+                for definition, field in data_vector.data.pairs():
                     if self._prepare_write_field(definition, field, data_vector.safe, None):
                         blocks.collect(definition, field)
                 if len(blocks) > 0:
