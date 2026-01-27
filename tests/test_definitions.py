@@ -31,7 +31,7 @@ class TestDefinition:
         names = self.TEST_DATA['names']
         assert definition.index == self.TEST_DATA['index']
         assert definition.count == self.TEST_DATA['count']
-        assert definition.data_type == self.TEST_DATA['type']
+        assert definition.field_type == self.TEST_DATA['type']
         assert definition.writeable == self.TEST_DATA['writeable']
         assert definition.names == names
         assert definition.name == names[0]
@@ -59,7 +59,7 @@ class TestDefinition:
         names = ['unknown_foo_2']
         assert definition.index == 2
         assert definition.count == self.DEFAULT_DATA['count']
-        assert definition.data_type == self.DEFAULT_DATA['type']
+        assert definition.field_type == self.DEFAULT_DATA['type']
         assert definition.writeable == self.DEFAULT_DATA['writeable']
         assert definition.names == names
         assert definition.name == names[0]
@@ -394,7 +394,7 @@ class TestDefinitionsList:
         definition = definitions.create_unknown_definition(4)
         assert definition.index == 4
         assert definition.count == 1
-        assert definition.data_type is Unknown
+        assert definition.field_type is Unknown
         assert not definition.writeable
         assert definition.names == ['unknown_foo_4']
         assert definition.valid

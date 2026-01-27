@@ -36,12 +36,12 @@ def get_version_definitions(definitions):
         definitions (LuxtronikDefinitionsList): List of definitions
 
     Returns:
-        list[LuxtronikDefinition]: List of definitions whose data_type
+        list[LuxtronikDefinition]: List of definitions whose field_type
         is either FullVersion or MajorMinorVersion.
     """
     version_definitions = []
     for d in definitions:
-        if d.data_type in (FullVersion, MajorMinorVersion):
+        if d.field_type in (FullVersion, MajorMinorVersion):
             version_definitions.append(d)
     return version_definitions
 

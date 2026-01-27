@@ -61,7 +61,7 @@ class LuxtronikDefinition:
             self._valid = index >= 0
             self._index = index if self._valid else 0
             self._count = int(data_dict["count"])
-            self._data_type = data_dict["type"]
+            self._field_type = data_dict["type"]
             self._writeable = bool(data_dict["writeable"])
             names = data_dict["names"]
             if not isinstance(names, list):
@@ -108,7 +108,7 @@ class LuxtronikDefinition:
         return self._valid
 
     def __repr__(self):
-        return f"(name={self.name}, data_type={self.data_type}," \
+        return f"(name={self.name}, field_type={self.field_type}," \
             + f" index={self.index}, count={self.count})"
 
     @property
@@ -138,8 +138,8 @@ class LuxtronikDefinition:
         return self._count
 
     @property
-    def data_type(self):
-        return self._data_type
+    def field_type(self):
+        return self._field_type
 
     @property
     def writeable(self):
@@ -173,7 +173,7 @@ class LuxtronikDefinition:
         Returns:
             Base | None: Field instance or None if invalid.
         """
-        return self.data_type(self.names, self.writeable) if self.valid else None
+        return self.field_type(self.names, self.writeable) if self.valid else None
 
 
 ###############################################################################

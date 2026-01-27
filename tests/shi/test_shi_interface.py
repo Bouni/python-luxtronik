@@ -155,7 +155,7 @@ class TestLuxtronikSmartHomeInterface:
         assert definition.index == 4
         assert definition.count == 1
         assert not definition.writeable
-        assert definition.data_type is Unknown
+        assert definition.field_type is Unknown
 
         # fail by name
         definition = self.interface._try_create_definition("unKnOWn_foo4", HOLDINGS_DEFINITIONS)
@@ -171,7 +171,7 @@ class TestLuxtronikSmartHomeInterface:
         assert definition.index == 9
         assert definition.count == 1
         assert not definition.writeable
-        assert definition.data_type is Unknown
+        assert definition.field_type is Unknown
 
         # fail by else
         definition = self.interface._try_create_definition(Base, HOLDINGS_DEFINITIONS)
@@ -184,7 +184,7 @@ class TestLuxtronikSmartHomeInterface:
         assert definition.index == 14
         assert definition.count == 1
         assert not definition.writeable
-        assert definition.data_type is Unknown
+        assert definition.field_type is Unknown
 
     def test_create_telegram(self):
         block = ContiguousDataBlock()

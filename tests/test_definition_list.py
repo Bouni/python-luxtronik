@@ -65,7 +65,7 @@ class RunTestDefinitionList:
                         assert isinstance(name, str), f"Entry of {KEY_NAMES} " \
                             f"must be of type 'int': {definition}"
 
-            # data_type
+            # field_type
             if KEY_TYPE in definition:
                 assert issubclass(definition[KEY_TYPE], Base), \
                     f"{KEY_TYPE} must be inherit from 'Base': {definition}"
@@ -176,13 +176,13 @@ class RunTestDefinitionList:
                             f"this  = {i_def}" \
                             f"other = {j_def}"
 
-    def test_data_type(self):
+    def test_field_type(self):
         for definition in self.definitions:
-            data_type = definition.get(KEY_TYPE, None)
-            assert issubclass(data_type, Base), \
+            field_type = definition.get(KEY_TYPE, None)
+            assert issubclass(field_type, Base), \
                 f"Type must be set: {definition}"
 
-    def test_data_types(self):
+    def test_data_type(self):
         for definition in self.definitions:
             if KEY_DATATYPE in definition:
                 data_type = definition[KEY_DATATYPE]
