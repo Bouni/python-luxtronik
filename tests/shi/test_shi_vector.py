@@ -59,7 +59,7 @@ def_list = [
         "until": "3.3",
     },
 ]
-TEST_DEFINITIONS = LuxtronikDefinitionsList(def_list, 'foo', 100)
+TEST_DEFINITIONS = LuxtronikDefinitionsList(def_list, 'foo', 100, 'INT16')
 
 class DataVectorTest(DataVectorSmartHome):
     name = 'foo'

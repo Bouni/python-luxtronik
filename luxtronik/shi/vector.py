@@ -7,7 +7,7 @@ from luxtronik.data_vector import DataVector
 from luxtronik.datatypes import Base, Unknown
 from luxtronik.definitions import LuxtronikDefinition
 
-from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
+from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION, LUXTRONIK_SHI_REGISTER_BIT_SIZE
 from luxtronik.shi.contiguous import ContiguousDataBlockList
 
 
@@ -304,7 +304,7 @@ class DataVectorSmartHome(DataVector):
         for definition, field in self._data.pairs():
             if definition.index + definition.count >= raw_len:
                 continue
-            integrate_data(definition, field, raw_data)
+            integrate_data(definition, field, raw_data, LUXTRONIK_SHI_REGISTER_BIT_SIZE)
 
     def get(self, def_name_or_idx, default=None):
         """

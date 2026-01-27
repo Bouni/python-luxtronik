@@ -21,10 +21,6 @@ LUXTRONIK_WAIT_TIME_AFTER_HOLDING_WRITE: Final = 1
 # The data from the smart home interface are transmitted in 16-bit chunks.
 LUXTRONIK_SHI_REGISTER_BIT_SIZE: Final = 16
 
-# Since version 3.92.0, all unavailable data fields
-# have been returning this value (0x7FFF)
-LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE: Final = 32767
-
 # First Luxtronik firmware version that supports the smart home interface (SHI)
 LUXTRONIK_FIRST_VERSION_WITH_SHI: Final = (3, 90, 1, 0)
 

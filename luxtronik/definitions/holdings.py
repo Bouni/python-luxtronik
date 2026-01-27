@@ -29,6 +29,7 @@ from luxtronik.datatypes import (
 # Offset which must be added to the holding indices
 # to obtain the correct address of the data fields
 HOLDINGS_OFFSET: Final = 10000
+HOLDINGS_DEFAULT_DATA_TYPE: Final = 'INT16'
 
 HOLDINGS_DEFINITIONS_LIST: Final = [
     {

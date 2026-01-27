@@ -47,6 +47,7 @@ from luxtronik.datatypes import (
 # Offset which must be added to the calculation indices
 # to obtain the correct address of the data fields
 CALCULATIONS_OFFSET: Final = 0
+CALCULATIONS_DEFAULT_DATA_TYPE: Final = 'INT32'
 
 CALCULATIONS_DEFINITIONS_LIST: Final = [
     {

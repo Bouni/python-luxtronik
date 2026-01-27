@@ -1,13 +1,13 @@
 import pytest
 from unittest.mock import patch
 
+from luxtronik.constants import LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
 from luxtronik.datatypes import Base, Unknown
 from luxtronik.definitions import LuxtronikDefinition
 
 from luxtronik.shi.constants import (
     LUXTRONIK_LATEST_SHI_VERSION,
     LUXTRONIK_FIRST_VERSION_WITH_SHI,
-    LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE,
 )
 from luxtronik.shi.common import (
     LuxtronikSmartHomeReadHoldingsTelegram,
@@ -255,7 +255,7 @@ class TestLuxtronikSmartHomeInterface:
         blocks.append(block)
 
         # block 2
-        blocks.append_single(HOLDINGS_DEFINITIONS[13], HOLDINGS_DEFINITIONS[13].create_field())
+        blocks.append_single(HOLDINGS_DEFINITIONS[17], HOLDINGS_DEFINITIONS[17].create_field())
 
         # block 3
         blocks.append_single(HOLDINGS_DEFINITIONS[10], HOLDINGS_DEFINITIONS[10].create_field())
@@ -267,8 +267,8 @@ class TestLuxtronikSmartHomeInterface:
         # invalid block
         blocks.append_single(HOLDINGS_DEFINITIONS[12], HOLDINGS_DEFINITIONS[12].create_field())
         # block 4
-        field3 = HOLDINGS_DEFINITIONS[13].create_field()
-        blocks.append_single(HOLDINGS_DEFINITIONS[13], field3)
+        field3 = HOLDINGS_DEFINITIONS[17].create_field()
+        blocks.append_single(HOLDINGS_DEFINITIONS[17], field3)
 
         blocks_list.append(blocks)
 
@@ -281,13 +281,13 @@ class TestLuxtronikSmartHomeInterface:
         assert telegram_data[0][0].first_index == 10
         assert telegram_data[0][0].overall_count == 2
         assert len(telegram_data[1][0]) == 1
-        assert telegram_data[1][0].first_index == 13
+        assert telegram_data[1][0].first_index == 17
         assert telegram_data[1][0].overall_count == 1
         assert len(telegram_data[2][0]) == 1
         assert telegram_data[2][0].first_index == 10
         assert telegram_data[2][0].overall_count == 1
         assert len(telegram_data[3][0]) == 1
-        assert telegram_data[3][0].first_index == 13
+        assert telegram_data[3][0].first_index == 17
         assert telegram_data[3][0].overall_count == 1
         # telegrams
         assert telegram_data[0][1].count == 2

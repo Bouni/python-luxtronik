@@ -41,6 +41,7 @@ from luxtronik.datatypes import (
 # Offset which must be added to the parameter indices
 # to obtain the correct address of the data fields
 PARAMETERS_OFFSET: Final = 0
+PARAMETERS_DEFAULT_DATA_TYPE: Final = 'INT32'
 
 PARAMETERS_DEFINITIONS_LIST: Final = [
     {

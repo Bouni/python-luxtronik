@@ -4,7 +4,11 @@ import logging
 from typing import Final
 
 from luxtronik.definitions import LuxtronikDefinitionsList
-from luxtronik.definitions.calculations import CALCULATIONS_DEFINITIONS_LIST, CALCULATIONS_OFFSET
+from luxtronik.definitions.calculations import (
+    CALCULATIONS_DEFINITIONS_LIST,
+    CALCULATIONS_OFFSET,
+    CALCULATIONS_DEFAULT_DATA_TYPE,
+)
 
 from luxtronik.cfi.constants import CALCULATIONS_FIELD_NAME
 from luxtronik.data_vector import DataVector
@@ -16,7 +20,8 @@ LOGGER = logging.getLogger(__name__)
 CALCULATIONS_DEFINITIONS: Final = LuxtronikDefinitionsList(
     CALCULATIONS_DEFINITIONS_LIST,
     CALCULATIONS_FIELD_NAME,
-    CALCULATIONS_OFFSET
+    CALCULATIONS_OFFSET,
+    CALCULATIONS_DEFAULT_DATA_TYPE
 )
 
 class Calculations(DataVector):
