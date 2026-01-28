@@ -17,6 +17,7 @@ class TestDefinition:
         'type': Base,
         'writeable': True,
         'names': ['test1', 'test2'],
+        'datatype': 'INT16',
         'since': '1.1',
         'until': '3.16.7',
         'description': 'foo',
@@ -31,7 +32,7 @@ class TestDefinition:
         names = self.TEST_DATA['names']
         assert definition.index == self.TEST_DATA['index']
         assert definition.count == self.TEST_DATA['count']
-        assert definition.data_type == self.TEST_DATA['type']
+        assert definition.field_type == self.TEST_DATA['type']
         assert definition.writeable == self.TEST_DATA['writeable']
         assert definition.names == names
         assert definition.name == names[0]
@@ -40,6 +41,7 @@ class TestDefinition:
         assert definition.type_name == 'bar'
         assert definition.offset == 20
         assert definition.addr == 20 + self.TEST_DATA['index']
+        assert definition.num_bits == 16
         assert definition.aliases == []
         assert definition.since == (1, 1, 0, 0)
         assert definition.until == (3, 16, 7, 0)
@@ -59,7 +61,7 @@ class TestDefinition:
         names = ['unknown_foo_2']
         assert definition.index == 2
         assert definition.count == self.DEFAULT_DATA['count']
-        assert definition.data_type == self.DEFAULT_DATA['type']
+        assert definition.field_type == self.DEFAULT_DATA['type']
         assert definition.writeable == self.DEFAULT_DATA['writeable']
         assert definition.names == names
         assert definition.name == names[0]
@@ -336,7 +338,7 @@ class TestDefinitionsList:
     ]
 
     def test_init(self):
-        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')
 
         # only valid
         assert len(definitions) == 4
@@ -354,7 +356,7 @@ class TestDefinitionsList:
         assert definitions.get(9).name == "field_9"
 
     def test_filtered(self):
-        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')
 
         filtered1 = LuxtronikDefinitionsList.filtered(definitions, (1, 1, 0, 0))
         assert filtered1.name == 'foo'
@@ -375,7 +377,7 @@ class TestDefinitionsList:
         assert 'field_invalid' not in filtered1  # invalid
 
     def test_iter(self):
-        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')
 
         for index, d in enumerate(definitions):
             if index == 0:
@@ -388,13 +390,13 @@ class TestDefinitionsList:
                 assert d.index == 9
 
     def test_create(self):
-        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')
 
         # create unknown definition
         definition = definitions.create_unknown_definition(4)
         assert definition.index == 4
         assert definition.count == 1
-        assert definition.data_type is Unknown
+        assert definition.field_type is Unknown
         assert not definition.writeable
         assert definition.names == ['unknown_foo_4']
         assert definition.valid
@@ -406,7 +408,7 @@ class TestDefinitionsList:
         assert definition.until is None
 
     def test_alias(self):
-        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')
 
         # add alias
         d = definitions.register_alias(5, 'bar')
@@ -421,7 +423,7 @@ class TestDefinitionsList:
         assert d is None
 
     def test_add(self):
-        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')
         assert len(definitions) == 4
 
         # add custom definition
@@ -461,6 +463,6 @@ class TestDefinitionsList:
         assert added_4 is None
 
     def test_repr(self):
-        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100)
+        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')
         text = repr(definitions)
         assert text

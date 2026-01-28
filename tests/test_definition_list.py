@@ -2,6 +2,7 @@ import re
 
 from luxtronik.common import parse_version
 from luxtronik.datatypes import Base
+from luxtronik.definitions import LuxtronikDefinition
 from luxtronik.definitions.calculations import CALCULATIONS_DEFINITIONS_LIST
 from luxtronik.definitions.holdings import HOLDINGS_DEFINITIONS_LIST
 from luxtronik.definitions.inputs import INPUTS_DEFINITIONS_LIST
@@ -23,8 +24,6 @@ KEY_MAX = "max"
 KEY_SINCE = "since"
 KEY_UNTIL = "until"
 KEY_DESC = "description"
-
-VALID_DATA_TYPES = ("", "UINT16", "UINT32", "INT16", "INT32")
 
 
 class RunTestDefinitionList:
@@ -65,7 +64,7 @@ class RunTestDefinitionList:
                         assert isinstance(name, str), f"Entry of {KEY_NAMES} " \
                             f"must be of type 'int': {definition}"
 
-            # data_type
+            # field_type
             if KEY_TYPE in definition:
                 assert issubclass(definition[KEY_TYPE], Base), \
                     f"{KEY_TYPE} must be inherit from 'Base': {definition}"
@@ -176,17 +175,17 @@ class RunTestDefinitionList:
                             f"this  = {i_def}" \
                             f"other = {j_def}"
 
-    def test_data_type(self):
+    def test_field_type(self):
         for definition in self.definitions:
-            data_type = definition.get(KEY_TYPE, None)
-            assert issubclass(data_type, Base), \
+            field_type = definition.get(KEY_TYPE, None)
+            assert issubclass(field_type, Base), \
                 f"Type must be set: {definition}"
 
-    def test_data_types(self):
+    def test_data_type(self):
         for definition in self.definitions:
             if KEY_DATATYPE in definition:
                 data_type = definition[KEY_DATATYPE]
-                assert data_type in VALID_DATA_TYPES, \
+                assert data_type in LuxtronikDefinition.VALID_DATA_TYPES, \
                     f"Datatype must be set correctly: {definition}"
 
     def test_since(self):

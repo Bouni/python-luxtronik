@@ -14,6 +14,10 @@ LUXTRONIK_DISCOVERY_MAGIC_PACKET: Final = "2000;111;1;\x00"
 # Content of response that is contained in responses to discovery broadcast
 LUXTRONIK_DISCOVERY_RESPONSE_PREFIX: Final = "2500;111;"
 
+# Since version 3.92.0, all unavailable 16 bit signed data fields
+# have been returning this value (0x7FFF)
+LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE: Final = 32767
+
 LUXTRONIK_NAME_CHECK_NONE: Final = "none"
 LUXTRONIK_NAME_CHECK_PREFERRED: Final = "preferred"
 LUXTRONIK_NAME_CHECK_OBSOLETE: Final = "obsolete"

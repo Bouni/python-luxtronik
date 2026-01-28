@@ -27,3 +27,6 @@ VISIBILITIES_FIELD_NAME: Final = "visibility"
 # Wait time (in seconds) after writing parameters to give controller
 # some time to re-calculate values, etc.
 WAIT_TIME_AFTER_PARAMETER_WRITE = 1
+
+# The data from the config interface are transmitted in 32-bit chunks.
+LUXTRONIK_CFI_REGISTER_BIT_SIZE: Final = 32

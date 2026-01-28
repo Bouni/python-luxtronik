@@ -9,7 +9,10 @@ from luxtronik.definitions import (
     LuxtronikDefinition,
     LuxtronikDefinitionsList,
 )
-from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
+from luxtronik.shi.constants import (
+    LUXTRONIK_LATEST_SHI_VERSION,
+    LUXTRONIK_SHI_REGISTER_BIT_SIZE
+)
 from luxtronik.shi.common import (
     LuxtronikSmartHomeReadHoldingsTelegram,
     LuxtronikSmartHomeReadInputsTelegram,
@@ -387,7 +390,7 @@ class LuxtronikSmartHomeInterface:
             field.value = data
 
         # Abort if insufficient data is provided
-        if get_data_arr(definition, field) is None:
+        if not get_data_arr(definition, field, LUXTRONIK_SHI_REGISTER_BIT_SIZE):
             LOGGER.warning("Data error / insufficient data provided: " \
                 + f"name={definition.name}, data={field.raw}")
             return False

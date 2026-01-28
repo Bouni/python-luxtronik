@@ -10,7 +10,7 @@ from luxtronik.datatypes import (
     Base,
     Unknown,
 )
-from luxtronik.shi.constants import LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
+from luxtronik.constants import LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
 
 
 ###############################################################################
@@ -40,53 +40,74 @@ class TestDefinitionFieldPair:
         # get from value
         definition._count = 1
         field.raw = 5
-        arr = get_data_arr(definition, field)
+        arr = get_data_arr(definition, field, 32)
         assert arr == [5]
-        assert arr == pair.get_data_arr()
+        assert arr == pair.get_data_arr(32)
+
+        # get from value
+        definition._count = 1
+        field.raw = 5
+        arr = get_data_arr(definition, field, 16)
+        assert arr == [5]
+        assert arr == pair.get_data_arr(16)
 
         # get from array
         definition._count = 2
         field.raw = [7, 3]
-        arr = get_data_arr(definition, field)
+        arr = get_data_arr(definition, field, 32)
         assert arr == [7, 3]
-        assert arr == pair.get_data_arr()
+        assert arr == pair.get_data_arr(32)
+
+        # get from array
+        definition._count = 2
+        field.raw = [7, 3]
+        arr = get_data_arr(definition, field, 16)
+        assert arr == [7, 3]
+        assert arr == pair.get_data_arr(16)
 
         # too much data
         definition._count = 2
         field.raw = [4, 8, 1]
-        arr = get_data_arr(definition, field)
+        arr = get_data_arr(definition, field, 16)
         assert arr is None
-        assert arr == pair.get_data_arr()
+        assert arr == pair.get_data_arr(16)
 
         # insufficient data
         definition._count = 2
         field.raw = [9]
-        arr = get_data_arr(definition, field)
+        arr = get_data_arr(definition, field, 16)
         assert arr is None
-        assert arr == pair.get_data_arr()
+        assert arr == pair.get_data_arr(16)
 
         field.concatenate_multiple_data_chunks = True
 
         # get from array
         definition._count = 2
-        field.raw = 0x0007_0003
-        arr = get_data_arr(definition, field)
+        field.raw = 0x00000007_00000003
+        arr = get_data_arr(definition, field, 32)
         assert arr == [7, 3]
-        assert arr == pair.get_data_arr()
+        assert arr == pair.get_data_arr(32)
+
+        # get from array
+        definition._count = 2
+        field.raw = 0x0007_0003
+        arr = get_data_arr(definition, field, 16)
+        assert arr == [7, 3]
+        assert arr == pair.get_data_arr(16)
 
         # too much data
         definition._count = 2
         field.raw = 0x0004_0008_0001
-        arr = get_data_arr(definition, field)
+        arr = get_data_arr(definition, field, 16)
         assert arr == [8, 1]
-        assert arr == pair.get_data_arr()
+        assert arr == pair.get_data_arr(16)
 
         # insufficient data
         definition._count = 2
         field.raw = 0x0009
-        arr = get_data_arr(definition, field)
+        arr = get_data_arr(definition, field, 16)
         assert arr == [0, 9]
-        assert arr == pair.get_data_arr()
+        assert arr == pair.get_data_arr(16)
 
     def test_integrate(self):
         definition = LuxtronikDefinition.unknown(2, 'Foo', 30)
@@ -98,49 +119,105 @@ class TestDefinitionFieldPair:
 
         # set array
         definition._count = 2
-        integrate_data(definition, field, data)
+        definition._data_type = 'INT64'
+        integrate_data(definition, field, data, 32)
         assert field.raw == [3, 4]
-        pair.integrate_data(data, 4)
+        pair.integrate_data(data, 32, 4)
         assert field.raw == [5, 6]
-        integrate_data(definition, field, data, 7)
+        integrate_data(definition, field, data, 32, 7)
         assert field.raw is None
-        pair.integrate_data(data, 0)
+        pair.integrate_data(data, 32, 0)
+        assert field.raw == [1, LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE]
+
+        # set array
+        definition._count = 2
+        definition._data_type = 'INT32'
+        integrate_data(definition, field, data, 16)
+        assert field.raw == [3, 4]
+        pair.integrate_data(data, 16, 4)
+        assert field.raw == [5, 6]
+        integrate_data(definition, field, data, 16, 7)
         assert field.raw is None
+        pair.integrate_data(data, 16, 0)
+        assert field.raw == [1, LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE]
 
         # set value
         definition._count = 1
-        integrate_data(definition, field, data)
+        definition._data_type = 'INT32'
+        integrate_data(definition, field, data, 32)
         assert field.raw == 3
-        pair.integrate_data(data, 5)
+        pair.integrate_data(data, 32, 5)
         assert field.raw == 6
-        integrate_data(definition, field, data, 9)
+        integrate_data(definition, field, data, 32, 9)
         assert field.raw is None
-        pair.integrate_data(data, 1)
+        pair.integrate_data(data, 32, 1)
+        # Currently there is no magic "not available" value for 32 bit values -> not None
+        # This applies also to similar lines below
+        assert field.raw == LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE
+
+        # set value
+        definition._count = 1
+        definition._data_type = 'INT16'
+        integrate_data(definition, field, data, 16)
+        assert field.raw == 3
+        pair.integrate_data(data, 16, 5)
+        assert field.raw == 6
+        integrate_data(definition, field, data, 16, 9)
+        assert field.raw is None
+        pair.integrate_data(data, 16, 1)
         assert field.raw is None
 
         field.concatenate_multiple_data_chunks = True
 
         # set array
         definition._count = 2
-        integrate_data(definition, field, data)
+        definition._data_type = 'INT64'
+        integrate_data(definition, field, data, 32)
+        assert field.raw == 0x00000003_00000004
+        pair.integrate_data(data, 32, 4)
+        assert field.raw == 0x00000005_00000006
+        integrate_data(definition, field, data, 32, 7)
+        assert field.raw is None
+        pair.integrate_data(data, 32, 0)
+        assert field.raw == 0x00000001_00007FFF
+
+        # set array
+        definition._count = 2
+        definition._data_type = 'INT32'
+        integrate_data(definition, field, data, 16)
         assert field.raw == 0x0003_0004
-        pair.integrate_data(data, 4)
+        pair.integrate_data(data, 16, 4)
         assert field.raw == 0x0005_0006
-        integrate_data(definition, field, data, 7)
+        integrate_data(definition, field, data, 16, 7)
         assert field.raw is None
-        pair.integrate_data(data, 0)
-        assert field.raw is None
+        pair.integrate_data(data, 16, 0)
+        assert field.raw == 0x0001_7FFF
 
         # set value
         definition._count = 1
-        integrate_data(definition, field, data)
+        definition._data_type = 'INT32'
+        integrate_data(definition, field, data, 32)
+        assert field.raw == 0x00000003
+        pair.integrate_data(data, 32, 5)
+        assert field.raw == 0x00000006
+        integrate_data(definition, field, data, 32, 9)
+        assert field.raw is None
+        pair.integrate_data(data, 32, 1)
+        assert field.raw == 0x00007FFF
+
+        # set value
+        definition._count = 1
+        definition._data_type = 'INT16'
+        integrate_data(definition, field, data, 16)
         assert field.raw == 0x0003
-        pair.integrate_data(data, 5)
+        pair.integrate_data(data, 16, 5)
         assert field.raw == 0x0006
-        integrate_data(definition, field, data, 9)
+        integrate_data(definition, field, data, 16, 9)
         assert field.raw is None
-        pair.integrate_data(data, 1)
+        pair.integrate_data(data, 16, 1)
         assert field.raw is None
+
+        field.concatenate_multiple_data_chunks = False
 
 
 class TestLuxtronikFieldsDictionary:

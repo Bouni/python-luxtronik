@@ -33,6 +33,7 @@ from luxtronik.datatypes import (
 # Offset which must be added to the input indices
 # to obtain the correct address of the data fields
 INPUTS_OFFSET: Final = 10000
+INPUTS_DEFAULT_DATA_TYPE: Final = 'INT16'
 
 INPUTS_DEFINITIONS_LIST: Final = [
     {

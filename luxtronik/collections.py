@@ -5,9 +5,6 @@ import logging
 from luxtronik.datatypes import Base
 from luxtronik.definitions import LuxtronikDefinition, LuxtronikDefinitionsDictionary
 
-# TODO: Remove SHI dependency
-LUXTRONIK_SHI_REGISTER_BIT_SIZE = 16
-LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE = 0x7FFF
 
 LOGGER = logging.getLogger(__name__)
 
@@ -16,14 +13,13 @@ LOGGER = logging.getLogger(__name__)
 # Common methods
 ###############################################################################
 
-VALUE_MASK = (1 << LUXTRONIK_SHI_REGISTER_BIT_SIZE) - 1
-
-def pack_values(values, reverse=True):
+def pack_values(values, num_bits, reverse=True):
     """
     Packs a list of data chunks into one integer.
 
     Args:
         values (list[int]): raw data; distributed across multiple registers.
+        num_bits (int): Number of bits per chunk.
         reverse (bool): Use big-endian/MSB-first if true,
             otherwise use little-endian/LSB-first order.
 
@@ -34,6 +30,7 @@ def pack_values(values, reverse=True):
         The smart home interface uses a chunk size of 16 bits.
     """
     count = len(values)
+    mask = (1 << num_bits) - 1
 
     result = 0
     for idx, value in enumerate(values):
@@ -41,17 +38,18 @@ def pack_values(values, reverse=True):
         # reversed index: highest chunk first
         bit_index = (count - 1 - idx) if reverse else idx
 
-        result |= (value & VALUE_MASK) << (LUXTRONIK_SHI_REGISTER_BIT_SIZE * bit_index)
+        result |= (value & mask) << (num_bits * bit_index)
 
     return result
 
-def unpack_values(packed, count, reverse=True):
+def unpack_values(packed, count, num_bits, reverse=True):
     """
     Unpacks 'count' chunks from a packed integer.
 
     Args:
         packed (int): Packed raw data as a single integer value.
         count (int): Number of chunks to unpack.
+        num_bits (int): Number of bits per chunk.
         reverse (bool): Use big-endian/MSB-first if true,
             otherwise use little-endian/LSB-first order.
 
@@ -62,24 +60,26 @@ def unpack_values(packed, count, reverse=True):
         The smart home interface uses a chunk size of 16 bits.
     """
     values = []
+    mask = (1 << num_bits) - 1
 
     for idx in range(count):
         # normal: idx = 0..n-1
         # reversed: highest chunk first
         bit_index = (count - 1 - idx) if reverse else idx
 
-        chunk = (packed >> (LUXTRONIK_SHI_REGISTER_BIT_SIZE * bit_index)) & VALUE_MASK
+        chunk = (packed >> (num_bits * bit_index)) & mask
         values.append(chunk)
 
     return values
 
-def get_data_arr(definition, field):
+def get_data_arr(definition, field, num_bits):
     """
     Normalize the field's data to a list of the correct size.
 
     Args:
         definition (LuxtronikDefinition): Meta-data of the field.
         field (Base): Field object that contains data to get.
+        num_bits (int): Number of bits per register.
 
     Returns:
         list[int] | None: List of length `definition.count`,
@@ -92,12 +92,12 @@ def get_data_arr(definition, field):
         and definition.count > 1
     if should_unpack and not isinstance(data, list):
         # Usually big-endian (reverse=True) is used
-        data = unpack_values(data, definition.count)
+        data = unpack_values(data, definition.count, num_bits)
     if not isinstance(data, list):
         data = [data]
     return data if len(data) == definition.count else None
 
-def integrate_data(definition, field, raw_data, data_offset=-1):
+def integrate_data(definition, field, raw_data, num_bits, data_offset=-1):
     """
     Integrate the related parts of the `raw_data` into the field.
 
@@ -105,6 +105,7 @@ def integrate_data(definition, field, raw_data, data_offset=-1):
         definition (LuxtronikDefinition): Meta-data of the field.
         field (Base): Field object where to integrate the data.
         raw_data (list): Source array of register values.
+        num_bits (int): Number of bits per register.
         data_offset (int): Optional offset. Defaults to `definition.index`.
     """
     # Use data_offset if provided, otherwise the index
@@ -114,15 +115,15 @@ def integrate_data(definition, field, raw_data, data_offset=-1):
         raw = None
     elif definition.count == 1:
         raw = raw_data[data_offset]
-        raw = raw if raw != LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE else None
     else:
         raw = raw_data[data_offset : data_offset + definition.count]
-        raw = raw if len(raw) == definition.count and \
-            not any(data == LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE for data in raw) else None
+        raw = raw if len(raw) == definition.count else None
         should_pack = field.concatenate_multiple_data_chunks
         if should_pack and raw is not None :
             # Usually big-endian (reverse=True) is used
-            raw = pack_values(raw)
+            raw = pack_values(raw, num_bits)
+
+    raw = raw if definition.check_raw_not_none(raw) else None
     field.raw = raw
 
 ###############################################################################
@@ -176,19 +177,19 @@ class LuxtronikDefFieldPair:
         """
         return self.definition.count
 
-    def get_data_arr(self):
+    def get_data_arr(self, num_bits):
         """
         Forward the `get_data_arr` method with the stored objects.
         Please check its documentation.
         """
-        return get_data_arr(self.definition, self.field)
+        return get_data_arr(self.definition, self.field, num_bits)
 
-    def integrate_data(self, raw_data, data_offset=-1):
+    def integrate_data(self, raw_data, num_bits, data_offset=-1):
         """
         Forward the `integrate_data` method with the stored objects.
         Please check its documentation.
         """
-        integrate_data(self.definition, self.field, raw_data, data_offset)
+        integrate_data(self.definition, self.field, raw_data, num_bits, data_offset)
 
 ###############################################################################
 # Field dictionary for data vectors
