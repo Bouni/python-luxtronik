@@ -3,6 +3,7 @@
 import unittest.mock as mock
 
 from luxtronik import Luxtronik, LuxtronikSocketInterface, Parameters, Calculations, Visibilities
+from luxtronik.collections import integrate_data
 from tests.fake import (
     fake_create_connection,
     fake_parameter_value,
@@ -16,6 +17,7 @@ from tests.fake import (
 @mock.patch("socket.create_connection", fake_create_connection)
 @mock.patch("luxtronik.LuxtronikModbusTcpInterface", FakeModbus)
 class TestSocketInteraction:
+
     def check_luxtronik_data(self, lux, check_for_true=True):
         cp = self.check_data_vector(lux.parameters)
         cc = self.check_data_vector(lux.calculations)
@@ -32,8 +34,12 @@ class TestSocketInteraction:
             fct = fake_calculation_value
         elif type(data_vector) is Visibilities:
             fct = fake_visibility_value
-        for idx, entry in data_vector:
-            if entry.raw != fct(idx):
+        for d, f in data_vector.data.pairs():
+            # get raw data
+            raw = [fct(idx) for idx in range(d.index, d.index + d.count)]
+            temp_field = d.create_field()
+            integrate_data(d, temp_field, raw, 32, 0)
+            if f.raw != temp_field.raw:
                 return False
         return True
 
