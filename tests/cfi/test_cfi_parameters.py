@@ -66,19 +66,6 @@ class TestParameters:
         j = 0.0
         assert parameters._lookup(j) is None
 
-    def test_parse(self):
-        """Test cases for _parse"""
-        parameters = Parameters()
-
-        n = 2000
-        t = list(range(0, n + 1))
-        parameters.parse(t)
-
-        p = parameters.get(n)
-
-        assert p.name == f"unknown_parameter_{n}"
-        assert p.raw == n
-
     def test___iter__(self):
         """Test cases for __iter__"""
         parameters = Parameters()

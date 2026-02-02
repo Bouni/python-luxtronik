@@ -309,33 +309,6 @@ class TestDataVector:
         assert field_9.value == 6
         assert field_9.write_pending
 
-    def test_parse(self):
-        data_vector = DataVectorTest(parse_version("1.1.2"))
-        field_5 = data_vector[5]
-        field_9 = data_vector[9]
-        field_9a = data_vector['field_9a']
-
-        # not enough data
-        data = [1]
-        data_vector.parse(data)
-        assert field_5.value is None
-        assert field_9.value is None
-        assert field_9a.value is None
-
-        # data only for field 5
-        data = [1, 2, 3, 4, 5, 6, 7]
-        data_vector.parse(data)
-        assert field_5.value == 6
-        assert field_9.value is None
-        assert field_9a.value is None
-
-        # data for all fields
-        data = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2]
-        data_vector.parse(data)
-        assert field_5.value == 4
-        assert field_9.value == [0, -1]
-        assert field_9a.value == 0
-
     def test_alias(self):
         TEST_DEFINITIONS.register_alias('field_9a', 10)
         data_vector = DataVectorTest(parse_version("1.1.2"))

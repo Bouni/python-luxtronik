@@ -15,6 +15,7 @@ from luxtronik.cfi.constants import (
     LUXTRONIK_SOCKET_READ_SIZE_INTEGER,
     LUXTRONIK_SOCKET_READ_SIZE_CHAR,
     WAIT_TIME_AFTER_PARAMETER_WRITE,
+    LUXTRONIK_CFI_REGISTER_BIT_SIZE,
 )
 from luxtronik.cfi.calculations import Calculations
 from luxtronik.cfi.parameters import Parameters
@@ -191,7 +192,7 @@ class LuxtronikSocketInterface:
         for _ in range(0, length):
             data.append(self._read_int())
         LOGGER.info("%s: Read %d parameters", self._host, length)
-        parameters.parse(data)
+        self._parse(parameters, data)
         return parameters
 
     def _read_calculations(self, calculations):
@@ -206,7 +207,7 @@ class LuxtronikSocketInterface:
         for _ in range(0, length):
             data.append(self._read_int())
         LOGGER.info("%s: Read %d calculations", self._host, length)
-        calculations.parse(data)
+        self._parse(calculations, data)
         return calculations
 
     def _read_visibilities(self, visibilities):
@@ -219,7 +220,7 @@ class LuxtronikSocketInterface:
         for _ in range(0, length):
             data.append(self._read_char())
         LOGGER.info("%s: Read %d visibilities", self._host, length)
-        visibilities.parse(data)
+        self._parse(visibilities, data)
         return visibilities
 
     def _send_ints(self, *ints):
@@ -257,3 +258,39 @@ class LuxtronikSocketInterface:
         "Low-level helper to receive a signed int"
         reading = self._read_bytes(LUXTRONIK_SOCKET_READ_SIZE_CHAR)
         return struct.unpack(">b", reading)[0]
+
+    def _parse(self, data_vector, raw_data):
+        """
+        Parse raw data into the corresponding fields.
+
+        Args:
+            data_vector (DataVector): Data vector in which
+                the raw data is to be integrated.
+            raw_data (list[int]): List of raw register values.
+                The raw data must start at register index 0.
+        """
+        raw_len = len(raw_data)
+        # Prepare a list of undefined indices
+        undefined = {i for i in range(0, raw_len)}
+
+        # integrate the data into the fields
+        for pair in data_vector.data.pairs():
+            definition, field = pair
+            # skip this field if there are not enough data
+            next_idx = definition.index + definition.count
+            if next_idx > raw_len:
+                # not enough registers
+                field.raw = None
+                continue
+            # remove all used indices from the list of undefined indices
+            for index in range(definition.index, next_idx):
+                undefined.discard(index)
+            pair.integrate_data(raw_data, LUXTRONIK_CFI_REGISTER_BIT_SIZE)
+
+        # create an unknown field for additional data
+        for index in undefined:
+            # LOGGER.warning(f"Entry '%d' not in list of {self.name}", index)
+            definition = data_vector.definitions.create_unknown_definition(index)
+            field = definition.create_field()
+            field.raw = raw_data[index]
+            data_vector.data.add_sorted(definition, field)

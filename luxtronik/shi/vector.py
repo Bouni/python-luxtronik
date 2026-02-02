@@ -2,12 +2,12 @@
 import logging
 
 from luxtronik.common import version_in_range
-from luxtronik.collections import integrate_data, LuxtronikFieldsDictionary
+from luxtronik.collections import LuxtronikFieldsDictionary
 from luxtronik.data_vector import DataVector
 from luxtronik.datatypes import Base, Unknown
 from luxtronik.definitions import LuxtronikDefinition
 
-from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION, LUXTRONIK_SHI_REGISTER_BIT_SIZE
+from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
 from luxtronik.shi.contiguous import ContiguousDataBlockList
 
 
@@ -291,20 +291,6 @@ class DataVectorSmartHome(DataVector):
 
 
 # Data and access methods #####################################################
-
-    def parse(self, raw_data):
-        """
-        Parse raw data into the corresponding fields.
-
-        Args:
-            raw_data (list[int]): List of raw register values.
-                The raw data must start at register index 0.
-        """
-        raw_len = len(raw_data)
-        for definition, field in self._data.pairs():
-            if definition.index + definition.count >= raw_len:
-                continue
-            integrate_data(definition, field, raw_data, LUXTRONIK_SHI_REGISTER_BIT_SIZE)
 
     def get(self, def_name_or_idx, default=None):
         """
