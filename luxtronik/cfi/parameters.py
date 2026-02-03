@@ -33,7 +33,6 @@ class Parameters(DataVector):
         """Initialize parameters class."""
         super().__init__()
         self.safe = safe
-        self.queue = {}
         for d in PARAMETERS_DEFINITIONS:
             self._data.add(d, d.create_field())
 

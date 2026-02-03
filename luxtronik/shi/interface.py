@@ -321,6 +321,8 @@ class LuxtronikSmartHomeInterface:
         success = True
         for block, telegram, read_not_write in telegrams_data:
             if (read_not_write == READ):
+                # integrate_data() also resets the write_pending flag,
+                # intentionally only for read fields
                 valid = block.integrate_data(telegram.data)
                 if not valid:
                     LOGGER.debug(f"Failed to integrate read data into {block}")
