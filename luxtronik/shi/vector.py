@@ -143,31 +143,11 @@ class DataVectorSmartHome(DataVector):
         obj._init_instance(version, safe)
         return obj
 
-    def __getitem__(self, def_name_or_idx):
-        return self.get(def_name_or_idx)
-
-    def __setitem__(self, def_name_or_idx, value):
-        return self.set(def_name_or_idx, value)
-
     def __len__(self):
         return len(self._data.pairs())
 
     def __iter__(self):
         return iter([definition for definition, _ in self._data.pairs()])
-
-    def __contains__(self, def_field_name_or_idx):
-        """
-        Check whether the data vector contains a name, index,
-        or definition matching an added field, or the field itself.
-
-        Args:
-            def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
-                Definition object, field object, field name or register index.
-
-        Returns:
-            True if the searched element was found, otherwise False.
-        """
-        return def_field_name_or_idx in self._data
 
 
 # properties and access methods ###############################################
