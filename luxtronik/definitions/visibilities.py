@@ -24,7 +24,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 0,
         "count": 1,
-        "names": ['ID_Visi_NieAnzeigen', 'Unknown_Visibility_0'],
+        "names": ['ID_Visi_NieAnzeigen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -34,7 +34,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 1,
         "count": 1,
-        "names": ['ID_Visi_ImmerAnzeigen', 'Unknown_Visibility_1'],
+        "names": ['ID_Visi_ImmerAnzeigen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -44,7 +44,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 2,
         "count": 1,
-        "names": ['ID_Visi_Heizung', 'Unknown_Visibility_2'],
+        "names": ['ID_Visi_Heizung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -54,7 +54,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 3,
         "count": 1,
-        "names": ['ID_Visi_Brauwasser', 'Unknown_Visibility_3'],
+        "names": ['ID_Visi_Brauwasser'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -64,7 +64,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 4,
         "count": 1,
-        "names": ['ID_Visi_Schwimmbad', 'Unknown_Visibility_4'],
+        "names": ['ID_Visi_Schwimmbad'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -74,7 +74,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 5,
         "count": 1,
-        "names": ['ID_Visi_Kuhlung', 'Unknown_Visibility_5'],
+        "names": ['ID_Visi_Kuhlung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -84,7 +84,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 6,
         "count": 1,
-        "names": ['ID_Visi_Lueftung', 'Unknown_Visibility_6'],
+        "names": ['ID_Visi_Lueftung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -94,7 +94,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 7,
         "count": 1,
-        "names": ['ID_Visi_MK1', 'Unknown_Visibility_7'],
+        "names": ['ID_Visi_MK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -104,7 +104,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 8,
         "count": 1,
-        "names": ['ID_Visi_MK2', 'Unknown_Visibility_8'],
+        "names": ['ID_Visi_MK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -114,7 +114,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 9,
         "count": 1,
-        "names": ['ID_Visi_ThermDesinfekt', 'Unknown_Visibility_9'],
+        "names": ['ID_Visi_ThermDesinfekt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -124,7 +124,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 10,
         "count": 1,
-        "names": ['ID_Visi_Zirkulation', 'Unknown_Visibility_10'],
+        "names": ['ID_Visi_Zirkulation'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -134,7 +134,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 11,
         "count": 1,
-        "names": ['ID_Visi_KuhlTemp_SolltempMK1', 'Unknown_Visibility_11'],
+        "names": ['ID_Visi_KuhlTemp_SolltempMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -144,7 +144,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 12,
         "count": 1,
-        "names": ['ID_Visi_KuhlTemp_SolltempMK2', 'Unknown_Visibility_12'],
+        "names": ['ID_Visi_KuhlTemp_SolltempMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -154,7 +154,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 13,
         "count": 1,
-        "names": ['ID_Visi_KuhlTemp_ATDiffMK1', 'Unknown_Visibility_13'],
+        "names": ['ID_Visi_KuhlTemp_ATDiffMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -164,7 +164,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 14,
         "count": 1,
-        "names": ['ID_Visi_KuhlTemp_ATDiffMK2', 'Unknown_Visibility_14'],
+        "names": ['ID_Visi_KuhlTemp_ATDiffMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -174,7 +174,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 15,
         "count": 1,
-        "names": ['ID_Visi_Service_Information', 'Unknown_Visibility_15'],
+        "names": ['ID_Visi_Service_Information'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -184,7 +184,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 16,
         "count": 1,
-        "names": ['ID_Visi_Service_Einstellung', 'Unknown_Visibility_16'],
+        "names": ['ID_Visi_Service_Einstellung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -194,7 +194,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 17,
         "count": 1,
-        "names": ['ID_Visi_Service_Sprache', 'Unknown_Visibility_17'],
+        "names": ['ID_Visi_Service_Sprache'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -204,7 +204,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 18,
         "count": 1,
-        "names": ['ID_Visi_Service_DatumUhrzeit', 'Unknown_Visibility_18'],
+        "names": ['ID_Visi_Service_DatumUhrzeit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -214,7 +214,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 19,
         "count": 1,
-        "names": ['ID_Visi_Service_Ausheiz', 'Unknown_Visibility_19'],
+        "names": ['ID_Visi_Service_Ausheiz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -224,7 +224,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 20,
         "count": 1,
-        "names": ['ID_Visi_Service_Anlagenkonfiguration', 'Unknown_Visibility_20'],
+        "names": ['ID_Visi_Service_Anlagenkonfiguration'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -234,7 +234,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 21,
         "count": 1,
-        "names": ['ID_Visi_Service_IBNAssistant', 'Unknown_Visibility_21'],
+        "names": ['ID_Visi_Service_IBNAssistant'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -244,7 +244,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 22,
         "count": 1,
-        "names": ['ID_Visi_Service_ParameterIBNZuruck', 'Unknown_Visibility_22'],
+        "names": ['ID_Visi_Service_ParameterIBNZuruck'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -254,7 +254,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 23,
         "count": 1,
-        "names": ['ID_Visi_Temp_Vorlauf', 'Unknown_Visibility_23'],
+        "names": ['ID_Visi_Temp_Vorlauf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -264,7 +264,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 24,
         "count": 1,
-        "names": ['ID_Visi_Temp_Rucklauf', 'Unknown_Visibility_24'],
+        "names": ['ID_Visi_Temp_Rucklauf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -274,7 +274,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 25,
         "count": 1,
-        "names": ['ID_Visi_Temp_RL_Soll', 'Unknown_Visibility_25'],
+        "names": ['ID_Visi_Temp_RL_Soll'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -284,7 +284,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 26,
         "count": 1,
-        "names": ['ID_Visi_Temp_Ruecklext', 'Unknown_Visibility_26'],
+        "names": ['ID_Visi_Temp_Ruecklext'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -294,7 +294,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 27,
         "count": 1,
-        "names": ['ID_Visi_Temp_Heissgas', 'Unknown_Visibility_27'],
+        "names": ['ID_Visi_Temp_Heissgas'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -304,7 +304,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 28,
         "count": 1,
-        "names": ['ID_Visi_Temp_Aussent', 'Unknown_Visibility_28'],
+        "names": ['ID_Visi_Temp_Aussent'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -314,7 +314,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 29,
         "count": 1,
-        "names": ['ID_Visi_Temp_BW_Ist', 'Unknown_Visibility_29'],
+        "names": ['ID_Visi_Temp_BW_Ist'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -324,7 +324,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 30,
         "count": 1,
-        "names": ['ID_Visi_Temp_BW_Soll', 'Unknown_Visibility_30'],
+        "names": ['ID_Visi_Temp_BW_Soll'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -334,7 +334,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 31,
         "count": 1,
-        "names": ['ID_Visi_Temp_WQ_Ein', 'Unknown_Visibility_31'],
+        "names": ['ID_Visi_Temp_WQ_Ein'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -344,7 +344,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 32,
         "count": 1,
-        "names": ['ID_Visi_Temp_Kaltekreis', 'Unknown_Visibility_32'],
+        "names": ['ID_Visi_Temp_Kaltekreis'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -354,7 +354,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 33,
         "count": 1,
-        "names": ['ID_Visi_Temp_MK1_Vorlauf', 'Unknown_Visibility_33'],
+        "names": ['ID_Visi_Temp_MK1_Vorlauf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -364,7 +364,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 34,
         "count": 1,
-        "names": ['ID_Visi_Temp_MK1VL_Soll', 'Unknown_Visibility_34'],
+        "names": ['ID_Visi_Temp_MK1VL_Soll'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -374,7 +374,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 35,
         "count": 1,
-        "names": ['ID_Visi_Temp_Raumstation', 'Unknown_Visibility_35'],
+        "names": ['ID_Visi_Temp_Raumstation'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -384,7 +384,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 36,
         "count": 1,
-        "names": ['ID_Visi_Temp_MK2_Vorlauf', 'Unknown_Visibility_36'],
+        "names": ['ID_Visi_Temp_MK2_Vorlauf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -394,7 +394,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 37,
         "count": 1,
-        "names": ['ID_Visi_Temp_MK2VL_Soll', 'Unknown_Visibility_37'],
+        "names": ['ID_Visi_Temp_MK2VL_Soll'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -404,7 +404,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 38,
         "count": 1,
-        "names": ['ID_Visi_Temp_Solarkoll', 'Unknown_Visibility_38'],
+        "names": ['ID_Visi_Temp_Solarkoll'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -414,7 +414,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 39,
         "count": 1,
-        "names": ['ID_Visi_Temp_Solarsp', 'Unknown_Visibility_39'],
+        "names": ['ID_Visi_Temp_Solarsp'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -424,7 +424,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 40,
         "count": 1,
-        "names": ['ID_Visi_Temp_Ext_Energ', 'Unknown_Visibility_40'],
+        "names": ['ID_Visi_Temp_Ext_Energ'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -434,7 +434,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 41,
         "count": 1,
-        "names": ['ID_Visi_IN_ASD', 'Unknown_Visibility_41'],
+        "names": ['ID_Visi_IN_ASD'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -444,7 +444,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 42,
         "count": 1,
-        "names": ['ID_Visi_IN_BWT', 'Unknown_Visibility_42'],
+        "names": ['ID_Visi_IN_BWT'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -454,7 +454,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 43,
         "count": 1,
-        "names": ['ID_Visi_IN_EVU', 'Unknown_Visibility_43'],
+        "names": ['ID_Visi_IN_EVU'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -464,7 +464,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 44,
         "count": 1,
-        "names": ['ID_Visi_IN_HD', 'Unknown_Visibility_44'],
+        "names": ['ID_Visi_IN_HD'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -474,7 +474,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 45,
         "count": 1,
-        "names": ['ID_Visi_IN_MOT', 'Unknown_Visibility_45'],
+        "names": ['ID_Visi_IN_MOT'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -484,7 +484,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 46,
         "count": 1,
-        "names": ['ID_Visi_IN_ND', 'Unknown_Visibility_46'],
+        "names": ['ID_Visi_IN_ND'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -494,7 +494,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 47,
         "count": 1,
-        "names": ['ID_Visi_IN_PEX', 'Unknown_Visibility_47'],
+        "names": ['ID_Visi_IN_PEX'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -504,7 +504,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 48,
         "count": 1,
-        "names": ['ID_Visi_IN_SWT', 'Unknown_Visibility_48'],
+        "names": ['ID_Visi_IN_SWT'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -514,7 +514,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 49,
         "count": 1,
-        "names": ['ID_Visi_OUT_Abtauventil', 'Unknown_Visibility_49'],
+        "names": ['ID_Visi_OUT_Abtauventil'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -524,7 +524,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 50,
         "count": 1,
-        "names": ['ID_Visi_OUT_BUP', 'Unknown_Visibility_50'],
+        "names": ['ID_Visi_OUT_BUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -534,7 +534,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 51,
         "count": 1,
-        "names": ['ID_Visi_OUT_FUP1', 'Unknown_Visibility_51'],
+        "names": ['ID_Visi_OUT_FUP1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -544,7 +544,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 52,
         "count": 1,
-        "names": ['ID_Visi_OUT_HUP', 'Unknown_Visibility_52'],
+        "names": ['ID_Visi_OUT_HUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -554,7 +554,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 53,
         "count": 1,
-        "names": ['ID_Visi_OUT_Mischer1Auf', 'Unknown_Visibility_53'],
+        "names": ['ID_Visi_OUT_Mischer1Auf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -564,7 +564,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 54,
         "count": 1,
-        "names": ['ID_Visi_OUT_Mischer1Zu', 'Unknown_Visibility_54'],
+        "names": ['ID_Visi_OUT_Mischer1Zu'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -574,7 +574,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 55,
         "count": 1,
-        "names": ['ID_Visi_OUT_Ventilation', 'Unknown_Visibility_55'],
+        "names": ['ID_Visi_OUT_Ventilation'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -584,7 +584,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 56,
         "count": 1,
-        "names": ['ID_Visi_OUT_Ventil_BOSUP', 'Unknown_Visibility_56'],
+        "names": ['ID_Visi_OUT_Ventil_BOSUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -594,7 +594,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 57,
         "count": 1,
-        "names": ['ID_Visi_OUT_Verdichter1', 'Unknown_Visibility_57'],
+        "names": ['ID_Visi_OUT_Verdichter1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -604,7 +604,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 58,
         "count": 1,
-        "names": ['ID_Visi_OUT_Verdichter2', 'Unknown_Visibility_58'],
+        "names": ['ID_Visi_OUT_Verdichter2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -614,7 +614,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 59,
         "count": 1,
-        "names": ['ID_Visi_OUT_ZIP', 'Unknown_Visibility_59'],
+        "names": ['ID_Visi_OUT_ZIP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -624,7 +624,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 60,
         "count": 1,
-        "names": ['ID_Visi_OUT_ZUP', 'Unknown_Visibility_60'],
+        "names": ['ID_Visi_OUT_ZUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -634,7 +634,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 61,
         "count": 1,
-        "names": ['ID_Visi_OUT_ZWE1', 'Unknown_Visibility_61'],
+        "names": ['ID_Visi_OUT_ZWE1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -644,7 +644,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 62,
         "count": 1,
-        "names": ['ID_Visi_OUT_ZWE2_SST', 'Unknown_Visibility_62'],
+        "names": ['ID_Visi_OUT_ZWE2_SST'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -654,7 +654,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 63,
         "count": 1,
-        "names": ['ID_Visi_OUT_ZWE3', 'Unknown_Visibility_63'],
+        "names": ['ID_Visi_OUT_ZWE3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -664,7 +664,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 64,
         "count": 1,
-        "names": ['ID_Visi_OUT_FUP2', 'Unknown_Visibility_64'],
+        "names": ['ID_Visi_OUT_FUP2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -674,7 +674,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 65,
         "count": 1,
-        "names": ['ID_Visi_OUT_SLP', 'Unknown_Visibility_65'],
+        "names": ['ID_Visi_OUT_SLP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -684,7 +684,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 66,
         "count": 1,
-        "names": ['ID_Visi_OUT_SUP', 'Unknown_Visibility_66'],
+        "names": ['ID_Visi_OUT_SUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -694,7 +694,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 67,
         "count": 1,
-        "names": ['ID_Visi_OUT_Mischer2Auf', 'Unknown_Visibility_67'],
+        "names": ['ID_Visi_OUT_Mischer2Auf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -704,7 +704,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 68,
         "count": 1,
-        "names": ['ID_Visi_OUT_Mischer2Zu', 'Unknown_Visibility_68'],
+        "names": ['ID_Visi_OUT_Mischer2Zu'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -714,7 +714,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 69,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_WP_Seit', 'Unknown_Visibility_69'],
+        "names": ['ID_Visi_AblaufZ_WP_Seit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -724,7 +724,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 70,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_ZWE1_seit', 'Unknown_Visibility_70'],
+        "names": ['ID_Visi_AblaufZ_ZWE1_seit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -734,7 +734,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 71,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_ZWE2_seit', 'Unknown_Visibility_71'],
+        "names": ['ID_Visi_AblaufZ_ZWE2_seit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -744,7 +744,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 72,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_ZWE3_seit', 'Unknown_Visibility_72'],
+        "names": ['ID_Visi_AblaufZ_ZWE3_seit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -754,7 +754,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 73,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_Netzeinv', 'Unknown_Visibility_73'],
+        "names": ['ID_Visi_AblaufZ_Netzeinv'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -764,7 +764,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 74,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_SSP_Zeit1', 'Unknown_Visibility_74'],
+        "names": ['ID_Visi_AblaufZ_SSP_Zeit1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -774,7 +774,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 75,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_VD_Stand', 'Unknown_Visibility_75'],
+        "names": ['ID_Visi_AblaufZ_VD_Stand'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -784,7 +784,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 76,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_HRM_Zeit', 'Unknown_Visibility_76'],
+        "names": ['ID_Visi_AblaufZ_HRM_Zeit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -794,7 +794,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 77,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_HRW_Zeit', 'Unknown_Visibility_77'],
+        "names": ['ID_Visi_AblaufZ_HRW_Zeit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -804,7 +804,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 78,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_TDI_seit', 'Unknown_Visibility_78'],
+        "names": ['ID_Visi_AblaufZ_TDI_seit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -814,7 +814,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 79,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_Sperre_BW', 'Unknown_Visibility_79'],
+        "names": ['ID_Visi_AblaufZ_Sperre_BW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -824,7 +824,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 80,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdVD1', 'Unknown_Visibility_80'],
+        "names": ['ID_Visi_Bst_BStdVD1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -834,7 +834,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 81,
         "count": 1,
-        "names": ['ID_Visi_Bst_ImpVD1', 'Unknown_Visibility_81'],
+        "names": ['ID_Visi_Bst_ImpVD1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -844,7 +844,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 82,
         "count": 1,
-        "names": ['ID_Visi_Bst_dEZVD1', 'Unknown_Visibility_82'],
+        "names": ['ID_Visi_Bst_dEZVD1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -854,7 +854,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 83,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdVD2', 'Unknown_Visibility_83'],
+        "names": ['ID_Visi_Bst_BStdVD2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -864,7 +864,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 84,
         "count": 1,
-        "names": ['ID_Visi_Bst_ImpVD2', 'Unknown_Visibility_84'],
+        "names": ['ID_Visi_Bst_ImpVD2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -874,7 +874,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 85,
         "count": 1,
-        "names": ['ID_Visi_Bst_dEZVD2', 'Unknown_Visibility_85'],
+        "names": ['ID_Visi_Bst_dEZVD2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -884,7 +884,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 86,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdZWE1', 'Unknown_Visibility_86'],
+        "names": ['ID_Visi_Bst_BStdZWE1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -894,7 +894,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 87,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdZWE2', 'Unknown_Visibility_87'],
+        "names": ['ID_Visi_Bst_BStdZWE2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -904,7 +904,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 88,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdZWE3', 'Unknown_Visibility_88'],
+        "names": ['ID_Visi_Bst_BStdZWE3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -914,7 +914,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 89,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdWP', 'Unknown_Visibility_89'],
+        "names": ['ID_Visi_Bst_BStdWP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -924,7 +924,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 90,
         "count": 1,
-        "names": ['ID_Visi_Text_Kurzprogramme', 'Unknown_Visibility_90'],
+        "names": ['ID_Visi_Text_Kurzprogramme'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -934,7 +934,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 91,
         "count": 1,
-        "names": ['ID_Visi_Text_Zwangsheizung', 'Unknown_Visibility_91'],
+        "names": ['ID_Visi_Text_Zwangsheizung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -944,7 +944,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 92,
         "count": 1,
-        "names": ['ID_Visi_Text_Zwangsbrauchwasser', 'Unknown_Visibility_92'],
+        "names": ['ID_Visi_Text_Zwangsbrauchwasser'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -954,7 +954,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 93,
         "count": 1,
-        "names": ['ID_Visi_Text_Abtauen', 'Unknown_Visibility_93'],
+        "names": ['ID_Visi_Text_Abtauen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -964,7 +964,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 94,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_RucklBegr', 'Unknown_Visibility_94'],
+        "names": ['ID_Visi_EinstTemp_RucklBegr'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -974,7 +974,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 95,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_HystereseHR', 'Unknown_Visibility_95'],
+        "names": ['ID_Visi_EinstTemp_HystereseHR'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -984,7 +984,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 96,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TRErhmax', 'Unknown_Visibility_96'],
+        "names": ['ID_Visi_EinstTemp_TRErhmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -994,7 +994,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 97,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_Freig2VD', 'Unknown_Visibility_97'],
+        "names": ['ID_Visi_EinstTemp_Freig2VD'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1004,7 +1004,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 98,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_FreigZWE', 'Unknown_Visibility_98'],
+        "names": ['ID_Visi_EinstTemp_FreigZWE'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1014,7 +1014,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 99,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_Tluftabt', 'Unknown_Visibility_99'],
+        "names": ['ID_Visi_EinstTemp_Tluftabt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1024,7 +1024,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 100,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TDISolltemp', 'Unknown_Visibility_100'],
+        "names": ['ID_Visi_EinstTemp_TDISolltemp'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1034,7 +1034,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 101,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_HystereseBW', 'Unknown_Visibility_101'],
+        "names": ['ID_Visi_EinstTemp_HystereseBW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1044,7 +1044,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 102,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_Vorl2VDBW', 'Unknown_Visibility_102'],
+        "names": ['ID_Visi_EinstTemp_Vorl2VDBW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1054,7 +1054,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 103,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TAussenmax', 'Unknown_Visibility_103'],
+        "names": ['ID_Visi_EinstTemp_TAussenmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1064,7 +1064,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 104,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TAussenmin', 'Unknown_Visibility_104'],
+        "names": ['ID_Visi_EinstTemp_TAussenmin'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1074,7 +1074,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 105,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TWQmin', 'Unknown_Visibility_105'],
+        "names": ['ID_Visi_EinstTemp_TWQmin'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1084,7 +1084,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 106,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_THGmax', 'Unknown_Visibility_106'],
+        "names": ['ID_Visi_EinstTemp_THGmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1094,7 +1094,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 107,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TLABTEnde', 'Unknown_Visibility_107'],
+        "names": ['ID_Visi_EinstTemp_TLABTEnde'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1104,7 +1104,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 108,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_Absenkbis', 'Unknown_Visibility_108'],
+        "names": ['ID_Visi_EinstTemp_Absenkbis'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1114,7 +1114,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 109,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_Vorlaufmax', 'Unknown_Visibility_109'],
+        "names": ['ID_Visi_EinstTemp_Vorlaufmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1124,7 +1124,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 110,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TDiffEin', 'Unknown_Visibility_110'],
+        "names": ['ID_Visi_EinstTemp_TDiffEin'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1134,7 +1134,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 111,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TDiffAus', 'Unknown_Visibility_111'],
+        "names": ['ID_Visi_EinstTemp_TDiffAus'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1144,7 +1144,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 112,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TDiffmax', 'Unknown_Visibility_112'],
+        "names": ['ID_Visi_EinstTemp_TDiffmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1154,7 +1154,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 113,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TEEHeizung', 'Unknown_Visibility_113'],
+        "names": ['ID_Visi_EinstTemp_TEEHeizung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1164,7 +1164,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 114,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TEEBrauchw', 'Unknown_Visibility_114'],
+        "names": ['ID_Visi_EinstTemp_TEEBrauchw'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1174,7 +1174,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 115,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_Vorl2VDSW', 'Unknown_Visibility_115'],
+        "names": ['ID_Visi_EinstTemp_Vorl2VDSW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1184,7 +1184,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 116,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_VLMaxMk1', 'Unknown_Visibility_116'],
+        "names": ['ID_Visi_EinstTemp_VLMaxMk1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1194,7 +1194,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 117,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_VLMaxMk2', 'Unknown_Visibility_117'],
+        "names": ['ID_Visi_EinstTemp_VLMaxMk2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1204,7 +1204,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 118,
         "count": 1,
-        "names": ['ID_Visi_Priori_Brauchwasser', 'Unknown_Visibility_118'],
+        "names": ['ID_Visi_Priori_Brauchwasser'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1214,7 +1214,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 119,
         "count": 1,
-        "names": ['ID_Visi_Priori_Heizung', 'Unknown_Visibility_119'],
+        "names": ['ID_Visi_Priori_Heizung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1224,7 +1224,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 120,
         "count": 1,
-        "names": ['ID_Visi_Priori_Schwimmbad', 'Unknown_Visibility_120'],
+        "names": ['ID_Visi_Priori_Schwimmbad'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1234,7 +1234,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 121,
         "count": 1,
-        "names": ['ID_Visi_SysEin_EVUSperre', 'Unknown_Visibility_121'],
+        "names": ['ID_Visi_SysEin_EVUSperre'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1244,7 +1244,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 122,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Raumstation', 'Unknown_Visibility_122'],
+        "names": ['ID_Visi_SysEin_Raumstation'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1254,7 +1254,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 123,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Einbindung', 'Unknown_Visibility_123'],
+        "names": ['ID_Visi_SysEin_Einbindung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1264,7 +1264,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 124,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Mischkreis1', 'Unknown_Visibility_124'],
+        "names": ['ID_Visi_SysEin_Mischkreis1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1274,7 +1274,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 125,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Mischkreis2', 'Unknown_Visibility_125'],
+        "names": ['ID_Visi_SysEin_Mischkreis2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1284,7 +1284,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 126,
         "count": 1,
-        "names": ['ID_Visi_SysEin_ZWE1Art', 'Unknown_Visibility_126'],
+        "names": ['ID_Visi_SysEin_ZWE1Art'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1294,7 +1294,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 127,
         "count": 1,
-        "names": ['ID_Visi_SysEin_ZWE1Fkt', 'Unknown_Visibility_127'],
+        "names": ['ID_Visi_SysEin_ZWE1Fkt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1304,7 +1304,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 128,
         "count": 1,
-        "names": ['ID_Visi_SysEin_ZWE2Art', 'Unknown_Visibility_128'],
+        "names": ['ID_Visi_SysEin_ZWE2Art'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1314,7 +1314,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 129,
         "count": 1,
-        "names": ['ID_Visi_SysEin_ZWE2Fkt', 'Unknown_Visibility_129'],
+        "names": ['ID_Visi_SysEin_ZWE2Fkt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1324,7 +1324,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 130,
         "count": 1,
-        "names": ['ID_Visi_SysEin_ZWE3Art', 'Unknown_Visibility_130'],
+        "names": ['ID_Visi_SysEin_ZWE3Art'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1334,7 +1334,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 131,
         "count": 1,
-        "names": ['ID_Visi_SysEin_ZWE3Fkt', 'Unknown_Visibility_131'],
+        "names": ['ID_Visi_SysEin_ZWE3Fkt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1344,7 +1344,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 132,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Stoerung', 'Unknown_Visibility_132'],
+        "names": ['ID_Visi_SysEin_Stoerung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1354,7 +1354,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 133,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Brauchwasser1', 'Unknown_Visibility_133'],
+        "names": ['ID_Visi_SysEin_Brauchwasser1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1364,7 +1364,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 134,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Brauchwasser2', 'Unknown_Visibility_134'],
+        "names": ['ID_Visi_SysEin_Brauchwasser2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1374,7 +1374,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 135,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Brauchwasser3', 'Unknown_Visibility_135'],
+        "names": ['ID_Visi_SysEin_Brauchwasser3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1384,7 +1384,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 136,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Brauchwasser4', 'Unknown_Visibility_136'],
+        "names": ['ID_Visi_SysEin_Brauchwasser4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1394,7 +1394,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 137,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Brauchwasser5', 'Unknown_Visibility_137'],
+        "names": ['ID_Visi_SysEin_Brauchwasser5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1404,7 +1404,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 138,
         "count": 1,
-        "names": ['ID_Visi_SysEin_BWWPmax', 'Unknown_Visibility_138'],
+        "names": ['ID_Visi_SysEin_BWWPmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1414,7 +1414,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 139,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Abtzykmax', 'Unknown_Visibility_139'],
+        "names": ['ID_Visi_SysEin_Abtzykmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1424,7 +1424,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 140,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Luftabt', 'Unknown_Visibility_140'],
+        "names": ['ID_Visi_SysEin_Luftabt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1434,7 +1434,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 141,
         "count": 1,
-        "names": ['ID_Visi_SysEin_LuftAbtmax', 'Unknown_Visibility_141'],
+        "names": ['ID_Visi_SysEin_LuftAbtmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1444,7 +1444,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 142,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Abtauen1', 'Unknown_Visibility_142'],
+        "names": ['ID_Visi_SysEin_Abtauen1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1454,7 +1454,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 143,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Abtauen2', 'Unknown_Visibility_143'],
+        "names": ['ID_Visi_SysEin_Abtauen2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1464,7 +1464,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 144,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Pumpenoptim', 'Unknown_Visibility_144'],
+        "names": ['ID_Visi_SysEin_Pumpenoptim'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1474,7 +1474,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 145,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Zusatzpumpe', 'Unknown_Visibility_145'],
+        "names": ['ID_Visi_SysEin_Zusatzpumpe'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1484,7 +1484,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 146,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Zugang', 'Unknown_Visibility_146'],
+        "names": ['ID_Visi_SysEin_Zugang'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1494,7 +1494,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 147,
         "count": 1,
-        "names": ['ID_Visi_SysEin_SoledrDurchf', 'Unknown_Visibility_147'],
+        "names": ['ID_Visi_SysEin_SoledrDurchf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1504,7 +1504,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 148,
         "count": 1,
-        "names": ['ID_Visi_SysEin_UberwachungVD', 'Unknown_Visibility_148'],
+        "names": ['ID_Visi_SysEin_UberwachungVD'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1514,7 +1514,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 149,
         "count": 1,
-        "names": ['ID_Visi_SysEin_RegelungHK', 'Unknown_Visibility_149'],
+        "names": ['ID_Visi_SysEin_RegelungHK'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1524,7 +1524,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 150,
         "count": 1,
-        "names": ['ID_Visi_SysEin_RegelungMK1', 'Unknown_Visibility_150'],
+        "names": ['ID_Visi_SysEin_RegelungMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1534,7 +1534,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 151,
         "count": 1,
-        "names": ['ID_Visi_SysEin_RegelungMK2', 'Unknown_Visibility_151'],
+        "names": ['ID_Visi_SysEin_RegelungMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1544,7 +1544,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 152,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Kuhlung', 'Unknown_Visibility_152'],
+        "names": ['ID_Visi_SysEin_Kuhlung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1554,7 +1554,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 153,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Ausheizen', 'Unknown_Visibility_153'],
+        "names": ['ID_Visi_SysEin_Ausheizen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1564,7 +1564,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 154,
         "count": 1,
-        "names": ['ID_Visi_SysEin_ElektrAnode', 'Unknown_Visibility_154'],
+        "names": ['ID_Visi_SysEin_ElektrAnode'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1574,7 +1574,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 155,
         "count": 1,
-        "names": ['ID_Visi_SysEin_SWBBer', 'Unknown_Visibility_155'],
+        "names": ['ID_Visi_SysEin_SWBBer'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1584,7 +1584,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 156,
         "count": 1,
-        "names": ['ID_Visi_SysEin_SWBMin', 'Unknown_Visibility_156'],
+        "names": ['ID_Visi_SysEin_SWBMin'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1594,7 +1594,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 157,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Heizung', 'Unknown_Visibility_157'],
+        "names": ['ID_Visi_SysEin_Heizung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1604,7 +1604,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 158,
         "count": 1,
-        "names": ['ID_Visi_SysEin_PeriodeMk1', 'Unknown_Visibility_158'],
+        "names": ['ID_Visi_SysEin_PeriodeMk1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1614,7 +1614,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 159,
         "count": 1,
-        "names": ['ID_Visi_SysEin_LaufzeitMk1', 'Unknown_Visibility_159'],
+        "names": ['ID_Visi_SysEin_LaufzeitMk1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1624,7 +1624,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 160,
         "count": 1,
-        "names": ['ID_Visi_SysEin_PeriodeMk2', 'Unknown_Visibility_160'],
+        "names": ['ID_Visi_SysEin_PeriodeMk2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1634,7 +1634,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 161,
         "count": 1,
-        "names": ['ID_Visi_SysEin_LaufzeitMk2', 'Unknown_Visibility_161'],
+        "names": ['ID_Visi_SysEin_LaufzeitMk2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1644,7 +1644,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 162,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Heizgrenze', 'Unknown_Visibility_162'],
+        "names": ['ID_Visi_SysEin_Heizgrenze'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1654,7 +1654,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 163,
         "count": 1,
-        "names": ['ID_Visi_Enlt_HUP', 'Unknown_Visibility_163'],
+        "names": ['ID_Visi_Enlt_HUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1664,7 +1664,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 164,
         "count": 1,
-        "names": ['ID_Visi_Enlt_ZUP', 'Unknown_Visibility_164'],
+        "names": ['ID_Visi_Enlt_ZUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1674,7 +1674,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 165,
         "count": 1,
-        "names": ['ID_Visi_Enlt_BUP', 'Unknown_Visibility_165'],
+        "names": ['ID_Visi_Enlt_BUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1684,7 +1684,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 166,
         "count": 1,
-        "names": ['ID_Visi_Enlt_Ventilator_BOSUP', 'Unknown_Visibility_166'],
+        "names": ['ID_Visi_Enlt_Ventilator_BOSUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1694,7 +1694,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 167,
         "count": 1,
-        "names": ['ID_Visi_Enlt_MA1', 'Unknown_Visibility_167'],
+        "names": ['ID_Visi_Enlt_MA1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1704,7 +1704,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 168,
         "count": 1,
-        "names": ['ID_Visi_Enlt_MZ1', 'Unknown_Visibility_168'],
+        "names": ['ID_Visi_Enlt_MZ1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1714,7 +1714,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 169,
         "count": 1,
-        "names": ['ID_Visi_Enlt_ZIP', 'Unknown_Visibility_169'],
+        "names": ['ID_Visi_Enlt_ZIP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1724,7 +1724,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 170,
         "count": 1,
-        "names": ['ID_Visi_Enlt_MA2', 'Unknown_Visibility_170'],
+        "names": ['ID_Visi_Enlt_MA2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1734,7 +1734,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 171,
         "count": 1,
-        "names": ['ID_Visi_Enlt_MZ2', 'Unknown_Visibility_171'],
+        "names": ['ID_Visi_Enlt_MZ2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1744,7 +1744,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 172,
         "count": 1,
-        "names": ['ID_Visi_Enlt_SUP', 'Unknown_Visibility_172'],
+        "names": ['ID_Visi_Enlt_SUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1754,7 +1754,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 173,
         "count": 1,
-        "names": ['ID_Visi_Enlt_SLP', 'Unknown_Visibility_173'],
+        "names": ['ID_Visi_Enlt_SLP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1764,7 +1764,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 174,
         "count": 1,
-        "names": ['ID_Visi_Enlt_FP2', 'Unknown_Visibility_174'],
+        "names": ['ID_Visi_Enlt_FP2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1774,7 +1774,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 175,
         "count": 1,
-        "names": ['ID_Visi_Enlt_Laufzeit', 'Unknown_Visibility_175'],
+        "names": ['ID_Visi_Enlt_Laufzeit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1784,7 +1784,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 176,
         "count": 1,
-        "names": ['ID_Visi_Anlgkonf_Heizung', 'Unknown_Visibility_176'],
+        "names": ['ID_Visi_Anlgkonf_Heizung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1794,7 +1794,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 177,
         "count": 1,
-        "names": ['ID_Visi_Anlgkonf_Brauchwarmwasser', 'Unknown_Visibility_177'],
+        "names": ['ID_Visi_Anlgkonf_Brauchwarmwasser'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1804,7 +1804,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 178,
         "count": 1,
-        "names": ['ID_Visi_Anlgkonf_Schwimmbad', 'Unknown_Visibility_178'],
+        "names": ['ID_Visi_Anlgkonf_Schwimmbad'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1814,7 +1814,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 179,
         "count": 1,
-        "names": ['ID_Visi_Heizung_Betriebsart', 'Unknown_Visibility_179'],
+        "names": ['ID_Visi_Heizung_Betriebsart'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1824,7 +1824,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 180,
         "count": 1,
-        "names": ['ID_Visi_Heizung_TemperaturPlusMinus', 'Unknown_Visibility_180'],
+        "names": ['ID_Visi_Heizung_TemperaturPlusMinus'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1834,7 +1834,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 181,
         "count": 1,
-        "names": ['ID_Visi_Heizung_Heizkurven', 'Unknown_Visibility_181'],
+        "names": ['ID_Visi_Heizung_Heizkurven'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1844,7 +1844,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 182,
         "count": 1,
-        "names": ['ID_Visi_Heizung_Zeitschaltprogramm', 'ID_Visi_Heizung_Zeitschlaltprogramm', 'Unknown_Visibility_182'],
+        "names": ['ID_Visi_Heizung_Zeitschaltprogramm', 'ID_Visi_Heizung_Zeitschlaltprogramm'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1854,7 +1854,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 183,
         "count": 1,
-        "names": ['ID_Visi_Heizung_Heizgrenze', 'Unknown_Visibility_183'],
+        "names": ['ID_Visi_Heizung_Heizgrenze'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1864,7 +1864,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 184,
         "count": 1,
-        "names": ['ID_Visi_Mitteltemperatur', 'Unknown_Visibility_184'],
+        "names": ['ID_Visi_Mitteltemperatur'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1874,7 +1874,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 185,
         "count": 1,
-        "names": ['ID_Visi_Dataenlogger', 'Unknown_Visibility_185'],
+        "names": ['ID_Visi_Dataenlogger'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1884,7 +1884,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 186,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_DEUTSCH', 'Unknown_Visibility_186'],
+        "names": ['ID_Visi_Sprachen_DEUTSCH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1894,7 +1894,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 187,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_ENGLISH', 'Unknown_Visibility_187'],
+        "names": ['ID_Visi_Sprachen_ENGLISH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1904,7 +1904,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 188,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_FRANCAIS', 'Unknown_Visibility_188'],
+        "names": ['ID_Visi_Sprachen_FRANCAIS'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1914,7 +1914,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 189,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_NORWAY', 'Unknown_Visibility_189'],
+        "names": ['ID_Visi_Sprachen_NORWAY'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1924,7 +1924,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 190,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_TCHECH', 'Unknown_Visibility_190'],
+        "names": ['ID_Visi_Sprachen_TCHECH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1934,7 +1934,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 191,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_ITALIANO', 'Unknown_Visibility_191'],
+        "names": ['ID_Visi_Sprachen_ITALIANO'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1944,7 +1944,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 192,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_NEDERLANDS', 'Unknown_Visibility_192'],
+        "names": ['ID_Visi_Sprachen_NEDERLANDS'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1954,7 +1954,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 193,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_SVENSKA', 'Unknown_Visibility_193'],
+        "names": ['ID_Visi_Sprachen_SVENSKA'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1964,7 +1964,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 194,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_POLSKI', 'Unknown_Visibility_194'],
+        "names": ['ID_Visi_Sprachen_POLSKI'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1974,7 +1974,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 195,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_MAGYARUL', 'Unknown_Visibility_195'],
+        "names": ['ID_Visi_Sprachen_MAGYARUL'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1984,7 +1984,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 196,
         "count": 1,
-        "names": ['ID_Visi_ErrorUSBspeichern', 'Unknown_Visibility_196'],
+        "names": ['ID_Visi_ErrorUSBspeichern'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1994,7 +1994,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 197,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdHz', 'Unknown_Visibility_197'],
+        "names": ['ID_Visi_Bst_BStdHz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2004,7 +2004,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 198,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdBW', 'Unknown_Visibility_198'],
+        "names": ['ID_Visi_Bst_BStdBW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2014,7 +2014,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 199,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdKue', 'Unknown_Visibility_199'],
+        "names": ['ID_Visi_Bst_BStdKue'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2024,7 +2024,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 200,
         "count": 1,
-        "names": ['ID_Visi_Service_Systemsteuerung', 'Unknown_Visibility_200'],
+        "names": ['ID_Visi_Service_Systemsteuerung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2034,7 +2034,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 201,
         "count": 1,
-        "names": ['ID_Visi_Service_Systemsteuerung_Contrast', 'Unknown_Visibility_201'],
+        "names": ['ID_Visi_Service_Systemsteuerung_Contrast'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2044,7 +2044,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 202,
         "count": 1,
-        "names": ['ID_Visi_Service_Systemsteuerung_Webserver', 'Unknown_Visibility_202'],
+        "names": ['ID_Visi_Service_Systemsteuerung_Webserver'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2054,7 +2054,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 203,
         "count": 1,
-        "names": ['ID_Visi_Service_Systemsteuerung_IPAdresse', 'Unknown_Visibility_203'],
+        "names": ['ID_Visi_Service_Systemsteuerung_IPAdresse'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2064,7 +2064,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 204,
         "count": 1,
-        "names": ['ID_Visi_Service_Systemsteuerung_Fernwartung', 'Unknown_Visibility_204'],
+        "names": ['ID_Visi_Service_Systemsteuerung_Fernwartung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2074,7 +2074,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 205,
         "count": 1,
-        "names": ['ID_Visi_Paralleleschaltung', 'Unknown_Visibility_205'],
+        "names": ['ID_Visi_Paralleleschaltung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2084,7 +2084,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 206,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Paralleleschaltung', 'Unknown_Visibility_206'],
+        "names": ['ID_Visi_SysEin_Paralleleschaltung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2094,7 +2094,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 207,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_DANSK', 'Unknown_Visibility_207'],
+        "names": ['ID_Visi_Sprachen_DANSK'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2104,7 +2104,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 208,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_PORTUGES', 'Unknown_Visibility_208'],
+        "names": ['ID_Visi_Sprachen_PORTUGES'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2114,7 +2114,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 209,
         "count": 1,
-        "names": ['ID_Visi_Heizkurve_Heizung', 'Unknown_Visibility_209'],
+        "names": ['ID_Visi_Heizkurve_Heizung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2124,7 +2124,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 210,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Mischkreis3', 'Unknown_Visibility_210'],
+        "names": ['ID_Visi_SysEin_Mischkreis3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2134,7 +2134,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 211,
         "count": 1,
-        "names": ['ID_Visi_MK3', 'Unknown_Visibility_211'],
+        "names": ['ID_Visi_MK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2144,7 +2144,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 212,
         "count": 1,
-        "names": ['ID_Visi_Temp_MK3_Vorlauf', 'Unknown_Visibility_212'],
+        "names": ['ID_Visi_Temp_MK3_Vorlauf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2154,7 +2154,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 213,
         "count": 1,
-        "names": ['ID_Visi_Temp_MK3VL_Soll', 'Unknown_Visibility_213'],
+        "names": ['ID_Visi_Temp_MK3VL_Soll'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2164,7 +2164,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 214,
         "count": 1,
-        "names": ['ID_Visi_OUT_Mischer3Auf', 'Unknown_Visibility_214'],
+        "names": ['ID_Visi_OUT_Mischer3Auf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2174,7 +2174,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 215,
         "count": 1,
-        "names": ['ID_Visi_OUT_Mischer3Zu', 'Unknown_Visibility_215'],
+        "names": ['ID_Visi_OUT_Mischer3Zu'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2184,7 +2184,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 216,
         "count": 1,
-        "names": ['ID_Visi_SysEin_RegelungMK3', 'Unknown_Visibility_216'],
+        "names": ['ID_Visi_SysEin_RegelungMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2194,7 +2194,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 217,
         "count": 1,
-        "names": ['ID_Visi_SysEin_PeriodeMk3', 'Unknown_Visibility_217'],
+        "names": ['ID_Visi_SysEin_PeriodeMk3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2204,7 +2204,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 218,
         "count": 1,
-        "names": ['ID_Visi_SysEin_LaufzeitMk3', 'Unknown_Visibility_218'],
+        "names": ['ID_Visi_SysEin_LaufzeitMk3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2214,7 +2214,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 219,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Kuhl_Zeit_Ein', 'Unknown_Visibility_219'],
+        "names": ['ID_Visi_SysEin_Kuhl_Zeit_Ein'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2224,7 +2224,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 220,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Kuhl_Zeit_Aus', 'Unknown_Visibility_220'],
+        "names": ['ID_Visi_SysEin_Kuhl_Zeit_Aus'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2234,7 +2234,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 221,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_AbtauIn', 'Unknown_Visibility_221'],
+        "names": ['ID_Visi_AblaufZ_AbtauIn'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2244,7 +2244,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 222,
         "count": 1,
-        "names": ['ID_Visi_Waermemenge_WS', 'Unknown_Visibility_222'],
+        "names": ['ID_Visi_Waermemenge_WS'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2254,7 +2254,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 223,
         "count": 1,
-        "names": ['ID_Visi_Waermemenge_WQ', 'Unknown_Visibility_223'],
+        "names": ['ID_Visi_Waermemenge_WQ'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2264,7 +2264,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 224,
         "count": 1,
-        "names": ['ID_Visi_Enlt_MA3', 'Unknown_Visibility_224'],
+        "names": ['ID_Visi_Enlt_MA3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2274,7 +2274,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 225,
         "count": 1,
-        "names": ['ID_Visi_Enlt_MZ3', 'Unknown_Visibility_225'],
+        "names": ['ID_Visi_Enlt_MZ3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2284,7 +2284,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 226,
         "count": 1,
-        "names": ['ID_Visi_Enlt_FP3', 'Unknown_Visibility_226'],
+        "names": ['ID_Visi_Enlt_FP3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2294,7 +2294,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 227,
         "count": 1,
-        "names": ['ID_Visi_OUT_FUP3', 'Unknown_Visibility_227'],
+        "names": ['ID_Visi_OUT_FUP3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2304,7 +2304,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 228,
         "count": 1,
-        "names": ['ID_Visi_Temp_Raumstation2', 'Unknown_Visibility_228'],
+        "names": ['ID_Visi_Temp_Raumstation2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2314,7 +2314,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 229,
         "count": 1,
-        "names": ['ID_Visi_Temp_Raumstation3', 'Unknown_Visibility_229'],
+        "names": ['ID_Visi_Temp_Raumstation3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2324,7 +2324,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 230,
         "count": 1,
-        "names": ['ID_Visi_Bst_BStdSW', 'Unknown_Visibility_230'],
+        "names": ['ID_Visi_Bst_BStdSW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2334,7 +2334,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 231,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_LITAUISCH', 'Unknown_Visibility_231'],
+        "names": ['ID_Visi_Sprachen_LITAUISCH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2344,7 +2344,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 232,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_ESTNICH', 'Unknown_Visibility_232'],
+        "names": ['ID_Visi_Sprachen_ESTNICH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2354,7 +2354,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 233,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Fernwartung', 'Unknown_Visibility_233'],
+        "names": ['ID_Visi_SysEin_Fernwartung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2364,7 +2364,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 234,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_SLOVENISCH', 'Unknown_Visibility_234'],
+        "names": ['ID_Visi_Sprachen_SLOVENISCH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2374,7 +2374,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 235,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TA_EG', 'Unknown_Visibility_235'],
+        "names": ['ID_Visi_EinstTemp_TA_EG'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2384,7 +2384,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 236,
         "count": 1,
-        "names": ['ID_Visi_Einst_TVLmax_EG', 'Unknown_Visibility_236'],
+        "names": ['ID_Visi_Einst_TVLmax_EG'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2394,7 +2394,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 237,
         "count": 1,
-        "names": ['ID_Visi_SysEin_PoptNachlauf', 'Unknown_Visibility_237'],
+        "names": ['ID_Visi_SysEin_PoptNachlauf'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2404,7 +2404,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 238,
         "count": 1,
-        "names": ['ID_Visi_RFV_K_Kuehlin', 'Unknown_Visibility_238'],
+        "names": ['ID_Visi_RFV_K_Kuehlin'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2414,7 +2414,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 239,
         "count": 1,
-        "names": ['ID_Visi_SysEin_EffizienzpumpeNom', 'Unknown_Visibility_239'],
+        "names": ['ID_Visi_SysEin_EffizienzpumpeNom'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2424,7 +2424,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 240,
         "count": 1,
-        "names": ['ID_Visi_SysEin_EffizienzpumpeMin', 'Unknown_Visibility_240'],
+        "names": ['ID_Visi_SysEin_EffizienzpumpeMin'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2434,7 +2434,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 241,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Effizienzpumpe', 'Unknown_Visibility_241'],
+        "names": ['ID_Visi_SysEin_Effizienzpumpe'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2444,7 +2444,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 242,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Waermemenge', 'Unknown_Visibility_242'],
+        "names": ['ID_Visi_SysEin_Waermemenge'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2454,7 +2454,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 243,
         "count": 1,
-        "names": ['ID_Visi_Service_WMZ_Effizienz', 'Unknown_Visibility_243'],
+        "names": ['ID_Visi_Service_WMZ_Effizienz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2464,7 +2464,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 244,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Wm_Versorgung_Korrektur', 'Unknown_Visibility_244'],
+        "names": ['ID_Visi_SysEin_Wm_Versorgung_Korrektur'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2474,7 +2474,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 245,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Wm_Auswertung_Korrektur', 'Unknown_Visibility_245'],
+        "names": ['ID_Visi_SysEin_Wm_Auswertung_Korrektur'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2484,7 +2484,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 246,
         "count": 1,
-        "names": ['ID_Visi_IN_AnalogIn', 'Unknown_Visibility_246'],
+        "names": ['ID_Visi_IN_AnalogIn'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2494,7 +2494,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 247,
         "count": 1,
-        "names": ['ID_Visi_Eins_SN_Eingabe', 'Unknown_Visibility_247'],
+        "names": ['ID_Visi_Eins_SN_Eingabe'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2504,7 +2504,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 248,
         "count": 1,
-        "names": ['ID_Visi_OUT_Analog_1', 'Unknown_Visibility_248'],
+        "names": ['ID_Visi_OUT_Analog_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2514,7 +2514,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 249,
         "count": 1,
-        "names": ['ID_Visi_OUT_Analog_2', 'Unknown_Visibility_249'],
+        "names": ['ID_Visi_OUT_Analog_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2524,7 +2524,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 250,
         "count": 1,
-        "names": ['ID_Visi_Solar', 'Unknown_Visibility_250'],
+        "names": ['ID_Visi_Solar'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2534,7 +2534,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 251,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Solar', 'Unknown_Visibility_251'],
+        "names": ['ID_Visi_SysEin_Solar'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2544,7 +2544,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 252,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_TDiffKollmax', 'Unknown_Visibility_252'],
+        "names": ['ID_Visi_EinstTemp_TDiffKollmax'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2554,7 +2554,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 253,
         "count": 1,
-        "names": ['ID_Visi_AblaufZ_HG_Sperre', 'Unknown_Visibility_253'],
+        "names": ['ID_Visi_AblaufZ_HG_Sperre'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2564,7 +2564,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 254,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Akt_Kuehlung', 'Unknown_Visibility_254'],
+        "names": ['ID_Visi_SysEin_Akt_Kuehlung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2574,7 +2574,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 255,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Vorlauf_VBO', 'Unknown_Visibility_255'],
+        "names": ['ID_Visi_SysEin_Vorlauf_VBO'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2584,7 +2584,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 256,
         "count": 1,
-        "names": ['ID_Visi_Einst_KRHyst', 'Unknown_Visibility_256'],
+        "names": ['ID_Visi_Einst_KRHyst'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2594,7 +2594,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 257,
         "count": 1,
-        "names": ['ID_Visi_Einst_Akt_Kuehl_Speicher_min', 'Unknown_Visibility_257'],
+        "names": ['ID_Visi_Einst_Akt_Kuehl_Speicher_min'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2604,7 +2604,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 258,
         "count": 1,
-        "names": ['ID_Visi_Einst_Akt_Kuehl_Freig_WQE', 'Unknown_Visibility_258'],
+        "names": ['ID_Visi_Einst_Akt_Kuehl_Freig_WQE'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2614,7 +2614,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 259,
         "count": 1,
-        "names": ['ID_Visi_SysEin_AbtZykMin', 'Unknown_Visibility_259'],
+        "names": ['ID_Visi_SysEin_AbtZykMin'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2624,7 +2624,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 260,
         "count": 1,
-        "names": ['ID_Visi_SysEin_VD2_Zeit_Min', 'Unknown_Visibility_260'],
+        "names": ['ID_Visi_SysEin_VD2_Zeit_Min'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2634,7 +2634,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 261,
         "count": 1,
-        "names": ['ID_Visi_EinstTemp_Hysterese_HR_verkuerzt', 'Unknown_Visibility_261'],
+        "names": ['ID_Visi_EinstTemp_Hysterese_HR_verkuerzt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2644,7 +2644,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 262,
         "count": 1,
-        "names": ['ID_Visi_Einst_Luf_Feuchteschutz_akt', 'Unknown_Visibility_262'],
+        "names": ['ID_Visi_Einst_Luf_Feuchteschutz_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2654,7 +2654,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 263,
         "count": 1,
-        "names": ['ID_Visi_Einst_Luf_Reduziert_akt', 'Unknown_Visibility_263'],
+        "names": ['ID_Visi_Einst_Luf_Reduziert_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2664,7 +2664,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 264,
         "count": 1,
-        "names": ['ID_Visi_Einst_Luf_Nennlueftung_akt', 'Unknown_Visibility_264'],
+        "names": ['ID_Visi_Einst_Luf_Nennlueftung_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2674,7 +2674,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 265,
         "count": 1,
-        "names": ['ID_Visi_Einst_Luf_Intensivlueftung_akt', 'Unknown_Visibility_265'],
+        "names": ['ID_Visi_Einst_Luf_Intensivlueftung_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2684,7 +2684,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 266,
         "count": 1,
-        "names": ['ID_Visi_Temperatur_Lueftung_Zuluft', 'Unknown_Visibility_266'],
+        "names": ['ID_Visi_Temperatur_Lueftung_Zuluft'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2694,7 +2694,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 267,
         "count": 1,
-        "names": ['ID_Visi_Temperatur_Lueftung_Abluft', 'Unknown_Visibility_267'],
+        "names": ['ID_Visi_Temperatur_Lueftung_Abluft'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2704,7 +2704,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 268,
         "count": 1,
-        "names": ['ID_Visi_OUT_Analog_3', 'Unknown_Visibility_268'],
+        "names": ['ID_Visi_OUT_Analog_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2714,7 +2714,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 269,
         "count": 1,
-        "names": ['ID_Visi_OUT_Analog_4', 'Unknown_Visibility_269'],
+        "names": ['ID_Visi_OUT_Analog_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2724,7 +2724,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 270,
         "count": 1,
-        "names": ['ID_Visi_IN_Analog_2', 'Unknown_Visibility_270'],
+        "names": ['ID_Visi_IN_Analog_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2734,7 +2734,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 271,
         "count": 1,
-        "names": ['ID_Visi_IN_Analog_3', 'Unknown_Visibility_271'],
+        "names": ['ID_Visi_IN_Analog_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2744,7 +2744,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 272,
         "count": 1,
-        "names": ['ID_Visi_IN_SAX', 'Unknown_Visibility_272'],
+        "names": ['ID_Visi_IN_SAX'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2754,7 +2754,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 273,
         "count": 1,
-        "names": ['ID_Visi_OUT_VZU', 'Unknown_Visibility_273'],
+        "names": ['ID_Visi_OUT_VZU'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2764,7 +2764,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 274,
         "count": 1,
-        "names": ['ID_Visi_OUT_VAB', 'Unknown_Visibility_274'],
+        "names": ['ID_Visi_OUT_VAB'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2774,7 +2774,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 275,
         "count": 1,
-        "names": ['ID_Visi_OUT_VSK', 'Unknown_Visibility_275'],
+        "names": ['ID_Visi_OUT_VSK'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2784,7 +2784,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 276,
         "count": 1,
-        "names": ['ID_Visi_OUT_FRH', 'Unknown_Visibility_276'],
+        "names": ['ID_Visi_OUT_FRH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2794,7 +2794,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 277,
         "count": 1,
-        "names": ['ID_Visi_KuhlTemp_SolltempMK3', 'Unknown_Visibility_277'],
+        "names": ['ID_Visi_KuhlTemp_SolltempMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2804,7 +2804,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 278,
         "count": 1,
-        "names": ['ID_Visi_KuhlTemp_ATDiffMK3', 'Unknown_Visibility_278'],
+        "names": ['ID_Visi_KuhlTemp_ATDiffMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2814,7 +2814,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 279,
         "count": 1,
-        "names": ['ID_Visi_IN_SPL', 'Unknown_Visibility_279'],
+        "names": ['ID_Visi_IN_SPL'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2824,7 +2824,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 280,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Lueftungsstufen', 'Unknown_Visibility_280'],
+        "names": ['ID_Visi_SysEin_Lueftungsstufen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2834,7 +2834,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 281,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Meldung_TDI', 'Unknown_Visibility_281'],
+        "names": ['ID_Visi_SysEin_Meldung_TDI'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2844,7 +2844,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 282,
         "count": 1,
-        "names": ['ID_Visi_SysEin_Typ_WZW', 'Unknown_Visibility_282'],
+        "names": ['ID_Visi_SysEin_Typ_WZW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2854,7 +2854,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 283,
         "count": 1,
-        "names": ['ID_Visi_BACnet', 'Unknown_Visibility_283'],
+        "names": ['ID_Visi_BACnet'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2864,7 +2864,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 284,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_SLOWAKISCH', 'Unknown_Visibility_284'],
+        "names": ['ID_Visi_Sprachen_SLOWAKISCH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2874,7 +2874,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 285,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_LETTISCH', 'Unknown_Visibility_285'],
+        "names": ['ID_Visi_Sprachen_LETTISCH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2884,7 +2884,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 286,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_FINNISCH', 'Unknown_Visibility_286'],
+        "names": ['ID_Visi_Sprachen_FINNISCH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2894,7 +2894,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 287,
         "count": 1,
-        "names": ['ID_Visi_Kalibrierung_LWD', 'Unknown_Visibility_287'],
+        "names": ['ID_Visi_Kalibrierung_LWD'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2904,7 +2904,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 288,
         "count": 1,
-        "names": ['ID_Visi_IN_Durchfluss', 'Unknown_Visibility_288'],
+        "names": ['ID_Visi_IN_Durchfluss'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2914,7 +2914,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 289,
         "count": 1,
-        "names": ['ID_Visi_LIN_ANSAUG_VERDICHTER', 'Unknown_Visibility_289'],
+        "names": ['ID_Visi_LIN_ANSAUG_VERDICHTER'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2924,7 +2924,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 290,
         "count": 1,
-        "names": ['ID_Visi_LIN_VDH', 'Unknown_Visibility_290'],
+        "names": ['ID_Visi_LIN_VDH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2934,7 +2934,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 291,
         "count": 1,
-        "names": ['ID_Visi_LIN_UH', 'Unknown_Visibility_291'],
+        "names": ['ID_Visi_LIN_UH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2944,7 +2944,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 292,
         "count": 1,
-        "names": ['ID_Visi_LIN_Druck', 'Unknown_Visibility_292'],
+        "names": ['ID_Visi_LIN_Druck'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2954,7 +2954,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 293,
         "count": 1,
-        "names": ['ID_Visi_Einst_Sollwert_TRL_Kuehlen', 'Unknown_Visibility_293'],
+        "names": ['ID_Visi_Einst_Sollwert_TRL_Kuehlen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2964,7 +2964,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 294,
         "count": 1,
-        "names": ['ID_Visi_Entl_ExVentil', 'Unknown_Visibility_294'],
+        "names": ['ID_Visi_Entl_ExVentil'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2974,7 +2974,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 295,
         "count": 1,
-        "names": ['ID_Visi_Einst_Medium_Waermequelle', 'Unknown_Visibility_295'],
+        "names": ['ID_Visi_Einst_Medium_Waermequelle'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2984,7 +2984,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 296,
         "count": 1,
-        "names": ['ID_Visi_Einst_Multispeicher', 'Unknown_Visibility_296'],
+        "names": ['ID_Visi_Einst_Multispeicher'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2994,7 +2994,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 297,
         "count": 1,
-        "names": ['ID_Visi_Einst_Minimale_Ruecklaufsolltemperatur', 'Unknown_Visibility_297'],
+        "names": ['ID_Visi_Einst_Minimale_Ruecklaufsolltemperatur'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3004,7 +3004,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 298,
         "count": 1,
-        "names": ['ID_Visi_Einst_PKuehlTime', 'Unknown_Visibility_298'],
+        "names": ['ID_Visi_Einst_PKuehlTime'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3014,7 +3014,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 299,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_TUERKISCH', 'Unknown_Visibility_299'],
+        "names": ['ID_Visi_Sprachen_TUERKISCH'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3024,7 +3024,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 300,
         "count": 1,
-        "names": ['ID_Visi_RBE', 'Unknown_Visibility_300'],
+        "names": ['ID_Visi_RBE'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3034,7 +3034,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 301,
         "count": 1,
-        "names": ['ID_Visi_Einst_Luf_Stufen_Faktor', 'Unknown_Visibility_301'],
+        "names": ['ID_Visi_Einst_Luf_Stufen_Faktor'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3044,7 +3044,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 302,
         "count": 1,
-        "names": ['ID_Visi_Freigabe_Zeit_ZWE', 'Unknown_Visibility_302'],
+        "names": ['ID_Visi_Freigabe_Zeit_ZWE'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3054,7 +3054,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 303,
         "count": 1,
-        "names": ['ID_Visi_Einst_min_VL_Kuehl', 'Unknown_Visibility_303'],
+        "names": ['ID_Visi_Einst_min_VL_Kuehl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3064,7 +3064,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 304,
         "count": 1,
-        "names": ['ID_Visi_ZWE1', 'Unknown_Visibility_304'],
+        "names": ['ID_Visi_ZWE1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3074,7 +3074,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 305,
         "count": 1,
-        "names": ['ID_Visi_ZWE2', 'Unknown_Visibility_305'],
+        "names": ['ID_Visi_ZWE2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3084,7 +3084,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 306,
         "count": 1,
-        "names": ['ID_Visi_ZWE3', 'Unknown_Visibility_306'],
+        "names": ['ID_Visi_ZWE3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3094,7 +3094,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 307,
         "count": 1,
-        "names": ['ID_Visi_SEC', 'Unknown_Visibility_307'],
+        "names": ['ID_Visi_SEC'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3104,7 +3104,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 308,
         "count": 1,
-        "names": ['ID_Visi_HZIO', 'Unknown_Visibility_308'],
+        "names": ['ID_Visi_HZIO'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3114,7 +3114,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 309,
         "count": 1,
-        "names": ['ID_Visi_WPIO', 'Unknown_Visibility_309'],
+        "names": ['ID_Visi_WPIO'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3124,7 +3124,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 310,
         "count": 1,
-        "names": ['ID_Visi_LIN_ANSAUG_VERDAMPFER', 'Unknown_Visibility_310'],
+        "names": ['ID_Visi_LIN_ANSAUG_VERDAMPFER'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3134,7 +3134,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 311,
         "count": 1,
-        "names": ['ID_Visi_LIN_MULTI1', 'Unknown_Visibility_311'],
+        "names": ['ID_Visi_LIN_MULTI1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3144,7 +3144,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 312,
         "count": 1,
-        "names": ['ID_Visi_LIN_MULTI2', 'Unknown_Visibility_312'],
+        "names": ['ID_Visi_LIN_MULTI2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3154,7 +3154,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 313,
         "count": 1,
-        "names": ['ID_Visi_Einst_Leistung_ZWE', 'Unknown_Visibility_313'],
+        "names": ['ID_Visi_Einst_Leistung_ZWE'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3164,7 +3164,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 314,
         "count": 1,
-        "names": ['ID_Visi_Sprachen_ESPANOL', 'Unknown_Visibility_314'],
+        "names": ['ID_Visi_Sprachen_ESPANOL'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3174,7 +3174,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 315,
         "count": 1,
-        "names": ['ID_Visi_Temp_BW_oben', 'Unknown_Visibility_315'],
+        "names": ['ID_Visi_Temp_BW_oben'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3184,7 +3184,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 316,
         "count": 1,
-        "names": ['ID_Visi_MAXIO', 'Unknown_Visibility_316'],
+        "names": ['ID_Visi_MAXIO'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3194,7 +3194,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 317,
         "count": 1,
-        "names": ['ID_Visi_OUT_Abtauwunsch', 'Unknown_Visibility_317'],
+        "names": ['ID_Visi_OUT_Abtauwunsch'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3204,7 +3204,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 318,
         "count": 1,
-        "names": ['ID_Visi_SmartGrid', 'Unknown_Visibility_318'],
+        "names": ['ID_Visi_SmartGrid'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3214,7 +3214,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 319,
         "count": 1,
-        "names": ['ID_Visi_Drehzahlgeregelt', 'Unknown_Visibility_319'],
+        "names": ['ID_Visi_Drehzahlgeregelt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3224,7 +3224,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 320,
         "count": 1,
-        "names": ['ID_Visi_P155_Inverter', 'Unknown_Visibility_320'],
+        "names": ['ID_Visi_P155_Inverter'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3234,7 +3234,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 321,
         "count": 1,
-        "names": ['ID_Visi_Leistungsfreigabe', 'Unknown_Visibility_321'],
+        "names": ['ID_Visi_Leistungsfreigabe'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3244,7 +3244,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 322,
         "count": 1,
-        "names": ['ID_Visi_Einst_Vorl_akt_Kuehl', 'Unknown_Visibility_322'],
+        "names": ['ID_Visi_Einst_Vorl_akt_Kuehl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3254,7 +3254,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 323,
         "count": 1,
-        "names": ['ID_Visi_Einst_Abtauen_im_Warmwasser', 'Unknown_Visibility_323'],
+        "names": ['ID_Visi_Einst_Abtauen_im_Warmwasser'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3264,7 +3264,7 @@ VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 324,
         "count": 1,
-        "names": ['ID_Visi_Waermemenge_ZWE', 'Unknown_Visibility_324'],
+        "names": ['ID_Visi_Waermemenge_ZWE'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',

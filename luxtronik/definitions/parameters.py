@@ -47,7 +47,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 0,
         "count": 1,
-        "names": ['ID_Transfert_LuxNet', 'Unknown_Parameter_0'],
+        "names": ['ID_Transfert_LuxNet'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -57,7 +57,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1,
         "count": 1,
-        "names": ['ID_Einst_WK_akt', 'Unknown_Parameter_1'],
+        "names": ['ID_Einst_WK_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -67,7 +67,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 2,
         "count": 1,
-        "names": ['ID_Einst_BWS_akt', 'Unknown_Parameter_2'],
+        "names": ['ID_Einst_BWS_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -77,7 +77,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 3,
         "count": 1,
-        "names": ['ID_Ba_Hz_akt', 'Unknown_Parameter_3'],
+        "names": ['ID_Ba_Hz_akt'],
         "type": HeatingMode,
         "writeable": True,
         "datatype": 'UINT32',
@@ -87,7 +87,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 4,
         "count": 1,
-        "names": ['ID_Ba_Bw_akt', 'Unknown_Parameter_4'],
+        "names": ['ID_Ba_Bw_akt'],
         "type": HotWaterMode,
         "writeable": True,
         "datatype": 'UINT32',
@@ -97,7 +97,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 5,
         "count": 1,
-        "names": ['ID_Ba_Al_akt', 'Unknown_Parameter_5'],
+        "names": ['ID_Ba_Al_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -107,7 +107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 6,
         "count": 1,
-        "names": ['ID_SU_FrkdHz', 'Unknown_Parameter_6'],
+        "names": ['ID_SU_FrkdHz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -117,7 +117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 7,
         "count": 1,
-        "names": ['ID_SU_FrkdBw', 'Unknown_Parameter_7'],
+        "names": ['ID_SU_FrkdBw'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -127,7 +127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 8,
         "count": 1,
-        "names": ['ID_SU_FrkdAl', 'Unknown_Parameter_8'],
+        "names": ['ID_SU_FrkdAl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -137,7 +137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 9,
         "count": 1,
-        "names": ['ID_Einst_HReg_akt', 'Unknown_Parameter_9'],
+        "names": ['ID_Einst_HReg_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -147,7 +147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 10,
         "count": 1,
-        "names": ['ID_Einst_HzHwMAt_akt', 'Unknown_Parameter_10'],
+        "names": ['ID_Einst_HzHwMAt_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -157,7 +157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 11,
         "count": 1,
-        "names": ['ID_Einst_HzHwHKE_akt', 'Unknown_Parameter_11'],
+        "names": ['ID_Einst_HzHwHKE_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -167,7 +167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 12,
         "count": 1,
-        "names": ['ID_Einst_HzHKRANH_akt', 'Unknown_Parameter_12'],
+        "names": ['ID_Einst_HzHKRANH_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -177,7 +177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 13,
         "count": 1,
-        "names": ['ID_Einst_HzHKRABS_akt', 'Unknown_Parameter_13'],
+        "names": ['ID_Einst_HzHKRABS_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -187,7 +187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 14,
         "count": 1,
-        "names": ['ID_Einst_HzMK1E_akt', 'Unknown_Parameter_14'],
+        "names": ['ID_Einst_HzMK1E_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -197,7 +197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 15,
         "count": 1,
-        "names": ['ID_Einst_HzMK1ANH_akt', 'Unknown_Parameter_15'],
+        "names": ['ID_Einst_HzMK1ANH_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -207,7 +207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 16,
         "count": 1,
-        "names": ['ID_Einst_HzMK1ABS_akt', 'Unknown_Parameter_16'],
+        "names": ['ID_Einst_HzMK1ABS_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -217,7 +217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 17,
         "count": 1,
-        "names": ['ID_Einst_HzFtRl_akt', 'Unknown_Parameter_17'],
+        "names": ['ID_Einst_HzFtRl_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -227,7 +227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 18,
         "count": 1,
-        "names": ['ID_Einst_HzFtMK1Vl_akt', 'Unknown_Parameter_18'],
+        "names": ['ID_Einst_HzFtMK1Vl_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -237,7 +237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 19,
         "count": 1,
-        "names": ['ID_Einst_SUBW_akt', 'Unknown_Parameter_19'],
+        "names": ['ID_Einst_SUBW_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -247,7 +247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 20,
         "count": 1,
-        "names": ['ID_Einst_BwTDI_akt_MO', 'Unknown_Parameter_20'],
+        "names": ['ID_Einst_BwTDI_akt_MO'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -257,7 +257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 21,
         "count": 1,
-        "names": ['ID_Einst_BwTDI_akt_DI', 'Unknown_Parameter_21'],
+        "names": ['ID_Einst_BwTDI_akt_DI'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -267,7 +267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 22,
         "count": 1,
-        "names": ['ID_Einst_BwTDI_akt_MI', 'Unknown_Parameter_22'],
+        "names": ['ID_Einst_BwTDI_akt_MI'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -277,7 +277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 23,
         "count": 1,
-        "names": ['ID_Einst_BwTDI_akt_DO', 'Unknown_Parameter_23'],
+        "names": ['ID_Einst_BwTDI_akt_DO'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -287,7 +287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 24,
         "count": 1,
-        "names": ['ID_Einst_BwTDI_akt_FR', 'Unknown_Parameter_24'],
+        "names": ['ID_Einst_BwTDI_akt_FR'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -297,7 +297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 25,
         "count": 1,
-        "names": ['ID_Einst_BwTDI_akt_SA', 'Unknown_Parameter_25'],
+        "names": ['ID_Einst_BwTDI_akt_SA'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -307,7 +307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 26,
         "count": 1,
-        "names": ['ID_Einst_BwTDI_akt_SO', 'Unknown_Parameter_26'],
+        "names": ['ID_Einst_BwTDI_akt_SO'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -317,7 +317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 27,
         "count": 1,
-        "names": ['ID_Einst_BwTDI_akt_AL', 'Unknown_Parameter_27'],
+        "names": ['ID_Einst_BwTDI_akt_AL'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -327,7 +327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 28,
         "count": 1,
-        "names": ['ID_Einst_AnlKonf_akt', 'Unknown_Parameter_28'],
+        "names": ['ID_Einst_AnlKonf_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -337,7 +337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 29,
         "count": 1,
-        "names": ['ID_Einst_Sprache_akt', 'Unknown_Parameter_29'],
+        "names": ['ID_Einst_Sprache_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -347,7 +347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 30,
         "count": 1,
-        "names": ['ID_Switchoff_Zahler', 'Unknown_Parameter_30'],
+        "names": ['ID_Switchoff_Zahler'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -357,7 +357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 31,
         "count": 1,
-        "names": ['ID_Switchoff_index', 'Unknown_Parameter_31'],
+        "names": ['ID_Switchoff_index'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -367,7 +367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 32,
         "count": 1,
-        "names": ['ID_Einst_EvuTyp_akt', 'Unknown_Parameter_32'],
+        "names": ['ID_Einst_EvuTyp_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -377,7 +377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 33,
         "count": 1,
-        "names": ['ID_Einst_RFVEinb_akt', 'Unknown_Parameter_33'],
+        "names": ['ID_Einst_RFVEinb_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -387,7 +387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 34,
         "count": 1,
-        "names": ['ID_Einst_AbtZykMax_akt', 'Unknown_Parameter_34'],
+        "names": ['ID_Einst_AbtZykMax_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -397,7 +397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 35,
         "count": 1,
-        "names": ['ID_Einst_HREinb_akt', 'Unknown_Parameter_35'],
+        "names": ['ID_Einst_HREinb_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -407,7 +407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 36,
         "count": 1,
-        "names": ['ID_Einst_ZWE1Art_akt', 'Unknown_Parameter_36'],
+        "names": ['ID_Einst_ZWE1Art_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -417,7 +417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 37,
         "count": 1,
-        "names": ['ID_Einst_ZWE1Fkt_akt', 'Unknown_Parameter_37'],
+        "names": ['ID_Einst_ZWE1Fkt_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -427,7 +427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 38,
         "count": 1,
-        "names": ['ID_Einst_ZWE2Art_akt', 'Unknown_Parameter_38'],
+        "names": ['ID_Einst_ZWE2Art_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -437,7 +437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 39,
         "count": 1,
-        "names": ['ID_Einst_ZWE2Fkt_akt', 'Unknown_Parameter_39'],
+        "names": ['ID_Einst_ZWE2Fkt_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -447,7 +447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 40,
         "count": 1,
-        "names": ['ID_Einst_BWBer_akt', 'Unknown_Parameter_40'],
+        "names": ['ID_Einst_BWBer_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -457,7 +457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 41,
         "count": 1,
-        "names": ['ID_Einst_En_Inst', 'Unknown_Parameter_41'],
+        "names": ['ID_Einst_En_Inst'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -467,7 +467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 42,
         "count": 1,
-        "names": ['ID_Einst_MK1Typ_akt', 'Unknown_Parameter_42'],
+        "names": ['ID_Einst_MK1Typ_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -477,7 +477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 43,
         "count": 1,
-        "names": ['ID_Einst_ABTLuft_akt', 'Unknown_Parameter_43'],
+        "names": ['ID_Einst_ABTLuft_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -487,7 +487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 44,
         "count": 1,
-        "names": ['ID_Einst_TLAbt_akt', 'Unknown_Parameter_44'],
+        "names": ['ID_Einst_TLAbt_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -497,7 +497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 45,
         "count": 1,
-        "names": ['ID_Einst_LAbtTime_akt', 'Unknown_Parameter_45'],
+        "names": ['ID_Einst_LAbtTime_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -507,7 +507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 46,
         "count": 1,
-        "names": ['ID_Einst_ASDTyp_akt', 'Unknown_Parameter_46'],
+        "names": ['ID_Einst_ASDTyp_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -517,7 +517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 47,
         "count": 1,
-        "names": ['ID_Einst_LGST_akt', 'Unknown_Parameter_47'],
+        "names": ['ID_Einst_LGST_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -527,7 +527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 48,
         "count": 1,
-        "names": ['ID_Einst_BwWpTime_akt', 'Unknown_Parameter_48'],
+        "names": ['ID_Einst_BwWpTime_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -537,7 +537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 49,
         "count": 1,
-        "names": ['ID_Einst_Popt_akt', 'Unknown_Parameter_49'],
+        "names": ['ID_Einst_Popt_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -547,7 +547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 50,
         "count": 1,
-        "names": ['ID_Einst_Kurzprog_akt', 'Unknown_Parameter_50'],
+        "names": ['ID_Einst_Kurzprog_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -557,7 +557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 51,
         "count": 1,
-        "names": ['ID_Timer_Kurzprog_akt', 'Unknown_Parameter_51'],
+        "names": ['ID_Timer_Kurzprog_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -567,7 +567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 52,
         "count": 1,
-        "names": ['ID_Einst_ManAbt_akt', 'Unknown_Parameter_52'],
+        "names": ['ID_Einst_ManAbt_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -577,7 +577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 53,
         "count": 1,
-        "names": ['ID_Einst_Ahz_akt', 'Unknown_Parameter_53'],
+        "names": ['ID_Einst_Ahz_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -587,7 +587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 54,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_1', 'Unknown_Parameter_54'],
+        "names": ['ID_Einst_TVL_Ahz_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -597,7 +597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 55,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_2', 'Unknown_Parameter_55'],
+        "names": ['ID_Einst_TVL_Ahz_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -607,7 +607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 56,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_3', 'Unknown_Parameter_56'],
+        "names": ['ID_Einst_TVL_Ahz_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -617,7 +617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 57,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_4', 'Unknown_Parameter_57'],
+        "names": ['ID_Einst_TVL_Ahz_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -627,7 +627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 58,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_5', 'Unknown_Parameter_58'],
+        "names": ['ID_Einst_TVL_Ahz_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -637,7 +637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 59,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_6', 'Unknown_Parameter_59'],
+        "names": ['ID_Einst_TVL_Ahz_6'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -647,7 +647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 60,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_7', 'Unknown_Parameter_60'],
+        "names": ['ID_Einst_TVL_Ahz_7'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -657,7 +657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 61,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_8', 'Unknown_Parameter_61'],
+        "names": ['ID_Einst_TVL_Ahz_8'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -667,7 +667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 62,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_9', 'Unknown_Parameter_62'],
+        "names": ['ID_Einst_TVL_Ahz_9'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -677,7 +677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 63,
         "count": 1,
-        "names": ['ID_Einst_TVL_Ahz_10', 'Unknown_Parameter_63'],
+        "names": ['ID_Einst_TVL_Ahz_10'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -687,7 +687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 64,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_1', 'Unknown_Parameter_64'],
+        "names": ['ID_Einst_TVL_Std_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -697,7 +697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 65,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_2', 'Unknown_Parameter_65'],
+        "names": ['ID_Einst_TVL_Std_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -707,7 +707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 66,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_3', 'Unknown_Parameter_66'],
+        "names": ['ID_Einst_TVL_Std_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -717,7 +717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 67,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_4', 'Unknown_Parameter_67'],
+        "names": ['ID_Einst_TVL_Std_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -727,7 +727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 68,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_5', 'Unknown_Parameter_68'],
+        "names": ['ID_Einst_TVL_Std_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -737,7 +737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 69,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_6', 'Unknown_Parameter_69'],
+        "names": ['ID_Einst_TVL_Std_6'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -747,7 +747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 70,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_7', 'Unknown_Parameter_70'],
+        "names": ['ID_Einst_TVL_Std_7'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -757,7 +757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 71,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_8', 'Unknown_Parameter_71'],
+        "names": ['ID_Einst_TVL_Std_8'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -767,7 +767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 72,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_9', 'Unknown_Parameter_72'],
+        "names": ['ID_Einst_TVL_Std_9'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -777,7 +777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 73,
         "count": 1,
-        "names": ['ID_Einst_TVL_Std_10', 'Unknown_Parameter_73'],
+        "names": ['ID_Einst_TVL_Std_10'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -787,7 +787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 74,
         "count": 1,
-        "names": ['ID_Einst_BWS_Hyst_akt', 'Unknown_Parameter_74'],
+        "names": ['ID_Einst_BWS_Hyst_akt'],
         "type": Kelvin,
         "writeable": True,
         "datatype": 'INT32',
@@ -797,7 +797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 75,
         "count": 1,
-        "names": ['ID_Temp_TBW_BwHD_saved', 'Unknown_Parameter_75'],
+        "names": ['ID_Temp_TBW_BwHD_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -807,7 +807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 76,
         "count": 1,
-        "names": ['ID_Einst_ABT1_akt', 'Unknown_Parameter_76'],
+        "names": ['ID_Einst_ABT1_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -817,7 +817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 77,
         "count": 1,
-        "names": ['ID_Einst_LABTpaus_akt', 'Unknown_Parameter_77'],
+        "names": ['ID_Einst_LABTpaus_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -827,7 +827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 78,
         "count": 1,
-        "names": ['ID_AHZ_state_akt', 'Unknown_Parameter_78'],
+        "names": ['ID_AHZ_state_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -837,7 +837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 79,
         "count": 1,
-        "names": ['ID_Sollwert_TRL_HZ_AHZ', 'Unknown_Parameter_79'],
+        "names": ['ID_Sollwert_TRL_HZ_AHZ'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -847,7 +847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 80,
         "count": 1,
-        "names": ['ID_AHP_valid_records', 'Unknown_Parameter_80'],
+        "names": ['ID_AHP_valid_records'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -857,7 +857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 81,
         "count": 1,
-        "names": ['ID_Timer_AHZ_akt', 'Unknown_Parameter_81'],
+        "names": ['ID_Timer_AHZ_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -867,7 +867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 82,
         "count": 1,
-        "names": ['ID_Einst_BWTINP_akt', 'Unknown_Parameter_82'],
+        "names": ['ID_Einst_BWTINP_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -877,7 +877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 83,
         "count": 1,
-        "names": ['ID_Einst_ZUPTYP_akt', 'Unknown_Parameter_83'],
+        "names": ['ID_Einst_ZUPTYP_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -887,7 +887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 84,
         "count": 1,
-        "names": ['ID_Sollwert_TLG_max', 'Unknown_Parameter_84'],
+        "names": ['ID_Sollwert_TLG_max'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -897,7 +897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 85,
         "count": 1,
-        "names": ['ID_Einst_BWZIP_akt', 'Unknown_Parameter_85'],
+        "names": ['ID_Einst_BWZIP_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -907,7 +907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 86,
         "count": 1,
-        "names": ['ID_Einst_ERRmZWE_akt', 'Unknown_Parameter_86'],
+        "names": ['ID_Einst_ERRmZWE_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -917,7 +917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 87,
         "count": 1,
-        "names": ['ID_Einst_TRBegr_akt', 'Unknown_Parameter_87'],
+        "names": ['ID_Einst_TRBegr_akt'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -927,7 +927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 88,
         "count": 1,
-        "names": ['ID_Einst_HRHyst_akt', 'Unknown_Parameter_88'],
+        "names": ['ID_Einst_HRHyst_akt'],
         "type": Kelvin,
         "writeable": True,
         "datatype": 'INT32',
@@ -937,7 +937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 89,
         "count": 1,
-        "names": ['ID_Einst_TRErhmax_akt', 'Unknown_Parameter_89'],
+        "names": ['ID_Einst_TRErhmax_akt'],
         "type": Kelvin,
         "writeable": True,
         "datatype": 'INT32',
@@ -947,7 +947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 90,
         "count": 1,
-        "names": ['ID_Einst_ZWEFreig_akt', 'Unknown_Parameter_90'],
+        "names": ['ID_Einst_ZWEFreig_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -957,7 +957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 91,
         "count": 1,
-        "names": ['ID_Einst_TAmax_akt', 'Unknown_Parameter_91'],
+        "names": ['ID_Einst_TAmax_akt'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -967,7 +967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 92,
         "count": 1,
-        "names": ['ID_Einst_TAmin_akt', 'Unknown_Parameter_92'],
+        "names": ['ID_Einst_TAmin_akt'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -977,7 +977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 93,
         "count": 1,
-        "names": ['ID_Einst_TWQmin_akt', 'Unknown_Parameter_93'],
+        "names": ['ID_Einst_TWQmin_akt'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -987,7 +987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 94,
         "count": 1,
-        "names": ['ID_Einst_THGmax_akt', 'Unknown_Parameter_94'],
+        "names": ['ID_Einst_THGmax_akt'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -997,7 +997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 95,
         "count": 1,
-        "names": ['ID_Einst_FRGT2VD_akt', 'Unknown_Parameter_95'],
+        "names": ['ID_Einst_FRGT2VD_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1007,7 +1007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 96,
         "count": 1,
-        "names": ['ID_Einst_TV2VDBW_akt', 'Unknown_Parameter_96'],
+        "names": ['ID_Einst_TV2VDBW_akt'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1017,7 +1017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 97,
         "count": 1,
-        "names": ['ID_Einst_SuAll_akt', 'Unknown_Parameter_97'],
+        "names": ['ID_Einst_SuAll_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1027,7 +1027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 98,
         "count": 1,
-        "names": ['ID_Einst_TAbtEnd_akt', 'Unknown_Parameter_98'],
+        "names": ['ID_Einst_TAbtEnd_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1037,7 +1037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 99,
         "count": 1,
-        "names": ['ID_Einst_NrKlingel_akt', 'Unknown_Parameter_99'],
+        "names": ['ID_Einst_NrKlingel_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1047,7 +1047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 100,
         "count": 1,
-        "names": ['ID_Einst_BWStyp_akt', 'Unknown_Parameter_100'],
+        "names": ['ID_Einst_BWStyp_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1057,7 +1057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 101,
         "count": 1,
-        "names": ['ID_Einst_ABT2_akt', 'Unknown_Parameter_101'],
+        "names": ['ID_Einst_ABT2_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1067,7 +1067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 102,
         "count": 1,
-        "names": ['ID_Einst_UeVd_akt', 'Unknown_Parameter_102'],
+        "names": ['ID_Einst_UeVd_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1077,7 +1077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 103,
         "count": 1,
-        "names": ['ID_Einst_RTyp_akt', 'Unknown_Parameter_103'],
+        "names": ['ID_Einst_RTyp_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1087,7 +1087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 104,
         "count": 1,
-        "names": ['ID_Einst_AhpM_akt', 'Unknown_Parameter_104'],
+        "names": ['ID_Einst_AhpM_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1097,7 +1097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 105,
         "count": 1,
-        "names": ['ID_Soll_BWS_akt', 'Unknown_Parameter_105'],
+        "names": ['ID_Soll_BWS_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1107,7 +1107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 106,
         "count": 1,
-        "names": ['ID_Timer_Password', 'Unknown_Parameter_106'],
+        "names": ['ID_Timer_Password'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1117,7 +1117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 107,
         "count": 1,
-        "names": ['ID_Einst_Zugangscode', 'Unknown_Parameter_107'],
+        "names": ['ID_Einst_Zugangscode'],
         "type": AccessLevel,
         "writeable": True,
         "datatype": 'UINT32',
@@ -1127,7 +1127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 108,
         "count": 1,
-        "names": ['ID_Einst_BA_Kuehl_akt', 'Unknown_Parameter_108'],
+        "names": ['ID_Einst_BA_Kuehl_akt'],
         "type": CoolingMode,
         "writeable": True,
         "datatype": 'UINT32',
@@ -1137,7 +1137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 109,
         "count": 1,
-        "names": ['ID_Sollwert_Kuehl1_akt', 'Unknown_Parameter_109'],
+        "names": ['ID_Sollwert_Kuehl1_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1147,7 +1147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 110,
         "count": 1,
-        "names": ['ID_Einst_KuehlFreig_akt', 'Unknown_Parameter_110'],
+        "names": ['ID_Einst_KuehlFreig_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1157,7 +1157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 111,
         "count": 1,
-        "names": ['ID_Einst_TAbsMin_akt', 'Unknown_Parameter_111'],
+        "names": ['ID_Einst_TAbsMin_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1167,7 +1167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 112,
         "count": 1,
-        "names": ['ID_TWQmin_saved', 'Unknown_Parameter_112'],
+        "names": ['ID_TWQmin_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1177,7 +1177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 113,
         "count": 1,
-        "names": ['ID_CWP_saved', 'Unknown_Parameter_113'],
+        "names": ['ID_CWP_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1187,7 +1187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 114,
         "count": 1,
-        "names": ['ID_Einst_Anode_akt', 'Unknown_Parameter_114'],
+        "names": ['ID_Einst_Anode_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1197,7 +1197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 115,
         "count": 1,
-        "names": ['ID_Timer_pexoff_akt', 'Unknown_Parameter_115'],
+        "names": ['ID_Timer_pexoff_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1207,7 +1207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 116,
         "count": 1,
-        "names": ['ID_Einst_AnlPrio_Hzakt', 'Unknown_Parameter_116'],
+        "names": ['ID_Einst_AnlPrio_Hzakt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1217,7 +1217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 117,
         "count": 1,
-        "names": ['ID_Einst_AnlPrio_Bwakt', 'Unknown_Parameter_117'],
+        "names": ['ID_Einst_AnlPrio_Bwakt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1227,7 +1227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 118,
         "count": 1,
-        "names": ['ID_Einst_AnlPrio_Swakt', 'Unknown_Parameter_118'],
+        "names": ['ID_Einst_AnlPrio_Swakt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1237,7 +1237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 119,
         "count": 1,
-        "names": ['ID_Ba_Sw_akt', 'Unknown_Parameter_119'],
+        "names": ['ID_Ba_Sw_akt'],
         "type": PoolMode,
         "writeable": True,
         "datatype": 'UINT32',
@@ -1247,7 +1247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 120,
         "count": 1,
-        "names": ['ID_Einst_RTypMK1_akt', 'Unknown_Parameter_120'],
+        "names": ['ID_Einst_RTypMK1_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1257,7 +1257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 121,
         "count": 1,
-        "names": ['ID_Einst_RTypMK2_akt', 'Unknown_Parameter_121'],
+        "names": ['ID_Einst_RTypMK2_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1267,7 +1267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 122,
         "count": 1,
-        "names": ['ID_Einst_TDC_Ein_akt', 'Unknown_Parameter_122'],
+        "names": ['ID_Einst_TDC_Ein_akt'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -1277,7 +1277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 123,
         "count": 1,
-        "names": ['ID_Einst_TDC_Aus_akt', 'Unknown_Parameter_123'],
+        "names": ['ID_Einst_TDC_Aus_akt'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -1287,7 +1287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 124,
         "count": 1,
-        "names": ['ID_Einst_TDC_Max_akt', 'Unknown_Parameter_124'],
+        "names": ['ID_Einst_TDC_Max_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1297,7 +1297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 125,
         "count": 1,
-        "names": ['ID_Einst_HysHzExEn_akt', 'Unknown_Parameter_125'],
+        "names": ['ID_Einst_HysHzExEn_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1307,7 +1307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 126,
         "count": 1,
-        "names": ['ID_Einst_HysBwExEn_akt', 'Unknown_Parameter_126'],
+        "names": ['ID_Einst_HysBwExEn_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1317,7 +1317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 127,
         "count": 1,
-        "names": ['ID_Einst_ZWE3Art_akt', 'Unknown_Parameter_127'],
+        "names": ['ID_Einst_ZWE3Art_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1327,7 +1327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 128,
         "count": 1,
-        "names": ['ID_Einst_ZWE3Fkt_akt', 'Unknown_Parameter_128'],
+        "names": ['ID_Einst_ZWE3Fkt_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1337,7 +1337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 129,
         "count": 1,
-        "names": ['ID_Einst_HzSup_akt', 'Unknown_Parameter_129'],
+        "names": ['ID_Einst_HzSup_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1347,7 +1347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 130,
         "count": 1,
-        "names": ['ID_Einst_MK2Typ_akt', 'Unknown_Parameter_130'],
+        "names": ['ID_Einst_MK2Typ_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1357,7 +1357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 131,
         "count": 1,
-        "names": ['ID_Einst_KuTyp_akt', 'Unknown_Parameter_131'],
+        "names": ['ID_Einst_KuTyp_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1367,7 +1367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 132,
         "count": 1,
-        "names": ['ID_Sollwert_KuCft1_akt', 'Unknown_Parameter_132'],
+        "names": ['ID_Sollwert_KuCft1_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1377,7 +1377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 133,
         "count": 1,
-        "names": ['ID_Sollwert_KuCft2_akt', 'Unknown_Parameter_133'],
+        "names": ['ID_Sollwert_KuCft2_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1387,7 +1387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 134,
         "count": 1,
-        "names": ['ID_Sollwert_AtDif1_akt', 'Unknown_Parameter_134'],
+        "names": ['ID_Sollwert_AtDif1_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1397,7 +1397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 135,
         "count": 1,
-        "names": ['ID_Sollwert_AtDif2_akt', 'Unknown_Parameter_135'],
+        "names": ['ID_Sollwert_AtDif2_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1407,7 +1407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 136,
         "count": 1,
-        "names": ['ID_SU_FrkdSwb', 'Unknown_Parameter_136'],
+        "names": ['ID_SU_FrkdSwb'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1417,7 +1417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 137,
         "count": 1,
-        "names": ['ID_Einst_SwbBer_akt', 'Unknown_Parameter_137'],
+        "names": ['ID_Einst_SwbBer_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1427,7 +1427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 138,
         "count": 1,
-        "names": ['ID_Einst_TV2VDSWB_akt', 'Unknown_Parameter_138'],
+        "names": ['ID_Einst_TV2VDSWB_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1437,7 +1437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 139,
         "count": 1,
-        "names": ['ID_Einst_MinSwan_Time_akt', 'Unknown_Parameter_139'],
+        "names": ['ID_Einst_MinSwan_Time_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1447,7 +1447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 140,
         "count": 1,
-        "names": ['ID_Einst_SuMk2_akt', 'Unknown_Parameter_140'],
+        "names": ['ID_Einst_SuMk2_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1457,7 +1457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 141,
         "count": 1,
-        "names": ['ID_Einst_HzMK2E_akt', 'Unknown_Parameter_141'],
+        "names": ['ID_Einst_HzMK2E_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1467,7 +1467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 142,
         "count": 1,
-        "names": ['ID_Einst_HzMK2ANH_akt', 'Unknown_Parameter_142'],
+        "names": ['ID_Einst_HzMK2ANH_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1477,7 +1477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 143,
         "count": 1,
-        "names": ['ID_Einst_HzMK2ABS_akt', 'Unknown_Parameter_143'],
+        "names": ['ID_Einst_HzMK2ABS_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -1487,7 +1487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 144,
         "count": 1,
-        "names": ['ID_Einst_HzMK2Hgr_akt', 'Unknown_Parameter_144'],
+        "names": ['ID_Einst_HzMK2Hgr_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1497,7 +1497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 145,
         "count": 1,
-        "names": ['ID_Einst_HzFtMK2Vl_akt', 'Unknown_Parameter_145'],
+        "names": ['ID_Einst_HzFtMK2Vl_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1507,7 +1507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 146,
         "count": 1,
-        "names": ['ID_Temp_THG_BwHD_saved', 'Unknown_Parameter_146'],
+        "names": ['ID_Temp_THG_BwHD_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1517,7 +1517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 147,
         "count": 1,
-        "names": ['ID_Temp_TA_BwHD_saved', 'Unknown_Parameter_147'],
+        "names": ['ID_Temp_TA_BwHD_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1527,7 +1527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 148,
         "count": 1,
-        "names": ['ID_Einst_BwHup_akt', 'Unknown_Parameter_148'],
+        "names": ['ID_Einst_BwHup_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1537,7 +1537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 149,
         "count": 1,
-        "names": ['ID_Einst_TVLmax_akt', 'Unknown_Parameter_149'],
+        "names": ['ID_Einst_TVLmax_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1547,7 +1547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 150,
         "count": 1,
-        "names": ['ID_Einst_MK1LzFaktor_akt', 'Unknown_Parameter_150'],
+        "names": ['ID_Einst_MK1LzFaktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1557,7 +1557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 151,
         "count": 1,
-        "names": ['ID_Einst_MK2LzFaktor_akt', 'Unknown_Parameter_151'],
+        "names": ['ID_Einst_MK2LzFaktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1567,7 +1567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 152,
         "count": 1,
-        "names": ['ID_Einst_MK1PerFaktor_akt', 'Unknown_Parameter_152'],
+        "names": ['ID_Einst_MK1PerFaktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1577,7 +1577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 153,
         "count": 1,
-        "names": ['ID_Einst_MK2PerFaktor_akt', 'Unknown_Parameter_153'],
+        "names": ['ID_Einst_MK2PerFaktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1587,7 +1587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 154,
         "count": 1,
-        "names": ['ID_Entl_Zyklus_akt', 'Unknown_Parameter_154'],
+        "names": ['ID_Entl_Zyklus_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1597,7 +1597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 155,
         "count": 1,
-        "names": ['ID_Einst_Entl_time_akt', 'Unknown_Parameter_155'],
+        "names": ['ID_Einst_Entl_time_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1607,7 +1607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 156,
         "count": 1,
-        "names": ['ID_Entl_Pause', 'Unknown_Parameter_156'],
+        "names": ['ID_Entl_Pause'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1617,7 +1617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 157,
         "count": 1,
-        "names": ['ID_Entl_timer', 'Unknown_Parameter_157'],
+        "names": ['ID_Entl_timer'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1627,7 +1627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 158,
         "count": 1,
-        "names": ['ID_Einst_Entl_akt', 'Unknown_Parameter_158'],
+        "names": ['ID_Einst_Entl_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1637,7 +1637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 159,
         "count": 1,
-        "names": ['ID_Ahz_HLeist_confirmed', 'Unknown_Parameter_159'],
+        "names": ['ID_Ahz_HLeist_confirmed'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1647,7 +1647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 160,
         "count": 1,
-        "names": ['ID_FirstInit_akt', 'Unknown_Parameter_160'],
+        "names": ['ID_FirstInit_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1657,7 +1657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 161,
         "count": 1,
-        "names": ['ID_Einst_SuAll_akt2', 'Unknown_Parameter_161'],
+        "names": ['ID_Einst_SuAll_akt2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1667,7 +1667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 162,
         "count": 1,
-        "names": ['ID_Einst_SuAllWo_zeit_0_0', 'Unknown_Parameter_162'],
+        "names": ['ID_Einst_SuAllWo_zeit_0_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1677,7 +1677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 163,
         "count": 1,
-        "names": ['ID_Einst_SuAllWo_zeit_0_1', 'Unknown_Parameter_163'],
+        "names": ['ID_Einst_SuAllWo_zeit_0_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1687,7 +1687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 164,
         "count": 1,
-        "names": ['ID_Einst_SuAllWo_zeit_1_0', 'Unknown_Parameter_164'],
+        "names": ['ID_Einst_SuAllWo_zeit_1_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1697,7 +1697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 165,
         "count": 1,
-        "names": ['ID_Einst_SuAllWo_zeit_1_1', 'Unknown_Parameter_165'],
+        "names": ['ID_Einst_SuAllWo_zeit_1_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1707,7 +1707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 166,
         "count": 1,
-        "names": ['ID_Einst_SuAllWo_zeit_2_0', 'Unknown_Parameter_166'],
+        "names": ['ID_Einst_SuAllWo_zeit_2_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1717,7 +1717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 167,
         "count": 1,
-        "names": ['ID_Einst_SuAllWo_zeit_2_1', 'Unknown_Parameter_167'],
+        "names": ['ID_Einst_SuAllWo_zeit_2_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1727,7 +1727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 168,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_0_0', 'Unknown_Parameter_168'],
+        "names": ['ID_Einst_SuAll25_zeit_0_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1737,7 +1737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 169,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_0_1', 'Unknown_Parameter_169'],
+        "names": ['ID_Einst_SuAll25_zeit_0_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1747,7 +1747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 170,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_1_0', 'Unknown_Parameter_170'],
+        "names": ['ID_Einst_SuAll25_zeit_1_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1757,7 +1757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 171,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_1_1', 'Unknown_Parameter_171'],
+        "names": ['ID_Einst_SuAll25_zeit_1_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1767,7 +1767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 172,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_2_0', 'Unknown_Parameter_172'],
+        "names": ['ID_Einst_SuAll25_zeit_2_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1777,7 +1777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 173,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_2_1', 'Unknown_Parameter_173'],
+        "names": ['ID_Einst_SuAll25_zeit_2_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1787,7 +1787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 174,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_0_2', 'Unknown_Parameter_174'],
+        "names": ['ID_Einst_SuAll25_zeit_0_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1797,7 +1797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 175,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_0_3', 'Unknown_Parameter_175'],
+        "names": ['ID_Einst_SuAll25_zeit_0_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1807,7 +1807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 176,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_1_2', 'Unknown_Parameter_176'],
+        "names": ['ID_Einst_SuAll25_zeit_1_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1817,7 +1817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 177,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_1_3', 'Unknown_Parameter_177'],
+        "names": ['ID_Einst_SuAll25_zeit_1_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1827,7 +1827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 178,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_2_2', 'Unknown_Parameter_178'],
+        "names": ['ID_Einst_SuAll25_zeit_2_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1837,7 +1837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 179,
         "count": 1,
-        "names": ['ID_Einst_SuAll25_zeit_2_3', 'Unknown_Parameter_179'],
+        "names": ['ID_Einst_SuAll25_zeit_2_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1847,7 +1847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 180,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_0', 'Unknown_Parameter_180'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1857,7 +1857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 181,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_1', 'Unknown_Parameter_181'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1867,7 +1867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 182,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_0', 'Unknown_Parameter_182'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1877,7 +1877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 183,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_1', 'Unknown_Parameter_183'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1887,7 +1887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 184,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_0', 'Unknown_Parameter_184'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1897,7 +1897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 185,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_1', 'Unknown_Parameter_185'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1907,7 +1907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 186,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_2', 'Unknown_Parameter_186'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1917,7 +1917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 187,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_3', 'Unknown_Parameter_187'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1927,7 +1927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 188,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_2', 'Unknown_Parameter_188'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1937,7 +1937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 189,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_3', 'Unknown_Parameter_189'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1947,7 +1947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 190,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_2', 'Unknown_Parameter_190'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1957,7 +1957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 191,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_3', 'Unknown_Parameter_191'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1967,7 +1967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 192,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_4', 'Unknown_Parameter_192'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1977,7 +1977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 193,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_5', 'Unknown_Parameter_193'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1987,7 +1987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 194,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_4', 'Unknown_Parameter_194'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1997,7 +1997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 195,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_5', 'Unknown_Parameter_195'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2007,7 +2007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 196,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_4', 'Unknown_Parameter_196'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2017,7 +2017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 197,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_5', 'Unknown_Parameter_197'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2027,7 +2027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 198,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_6', 'Unknown_Parameter_198'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_6'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2037,7 +2037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 199,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_7', 'Unknown_Parameter_199'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_7'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2047,7 +2047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 200,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_6', 'Unknown_Parameter_200'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_6'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2057,7 +2057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 201,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_7', 'Unknown_Parameter_201'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_7'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2067,7 +2067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 202,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_6', 'Unknown_Parameter_202'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_6'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2077,7 +2077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 203,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_7', 'Unknown_Parameter_203'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_7'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2087,7 +2087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 204,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_8', 'Unknown_Parameter_204'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_8'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2097,7 +2097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 205,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_9', 'Unknown_Parameter_205'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_9'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2107,7 +2107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 206,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_8', 'Unknown_Parameter_206'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_8'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2117,7 +2117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 207,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_9', 'Unknown_Parameter_207'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_9'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2127,7 +2127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 208,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_8', 'Unknown_Parameter_208'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_8'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2137,7 +2137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 209,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_9', 'Unknown_Parameter_209'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_9'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2147,7 +2147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 210,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_10', 'Unknown_Parameter_210'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_10'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2157,7 +2157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 211,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_11', 'Unknown_Parameter_211'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_11'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2167,7 +2167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 212,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_10', 'Unknown_Parameter_212'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_10'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2177,7 +2177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 213,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_11', 'Unknown_Parameter_213'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_11'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2187,7 +2187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 214,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_10', 'Unknown_Parameter_214'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_10'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2197,7 +2197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 215,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_11', 'Unknown_Parameter_215'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_11'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2207,7 +2207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 216,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_12', 'Unknown_Parameter_216'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_12'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2217,7 +2217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 217,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_0_13', 'Unknown_Parameter_217'],
+        "names": ['ID_Einst_SuAllTg_zeit_0_13'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2227,7 +2227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 218,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_12', 'Unknown_Parameter_218'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_12'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2237,7 +2237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 219,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_1_13', 'Unknown_Parameter_219'],
+        "names": ['ID_Einst_SuAllTg_zeit_1_13'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2247,7 +2247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 220,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_12', 'Unknown_Parameter_220'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_12'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2257,7 +2257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 221,
         "count": 1,
-        "names": ['ID_Einst_SuAllTg_zeit_2_13', 'Unknown_Parameter_221'],
+        "names": ['ID_Einst_SuAllTg_zeit_2_13'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2267,7 +2267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 222,
         "count": 1,
-        "names": ['ID_Einst_SuHkr_akt', 'Unknown_Parameter_222'],
+        "names": ['ID_Einst_SuHkr_akt'],
         "type": TimerProgram,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2277,7 +2277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 223,
         "count": 1,
-        "names": ['ID_Einst_SuHkrW0_zeit_0_0', 'Unknown_Parameter_223'],
+        "names": ['ID_Einst_SuHkrW0_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2287,7 +2287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 224,
         "count": 1,
-        "names": ['ID_Einst_SuHkrW0_zeit_0_1', 'Unknown_Parameter_224'],
+        "names": ['ID_Einst_SuHkrW0_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2297,7 +2297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 225,
         "count": 1,
-        "names": ['ID_Einst_SuHkrW0_zeit_1_0', 'Unknown_Parameter_225'],
+        "names": ['ID_Einst_SuHkrW0_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2307,7 +2307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 226,
         "count": 1,
-        "names": ['ID_Einst_SuHkrW0_zeit_1_1', 'Unknown_Parameter_226'],
+        "names": ['ID_Einst_SuHkrW0_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2317,7 +2317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 227,
         "count": 1,
-        "names": ['ID_Einst_SuHkrW0_zeit_2_0', 'Unknown_Parameter_227'],
+        "names": ['ID_Einst_SuHkrW0_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2327,7 +2327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 228,
         "count": 1,
-        "names": ['ID_Einst_SuHkrW0_zeit_2_1', 'Unknown_Parameter_228'],
+        "names": ['ID_Einst_SuHkrW0_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2337,7 +2337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 229,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_0_0', 'Unknown_Parameter_229'],
+        "names": ['ID_Einst_SuHkr25_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2347,7 +2347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 230,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_0_1', 'Unknown_Parameter_230'],
+        "names": ['ID_Einst_SuHkr25_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2357,7 +2357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 231,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_1_0', 'Unknown_Parameter_231'],
+        "names": ['ID_Einst_SuHkr25_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2367,7 +2367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 232,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_1_1', 'Unknown_Parameter_232'],
+        "names": ['ID_Einst_SuHkr25_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2377,7 +2377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 233,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_2_0', 'Unknown_Parameter_233'],
+        "names": ['ID_Einst_SuHkr25_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2387,7 +2387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 234,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_2_1', 'Unknown_Parameter_234'],
+        "names": ['ID_Einst_SuHkr25_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2397,7 +2397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 235,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_0_2', 'Unknown_Parameter_235'],
+        "names": ['ID_Einst_SuHkr25_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2407,7 +2407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 236,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_0_3', 'Unknown_Parameter_236'],
+        "names": ['ID_Einst_SuHkr25_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2417,7 +2417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 237,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_1_2', 'Unknown_Parameter_237'],
+        "names": ['ID_Einst_SuHkr25_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2427,7 +2427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 238,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_1_3', 'Unknown_Parameter_238'],
+        "names": ['ID_Einst_SuHkr25_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2437,7 +2437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 239,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_2_2', 'Unknown_Parameter_239'],
+        "names": ['ID_Einst_SuHkr25_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2447,7 +2447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 240,
         "count": 1,
-        "names": ['ID_Einst_SuHkr25_zeit_2_3', 'Unknown_Parameter_240'],
+        "names": ['ID_Einst_SuHkr25_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2457,7 +2457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 241,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_0', 'Unknown_Parameter_241'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2467,7 +2467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 242,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_1', 'Unknown_Parameter_242'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2477,7 +2477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 243,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_0', 'Unknown_Parameter_243'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2487,7 +2487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 244,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_1', 'Unknown_Parameter_244'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2497,7 +2497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 245,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_0', 'Unknown_Parameter_245'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2507,7 +2507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 246,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_1', 'Unknown_Parameter_246'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2517,7 +2517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 247,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_2', 'Unknown_Parameter_247'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2527,7 +2527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 248,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_3', 'Unknown_Parameter_248'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2537,7 +2537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 249,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_2', 'Unknown_Parameter_249'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2547,7 +2547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 250,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_3', 'Unknown_Parameter_250'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2557,7 +2557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 251,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_2', 'Unknown_Parameter_251'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2567,7 +2567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 252,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_3', 'Unknown_Parameter_252'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2577,7 +2577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 253,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_4', 'Unknown_Parameter_253'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2587,7 +2587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 254,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_5', 'Unknown_Parameter_254'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2597,7 +2597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 255,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_4', 'Unknown_Parameter_255'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2607,7 +2607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 256,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_5', 'Unknown_Parameter_256'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2617,7 +2617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 257,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_4', 'Unknown_Parameter_257'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2627,7 +2627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 258,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_5', 'Unknown_Parameter_258'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2637,7 +2637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 259,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_6', 'Unknown_Parameter_259'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2647,7 +2647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 260,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_7', 'Unknown_Parameter_260'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2657,7 +2657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 261,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_6', 'Unknown_Parameter_261'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2667,7 +2667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 262,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_7', 'Unknown_Parameter_262'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2677,7 +2677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 263,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_6', 'Unknown_Parameter_263'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2687,7 +2687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 264,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_7', 'Unknown_Parameter_264'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2697,7 +2697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 265,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_8', 'Unknown_Parameter_265'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2707,7 +2707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 266,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_9', 'Unknown_Parameter_266'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2717,7 +2717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 267,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_8', 'Unknown_Parameter_267'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2727,7 +2727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 268,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_9', 'Unknown_Parameter_268'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2737,7 +2737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 269,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_8', 'Unknown_Parameter_269'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2747,7 +2747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 270,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_9', 'Unknown_Parameter_270'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2757,7 +2757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 271,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_10', 'Unknown_Parameter_271'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2767,7 +2767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 272,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_11', 'Unknown_Parameter_272'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2777,7 +2777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 273,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_10', 'Unknown_Parameter_273'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2787,7 +2787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 274,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_11', 'Unknown_Parameter_274'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2797,7 +2797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 275,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_10', 'Unknown_Parameter_275'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2807,7 +2807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 276,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_11', 'Unknown_Parameter_276'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2817,7 +2817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 277,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_12', 'Unknown_Parameter_277'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2827,7 +2827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 278,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_0_13', 'Unknown_Parameter_278'],
+        "names": ['ID_Einst_SuHkrTG_zeit_0_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2837,7 +2837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 279,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_12', 'Unknown_Parameter_279'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2847,7 +2847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 280,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_1_13', 'Unknown_Parameter_280'],
+        "names": ['ID_Einst_SuHkrTG_zeit_1_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2857,7 +2857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 281,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_12', 'Unknown_Parameter_281'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2867,7 +2867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 282,
         "count": 1,
-        "names": ['ID_Einst_SuHkrTG_zeit_2_13', 'Unknown_Parameter_282'],
+        "names": ['ID_Einst_SuHkrTG_zeit_2_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -2877,7 +2877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 283,
         "count": 1,
-        "names": ['ID_Einst_SuMk1_akt', 'Unknown_Parameter_283'],
+        "names": ['ID_Einst_SuMk1_akt'],
         "type": TimerProgram,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2887,7 +2887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 284,
         "count": 1,
-        "names": ['ID_Einst_SuMk1W0_zeit_0_0', 'Unknown_Parameter_284'],
+        "names": ['ID_Einst_SuMk1W0_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2897,7 +2897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 285,
         "count": 1,
-        "names": ['ID_Einst_SuMk1W0_zeit_0_1', 'Unknown_Parameter_285'],
+        "names": ['ID_Einst_SuMk1W0_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2907,7 +2907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 286,
         "count": 1,
-        "names": ['ID_Einst_SuMk1W0_zeit_1_0', 'Unknown_Parameter_286'],
+        "names": ['ID_Einst_SuMk1W0_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2917,7 +2917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 287,
         "count": 1,
-        "names": ['ID_Einst_SuMk1W0_zeit_1_1', 'Unknown_Parameter_287'],
+        "names": ['ID_Einst_SuMk1W0_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2927,7 +2927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 288,
         "count": 1,
-        "names": ['ID_Einst_SuMk1W0_zeit_2_0', 'Unknown_Parameter_288'],
+        "names": ['ID_Einst_SuMk1W0_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2937,7 +2937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 289,
         "count": 1,
-        "names": ['ID_Einst_SuMk1W0_zeit_2_1', 'Unknown_Parameter_289'],
+        "names": ['ID_Einst_SuMk1W0_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2947,7 +2947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 290,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_0_0', 'Unknown_Parameter_290'],
+        "names": ['ID_Einst_SuMk125_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2957,7 +2957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 291,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_0_1', 'Unknown_Parameter_291'],
+        "names": ['ID_Einst_SuMk125_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2967,7 +2967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 292,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_1_0', 'Unknown_Parameter_292'],
+        "names": ['ID_Einst_SuMk125_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2977,7 +2977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 293,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_1_1', 'Unknown_Parameter_293'],
+        "names": ['ID_Einst_SuMk125_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2987,7 +2987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 294,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_2_0', 'Unknown_Parameter_294'],
+        "names": ['ID_Einst_SuMk125_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2997,7 +2997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 295,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_2_1', 'Unknown_Parameter_295'],
+        "names": ['ID_Einst_SuMk125_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3007,7 +3007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 296,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_0_2', 'Unknown_Parameter_296'],
+        "names": ['ID_Einst_SuMk125_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3017,7 +3017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 297,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_0_3', 'Unknown_Parameter_297'],
+        "names": ['ID_Einst_SuMk125_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3027,7 +3027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 298,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_1_2', 'Unknown_Parameter_298'],
+        "names": ['ID_Einst_SuMk125_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3037,7 +3037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 299,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_1_3', 'Unknown_Parameter_299'],
+        "names": ['ID_Einst_SuMk125_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3047,7 +3047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 300,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_2_2', 'Unknown_Parameter_300'],
+        "names": ['ID_Einst_SuMk125_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3057,7 +3057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 301,
         "count": 1,
-        "names": ['ID_Einst_SuMk125_zeit_2_3', 'Unknown_Parameter_301'],
+        "names": ['ID_Einst_SuMk125_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3067,7 +3067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 302,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_0', 'Unknown_Parameter_302'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3077,7 +3077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 303,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_1', 'Unknown_Parameter_303'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3087,7 +3087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 304,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_0', 'Unknown_Parameter_304'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3097,7 +3097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 305,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_1', 'Unknown_Parameter_305'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3107,7 +3107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 306,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_0', 'Unknown_Parameter_306'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3117,7 +3117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 307,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_1', 'Unknown_Parameter_307'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3127,7 +3127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 308,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_2', 'Unknown_Parameter_308'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3137,7 +3137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 309,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_3', 'Unknown_Parameter_309'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3147,7 +3147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 310,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_2', 'Unknown_Parameter_310'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3157,7 +3157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 311,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_3', 'Unknown_Parameter_311'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3167,7 +3167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 312,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_2', 'Unknown_Parameter_312'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3177,7 +3177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 313,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_3', 'Unknown_Parameter_313'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3187,7 +3187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 314,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_4', 'Unknown_Parameter_314'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3197,7 +3197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 315,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_5', 'Unknown_Parameter_315'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3207,7 +3207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 316,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_4', 'Unknown_Parameter_316'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3217,7 +3217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 317,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_5', 'Unknown_Parameter_317'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3227,7 +3227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 318,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_4', 'Unknown_Parameter_318'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3237,7 +3237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 319,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_5', 'Unknown_Parameter_319'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3247,7 +3247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 320,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_6', 'Unknown_Parameter_320'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3257,7 +3257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 321,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_7', 'Unknown_Parameter_321'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3267,7 +3267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 322,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_6', 'Unknown_Parameter_322'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3277,7 +3277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 323,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_7', 'Unknown_Parameter_323'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3287,7 +3287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 324,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_6', 'Unknown_Parameter_324'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3297,7 +3297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 325,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_7', 'Unknown_Parameter_325'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3307,7 +3307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 326,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_8', 'Unknown_Parameter_326'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3317,7 +3317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 327,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_9', 'Unknown_Parameter_327'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3327,7 +3327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 328,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_8', 'Unknown_Parameter_328'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3337,7 +3337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 329,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_9', 'Unknown_Parameter_329'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3347,7 +3347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 330,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_8', 'Unknown_Parameter_330'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3357,7 +3357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 331,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_9', 'Unknown_Parameter_331'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3367,7 +3367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 332,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_10', 'Unknown_Parameter_332'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3377,7 +3377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 333,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_11', 'Unknown_Parameter_333'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3387,7 +3387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 334,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_10', 'Unknown_Parameter_334'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3397,7 +3397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 335,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_11', 'Unknown_Parameter_335'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3407,7 +3407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 336,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_10', 'Unknown_Parameter_336'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3417,7 +3417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 337,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_11', 'Unknown_Parameter_337'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3427,7 +3427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 338,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_12', 'Unknown_Parameter_338'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3437,7 +3437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 339,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_0_13', 'Unknown_Parameter_339'],
+        "names": ['ID_Einst_SuMk1TG_zeit_0_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3447,7 +3447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 340,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_12', 'Unknown_Parameter_340'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3457,7 +3457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 341,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_1_13', 'Unknown_Parameter_341'],
+        "names": ['ID_Einst_SuMk1TG_zeit_1_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3467,7 +3467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 342,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_12', 'Unknown_Parameter_342'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3477,7 +3477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 343,
         "count": 1,
-        "names": ['ID_Einst_SuMk1TG_zeit_2_13', 'Unknown_Parameter_343'],
+        "names": ['ID_Einst_SuMk1TG_zeit_2_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3487,7 +3487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 344,
         "count": 1,
-        "names": ['ID_Einst_SuMk2_akt2', 'Unknown_Parameter_344'],
+        "names": ['ID_Einst_SuMk2_akt2'],
         "type": TimerProgram,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3497,7 +3497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 345,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Wo_zeit_0_0', 'Unknown_Parameter_345'],
+        "names": ['ID_Einst_SuMk2Wo_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3507,7 +3507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 346,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Wo_zeit_0_1', 'Unknown_Parameter_346'],
+        "names": ['ID_Einst_SuMk2Wo_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3517,7 +3517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 347,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Wo_zeit_1_0', 'Unknown_Parameter_347'],
+        "names": ['ID_Einst_SuMk2Wo_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3527,7 +3527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 348,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Wo_zeit_1_1', 'Unknown_Parameter_348'],
+        "names": ['ID_Einst_SuMk2Wo_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3537,7 +3537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 349,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Wo_zeit_2_0', 'Unknown_Parameter_349'],
+        "names": ['ID_Einst_SuMk2Wo_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3547,7 +3547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 350,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Wo_zeit_2_1', 'Unknown_Parameter_350'],
+        "names": ['ID_Einst_SuMk2Wo_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3557,7 +3557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 351,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_0_0', 'Unknown_Parameter_351'],
+        "names": ['ID_Einst_SuMk225_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3567,7 +3567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 352,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_0_1', 'Unknown_Parameter_352'],
+        "names": ['ID_Einst_SuMk225_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3577,7 +3577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 353,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_1_0', 'Unknown_Parameter_353'],
+        "names": ['ID_Einst_SuMk225_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3587,7 +3587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 354,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_1_1', 'Unknown_Parameter_354'],
+        "names": ['ID_Einst_SuMk225_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3597,7 +3597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 355,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_2_0', 'Unknown_Parameter_355'],
+        "names": ['ID_Einst_SuMk225_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3607,7 +3607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 356,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_2_1', 'Unknown_Parameter_356'],
+        "names": ['ID_Einst_SuMk225_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3617,7 +3617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 357,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_0_2', 'Unknown_Parameter_357'],
+        "names": ['ID_Einst_SuMk225_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3627,7 +3627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 358,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_0_3', 'Unknown_Parameter_358'],
+        "names": ['ID_Einst_SuMk225_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3637,7 +3637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 359,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_1_2', 'Unknown_Parameter_359'],
+        "names": ['ID_Einst_SuMk225_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3647,7 +3647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 360,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_1_3', 'Unknown_Parameter_360'],
+        "names": ['ID_Einst_SuMk225_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3657,7 +3657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 361,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_2_2', 'Unknown_Parameter_361'],
+        "names": ['ID_Einst_SuMk225_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3667,7 +3667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 362,
         "count": 1,
-        "names": ['ID_Einst_SuMk225_zeit_2_3', 'Unknown_Parameter_362'],
+        "names": ['ID_Einst_SuMk225_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3677,7 +3677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 363,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_0', 'Unknown_Parameter_363'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3687,7 +3687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 364,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_1', 'Unknown_Parameter_364'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3697,7 +3697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 365,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_0', 'Unknown_Parameter_365'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3707,7 +3707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 366,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_1', 'Unknown_Parameter_366'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3717,7 +3717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 367,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_0', 'Unknown_Parameter_367'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3727,7 +3727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 368,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_1', 'Unknown_Parameter_368'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3737,7 +3737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 369,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_2', 'Unknown_Parameter_369'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3747,7 +3747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 370,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_3', 'Unknown_Parameter_370'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3757,7 +3757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 371,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_2', 'Unknown_Parameter_371'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3767,7 +3767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 372,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_3', 'Unknown_Parameter_372'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3777,7 +3777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 373,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_2', 'Unknown_Parameter_373'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3787,7 +3787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 374,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_3', 'Unknown_Parameter_374'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3797,7 +3797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 375,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_4', 'Unknown_Parameter_375'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3807,7 +3807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 376,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_5', 'Unknown_Parameter_376'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3817,7 +3817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 377,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_4', 'Unknown_Parameter_377'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3827,7 +3827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 378,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_5', 'Unknown_Parameter_378'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3837,7 +3837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 379,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_4', 'Unknown_Parameter_379'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3847,7 +3847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 380,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_5', 'Unknown_Parameter_380'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3857,7 +3857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 381,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_6', 'Unknown_Parameter_381'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3867,7 +3867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 382,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_7', 'Unknown_Parameter_382'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3877,7 +3877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 383,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_6', 'Unknown_Parameter_383'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3887,7 +3887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 384,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_7', 'Unknown_Parameter_384'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3897,7 +3897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 385,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_6', 'Unknown_Parameter_385'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3907,7 +3907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 386,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_7', 'Unknown_Parameter_386'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3917,7 +3917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 387,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_8', 'Unknown_Parameter_387'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3927,7 +3927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 388,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_9', 'Unknown_Parameter_388'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3937,7 +3937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 389,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_8', 'Unknown_Parameter_389'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3947,7 +3947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 390,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_9', 'Unknown_Parameter_390'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3957,7 +3957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 391,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_8', 'Unknown_Parameter_391'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3967,7 +3967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 392,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_9', 'Unknown_Parameter_392'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3977,7 +3977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 393,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_10', 'Unknown_Parameter_393'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3987,7 +3987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 394,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_11', 'Unknown_Parameter_394'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -3997,7 +3997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 395,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_10', 'Unknown_Parameter_395'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4007,7 +4007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 396,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_11', 'Unknown_Parameter_396'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4017,7 +4017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 397,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_10', 'Unknown_Parameter_397'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4027,7 +4027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 398,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_11', 'Unknown_Parameter_398'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4037,7 +4037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 399,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_12', 'Unknown_Parameter_399'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4047,7 +4047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 400,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_0_13', 'Unknown_Parameter_400'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_0_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4057,7 +4057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 401,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_12', 'Unknown_Parameter_401'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4067,7 +4067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 402,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_1_13', 'Unknown_Parameter_402'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_1_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4077,7 +4077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 403,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_12', 'Unknown_Parameter_403'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4087,7 +4087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 404,
         "count": 1,
-        "names": ['ID_Einst_SuMk2Tg_zeit_2_13', 'Unknown_Parameter_404'],
+        "names": ['ID_Einst_SuMk2Tg_zeit_2_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -4097,7 +4097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 405,
         "count": 1,
-        "names": ['ID_Einst_SUBW_akt2', 'Unknown_Parameter_405'],
+        "names": ['ID_Einst_SUBW_akt2'],
         "type": TimerProgram,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4107,7 +4107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 406,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_0_0', 'Unknown_Parameter_406'],
+        "names": ['ID_Einst_SuBwWO_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4117,7 +4117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 407,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_0_1', 'Unknown_Parameter_407'],
+        "names": ['ID_Einst_SuBwWO_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4127,7 +4127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 408,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_1_0', 'Unknown_Parameter_408'],
+        "names": ['ID_Einst_SuBwWO_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4137,7 +4137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 409,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_1_1', 'Unknown_Parameter_409'],
+        "names": ['ID_Einst_SuBwWO_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4147,7 +4147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 410,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_2_0', 'Unknown_Parameter_410'],
+        "names": ['ID_Einst_SuBwWO_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4157,7 +4157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 411,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_2_1', 'Unknown_Parameter_411'],
+        "names": ['ID_Einst_SuBwWO_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4167,7 +4167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 412,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_3_0', 'Unknown_Parameter_412'],
+        "names": ['ID_Einst_SuBwWO_zeit_3_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4177,7 +4177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 413,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_3_1', 'Unknown_Parameter_413'],
+        "names": ['ID_Einst_SuBwWO_zeit_3_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4187,7 +4187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 414,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_4_0', 'Unknown_Parameter_414'],
+        "names": ['ID_Einst_SuBwWO_zeit_4_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4197,7 +4197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 415,
         "count": 1,
-        "names": ['ID_Einst_SuBwWO_zeit_4_1', 'Unknown_Parameter_415'],
+        "names": ['ID_Einst_SuBwWO_zeit_4_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4207,7 +4207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 416,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_0_0', 'Unknown_Parameter_416'],
+        "names": ['ID_Einst_SuBw25_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4217,7 +4217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 417,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_0_1', 'Unknown_Parameter_417'],
+        "names": ['ID_Einst_SuBw25_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4227,7 +4227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 418,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_1_0', 'Unknown_Parameter_418'],
+        "names": ['ID_Einst_SuBw25_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4237,7 +4237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 419,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_1_1', 'Unknown_Parameter_419'],
+        "names": ['ID_Einst_SuBw25_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4247,7 +4247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 420,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_2_0', 'Unknown_Parameter_420'],
+        "names": ['ID_Einst_SuBw25_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4257,7 +4257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 421,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_2_1', 'Unknown_Parameter_421'],
+        "names": ['ID_Einst_SuBw25_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4267,7 +4267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 422,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_3_0', 'Unknown_Parameter_422'],
+        "names": ['ID_Einst_SuBw25_zeit_3_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4277,7 +4277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 423,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_3_1', 'Unknown_Parameter_423'],
+        "names": ['ID_Einst_SuBw25_zeit_3_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4287,7 +4287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 424,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_4_0', 'Unknown_Parameter_424'],
+        "names": ['ID_Einst_SuBw25_zeit_4_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4297,7 +4297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 425,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_4_1', 'Unknown_Parameter_425'],
+        "names": ['ID_Einst_SuBw25_zeit_4_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4307,7 +4307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 426,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_0_2', 'Unknown_Parameter_426'],
+        "names": ['ID_Einst_SuBw25_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4317,7 +4317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 427,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_0_3', 'Unknown_Parameter_427'],
+        "names": ['ID_Einst_SuBw25_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4327,7 +4327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 428,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_1_2', 'Unknown_Parameter_428'],
+        "names": ['ID_Einst_SuBw25_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4337,7 +4337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 429,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_1_3', 'Unknown_Parameter_429'],
+        "names": ['ID_Einst_SuBw25_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4347,7 +4347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 430,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_2_2', 'Unknown_Parameter_430'],
+        "names": ['ID_Einst_SuBw25_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4357,7 +4357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 431,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_2_3', 'Unknown_Parameter_431'],
+        "names": ['ID_Einst_SuBw25_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4367,7 +4367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 432,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_3_2', 'Unknown_Parameter_432'],
+        "names": ['ID_Einst_SuBw25_zeit_3_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4377,7 +4377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 433,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_3_3', 'Unknown_Parameter_433'],
+        "names": ['ID_Einst_SuBw25_zeit_3_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4387,7 +4387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 434,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_4_2', 'Unknown_Parameter_434'],
+        "names": ['ID_Einst_SuBw25_zeit_4_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4397,7 +4397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 435,
         "count": 1,
-        "names": ['ID_Einst_SuBw25_zeit_4_3', 'Unknown_Parameter_435'],
+        "names": ['ID_Einst_SuBw25_zeit_4_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4407,7 +4407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 436,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_0', 'Unknown_Parameter_436'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4417,7 +4417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 437,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_1', 'Unknown_Parameter_437'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4427,7 +4427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 438,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_0', 'Unknown_Parameter_438'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4437,7 +4437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 439,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_1', 'Unknown_Parameter_439'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4447,7 +4447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 440,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_0', 'Unknown_Parameter_440'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4457,7 +4457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 441,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_1', 'Unknown_Parameter_441'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4467,7 +4467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 442,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_0', 'Unknown_Parameter_442'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4477,7 +4477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 443,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_1', 'Unknown_Parameter_443'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4487,7 +4487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 444,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_0', 'Unknown_Parameter_444'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4497,7 +4497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 445,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_1', 'Unknown_Parameter_445'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4507,7 +4507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 446,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_2', 'Unknown_Parameter_446'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4517,7 +4517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 447,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_3', 'Unknown_Parameter_447'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4527,7 +4527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 448,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_2', 'Unknown_Parameter_448'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4537,7 +4537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 449,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_3', 'Unknown_Parameter_449'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4547,7 +4547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 450,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_2', 'Unknown_Parameter_450'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4557,7 +4557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 451,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_3', 'Unknown_Parameter_451'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4567,7 +4567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 452,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_2', 'Unknown_Parameter_452'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4577,7 +4577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 453,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_3', 'Unknown_Parameter_453'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4587,7 +4587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 454,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_2', 'Unknown_Parameter_454'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4597,7 +4597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 455,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_3', 'Unknown_Parameter_455'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4607,7 +4607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 456,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_4', 'Unknown_Parameter_456'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4617,7 +4617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 457,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_5', 'Unknown_Parameter_457'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4627,7 +4627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 458,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_4', 'Unknown_Parameter_458'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4637,7 +4637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 459,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_5', 'Unknown_Parameter_459'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4647,7 +4647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 460,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_4', 'Unknown_Parameter_460'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4657,7 +4657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 461,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_5', 'Unknown_Parameter_461'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4667,7 +4667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 462,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_4', 'Unknown_Parameter_462'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4677,7 +4677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 463,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_5', 'Unknown_Parameter_463'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4687,7 +4687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 464,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_4', 'Unknown_Parameter_464'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4697,7 +4697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 465,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_5', 'Unknown_Parameter_465'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4707,7 +4707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 466,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_6', 'Unknown_Parameter_466'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4717,7 +4717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 467,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_7', 'Unknown_Parameter_467'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4727,7 +4727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 468,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_6', 'Unknown_Parameter_468'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4737,7 +4737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 469,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_7', 'Unknown_Parameter_469'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4747,7 +4747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 470,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_6', 'Unknown_Parameter_470'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4757,7 +4757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 471,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_7', 'Unknown_Parameter_471'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4767,7 +4767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 472,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_6', 'Unknown_Parameter_472'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4777,7 +4777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 473,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_7', 'Unknown_Parameter_473'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4787,7 +4787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 474,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_6', 'Unknown_Parameter_474'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4797,7 +4797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 475,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_7', 'Unknown_Parameter_475'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4807,7 +4807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 476,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_8', 'Unknown_Parameter_476'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4817,7 +4817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 477,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_9', 'Unknown_Parameter_477'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4827,7 +4827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 478,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_8', 'Unknown_Parameter_478'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4837,7 +4837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 479,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_9', 'Unknown_Parameter_479'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4847,7 +4847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 480,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_8', 'Unknown_Parameter_480'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4857,7 +4857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 481,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_9', 'Unknown_Parameter_481'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4867,7 +4867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 482,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_8', 'Unknown_Parameter_482'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4877,7 +4877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 483,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_9', 'Unknown_Parameter_483'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4887,7 +4887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 484,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_8', 'Unknown_Parameter_484'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4897,7 +4897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 485,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_9', 'Unknown_Parameter_485'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4907,7 +4907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 486,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_10', 'Unknown_Parameter_486'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4917,7 +4917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 487,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_11', 'Unknown_Parameter_487'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4927,7 +4927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 488,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_10', 'Unknown_Parameter_488'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4937,7 +4937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 489,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_11', 'Unknown_Parameter_489'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4947,7 +4947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 490,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_10', 'Unknown_Parameter_490'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4957,7 +4957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 491,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_11', 'Unknown_Parameter_491'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4967,7 +4967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 492,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_10', 'Unknown_Parameter_492'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4977,7 +4977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 493,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_11', 'Unknown_Parameter_493'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4987,7 +4987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 494,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_10', 'Unknown_Parameter_494'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -4997,7 +4997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 495,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_11', 'Unknown_Parameter_495'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5007,7 +5007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 496,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_12', 'Unknown_Parameter_496'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5017,7 +5017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 497,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_0_13', 'Unknown_Parameter_497'],
+        "names": ['ID_Einst_SuBwTG_zeit_0_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5027,7 +5027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 498,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_12', 'Unknown_Parameter_498'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5037,7 +5037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 499,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_1_13', 'Unknown_Parameter_499'],
+        "names": ['ID_Einst_SuBwTG_zeit_1_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5047,7 +5047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 500,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_12', 'Unknown_Parameter_500'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5057,7 +5057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 501,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_2_13', 'Unknown_Parameter_501'],
+        "names": ['ID_Einst_SuBwTG_zeit_2_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5067,7 +5067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 502,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_12', 'Unknown_Parameter_502'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5077,7 +5077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 503,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_3_13', 'Unknown_Parameter_503'],
+        "names": ['ID_Einst_SuBwTG_zeit_3_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5087,7 +5087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 504,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_12', 'Unknown_Parameter_504'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5097,7 +5097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 505,
         "count": 1,
-        "names": ['ID_Einst_SuBwTG_zeit_4_13', 'Unknown_Parameter_505'],
+        "names": ['ID_Einst_SuBwTG_zeit_4_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5107,7 +5107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 506,
         "count": 1,
-        "names": ['ID_Einst_SuZIP_akt', 'Unknown_Parameter_506'],
+        "names": ['ID_Einst_SuZIP_akt'],
         "type": TimerProgram,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5117,7 +5117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 507,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_0_0', 'Unknown_Parameter_507'],
+        "names": ['ID_Einst_SuZIPWo_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5127,7 +5127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 508,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_0_1', 'Unknown_Parameter_508'],
+        "names": ['ID_Einst_SuZIPWo_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5137,7 +5137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 509,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_1_0', 'Unknown_Parameter_509'],
+        "names": ['ID_Einst_SuZIPWo_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5147,7 +5147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 510,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_1_1', 'Unknown_Parameter_510'],
+        "names": ['ID_Einst_SuZIPWo_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5157,7 +5157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 511,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_2_0', 'Unknown_Parameter_511'],
+        "names": ['ID_Einst_SuZIPWo_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5167,7 +5167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 512,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_2_1', 'Unknown_Parameter_512'],
+        "names": ['ID_Einst_SuZIPWo_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5177,7 +5177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 513,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_3_0', 'Unknown_Parameter_513'],
+        "names": ['ID_Einst_SuZIPWo_zeit_3_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5187,7 +5187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 514,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_3_1', 'Unknown_Parameter_514'],
+        "names": ['ID_Einst_SuZIPWo_zeit_3_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5197,7 +5197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 515,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_4_0', 'Unknown_Parameter_515'],
+        "names": ['ID_Einst_SuZIPWo_zeit_4_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5207,7 +5207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 516,
         "count": 1,
-        "names": ['ID_Einst_SuZIPWo_zeit_4_1', 'Unknown_Parameter_516'],
+        "names": ['ID_Einst_SuZIPWo_zeit_4_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5217,7 +5217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 517,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_0_0', 'Unknown_Parameter_517'],
+        "names": ['ID_Einst_SuZIP25_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5227,7 +5227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 518,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_0_1', 'Unknown_Parameter_518'],
+        "names": ['ID_Einst_SuZIP25_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5237,7 +5237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 519,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_1_0', 'Unknown_Parameter_519'],
+        "names": ['ID_Einst_SuZIP25_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5247,7 +5247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 520,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_1_1', 'Unknown_Parameter_520'],
+        "names": ['ID_Einst_SuZIP25_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5257,7 +5257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 521,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_2_0', 'Unknown_Parameter_521'],
+        "names": ['ID_Einst_SuZIP25_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5267,7 +5267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 522,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_2_1', 'Unknown_Parameter_522'],
+        "names": ['ID_Einst_SuZIP25_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5277,7 +5277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 523,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_3_0', 'Unknown_Parameter_523'],
+        "names": ['ID_Einst_SuZIP25_zeit_3_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5287,7 +5287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 524,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_3_1', 'Unknown_Parameter_524'],
+        "names": ['ID_Einst_SuZIP25_zeit_3_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5297,7 +5297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 525,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_4_0', 'Unknown_Parameter_525'],
+        "names": ['ID_Einst_SuZIP25_zeit_4_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5307,7 +5307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 526,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_4_1', 'Unknown_Parameter_526'],
+        "names": ['ID_Einst_SuZIP25_zeit_4_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5317,7 +5317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 527,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_0_2', 'Unknown_Parameter_527'],
+        "names": ['ID_Einst_SuZIP25_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5327,7 +5327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 528,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_0_3', 'Unknown_Parameter_528'],
+        "names": ['ID_Einst_SuZIP25_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5337,7 +5337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 529,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_1_2', 'Unknown_Parameter_529'],
+        "names": ['ID_Einst_SuZIP25_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5347,7 +5347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 530,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_1_3', 'Unknown_Parameter_530'],
+        "names": ['ID_Einst_SuZIP25_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5357,7 +5357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 531,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_2_2', 'Unknown_Parameter_531'],
+        "names": ['ID_Einst_SuZIP25_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5367,7 +5367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 532,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_2_3', 'Unknown_Parameter_532'],
+        "names": ['ID_Einst_SuZIP25_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5377,7 +5377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 533,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_3_2', 'Unknown_Parameter_533'],
+        "names": ['ID_Einst_SuZIP25_zeit_3_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5387,7 +5387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 534,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_3_3', 'Unknown_Parameter_534'],
+        "names": ['ID_Einst_SuZIP25_zeit_3_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5397,7 +5397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 535,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_4_2', 'Unknown_Parameter_535'],
+        "names": ['ID_Einst_SuZIP25_zeit_4_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5407,7 +5407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 536,
         "count": 1,
-        "names": ['ID_Einst_SuZIP25_zeit_4_3', 'Unknown_Parameter_536'],
+        "names": ['ID_Einst_SuZIP25_zeit_4_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5417,7 +5417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 537,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_0', 'Unknown_Parameter_537'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5427,7 +5427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 538,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_1', 'Unknown_Parameter_538'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5437,7 +5437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 539,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_0', 'Unknown_Parameter_539'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5447,7 +5447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 540,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_1', 'Unknown_Parameter_540'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5457,7 +5457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 541,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_0', 'Unknown_Parameter_541'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5467,7 +5467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 542,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_1', 'Unknown_Parameter_542'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5477,7 +5477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 543,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_0', 'Unknown_Parameter_543'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5487,7 +5487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 544,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_1', 'Unknown_Parameter_544'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5497,7 +5497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 545,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_0', 'Unknown_Parameter_545'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_0'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5507,7 +5507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 546,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_1', 'Unknown_Parameter_546'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_1'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5517,7 +5517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 547,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_2', 'Unknown_Parameter_547'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5527,7 +5527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 548,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_3', 'Unknown_Parameter_548'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5537,7 +5537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 549,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_2', 'Unknown_Parameter_549'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5547,7 +5547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 550,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_3', 'Unknown_Parameter_550'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5557,7 +5557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 551,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_2', 'Unknown_Parameter_551'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5567,7 +5567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 552,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_3', 'Unknown_Parameter_552'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5577,7 +5577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 553,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_2', 'Unknown_Parameter_553'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5587,7 +5587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 554,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_3', 'Unknown_Parameter_554'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5597,7 +5597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 555,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_2', 'Unknown_Parameter_555'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_2'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5607,7 +5607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 556,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_3', 'Unknown_Parameter_556'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_3'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5617,7 +5617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 557,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_4', 'Unknown_Parameter_557'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5627,7 +5627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 558,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_5', 'Unknown_Parameter_558'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5637,7 +5637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 559,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_4', 'Unknown_Parameter_559'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5647,7 +5647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 560,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_5', 'Unknown_Parameter_560'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5657,7 +5657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 561,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_4', 'Unknown_Parameter_561'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5667,7 +5667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 562,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_5', 'Unknown_Parameter_562'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5677,7 +5677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 563,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_4', 'Unknown_Parameter_563'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5687,7 +5687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 564,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_5', 'Unknown_Parameter_564'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5697,7 +5697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 565,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_4', 'Unknown_Parameter_565'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_4'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5707,7 +5707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 566,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_5', 'Unknown_Parameter_566'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_5'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5717,7 +5717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 567,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_6', 'Unknown_Parameter_567'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5727,7 +5727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 568,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_7', 'Unknown_Parameter_568'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5737,7 +5737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 569,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_6', 'Unknown_Parameter_569'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5747,7 +5747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 570,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_7', 'Unknown_Parameter_570'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5757,7 +5757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 571,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_6', 'Unknown_Parameter_571'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5767,7 +5767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 572,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_7', 'Unknown_Parameter_572'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5777,7 +5777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 573,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_6', 'Unknown_Parameter_573'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5787,7 +5787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 574,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_7', 'Unknown_Parameter_574'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5797,7 +5797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 575,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_6', 'Unknown_Parameter_575'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_6'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5807,7 +5807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 576,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_7', 'Unknown_Parameter_576'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_7'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5817,7 +5817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 577,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_8', 'Unknown_Parameter_577'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5827,7 +5827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 578,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_9', 'Unknown_Parameter_578'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5837,7 +5837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 579,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_8', 'Unknown_Parameter_579'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5847,7 +5847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 580,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_9', 'Unknown_Parameter_580'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5857,7 +5857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 581,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_8', 'Unknown_Parameter_581'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5867,7 +5867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 582,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_9', 'Unknown_Parameter_582'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5877,7 +5877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 583,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_8', 'Unknown_Parameter_583'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5887,7 +5887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 584,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_9', 'Unknown_Parameter_584'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5897,7 +5897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 585,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_8', 'Unknown_Parameter_585'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_8'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5907,7 +5907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 586,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_9', 'Unknown_Parameter_586'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_9'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5917,7 +5917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 587,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_10', 'Unknown_Parameter_587'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5927,7 +5927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 588,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_11', 'Unknown_Parameter_588'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5937,7 +5937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 589,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_10', 'Unknown_Parameter_589'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5947,7 +5947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 590,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_11', 'Unknown_Parameter_590'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5957,7 +5957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 591,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_10', 'Unknown_Parameter_591'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5967,7 +5967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 592,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_11', 'Unknown_Parameter_592'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5977,7 +5977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 593,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_10', 'Unknown_Parameter_593'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5987,7 +5987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 594,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_11', 'Unknown_Parameter_594'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -5997,7 +5997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 595,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_10', 'Unknown_Parameter_595'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_10'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6007,7 +6007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 596,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_11', 'Unknown_Parameter_596'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_11'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6017,7 +6017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 597,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_12', 'Unknown_Parameter_597'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6027,7 +6027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 598,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_0_13', 'Unknown_Parameter_598'],
+        "names": ['ID_Einst_SuZIPTg_zeit_0_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6037,7 +6037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 599,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_12', 'Unknown_Parameter_599'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6047,7 +6047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 600,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_1_13', 'Unknown_Parameter_600'],
+        "names": ['ID_Einst_SuZIPTg_zeit_1_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6057,7 +6057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 601,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_12', 'Unknown_Parameter_601'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6067,7 +6067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 602,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_2_13', 'Unknown_Parameter_602'],
+        "names": ['ID_Einst_SuZIPTg_zeit_2_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6077,7 +6077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 603,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_12', 'Unknown_Parameter_603'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6087,7 +6087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 604,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_3_13', 'Unknown_Parameter_604'],
+        "names": ['ID_Einst_SuZIPTg_zeit_3_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6097,7 +6097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 605,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_12', 'Unknown_Parameter_605'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_12'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6107,7 +6107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 606,
         "count": 1,
-        "names": ['ID_Einst_SuZIPTg_zeit_4_13', 'Unknown_Parameter_606'],
+        "names": ['ID_Einst_SuZIPTg_zeit_4_13'],
         "type": TimeOfDay,
         "writeable": True,
         "datatype": 'UINT32',
@@ -6117,7 +6117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 607,
         "count": 1,
-        "names": ['ID_Einst_SuSwb_akt', 'Unknown_Parameter_607'],
+        "names": ['ID_Einst_SuSwb_akt'],
         "type": TimerProgram,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6127,7 +6127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 608,
         "count": 1,
-        "names": ['ID_Einst_SuSwbWo_zeit_0_0', 'Unknown_Parameter_608'],
+        "names": ['ID_Einst_SuSwbWo_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6137,7 +6137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 609,
         "count": 1,
-        "names": ['ID_Einst_SuSwbWo_zeit_0_1', 'Unknown_Parameter_609'],
+        "names": ['ID_Einst_SuSwbWo_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6147,7 +6147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 610,
         "count": 1,
-        "names": ['ID_Einst_SuSwbWo_zeit_1_0', 'Unknown_Parameter_610'],
+        "names": ['ID_Einst_SuSwbWo_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6157,7 +6157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 611,
         "count": 1,
-        "names": ['ID_Einst_SuSwbWo_zeit_1_1', 'Unknown_Parameter_611'],
+        "names": ['ID_Einst_SuSwbWo_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6167,7 +6167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 612,
         "count": 1,
-        "names": ['ID_Einst_SuSwbWo_zeit_2_0', 'Unknown_Parameter_612'],
+        "names": ['ID_Einst_SuSwbWo_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6177,7 +6177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 613,
         "count": 1,
-        "names": ['ID_Einst_SuSwbWo_zeit_2_1', 'Unknown_Parameter_613'],
+        "names": ['ID_Einst_SuSwbWo_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6187,7 +6187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 614,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_0_0', 'Unknown_Parameter_614'],
+        "names": ['ID_Einst_SuSwb25_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6197,7 +6197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 615,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_0_1', 'Unknown_Parameter_615'],
+        "names": ['ID_Einst_SuSwb25_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6207,7 +6207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 616,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_1_0', 'Unknown_Parameter_616'],
+        "names": ['ID_Einst_SuSwb25_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6217,7 +6217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 617,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_1_1', 'Unknown_Parameter_617'],
+        "names": ['ID_Einst_SuSwb25_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6227,7 +6227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 618,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_2_0', 'Unknown_Parameter_618'],
+        "names": ['ID_Einst_SuSwb25_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6237,7 +6237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 619,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_2_1', 'Unknown_Parameter_619'],
+        "names": ['ID_Einst_SuSwb25_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6247,7 +6247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 620,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_0_2', 'Unknown_Parameter_620'],
+        "names": ['ID_Einst_SuSwb25_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6257,7 +6257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 621,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_0_3', 'Unknown_Parameter_621'],
+        "names": ['ID_Einst_SuSwb25_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6267,7 +6267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 622,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_1_2', 'Unknown_Parameter_622'],
+        "names": ['ID_Einst_SuSwb25_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6277,7 +6277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 623,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_1_3', 'Unknown_Parameter_623'],
+        "names": ['ID_Einst_SuSwb25_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6287,7 +6287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 624,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_2_2', 'Unknown_Parameter_624'],
+        "names": ['ID_Einst_SuSwb25_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6297,7 +6297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 625,
         "count": 1,
-        "names": ['ID_Einst_SuSwb25_zeit_2_3', 'Unknown_Parameter_625'],
+        "names": ['ID_Einst_SuSwb25_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6307,7 +6307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 626,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_0', 'Unknown_Parameter_626'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6317,7 +6317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 627,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_1', 'Unknown_Parameter_627'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6327,7 +6327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 628,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_0', 'Unknown_Parameter_628'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6337,7 +6337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 629,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_1', 'Unknown_Parameter_629'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6347,7 +6347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 630,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_0', 'Unknown_Parameter_630'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6357,7 +6357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 631,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_1', 'Unknown_Parameter_631'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6367,7 +6367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 632,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_2', 'Unknown_Parameter_632'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6377,7 +6377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 633,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_3', 'Unknown_Parameter_633'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6387,7 +6387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 634,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_2', 'Unknown_Parameter_634'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6397,7 +6397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 635,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_3', 'Unknown_Parameter_635'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6407,7 +6407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 636,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_2', 'Unknown_Parameter_636'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6417,7 +6417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 637,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_3', 'Unknown_Parameter_637'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6427,7 +6427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 638,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_4', 'Unknown_Parameter_638'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6437,7 +6437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 639,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_5', 'Unknown_Parameter_639'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6447,7 +6447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 640,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_4', 'Unknown_Parameter_640'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6457,7 +6457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 641,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_5', 'Unknown_Parameter_641'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6467,7 +6467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 642,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_4', 'Unknown_Parameter_642'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6477,7 +6477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 643,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_5', 'Unknown_Parameter_643'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6487,7 +6487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 644,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_6', 'Unknown_Parameter_644'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6497,7 +6497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 645,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_7', 'Unknown_Parameter_645'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6507,7 +6507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 646,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_6', 'Unknown_Parameter_646'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6517,7 +6517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 647,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_7', 'Unknown_Parameter_647'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6527,7 +6527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 648,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_6', 'Unknown_Parameter_648'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6537,7 +6537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 649,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_7', 'Unknown_Parameter_649'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6547,7 +6547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 650,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_8', 'Unknown_Parameter_650'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6557,7 +6557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 651,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_9', 'Unknown_Parameter_651'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6567,7 +6567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 652,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_8', 'Unknown_Parameter_652'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6577,7 +6577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 653,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_9', 'Unknown_Parameter_653'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6587,7 +6587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 654,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_8', 'Unknown_Parameter_654'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6597,7 +6597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 655,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_9', 'Unknown_Parameter_655'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6607,7 +6607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 656,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_10', 'Unknown_Parameter_656'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6617,7 +6617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 657,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_11', 'Unknown_Parameter_657'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6627,7 +6627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 658,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_10', 'Unknown_Parameter_658'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6637,7 +6637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 659,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_11', 'Unknown_Parameter_659'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6647,7 +6647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 660,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_10', 'Unknown_Parameter_660'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6657,7 +6657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 661,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_11', 'Unknown_Parameter_661'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6667,7 +6667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 662,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_12', 'Unknown_Parameter_662'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6677,7 +6677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 663,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_0_13', 'Unknown_Parameter_663'],
+        "names": ['ID_Einst_SuSwbTg_zeit_0_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6687,7 +6687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 664,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_12', 'Unknown_Parameter_664'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6697,7 +6697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 665,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_1_13', 'Unknown_Parameter_665'],
+        "names": ['ID_Einst_SuSwbTg_zeit_1_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6707,7 +6707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 666,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_12', 'Unknown_Parameter_666'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6717,7 +6717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 667,
         "count": 1,
-        "names": ['ID_Einst_SuSwbTg_zeit_2_13', 'Unknown_Parameter_667'],
+        "names": ['ID_Einst_SuSwbTg_zeit_2_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6727,7 +6727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 668,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitWP', 'Unknown_Parameter_668'],
+        "names": ['ID_Zaehler_BetrZeitWP'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6737,7 +6737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 669,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitVD1', 'Unknown_Parameter_669'],
+        "names": ['ID_Zaehler_BetrZeitVD1'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6747,7 +6747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 670,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitVD2', 'Unknown_Parameter_670'],
+        "names": ['ID_Zaehler_BetrZeitVD2'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6757,7 +6757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 671,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitZWE1', 'Unknown_Parameter_671'],
+        "names": ['ID_Zaehler_BetrZeitZWE1'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6767,7 +6767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 672,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitZWE2', 'Unknown_Parameter_672'],
+        "names": ['ID_Zaehler_BetrZeitZWE2'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6777,7 +6777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 673,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitZWE3', 'Unknown_Parameter_673'],
+        "names": ['ID_Zaehler_BetrZeitZWE3'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6787,7 +6787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 674,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitImpVD1', 'Unknown_Parameter_674'],
+        "names": ['ID_Zaehler_BetrZeitImpVD1'],
         "type": Count,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6797,7 +6797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 675,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitImpVD2', 'Unknown_Parameter_675'],
+        "names": ['ID_Zaehler_BetrZeitImpVD2'],
         "type": Count,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6807,7 +6807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 676,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitEZMVD1', 'Unknown_Parameter_676'],
+        "names": ['ID_Zaehler_BetrZeitEZMVD1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6817,7 +6817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 677,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitEZMVD2', 'Unknown_Parameter_677'],
+        "names": ['ID_Zaehler_BetrZeitEZMVD2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6827,7 +6827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 678,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_0', 'Unknown_Parameter_678'],
+        "names": ['ID_Einst_Entl_Typ_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6837,7 +6837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 679,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_1', 'Unknown_Parameter_679'],
+        "names": ['ID_Einst_Entl_Typ_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6847,7 +6847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 680,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_2', 'Unknown_Parameter_680'],
+        "names": ['ID_Einst_Entl_Typ_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6857,7 +6857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 681,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_3', 'Unknown_Parameter_681'],
+        "names": ['ID_Einst_Entl_Typ_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6867,7 +6867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 682,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_4', 'Unknown_Parameter_682'],
+        "names": ['ID_Einst_Entl_Typ_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6877,7 +6877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 683,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_5', 'Unknown_Parameter_683'],
+        "names": ['ID_Einst_Entl_Typ_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6887,7 +6887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 684,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_6', 'Unknown_Parameter_684'],
+        "names": ['ID_Einst_Entl_Typ_6'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6897,7 +6897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 685,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_7', 'Unknown_Parameter_685'],
+        "names": ['ID_Einst_Entl_Typ_7'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6907,7 +6907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 686,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_8', 'Unknown_Parameter_686'],
+        "names": ['ID_Einst_Entl_Typ_8'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6917,7 +6917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 687,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_9', 'Unknown_Parameter_687'],
+        "names": ['ID_Einst_Entl_Typ_9'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6927,7 +6927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 688,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_10', 'Unknown_Parameter_688'],
+        "names": ['ID_Einst_Entl_Typ_10'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6937,7 +6937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 689,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_11', 'Unknown_Parameter_689'],
+        "names": ['ID_Einst_Entl_Typ_11'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6947,7 +6947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 690,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_12', 'Unknown_Parameter_690'],
+        "names": ['ID_Einst_Entl_Typ_12'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6957,7 +6957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 691,
         "count": 1,
-        "names": ['ID_Einst_Vorl_max_MK1', 'Unknown_Parameter_691'],
+        "names": ['ID_Einst_Vorl_max_MK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6967,7 +6967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 692,
         "count": 1,
-        "names": ['ID_Einst_Vorl_max_MK2', 'Unknown_Parameter_692'],
+        "names": ['ID_Einst_Vorl_max_MK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6977,7 +6977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 693,
         "count": 1,
-        "names": ['ID_SU_FrkdMK1', 'Unknown_Parameter_693'],
+        "names": ['ID_SU_FrkdMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6987,7 +6987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 694,
         "count": 1,
-        "names": ['ID_SU_FrkdMK2', 'Unknown_Parameter_694'],
+        "names": ['ID_SU_FrkdMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -6997,7 +6997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 695,
         "count": 1,
-        "names": ['ID_Ba_Hz_MK1_akt', 'Unknown_Parameter_695'],
+        "names": ['ID_Ba_Hz_MK1_akt'],
         "type": MixedCircuitMode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7007,7 +7007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 696,
         "count": 1,
-        "names": ['ID_Ba_Hz_MK2_akt', 'Unknown_Parameter_696'],
+        "names": ['ID_Ba_Hz_MK2_akt'],
         "type": MixedCircuitMode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7017,7 +7017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 697,
         "count": 1,
-        "names": ['ID_Einst_Zirk_Ein_akt', 'Unknown_Parameter_697'],
+        "names": ['ID_Einst_Zirk_Ein_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7027,7 +7027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 698,
         "count": 1,
-        "names": ['ID_Einst_Zirk_Aus_akt', 'Unknown_Parameter_698'],
+        "names": ['ID_Einst_Zirk_Aus_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7037,7 +7037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 699,
         "count": 1,
-        "names": ['ID_Einst_Heizgrenze', 'Unknown_Parameter_699'],
+        "names": ['ID_Einst_Heizgrenze'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7047,7 +7047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 700,
         "count": 1,
-        "names": ['ID_Einst_Heizgrenze_Temp', 'Unknown_Parameter_700'],
+        "names": ['ID_Einst_Heizgrenze_Temp'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -7057,7 +7057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 701,
         "count": 1,
-        "names": ['ID_VariablenIBNgespeichert', 'Unknown_Parameter_701'],
+        "names": ['ID_VariablenIBNgespeichert'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7067,7 +7067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 702,
         "count": 1,
-        "names": ['ID_SchonIBNAssistant', 'Unknown_Parameter_702'],
+        "names": ['ID_SchonIBNAssistant'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7077,7 +7077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 703,
         "count": 1,
-        "names": ['ID_Heizgrenze_0', 'Unknown_Parameter_703'],
+        "names": ['ID_Heizgrenze_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7087,7 +7087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 704,
         "count": 1,
-        "names": ['ID_Heizgrenze_1', 'Unknown_Parameter_704'],
+        "names": ['ID_Heizgrenze_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7097,7 +7097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 705,
         "count": 1,
-        "names": ['ID_Heizgrenze_2', 'Unknown_Parameter_705'],
+        "names": ['ID_Heizgrenze_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7107,7 +7107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 706,
         "count": 1,
-        "names": ['ID_Heizgrenze_3', 'Unknown_Parameter_706'],
+        "names": ['ID_Heizgrenze_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7117,7 +7117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 707,
         "count": 1,
-        "names": ['ID_Heizgrenze_4', 'Unknown_Parameter_707'],
+        "names": ['ID_Heizgrenze_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7127,7 +7127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 708,
         "count": 1,
-        "names": ['ID_Heizgrenze_5', 'Unknown_Parameter_708'],
+        "names": ['ID_Heizgrenze_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7137,7 +7137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 709,
         "count": 1,
-        "names": ['ID_Heizgrenze_6', 'Unknown_Parameter_709'],
+        "names": ['ID_Heizgrenze_6'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7147,7 +7147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 710,
         "count": 1,
-        "names": ['ID_Heizgrenze_7', 'Unknown_Parameter_710'],
+        "names": ['ID_Heizgrenze_7'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7157,7 +7157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 711,
         "count": 1,
-        "names": ['ID_Heizgrenze_8', 'Unknown_Parameter_711'],
+        "names": ['ID_Heizgrenze_8'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7167,7 +7167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 712,
         "count": 1,
-        "names": ['ID_Heizgrenze_9', 'Unknown_Parameter_712'],
+        "names": ['ID_Heizgrenze_9'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7177,7 +7177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 713,
         "count": 1,
-        "names": ['ID_Heizgrenze_10', 'Unknown_Parameter_713'],
+        "names": ['ID_Heizgrenze_10'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7187,7 +7187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 714,
         "count": 1,
-        "names": ['ID_Heizgrenze_11', 'Unknown_Parameter_714'],
+        "names": ['ID_Heizgrenze_11'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7197,7 +7197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 715,
         "count": 1,
-        "names": ['ID_SchemenIBNgewahlt', 'Unknown_Parameter_715'],
+        "names": ['ID_SchemenIBNgewahlt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7207,7 +7207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 716,
         "count": 1,
-        "names": ['ID_Switchoff_file_0_0', 'Unknown_Parameter_716'],
+        "names": ['ID_Switchoff_file_0_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7217,7 +7217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 717,
         "count": 1,
-        "names": ['ID_Switchoff_file_1_0', 'Unknown_Parameter_717'],
+        "names": ['ID_Switchoff_file_1_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7227,7 +7227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 718,
         "count": 1,
-        "names": ['ID_Switchoff_file_2_0', 'Unknown_Parameter_718'],
+        "names": ['ID_Switchoff_file_2_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7237,7 +7237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 719,
         "count": 1,
-        "names": ['ID_Switchoff_file_3_0', 'Unknown_Parameter_719'],
+        "names": ['ID_Switchoff_file_3_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7247,7 +7247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 720,
         "count": 1,
-        "names": ['ID_Switchoff_file_4_0', 'Unknown_Parameter_720'],
+        "names": ['ID_Switchoff_file_4_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7257,7 +7257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 721,
         "count": 1,
-        "names": ['ID_Switchoff_file_0_1', 'Unknown_Parameter_721'],
+        "names": ['ID_Switchoff_file_0_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7267,7 +7267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 722,
         "count": 1,
-        "names": ['ID_Switchoff_file_1_1', 'Unknown_Parameter_722'],
+        "names": ['ID_Switchoff_file_1_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7277,7 +7277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 723,
         "count": 1,
-        "names": ['ID_Switchoff_file_2_1', 'Unknown_Parameter_723'],
+        "names": ['ID_Switchoff_file_2_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7287,7 +7287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 724,
         "count": 1,
-        "names": ['ID_Switchoff_file_3_1', 'Unknown_Parameter_724'],
+        "names": ['ID_Switchoff_file_3_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7297,7 +7297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 725,
         "count": 1,
-        "names": ['ID_Switchoff_file_4_1', 'Unknown_Parameter_725'],
+        "names": ['ID_Switchoff_file_4_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7307,7 +7307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 726,
         "count": 1,
-        "names": ['ID_DauerDatenLoggerAktiv', 'Unknown_Parameter_726'],
+        "names": ['ID_DauerDatenLoggerAktiv'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7317,7 +7317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 727,
         "count": 1,
-        "names": ['ID_Laufvar_Heizgrenze', 'Unknown_Parameter_727'],
+        "names": ['ID_Laufvar_Heizgrenze'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7327,7 +7327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 728,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitHz', 'Unknown_Parameter_728'],
+        "names": ['ID_Zaehler_BetrZeitHz'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7337,7 +7337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 729,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitBW', 'Unknown_Parameter_729'],
+        "names": ['ID_Zaehler_BetrZeitBW'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7347,7 +7347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 730,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitKue', 'Unknown_Parameter_730'],
+        "names": ['ID_Zaehler_BetrZeitKue'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7357,7 +7357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 731,
         "count": 1,
-        "names": ['ID_SU_FstdHz', 'Unknown_Parameter_731'],
+        "names": ['ID_SU_FstdHz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7367,7 +7367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 732,
         "count": 1,
-        "names": ['ID_SU_FstdBw', 'Unknown_Parameter_732'],
+        "names": ['ID_SU_FstdBw'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7377,7 +7377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 733,
         "count": 1,
-        "names": ['ID_SU_FstdSwb', 'Unknown_Parameter_733'],
+        "names": ['ID_SU_FstdSwb'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7387,7 +7387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 734,
         "count": 1,
-        "names": ['ID_SU_FstdMK1', 'Unknown_Parameter_734'],
+        "names": ['ID_SU_FstdMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7397,7 +7397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 735,
         "count": 1,
-        "names": ['ID_SU_FstdMK2', 'Unknown_Parameter_735'],
+        "names": ['ID_SU_FstdMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7407,7 +7407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 736,
         "count": 1,
-        "names": ['ID_FerienAbsenkungHz', 'Unknown_Parameter_736'],
+        "names": ['ID_FerienAbsenkungHz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7417,7 +7417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 737,
         "count": 1,
-        "names": ['ID_FerienAbsenkungMK1', 'Unknown_Parameter_737'],
+        "names": ['ID_FerienAbsenkungMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7427,7 +7427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 738,
         "count": 1,
-        "names": ['ID_FerienAbsenkungMK2', 'Unknown_Parameter_738'],
+        "names": ['ID_FerienAbsenkungMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7437,7 +7437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 739,
         "count": 1,
-        "names": ['ID_FerienModusAktivHz', 'Unknown_Parameter_739'],
+        "names": ['ID_FerienModusAktivHz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7447,7 +7447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 740,
         "count": 1,
-        "names": ['ID_FerienModusAktivBw', 'Unknown_Parameter_740'],
+        "names": ['ID_FerienModusAktivBw'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7457,7 +7457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 741,
         "count": 1,
-        "names": ['ID_FerienModusAktivSwb', 'Unknown_Parameter_741'],
+        "names": ['ID_FerienModusAktivSwb'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7467,7 +7467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 742,
         "count": 1,
-        "names": ['ID_FerienModusAktivMk1', 'Unknown_Parameter_742'],
+        "names": ['ID_FerienModusAktivMk1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7477,7 +7477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 743,
         "count": 1,
-        "names": ['ID_FerienModusAktivMk2', 'Unknown_Parameter_743'],
+        "names": ['ID_FerienModusAktivMk2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7487,7 +7487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 744,
         "count": 1,
-        "names": ['ID_DisplayContrast_akt', 'Unknown_Parameter_744'],
+        "names": ['ID_DisplayContrast_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7497,7 +7497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 745,
         "count": 1,
-        "names": ['ID_Ba_Hz_saved', 'Unknown_Parameter_745'],
+        "names": ['ID_Ba_Hz_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7507,7 +7507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 746,
         "count": 1,
-        "names": ['ID_Ba_Bw_saved', 'Unknown_Parameter_746'],
+        "names": ['ID_Ba_Bw_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7517,7 +7517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 747,
         "count": 1,
-        "names": ['ID_Ba_Sw_saved', 'Unknown_Parameter_747'],
+        "names": ['ID_Ba_Sw_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7527,7 +7527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 748,
         "count": 1,
-        "names": ['ID_Ba_Hz_MK1_saved', 'Unknown_Parameter_748'],
+        "names": ['ID_Ba_Hz_MK1_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7537,7 +7537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 749,
         "count": 1,
-        "names": ['ID_Ba_Hz_MK2_saved', 'Unknown_Parameter_749'],
+        "names": ['ID_Ba_Hz_MK2_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7547,7 +7547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 750,
         "count": 1,
-        "names": ['ID_AdresseIP_akt', 'Unknown_Parameter_750'],
+        "names": ['ID_AdresseIP_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7557,7 +7557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 751,
         "count": 1,
-        "names": ['ID_SubNetMask_akt', 'Unknown_Parameter_751'],
+        "names": ['ID_SubNetMask_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7567,7 +7567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 752,
         "count": 1,
-        "names": ['ID_Add_Broadcast_akt', 'Unknown_Parameter_752'],
+        "names": ['ID_Add_Broadcast_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7577,7 +7577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 753,
         "count": 1,
-        "names": ['ID_Add_StdGateway_akt', 'Unknown_Parameter_753'],
+        "names": ['ID_Add_StdGateway_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7587,7 +7587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 754,
         "count": 1,
-        "names": ['ID_DHCPServerAktiv_akt', 'Unknown_Parameter_754'],
+        "names": ['ID_DHCPServerAktiv_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7597,7 +7597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 755,
         "count": 1,
-        "names": ['ID_WebserverPasswort_1_akt', 'Unknown_Parameter_755'],
+        "names": ['ID_WebserverPasswort_1_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7607,7 +7607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 756,
         "count": 1,
-        "names": ['ID_WebserverPasswort_2_akt', 'Unknown_Parameter_756'],
+        "names": ['ID_WebserverPasswort_2_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7617,7 +7617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 757,
         "count": 1,
-        "names": ['ID_WebserverPasswort_3_akt', 'Unknown_Parameter_757'],
+        "names": ['ID_WebserverPasswort_3_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7627,7 +7627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 758,
         "count": 1,
-        "names": ['ID_WebserverPasswort_4_akt', 'Unknown_Parameter_758'],
+        "names": ['ID_WebserverPasswort_4_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7637,7 +7637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 759,
         "count": 1,
-        "names": ['ID_WebserverPasswort_5_akt', 'Unknown_Parameter_759'],
+        "names": ['ID_WebserverPasswort_5_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7647,7 +7647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 760,
         "count": 1,
-        "names": ['ID_WebserverPasswort_6_akt', 'Unknown_Parameter_760'],
+        "names": ['ID_WebserverPasswort_6_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7657,7 +7657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 761,
         "count": 1,
-        "names": ['ID_WebServerWerteBekommen', 'Unknown_Parameter_761'],
+        "names": ['ID_WebServerWerteBekommen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7667,7 +7667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 762,
         "count": 1,
-        "names": ['ID_Einst_ParBetr_akt', 'Unknown_Parameter_762'],
+        "names": ['ID_Einst_ParBetr_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7677,7 +7677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 763,
         "count": 1,
-        "names": ['ID_Einst_WpAnz_akt', 'Unknown_Parameter_763'],
+        "names": ['ID_Einst_WpAnz_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7687,7 +7687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 764,
         "count": 1,
-        "names": ['ID_Einst_PhrTime_akt', 'Unknown_Parameter_764'],
+        "names": ['ID_Einst_PhrTime_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7697,7 +7697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 765,
         "count": 1,
-        "names": ['ID_Einst_HysPar_akt', 'Unknown_Parameter_765'],
+        "names": ['ID_Einst_HysPar_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7707,7 +7707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 766,
         "count": 1,
-        "names": ['ID_IP_PB_Slave_0', 'Unknown_Parameter_766'],
+        "names": ['ID_IP_PB_Slave_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7717,7 +7717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 767,
         "count": 1,
-        "names": ['ID_IP_PB_Slave_1', 'Unknown_Parameter_767'],
+        "names": ['ID_IP_PB_Slave_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7727,7 +7727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 768,
         "count": 1,
-        "names": ['ID_IP_PB_Slave_2', 'Unknown_Parameter_768'],
+        "names": ['ID_IP_PB_Slave_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7737,7 +7737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 769,
         "count": 1,
-        "names": ['ID_IP_PB_Slave_3', 'Unknown_Parameter_769'],
+        "names": ['ID_IP_PB_Slave_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7747,7 +7747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 770,
         "count": 1,
-        "names": ['ID_IP_PB_Slave_4', 'Unknown_Parameter_770'],
+        "names": ['ID_IP_PB_Slave_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7757,7 +7757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 771,
         "count": 1,
-        "names": ['ID_IP_PB_Slave_5', 'Unknown_Parameter_771'],
+        "names": ['ID_IP_PB_Slave_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7767,7 +7767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 772,
         "count": 1,
-        "names": ['ID_Einst_BwHup_akt_backup', 'Unknown_Parameter_772'],
+        "names": ['ID_Einst_BwHup_akt_backup'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7777,7 +7777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 773,
         "count": 1,
-        "names": ['ID_Einst_SuMk3_akt', 'Unknown_Parameter_773'],
+        "names": ['ID_Einst_SuMk3_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7787,7 +7787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 774,
         "count": 1,
-        "names": ['ID_Einst_HzMK3E_akt', 'Unknown_Parameter_774'],
+        "names": ['ID_Einst_HzMK3E_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -7797,7 +7797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 775,
         "count": 1,
-        "names": ['ID_Einst_HzMK3ANH_akt', 'Unknown_Parameter_775'],
+        "names": ['ID_Einst_HzMK3ANH_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -7807,7 +7807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 776,
         "count": 1,
-        "names": ['ID_Einst_HzMK3ABS_akt', 'Unknown_Parameter_776'],
+        "names": ['ID_Einst_HzMK3ABS_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -7817,7 +7817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 777,
         "count": 1,
-        "names": ['ID_Einst_HzMK3Hgr_akt', 'Unknown_Parameter_777'],
+        "names": ['ID_Einst_HzMK3Hgr_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7827,7 +7827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 778,
         "count": 1,
-        "names": ['ID_Einst_HzFtMK3Vl_akt', 'Unknown_Parameter_778'],
+        "names": ['ID_Einst_HzFtMK3Vl_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7837,7 +7837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 779,
         "count": 1,
-        "names": ['ID_Ba_Hz_MK3_akt', 'Unknown_Parameter_779'],
+        "names": ['ID_Ba_Hz_MK3_akt'],
         "type": MixedCircuitMode,
         "writeable": True,
         "datatype": 'UINT32',
@@ -7847,7 +7847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 780,
         "count": 1,
-        "names": ['ID_Einst_MK3Typ_akt', 'Unknown_Parameter_780'],
+        "names": ['ID_Einst_MK3Typ_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7857,7 +7857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 781,
         "count": 1,
-        "names": ['ID_Einst_RTypMK3_akt', 'Unknown_Parameter_781'],
+        "names": ['ID_Einst_RTypMK3_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7867,7 +7867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 782,
         "count": 1,
-        "names": ['ID_Einst_MK3LzFaktor_akt', 'Unknown_Parameter_782'],
+        "names": ['ID_Einst_MK3LzFaktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7877,7 +7877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 783,
         "count": 1,
-        "names": ['ID_Einst_MK3PerFaktor_akt', 'Unknown_Parameter_783'],
+        "names": ['ID_Einst_MK3PerFaktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7887,7 +7887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 784,
         "count": 1,
-        "names": ['ID_FerienModusAktivMk3', 'Unknown_Parameter_784'],
+        "names": ['ID_FerienModusAktivMk3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7897,7 +7897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 785,
         "count": 1,
-        "names": ['ID_SU_FrkdMK3', 'Unknown_Parameter_785'],
+        "names": ['ID_SU_FrkdMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7907,7 +7907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 786,
         "count": 1,
-        "names": ['ID_FerienAbsenkungMK3', 'Unknown_Parameter_786'],
+        "names": ['ID_FerienAbsenkungMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7917,7 +7917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 787,
         "count": 1,
-        "names": ['ID_SU_FstdMK3', 'Unknown_Parameter_787'],
+        "names": ['ID_SU_FstdMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7927,7 +7927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 788,
         "count": 1,
-        "names": ['ID_Einst_SuMk3_akt2', 'Unknown_Parameter_788'],
+        "names": ['ID_Einst_SuMk3_akt2'],
         "type": TimerProgram,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7937,7 +7937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 789,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Wo_zeit_0_0', 'Unknown_Parameter_789'],
+        "names": ['ID_Einst_SuMk3Wo_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7947,7 +7947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 790,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Wo_zeit_0_1', 'Unknown_Parameter_790'],
+        "names": ['ID_Einst_SuMk3Wo_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7957,7 +7957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 791,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Wo_zeit_1_0', 'Unknown_Parameter_791'],
+        "names": ['ID_Einst_SuMk3Wo_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7967,7 +7967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 792,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Wo_zeit_1_1', 'Unknown_Parameter_792'],
+        "names": ['ID_Einst_SuMk3Wo_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7977,7 +7977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 793,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Wo_zeit_2_0', 'Unknown_Parameter_793'],
+        "names": ['ID_Einst_SuMk3Wo_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7987,7 +7987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 794,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Wo_zeit_2_1', 'Unknown_Parameter_794'],
+        "names": ['ID_Einst_SuMk3Wo_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -7997,7 +7997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 795,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_0_0', 'Unknown_Parameter_795'],
+        "names": ['ID_Einst_SuMk325_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8007,7 +8007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 796,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_0_1', 'Unknown_Parameter_796'],
+        "names": ['ID_Einst_SuMk325_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8017,7 +8017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 797,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_1_0', 'Unknown_Parameter_797'],
+        "names": ['ID_Einst_SuMk325_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8027,7 +8027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 798,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_1_1', 'Unknown_Parameter_798'],
+        "names": ['ID_Einst_SuMk325_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8037,7 +8037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 799,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_2_0', 'Unknown_Parameter_799'],
+        "names": ['ID_Einst_SuMk325_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8047,7 +8047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 800,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_2_1', 'Unknown_Parameter_800'],
+        "names": ['ID_Einst_SuMk325_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8057,7 +8057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 801,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_0_2', 'Unknown_Parameter_801'],
+        "names": ['ID_Einst_SuMk325_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8067,7 +8067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 802,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_0_3', 'Unknown_Parameter_802'],
+        "names": ['ID_Einst_SuMk325_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8077,7 +8077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 803,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_1_2', 'Unknown_Parameter_803'],
+        "names": ['ID_Einst_SuMk325_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8087,7 +8087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 804,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_1_3', 'Unknown_Parameter_804'],
+        "names": ['ID_Einst_SuMk325_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8097,7 +8097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 805,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_2_2', 'Unknown_Parameter_805'],
+        "names": ['ID_Einst_SuMk325_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8107,7 +8107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 806,
         "count": 1,
-        "names": ['ID_Einst_SuMk325_zeit_2_3', 'Unknown_Parameter_806'],
+        "names": ['ID_Einst_SuMk325_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8117,7 +8117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 807,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_0', 'Unknown_Parameter_807'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8127,7 +8127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 808,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_1', 'Unknown_Parameter_808'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8137,7 +8137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 809,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_0', 'Unknown_Parameter_809'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8147,7 +8147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 810,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_1', 'Unknown_Parameter_810'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8157,7 +8157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 811,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_0', 'Unknown_Parameter_811'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_0'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8167,7 +8167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 812,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_1', 'Unknown_Parameter_812'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_1'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8177,7 +8177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 813,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_2', 'Unknown_Parameter_813'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8187,7 +8187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 814,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_3', 'Unknown_Parameter_814'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8197,7 +8197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 815,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_2', 'Unknown_Parameter_815'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8207,7 +8207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 816,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_3', 'Unknown_Parameter_816'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8217,7 +8217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 817,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_2', 'Unknown_Parameter_817'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_2'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8227,7 +8227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 818,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_3', 'Unknown_Parameter_818'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_3'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8237,7 +8237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 819,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_4', 'Unknown_Parameter_819'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8247,7 +8247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 820,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_5', 'Unknown_Parameter_820'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8257,7 +8257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 821,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_4', 'Unknown_Parameter_821'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8267,7 +8267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 822,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_5', 'Unknown_Parameter_822'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8277,7 +8277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 823,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_4', 'Unknown_Parameter_823'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_4'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8287,7 +8287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 824,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_5', 'Unknown_Parameter_824'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_5'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8297,7 +8297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 825,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_6', 'Unknown_Parameter_825'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8307,7 +8307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 826,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_7', 'Unknown_Parameter_826'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8317,7 +8317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 827,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_6', 'Unknown_Parameter_827'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8327,7 +8327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 828,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_7', 'Unknown_Parameter_828'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8337,7 +8337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 829,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_6', 'Unknown_Parameter_829'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_6'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8347,7 +8347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 830,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_7', 'Unknown_Parameter_830'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_7'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8357,7 +8357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 831,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_8', 'Unknown_Parameter_831'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8367,7 +8367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 832,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_9', 'Unknown_Parameter_832'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8377,7 +8377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 833,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_8', 'Unknown_Parameter_833'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8387,7 +8387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 834,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_9', 'Unknown_Parameter_834'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8397,7 +8397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 835,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_8', 'Unknown_Parameter_835'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_8'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8407,7 +8407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 836,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_9', 'Unknown_Parameter_836'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_9'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8417,7 +8417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 837,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_10', 'Unknown_Parameter_837'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8427,7 +8427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 838,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_11', 'Unknown_Parameter_838'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8437,7 +8437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 839,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_10', 'Unknown_Parameter_839'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8447,7 +8447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 840,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_11', 'Unknown_Parameter_840'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8457,7 +8457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 841,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_10', 'Unknown_Parameter_841'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_10'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8467,7 +8467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 842,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_11', 'Unknown_Parameter_842'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_11'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8477,7 +8477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 843,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_12', 'Unknown_Parameter_843'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8487,7 +8487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 844,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_0_13', 'Unknown_Parameter_844'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_0_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8497,7 +8497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 845,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_12', 'Unknown_Parameter_845'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8507,7 +8507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 846,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_1_13', 'Unknown_Parameter_846'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_1_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8517,7 +8517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 847,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_12', 'Unknown_Parameter_847'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_12'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8527,7 +8527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 848,
         "count": 1,
-        "names": ['ID_Einst_SuMk3Tg_zeit_2_13', 'Unknown_Parameter_848'],
+        "names": ['ID_Einst_SuMk3Tg_zeit_2_13'],
         "type": TimeOfDay,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8537,7 +8537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 849,
         "count": 1,
-        "names": ['ID_Ba_Hz_MK3_saved', 'Unknown_Parameter_849'],
+        "names": ['ID_Ba_Hz_MK3_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8547,7 +8547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 850,
         "count": 1,
-        "names": ['ID_Einst_Kuhl_Zeit_Ein_akt', 'Unknown_Parameter_850'],
+        "names": ['ID_Einst_Kuhl_Zeit_Ein_akt'],
         "type": Hours,
         "writeable": True,
         "datatype": 'UINT32',
@@ -8557,7 +8557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 851,
         "count": 1,
-        "names": ['ID_Einst_Kuhl_Zeit_Aus_akt', 'Unknown_Parameter_851'],
+        "names": ['ID_Einst_Kuhl_Zeit_Aus_akt'],
         "type": Hours,
         "writeable": True,
         "datatype": 'UINT32',
@@ -8567,7 +8567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 852,
         "count": 1,
-        "names": ['ID_Waermemenge_Seit', 'Unknown_Parameter_852'],
+        "names": ['ID_Waermemenge_Seit'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8577,7 +8577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 853,
         "count": 1,
-        "names": ['ID_Waermemenge_WQ', 'Unknown_Parameter_853'],
+        "names": ['ID_Waermemenge_WQ'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8587,7 +8587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 854,
         "count": 1,
-        "names": ['ID_Waermemenge_Hz', 'Unknown_Parameter_854'],
+        "names": ['ID_Waermemenge_Hz'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8597,7 +8597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 855,
         "count": 1,
-        "names": ['ID_Waermemenge_WQ_ges', 'Unknown_Parameter_855'],
+        "names": ['ID_Waermemenge_WQ_ges'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8607,7 +8607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 856,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_13', 'Unknown_Parameter_856'],
+        "names": ['ID_Einst_Entl_Typ_13'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8617,7 +8617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 857,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_14', 'Unknown_Parameter_857'],
+        "names": ['ID_Einst_Entl_Typ_14'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8627,7 +8627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 858,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_15', 'Unknown_Parameter_858'],
+        "names": ['ID_Einst_Entl_Typ_15'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8637,7 +8637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 859,
         "count": 1,
-        "names": ['ID_Zaehler_BetrZeitSW', 'Unknown_Parameter_859'],
+        "names": ['ID_Zaehler_BetrZeitSW'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8647,7 +8647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 860,
         "count": 1,
-        "names": ['ID_Einst_Fernwartung_akt', 'Unknown_Parameter_860'],
+        "names": ['ID_Einst_Fernwartung_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8657,7 +8657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 861,
         "count": 1,
-        "names": ['ID_AdresseIPServ_akt', 'Unknown_Parameter_861'],
+        "names": ['ID_AdresseIPServ_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8667,7 +8667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 862,
         "count": 1,
-        "names": ['ID_Einst_TA_EG_akt', 'Unknown_Parameter_862'],
+        "names": ['ID_Einst_TA_EG_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8677,7 +8677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 863,
         "count": 1,
-        "names": ['ID_Einst_TVLmax_EG_akt', 'Unknown_Parameter_863'],
+        "names": ['ID_Einst_TVLmax_EG_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8687,7 +8687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 864,
         "count": 1,
-        "names": ['ID_Einst_Popt_Nachlauf_akt', 'Unknown_Parameter_864'],
+        "names": ['ID_Einst_Popt_Nachlauf_akt'],
         "type": Minutes,
         "writeable": True,
         "datatype": 'UINT32',
@@ -8697,7 +8697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 865,
         "count": 1,
-        "names": ['ID_FernwartungVertrag_akt', 'Unknown_Parameter_865'],
+        "names": ['ID_FernwartungVertrag_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8707,7 +8707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 866,
         "count": 1,
-        "names": ['ID_FernwartungAktuZeit', 'Unknown_Parameter_866'],
+        "names": ['ID_FernwartungAktuZeit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8717,7 +8717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 867,
         "count": 1,
-        "names": ['ID_Einst_Effizienzpumpe_Nominal_akt', 'Unknown_Parameter_867'],
+        "names": ['ID_Einst_Effizienzpumpe_Nominal_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8727,7 +8727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 868,
         "count": 1,
-        "names": ['ID_Einst_Effizienzpumpe_Minimal_akt', 'Unknown_Parameter_868'],
+        "names": ['ID_Einst_Effizienzpumpe_Minimal_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8737,7 +8737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 869,
         "count": 1,
-        "names": ['ID_Einst_Effizienzpumpe_akt', 'Unknown_Parameter_869'],
+        "names": ['ID_Einst_Effizienzpumpe_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8747,7 +8747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 870,
         "count": 1,
-        "names": ['ID_Einst_Waermemenge_akt', 'Unknown_Parameter_870'],
+        "names": ['ID_Einst_Waermemenge_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8757,7 +8757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 871,
         "count": 1,
-        "names": ['ID_Einst_Wm_Versorgung_Korrektur_akt', 'Unknown_Parameter_871'],
+        "names": ['ID_Einst_Wm_Versorgung_Korrektur_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8767,7 +8767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 872,
         "count": 1,
-        "names": ['ID_Einst_Wm_Auswertung_Korrektur_akt', 'Unknown_Parameter_872'],
+        "names": ['ID_Einst_Wm_Auswertung_Korrektur_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8777,7 +8777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 873,
         "count": 1,
-        "names": ['ID_SoftwareUpdateJetztGemacht_akt', 'Unknown_Parameter_873'],
+        "names": ['ID_SoftwareUpdateJetztGemacht_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8787,7 +8787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 874,
         "count": 1,
-        "names": ['ID_WP_SerienNummer_DATUM', 'Unknown_Parameter_874'],
+        "names": ['ID_WP_SerienNummer_DATUM'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8797,7 +8797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 875,
         "count": 1,
-        "names": ['ID_WP_SerienNummer_HEX', 'Unknown_Parameter_875'],
+        "names": ['ID_WP_SerienNummer_HEX'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8807,7 +8807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 876,
         "count": 1,
-        "names": ['ID_WP_SerienNummer_INDEX', 'Unknown_Parameter_876'],
+        "names": ['ID_WP_SerienNummer_INDEX'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8817,7 +8817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 877,
         "count": 1,
-        "names": ['ID_ProgWerteWebSrvBeobarten', 'Unknown_Parameter_877'],
+        "names": ['ID_ProgWerteWebSrvBeobarten'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8827,7 +8827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 878,
         "count": 1,
-        "names": ['ID_Waermemenge_BW', 'Unknown_Parameter_878'],
+        "names": ['ID_Waermemenge_BW'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8837,7 +8837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 879,
         "count": 1,
-        "names": ['ID_Waermemenge_SW', 'Unknown_Parameter_879'],
+        "names": ['ID_Waermemenge_SW'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8847,7 +8847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 880,
         "count": 1,
-        "names": ['ID_Waermemenge_Datum', 'Unknown_Parameter_880'],
+        "names": ['ID_Waermemenge_Datum'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8857,7 +8857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 881,
         "count": 1,
-        "names": ['ID_Einst_Solar_akt', 'Unknown_Parameter_881'],
+        "names": ['ID_Einst_Solar_akt'],
         "type": SolarMode,
         "writeable": True,
         "datatype": 'UINT32',
@@ -8867,7 +8867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 882,
         "count": 1,
-        "names": ['ID_BSTD_Solar', 'Unknown_Parameter_882'],
+        "names": ['ID_BSTD_Solar'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8877,7 +8877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 883,
         "count": 1,
-        "names": ['ID_Einst_TDC_Koll_Max_akt', 'Unknown_Parameter_883'],
+        "names": ['ID_Einst_TDC_Koll_Max_akt'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -8887,7 +8887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 884,
         "count": 1,
-        "names": ['ID_Einst_Akt_Kuehlung_akt', 'Unknown_Parameter_884'],
+        "names": ['ID_Einst_Akt_Kuehlung_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8897,7 +8897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 885,
         "count": 1,
-        "names": ['ID_Einst_Vorlauf_VBO_akt', 'Unknown_Parameter_885'],
+        "names": ['ID_Einst_Vorlauf_VBO_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8907,7 +8907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 886,
         "count": 1,
-        "names": ['ID_Einst_KRHyst_akt', 'Unknown_Parameter_886'],
+        "names": ['ID_Einst_KRHyst_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8917,7 +8917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 887,
         "count": 1,
-        "names": ['ID_Einst_Akt_Kuehl_Speicher_min_akt', 'Unknown_Parameter_887'],
+        "names": ['ID_Einst_Akt_Kuehl_Speicher_min_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8927,7 +8927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 888,
         "count": 1,
-        "names": ['ID_Einst_Akt_Kuehl_Freig_WQE_akt', 'Unknown_Parameter_888'],
+        "names": ['ID_Einst_Akt_Kuehl_Freig_WQE_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8937,7 +8937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 889,
         "count": 1,
-        "names": ['ID_NDAB_WW_Anzahl', 'Unknown_Parameter_889'],
+        "names": ['ID_NDAB_WW_Anzahl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8947,7 +8947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 890,
         "count": 1,
-        "names": ['ID_NDS_WW_KD_Quitt', 'Unknown_Parameter_890'],
+        "names": ['ID_NDS_WW_KD_Quitt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8957,7 +8957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 891,
         "count": 1,
-        "names": ['ID_Einst_AbtZykMin_akt', 'Unknown_Parameter_891'],
+        "names": ['ID_Einst_AbtZykMin_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8967,7 +8967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 892,
         "count": 1,
-        "names": ['ID_Einst_VD2_Zeit_Min_akt', 'Unknown_Parameter_892'],
+        "names": ['ID_Einst_VD2_Zeit_Min_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8977,7 +8977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 893,
         "count": 1,
-        "names": ['ID_Einst_Hysterese_HR_verkuerzt_akt', 'Unknown_Parameter_893'],
+        "names": ['ID_Einst_Hysterese_HR_verkuerzt_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -8987,7 +8987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 894,
         "count": 1,
-        "names": ['ID_Einst_BA_Lueftung_akt', 'Unknown_Parameter_894'],
+        "names": ['ID_Einst_BA_Lueftung_akt'],
         "type": VentilationMode,
         "writeable": True,
         "datatype": 'UINT32',
@@ -8997,7 +8997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 895,
         "count": 1,
-        "names": ['ID_Einst_SuLuf_akt', 'Unknown_Parameter_895'],
+        "names": ['ID_Einst_SuLuf_akt'],
         "type": TimerProgram,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9007,7 +9007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 896,
         "count": 1,
-        "names": ['ID_Einst_SuLufWo_zeit_0_0_0', 'Unknown_Parameter_896'],
+        "names": ['ID_Einst_SuLufWo_zeit_0_0_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9017,7 +9017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 897,
         "count": 1,
-        "names": ['ID_Einst_SuLufWo_zeit_0_1_0', 'Unknown_Parameter_897'],
+        "names": ['ID_Einst_SuLufWo_zeit_0_1_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9027,7 +9027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 898,
         "count": 1,
-        "names": ['ID_Einst_SuLufWo_zeit_0_2_0', 'Unknown_Parameter_898'],
+        "names": ['ID_Einst_SuLufWo_zeit_0_2_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9037,7 +9037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 899,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_0_0_0', 'Unknown_Parameter_899'],
+        "names": ['ID_Einst_SuLuf25_zeit_0_0_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9047,7 +9047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 900,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_0_1_0', 'Unknown_Parameter_900'],
+        "names": ['ID_Einst_SuLuf25_zeit_0_1_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9057,7 +9057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 901,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_0_2_0', 'Unknown_Parameter_901'],
+        "names": ['ID_Einst_SuLuf25_zeit_0_2_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9067,7 +9067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 902,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_0_0_2', 'Unknown_Parameter_902'],
+        "names": ['ID_Einst_SuLuf25_zeit_0_0_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9077,7 +9077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 903,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_0_1_2', 'Unknown_Parameter_903'],
+        "names": ['ID_Einst_SuLuf25_zeit_0_1_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9087,7 +9087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 904,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_0_2_2', 'Unknown_Parameter_904'],
+        "names": ['ID_Einst_SuLuf25_zeit_0_2_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9097,7 +9097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 905,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_0_0', 'Unknown_Parameter_905'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_0_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9107,7 +9107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 906,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_1_0', 'Unknown_Parameter_906'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_1_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9117,7 +9117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 907,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_2_0', 'Unknown_Parameter_907'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_2_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9127,7 +9127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 908,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_0_2', 'Unknown_Parameter_908'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_0_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9137,7 +9137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 909,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_1_2', 'Unknown_Parameter_909'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_1_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9147,7 +9147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 910,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_2_2', 'Unknown_Parameter_910'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_2_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9157,7 +9157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 911,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_0_4', 'Unknown_Parameter_911'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_0_4'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9167,7 +9167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 912,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_1_4', 'Unknown_Parameter_912'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_1_4'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9177,7 +9177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 913,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_2_4', 'Unknown_Parameter_913'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_2_4'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9187,7 +9187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 914,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_0_6', 'Unknown_Parameter_914'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_0_6'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9197,7 +9197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 915,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_1_6', 'Unknown_Parameter_915'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_1_6'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9207,7 +9207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 916,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_2_6', 'Unknown_Parameter_916'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_2_6'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9217,7 +9217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 917,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_0_8', 'Unknown_Parameter_917'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_0_8'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9227,7 +9227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 918,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_1_8', 'Unknown_Parameter_918'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_1_8'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9237,7 +9237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 919,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_2_8', 'Unknown_Parameter_919'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_2_8'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9247,7 +9247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 920,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_0_10', 'Unknown_Parameter_920'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_0_10'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9257,7 +9257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 921,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_1_10', 'Unknown_Parameter_921'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_1_10'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9267,7 +9267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 922,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_2_10', 'Unknown_Parameter_922'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_2_10'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9277,7 +9277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 923,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_0_12', 'Unknown_Parameter_923'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_0_12'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9287,7 +9287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 924,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_1_12', 'Unknown_Parameter_924'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_1_12'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9297,7 +9297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 925,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_0_2_12', 'Unknown_Parameter_925'],
+        "names": ['ID_Einst_SuLufTg_zeit_0_2_12'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9307,7 +9307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 926,
         "count": 1,
-        "names": ['ID_Einst_SuLufWo_zeit_1_0_0', 'Unknown_Parameter_926'],
+        "names": ['ID_Einst_SuLufWo_zeit_1_0_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9317,7 +9317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 927,
         "count": 1,
-        "names": ['ID_Einst_SuLufWo_zeit_1_1_0', 'Unknown_Parameter_927'],
+        "names": ['ID_Einst_SuLufWo_zeit_1_1_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9327,7 +9327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 928,
         "count": 1,
-        "names": ['ID_Einst_SuLufWo_zeit_1_2_0', 'Unknown_Parameter_928'],
+        "names": ['ID_Einst_SuLufWo_zeit_1_2_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9337,7 +9337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 929,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_1_0_0', 'Unknown_Parameter_929'],
+        "names": ['ID_Einst_SuLuf25_zeit_1_0_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9347,7 +9347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 930,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_1_1_0', 'Unknown_Parameter_930'],
+        "names": ['ID_Einst_SuLuf25_zeit_1_1_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9357,7 +9357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 931,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_1_2_0', 'Unknown_Parameter_931'],
+        "names": ['ID_Einst_SuLuf25_zeit_1_2_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9367,7 +9367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 932,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_1_0_2', 'Unknown_Parameter_932'],
+        "names": ['ID_Einst_SuLuf25_zeit_1_0_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9377,7 +9377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 933,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_1_1_2', 'Unknown_Parameter_933'],
+        "names": ['ID_Einst_SuLuf25_zeit_1_1_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9387,7 +9387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 934,
         "count": 1,
-        "names": ['ID_Einst_SuLuf25_zeit_1_2_2', 'Unknown_Parameter_934'],
+        "names": ['ID_Einst_SuLuf25_zeit_1_2_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9397,7 +9397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 935,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_0_0', 'Unknown_Parameter_935'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_0_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9407,7 +9407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 936,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_1_0', 'Unknown_Parameter_936'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_1_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9417,7 +9417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 937,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_2_0', 'Unknown_Parameter_937'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_2_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9427,7 +9427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 938,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_0_2', 'Unknown_Parameter_938'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_0_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9437,7 +9437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 939,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_1_2', 'Unknown_Parameter_939'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_1_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9447,7 +9447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 940,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_2_2', 'Unknown_Parameter_940'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_2_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9457,7 +9457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 941,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_0_4', 'Unknown_Parameter_941'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_0_4'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9467,7 +9467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 942,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_1_4', 'Unknown_Parameter_942'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_1_4'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9477,7 +9477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 943,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_2_4', 'Unknown_Parameter_943'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_2_4'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9487,7 +9487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 944,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_0_6', 'Unknown_Parameter_944'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_0_6'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9497,7 +9497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 945,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_1_6', 'Unknown_Parameter_945'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_1_6'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9507,7 +9507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 946,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_2_6', 'Unknown_Parameter_946'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_2_6'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9517,7 +9517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 947,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_0_8', 'Unknown_Parameter_947'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_0_8'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9527,7 +9527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 948,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_1_8', 'Unknown_Parameter_948'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_1_8'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9537,7 +9537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 949,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_2_8', 'Unknown_Parameter_949'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_2_8'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9547,7 +9547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 950,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_0_10', 'Unknown_Parameter_950'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_0_10'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9557,7 +9557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 951,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_1_10', 'Unknown_Parameter_951'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_1_10'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9567,7 +9567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 952,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_2_10', 'Unknown_Parameter_952'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_2_10'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9577,7 +9577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 953,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_0_12', 'Unknown_Parameter_953'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_0_12'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9587,7 +9587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 954,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_1_12', 'Unknown_Parameter_954'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_1_12'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9597,7 +9597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 955,
         "count": 1,
-        "names": ['ID_Einst_SuLufTg_zeit_1_2_12', 'Unknown_Parameter_955'],
+        "names": ['ID_Einst_SuLufTg_zeit_1_2_12'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9607,7 +9607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 956,
         "count": 1,
-        "names": ['ID_FerienModusAktivLueftung', 'Unknown_Parameter_956'],
+        "names": ['ID_FerienModusAktivLueftung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9617,7 +9617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 957,
         "count": 1,
-        "names": ['ID_Einst_BA_Lueftung_saved', 'Unknown_Parameter_957'],
+        "names": ['ID_Einst_BA_Lueftung_saved'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9627,7 +9627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 958,
         "count": 1,
-        "names": ['ID_SU_FrkdLueftung', 'Unknown_Parameter_958'],
+        "names": ['ID_SU_FrkdLueftung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9637,7 +9637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 959,
         "count": 1,
-        "names": ['ID_SU_FstdLueftung', 'Unknown_Parameter_959'],
+        "names": ['ID_SU_FstdLueftung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9647,7 +9647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 960,
         "count": 1,
-        "names": ['ID_Einst_Luf_Feuchteschutz_akt', 'Unknown_Parameter_960'],
+        "names": ['ID_Einst_Luf_Feuchteschutz_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9657,7 +9657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 961,
         "count": 1,
-        "names": ['ID_Einst_Luf_Reduziert_akt', 'Unknown_Parameter_961'],
+        "names": ['ID_Einst_Luf_Reduziert_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9667,7 +9667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 962,
         "count": 1,
-        "names": ['ID_Einst_Luf_Nennlueftung_akt', 'Unknown_Parameter_962'],
+        "names": ['ID_Einst_Luf_Nennlueftung_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9677,7 +9677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 963,
         "count": 1,
-        "names": ['ID_Einst_Luf_Intensivlueftung_akt', 'Unknown_Parameter_963'],
+        "names": ['ID_Einst_Luf_Intensivlueftung_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9687,7 +9687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 964,
         "count": 1,
-        "names": ['ID_Timer_Fil_4Makt', 'Unknown_Parameter_964'],
+        "names": ['ID_Timer_Fil_4Makt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9697,7 +9697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 965,
         "count": 1,
-        "names": ['ID_Timer_Fil_WoAkt', 'Unknown_Parameter_965'],
+        "names": ['ID_Timer_Fil_WoAkt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9707,7 +9707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 966,
         "count": 1,
-        "names": ['ID_Sollwert_KuCft3_akt', 'Unknown_Parameter_966'],
+        "names": ['ID_Sollwert_KuCft3_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -9717,7 +9717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 967,
         "count": 1,
-        "names": ['ID_Sollwert_AtDif3_akt', 'Unknown_Parameter_967'],
+        "names": ['ID_Sollwert_AtDif3_akt'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -9727,7 +9727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 968,
         "count": 1,
-        "names": ['ID_Bitmaske_0', 'Unknown_Parameter_968'],
+        "names": ['ID_Bitmaske_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9737,7 +9737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 969,
         "count": 1,
-        "names": ['ID_Einst_Lueftungsstufen', 'Unknown_Parameter_969'],
+        "names": ['ID_Einst_Lueftungsstufen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9747,7 +9747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 970,
         "count": 1,
-        "names": ['ID_SysEin_Meldung_TDI', 'Unknown_Parameter_970'],
+        "names": ['ID_SysEin_Meldung_TDI'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9757,7 +9757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 971,
         "count": 1,
-        "names": ['ID_SysEin_Typ_WZW', 'Unknown_Parameter_971'],
+        "names": ['ID_SysEin_Typ_WZW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9767,7 +9767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 972,
         "count": 1,
-        "names": ['ID_Einst_GLT_aktiviert', 'Unknown_Parameter_972'],
+        "names": ['ID_Einst_GLT_aktiviert'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9777,7 +9777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 973,
         "count": 1,
-        "names": ['ID_Einst_BW_max', 'Unknown_Parameter_973'],
+        "names": ['ID_Einst_BW_max'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9787,7 +9787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 974,
         "count": 1,
-        "names": ['ID_Einst_Sollwert_TRL_Kuehlen', 'Unknown_Parameter_974'],
+        "names": ['ID_Einst_Sollwert_TRL_Kuehlen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9797,7 +9797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 975,
         "count": 1,
-        "names": ['ID_Einst_Medium_Waermequelle', 'Unknown_Parameter_975'],
+        "names": ['ID_Einst_Medium_Waermequelle'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9807,7 +9807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 976,
         "count": 1,
-        "names": ['ID_Einst_Photovoltaik_akt', 'Unknown_Parameter_976'],
+        "names": ['ID_Einst_Photovoltaik_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9817,7 +9817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 977,
         "count": 1,
-        "names": ['ID_Einst_Multispeicher_akt', 'Unknown_Parameter_977'],
+        "names": ['ID_Einst_Multispeicher_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9827,7 +9827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 978,
         "count": 1,
-        "names": ['ID_Einst_PKuehlTime_akt', 'Unknown_Parameter_978'],
+        "names": ['ID_Einst_PKuehlTime_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9837,7 +9837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 979,
         "count": 1,
-        "names": ['ID_Einst_Minimale_Ruecklaufsolltemperatur', 'Unknown_Parameter_979'],
+        "names": ['ID_Einst_Minimale_Ruecklaufsolltemperatur'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
@@ -9847,7 +9847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 980,
         "count": 1,
-        "names": ['ID_RBE_Einflussfaktor_RT_akt', 'Unknown_Parameter_980'],
+        "names": ['ID_RBE_Einflussfaktor_RT_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9857,7 +9857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 981,
         "count": 1,
-        "names": ['ID_RBE_Freigabe_Kuehlung_akt', 'Unknown_Parameter_981'],
+        "names": ['ID_RBE_Freigabe_Kuehlung_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9867,7 +9867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 982,
         "count": 1,
-        "names": ['ID_RBE_Waermeverteilsystem_akt', 'Unknown_Parameter_982'],
+        "names": ['ID_RBE_Waermeverteilsystem_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9877,7 +9877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 983,
         "count": 1,
-        "names": ['ID_RBE_Zeit_Heizstab_aktiv', 'Unknown_Parameter_983'],
+        "names": ['ID_RBE_Zeit_Heizstab_aktiv'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9887,7 +9887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 984,
         "count": 1,
-        "names": ['ID_SEC_ND_Alarmgrenze', 'Unknown_Parameter_984'],
+        "names": ['ID_SEC_ND_Alarmgrenze'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9897,7 +9897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 985,
         "count": 1,
-        "names": ['ID_SEC_HD_Alarmgrenze', 'Unknown_Parameter_985'],
+        "names": ['ID_SEC_HD_Alarmgrenze'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9907,7 +9907,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 986,
         "count": 1,
-        "names": ['ID_SEC_Abtauendtemperatur', 'Unknown_Parameter_986'],
+        "names": ['ID_SEC_Abtauendtemperatur'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9917,7 +9917,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 987,
         "count": 1,
-        "names": ['ID_Einst_Min_RPM_BW', 'Unknown_Parameter_987'],
+        "names": ['ID_Einst_Min_RPM_BW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9927,7 +9927,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 988,
         "count": 1,
-        "names": ['ID_Einst_Luf_Feuchteschutz_Faktor_akt', 'Unknown_Parameter_988'],
+        "names": ['ID_Einst_Luf_Feuchteschutz_Faktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9937,7 +9937,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 989,
         "count": 1,
-        "names": ['ID_Einst_Luf_Reduziert_Faktor_akt', 'Unknown_Parameter_989'],
+        "names": ['ID_Einst_Luf_Reduziert_Faktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9947,7 +9947,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 990,
         "count": 1,
-        "names": ['ID_Einst_Luf_Nennlueftung_Faktor_akt', 'Unknown_Parameter_990'],
+        "names": ['ID_Einst_Luf_Nennlueftung_Faktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9957,7 +9957,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 991,
         "count": 1,
-        "names": ['ID_Einst_Luf_Intensivlueftung_Faktor_akt', 'Unknown_Parameter_991'],
+        "names": ['ID_Einst_Luf_Intensivlueftung_Faktor_akt'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9967,7 +9967,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 992,
         "count": 1,
-        "names": ['ID_Einst_Freigabe_Zeit_ZWE', 'Unknown_Parameter_992'],
+        "names": ['ID_Einst_Freigabe_Zeit_ZWE'],
         "type": Minutes,
         "writeable": True,
         "datatype": 'UINT32',
@@ -9977,7 +9977,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 993,
         "count": 1,
-        "names": ['ID_Einst_min_VL_Kuehl', 'Unknown_Parameter_993'],
+        "names": ['ID_Einst_min_VL_Kuehl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -9987,7 +9987,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 994,
         "count": 1,
-        "names": ['ID_Einst_Warmwasser_Nachheizung', 'Unknown_Parameter_994'],
+        "names": ['ID_Einst_Warmwasser_Nachheizung'],
         "type": Bool,
         "writeable": True,
         "datatype": 'UINT32',
@@ -9997,7 +9997,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 995,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_0_0', 'Unknown_Parameter_995'],
+        "names": ['ID_Switchoff_file_LWD2_0_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10007,7 +10007,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 996,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_1_0', 'Unknown_Parameter_996'],
+        "names": ['ID_Switchoff_file_LWD2_1_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10017,7 +10017,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 997,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_2_0', 'Unknown_Parameter_997'],
+        "names": ['ID_Switchoff_file_LWD2_2_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10027,7 +10027,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 998,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_3_0', 'Unknown_Parameter_998'],
+        "names": ['ID_Switchoff_file_LWD2_3_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10037,7 +10037,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 999,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_4_0', 'Unknown_Parameter_999'],
+        "names": ['ID_Switchoff_file_LWD2_4_0'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10047,7 +10047,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1000,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_0_1', 'Unknown_Parameter_1000'],
+        "names": ['ID_Switchoff_file_LWD2_0_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10057,7 +10057,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1001,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_1_1', 'Unknown_Parameter_1001'],
+        "names": ['ID_Switchoff_file_LWD2_1_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10067,7 +10067,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1002,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_2_1', 'Unknown_Parameter_1002'],
+        "names": ['ID_Switchoff_file_LWD2_2_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10077,7 +10077,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1003,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_3_1', 'Unknown_Parameter_1003'],
+        "names": ['ID_Switchoff_file_LWD2_3_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10087,7 +10087,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1004,
         "count": 1,
-        "names": ['ID_Switchoff_file_LWD2_4_1', 'Unknown_Parameter_1004'],
+        "names": ['ID_Switchoff_file_LWD2_4_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10097,7 +10097,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1005,
         "count": 1,
-        "names": ['ID_Switchoff_index_LWD2', 'Unknown_Parameter_1005'],
+        "names": ['ID_Switchoff_index_LWD2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10107,7 +10107,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1006,
         "count": 1,
-        "names": ['ID_Einst_Effizienzpumpe_Nominal_2', 'Unknown_Parameter_1006'],
+        "names": ['ID_Einst_Effizienzpumpe_Nominal_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10117,7 +10117,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1007,
         "count": 1,
-        "names": ['ID_Einst_Effizienzpumpe_Minimal_2', 'Unknown_Parameter_1007'],
+        "names": ['ID_Einst_Effizienzpumpe_Minimal_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10127,7 +10127,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1008,
         "count": 1,
-        "names": ['ID_Einst_Wm_Versorgung_Korrektur_2', 'Unknown_Parameter_1008'],
+        "names": ['ID_Einst_Wm_Versorgung_Korrektur_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10137,7 +10137,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1009,
         "count": 1,
-        "names": ['ID_Einst_Wm_Auswertung_Korrektur_2', 'Unknown_Parameter_1009'],
+        "names": ['ID_Einst_Wm_Auswertung_Korrektur_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10147,7 +10147,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1010,
         "count": 1,
-        "names": ['ID_Einst_isTwin', 'Unknown_Parameter_1010'],
+        "names": ['ID_Einst_isTwin'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10157,7 +10157,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1011,
         "count": 1,
-        "names": ['ID_Einst_TAmin_2', 'Unknown_Parameter_1011'],
+        "names": ['ID_Einst_TAmin_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10167,7 +10167,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1012,
         "count": 1,
-        "names": ['ID_Einst_TVLmax_2', 'Unknown_Parameter_1012'],
+        "names": ['ID_Einst_TVLmax_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10177,7 +10177,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1013,
         "count": 1,
-        "names": ['ID_Einst_TA_EG_2', 'Unknown_Parameter_1013'],
+        "names": ['ID_Einst_TA_EG_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10187,7 +10187,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1014,
         "count": 1,
-        "names": ['ID_Einst_TVLmax_EG_2', 'Unknown_Parameter_1014'],
+        "names": ['ID_Einst_TVLmax_EG_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10197,7 +10197,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1015,
         "count": 1,
-        "names": ['ID_Waermemenge_Hz_2', 'Unknown_Parameter_1015'],
+        "names": ['ID_Waermemenge_Hz_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10207,7 +10207,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1016,
         "count": 1,
-        "names": ['ID_Waermemenge_BW_2', 'Unknown_Parameter_1016'],
+        "names": ['ID_Waermemenge_BW_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10217,7 +10217,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1017,
         "count": 1,
-        "names": ['ID_Waermemenge_SW_2', 'Unknown_Parameter_1017'],
+        "names": ['ID_Waermemenge_SW_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10227,7 +10227,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1018,
         "count": 1,
-        "names": ['ID_Waermemenge_Seit_2', 'Unknown_Parameter_1018'],
+        "names": ['ID_Waermemenge_Seit_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10237,7 +10237,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1019,
         "count": 1,
-        "names": ['ID_Einst_Entl_Typ_15_2', 'Unknown_Parameter_1019'],
+        "names": ['ID_Einst_Entl_Typ_15_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10247,7 +10247,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1020,
         "count": 1,
-        "names": ['ID_Einst_WW_Nachheizung_max', 'Unknown_Parameter_1020'],
+        "names": ['ID_Einst_WW_Nachheizung_max'],
         "type": Hours2,
         "writeable": True,
         "datatype": 'UINT32',
@@ -10257,7 +10257,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1021,
         "count": 1,
-        "names": ['ID_Einst_Kuhl_Zeit_Ein_RT', 'Unknown_Parameter_1021'],
+        "names": ['ID_Einst_Kuhl_Zeit_Ein_RT'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10267,7 +10267,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1022,
         "count": 1,
-        "names": ['ID_Einst_ZWE1_Pos', 'Unknown_Parameter_1022'],
+        "names": ['ID_Einst_ZWE1_Pos'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10277,7 +10277,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1023,
         "count": 1,
-        "names": ['ID_Einst_ZWE2_Pos', 'Unknown_Parameter_1023'],
+        "names": ['ID_Einst_ZWE2_Pos'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10287,7 +10287,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1024,
         "count": 1,
-        "names": ['ID_Einst_ZWE3_Pos', 'Unknown_Parameter_1024'],
+        "names": ['ID_Einst_ZWE3_Pos'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10297,7 +10297,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1025,
         "count": 1,
-        "names": ['ID_Einst_Leistung_ZWE', 'Unknown_Parameter_1025'],
+        "names": ['ID_Einst_Leistung_ZWE'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10307,7 +10307,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1026,
         "count": 1,
-        "names": ['ID_WP_SN2_DATUM', 'Unknown_Parameter_1026'],
+        "names": ['ID_WP_SN2_DATUM'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10317,7 +10317,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1027,
         "count": 1,
-        "names": ['ID_WP_SN2_HEX', 'Unknown_Parameter_1027'],
+        "names": ['ID_WP_SN2_HEX'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10327,7 +10327,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1028,
         "count": 1,
-        "names": ['ID_WP_SN2_INDEX', 'Unknown_Parameter_1028'],
+        "names": ['ID_WP_SN2_INDEX'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10337,7 +10337,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1029,
         "count": 1,
-        "names": ['ID_CWP_saved2', 'Unknown_Parameter_1029'],
+        "names": ['ID_CWP_saved2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10347,7 +10347,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1030,
         "count": 1,
-        "names": ['ID_Einst_SmartGrid', 'Unknown_Parameter_1030'],
+        "names": ['ID_Einst_SmartGrid'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10357,7 +10357,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1031,
         "count": 1,
-        "names": ['ID_Einst_P155_HDS', 'Unknown_Parameter_1031'],
+        "names": ['ID_Einst_P155_HDS'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10367,7 +10367,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1032,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpHeat_Max', 'Unknown_Parameter_1032'],
+        "names": ['ID_Einst_P155_PumpHeat_Max'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10377,7 +10377,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1033,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpHeatCtrl', 'Unknown_Parameter_1033'],
+        "names": ['ID_Einst_P155_PumpHeatCtrl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10387,7 +10387,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1034,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpDHWCtrl', 'Unknown_Parameter_1034'],
+        "names": ['ID_Einst_P155_PumpDHWCtrl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10397,7 +10397,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1035,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpDHW_RPM', 'Unknown_Parameter_1035'],
+        "names": ['ID_Einst_P155_PumpDHW_RPM'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10407,7 +10407,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1036,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpPoolCtrl', 'Unknown_Parameter_1036'],
+        "names": ['ID_Einst_P155_PumpPoolCtrl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10417,7 +10417,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1037,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpPool_RPM', 'Unknown_Parameter_1037'],
+        "names": ['ID_Einst_P155_PumpPool_RPM'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10427,7 +10427,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1038,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpCool_RPM', 'Unknown_Parameter_1038'],
+        "names": ['ID_Einst_P155_PumpCool_RPM'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10437,7 +10437,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1039,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpVBOCtrl', 'Unknown_Parameter_1039'],
+        "names": ['ID_Einst_P155_PumpVBOCtrl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10447,7 +10447,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1040,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpVBO_RPM_C', 'Unknown_Parameter_1040'],
+        "names": ['ID_Einst_P155_PumpVBO_RPM_C'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10457,7 +10457,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1041,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpDHW_Max', 'Unknown_Parameter_1041'],
+        "names": ['ID_Einst_P155_PumpDHW_Max'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10467,7 +10467,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1042,
         "count": 1,
-        "names": ['ID_Einst_P155_PumpPool_Max', 'Unknown_Parameter_1042'],
+        "names": ['ID_Einst_P155_PumpPool_Max'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10477,7 +10477,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1043,
         "count": 1,
-        "names": ['ID_Einst_P155_Sperrband_1', 'Unknown_Parameter_1043'],
+        "names": ['ID_Einst_P155_Sperrband_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10487,7 +10487,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1044,
         "count": 1,
-        "names": ['ID_Einst_P155_Leistungsfreigabe', 'Unknown_Parameter_1044'],
+        "names": ['ID_Einst_P155_Leistungsfreigabe'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10497,7 +10497,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1045,
         "count": 1,
-        "names": ['ID_Einst_P155_DHW_Freq', 'Unknown_Parameter_1045'],
+        "names": ['ID_Einst_P155_DHW_Freq'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10507,7 +10507,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1046,
         "count": 1,
-        "names": ['ID_Einst_SWHUP', 'Unknown_Parameter_1046'],
+        "names": ['ID_Einst_SWHUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10517,7 +10517,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1047,
         "count": 1,
-        "names": ['ID_Einst_P155_SWB_Freq', 'Unknown_Parameter_1047'],
+        "names": ['ID_Einst_P155_SWB_Freq'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10527,7 +10527,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1048,
         "count": 1,
-        "names": ['ID_Einst_MK1_Regelung', 'Unknown_Parameter_1048'],
+        "names": ['ID_Einst_MK1_Regelung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10537,7 +10537,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1049,
         "count": 1,
-        "names": ['ID_Einst_MK2_Regelung', 'Unknown_Parameter_1049'],
+        "names": ['ID_Einst_MK2_Regelung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10547,7 +10547,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1050,
         "count": 1,
-        "names": ['ID_Einst_MK3_Regelung', 'Unknown_Parameter_1050'],
+        "names": ['ID_Einst_MK3_Regelung'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10557,7 +10557,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1051,
         "count": 1,
-        "names": ['ID_Einst_PV_WW_Sperrzeit', 'Unknown_Parameter_1051'],
+        "names": ['ID_Einst_PV_WW_Sperrzeit'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10567,7 +10567,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1052,
         "count": 1,
-        "names": ['ID_Einst_Warmwasser_extra', 'Unknown_Parameter_1052'],
+        "names": ['ID_Einst_Warmwasser_extra'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10577,7 +10577,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1053,
         "count": 1,
-        "names": ['ID_Einst_Vorl_akt_Kuehl', 'Unknown_Parameter_1053'],
+        "names": ['ID_Einst_Vorl_akt_Kuehl'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10587,7 +10587,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1054,
         "count": 1,
-        "names": ['ID_WP_SN3_DATUM', 'Unknown_Parameter_1054'],
+        "names": ['ID_WP_SN3_DATUM'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10597,7 +10597,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1055,
         "count": 1,
-        "names": ['ID_WP_SN3_HEX', 'Unknown_Parameter_1055'],
+        "names": ['ID_WP_SN3_HEX'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10607,7 +10607,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1056,
         "count": 1,
-        "names": ['ID_WP_SN3_INDEX', 'Unknown_Parameter_1056'],
+        "names": ['ID_WP_SN3_INDEX'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10617,7 +10617,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1057,
         "count": 1,
-        "names": ['ID_Einst_Vorlauf_ZUP', 'Unknown_Parameter_1057'],
+        "names": ['ID_Einst_Vorlauf_ZUP'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10627,7 +10627,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1058,
         "count": 1,
-        "names": ['ID_Einst_Abtauen_im_Warmwasser', 'Unknown_Parameter_1058'],
+        "names": ['ID_Einst_Abtauen_im_Warmwasser'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10637,7 +10637,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1059,
         "count": 1,
-        "names": ['ID_Waermemenge_ZWE', 'Unknown_Parameter_1059'],
+        "names": ['ID_Waermemenge_ZWE'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10647,7 +10647,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1060,
         "count": 1,
-        "names": ['ID_Waermemenge_Reset', 'Unknown_Parameter_1060'],
+        "names": ['ID_Waermemenge_Reset'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10657,7 +10657,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1061,
         "count": 1,
-        "names": ['ID_Waermemenge_Reset_2', 'Unknown_Parameter_1061'],
+        "names": ['ID_Waermemenge_Reset_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10667,7 +10667,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1062,
         "count": 1,
-        "names": ['ID_Einst_Brunnenpumpe_min', 'Unknown_Parameter_1062'],
+        "names": ['ID_Einst_Brunnenpumpe_min'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10677,7 +10677,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1063,
         "count": 1,
-        "names": ['ID_Einst_Brunnenpumpe_max', 'Unknown_Parameter_1063'],
+        "names": ['ID_Einst_Brunnenpumpe_max'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10687,7 +10687,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1064,
         "count": 1,
-        "names": ['ID_Einst_SmartHomeID', 'Unknown_Parameter_1064'],
+        "names": ['ID_Einst_SmartHomeID'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10697,7 +10697,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1065,
         "count": 1,
-        "names": ['ID_Einst_SmartHK', 'Unknown_Parameter_1065'],
+        "names": ['ID_Einst_SmartHK'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10707,7 +10707,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1066,
         "count": 1,
-        "names": ['ID_Einst_SmartMK1', 'Unknown_Parameter_1066'],
+        "names": ['ID_Einst_SmartMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10717,7 +10717,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1067,
         "count": 1,
-        "names": ['ID_Einst_SmartMK2', 'Unknown_Parameter_1067'],
+        "names": ['ID_Einst_SmartMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10727,7 +10727,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1068,
         "count": 1,
-        "names": ['ID_Einst_SmartMK3', 'Unknown_Parameter_1068'],
+        "names": ['ID_Einst_SmartMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10737,7 +10737,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1069,
         "count": 1,
-        "names": ['ID_Einst_SmartWW', 'Unknown_Parameter_1069'],
+        "names": ['ID_Einst_SmartWW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10747,7 +10747,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1070,
         "count": 1,
-        "names": ['ID_Einst_SmartDefrost', 'Unknown_Parameter_1070'],
+        "names": ['ID_Einst_SmartDefrost'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10757,7 +10757,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1071,
         "count": 1,
-        "names": ['ID_Einst_Empty1071', 'Unknown_Parameter_1071'],
+        "names": ['ID_Einst_Empty1071'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10767,7 +10767,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1072,
         "count": 1,
-        "names": ['ID_Einst_MinVLMK1', 'Unknown_Parameter_1072'],
+        "names": ['ID_Einst_MinVLMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10777,7 +10777,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1073,
         "count": 1,
-        "names": ['ID_Einst_MinVLMK2', 'Unknown_Parameter_1073'],
+        "names": ['ID_Einst_MinVLMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10787,7 +10787,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1074,
         "count": 1,
-        "names": ['ID_Einst_MinVLMK3', 'Unknown_Parameter_1074'],
+        "names": ['ID_Einst_MinVLMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10797,7 +10797,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1075,
         "count": 1,
-        "names": ['ID_Einst_MaxVLMK1', 'Unknown_Parameter_1075'],
+        "names": ['ID_Einst_MaxVLMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10807,7 +10807,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1076,
         "count": 1,
-        "names": ['ID_Einst_MaxVLMK2', 'Unknown_Parameter_1076'],
+        "names": ['ID_Einst_MaxVLMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10817,7 +10817,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1077,
         "count": 1,
-        "names": ['ID_Einst_MaxVLMK3', 'Unknown_Parameter_1077'],
+        "names": ['ID_Einst_MaxVLMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10827,7 +10827,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1078,
         "count": 1,
-        "names": ['ID_Einst_SmartPlusHz', 'Unknown_Parameter_1078'],
+        "names": ['ID_Einst_SmartPlusHz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10837,7 +10837,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1079,
         "count": 1,
-        "names": ['ID_Einst_SmartMinusHz', 'Unknown_Parameter_1079'],
+        "names": ['ID_Einst_SmartMinusHz'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10847,7 +10847,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1080,
         "count": 1,
-        "names": ['ID_Einst_SmartPlusMK1', 'Unknown_Parameter_1080'],
+        "names": ['ID_Einst_SmartPlusMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10857,7 +10857,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1081,
         "count": 1,
-        "names": ['ID_Einst_SmartMinusMK1', 'Unknown_Parameter_1081'],
+        "names": ['ID_Einst_SmartMinusMK1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10867,7 +10867,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1082,
         "count": 1,
-        "names": ['ID_Einst_SmartPlusMK2', 'Unknown_Parameter_1082'],
+        "names": ['ID_Einst_SmartPlusMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10877,7 +10877,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1083,
         "count": 1,
-        "names": ['ID_Einst_SmartMinusMK2', 'Unknown_Parameter_1083'],
+        "names": ['ID_Einst_SmartMinusMK2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10887,7 +10887,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1084,
         "count": 1,
-        "names": ['ID_Einst_SmartPlusMK3', 'Unknown_Parameter_1084'],
+        "names": ['ID_Einst_SmartPlusMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10897,7 +10897,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 1085,
         "count": 1,
-        "names": ['ID_Einst_SmartMinusMK3', 'Unknown_Parameter_1085'],
+        "names": ['ID_Einst_SmartMinusMK3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
