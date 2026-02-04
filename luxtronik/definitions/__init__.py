@@ -249,7 +249,7 @@ class LuxtronikDefinitionsDictionary:
 
     def __contains__(self, def_name_or_idx):
         if isinstance(def_name_or_idx, LuxtronikDefinition):
-            return any(def_name_or_idx is d for d in self._index_dict.values())
+            return any(def_name_or_idx is d for d in self._name_dict.values())
         return self._get(def_name_or_idx) is not None
 
     def _add_alias(self, definition, alias):
