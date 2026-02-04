@@ -27,7 +27,6 @@ CALCULATIONS_DEFINITIONS: Final = LuxtronikDefinitionsList(
 class Calculations(DataVector):
     """Class that holds all calculations."""
 
-    logger = LOGGER
     name = CALCULATIONS_FIELD_NAME
     definitions = CALCULATIONS_DEFINITIONS
 
@@ -55,7 +54,7 @@ class Calculations(DataVector):
     def get(self, target):
         """Treats certain names specially. For all others, the function of the base class is called."""
         if target == "ID_WEB_SoftStand":
-            self.logger.debug("The name 'ID_WEB_SoftStand' is obsolete! Use 'get_firmware_version()' instead.")
+            LOGGER.debug("The name 'ID_WEB_SoftStand' is obsolete! Use 'get_firmware_version()' instead.")
             entry = Base("ID_WEB_SoftStand")
             entry.raw = self._get_firmware_version()
             return entry

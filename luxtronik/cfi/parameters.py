@@ -26,7 +26,6 @@ PARAMETERS_DEFINITIONS: Final = LuxtronikDefinitionsList(
 class Parameters(DataVector):
     """Class that holds all parameters."""
 
-    logger = LOGGER
     name = PARAMETERS_FIELD_NAME
     definitions = PARAMETERS_DEFINITIONS
 
@@ -51,8 +50,8 @@ class Parameters(DataVector):
                 if isinstance(raw, int):
                     self.queue[index] = raw
                 else:
-                    self.logger.error("Value '%s' for Parameter '%s' not valid!", value, parameter.name)
+                    LOGGER.error("Value '%s' for Parameter '%s' not valid!", value, parameter.name)
             else:
-                self.logger.warning("Parameter '%s' not safe for writing!", parameter.name)
+                LOGGER.warning("Parameter '%s' not safe for writing!", parameter.name)
         else:
-            self.logger.warning("Parameter '%s' not found", target)
+            LOGGER.warning("Parameter '%s' not found", target)
