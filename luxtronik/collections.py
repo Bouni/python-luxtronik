@@ -88,6 +88,10 @@ def get_data_arr(definition, field, num_bits):
     data = field.raw
     if data is None:
         return None
+    # Currently, no read-modify-write function is implemented.
+    # For this reason, we cannot write (and retrieve the data to write)
+    # from a field with a bit_offset.
+    # -> no additional code here like in `integrate_data`
     should_unpack = field.concatenate_multiple_data_chunks \
         and definition.count > 1
     if should_unpack and not isinstance(data, list):
@@ -111,6 +115,7 @@ def integrate_data(definition, field, raw_data, num_bits, data_offset=-1):
     # Use data_offset if provided, otherwise the index
     data_offset = data_offset if data_offset >= 0 else definition.index
     # Use the information of the definition to extract the raw-value
+    use_bit_offset = definition.bit_offset and definition.num_bits
     if (data_offset + definition.count - 1) >= len(raw_data):
         raw = None
     elif definition.count == 1:
@@ -124,6 +129,9 @@ def integrate_data(definition, field, raw_data, num_bits, data_offset=-1):
             raw = pack_values(raw, num_bits)
 
     raw = raw if definition.check_raw_not_none(raw) else None
+    # Perform bit shift operations
+    if use_bit_offset and isinstance(raw, int):
+        raw = (raw >> definition.bit_offset) & ((1 << definition.num_bits) - 1)
     field.raw = raw
 
 ###############################################################################
