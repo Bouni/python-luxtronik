@@ -39,6 +39,8 @@ class LuxtronikDefinition:
         "since": "",
         "until": "",
         "datatype": "",
+        "bit_offset": None,
+        "bit_count": None,
         "description": "",
     }
 
@@ -91,8 +93,13 @@ class LuxtronikDefinition:
             data_type_valid = self._data_type in self.VALID_DATA_TYPES
             self._valid &= data_type_valid
             data_type_valid &= self._data_type != ""
-            self._num_bits = int(self._data_type.replace('U', '').replace('INT', '')) \
-                if data_type_valid else 0
+            self._bit_offset = data_dict["bit_offset"]
+            bit_count = data_dict["bit_count"]
+            if bit_count:
+                self._num_bits = bit_count
+            else:
+                self._num_bits = int(self._data_type.replace('U', '').replace('INT', '')) \
+                    if data_type_valid else 0
         except Exception as e:
             self._valid = False
             self._index = 0
@@ -163,6 +170,10 @@ class LuxtronikDefinition:
     @property
     def data_type(self):
         return self._data_type
+
+    @property
+    def bit_offset(self):
+        return self._bit_offset
 
     @property
     def num_bits(self):
