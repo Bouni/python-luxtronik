@@ -15,6 +15,7 @@ preferred one should be inserted as the last one in the same index.
 from typing import Final
 
 from luxtronik.datatypes import (
+    Bool,
     BufferType,
     CelsiusInt16,
     CelsiusUInt16,
@@ -36,6 +37,71 @@ INPUTS_OFFSET: Final = 10000
 INPUTS_DEFAULT_DATA_TYPE: Final = 'INT16'
 
 INPUTS_DEFINITIONS_LIST: Final = [
+    {
+        "index": 0,
+        "count": 1,
+        "names": ["heatpump_vd1_status"],
+        "type": Bool,
+        "writeable": False,
+        "datatype": "UINT16",
+        "bit_offset": 0,
+        "bit_count": 1,
+        "unit": "boolean",
+        "since": "3.90.1",
+        "description": "Indicates whether VD1 is running"
+    },
+    {
+        "index": 0,
+        "count": 1,
+        "names": ["heatpump_vd2_status"],
+        "type": Bool,
+        "writeable": False,
+        "datatype": "UINT16",
+        "bit_offset": 1,
+        "bit_count": 1,
+        "unit": "boolean",
+        "since": "3.90.1",
+        "description": "Indicates whether VD2 is running"
+    },
+    {
+        "index": 0,
+        "count": 1,
+        "names": ["heatpump_zwe1_status"],
+        "type": Bool,
+        "writeable": False,
+        "datatype": "UINT16",
+        "bit_offset": 2,
+        "bit_count": 1,
+        "unit": "boolean",
+        "since": "3.90.1",
+        "description": "Indicates whether ZWE1 is running"
+    },
+    {
+        "index": 0,
+        "count": 1,
+        "names": ["heatpump_zwe2_status"],
+        "type": Bool,
+        "writeable": False,
+        "datatype": "UINT16",
+        "bit_offset": 3,
+        "bit_count": 1,
+        "unit": "boolean",
+        "since": "3.90.1",
+        "description": "Indicates whether ZWE2 is running"
+    },
+    {
+        "index": 0,
+        "count": 1,
+        "names": ["heatpump_zwe3_status"],
+        "type": Bool,
+        "writeable": False,
+        "datatype": "UINT16",
+        "bit_offset": 4,
+        "bit_count": 1,
+        "unit": "boolean",
+        "since": "3.90.1",
+        "description": "Indicates whether ZWE3 is running"
+    },
     {
         "index": 0,
         "count": 1,
