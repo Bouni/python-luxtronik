@@ -153,7 +153,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 10,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TVL', 'Unknown_Calculation_10'],
+        "names": ['ID_WEB_Temperatur_TVL'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -163,7 +163,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 11,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TRL', 'Unknown_Calculation_11'],
+        "names": ['ID_WEB_Temperatur_TRL'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -173,7 +173,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 12,
         "count": 1,
-        "names": ['ID_WEB_Sollwert_TRL_HZ', 'Unknown_Calculation_12'],
+        "names": ['ID_WEB_Sollwert_TRL_HZ'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -183,7 +183,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 13,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TRL_ext', 'Unknown_Calculation_13'],
+        "names": ['ID_WEB_Temperatur_TRL_ext'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -193,7 +193,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 14,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_THG', 'Unknown_Calculation_14'],
+        "names": ['ID_WEB_Temperatur_THG'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -203,7 +203,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 15,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TA', 'Unknown_Calculation_15'],
+        "names": ['ID_WEB_Temperatur_TA'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -213,7 +213,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 16,
         "count": 1,
-        "names": ['ID_WEB_Mitteltemperatur', 'Unknown_Calculation_16'],
+        "names": ['ID_WEB_Mitteltemperatur'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -223,7 +223,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 17,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TBW', 'Unknown_Calculation_17'],
+        "names": ['ID_WEB_Temperatur_TBW'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -233,7 +233,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 18,
         "count": 1,
-        "names": ['ID_WEB_Einst_BWS_akt', 'Unknown_Calculation_18'],
+        "names": ['ID_WEB_Einst_BWS_akt'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -243,7 +243,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 19,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TWE', 'Unknown_Calculation_19'],
+        "names": ['ID_WEB_Temperatur_TWE'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -253,7 +253,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 20,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TWA', 'Unknown_Calculation_20'],
+        "names": ['ID_WEB_Temperatur_TWA'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -263,7 +263,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 21,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TFB1', 'Unknown_Calculation_21'],
+        "names": ['ID_WEB_Temperatur_TFB1'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -273,7 +273,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 22,
         "count": 1,
-        "names": ['ID_WEB_Sollwert_TVL_MK1', 'Unknown_Calculation_22'],
+        "names": ['ID_WEB_Sollwert_TVL_MK1'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -283,7 +283,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 23,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_RFV', 'Unknown_Calculation_23'],
+        "names": ['ID_WEB_Temperatur_RFV'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -293,7 +293,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 24,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TFB2', 'Unknown_Calculation_24'],
+        "names": ['ID_WEB_Temperatur_TFB2'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -303,7 +303,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 25,
         "count": 1,
-        "names": ['ID_WEB_Sollwert_TVL_MK2', 'Unknown_Calculation_25'],
+        "names": ['ID_WEB_Sollwert_TVL_MK2'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -313,7 +313,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 26,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TSK', 'Unknown_Calculation_26'],
+        "names": ['ID_WEB_Temperatur_TSK'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -323,7 +323,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 27,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TSS', 'Unknown_Calculation_27'],
+        "names": ['ID_WEB_Temperatur_TSS'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -333,7 +333,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 28,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TEE', 'Unknown_Calculation_28'],
+        "names": ['ID_WEB_Temperatur_TEE'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -343,7 +343,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 29,
         "count": 1,
-        "names": ['ID_WEB_ASDin', 'Unknown_Calculation_29'],
+        "names": ['ID_WEB_ASDin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -353,7 +353,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 30,
         "count": 1,
-        "names": ['ID_WEB_BWTin', 'Unknown_Calculation_30'],
+        "names": ['ID_WEB_BWTin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -363,7 +363,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 31,
         "count": 1,
-        "names": ['ID_WEB_EVUin', 'Unknown_Calculation_31'],
+        "names": ['ID_WEB_EVUin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -373,7 +373,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 32,
         "count": 1,
-        "names": ['ID_WEB_HDin', 'Unknown_Calculation_32'],
+        "names": ['ID_WEB_HDin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -383,7 +383,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 33,
         "count": 1,
-        "names": ['ID_WEB_MOTin', 'Unknown_Calculation_33'],
+        "names": ['ID_WEB_MOTin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -393,7 +393,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 34,
         "count": 1,
-        "names": ['ID_WEB_NDin', 'Unknown_Calculation_34'],
+        "names": ['ID_WEB_NDin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -403,7 +403,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 35,
         "count": 1,
-        "names": ['ID_WEB_PEXin', 'Unknown_Calculation_35'],
+        "names": ['ID_WEB_PEXin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -413,7 +413,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 36,
         "count": 1,
-        "names": ['ID_WEB_SWTin', 'Unknown_Calculation_36'],
+        "names": ['ID_WEB_SWTin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -423,7 +423,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 37,
         "count": 1,
-        "names": ['ID_WEB_AVout', 'Unknown_Calculation_37'],
+        "names": ['ID_WEB_AVout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -433,7 +433,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 38,
         "count": 1,
-        "names": ['ID_WEB_BUPout', 'Unknown_Calculation_38'],
+        "names": ['ID_WEB_BUPout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -443,7 +443,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 39,
         "count": 1,
-        "names": ['ID_WEB_HUPout', 'Unknown_Calculation_39'],
+        "names": ['ID_WEB_HUPout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -453,7 +453,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 40,
         "count": 1,
-        "names": ['ID_WEB_MA1out', 'Unknown_Calculation_40'],
+        "names": ['ID_WEB_MA1out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -463,7 +463,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 41,
         "count": 1,
-        "names": ['ID_WEB_MZ1out', 'Unknown_Calculation_41'],
+        "names": ['ID_WEB_MZ1out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -473,7 +473,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 42,
         "count": 1,
-        "names": ['ID_WEB_VENout', 'Unknown_Calculation_42'],
+        "names": ['ID_WEB_VENout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -483,7 +483,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 43,
         "count": 1,
-        "names": ['ID_WEB_VBOout', 'Unknown_Calculation_43'],
+        "names": ['ID_WEB_VBOout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -493,7 +493,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 44,
         "count": 1,
-        "names": ['ID_WEB_VD1out', 'Unknown_Calculation_44'],
+        "names": ['ID_WEB_VD1out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -503,7 +503,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 45,
         "count": 1,
-        "names": ['ID_WEB_VD2out', 'Unknown_Calculation_45'],
+        "names": ['ID_WEB_VD2out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -513,7 +513,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 46,
         "count": 1,
-        "names": ['ID_WEB_ZIPout', 'Unknown_Calculation_46'],
+        "names": ['ID_WEB_ZIPout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -523,7 +523,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 47,
         "count": 1,
-        "names": ['ID_WEB_ZUPout', 'Unknown_Calculation_47'],
+        "names": ['ID_WEB_ZUPout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -533,7 +533,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 48,
         "count": 1,
-        "names": ['ID_WEB_ZW1out', 'Unknown_Calculation_48'],
+        "names": ['ID_WEB_ZW1out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -543,7 +543,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 49,
         "count": 1,
-        "names": ['ID_WEB_ZW2SSTout', 'Unknown_Calculation_49'],
+        "names": ['ID_WEB_ZW2SSTout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -553,7 +553,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 50,
         "count": 1,
-        "names": ['ID_WEB_ZW3SSTout', 'Unknown_Calculation_50'],
+        "names": ['ID_WEB_ZW3SSTout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -563,7 +563,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 51,
         "count": 1,
-        "names": ['ID_WEB_FP2out', 'Unknown_Calculation_51'],
+        "names": ['ID_WEB_FP2out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -573,7 +573,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 52,
         "count": 1,
-        "names": ['ID_WEB_SLPout', 'Unknown_Calculation_52'],
+        "names": ['ID_WEB_SLPout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -583,7 +583,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 53,
         "count": 1,
-        "names": ['ID_WEB_SUPout', 'Unknown_Calculation_53'],
+        "names": ['ID_WEB_SUPout'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -593,7 +593,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 54,
         "count": 1,
-        "names": ['ID_WEB_MZ2out', 'Unknown_Calculation_54'],
+        "names": ['ID_WEB_MZ2out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -603,7 +603,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 55,
         "count": 1,
-        "names": ['ID_WEB_MA2out', 'Unknown_Calculation_55'],
+        "names": ['ID_WEB_MA2out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -613,7 +613,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 56,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitVD1', 'Unknown_Calculation_56'],
+        "names": ['ID_WEB_Zaehler_BetrZeitVD1'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -623,7 +623,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 57,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitImpVD1', 'Unknown_Calculation_57'],
+        "names": ['ID_WEB_Zaehler_BetrZeitImpVD1'],
         "type": Count,
         "writeable": False,
         "datatype": 'UINT32',
@@ -633,7 +633,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 58,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitVD2', 'Unknown_Calculation_58'],
+        "names": ['ID_WEB_Zaehler_BetrZeitVD2'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -643,7 +643,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 59,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitImpVD2', 'Unknown_Calculation_59'],
+        "names": ['ID_WEB_Zaehler_BetrZeitImpVD2'],
         "type": Count,
         "writeable": False,
         "datatype": 'UINT32',
@@ -653,7 +653,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 60,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitZWE1', 'Unknown_Calculation_60'],
+        "names": ['ID_WEB_Zaehler_BetrZeitZWE1'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -663,7 +663,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 61,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitZWE2', 'Unknown_Calculation_61'],
+        "names": ['ID_WEB_Zaehler_BetrZeitZWE2'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -673,7 +673,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 62,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitZWE3', 'Unknown_Calculation_62'],
+        "names": ['ID_WEB_Zaehler_BetrZeitZWE3'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -683,7 +683,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 63,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitWP', 'Unknown_Calculation_63'],
+        "names": ['ID_WEB_Zaehler_BetrZeitWP'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -693,7 +693,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 64,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitHz', 'Unknown_Calculation_64'],
+        "names": ['ID_WEB_Zaehler_BetrZeitHz'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -703,7 +703,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 65,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitBW', 'Unknown_Calculation_65'],
+        "names": ['ID_WEB_Zaehler_BetrZeitBW'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -713,7 +713,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 66,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitKue', 'Unknown_Calculation_66'],
+        "names": ['ID_WEB_Zaehler_BetrZeitKue'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -723,7 +723,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 67,
         "count": 1,
-        "names": ['ID_WEB_Time_WPein_akt', 'Unknown_Calculation_67'],
+        "names": ['ID_WEB_Time_WPein_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -733,7 +733,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 68,
         "count": 1,
-        "names": ['ID_WEB_Time_ZWE1_akt', 'Unknown_Calculation_68'],
+        "names": ['ID_WEB_Time_ZWE1_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -743,7 +743,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 69,
         "count": 1,
-        "names": ['ID_WEB_Time_ZWE2_akt', 'Unknown_Calculation_69'],
+        "names": ['ID_WEB_Time_ZWE2_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -753,7 +753,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 70,
         "count": 1,
-        "names": ['ID_WEB_Timer_EinschVerz', 'Unknown_Calculation_70'],
+        "names": ['ID_WEB_Timer_EinschVerz'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -763,7 +763,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 71,
         "count": 1,
-        "names": ['ID_WEB_Time_SSPAUS_akt', 'Unknown_Calculation_71'],
+        "names": ['ID_WEB_Time_SSPAUS_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -773,7 +773,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 72,
         "count": 1,
-        "names": ['ID_WEB_Time_SSPEIN_akt', 'Unknown_Calculation_72'],
+        "names": ['ID_WEB_Time_SSPEIN_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -783,7 +783,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 73,
         "count": 1,
-        "names": ['ID_WEB_Time_VDStd_akt', 'Unknown_Calculation_73'],
+        "names": ['ID_WEB_Time_VDStd_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -793,7 +793,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 74,
         "count": 1,
-        "names": ['ID_WEB_Time_HRM_akt', 'Unknown_Calculation_74'],
+        "names": ['ID_WEB_Time_HRM_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -803,7 +803,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 75,
         "count": 1,
-        "names": ['ID_WEB_Time_HRW_akt', 'Unknown_Calculation_75'],
+        "names": ['ID_WEB_Time_HRW_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -813,7 +813,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 76,
         "count": 1,
-        "names": ['ID_WEB_Time_LGS_akt', 'Unknown_Calculation_76'],
+        "names": ['ID_WEB_Time_LGS_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -823,7 +823,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 77,
         "count": 1,
-        "names": ['ID_WEB_Time_SBW_akt', 'Unknown_Calculation_77'],
+        "names": ['ID_WEB_Time_SBW_akt'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -833,7 +833,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 78,
         "count": 1,
-        "names": ['ID_WEB_Code_WP_akt', 'Unknown_Calculation_78'],
+        "names": ['ID_WEB_Code_WP_akt'],
         "type": HeatpumpCode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -843,7 +843,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 79,
         "count": 1,
-        "names": ['ID_WEB_BIV_Stufe_akt', 'Unknown_Calculation_79'],
+        "names": ['ID_WEB_BIV_Stufe_akt'],
         "type": BivalenceLevel,
         "writeable": False,
         "datatype": 'UINT32',
@@ -853,7 +853,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 80,
         "count": 1,
-        "names": ['ID_WEB_WP_BZ_akt', 'Unknown_Calculation_80'],
+        "names": ['ID_WEB_WP_BZ_akt'],
         "type": OperationMode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -863,7 +863,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 81,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_0', 'Unknown_Calculation_81'],
+        "names": ['ID_WEB_SoftStand_0'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -873,7 +873,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 82,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_1', 'Unknown_Calculation_82'],
+        "names": ['ID_WEB_SoftStand_1'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -883,7 +883,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 83,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_2', 'Unknown_Calculation_83'],
+        "names": ['ID_WEB_SoftStand_2'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -893,7 +893,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 84,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_3', 'Unknown_Calculation_84'],
+        "names": ['ID_WEB_SoftStand_3'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -903,7 +903,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 85,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_4', 'Unknown_Calculation_85'],
+        "names": ['ID_WEB_SoftStand_4'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -913,7 +913,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 86,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_5', 'Unknown_Calculation_86'],
+        "names": ['ID_WEB_SoftStand_5'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -923,7 +923,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 87,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_6', 'Unknown_Calculation_87'],
+        "names": ['ID_WEB_SoftStand_6'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -933,7 +933,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 88,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_7', 'Unknown_Calculation_88'],
+        "names": ['ID_WEB_SoftStand_7'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -943,7 +943,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 89,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_8', 'Unknown_Calculation_89'],
+        "names": ['ID_WEB_SoftStand_8'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -953,7 +953,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 90,
         "count": 1,
-        "names": ['ID_WEB_SoftStand_9', 'Unknown_Calculation_90'],
+        "names": ['ID_WEB_SoftStand_9'],
         "type": Character,
         "writeable": False,
         "datatype": 'UINT32',
@@ -963,7 +963,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 91,
         "count": 1,
-        "names": ['ID_WEB_AdresseIP_akt', 'Unknown_Calculation_91'],
+        "names": ['ID_WEB_AdresseIP_akt'],
         "type": IPv4Address,
         "writeable": False,
         "datatype": 'UINT32',
@@ -973,7 +973,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 92,
         "count": 1,
-        "names": ['ID_WEB_SubNetMask_akt', 'Unknown_Calculation_92'],
+        "names": ['ID_WEB_SubNetMask_akt'],
         "type": IPv4Address,
         "writeable": False,
         "datatype": 'UINT32',
@@ -983,7 +983,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 93,
         "count": 1,
-        "names": ['ID_WEB_Add_Broadcast', 'Unknown_Calculation_93'],
+        "names": ['ID_WEB_Add_Broadcast'],
         "type": IPv4Address,
         "writeable": False,
         "datatype": 'UINT32',
@@ -993,7 +993,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 94,
         "count": 1,
-        "names": ['ID_WEB_Add_StdGateway', 'Unknown_Calculation_94'],
+        "names": ['ID_WEB_Add_StdGateway'],
         "type": IPv4Address,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1003,7 +1003,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 95,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Time0', 'Unknown_Calculation_95'],
+        "names": ['ID_WEB_ERROR_Time0'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1013,7 +1013,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 96,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Time1', 'Unknown_Calculation_96'],
+        "names": ['ID_WEB_ERROR_Time1'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1023,7 +1023,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 97,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Time2', 'Unknown_Calculation_97'],
+        "names": ['ID_WEB_ERROR_Time2'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1033,7 +1033,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 98,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Time3', 'Unknown_Calculation_98'],
+        "names": ['ID_WEB_ERROR_Time3'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1043,7 +1043,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 99,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Time4', 'Unknown_Calculation_99'],
+        "names": ['ID_WEB_ERROR_Time4'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1053,7 +1053,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 100,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Nr0', 'Unknown_Calculation_100'],
+        "names": ['ID_WEB_ERROR_Nr0'],
         "type": Errorcode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1063,7 +1063,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 101,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Nr1', 'Unknown_Calculation_101'],
+        "names": ['ID_WEB_ERROR_Nr1'],
         "type": Errorcode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1073,7 +1073,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 102,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Nr2', 'Unknown_Calculation_102'],
+        "names": ['ID_WEB_ERROR_Nr2'],
         "type": Errorcode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1083,7 +1083,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 103,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Nr3', 'Unknown_Calculation_103'],
+        "names": ['ID_WEB_ERROR_Nr3'],
         "type": Errorcode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1093,7 +1093,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 104,
         "count": 1,
-        "names": ['ID_WEB_ERROR_Nr4', 'Unknown_Calculation_104'],
+        "names": ['ID_WEB_ERROR_Nr4'],
         "type": Errorcode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1103,7 +1103,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 105,
         "count": 1,
-        "names": ['ID_WEB_AnzahlFehlerInSpeicher', 'Unknown_Calculation_105'],
+        "names": ['ID_WEB_AnzahlFehlerInSpeicher'],
         "type": Count,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1113,7 +1113,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 106,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Nr0', 'Unknown_Calculation_106'],
+        "names": ['ID_WEB_Switchoff_file_Nr0'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1123,7 +1123,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 107,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Nr1', 'Unknown_Calculation_107'],
+        "names": ['ID_WEB_Switchoff_file_Nr1'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1133,7 +1133,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 108,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Nr2', 'Unknown_Calculation_108'],
+        "names": ['ID_WEB_Switchoff_file_Nr2'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1143,7 +1143,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 109,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Nr3', 'Unknown_Calculation_109'],
+        "names": ['ID_WEB_Switchoff_file_Nr3'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1153,7 +1153,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 110,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Nr4', 'Unknown_Calculation_110'],
+        "names": ['ID_WEB_Switchoff_file_Nr4'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1163,7 +1163,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 111,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Time0', 'Unknown_Calculation_111'],
+        "names": ['ID_WEB_Switchoff_file_Time0'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1173,7 +1173,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 112,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Time1', 'Unknown_Calculation_112'],
+        "names": ['ID_WEB_Switchoff_file_Time1'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1183,7 +1183,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 113,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Time2', 'Unknown_Calculation_113'],
+        "names": ['ID_WEB_Switchoff_file_Time2'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1193,7 +1193,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 114,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Time3', 'Unknown_Calculation_114'],
+        "names": ['ID_WEB_Switchoff_file_Time3'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1203,7 +1203,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 115,
         "count": 1,
-        "names": ['ID_WEB_Switchoff_file_Time4', 'Unknown_Calculation_115'],
+        "names": ['ID_WEB_Switchoff_file_Time4'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1213,7 +1213,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 116,
         "count": 1,
-        "names": ['ID_WEB_Comfort_exists', 'Unknown_Calculation_116'],
+        "names": ['ID_WEB_Comfort_exists'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1223,7 +1223,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 117,
         "count": 1,
-        "names": ['ID_WEB_HauptMenuStatus_Zeile1', 'Unknown_Calculation_117'],
+        "names": ['ID_WEB_HauptMenuStatus_Zeile1'],
         "type": MainMenuStatusLine1,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1233,7 +1233,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 118,
         "count": 1,
-        "names": ['ID_WEB_HauptMenuStatus_Zeile2', 'Unknown_Calculation_118'],
+        "names": ['ID_WEB_HauptMenuStatus_Zeile2'],
         "type": MainMenuStatusLine2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1243,7 +1243,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 119,
         "count": 1,
-        "names": ['ID_WEB_HauptMenuStatus_Zeile3', 'Unknown_Calculation_119'],
+        "names": ['ID_WEB_HauptMenuStatus_Zeile3'],
         "type": MainMenuStatusLine3,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1253,7 +1253,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 120,
         "count": 1,
-        "names": ['ID_WEB_HauptMenuStatus_Zeit', 'Unknown_Calculation_120'],
+        "names": ['ID_WEB_HauptMenuStatus_Zeit'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1263,7 +1263,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 121,
         "count": 1,
-        "names": ['ID_WEB_HauptMenuAHP_Stufe', 'Unknown_Calculation_121'],
+        "names": ['ID_WEB_HauptMenuAHP_Stufe'],
         "type": Level,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1273,7 +1273,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 122,
         "count": 1,
-        "names": ['ID_WEB_HauptMenuAHP_Temp', 'Unknown_Calculation_122'],
+        "names": ['ID_WEB_HauptMenuAHP_Temp'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1283,7 +1283,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 123,
         "count": 1,
-        "names": ['ID_WEB_HauptMenuAHP_Zeit', 'Unknown_Calculation_123'],
+        "names": ['ID_WEB_HauptMenuAHP_Zeit'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1293,7 +1293,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 124,
         "count": 1,
-        "names": ['ID_WEB_SH_BWW', 'Unknown_Calculation_124'],
+        "names": ['ID_WEB_SH_BWW'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1303,7 +1303,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 125,
         "count": 1,
-        "names": ['ID_WEB_SH_HZ', 'Unknown_Calculation_125'],
+        "names": ['ID_WEB_SH_HZ'],
         "type": Icon,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1313,7 +1313,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 126,
         "count": 1,
-        "names": ['ID_WEB_SH_MK1', 'Unknown_Calculation_126'],
+        "names": ['ID_WEB_SH_MK1'],
         "type": Icon,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1323,7 +1323,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 127,
         "count": 1,
-        "names": ['ID_WEB_SH_MK2', 'Unknown_Calculation_127'],
+        "names": ['ID_WEB_SH_MK2'],
         "type": Icon,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1333,7 +1333,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 128,
         "count": 1,
-        "names": ['ID_WEB_Einst_Kurzrpgramm', 'Unknown_Calculation_128'],
+        "names": ['ID_WEB_Einst_Kurzrpgramm'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1343,7 +1343,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 129,
         "count": 1,
-        "names": ['ID_WEB_StatusSlave_1', 'Unknown_Calculation_129'],
+        "names": ['ID_WEB_StatusSlave_1'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1353,7 +1353,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 130,
         "count": 1,
-        "names": ['ID_WEB_StatusSlave_2', 'Unknown_Calculation_130'],
+        "names": ['ID_WEB_StatusSlave_2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1363,7 +1363,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 131,
         "count": 1,
-        "names": ['ID_WEB_StatusSlave_3', 'Unknown_Calculation_131'],
+        "names": ['ID_WEB_StatusSlave_3'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1373,7 +1373,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 132,
         "count": 1,
-        "names": ['ID_WEB_StatusSlave_4', 'Unknown_Calculation_132'],
+        "names": ['ID_WEB_StatusSlave_4'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1383,7 +1383,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 133,
         "count": 1,
-        "names": ['ID_WEB_StatusSlave_5', 'Unknown_Calculation_133'],
+        "names": ['ID_WEB_StatusSlave_5'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1393,7 +1393,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 134,
         "count": 1,
-        "names": ['ID_WEB_AktuelleTimeStamp', 'Unknown_Calculation_134'],
+        "names": ['ID_WEB_AktuelleTimeStamp'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1403,7 +1403,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 135,
         "count": 1,
-        "names": ['ID_WEB_SH_MK3', 'Unknown_Calculation_135'],
+        "names": ['ID_WEB_SH_MK3'],
         "type": Icon,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1413,7 +1413,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 136,
         "count": 1,
-        "names": ['ID_WEB_Sollwert_TVL_MK3', 'Unknown_Calculation_136'],
+        "names": ['ID_WEB_Sollwert_TVL_MK3'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1423,7 +1423,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 137,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TFB3', 'Unknown_Calculation_137'],
+        "names": ['ID_WEB_Temperatur_TFB3'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1433,7 +1433,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 138,
         "count": 1,
-        "names": ['ID_WEB_MZ3out', 'Unknown_Calculation_138'],
+        "names": ['ID_WEB_MZ3out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1443,7 +1443,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 139,
         "count": 1,
-        "names": ['ID_WEB_MA3out', 'Unknown_Calculation_139'],
+        "names": ['ID_WEB_MA3out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1453,7 +1453,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 140,
         "count": 1,
-        "names": ['ID_WEB_FP3out', 'Unknown_Calculation_140'],
+        "names": ['ID_WEB_FP3out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1463,7 +1463,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 141,
         "count": 1,
-        "names": ['ID_WEB_Time_AbtIn', 'Unknown_Calculation_141'],
+        "names": ['ID_WEB_Time_AbtIn'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1473,7 +1473,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 142,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_RFV2', 'Unknown_Calculation_142'],
+        "names": ['ID_WEB_Temperatur_RFV2'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1483,7 +1483,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 143,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_RFV3', 'Unknown_Calculation_143'],
+        "names": ['ID_WEB_Temperatur_RFV3'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1493,7 +1493,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 144,
         "count": 1,
-        "names": ['ID_WEB_SH_SW', 'Unknown_Calculation_144'],
+        "names": ['ID_WEB_SH_SW'],
         "type": Icon,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1503,7 +1503,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 145,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitSW', 'Unknown_Calculation_145'],
+        "names": ['ID_WEB_Zaehler_BetrZeitSW'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1513,7 +1513,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 146,
         "count": 1,
-        "names": ['ID_WEB_FreigabKuehl', 'Unknown_Calculation_146'],
+        "names": ['ID_WEB_FreigabKuehl'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1523,7 +1523,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 147,
         "count": 1,
-        "names": ['ID_WEB_AnalogIn', 'Unknown_Calculation_147'],
+        "names": ['ID_WEB_AnalogIn'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1533,7 +1533,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 148,
         "count": 1,
-        "names": ['ID_WEB_SonderZeichen', 'Unknown_Calculation_148'],
+        "names": ['ID_WEB_SonderZeichen'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1543,7 +1543,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 149,
         "count": 1,
-        "names": ['ID_WEB_SH_ZIP', 'Unknown_Calculation_149'],
+        "names": ['ID_WEB_SH_ZIP'],
         "type": Icon,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1553,7 +1553,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 150,
         "count": 1,
-        "names": ['ID_WEB_WebsrvProgrammWerteBeobarten', 'Unknown_Calculation_150'],
+        "names": ['ID_WEB_WebsrvProgrammWerteBeobarten'],
         "type": Icon,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1563,7 +1563,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 151,
         "count": 1,
-        "names": ['ID_WEB_WMZ_Heizung', 'Unknown_Calculation_151'],
+        "names": ['ID_WEB_WMZ_Heizung'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1573,7 +1573,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 152,
         "count": 1,
-        "names": ['ID_WEB_WMZ_Brauchwasser', 'Unknown_Calculation_152'],
+        "names": ['ID_WEB_WMZ_Brauchwasser'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1583,7 +1583,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 153,
         "count": 1,
-        "names": ['ID_WEB_WMZ_Schwimmbad', 'Unknown_Calculation_153'],
+        "names": ['ID_WEB_WMZ_Schwimmbad'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1593,7 +1593,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 154,
         "count": 1,
-        "names": ['ID_WEB_WMZ_Seit', 'Unknown_Calculation_154'],
+        "names": ['ID_WEB_WMZ_Seit'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1603,7 +1603,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 155,
         "count": 1,
-        "names": ['ID_WEB_WMZ_Durchfluss', 'Unknown_Calculation_155'],
+        "names": ['ID_WEB_WMZ_Durchfluss'],
         "type": Flow,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1613,7 +1613,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 156,
         "count": 1,
-        "names": ['ID_WEB_AnalogOut1', 'Unknown_Calculation_156'],
+        "names": ['ID_WEB_AnalogOut1'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1623,7 +1623,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 157,
         "count": 1,
-        "names": ['ID_WEB_AnalogOut2', 'Unknown_Calculation_157'],
+        "names": ['ID_WEB_AnalogOut2'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1633,7 +1633,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 158,
         "count": 1,
-        "names": ['ID_WEB_Time_Heissgas', 'Unknown_Calculation_158'],
+        "names": ['ID_WEB_Time_Heissgas'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1643,7 +1643,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 159,
         "count": 1,
-        "names": ['ID_WEB_Temp_Lueftung_Zuluft', 'Unknown_Calculation_159'],
+        "names": ['ID_WEB_Temp_Lueftung_Zuluft'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1653,7 +1653,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 160,
         "count": 1,
-        "names": ['ID_WEB_Temp_Lueftung_Abluft', 'Unknown_Calculation_160'],
+        "names": ['ID_WEB_Temp_Lueftung_Abluft'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1663,7 +1663,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 161,
         "count": 1,
-        "names": ['ID_WEB_Zaehler_BetrZeitSolar', 'Unknown_Calculation_161'],
+        "names": ['ID_WEB_Zaehler_BetrZeitSolar'],
         "type": Seconds,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1673,7 +1673,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 162,
         "count": 1,
-        "names": ['ID_WEB_AnalogOut3', 'Unknown_Calculation_162'],
+        "names": ['ID_WEB_AnalogOut3'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1683,7 +1683,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 163,
         "count": 1,
-        "names": ['ID_WEB_AnalogOut4', 'Unknown_Calculation_163'],
+        "names": ['ID_WEB_AnalogOut4'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1693,7 +1693,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 164,
         "count": 1,
-        "names": ['ID_WEB_Out_VZU', 'Unknown_Calculation_164'],
+        "names": ['ID_WEB_Out_VZU'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1703,7 +1703,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 165,
         "count": 1,
-        "names": ['ID_WEB_Out_VAB', 'Unknown_Calculation_165'],
+        "names": ['ID_WEB_Out_VAB'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1713,7 +1713,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 166,
         "count": 1,
-        "names": ['ID_WEB_Out_VSK', 'Unknown_Calculation_166'],
+        "names": ['ID_WEB_Out_VSK'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1723,7 +1723,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 167,
         "count": 1,
-        "names": ['ID_WEB_Out_FRH', 'Unknown_Calculation_167'],
+        "names": ['ID_WEB_Out_FRH'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1733,7 +1733,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 168,
         "count": 1,
-        "names": ['ID_WEB_AnalogIn2', 'Unknown_Calculation_168'],
+        "names": ['ID_WEB_AnalogIn2'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1743,7 +1743,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 169,
         "count": 1,
-        "names": ['ID_WEB_AnalogIn3', 'Unknown_Calculation_169'],
+        "names": ['ID_WEB_AnalogIn3'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -1753,7 +1753,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 170,
         "count": 1,
-        "names": ['ID_WEB_SAXin', 'Unknown_Calculation_170'],
+        "names": ['ID_WEB_SAXin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1763,7 +1763,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 171,
         "count": 1,
-        "names": ['ID_WEB_SPLin', 'Unknown_Calculation_171'],
+        "names": ['ID_WEB_SPLin'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1773,7 +1773,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 172,
         "count": 1,
-        "names": ['ID_WEB_Compact_exists', 'Unknown_Calculation_172'],
+        "names": ['ID_WEB_Compact_exists'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1783,7 +1783,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 173,
         "count": 1,
-        "names": ['ID_WEB_Durchfluss_WQ', 'Unknown_Calculation_173'],
+        "names": ['ID_WEB_Durchfluss_WQ'],
         "type": Flow,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1793,7 +1793,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 174,
         "count": 1,
-        "names": ['ID_WEB_LIN_exists', 'Unknown_Calculation_174'],
+        "names": ['ID_WEB_LIN_exists'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1803,7 +1803,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 175,
         "count": 1,
-        "names": ['ID_WEB_LIN_ANSAUG_VERDAMPFER', 'Unknown_Calculation_175'],
+        "names": ['ID_WEB_LIN_ANSAUG_VERDAMPFER'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1813,7 +1813,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 176,
         "count": 1,
-        "names": ['ID_WEB_LIN_ANSAUG_VERDICHTER', 'Unknown_Calculation_176'],
+        "names": ['ID_WEB_LIN_ANSAUG_VERDICHTER'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1823,7 +1823,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 177,
         "count": 1,
-        "names": ['ID_WEB_LIN_VDH', 'Unknown_Calculation_177'],
+        "names": ['ID_WEB_LIN_VDH'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1833,7 +1833,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 178,
         "count": 1,
-        "names": ['ID_WEB_LIN_UH', 'Unknown_Calculation_178'],
+        "names": ['ID_WEB_LIN_UH'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -1843,7 +1843,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 179,
         "count": 1,
-        "names": ['ID_WEB_LIN_UH_Soll', 'Unknown_Calculation_179'],
+        "names": ['ID_WEB_LIN_UH_Soll'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -1853,7 +1853,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 180,
         "count": 1,
-        "names": ['ID_WEB_LIN_HD', 'Unknown_Calculation_180'],
+        "names": ['ID_WEB_LIN_HD'],
         "type": Pressure,
         "writeable": False,
         "datatype": 'INT32',
@@ -1863,7 +1863,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 181,
         "count": 1,
-        "names": ['ID_WEB_LIN_ND', 'Unknown_Calculation_181'],
+        "names": ['ID_WEB_LIN_ND'],
         "type": Pressure,
         "writeable": False,
         "datatype": 'INT32',
@@ -1873,7 +1873,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 182,
         "count": 1,
-        "names": ['ID_WEB_LIN_VDH_out', 'Unknown_Calculation_182'],
+        "names": ['ID_WEB_LIN_VDH_out'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1883,7 +1883,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 183,
         "count": 1,
-        "names": ['ID_WEB_HZIO_PWM', 'Unknown_Calculation_183'],
+        "names": ['ID_WEB_HZIO_PWM'],
         "type": Percent2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1893,7 +1893,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 184,
         "count": 1,
-        "names": ['ID_WEB_HZIO_VEN', 'Unknown_Calculation_184'],
+        "names": ['ID_WEB_HZIO_VEN'],
         "type": Speed,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1903,7 +1903,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 185,
         "count": 1,
-        "names": ['ID_WEB_HZIO_EVU2', 'Unknown_Calculation_185'],
+        "names": ['ID_WEB_HZIO_EVU2'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1913,7 +1913,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 186,
         "count": 1,
-        "names": ['ID_WEB_HZIO_STB', 'Unknown_Calculation_186'],
+        "names": ['ID_WEB_HZIO_STB'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1923,7 +1923,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 187,
         "count": 1,
-        "names": ['ID_WEB_SEC_Qh_Soll', 'Unknown_Calculation_187'],
+        "names": ['ID_WEB_SEC_Qh_Soll'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1933,7 +1933,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 188,
         "count": 1,
-        "names": ['ID_WEB_SEC_Qh_Ist', 'Unknown_Calculation_188'],
+        "names": ['ID_WEB_SEC_Qh_Ist'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1943,7 +1943,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 189,
         "count": 1,
-        "names": ['ID_WEB_SEC_TVL_Soll', 'Unknown_Calculation_189'],
+        "names": ['ID_WEB_SEC_TVL_Soll'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -1953,7 +1953,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 190,
         "count": 1,
-        "names": ['ID_WEB_SEC_Software', 'Unknown_Calculation_190'],
+        "names": ['ID_WEB_SEC_Software'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1963,7 +1963,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 191,
         "count": 1,
-        "names": ['ID_WEB_SEC_BZ', 'Unknown_Calculation_191'],
+        "names": ['ID_WEB_SEC_BZ'],
         "type": SecOperationMode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1973,7 +1973,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 192,
         "count": 1,
-        "names": ['ID_WEB_SEC_VWV', 'Unknown_Calculation_192'],
+        "names": ['ID_WEB_SEC_VWV'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1983,7 +1983,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 193,
         "count": 1,
-        "names": ['ID_WEB_SEC_VD', 'Unknown_Calculation_193'],
+        "names": ['ID_WEB_SEC_VD'],
         "type": Speed,
         "writeable": False,
         "datatype": 'UINT32',
@@ -1993,7 +1993,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 194,
         "count": 1,
-        "names": ['ID_WEB_SEC_VerdEVI', 'Unknown_Calculation_194'],
+        "names": ['ID_WEB_SEC_VerdEVI'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2003,7 +2003,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 195,
         "count": 1,
-        "names": ['ID_WEB_SEC_AnsEVI', 'Unknown_Calculation_195'],
+        "names": ['ID_WEB_SEC_AnsEVI'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2013,7 +2013,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 196,
         "count": 1,
-        "names": ['ID_WEB_SEC_UEH_EVI', 'Unknown_Calculation_196'],
+        "names": ['ID_WEB_SEC_UEH_EVI'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -2023,7 +2023,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 197,
         "count": 1,
-        "names": ['ID_WEB_SEC_UEH_EVI_S', 'Unknown_Calculation_197'],
+        "names": ['ID_WEB_SEC_UEH_EVI_S'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -2033,7 +2033,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 198,
         "count": 1,
-        "names": ['ID_WEB_SEC_KondTemp', 'Unknown_Calculation_198'],
+        "names": ['ID_WEB_SEC_KondTemp'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2043,7 +2043,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 199,
         "count": 1,
-        "names": ['ID_WEB_SEC_FlussigEx', 'Unknown_Calculation_199'],
+        "names": ['ID_WEB_SEC_FlussigEx'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2053,7 +2053,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 200,
         "count": 1,
-        "names": ['ID_WEB_SEC_UK_EEV', 'Unknown_Calculation_200'],
+        "names": ['ID_WEB_SEC_UK_EEV'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2063,7 +2063,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 201,
         "count": 1,
-        "names": ['ID_WEB_SEC_EVI_Druck', 'Unknown_Calculation_201'],
+        "names": ['ID_WEB_SEC_EVI_Druck'],
         "type": Pressure,
         "writeable": False,
         "datatype": 'INT32',
@@ -2073,7 +2073,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 202,
         "count": 1,
-        "names": ['ID_WEB_SEC_U_Inv', 'Unknown_Calculation_202'],
+        "names": ['ID_WEB_SEC_U_Inv'],
         "type": Voltage,
         "writeable": False,
         "datatype": 'INT32',
@@ -2083,7 +2083,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 203,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_THG_2', 'Unknown_Calculation_203'],
+        "names": ['ID_WEB_Temperatur_THG_2'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2093,7 +2093,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 204,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_TWE_2', 'Unknown_Calculation_204'],
+        "names": ['ID_WEB_Temperatur_TWE_2'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2103,7 +2103,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 205,
         "count": 1,
-        "names": ['ID_WEB_LIN_ANSAUG_VERDAMPFER_2', 'Unknown_Calculation_205'],
+        "names": ['ID_WEB_LIN_ANSAUG_VERDAMPFER_2'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2113,7 +2113,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 206,
         "count": 1,
-        "names": ['ID_WEB_LIN_ANSAUG_VERDICHTER_2', 'Unknown_Calculation_206'],
+        "names": ['ID_WEB_LIN_ANSAUG_VERDICHTER_2'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2123,7 +2123,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 207,
         "count": 1,
-        "names": ['ID_WEB_LIN_VDH_2', 'Unknown_Calculation_207'],
+        "names": ['ID_WEB_LIN_VDH_2'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2133,7 +2133,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 208,
         "count": 1,
-        "names": ['ID_WEB_LIN_UH_2', 'Unknown_Calculation_208'],
+        "names": ['ID_WEB_LIN_UH_2'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -2143,7 +2143,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 209,
         "count": 1,
-        "names": ['ID_WEB_LIN_UH_Soll_2', 'Unknown_Calculation_209'],
+        "names": ['ID_WEB_LIN_UH_Soll_2'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -2153,7 +2153,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 210,
         "count": 1,
-        "names": ['ID_WEB_LIN_HD_2', 'Unknown_Calculation_210'],
+        "names": ['ID_WEB_LIN_HD_2'],
         "type": Pressure,
         "writeable": False,
         "datatype": 'INT32',
@@ -2163,7 +2163,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 211,
         "count": 1,
-        "names": ['ID_WEB_LIN_ND_2', 'Unknown_Calculation_211'],
+        "names": ['ID_WEB_LIN_ND_2'],
         "type": Pressure,
         "writeable": False,
         "datatype": 'INT32',
@@ -2173,7 +2173,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 212,
         "count": 1,
-        "names": ['ID_WEB_HDin_2', 'Unknown_Calculation_212'],
+        "names": ['ID_WEB_HDin_2'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2183,7 +2183,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 213,
         "count": 1,
-        "names": ['ID_WEB_AVout_2', 'Unknown_Calculation_213'],
+        "names": ['ID_WEB_AVout_2'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2193,7 +2193,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 214,
         "count": 1,
-        "names": ['ID_WEB_VBOout_2', 'Unknown_Calculation_214'],
+        "names": ['ID_WEB_VBOout_2'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2203,7 +2203,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 215,
         "count": 1,
-        "names": ['ID_WEB_VD1out_2', 'Unknown_Calculation_215'],
+        "names": ['ID_WEB_VD1out_2'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2213,7 +2213,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 216,
         "count": 1,
-        "names": ['ID_WEB_LIN_VDH_out_2', 'Unknown_Calculation_216'],
+        "names": ['ID_WEB_LIN_VDH_out_2'],
         "type": Bool,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2223,7 +2223,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 217,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Nr0', 'Unknown_Calculation_217'],
+        "names": ['ID_WEB_Switchoff2_file_Nr0'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2233,7 +2233,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 218,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Nr1', 'Unknown_Calculation_218'],
+        "names": ['ID_WEB_Switchoff2_file_Nr1'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2243,7 +2243,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 219,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Nr2', 'Unknown_Calculation_219'],
+        "names": ['ID_WEB_Switchoff2_file_Nr2'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2253,7 +2253,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 220,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Nr3', 'Unknown_Calculation_220'],
+        "names": ['ID_WEB_Switchoff2_file_Nr3'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2263,7 +2263,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 221,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Nr4', 'Unknown_Calculation_221'],
+        "names": ['ID_WEB_Switchoff2_file_Nr4'],
         "type": SwitchoffFile,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2273,7 +2273,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 222,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Time0', 'Unknown_Calculation_222'],
+        "names": ['ID_WEB_Switchoff2_file_Time0'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2283,7 +2283,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 223,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Time1', 'Unknown_Calculation_223'],
+        "names": ['ID_WEB_Switchoff2_file_Time1'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2293,7 +2293,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 224,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Time2', 'Unknown_Calculation_224'],
+        "names": ['ID_WEB_Switchoff2_file_Time2'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2303,7 +2303,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 225,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Time3', 'Unknown_Calculation_225'],
+        "names": ['ID_WEB_Switchoff2_file_Time3'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2313,7 +2313,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 226,
         "count": 1,
-        "names": ['ID_WEB_Switchoff2_file_Time4', 'Unknown_Calculation_226'],
+        "names": ['ID_WEB_Switchoff2_file_Time4'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2323,7 +2323,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 227,
         "count": 1,
-        "names": ['ID_WEB_RBE_RT_Ist', 'Unknown_Calculation_227'],
+        "names": ['ID_WEB_RBE_RT_Ist'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2333,7 +2333,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 228,
         "count": 1,
-        "names": ['ID_WEB_RBE_RT_Soll', 'Unknown_Calculation_228'],
+        "names": ['ID_WEB_RBE_RT_Soll'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2343,7 +2343,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 229,
         "count": 1,
-        "names": ['ID_WEB_Temperatur_BW_oben', 'Unknown_Calculation_229'],
+        "names": ['ID_WEB_Temperatur_BW_oben'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2353,7 +2353,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 230,
         "count": 1,
-        "names": ['ID_WEB_Code_WP_akt_2', 'Unknown_Calculation_230'],
+        "names": ['ID_WEB_Code_WP_akt_2'],
         "type": HeatpumpCode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2363,7 +2363,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 231,
         "count": 1,
-        "names": ['ID_WEB_Freq_VD', 'Unknown_Calculation_231'],
+        "names": ['ID_WEB_Freq_VD'],
         "type": Frequency,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2463,7 +2463,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 241,
         "count": 1,
-        "names": ['HUP_PWM', 'Circulation_Pump', 'Unknown_Calculation_241'],
+        "names": ['HUP_PWM', 'Circulation_Pump'],
         "type": Percent2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2593,7 +2593,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 254,
         "count": 1,
-        "names": ['Flow_Rate_254', 'Unknown_Calculation_254'],
+        "names": ['Flow_Rate_254'],
         "type": Flow,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2623,7 +2623,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 257,
         "count": 1,
-        "names": ['Heat_Output', 'Unknown_Calculation_257'],
+        "names": ['Heat_Output'],
         "type": Power,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2723,7 +2723,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 267,
         "count": 1,
-        "names": ['Desired_Room_Temperature', 'Unknown_Calculation_267'],
+        "names": ['Desired_Room_Temperature'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2733,7 +2733,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 268,
         "count": 1,
-        "names": ['AC_Power_Input', 'Unknown_Calculation_268'],
+        "names": ['AC_Power_Input'],
         "type": Power,
         "writeable": False,
         "datatype": 'UINT32',

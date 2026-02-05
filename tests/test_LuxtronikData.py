@@ -68,8 +68,8 @@ class TestLuxtronikData:
         ("para", 1106, ["ID_Einst_SilenceTimer_13", "Unknown_Parameter_1106"]),
         ("para", 1109, ["ID_Einst_SilenceTimer_16", "Unknown_Parameter_1109"]),
         ("calc", 232, ["Vapourisation_Temperature", "Unknown_Calculation_232"]),
-        ("calc", 241, ["HUP_PWM", "Circulation_Pump", "Unknown_Calculation_241"]),
-        ("visi", 182, ["ID_Visi_Heizung_Zeitschaltprogramm", "ID_Visi_Heizung_Zeitschlaltprogramm", "Unknown_Visibility_182"]),
+        ("calc", 241, ["HUP_PWM", "Circulation_Pump"]),
+        ("visi", 182, ["ID_Visi_Heizung_Zeitschaltprogramm", "ID_Visi_Heizung_Zeitschlaltprogramm"]),
         ("visi", 326, ["Unknown_Visibility_326"]),
     ])
     def test_obsolete(self, vector, index, names):

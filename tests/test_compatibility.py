@@ -1204,7 +1204,9 @@ class TestCompatibility:
             "Unknown_Parameter_1155": 1155,
             "Unknown_Parameter_1156": 1156,
             "Unknown_Parameter_1157": 1157,
+            "Unknown_Parameter_1158": 1158,
             "POWER_LIMIT_SWITCH": 1158,
+            "Unknown_Parameter_1159": 1159,
             "POWER_LIMIT_VALUE": 1159,
         }
 
@@ -1911,11 +1913,11 @@ class TestCompatibility:
 
         # First, we check if we can find all entries of the above dicts.
         ok = True
-        for mapping, obj, caption in values:
+        for mapping, data_vector, caption in values:
             print_caption = True
             for old_name, old_idx in mapping.items():
-                cur_idx, new_name = obj._name_lookup(old_name)
-                cur_name = obj.get(old_idx).name
+                cur_idx, new_name = data_vector._name_lookup(old_name)
+                cur_name = data_vector.get(old_idx).name
                 if cur_idx != old_idx or (new_name is not None and new_name != cur_name):
                     # We do not use assert here, in order to catch all incompatibilities at once.
                     if print_caption:
@@ -1927,15 +1929,16 @@ class TestCompatibility:
 
         # Second, we check if all names are present in the above dicts.
         ok = True
-        for mapping, obj, caption in values:
+        for mapping, data_vector, caption in values:
             print_caption = True
-            for cur_idx, entry in obj:
-                if entry.name not in mapping:
-                    # We do not use assert here, in order to catch all incompatibilities at once.
-                    # The output can be copied to the dicts above
-                    if print_caption:
-                        print(f"### Missing - {caption}:")
-                        print_caption = False
-                    print(f'"{entry.name}": {cur_idx},')
-                    ok = False
-        assert ok, f"Found missing {obj.name}. Please consider to add them to the test suite."
+            for definition in data_vector.definitions:
+                for name in definition.names:
+                    if name not in mapping:
+                        # We do not use assert here, in order to catch all incompatibilities at once.
+                        # The output can be copied to the dicts above
+                        if print_caption:
+                            print(f"### Missing - {caption}:")
+                            print_caption = False
+                        print(f'"{name}": {definition.index},')
+                        ok = False
+        assert ok, "Found missing entries. Please consider to add them to the test suite."
