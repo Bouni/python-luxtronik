@@ -34,7 +34,33 @@ class DataVector:
 
     @property
     def data(self):
+        """
+        Return the internal `LuxtronikFieldsDictionary`.
+        Please check its documentation.
+        """
         return self._data
+
+    def __getitem__(self, def_name_or_idx):
+        """
+        Array-style access to method `get`.
+        Please check its documentation.
+        """
+        return self.get(def_name_or_idx)
+
+    def __setitem__(self, def_name_or_idx, value):
+        """
+        Array-style access to method `set`.
+        Please check its documentation.
+        """
+        return self.set(def_name_or_idx, value)
+
+
+    def __contains__(self, def_field_name_or_idx):
+        """
+        Forward the `LuxtronikFieldsDictionary.__contains__` method.
+        Please check its documentation.
+        """
+        return def_field_name_or_idx in self._data
 
     def _name_lookup(self, name):
         """
@@ -93,3 +119,7 @@ class DataVector:
         """Get entry by id or name."""
         entry = self._lookup(target)
         return entry
+
+    def set(self, target, value):
+        "TODO: Placeholder for future changes"
+        pass
