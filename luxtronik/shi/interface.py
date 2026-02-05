@@ -321,6 +321,8 @@ class LuxtronikSmartHomeInterface:
         success = True
         for block, telegram, read_not_write in telegrams_data:
             if (read_not_write == READ):
+                # integrate_data() also resets the write_pending flag,
+                # intentionally only for read fields
                 valid = block.integrate_data(telegram.data)
                 if not valid:
                     LOGGER.debug(f"Failed to integrate read data into {block}")
@@ -379,15 +381,13 @@ class LuxtronikSmartHomeInterface:
         if not field.write_pending and data is None:
             return False
 
-        # Abort if field is not writeable
-        if safe and not (definition.writeable and field.writeable):
-            LOGGER.warning("Field marked as non-writeable: " \
-                + f"name={definition.name}, data={field.raw}")
-            return False
-
         # Override the field's data with the provided data
         if data is not None:
             field.value = data
+
+        # Abort if field is not writeable or the value is invalid
+        if not field.check_for_write(safe):
+            return False
 
         # Abort if insufficient data is provided
         if not get_data_arr(definition, field, LUXTRONIK_SHI_REGISTER_BIT_SIZE):

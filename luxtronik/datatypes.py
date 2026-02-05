@@ -1,6 +1,7 @@
 """datatype conversions."""
 
 import datetime
+import logging
 import socket
 import struct
 
@@ -12,6 +13,9 @@ from luxtronik.constants import (
 from luxtronik.common import classproperty
 
 from functools import total_ordering
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 @total_ordering
@@ -83,6 +87,8 @@ class Base:
     def value(self, value):
         """Converts the value into heatpump units and store it."""
         self._raw = self.to_heatpump(value)
+        if self._raw is None:
+            LOGGER.warning(f"Value '{value}' not valid for field '{self.name}'")
         self.write_pending = True
 
     @property
@@ -92,7 +98,7 @@ class Base:
 
     @raw.setter
     def raw(self, raw):
-        """Store the raw data."""
+        """Store the raw data. For internal use only"""
         self._raw = raw
         self.write_pending = False
 
@@ -140,6 +146,30 @@ class Base:
             and self.datatype_class == other.datatype_class
             and self.datatype_unit == other.datatype_unit
         )
+
+    def check_for_write(self, safe=True):
+        """
+        Returns true if the field is writable and the field data is valid.
+
+        Args:
+            safe (bool, Default: True): Flag for blocking write operations
+                if the field is not marked as writable
+
+        Returns:
+            bool: True if the data is writable, otherwise False.
+        """
+        if self.writeable or not safe:
+            # We support integers
+            if isinstance(self._raw, int):
+                return True
+            # and list of integers
+            elif isinstance(self._raw, list) and all(isinstance(value, int) for value in self._raw):
+                return True
+            else:
+                LOGGER.error(f"Value of '{self.name}' invalid!")
+        else:
+            LOGGER.warning(f"'{self.name}' not safe for writing!")
+        return False
 
 
 class SelectionBase(Base):

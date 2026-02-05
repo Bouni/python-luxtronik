@@ -28,6 +28,10 @@ from luxtronik.shi import (
 )
 from tests.fake import FakeModbus
 
+IDX_BLK = 0
+IDX_TLG = 1
+IDX_RNW = 2
+
 
 class TestLuxtronikSmartHomeData:
 
@@ -244,8 +248,8 @@ class TestLuxtronikSmartHomeInterface:
         telegram = self.interface._create_telegram(block, "input", False)
         assert telegram is None
 
-    def test_create_telegrams(self):
-        blocks_list = []
+    def create_contiguous_block_list(self):
+        block_list = []
         blocks = ContiguousDataBlockList("holding", True)
 
         # block 1
@@ -260,86 +264,129 @@ class TestLuxtronikSmartHomeInterface:
         # block 3
         blocks.append_single(HOLDINGS_DEFINITIONS[10], HOLDINGS_DEFINITIONS[10].create_field())
 
-        blocks_list.append(blocks)
+        block_list.append(blocks)
 
         blocks = ContiguousDataBlockList("holding", False)
 
-        # invalid block
+        # invalid block because of invalid data
         blocks.append_single(HOLDINGS_DEFINITIONS[12], HOLDINGS_DEFINITIONS[12].create_field())
+
         # block 4
         field3 = HOLDINGS_DEFINITIONS[17].create_field()
         blocks.append_single(HOLDINGS_DEFINITIONS[17], field3)
 
-        blocks_list.append(blocks)
+        block_list.append(blocks)
 
         field3.raw = 17
 
-        telegram_data = self.interface._create_telegrams(blocks_list)
+        assert len(block_list) == 2
+        assert len(block_list[0]) == 3
+        assert len(block_list[0][0]) == 2
+        assert len(block_list[0][1]) == 1
+        assert len(block_list[0][2]) == 1
+        assert len(block_list[1]) == 2
+        assert len(block_list[1][0]) == 1
+        assert len(block_list[1][1]) == 1
+
+        return block_list
+
+    def test_create_telegrams(self):
+        block_list = self.create_contiguous_block_list()
+
+        telegram_data = self.interface._create_telegrams(block_list)
         assert len(telegram_data) == 4
+
+        # Note: telegram_data[block index][tuple index]
+        # Note: telegram_data[block index][IDX_BLK][part index]
+
         # blocks
-        assert len(telegram_data[0][0]) == 2
-        assert telegram_data[0][0].first_index == 10
-        assert telegram_data[0][0].overall_count == 2
-        assert len(telegram_data[1][0]) == 1
-        assert telegram_data[1][0].first_index == 17
-        assert telegram_data[1][0].overall_count == 1
-        assert len(telegram_data[2][0]) == 1
-        assert telegram_data[2][0].first_index == 10
-        assert telegram_data[2][0].overall_count == 1
-        assert len(telegram_data[3][0]) == 1
-        assert telegram_data[3][0].first_index == 17
-        assert telegram_data[3][0].overall_count == 1
+        assert len(telegram_data[0][IDX_BLK]) == 2
+        assert telegram_data[0][IDX_BLK].first_index == 10
+        assert telegram_data[0][IDX_BLK].overall_count == 2
+        assert len(telegram_data[1][IDX_BLK]) == 1
+        assert telegram_data[1][IDX_BLK].first_index == 17
+        assert telegram_data[1][IDX_BLK].overall_count == 1
+        assert len(telegram_data[2][IDX_BLK]) == 1
+        assert telegram_data[2][IDX_BLK].first_index == 10
+        assert telegram_data[2][IDX_BLK].overall_count == 1
+        assert len(telegram_data[3][IDX_BLK]) == 1
+        assert telegram_data[3][IDX_BLK].first_index == 17
+        assert telegram_data[3][IDX_BLK].overall_count == 1
         # telegrams
-        assert telegram_data[0][1].count == 2
-        assert telegram_data[1][1].count == 1
-        assert telegram_data[2][1].count == 1
-        assert telegram_data[3][1].count == 1
+        assert telegram_data[0][IDX_TLG].count == 2
+        assert telegram_data[1][IDX_TLG].count == 1
+        assert telegram_data[2][IDX_TLG].count == 1
+        assert telegram_data[3][IDX_TLG].count == 1
         # read not write
-        assert telegram_data[0][2]
-        assert telegram_data[1][2]
-        assert telegram_data[2][2]
-        assert not telegram_data[3][2]
+        assert telegram_data[0][IDX_RNW]
+        assert telegram_data[1][IDX_RNW]
+        assert telegram_data[2][IDX_RNW]
+        assert not telegram_data[3][IDX_RNW]
+
+    def test_integrate_data(self):
+        block_list = self.create_contiguous_block_list()
+
+        telegram_data = self.interface._create_telegrams(block_list)
 
         # integrate
-        telegram_data[0][1].data = [18, 4]
-        telegram_data[1][1].data = [9]
-        telegram_data[2][1].data = [27]
-        telegram_data[3][0][0].field.write_pending = True
+        telegram_data[0][IDX_TLG].data = [18, 4]
+        telegram_data[0][IDX_BLK][0].field.write_pending = True
+        telegram_data[0][IDX_BLK][1].field.write_pending = False
+        telegram_data[1][IDX_TLG].data = [9]
+        telegram_data[2][IDX_TLG].data = [27]
+        telegram_data[3][IDX_BLK][0].field.write_pending = True
         valid = self.interface._integrate_data(telegram_data)
         assert valid
         # [index data, index for blocks, index for part]
-        assert telegram_data[0][0][0].field.raw == 18
-        assert telegram_data[0][0][1].field.raw == 4
-        assert telegram_data[1][0][0].field.raw == 9
-        assert telegram_data[2][0][0].field.raw == 27
-        assert not telegram_data[3][0][0].field.write_pending
-        assert telegram_data[3][0][0].field.raw == 17 # no update
+        assert telegram_data[0][IDX_BLK][0].field.raw == 18
+        assert not telegram_data[0][IDX_BLK][0].field.write_pending
+        assert telegram_data[0][IDX_BLK][1].field.raw == 4
+        assert not telegram_data[0][IDX_BLK][1].field.write_pending
+        assert telegram_data[1][IDX_BLK][0].field.raw == 9
+        assert telegram_data[2][IDX_BLK][0].field.raw == 27
+        assert telegram_data[3][IDX_BLK][0].field.raw == 17 # no update
+        assert not telegram_data[3][IDX_BLK][0].field.write_pending
 
         # integrate not available / None -> no error
-        telegram_data[0][1].data = [18, 4]
-        telegram_data[1][1].data = [LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE]
-        telegram_data[2][1].data = [None]
+        telegram_data[0][IDX_TLG].data = [19, 5]
+        telegram_data[0][IDX_BLK][0].field.write_pending = True
+        telegram_data[1][IDX_TLG].data = [LUXTRONIK_VALUE_FUNCTION_NOT_AVAILABLE]
+        telegram_data[1][IDX_BLK][0].field.write_pending = True
+        telegram_data[2][IDX_TLG].data = [None]
+        telegram_data[2][IDX_BLK][0].field.write_pending = True
+        telegram_data[3][IDX_BLK][0].field.write_pending = True
         valid = self.interface._integrate_data(telegram_data)
         assert valid
         # [index data, index for blocks, index for part]
-        assert telegram_data[0][0][0].field.raw == 18
-        assert telegram_data[0][0][1].field.raw == 4
-        assert telegram_data[1][0][0].field.raw is None
-        assert telegram_data[2][0][0].field.raw is None
-        assert telegram_data[3][0][0].field.raw == 17 # no update
+        assert telegram_data[0][IDX_BLK][0].field.raw == 19
+        assert not telegram_data[0][IDX_BLK][0].field.write_pending
+        assert telegram_data[0][IDX_BLK][1].field.raw == 5
+        assert not telegram_data[0][IDX_BLK][1].field.write_pending
+        assert telegram_data[1][IDX_BLK][0].field.raw is None
+        assert not telegram_data[1][IDX_BLK][0].field.write_pending # update with none -> reset flag
+        assert telegram_data[2][IDX_BLK][0].field.raw is None
+        assert not telegram_data[2][IDX_BLK][0].field.write_pending # update with none -> reset flag
+        assert telegram_data[3][IDX_BLK][0].field.raw == 17 # no update
+        assert not telegram_data[3][IDX_BLK][0].field.write_pending
 
         # integrate too less -> error
-        telegram_data[0][1].data = [18]
-        telegram_data[1][1].data = [1]
-        telegram_data[2][1].data = [None]
+        telegram_data[0][IDX_TLG].data = [18]
+        telegram_data[0][IDX_BLK][0].field.write_pending = True
+        telegram_data[0][IDX_BLK][1].field.write_pending = True
+        telegram_data[1][IDX_TLG].data = [2]
+        telegram_data[1][IDX_BLK][0].field.write_pending = True
+        telegram_data[2][IDX_TLG].data = [None]
         valid = self.interface._integrate_data(telegram_data)
         assert not valid
         # [index data, index for blocks, index for part]
-        assert telegram_data[0][0][0].field.raw == 18
-        assert telegram_data[0][0][1].field.raw == 4 # no update
-        assert telegram_data[1][0][0].field.raw == 1
-        assert telegram_data[2][0][0].field.raw is None
-        assert telegram_data[3][0][0].field.raw == 17 # no update
+        assert telegram_data[0][IDX_BLK][0].field.raw == 19 # no update
+        assert telegram_data[0][IDX_BLK][0].field.write_pending # no update
+        assert telegram_data[0][IDX_BLK][1].field.raw == 5 # no update
+        assert telegram_data[0][IDX_BLK][1].field.write_pending # no update
+        assert telegram_data[1][IDX_BLK][0].field.raw == 2
+        assert not telegram_data[1][IDX_BLK][0].field.write_pending
+        assert telegram_data[2][IDX_BLK][0].field.raw is None
+        assert telegram_data[3][IDX_BLK][0].field.raw == 17 # no update
 
     def test_prepare(self):
         definition = HOLDINGS_DEFINITIONS[2]

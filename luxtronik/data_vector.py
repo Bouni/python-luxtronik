@@ -8,6 +8,7 @@ from luxtronik.constants import (
 )
 
 from luxtronik.collections import LuxtronikFieldsDictionary
+from luxtronik.datatypes import Base
 
 
 LOGGER = logging.getLogger(__name__)
@@ -121,5 +122,14 @@ class DataVector:
         return entry
 
     def set(self, target, value):
-        "TODO: Placeholder for future changes"
-        pass
+        """
+        Set the value of a field to the given value.
+
+        The value is set, even if the field marked as non-writeable.
+        No data validation is performed either.
+        """
+        field = target
+        if not isinstance(field, Base):
+            field = self.get(target)
+        if field is not None:
+            field.value = value

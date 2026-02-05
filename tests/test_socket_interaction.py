@@ -96,21 +96,29 @@ class TestSocketInteraction:
 
         # Finally, writing
         p = Parameters()
-        p.queue = {0: 100, 1: 200}
+        p[1].raw = 100
+        p[1].write_pending = True
+        p[2].raw = 200
+        p[2].write_pending = True
         lux.write(p)
         s = FakeSocket.last_instance
-        assert s.written_values[0] == 100
-        assert s.written_values[1] == 200
-        assert len(p.queue) == 0
+        assert s.written_values[1] == 100
+        assert s.written_values[2] == 200
+        assert not p[1].write_pending
+        assert not p[2].write_pending
 
         p = Parameters()
-        p.queue = {2: 300, 3: "test"}
+        p[3].raw = 300
+        p[3].write_pending = True
+        p[4].raw = "test"
+        p[4].write_pending = True
         d = lux.write_and_read(p)
         s = FakeSocket.last_instance
-        assert s.written_values[2] == 300
+        assert s.written_values[3] == 300
         # Make sure that the non-int value is not written:
-        assert 3 not in s.written_values
-        assert len(p.queue) == 0
+        assert 4 not in s.written_values
+        assert not p[3].write_pending
+        assert not p[4].write_pending
         assert self.check_luxtronik_data(d)
 
     def test_luxtronik(self):
@@ -141,16 +149,18 @@ class TestSocketInteraction:
         ##########################
         # Test the write routine #
         ##########################
-        lux.parameters.queue = {0: 500}
+        lux.parameters[1].raw = 500
+        lux.parameters[1].write_pending = True
         lux.write()
         s = FakeSocket.last_instance
-        assert s.written_values[0] == 500
+        assert s.written_values[1] == 500
 
         p = Parameters()
-        p.queue = {1: 501}
+        p[2].raw = 501
+        p[2].write_pending = True
         lux.write(p)
         s = FakeSocket.last_instance
-        assert s.written_values[1] == 501
+        assert s.written_values[2] == 501
 
         # lux.write() and lux.write(p) should not read:
         assert self.check_luxtronik_data(lux, False)
@@ -158,22 +168,24 @@ class TestSocketInteraction:
         ###################################
         # Test the write_and_read routine #
         ###################################
-        lux.parameters.queue = {2: 502}
+        lux.parameters[3].raw = 502
+        lux.parameters[3].write_pending = True
         lux.write_and_read()
         # Currently write_and_read triggers two separate connections/operations
         s = FakeSocket.prev_instance
-        assert s.written_values[2] == 502
+        assert s.written_values[3] == 502
 
         # Now, the values should be read
         assert self.check_luxtronik_data(lux)
 
         self.clear_luxtronik_data(lux)
 
-        p.queue = {3: 503}
+        p[4].raw = 503
+        p[4].write_pending = True
         lux.write_and_read(p)
         # Currently write_and_read triggers two separate connections/operations
         s = FakeSocket.prev_instance
-        assert s.written_values[3] == 503
+        assert s.written_values[4] == 503
 
         # Now, the values should be read
         assert self.check_luxtronik_data(lux)
