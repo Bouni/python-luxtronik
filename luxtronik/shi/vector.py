@@ -288,22 +288,3 @@ class DataVectorSmartHome(DataVector):
             the last added takes precedence.
         """
         return self._data.get(def_name_or_idx, default)
-
-    def set(self, def_field_name_or_idx, value):
-        """
-        Set field to new value.
-
-        The value is set, even if the field marked as non-writeable.
-        No data validation is performed either.
-
-        Args:
-            def_field_name_or_idx (LuxtronikDefinition | Base | int | str):
-                Definition, name, or register index to be used to search for the field.
-                It is also possible to pass the field itself.
-            value (int | List[int]): Value to set
-        """
-        field = def_field_name_or_idx
-        if not isinstance(field, Base):
-            field = self.get(def_field_name_or_idx)
-        if field is not None:
-            field.value = value
