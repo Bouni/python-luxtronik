@@ -166,7 +166,7 @@ class LuxtronikSocketInterface:
             if field.write_pending:
                 field.write_pending = False
                 value = field.raw
-                if not isinstance(index, int) or not isinstance(value, int):
+                if not isinstance(index, int) or not field.check_for_write(parameters.safe):
                     LOGGER.warning(
                         "%s: Parameter id '%s' or value '%s' invalid!",
                         self._host,

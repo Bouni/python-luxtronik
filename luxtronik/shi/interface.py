@@ -381,15 +381,13 @@ class LuxtronikSmartHomeInterface:
         if not field.write_pending and data is None:
             return False
 
-        # Abort if field is not writeable
-        if safe and not (definition.writeable and field.writeable):
-            LOGGER.warning("Field marked as non-writeable: " \
-                + f"name={definition.name}, data={field.raw}")
-            return False
-
         # Override the field's data with the provided data
         if data is not None:
             field.value = data
+
+        # Abort if field is not writeable or the value is invalid
+        if not field.check_for_write(safe):
+            return False
 
         # Abort if insufficient data is provided
         if not get_data_arr(definition, field, LUXTRONIK_SHI_REGISTER_BIT_SIZE):
