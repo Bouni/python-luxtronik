@@ -26,7 +26,6 @@ HOLDINGS_DEFINITIONS: Final = LuxtronikDefinitionsList(
 class Holdings(DataVectorSmartHome):
     """Class that holds holding fields."""
 
-    logger = LOGGER
     name = HOLDINGS_FIELD_NAME
     definitions = HOLDINGS_DEFINITIONS
 

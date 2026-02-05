@@ -20,7 +20,6 @@ LOGGER = logging.getLogger(__name__)
 class DataVector:
     """Class that holds a vector of data entries."""
 
-    logger = LOGGER
     name = "DataVector"
 
     _obsolete = {}
@@ -85,7 +84,7 @@ class DataVector:
 
         target_entry = self._data.get(target_index, None)
         if target_entry is None:
-            self.logger.warning("entry '%s' not found", target)
+            LOGGER.warning("entry '%s' not found", target)
         if with_index:
             return target_index, target_entry
         return target_entry

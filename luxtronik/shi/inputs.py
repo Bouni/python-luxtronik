@@ -26,7 +26,6 @@ INPUTS_DEFINITIONS: Final = LuxtronikDefinitionsList(
 class Inputs(DataVectorSmartHome):
     """Class that holds input fields."""
 
-    logger = LOGGER
     name = INPUTS_FIELD_NAME
     definitions = INPUTS_DEFINITIONS
 
