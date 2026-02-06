@@ -43,11 +43,13 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "default": 0,
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Configuration for heating operation \
-0: no influence \
-1: Heating setpoint \
-2: Heating offset \
-3: Heating level"
+        "description": (
+            "Configuration for heating operation\n"
+            "0: no influence\n"
+            "1: Heating setpoint\n"
+            "2: Heating offset\n"
+            "3: Heating level"
+        )
     },
     {
         "index": 1,
@@ -60,9 +62,11 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "default": 350,
         "range": {"min": 150, "max": 750},
         "since": "3.90.1",
-        "description": "Overrides the current return temperature setpoint (tRL) for heating. \
-Value may be limited by heat pump controller settings. \
-Requires heating_mode = setpoint to apply."
+        "description": (
+            "Overrides the current return temperature setpoint (tRL) for heating. "
+            "Value may be limited by heat pump controller settings. "
+            "Requires heating_mode = setpoint to apply."
+        )
     },
     {
         "index": 2,
@@ -75,8 +79,10 @@ Requires heating_mode = setpoint to apply."
         "default": 0,
         "range": {"min": -200, "max": 200},
         "since": "3.90.1",
-        "description": "Offset applied to the current return temperature setpoint (tRL) for heating. \
-Requires heating_mode = offset to apply."
+        "description": (
+            "Offset applied to the current return temperature setpoint (tRL) for heating. "
+            "Requires heating_mode = offset to apply."
+        )
     },
     {
         "index": 3,
@@ -85,8 +91,10 @@ Requires heating_mode = offset to apply."
         "type": LevelMode,
         "writeable": True,
         "since": "3.92.0",
-        "description": "Increase or decrease the heating temperature " \
-            "using the SHI offset settings.",
+        "description": (
+            "Increase or decrease the heating temperature "
+            "using the SHI offset settings."
+        )
     },
     {
         "index": 5,
@@ -99,11 +107,13 @@ Requires heating_mode = offset to apply."
         "default": 0,
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Configuration for domestic hot water operation \
-0: no influence \
-1: DHW setpoint \
-2: DHW offset \
-3: DHW level"
+        "description": (
+            "Configuration for domestic hot water operation\n"
+            "0: no influence\n"
+            "1: DHW setpoint\n"
+            "2: DHW offset\n"
+            "3: DHW level"
+        )
     },
     {
         "index": 6,
@@ -116,9 +126,11 @@ Requires heating_mode = offset to apply."
         "default": 400,
         "range": {"min": 300, "max": 750},
         "since": "3.90.1",
-        "description": "Overrides the current DHW setpoint. \
-Value may be limited by heat pump controller settings. \
-Requires dhw_mode = setpoint to apply."
+        "description": (
+            "Overrides the current DHW setpoint. "
+            "Value may be limited by heat pump controller settings. "
+            "Requires dhw_mode = setpoint to apply."
+        )
     },
     {
         "index": 7,
@@ -131,8 +143,10 @@ Requires dhw_mode = setpoint to apply."
         "default": 0,
         "range": {"min": -200, "max": 200},
         "since": "3.90.1",
-        "description": "Offset applied to the current DHW setpoint. \
-Requires dhw_mode = offset to apply."
+        "description": (
+            "Offset applied to the current DHW setpoint. "
+            "Requires dhw_mode = offset to apply."
+        )
     },
     {
         "index": 8,
@@ -141,8 +155,10 @@ Requires dhw_mode = offset to apply."
         "type": LevelMode,
         "writeable": True,
         "since": "3.92.0",
-        "description": "Increase or decrease the hot water temperature " \
-            "using the SHI offset settings.",
+        "description": (
+            "Increase or decrease the hot water temperature "
+            "using the SHI offset settings."
+        )
     },
     {
         "index": 10,
@@ -155,11 +171,13 @@ Requires dhw_mode = offset to apply."
         "default": 0,
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Configuration for mixing circuit 1 heating operation \
-0: no influence \
-1: Heating setpoint \
-2: Heating offset \
-3: Heating level"
+        "description": (
+            "Configuration for mixing circuit 1 heating operation\n"
+            "0: no influence\n"
+            "1: Heating setpoint\n"
+            "2: Heating offset\n"
+            "3: Heating level"
+        )
     },
     {
         "index": 11,
@@ -172,9 +190,11 @@ Requires dhw_mode = offset to apply."
         "default": 350,
         "range": {"min": 200, "max": 650},
         "since": "3.90.1",
-        "description": "Overrides the current flow temperature for mixing circuit 1 heating. \
-Value may be limited by heat pump controller settings. \
-Requires mc1_heat_mode = setpoint to apply."
+        "description": (
+            "Overrides the current flow temperature for mixing circuit 1 heating. "
+            "Value may be limited by heat pump controller settings. "
+            "Requires mc1_heat_mode = setpoint to apply."
+        )
     },
     {
         "index": 12,
@@ -187,8 +207,10 @@ Requires mc1_heat_mode = setpoint to apply."
         "default": 0,
         "range": {"min": -50, "max": 50},
         "since": "3.90.1",
-        "description": "Offset applied to the current flow temperature for mixing circuit 1 heating. \
-Requires mc1_heat_mode = offset to apply."
+        "description": (
+            "Offset applied to the current flow temperature for mixing circuit 1 heating. "
+            "Requires mc1_heat_mode = offset to apply."
+        )
     },
     {
         "index": 13,
@@ -197,8 +219,10 @@ Requires mc1_heat_mode = offset to apply."
         "type": LevelMode,
         "writeable": True,
         "since": "3.92.0",
-        "description": "Increase or decrease the mixing circuit 1 temperature " \
-            "using the SHI offset settings.",
+        "description": (
+            "Increase or decrease the mixing circuit 1 temperature "
+            "using the SHI offset settings."
+        )
     },
     {
         "index": 15,
@@ -211,11 +235,13 @@ Requires mc1_heat_mode = offset to apply."
         "default": 0,
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Configuration for mixing circuit 1 cooling operation \
-0: no influence \
-1: Cooling setpoint \
-2: Cooling offset \
-3: Cooling level"
+        "description": (
+            "Configuration for mixing circuit 1 cooling operation\n"
+            "0: no influence\n"
+            "1: Cooling setpoint\n"
+            "2: Cooling offset\n"
+            "3: Cooling level"
+        )
     },
     {
         "index": 16,
@@ -228,9 +254,11 @@ Requires mc1_heat_mode = offset to apply."
         "default": 200,
         "range": {"min": 50, "max": 250},
         "since": "3.90.1",
-        "description": "Overrides the current flow temperature for mixing circuit 1 cooling. \
-Value may be limited by heat pump controller settings. \
-Requires mc1_cool_mode = setpoint to apply."
+        "description": (
+            "Overrides the current flow temperature for mixing circuit 1 cooling. "
+            "Value may be limited by heat pump controller settings. "
+            "Requires mc1_cool_mode = setpoint to apply."
+        )
     },
     {
         "index": 17,
@@ -243,8 +271,10 @@ Requires mc1_cool_mode = setpoint to apply."
         "default": 0,
         "range": {"min": -50, "max": 50},
         "since": "3.90.1",
-        "description": "Offset applied to the current flow temperature for mixing circuit 1 cooling. \
-Requires mc1_cool_mode = offset to apply."
+        "description": (
+            "Offset applied to the current flow temperature for mixing circuit 1 cooling. "
+            "Requires mc1_cool_mode = offset to apply."
+        )
     },
     {
         "index": 20,
@@ -257,11 +287,13 @@ Requires mc1_cool_mode = offset to apply."
         "default": 0,
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Configuration for mixing circuit 2 heating operation \
-0: no influence \
-1: Heating setpoint \
-2: Heating offset \
-3: Heating level"
+        "description": (
+            "Configuration for mixing circuit 2 heating operation\n"
+            "0: no influence\n"
+            "1: Heating setpoint\n"
+            "2: Heating offset\n"
+            "3: Heating level"
+        )
     },
     {
         "index": 21,
@@ -274,9 +306,11 @@ Requires mc1_cool_mode = offset to apply."
         "default": 350,
         "range": {"min": 200, "max": 650},
         "since": "3.90.1",
-        "description": "Overrides the current flow temperature for mixing circuit 2 heating. \
-Value may be limited by heat pump controller settings. \
-Requires mc2_heat_mode = setpoint to apply."
+        "description": (
+            "Overrides the current flow temperature for mixing circuit 2 heating. "
+            "Value may be limited by heat pump controller settings. "
+            "Requires mc2_heat_mode = setpoint to apply."
+        )
     },
     {
         "index": 22,
@@ -289,8 +323,10 @@ Requires mc2_heat_mode = setpoint to apply."
         "default": 0,
         "range": {"min": -50, "max": 50},
         "since": "3.90.1",
-        "description": "Offset applied to the current flow temperature for mixing circuit 2 heating. \
-Requires mc2_heat_mode = offset to apply."
+        "description": (
+            "Offset applied to the current flow temperature for mixing circuit 2 heating. "
+            "Requires mc2_heat_mode = offset to apply."
+        )
     },
     {
         "index": 23,
@@ -299,8 +335,10 @@ Requires mc2_heat_mode = offset to apply."
         "type": LevelMode,
         "writeable": True,
         "since": "3.92.0",
-        "description": "Increase or decrease the mixing circuit 2 temperature " \
-            "using the SHI offset settings.",
+        "description": (
+            "Increase or decrease the mixing circuit 2 temperature "
+            "using the SHI offset settings."
+        )
     },
     {
         "index": 25,
@@ -313,11 +351,13 @@ Requires mc2_heat_mode = offset to apply."
         "default": 0,
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Configuration for mixing circuit 2 cooling operation \
-0: no influence \
-1: Cooling setpoint \
-2: Cooling offset \
-3: Cooling level"
+        "description": (
+            "Configuration for mixing circuit 2 cooling operation\n"
+            "0: no influence\n"
+            "1: Cooling setpoint\n"
+            "2: Cooling offset\n"
+            "3: Cooling level"
+        )
     },
     {
         "index": 26,
@@ -330,9 +370,11 @@ Requires mc2_heat_mode = offset to apply."
         "default": 200,
         "range": {"min": 50, "max": 250},
         "since": "3.90.1",
-        "description": "Overrides the current flow temperature for mixing circuit 2 cooling. \
-Value may be limited by heat pump controller settings. \
-Requires mc2_cool_mode = setpoint to apply."
+        "description": (
+            "Overrides the current flow temperature for mixing circuit 2 cooling. "
+            "Value may be limited by heat pump controller settings. "
+            "Requires mc2_cool_mode = setpoint to apply."
+        )
     },
     {
         "index": 27,
@@ -345,8 +387,10 @@ Requires mc2_cool_mode = setpoint to apply."
         "default": 0,
         "range": {"min": -50, "max": 50},
         "since": "3.90.1",
-        "description": "Offset applied to the current flow temperature for mixing circuit 2 cooling. \
-Requires mc2_cool_mode = offset to apply."
+        "description": (
+            "Offset applied to the current flow temperature for mixing circuit 2 cooling. "
+            "Requires mc2_cool_mode = offset to apply."
+        )
     },
     {
         "index": 30,
@@ -359,11 +403,13 @@ Requires mc2_cool_mode = offset to apply."
         "default": 0,
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Configuration for mixing circuit 3 heating operation \
-0: no influence \
-1: Heating setpoint \
-2: Heating offset \
-3: Heating level"
+        "description": (
+            "Configuration for mixing circuit 3 heating operation\n"
+            "0: no influence\n"
+            "1: Heating setpoint\n"
+            "2: Heating offset\n"
+            "3: Heating level"
+        )
     },
     {
         "index": 31,
@@ -376,9 +422,11 @@ Requires mc2_cool_mode = offset to apply."
         "default": 350,
         "range": {"min": 200, "max": 650},
         "since": "3.90.1",
-        "description": "Overrides the current flow temperature for mixing circuit 3 heating. \
-Value may be limited by heat pump controller settings. \
-Requires mc3_heat_mode = setpoint to apply."
+        "description": (
+            "Overrides the current flow temperature for mixing circuit 3 heating. "
+            "Value may be limited by heat pump controller settings. "
+            "Requires mc3_heat_mode = setpoint to apply."
+        )
     },
     {
         "index": 32,
@@ -391,8 +439,10 @@ Requires mc3_heat_mode = setpoint to apply."
         "default": 0,
         "range": {"min": -50, "max": 50},
         "since": "3.90.1",
-        "description": "Offset applied to the current flow temperature for mixing circuit 3 heating. \
-Requires mc3_heat_mode = offset to apply."
+        "description": (
+            "Offset applied to the current flow temperature for mixing circuit 3 heating. "
+            "Requires mc3_heat_mode = offset to apply."
+        )
     },
     {
         "index": 33,
@@ -401,8 +451,10 @@ Requires mc3_heat_mode = offset to apply."
         "type": LevelMode,
         "writeable": True,
         "since": "3.92.0",
-        "description": "Increase or decrease the mixing circuit 3 temperature " \
-            "using the SHI offset settings.",
+        "description": (
+            "Increase or decrease the mixing circuit 3 temperature "
+            "using the SHI offset settings."
+        )
     },
     {
         "index": 35,
@@ -415,11 +467,13 @@ Requires mc3_heat_mode = offset to apply."
         "default": 0,
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Configuration for mixing circuit 3 cooling operation \
-0: no influence \
-1: Cooling setpoint \
-2: Cooling offset \
-3: Cooling level"
+        "description": (
+            "Configuration for mixing circuit 3 cooling operation\n"
+            "0: no influence\n"
+            "1: Cooling setpoint\n"
+            "2: Cooling offset\n"
+            "3: Cooling level"
+        )
     },
     {
         "index": 36,
@@ -432,9 +486,11 @@ Requires mc3_heat_mode = offset to apply."
         "default": 200,
         "range": {"min": 50, "max": 250},
         "since": "3.90.1",
-        "description": "Overrides the current flow temperature for mixing circuit 3 cooling. \
-Value may be limited by heat pump controller settings. \
-Requires mc3_cool_mode = setpoint to apply."
+        "description": (
+            "Overrides the current flow temperature for mixing circuit 3 cooling. "
+            "Value may be limited by heat pump controller settings. "
+            "Requires mc3_cool_mode = setpoint to apply."
+        )
     },
     {
         "index": 37,
@@ -447,8 +503,10 @@ Requires mc3_cool_mode = setpoint to apply."
         "default": 0,
         "range": {"min": -50, "max": 50},
         "since": "3.90.1",
-        "description": "Offset applied to the current flow temperature for mixing circuit 3 cooling. \
-Requires mc3_cool_mode = offset to apply."
+        "description": (
+            "Offset applied to the current flow temperature for mixing circuit 3 cooling. "
+            "Requires mc3_cool_mode = offset to apply."
+        )
     },
     {
         "index": 40,
@@ -461,17 +519,19 @@ Requires mc3_cool_mode = offset to apply."
         "default": 0,
         "range": {"min": 0, "max": 2},
         "since": "3.90.1",
-        "description": "Configuration for limitation of power consumption: \
-0: no power limitation (normal operation) \
-Setpoint values are achieved with heat pump performance curve \
-1: Soft limitation (recommended for PV surplus) \
-Power recommendation for heat pump, i.e., heat pump attempts to \
-limit power demand according to data point pc_limit \
-If the actual value deviates too much from the setpoint (hysteresis), \
-the heat pump ignores the PC Limit power specification. \
-2: Hard limitation (recommended only for §14a EnWG). \
-The heat pump limits the power consumption according to pc_limit regardless of hysteresis. \
-Hard limitation may reduce comfort."
+        "description": (
+            "Configuration for limitation of power consumption:\n"
+            "0: no power limitation (normal operation)\n"
+            "Setpoint values are achieved with heat pump performance curve\n"
+            "1: Soft limitation (recommended for PV surplus)\n"
+            "Power recommendation for heat pump, i.e., heat pump attempts to "
+            "limit power demand according to data point pc_limit "
+            "If the actual value deviates too much from the setpoint (hysteresis), "
+            "the heat pump ignores the PC Limit power specification.\n"
+            "2: Hard limitation (recommended only for §14a EnWG).\n"
+            "The heat pump limits the power consumption according to pc_limit regardless of hysteresis. "
+            "Hard limitation may reduce comfort."
+        )
     },
     {
         "index": 41,
@@ -484,8 +544,10 @@ Hard limitation may reduce comfort."
         "default": 300,
         "range": {"min": 0, "max": 300},
         "since": "3.90.1",
-        "description": "Maximum allowed power consumption of the heat pump. \
-Requires lpc_mode to be set accordingly."
+        "description": (
+            "Maximum allowed power consumption of the heat pump. "
+            "Requires lpc_mode to be set accordingly."
+        )
     },
     {
         "index": 50,
@@ -516,10 +578,12 @@ Requires lpc_mode to be set accordingly."
         "default": 0,
         "range": {"min": 0, "max": 1},
         "since": "3.90.1",
-        "description": "Cooling operation lock. \
-0: normal operation \
-1: lock passive and active cooling. \
-Frequent switching may cause wear on heat pump and hydraulic components."
+        "description": (
+            "Cooling operation lock.\n"
+            "0: normal operation\n"
+            "1: lock passive and active cooling.\n"
+            "Frequent switching may cause wear on heat pump and hydraulic components."
+        )
     },
     {
         "index": 53,
@@ -532,10 +596,12 @@ Frequent switching may cause wear on heat pump and hydraulic components."
         "default": 0,
         "range": {"min": 0, "max": 1},
         "since": "3.90.1",
-        "description": "Swimming pool heating lock. \
-0: normal operation \
-1: lock pool heating. \
-Frequent switching may cause wear on heat pump and hydraulic components."
+        "description": (
+            "Swimming pool heating lock.\n"
+            "0: normal operation\n"
+            "1: lock pool heating.\n"
+            "Frequent switching may cause wear on heat pump and hydraulic components."
+        )
     },
     {
         "index": 60,
@@ -564,8 +630,10 @@ Frequent switching may cause wear on heat pump and hydraulic components."
         "datatype": "INT16",
         "range": {"min": -200, "max": 200},
         "since": "3.92.0",
-        "description": "Temperature correction in Kelvin " \
-            "for all heating functions",
+        "description": (
+            "Temperature correction in Kelvin "
+            "for all heating functions"
+        )
     },
     {
         "index": 67,
@@ -574,8 +642,10 @@ Frequent switching may cause wear on heat pump and hydraulic components."
         "type": LevelMode,
         "writeable": True,
         "since": "3.92.0",
-        "description": "Increase or decrease all heating temperatures " \
-            "using the SHI offset settings.",
+        "description": (
+            "Increase or decrease all heating temperatures "
+            "using the SHI offset settings."
+        )
     },
     {
         "index": 70,

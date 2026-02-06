@@ -111,14 +111,16 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "datatype": "UINT16",
         "unit": "bitmask",
         "since": "3.90.1",
-        "description": "Heat pump status bitmask: \
-1: VD1 \
-2: VD2 \
-4: ZWE1 \
-8: ZWE2 \
-16: ZWE3 \
-0: Heat pump inactive \
->0: Heat pump or auxiliary heater active"
+        "description": (
+            "Heat pump status bitmask:\n"
+            "1: VD1\n"
+            "2: VD2\n"
+            "4: ZWE1\n"
+            "8: ZWE2\n"
+            "16: ZWE3\n"
+            "0: Heat pump inactive\n"
+            ">0: Heat pump or auxiliary heater active"
+        )
     },
     {
         "index": 2,
@@ -131,15 +133,17 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "default": 5,
         "range": {"min": 0, "max": 7},
         "since": "3.90.1",
-        "description": "Operating mode status: \
-0: Heating \
-1: DHW heating \
-2: Pool heating / Solar\
-3: Utility lockout \
-4: Defrost \
-5: No demand \
-6: Not used \
-7: Cooling"
+        "description": (
+            "Operating mode status:\n"
+            "0: Heating\n"
+            "1: DHW heating\n"
+            "2: Pool heating / Solar\n"
+            "3: Utility lockout\n"
+            "4: Defrost\n"
+            "5: No demand\n"
+            "6: Not used\n"
+            "7: Cooling"
+        )
     },
     {
         "index": 3,
@@ -151,11 +155,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "unit": "enum",
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Heating status: \
-0: Off \
-1: No demand \
-2: Demand \
-3: Active"
+        "description": (
+            "Heating status:\n"
+            "0: Off\n"
+            "1: No demand\n"
+            "2: Demand\n"
+            "3: Active"
+        )
     },
     {
         "index": 4,
@@ -167,11 +173,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "unit": "enum",
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "DHW status: \
-0: Off \
-1: No demand \
-2: Demand \
-3: Active"
+        "description": (
+            "DHW status:\n"
+            "0: Off\n"
+            "1: No demand\n"
+            "2: Demand\n"
+            "3: Active"
+        )
     },
     {
         "index": 6,
@@ -183,11 +191,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "unit": "enum",
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Cooling status: \
-0: Off \
-1: No demand \
-2: Demand \
-3: Active"
+        "description": (
+            "Cooling status:\n"
+            "0: Off\n"
+            "1: No demand\n"
+            "2: Demand\n"
+            "3: Active"
+        )
     },
     {
         "index": 7,
@@ -199,11 +209,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "unit": "enum",
         "range": {"min": 0, "max": 3},
         "since": "3.90.1",
-        "description": "Pool heating / Solar status: \
-0: Off \
-1: No demand \
-2: Demand \
-3: Active"
+        "description": (
+            "Pool heating / Solar status:\n"
+            "0: Off\n"
+            "1: No demand\n"
+            "2: Demand\n"
+            "3: Active"
+        )
     },
     {
         "index": 100,
@@ -280,8 +292,10 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "datatype": "INT16",
         "unit": "°C/10",
         "since": "3.90.1",
-        "description": "Current room temperature. \
-Requires accessory RBE+ room control unit."
+        "description": (
+            "Current room temperature. "
+            "Requires accessory RBE+ room control unit."
+        )
     },
     {
         "index": 107,
@@ -292,8 +306,10 @@ Requires accessory RBE+ room control unit."
         "datatype": "INT16",
         "unit": "°C/10",
         "since": "3.90.1",
-        "description": "Heating limit temperature. \
-If undershot (heating curve setpoint - hysteresis), soft-limit power control is ignored."
+        "description": (
+            "Heating limit temperature. "
+            "If undershot (heating curve setpoint - hysteresis), soft-limit power control is ignored."
+        )
     },
     {
         "index": 108,
@@ -410,8 +426,10 @@ If undershot (heating curve setpoint - hysteresis), soft-limit power control is 
         "datatype": "INT16",
         "unit": "°C/10",
         "since": "3.90.1",
-        "description": "DHW limit temperature. \
-If undershot (desired regulation value), soft-limit power control is ignored."
+        "description": (
+            "DHW limit temperature. "
+            "If undershot (desired regulation value), soft-limit power control is ignored."
+        )
     },
     {
         "index": 140,
@@ -553,9 +571,11 @@ If undershot (desired regulation value), soft-limit power control is ignored."
         "writeable": False,
         "datatype": "UINT16",
         "since": "3.90.1",
-        "description": "Current error number: \
-0: no error \
-X: error code."
+        "description": (
+            "Current error number:\n"
+            "0: no error\n"
+            "X: error code."
+        )
     },
     {
         "index": 202,
@@ -566,10 +586,12 @@ X: error code."
         "datatype": "UINT16",
         "range": {"min": 0, "max": 2},
         "since": "3.90.1",
-        "description": "Buffer tank configuration: \
-0: series buffer \
-1: separation buffer \
-2: multifunction buffer."
+        "description": (
+            "Buffer tank configuration:\n"
+            "0: series buffer\n"
+            "1: separation buffer\n"
+            "2: multifunction buffer."
+        )
     },
     {
         "index": 203,
@@ -603,9 +625,11 @@ X: error code."
         "unit": "bool",
         "range": {"min": 0, "max": 1},
         "since": "3.90.1",
-        "description": "Indicates whether cooling mode is configured: \
-0: no \
-1: yes."
+        "description": (
+            "Indicates whether cooling mode is configured:\n"
+            "0: no\n"
+            "1: yes."
+        )
     },
     {
         "index": 206,
@@ -617,9 +641,11 @@ X: error code."
         "unit": "bool",
         "range": {"min": 0, "max": 1},
         "since": "3.90.1",
-        "description": "Indicates whether pool heating is configured: \
-0: no \
-1: yes."
+        "description": (
+            "Indicates whether pool heating is configured:\n"
+            "0: no\n"
+            "1: yes."
+        )
     },
     {
         "index": 207,
@@ -631,10 +657,12 @@ X: error code."
         "unit": "bool",
         "range": {"min": 0, "max": 1},
         "since": "3.90.1",
-        "description": "Cooling release condition fulfilled: \
-0: no \
-1: yes. \
-Cooling release only valid if cooling is enabled (see cooling_configured)."
+        "description": (
+            "Cooling release condition fulfilled:\n"
+            "0: no\n"
+            "1: yes.\n"
+            "Cooling release only valid if cooling is enabled (see cooling_configured)."
+        )
     },
     {
         "index": 300,
