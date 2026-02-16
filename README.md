@@ -238,16 +238,17 @@ from luxtronik import Luxtronik, Parameters
 
 l = Luxtronik('192.168.1.23', 8889)
 
-# Queue a parameter change
-# In this example, the domestic hot water temperature is set to 45 degrees.
+# Set the value of a field
+# In this example, the domestic hot water temperature
+# is set (for the time being only in this field) to 45 degrees
 l.parameters.set("ID_Soll_BWS_akt", 45.0)
 
-# Write all queued changes to the heat pump
+# Then write the data of all changed fields to the to the heat pump
 l.write()
 
 # Another possibility to write parameters
 parameters = Parameters()
-parameters.set("ID_Ba_Hz_akt", "Party")
+parameters["ID_Ba_Hz_akt"] = "Party"
 l.write(parameters)
 
 # If you're not sure what values to write, you can get all available options:
@@ -261,7 +262,7 @@ l.holdings["heating_mode"] = "Offset" # Set the value to activate the offset mod
 l.write()                             # Write down the values to the heatpump
 ```
 
-**NOTE:** Writing values to the heat pump is particulary dangerous as this is
+**NOTE:** Writing values to the heat pump is particularly dangerous as this is
 an undocumented API. By default a safe guard is in place, which will prevent
 writing parameters that are not (yet) understood.
 
