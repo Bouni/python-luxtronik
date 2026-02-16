@@ -49,6 +49,10 @@ from luxtronik.datatypes import (
 CALCULATIONS_OFFSET: Final = 0
 CALCULATIONS_DEFAULT_DATA_TYPE: Final = 'INT32'
 
+CALCULATIONS_OUTDATED = {
+    "ID_WEB_SoftStand": "get_firmware_version()"
+}
+
 CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 0,

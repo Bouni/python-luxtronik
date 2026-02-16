@@ -20,6 +20,9 @@ from luxtronik.datatypes import (
 VISIBILITIES_OFFSET: Final = 0
 VISIBILITIES_DEFAULT_DATA_TYPE: Final = 'INT32'
 
+VISIBILITIES_OUTDATED = {
+}
+
 VISIBILITIES_DEFINITIONS_LIST: Final = [
     {
         "index": 0,
