@@ -8,6 +8,7 @@ from luxtronik.definitions.parameters import (
     PARAMETERS_DEFINITIONS_LIST,
     PARAMETERS_OFFSET,
     PARAMETERS_DEFAULT_DATA_TYPE,
+    PARAMETERS_OUTDATED,
 )
 
 from luxtronik.cfi.constants import PARAMETERS_FIELD_NAME
@@ -28,6 +29,7 @@ class Parameters(DataVector):
 
     name = PARAMETERS_FIELD_NAME
     definitions = PARAMETERS_DEFINITIONS
+    _outdated = PARAMETERS_OUTDATED
 
     def __init__(self, safe=True):
         """Initialize parameters class."""

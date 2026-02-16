@@ -43,6 +43,9 @@ from luxtronik.datatypes import (
 PARAMETERS_OFFSET: Final = 0
 PARAMETERS_DEFAULT_DATA_TYPE: Final = 'INT32'
 
+PARAMETERS_OUTDATED = {
+}
+
 PARAMETERS_DEFINITIONS_LIST: Final = [
     {
         "index": 0,

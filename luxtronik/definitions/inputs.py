@@ -36,6 +36,9 @@ from luxtronik.datatypes import (
 INPUTS_OFFSET: Final = 10000
 INPUTS_DEFAULT_DATA_TYPE: Final = 'INT16'
 
+INPUTS_OUTDATED = {
+}
+
 INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 0,

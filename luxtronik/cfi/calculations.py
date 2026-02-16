@@ -8,6 +8,7 @@ from luxtronik.definitions.calculations import (
     CALCULATIONS_DEFINITIONS_LIST,
     CALCULATIONS_OFFSET,
     CALCULATIONS_DEFAULT_DATA_TYPE,
+    CALCULATIONS_OUTDATED,
 )
 
 from luxtronik.cfi.constants import CALCULATIONS_FIELD_NAME
@@ -29,10 +30,7 @@ class Calculations(DataVector):
 
     name = CALCULATIONS_FIELD_NAME
     definitions = CALCULATIONS_DEFINITIONS
-
-    _obsolete = {
-        "ID_WEB_SoftStand": "get_firmware_version()"
-    }
+    _outdated = CALCULATIONS_OUTDATED
 
     def __init__(self):
         super().__init__()

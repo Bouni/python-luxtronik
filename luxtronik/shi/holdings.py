@@ -8,6 +8,7 @@ from luxtronik.definitions.holdings import (
     HOLDINGS_DEFINITIONS_LIST,
     HOLDINGS_OFFSET,
     HOLDINGS_DEFAULT_DATA_TYPE,
+    HOLDINGS_OUTDATED,
 )
 
 from luxtronik.shi.constants import HOLDINGS_FIELD_NAME
@@ -28,6 +29,7 @@ class Holdings(DataVectorSmartHome):
 
     name = HOLDINGS_FIELD_NAME
     definitions = HOLDINGS_DEFINITIONS
+    _outdated = HOLDINGS_OUTDATED
 
     @property
     def holdings(self):
