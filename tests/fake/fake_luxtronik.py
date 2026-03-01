@@ -5,9 +5,9 @@ class FakeLuxtronik(Luxtronik):
 
     def __init__(self):
         LuxtronikAllData.__init__(self)
-        for idx, field in self.parameters:
-            field.raw = idx
-        for idx, field in self.calculations:
-            field.raw = idx
-        for idx, field in self.visibilities:
-            field.raw = idx
+        for definition, field in self.parameters.items():
+            field.raw = definition.index
+        for definition, field in self.calculations.items():
+            field.raw = definition.index
+        for definition, field in self.visibilities.items():
+            field.raw = definition.index

@@ -205,8 +205,7 @@ class LuxtronikDefFieldPair:
 
 class LuxtronikFieldsDictionary:
     """
-    Dictionary that behaves like the earlier data vector dictionaries (index-field-dictionary),
-    with the addition that obsolete fields are also supported and can be addressed by name.
+    Dictionary that maps definitions, names or indices to added fields.
     Aliases are also supported.
     """
 
@@ -228,15 +227,12 @@ class LuxtronikFieldsDictionary:
         return self.get(def_field_name_or_idx)
 
     def __len__(self):
-        return len(self._def_lookup._index_dict)
+        """Return the number of added fields."""
+        return len(self._pairs)
 
     def __iter__(self):
-        """
-        Iterate over all non-obsolete indices. If an index is assigned multiple times,
-        only the index of the preferred definition will be output.
-        """
-        all_related_defs = self._def_lookup._index_dict.values()
-        return iter([d.index for d in self._pairs if d in all_related_defs])
+        """Return the iterator over all definitions related to the added fields."""
+        return iter([d for d, _ in self._pairs])
 
     def __contains__(self, def_field_name_or_idx):
         """
@@ -265,26 +261,16 @@ class LuxtronikFieldsDictionary:
             return def_field_name_or_idx in self._def_lookup
 
     def values(self):
-        """
-        Iterator for all added non-obsolete fields. If an index is assigned multiple times,
-        only the field of the preferred definition will be output.
-        """
-        all_related_defs = self._def_lookup._index_dict.values()
-        return iter([f for d, f in self._pairs if d in all_related_defs])
+        """Return the iterator over all added fields."""
+        return iter([f for _, f in self._pairs])
 
     def items(self):
-        """
-        Iterator for all non-obsolete index-field-pairs (list of tuples with
-        0: index, 1: field) contained herein. If an index is assigned multiple times,
-        only the index-field-pair of the preferred definition will be output.
-        """
-        all_related_defs = self._def_lookup._index_dict.values()
-        return iter([(d.index, f) for d, f in self._pairs if d in all_related_defs])
+        """Return the iterator over all added definition-field-pairs."""
+        return iter(self._pairs)
 
+    @property
     def pairs(self):
-        """
-        Return all definition-field-pairs contained herein.
-        """
+        """Return all definition-field-pairs contained herein."""
         return self._pairs
 
     @property

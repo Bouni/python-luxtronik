@@ -4,6 +4,7 @@
 
 from luxtronik import Parameters
 from luxtronik.datatypes import Base
+from luxtronik.definitions import LuxtronikDefinition
 
 
 class TestParameters:
@@ -27,12 +28,12 @@ class TestParameters:
         # The Value must be a fields
         # The key can be an index
         assert isinstance(data[0], Base)
-        for k in data:
-            assert isinstance(k, int)
+        for d in data:
+            assert isinstance(d, LuxtronikDefinition)
         for v in data.values():
             assert isinstance(v, Base)
-        for k, v in data.items():
-            assert isinstance(k, int)
+        for d, v in data.items():
+            assert isinstance(d, LuxtronikDefinition)
             assert isinstance(v, Base)
 
     def test_get(self):
@@ -68,11 +69,15 @@ class TestParameters:
         """Test cases for __iter__"""
         parameters = Parameters()
 
-        for i, p in parameters:
-            if i == 0:
+        for d, p in parameters.items():
+            if d.index == 0:
                 assert p.name == "ID_Transfert_LuxNet"
-            elif i == 1:
+                assert d is parameters.data.def_dict.get(0)
+                assert p is parameters.get(0)
+            elif d.index == 1:
                 assert p.name == "ID_Einst_WK_akt"
+                assert d is parameters.data.def_dict.get(1)
+                assert p is parameters.get(1)
             else:
                 break
 

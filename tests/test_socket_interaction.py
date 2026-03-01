@@ -34,7 +34,7 @@ class TestSocketInteraction:
             fct = fake_calculation_value
         elif type(data_vector) is Visibilities:
             fct = fake_visibility_value
-        for d, f in data_vector.data.pairs():
+        for d, f in data_vector.items():
             # get raw data
             raw = [fct(idx) for idx in range(d.index, d.index + d.count)]
             temp_field = d.create_field()
@@ -49,8 +49,8 @@ class TestSocketInteraction:
         self.clear_data_vector(lux.visibilities)
 
     def clear_data_vector(self, data_vector):
-        for idx, entry in data_vector:
-            entry.raw = 0
+        for d, f in data_vector.items():
+            f.raw = 0
 
     def test_luxtronik_socket_interface(self):
         host = "my_heatpump"

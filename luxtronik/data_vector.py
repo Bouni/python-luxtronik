@@ -29,10 +29,6 @@ class DataVector:
         """Initialize DataVector class."""
         self._data = LuxtronikFieldsDictionary()
 
-    def __iter__(self):
-        """Iterator for the data entries."""
-        return iter(self._data.items())
-
     @property
     def data(self):
         """
@@ -55,6 +51,19 @@ class DataVector:
         """
         return self.set(def_name_or_idx, value)
 
+    def __len__(self):
+        """
+        Forward the `LuxtronikFieldsDictionary.__len__` method.
+        Please check its documentation.
+        """
+        return len(self._data)
+
+    def __iter__(self):
+        """
+        Forward the `LuxtronikFieldsDictionary.__iter__` method.
+        Please check its documentation.
+        """
+        return iter(self._data)
 
     def __contains__(self, def_field_name_or_idx):
         """
@@ -62,6 +71,20 @@ class DataVector:
         Please check its documentation.
         """
         return def_field_name_or_idx in self._data
+
+    def values(self):
+        """
+        Forward the `LuxtronikFieldsDictionary.values` method.
+        Please check its documentation.
+        """
+        return self._data.values()
+
+    def items(self):
+        """
+        Forward the `LuxtronikFieldsDictionary.items` method.
+        Please check its documentation.
+        """
+        return iter(self._data.items())
 
     def _name_lookup(self, name):
         """
@@ -78,12 +101,12 @@ class DataVector:
         obsolete_entry = self._obsolete.get(name, None)
         if obsolete_entry:
             return None, obsolete_entry
-        for index, entry in self._data.items():
-            check_result = entry.check_name(name)
+        for definition, field in self._data.items():
+            check_result = field.check_name(name)
             if check_result == LUXTRONIK_NAME_CHECK_PREFERRED:
-                return index, None
+                return definition.index, None
             elif check_result == LUXTRONIK_NAME_CHECK_OBSOLETE:
-                return index, entry.name
+                return definition.index, field.name
         return None, None
 
     def _lookup(self, target, with_index=False):

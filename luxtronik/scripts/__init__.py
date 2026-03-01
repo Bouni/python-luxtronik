@@ -25,8 +25,8 @@ def print_dump_row(number, field):
 
 def dump_fields(data_vector):
     print_dump_header(f"{data_vector.name}s")
-    for index, field in data_vector.data.items():
-        print_dump_row(index, field)
+    for definition, field in data_vector.data.items():
+        print_dump_row(definition.index, field)
 
 def print_watch_header(screen, caption):
     cols, _ = screen.get_visible_size()
@@ -41,11 +41,11 @@ def get_watch_row(short_name, number, prev_field, this_field):
     return text
 
 def update_changes(changes, prev_data_vector, this_data_vector):
-    for index, this_field in this_data_vector.data.items():
+    for definition, this_field in this_data_vector.data.items():
         short_name = this_data_vector.name[:4]
-        key = f"{short_name}_{str(index).zfill(5)}"
-        prev_field = prev_data_vector.get(index)
+        key = f"{short_name}_{str(definition.index).zfill(5)}"
+        prev_field = prev_data_vector.get(definition.name)
         if this_field.raw != prev_field.raw:
-            changes[key] = get_watch_row(short_name, index, prev_field, this_field)
+            changes[key] = get_watch_row(short_name, definition.index, prev_field, this_field)
         elif key in changes:
-            changes[key] = get_watch_row(short_name, index, prev_field, None)
+            changes[key] = get_watch_row(short_name, definition.index, prev_field, None)
