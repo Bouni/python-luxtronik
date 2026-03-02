@@ -101,71 +101,100 @@ class DataVector:
 
     def _name_lookup(self, name):
         """
-        Try to find the index using the given field name.
+
+# Get and set methods #########################################################
+
+    def _get_definition(self, def_field_name_or_idx, all_not_version_dependent):
+        """
+        Look-up a definition by name, index, a field instance or by the definition itself.
+
+        If `def_field_name_or_idx`
+        - is a definition -> lookup the definition by the definition's name
+        - is a field -> lookup the definition by the field's name
+        - is a name -> lookup the field by the name
+        - is a idx -> lookup the field by the index
 
         Args:
-            name (string): Field name.
+            def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
+                Definition object, field object, field name or register index.
+            all_not_version_dependent (bool): If true, look up the definition
+                within the `cls.definitions` otherwise within `self._data` (which
+                contain all definitions related to all added fields)
 
         Returns:
-            tuple[int | None, str | None]:
-                0: Index found or None
-                1: New preferred name, if available, otherwise None
+            tuple[LuxtronikDefinition | None, Base | None]:
+                A definition-field-pair tuple:
+                Index 0: Return the found or given definitions, otherwise None
+                Index 1: Return the given field, otherwise None
         """
-        obsolete_entry = self._obsolete.get(name, None)
+        definition = def_field_name_or_idx
+        field = None
+        if isinstance(def_field_name_or_idx, Base):
+            # In case we got a field, search for the description by the field name
+            definition = def_field_name_or_idx.name
+            field = def_field_name_or_idx
+        if not isinstance(def_field_name_or_idx, LuxtronikDefinition):
+            if all_not_version_dependent:
+                # definitions contains all available definitions
+                definition = self.definitions.get(definition)
+            else:
+                # _data.def_dict contains only valid and previously added definitions
+                definition = self._data.def_dict.get(definition)
+        return definition, field
+
+    def get(self, def_field_name_or_idx, default=None):
+        """
+        Retrieve an added field by definition, field, name or register index.
+        Triggers a key error when we try to query obsolete fields.
+
+        If `def_field_name_or_idx`
+        - is a definition -> lookup the field by the definition
+        - is a field -> lookup the field by the field's name
+        - is a name -> lookup the field by the name
+        - is a idx -> lookup the field by the index
+
+        Args:
+            def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
+                Definition, name, or register index to be used to search for the field.
+
+        Returns:
+            Base | None: The field found or the provided default if not found.
+
+        Note:
+            If multiple fields added for the same index/name,
+            the last added takes precedence.
+        """
+        # check for obsolete
+        obsolete_entry = self._obsolete.get(def_field_name_or_idx, None)
         if obsolete_entry:
-            return None, obsolete_entry
-        for definition, field in self._data.items():
-            check_result = field.check_name(name)
-            if check_result == LUXTRONIK_NAME_CHECK_PREFERRED:
-                return definition.index, None
-            elif check_result == LUXTRONIK_NAME_CHECK_OBSOLETE:
-                return definition.index, field.name
-        return None, None
+            raise KeyError(f"The name '{def_field_name_or_idx}' is obsolete! Use '{obsolete_entry}' instead.")
+        # look-up the field
+        field = self._data.get(def_field_name_or_idx, default)
+        if field is None:
+            LOGGER.warning(f"entry '{def_field_name_or_idx}' not found")
+        return field
 
-    def _lookup(self, target, with_index=False):
+    def set(self, def_field_name_or_idx, value):
         """
-        Lookup an entry
-
-        "target" could either be its id or its name.
-
-        In case "with_index" is set, also the index is returned.
-        """
-        if isinstance(target, str):
-            try:
-                # Try to get entry by id
-                target_index = int(target)
-            except ValueError:
-                # Get entry by name
-                target_index, new_name = self._name_lookup(target)
-                if new_name is not None:
-                    raise KeyError(f"The name '{target}' is obsolete! Use '{new_name}' instead.")
-        elif isinstance(target, int):
-            # Get entry by id
-            target_index = target
-        else:
-            target_index = None
-
-        target_entry = self._data.get(target_index, None)
-        if target_entry is None:
-            LOGGER.warning("entry '%s' not found", target)
-        if with_index:
-            return target_index, target_entry
-        return target_entry
-
-    def get(self, target):
-        """Get entry by id or name."""
-        entry = self._lookup(target)
-        return entry
-
-    def set(self, target, value):
-        """
-        Set the value of a field to the given value.
+        Set the data of a field to the given value.
 
         The value is set, even if the field marked as non-writeable.
         No data validation is performed either.
+
+        If `def_field_name_or_idx`
+        - is a definition -> lookup the field by the definition and set the value
+        - is a field -> set the value of this field
+        - is a name -> lookup the field by the name and set the value
+        - is a idx -> lookup the field by the index and set the value
+
+        Args:
+            def_field_name_or_idx (LuxtronikDefinition | Base | int | str):
+                Definition, name, or register index to be used to search for the field.
+                It is also possible to pass the field itself.
+            value (int | List[int]): Value to set
         """
-        field = target
+        field = def_field_name_or_idx
         if not isinstance(field, Base):
-            field = self.get(target)
+            field = self.get(def_field_name_or_idx)
         if field is not None:
             field.value = value

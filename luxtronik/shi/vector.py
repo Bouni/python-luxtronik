@@ -145,37 +145,7 @@ class DataVectorSmartHome(DataVector):
         return self._version
 
 
-# Find, add and alias methods #################################################
-
-    def _get_definition(self, def_field_name_or_idx, all_not_version_dependent):
-        """
-        Look-up a definition by name, index, a field instance or by the definition itself.
-
-        Args:
-            def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
-                Definition object, field object, field name or register index.
-            all_not_version_dependent (bool): If true, look up the definition
-                within the `cls.definitions` otherwise within `self.def_dict` (which
-                contain all definitions related to all added fields)
-
-        Returns:
-            tuple[LuxtronikDefinition | None, Base | None]:
-                A definition-field-pair tuple:
-                Index 0: Return the found or given definitions, otherwise None
-                Index 1: Return the given field, otherwise None
-        """
-        definition = def_field_name_or_idx
-        field = None
-        if isinstance(def_field_name_or_idx, Base):
-            definition = def_field_name_or_idx.name
-            field = def_field_name_or_idx
-        if not isinstance(def_field_name_or_idx, LuxtronikDefinition):
-            if all_not_version_dependent:
-                definition = self.definitions.get(definition)
-            else:
-                # def_dict contains only valid and addable definitions
-                definition = self._data.def_dict.get(definition)
-        return definition, field
+# Add and alias methods #######################################################
 
     def add(self, def_field_name_or_idx, alias=None):
         """
@@ -251,22 +221,3 @@ class DataVectorSmartHome(DataVector):
                 self._read_blocks.collect(definition, field)
         self._read_blocks_up_to_date = True
 
-
-# Data and access methods #####################################################
-
-    def get(self, def_name_or_idx, default=None):
-        """
-        Retrieve a field by definition, name or register index.
-
-        Args:
-            def_name_or_idx (LuxtronikDefinition | str | int):
-                Definition, name, or register index to be used to search for the field.
-
-        Returns:
-            Base | None: The field found or the provided default if not found.
-
-        Note:
-            If multiple fields added for the same index/name,
-            the last added takes precedence.
-        """
-        return self._data.get(def_name_or_idx, default)
