@@ -3,8 +3,6 @@ import logging
 
 from luxtronik.common import version_in_range
 from luxtronik.data_vector import DataVector
-from luxtronik.datatypes import Base, Unknown
-from luxtronik.definitions import LuxtronikDefinition
 
 from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
 from luxtronik.shi.contiguous import ContiguousDataBlockList
@@ -17,14 +15,7 @@ LOGGER = logging.getLogger(__name__)
 ###############################################################################
 
 class DataVectorSmartHome(DataVector):
-    """
-    Specialized DataVector for Luxtronik smart home fields.
-
-    Provides access to fields by name, index or alias.
-    To use aliases, they must first be registered here (locally = only valid
-    for this vector) or directly in the `LuxtronikDefinitionsList`
-    (globally = valid for all newly created vector).
-    """
+    """Specialized DataVector for Luxtronik smart home fields."""
 
     def _init_instance(self, version, safe):
         """Re-usable method to initialize all instance variables."""
@@ -84,9 +75,6 @@ class DataVectorSmartHome(DataVector):
     def version(self):
         return self._version
 
-
-# Add and alias methods #######################################################
-
     def add(self, def_field_name_or_idx, alias=None):
         """
         Adds an additional version-dependent field (= included in class variable
@@ -127,26 +115,6 @@ class DataVectorSmartHome(DataVector):
             self._data.add_sorted(definition, field, alias)
             return field
         return None
-
-    def register_alias(self, def_field_name_or_idx, alias):
-        """
-        Add an alternative name (or anything hashable else)
-        that can be used to access a specific field.
-
-        Args:
-            def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
-                Field to which the alias is to be added.
-                Either by definition, name, register index, or the field itself.
-            alias (Hashable): Alias, which can be used to access the field again.
-
-        Returns:
-            Base | None: The field to which the alias was added,
-                or None if not possible
-        """
-        return self._data.register_alias(def_field_name_or_idx, alias)
-
-
-# Data-blocks methods #########################################################
 
     def update_read_blocks(self):
         """
