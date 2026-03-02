@@ -2,7 +2,6 @@
 import logging
 
 from luxtronik.common import version_in_range
-from luxtronik.collections import LuxtronikFieldsDictionary
 from luxtronik.data_vector import DataVector
 from luxtronik.datatypes import Base, Unknown
 from luxtronik.definitions import LuxtronikDefinition
@@ -26,62 +25,6 @@ class DataVectorSmartHome(DataVector):
     for this vector) or directly in the `LuxtronikDefinitionsList`
     (globally = valid for all newly created vector).
     """
-
-# Field construction methods ##################################################
-
-    @classmethod
-    def create_unknown_field(cls, idx):
-        """
-        Create an unknown field object.
-        Be careful! The used controller firmware
-        may not support this field.
-
-        Args:
-            idx (int): Register index.
-
-        Returns:
-            Unknown: A field instance of type 'Unknown'.
-        """
-        return Unknown(f"unknown_{cls.name}_{idx}", False)
-
-    @classmethod
-    def create_any_field(cls, name_or_idx):
-        """
-        Create a field object from an available definition
-        (= included in class variable `cls.definitions`).
-        Be careful! The used controller firmware
-        may not support this field.
-
-        Args:
-            name_or_idx (str | int): Field name or register index.
-
-        Returns:
-            Base | None: The created field, or None if not found or not valid.
-        """
-        # The definitions object hold all available definitions
-        definition = cls.definitions.get(name_or_idx)
-        if definition is not None and definition.valid:
-            return definition.create_field()
-        return None
-
-    def create_field(self, name_or_idx):
-        """
-        Create a field object from a version-dependent definition (= included in
-        class variable `cls.definitions` and is valid for `self.version`).
-
-        Args:
-            name_or_idx (str | int): Field name or register index.
-
-        Returns:
-            Base | None: The created field, or None if not found or not valid.
-        """
-        definition, _ = self._get_definition(name_or_idx, False)
-        if definition is not None and definition.valid:
-            return definition.create_field()
-        return None
-
-
-# Constructors and magic methods ##############################################
 
     def _init_instance(self, version, safe):
         """Re-usable method to initialize all instance variables."""
@@ -136,9 +79,6 @@ class DataVectorSmartHome(DataVector):
         obj = cls.__new__(cls) # this don't call __init__()
         obj._init_instance(version, safe)
         return obj
-
-
-# properties and access methods ###############################################
 
     @property
     def version(self):

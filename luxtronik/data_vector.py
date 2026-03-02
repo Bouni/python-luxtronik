@@ -3,7 +3,8 @@
 import logging
 
 from luxtronik.collections import LuxtronikFieldsDictionary
-from luxtronik.datatypes import Base
+from luxtronik.datatypes import Base, Unknown
+from luxtronik.definitions import LuxtronikDefinition
 
 
 LOGGER = logging.getLogger(__name__)
@@ -22,6 +23,75 @@ class DataVector:
     definitions = None # override this
 
     _obsolete = {}
+
+
+# Field construction methods ##################################################
+
+    @classmethod
+    def create_unknown_field(cls, idx):
+        """
+        Create an unknown field object.
+        Be careful! The used controller firmware
+        may not support this field.
+
+        Args:
+            idx (int): Register index.
+
+        Returns:
+            Unknown: A field instance of type `Unknown`.
+        """
+        return Unknown(f"unknown_{cls.name}_{idx}", False)
+
+    @classmethod
+    def create_any_field(cls, def_name_or_idx):
+        """
+        Create a field object from an available definition
+        (= included in class variable `cls.definitions`).
+        Be careful! The used controller firmware
+        may not support this field.
+
+        If `def_name_or_idx`
+        - is a definition -> create the field from the provided definition
+        - is a name -> lookup the definition by name and create the field
+        - is a idx -> lookup definition by index and create the field
+
+        Args:
+            def_name_or_idx (LuxtronikDefinition | str | int): Definitions object,
+                field name or register index.
+
+        Returns:
+            Base | None: The created field, or None if not found or not valid.
+        """
+        if isinstance(def_name_or_idx, LuxtronikDefinition):
+            definition = def_name_or_idx
+        else:
+            # The definitions object hold all available definitions
+            definition = cls.definitions.get(def_name_or_idx)
+        if definition is not None and definition.valid:
+            return definition.create_field()
+        return None
+
+    def create_field(self, def_name_or_idx):
+        """
+        Create a field object from a version-dependent definition (= included in
+        class variable `cls.definitions` and is valid for `self.version`).
+
+        If `def_name_or_idx`
+        - is a definition -> create the field from the provided definition
+        - is a name -> lookup the definition by name and create the field
+        - is a idx -> lookup definition by index and create the field
+
+        Args:
+            def_name_or_idx (str | int): Definitions object,
+                field name or register index.
+
+        Returns:
+            Base | None: The created field, or None if not found or not valid.
+        """
+        definition, _ = self._get_definition(def_name_or_idx, False)
+        if definition is not None and definition.valid:
+            return definition.create_field()
+        return None
 
 
 # constructor, magic methods and iterators ####################################
@@ -94,8 +164,6 @@ class DataVector:
         """
         return iter(self._data.items())
 
-    def _name_lookup(self, name):
-        """
 
 # Get and set methods #########################################################
 
