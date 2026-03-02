@@ -23,11 +23,24 @@ class DataVector:
 
     name = "DataVector"
 
+    # DataVector specific list of definitions as `LuxtronikDefinitionsList`
+    definitions = None # override this
+
     _obsolete = {}
+
+
+# constructor, magic methods and iterators ####################################
+
+    def _init_instance(self, safe):
+        """Re-usable method to initialize all instance variables."""
+        self.safe = safe
+
+        # Dictionary that holds all fields
+        self._data = LuxtronikFieldsDictionary()
 
     def __init__(self):
         """Initialize DataVector class."""
-        self._data = LuxtronikFieldsDictionary()
+        self._init_instance(True)
 
     @property
     def data(self):

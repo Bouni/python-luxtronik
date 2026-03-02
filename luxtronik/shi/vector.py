@@ -27,9 +27,6 @@ class DataVectorSmartHome(DataVector):
     (globally = valid for all newly created vector).
     """
 
-    # DataVector specific list of definitions as `LuxtronikDefinitionsList`
-    definitions = None # override this
-
 # Field construction methods ##################################################
 
     @classmethod
@@ -88,11 +85,8 @@ class DataVectorSmartHome(DataVector):
 
     def _init_instance(self, version, safe):
         """Re-usable method to initialize all instance variables."""
-        self.safe = safe
+        super()._init_instance(safe)
         self._version = version
-
-        # Dictionary that holds all fields
-        self._data = LuxtronikFieldsDictionary()
 
         # Instead of re-create the block-list on every read, we just update it
         # on first time used or on next time used if some fields are added.
