@@ -1916,14 +1916,20 @@ class TestCompatibility:
         for mapping, data_vector, caption in values:
             print_caption = True
             for old_name, old_idx in mapping.items():
-                cur_idx, new_name = data_vector._name_lookup(old_name)
-                cur_name = data_vector.get(old_idx).name
-                if cur_idx != old_idx or (new_name is not None and new_name != cur_name):
+                # Try to get the definition of the "old name"
+                try:
+                    def_by_name = data_vector.definitions.get(old_name)
+                except Exception:
+                    def_by_name = None
+                if def_by_name is None or def_by_name.index != old_idx:
                     # We do not use assert here, in order to catch all incompatibilities at once.
                     if print_caption:
                         print(f"### Incompatibilities - {caption}:")
                         print_caption = False
-                    print(f'"{old_name}" is not registered for {old_idx}: "{cur_name}",')
+                    if def_by_name:
+                        print(f'"{old_name}" is not registered for {old_idx}: "{def_by_name.name}",')
+                    else:
+                        print(f'"{old_name}" not found,')
                     ok = False
         assert ok, "Found incompatibilities. Please consider to add them to compatibilities.py"
 

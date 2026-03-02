@@ -4,12 +4,6 @@
 
 import datetime
 
-from luxtronik.constants import (
-    LUXTRONIK_NAME_CHECK_NONE,
-    LUXTRONIK_NAME_CHECK_PREFERRED,
-    LUXTRONIK_NAME_CHECK_OBSOLETE,
-)
-
 from luxtronik.datatypes import (
     Base,
     BitMaskBase,
@@ -120,14 +114,6 @@ class TestBase:
             assert False
         except Exception:
             pass
-
-    def test_check_name(self):
-        """Test cases for check_name() function"""
-        base = Base(["foo", "bar"])
-
-        assert base.check_name("foo") == LUXTRONIK_NAME_CHECK_PREFERRED
-        assert base.check_name("bar") == LUXTRONIK_NAME_CHECK_OBSOLETE
-        assert base.check_name("baz") == LUXTRONIK_NAME_CHECK_NONE
 
     def test_value_property(self):
         """Test case for value property"""

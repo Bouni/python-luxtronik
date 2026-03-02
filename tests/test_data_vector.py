@@ -34,7 +34,7 @@ class TestDataVector:
 
     @pytest.mark.parametrize("name, exception_expected", [
         ("foo", False),
-        ("bar", True),
+        ("bar", False),
         ("baz", True),
         ("qux", False),
     ])
