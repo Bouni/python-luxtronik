@@ -2,11 +2,6 @@
 
 import logging
 
-from luxtronik.constants import (
-    LUXTRONIK_NAME_CHECK_PREFERRED,
-    LUXTRONIK_NAME_CHECK_OBSOLETE,
-)
-
 from luxtronik.collections import LuxtronikFieldsDictionary
 from luxtronik.datatypes import Base
 
