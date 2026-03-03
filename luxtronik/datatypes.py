@@ -5,11 +5,6 @@ import logging
 import socket
 import struct
 
-from luxtronik.constants import (
-    LUXTRONIK_NAME_CHECK_NONE,
-    LUXTRONIK_NAME_CHECK_PREFERRED,
-    LUXTRONIK_NAME_CHECK_OBSOLETE,
-)
 from luxtronik.common import classproperty
 
 from functools import total_ordering
@@ -64,19 +59,6 @@ class Base:
     def name(self):
         """Return the (most common) name of the entry."""
         return self._names[0]
-
-    def check_name(self, name):
-        """
-        Check whether a name matches one of the supported entry names.
-        The result string can be used to trigger a exception for obsolete names.
-        """
-        name_lower = name.lower()
-        if name_lower == self.name.lower():
-            return LUXTRONIK_NAME_CHECK_PREFERRED
-        elif name_lower in (n.lower() for n in self._names):
-            return LUXTRONIK_NAME_CHECK_OBSOLETE
-        else:
-            return LUXTRONIK_NAME_CHECK_NONE
 
     @property
     def value(self):
