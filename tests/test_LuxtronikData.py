@@ -61,13 +61,14 @@ class TestLuxtronikData:
         assert a.get_firmware_version() == "V3.1"
 
         # Test of downward compatibility with outdated entry name
+        a.calculations.get("ID_WEB_SoftStand").raw = [ord("V"), ord("3"), ord("."), ord("1"), 0x00]
         assert a.calculations.get("ID_WEB_SoftStand").value == "V3.1"
 
 
     @pytest.mark.parametrize("vector, index, names", [
-        ("para", 1106, ["ID_Einst_SilenceTimer_13", "Unknown_Parameter_1106"]),
-        ("para", 1109, ["ID_Einst_SilenceTimer_16", "Unknown_Parameter_1109"]),
-        ("calc", 232, ["Vapourisation_Temperature", "Unknown_Calculation_232"]),
+        ("para", 1106, ["ID_Einst_SilenceTimer_13"]),
+        ("para", 1109, ["ID_Einst_SilenceTimer_16"]),
+        ("calc", 232, ["Vapourisation_Temperature"]),
         ("calc", 241, ["HUP_PWM", "Circulation_Pump"]),
         ("visi", 182, ["ID_Visi_Heizung_Zeitschaltprogramm", "ID_Visi_Heizung_Zeitschlaltprogramm"]),
         ("visi", 326, ["Unknown_Visibility_326"]),
