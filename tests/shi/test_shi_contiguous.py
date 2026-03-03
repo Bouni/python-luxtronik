@@ -278,6 +278,16 @@ class TestContiguousDataBlock:
         data_arr = block.get_data_arr()
         assert data_arr is None
 
+        # Missing data (via gaps)
+        block = ContiguousDataBlock()
+        field_a.raw = [56, 57]
+        field_c.raw = [21, 22, 23]
+        block.add(def_a, field_a)
+        block.add(def_c, field_c)
+
+        data_arr = block.get_data_arr()
+        assert data_arr is None
+
     def test_repr(self):
         block = ContiguousDataBlock()
         text_empty = repr(block)

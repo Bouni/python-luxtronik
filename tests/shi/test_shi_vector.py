@@ -88,6 +88,12 @@ class TestDataVector:
         field = DataVectorTest.create_any_field('BAR')
         assert field is None
 
+        # create field by def
+        field = DataVectorTest.create_any_field(TEST_DEFINITIONS._definitions[2])
+        assert field.name == 'field_9a'
+        assert field.writeable
+        assert type(field) is Base
+
         # create versioned data vector
         data_vector = DataVectorTest(parse_version("1.2"))
         assert data_vector.version == (1, 2, 0, 0)
