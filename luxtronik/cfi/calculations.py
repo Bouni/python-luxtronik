@@ -13,7 +13,6 @@ from luxtronik.definitions.calculations import (
 
 from luxtronik.cfi.constants import CALCULATIONS_FIELD_NAME
 from luxtronik.cfi.vector import DataVectorConfig
-from luxtronik.datatypes import Base
 
 
 LOGGER = logging.getLogger(__name__)
@@ -39,13 +38,3 @@ class Calculations(DataVectorConfig):
     def _get_firmware_version(self):
         """Get the firmware version as string like in previous versions."""
         return self.get_firmware_version().strip("\x00")
-
-    def get(self, target):
-        """Treats certain names specially. For all others, the function of the base class is called."""
-        if target == "ID_WEB_SoftStand":
-            LOGGER.debug("The name 'ID_WEB_SoftStand' is obsolete! Use 'get_firmware_version()' instead.")
-            entry = Base("ID_WEB_SoftStand")
-            entry.raw = self._get_firmware_version()
-            return entry
-        else:
-            return super().get(target)

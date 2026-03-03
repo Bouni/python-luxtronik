@@ -1293,6 +1293,7 @@ class TestCompatibility:
             "ID_WEB_Code_WP_akt": 78,
             "ID_WEB_BIV_Stufe_akt": 79,
             "ID_WEB_WP_BZ_akt": 80,
+            "ID_WEB_SoftStand": 81,
             "ID_WEB_AdresseIP_akt": 91,
             "ID_WEB_SubNetMask_akt": 92,
             "ID_WEB_Add_Broadcast": 93,
@@ -1494,7 +1495,6 @@ class TestCompatibility:
             "Desired_Room_Temperature": 267,
             "AC_Power_Input": 268,
         }
-        # Note: "ID_WEB_SoftStand" tested in "test_get_firmware_version()"
 
         visis = {
             # Status of 0.3.14:

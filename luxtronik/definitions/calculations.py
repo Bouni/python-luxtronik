@@ -41,6 +41,7 @@ from luxtronik.datatypes import (
     Timestamp,
     Unknown,
     MajorMinorVersion,
+    Version,
     Voltage,
 )
 
@@ -50,7 +51,6 @@ CALCULATIONS_OFFSET: Final = 0
 CALCULATIONS_DEFAULT_DATA_TYPE: Final = 'INT32'
 
 CALCULATIONS_OUTDATED = {
-    "ID_WEB_SoftStand": "get_firmware_version()"
 }
 
 CALCULATIONS_DEFINITIONS_LIST: Final = [
@@ -862,6 +862,16 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "writeable": False,
         "datatype": 'UINT32',
         "unit": 'enum',
+        "description": '',
+    },
+    {
+        "index": 81,
+        "count": 10,
+        "names": ['ID_WEB_SoftStand'],
+        "type": Version,
+        "writeable": False,
+        "datatype": 'UINT32',
+        "unit": '',
         "description": '',
     },
     {
@@ -2376,8 +2386,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 232,
+        "names": ['Unknown_Calculation_232'],
+        "type": Unknown,
+    },
+    {
+        "index": 232,
         "count": 1,
-        "names": ['Vapourisation_Temperature', 'Unknown_Calculation_232'],
+        "names": ['Vapourisation_Temperature'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2386,8 +2401,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 233,
+        "names": ['Unknown_Calculation_233'],
+        "type": Unknown,
+    },
+    {
+        "index": 233,
         "count": 1,
-        "names": ['Liquefaction_Temperature', 'Unknown_Calculation_233'],
+        "names": ['Liquefaction_Temperature'],
         "type": Celsius,
         "writeable": False,
         "datatype": 'INT32',
@@ -2416,8 +2436,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 236,
+        "names": ['Unknown_Calculation_236'],
+        "type": Unknown,
+    },
+    {
+        "index": 236,
         "count": 1,
-        "names": ['ID_WEB_Freq_VD_Soll', 'Unknown_Calculation_236'],
+        "names": ['ID_WEB_Freq_VD_Soll'],
         "type": Frequency,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2426,8 +2451,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 237,
+        "names": ['Unknown_Calculation_237'],
+        "type": Unknown,
+    },
+    {
+        "index": 237,
         "count": 1,
-        "names": ['ID_WEB_Freq_VD_Min', 'Unknown_Calculation_237'],
+        "names": ['ID_WEB_Freq_VD_Min'],
         "type": Frequency,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2436,8 +2466,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 238,
+        "names": ['Unknown_Calculation_238'],
+        "type": Unknown,
+    },
+    {
+        "index": 238,
         "count": 1,
-        "names": ['ID_WEB_Freq_VD_Max', 'Unknown_Calculation_238'],
+        "names": ['ID_WEB_Freq_VD_Max'],
         "type": Frequency,
         "writeable": False,
         "datatype": 'UINT32',
@@ -2446,8 +2481,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 239,
+        "names": ['Unknown_Calculation_239'],
+        "type": Unknown,
+    },
+    {
+        "index": 239,
         "count": 1,
-        "names": ['VBO_Temp_Spread_Soll', 'Unknown_Calculation_239'],
+        "names": ['VBO_Temp_Spread_Soll'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -2456,8 +2496,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 240,
+        "names": ['Unknown_Calculation_240'],
+        "type": Unknown,
+    },
+    {
+        "index": 240,
         "count": 1,
-        "names": ['VBO_Temp_Spread_Ist', 'Unknown_Calculation_240'],
+        "names": ['VBO_Temp_Spread_Ist'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -2476,8 +2521,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 242,
+        "names": ['Unknown_Calculation_242'],
+        "type": Unknown,
+    },
+    {
+        "index": 242,
         "count": 1,
-        "names": ['HUP_Temp_Spread_Soll', 'Unknown_Calculation_242'],
+        "names": ['HUP_Temp_Spread_Soll'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -2486,8 +2536,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 243,
+        "names": ['Unknown_Calculation_243'],
+        "type": Unknown,
+    },
+    {
+        "index": 243,
         "count": 1,
-        "names": ['HUP_Temp_Spread_Ist', 'Unknown_Calculation_243'],
+        "names": ['HUP_Temp_Spread_Ist'],
         "type": Kelvin,
         "writeable": False,
         "datatype": 'INT32',
@@ -2636,8 +2691,13 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 258,
+        "names": ['Unknown_Calculation_258'],
+        "type": Unknown,
+    },
+    {
+        "index": 258,
         "count": 1,
-        "names": ['RBE_Version', 'Unknown_Calculation_258'],
+        "names": ['RBE_Version'],
         "type": MajorMinorVersion,
         "writeable": False,
         "datatype": 'UINT32',

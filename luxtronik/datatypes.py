@@ -607,6 +607,20 @@ class Count(Base):
     datatype_class = "count"
 
 
+class Version(Base):
+    """Version datatype, converts from and to a Heatpump Version."""
+
+    datatype_class = "version"
+
+    concatenate_multiple_data_chunks = False
+
+    @classmethod
+    def from_heatpump(self, value):
+        if not isinstance(value, list):
+            return None
+        return "".join([chr(c) for c in value]).strip("\x00")
+
+
 class Character(Base):
     """Character datatype, converts from and to a Character."""
 

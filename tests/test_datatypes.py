@@ -54,6 +54,7 @@ from luxtronik.datatypes import (
     TimerProgram,
     TimeOfDay,
     TimeOfDay2,
+    Version,
 )
 
 
@@ -934,6 +935,24 @@ class TestCount:
         assert a.name == "count"
         assert a.datatype_class == "count"
         assert a.datatype_unit is None
+
+
+class TestVersion:
+    """Test suite for Version datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = Version("ver")
+        assert a.name == "ver"
+        assert a.datatype_class == "version"
+        assert a.datatype_unit is None
+
+    def test_from_heatpump(self):
+
+        assert Version.from_heatpump([3, 1, 4]) == '\x03\x01\x04'
+        assert Version.from_heatpump(None) is None
+        assert Version.from_heatpump("a") is None
 
 
 class TestCharacter:

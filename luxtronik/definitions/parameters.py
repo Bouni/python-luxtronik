@@ -10919,8 +10919,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1087,
+        "names": ['Unknown_Parameter_1087'],
+        "type": Unknown,
+    },
+    {
+        "index": 1087,
         "count": 1,
-        "names": ['SILENT_MODE', 'Unknown_Parameter_1087'],
+        "names": ['SILENT_MODE'],
         "type": OnOffMode,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10969,8 +10974,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1092,
+        "names": ['Unknown_Parameter_1092'],
+        "type": Unknown,
+    },
+    {
+        "index": 1092,
         "count": 1,
-        "names": ['ID_Einst_SuSilence', 'Unknown_Parameter_1092'],
+        "names": ['ID_Einst_SuSilence'],
         "type": TimerProgram,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10979,8 +10989,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1093,
+        "names": ['Unknown_Parameter_1093'],
+        "type": Unknown,
+    },
+    {
+        "index": 1093,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_0', 'Unknown_Parameter_1093'],
+        "names": ['ID_Einst_SilenceTimer_0'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10989,8 +11004,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1094,
+        "names": ['Unknown_Parameter_1094'],
+        "type": Unknown,
+    },
+    {
+        "index": 1094,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_1', 'Unknown_Parameter_1094'],
+        "names": ['ID_Einst_SilenceTimer_1'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -10999,8 +11019,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1095,
+        "names": ['Unknown_Parameter_1095'],
+        "type": Unknown,
+    },
+    {
+        "index": 1095,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_2', 'Unknown_Parameter_1095'],
+        "names": ['ID_Einst_SilenceTimer_2'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11009,8 +11034,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1096,
+        "names": ['Unknown_Parameter_1096'],
+        "type": Unknown,
+    },
+    {
+        "index": 1096,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_3', 'Unknown_Parameter_1096'],
+        "names": ['ID_Einst_SilenceTimer_3'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11019,8 +11049,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1097,
+        "names": ['Unknown_Parameter_1097'],
+        "type": Unknown,
+    },
+    {
+        "index": 1097,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_4', 'Unknown_Parameter_1097'],
+        "names": ['ID_Einst_SilenceTimer_4'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11029,8 +11064,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1098,
+        "names": ['Unknown_Parameter_1098'],
+        "type": Unknown,
+    },
+    {
+        "index": 1098,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_5', 'Unknown_Parameter_1098'],
+        "names": ['ID_Einst_SilenceTimer_5'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11039,8 +11079,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1099,
+        "names": ['Unknown_Parameter_1099'],
+        "type": Unknown,
+    },
+    {
+        "index": 1099,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_6', 'Unknown_Parameter_1099'],
+        "names": ['ID_Einst_SilenceTimer_6'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11049,8 +11094,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1100,
+        "names": ['Unknown_Parameter_1100'],
+        "type": Unknown,
+    },
+    {
+        "index": 1100,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_7', 'Unknown_Parameter_1100'],
+        "names": ['ID_Einst_SilenceTimer_7'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11059,8 +11109,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1101,
+        "names": ['Unknown_Parameter_1101'],
+        "type": Unknown,
+    },
+    {
+        "index": 1101,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_8', 'Unknown_Parameter_1101'],
+        "names": ['ID_Einst_SilenceTimer_8'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11069,8 +11124,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1102,
+        "names": ['Unknown_Parameter_1102'],
+        "type": Unknown,
+    },
+    {
+        "index": 1102,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_9', 'Unknown_Parameter_1102'],
+        "names": ['ID_Einst_SilenceTimer_9'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11079,8 +11139,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1103,
+        "names": ['Unknown_Parameter_1103'],
+        "type": Unknown,
+    },
+    {
+        "index": 1103,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_10', 'Unknown_Parameter_1103'],
+        "names": ['ID_Einst_SilenceTimer_10'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11089,8 +11154,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1104,
+        "names": ['Unknown_Parameter_1104'],
+        "type": Unknown,
+    },
+    {
+        "index": 1104,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_11', 'Unknown_Parameter_1104'],
+        "names": ['ID_Einst_SilenceTimer_11'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11099,8 +11169,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1105,
+        "names": ['Unknown_Parameter_1105'],
+        "type": Unknown,
+    },
+    {
+        "index": 1105,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_12', 'Unknown_Parameter_1105'],
+        "names": ['ID_Einst_SilenceTimer_12'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11109,8 +11184,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1106,
+        "names": ['Unknown_Parameter_1106'],
+        "type": Unknown,
+    },
+    {
+        "index": 1106,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_13', 'Unknown_Parameter_1106'],
+        "names": ['ID_Einst_SilenceTimer_13'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11119,8 +11199,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1107,
+        "names": ['Unknown_Parameter_1107'],
+        "type": Unknown,
+    },
+    {
+        "index": 1107,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_14', 'Unknown_Parameter_1107'],
+        "names": ['ID_Einst_SilenceTimer_14'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11129,8 +11214,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1108,
+        "names": ['Unknown_Parameter_1108'],
+        "type": Unknown,
+    },
+    {
+        "index": 1108,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_15', 'Unknown_Parameter_1108'],
+        "names": ['ID_Einst_SilenceTimer_15'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11139,8 +11229,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1109,
+        "names": ['Unknown_Parameter_1109'],
+        "type": Unknown,
+    },
+    {
+        "index": 1109,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_16', 'Unknown_Parameter_1109'],
+        "names": ['ID_Einst_SilenceTimer_16'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11149,8 +11244,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1110,
+        "names": ['Unknown_Parameter_1110'],
+        "type": Unknown,
+    },
+    {
+        "index": 1110,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_17', 'Unknown_Parameter_1110'],
+        "names": ['ID_Einst_SilenceTimer_17'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11159,8 +11259,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1111,
+        "names": ['Unknown_Parameter_1111'],
+        "type": Unknown,
+    },
+    {
+        "index": 1111,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_18', 'Unknown_Parameter_1111'],
+        "names": ['ID_Einst_SilenceTimer_18'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11169,8 +11274,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1112,
+        "names": ['Unknown_Parameter_1112'],
+        "type": Unknown,
+    },
+    {
+        "index": 1112,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_19', 'Unknown_Parameter_1112'],
+        "names": ['ID_Einst_SilenceTimer_19'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11179,8 +11289,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1113,
+        "names": ['Unknown_Parameter_1113'],
+        "type": Unknown,
+    },
+    {
+        "index": 1113,
         "count": 1,
-        "names": ['ID_Einst_SilenceTimer_20', 'Unknown_Parameter_1113'],
+        "names": ['ID_Einst_SilenceTimer_20'],
         "type": TimeOfDay2,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11239,8 +11354,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1119,
+        "names": ['Unknown_Parameter_1119'],
+        "type": Unknown,
+    },
+    {
+        "index": 1119,
         "count": 1,
-        "names": ['LAST_DEFROST_TIMESTAMP', 'Unknown_Parameter_1119'],
+        "names": ['LAST_DEFROST_TIMESTAMP'],
         "type": Timestamp,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11409,8 +11529,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1136,
+        "names": ['Unknown_Parameter_1136'],
+        "type": Unknown,
+    },
+    {
+        "index": 1136,
         "count": 1,
-        "names": ['HEAT_ENERGY_INPUT', 'Unknown_Parameter_1136'],
+        "names": ['HEAT_ENERGY_INPUT'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11419,8 +11544,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1137,
+        "names": ['Unknown_Parameter_1137'],
+        "type": Unknown,
+    },
+    {
+        "index": 1137,
         "count": 1,
-        "names": ['DHW_ENERGY_INPUT', 'Unknown_Parameter_1137'],
+        "names": ['DHW_ENERGY_INPUT'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11439,8 +11569,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1139,
+        "names": ['Unknown_Parameter_1139'],
+        "type": Unknown,
+    },
+    {
+        "index": 1139,
         "count": 1,
-        "names": ['COOLING_ENERGY_INPUT', 'Unknown_Parameter_1139'],
+        "names": ['COOLING_ENERGY_INPUT'],
         "type": Energy,
         "writeable": False,
         "datatype": 'UINT32',
@@ -11529,8 +11664,13 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 1148,
+        "names": ['Unknown_Parameter_1148'],
+        "type": Unknown,
+    },
+    {
+        "index": 1148,
         "count": 1,
-        "names": ['HEATING_TARGET_TEMP_ROOM_THERMOSTAT', 'Unknown_Parameter_1148'],
+        "names": ['HEATING_TARGET_TEMP_ROOM_THERMOSTAT'],
         "type": Celsius,
         "writeable": True,
         "datatype": 'INT32',
