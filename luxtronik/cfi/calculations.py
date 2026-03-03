@@ -33,7 +33,7 @@ class Calculations(DataVectorConfig):
 
     def get_firmware_version(self):
         """Get the firmware version as string."""
-        return "".join([super(Calculations, self).get(i).value for i in range(81, 91)])
+        return "".join([str(super(Calculations, self).get(i).value) for i in range(81, 91)])
 
     def _get_firmware_version(self):
         """Get the firmware version as string like in previous versions."""
