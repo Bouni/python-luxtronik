@@ -19,6 +19,8 @@ def fake_visibility_value(i):
 class FakeSocket:
     last_instance = None
     prev_instance = None
+    create_connection_exception = None
+    force_recv_result = None
 
     # These code are hard coded here in order to prevent
     # accidential changes in constants.py
@@ -125,6 +127,9 @@ class FakeSocket:
     def recv(self, cnt, flag=0):
         assert self._connected
 
+        if FakeSocket.force_recv_result is not None:
+            return FakeSocket.force_recv_result
+
         if (not self._blocking) and len(self._buffer) < cnt:
             raise BlockingIOError("Not enough bytes in buffer.")
 
@@ -147,5 +152,9 @@ class FakeSocket:
         self.close()
         return False
 
+
 def fake_create_connection(info):
-    return FakeSocket()
+    if FakeSocket.create_connection_exception is not None:
+        raise FakeSocket.create_connection_exception
+    else:
+        return FakeSocket()

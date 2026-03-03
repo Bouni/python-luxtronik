@@ -95,7 +95,6 @@ class TestModbusInterface:
         # Cannot connect to read holdings
         data = LuxtronikSmartHomeReadHoldingsTelegram(0, 1)
         result = self.modbus_interface.send(data)
-        print(data.data)
         assert not result
 
         # Cannot connect to write holdings

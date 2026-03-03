@@ -226,10 +226,13 @@ class TestLuxtronikFieldsDictionary:
         d = LuxtronikFieldsDictionary()
 
         assert type(d._def_lookup) is LuxtronikDefinitionsDictionary
+        assert d.def_dict is d._def_lookup
         assert type(d._field_lookup) is dict
-        assert len(d._field_lookup.values()) == 0
+        assert d.field_dict is d._field_lookup
         assert type(d._pairs) is list
-        assert len(d._pairs) == 0
+        assert d.pairs is d._pairs
+        assert len(d.field_dict) == 0
+        assert len(d.pairs) == 0
 
     def test_add(self):
         d = LuxtronikFieldsDictionary()

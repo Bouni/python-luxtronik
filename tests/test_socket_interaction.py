@@ -1,6 +1,7 @@
 """Test suite for the socket interaction of LuxtronikSocketInterface and Luxtronik"""
 
 import unittest.mock as mock
+import socket
 
 from luxtronik import Luxtronik, LuxtronikSocketInterface, Parameters, Calculations, Visibilities
 from luxtronik.collections import integrate_data
@@ -68,7 +69,7 @@ class TestSocketInteraction:
         self.clear_data_vector(p)
         assert not self.check_data_vector(p)
 
-        # Read parameters
+        # Read calculations
         c = lux.read_calculations()
         s = FakeSocket.last_instance
         assert type(c) is Calculations
@@ -78,7 +79,7 @@ class TestSocketInteraction:
         self.clear_data_vector(c)
         assert not self.check_data_vector(c)
 
-        # Read parameters
+        # Read visibilities
         v = lux.read_visibilities()
         s = FakeSocket.last_instance
         assert type(v) is Visibilities
@@ -120,6 +121,14 @@ class TestSocketInteraction:
         assert not p[3].write_pending
         assert not p[4].write_pending
         assert self.check_luxtronik_data(d)
+
+        # erroneous read
+        FakeSocket.force_recv_result = b''
+
+        p = lux.read_parameters()
+        assert p is None
+
+        FakeSocket.force_recv_result = None
 
     def test_luxtronik(self):
         host = "my_heatpump"
@@ -189,3 +198,38 @@ class TestSocketInteraction:
 
         # Now, the values should be read
         assert self.check_luxtronik_data(lux)
+
+    def test_connect(self):
+        host = "my_heatpump"
+        port = 4711
+        lux = LuxtronikSocketInterface(host, port)
+
+        p = lux.read_parameters()
+        assert p is not None
+
+        FakeSocket.create_connection_exception = socket.gaierror
+
+        p = lux.read_parameters()
+        assert p is None
+
+        FakeSocket.create_connection_exception = socket.timeout
+
+        p = lux.read_parameters()
+        assert p is None
+
+        FakeSocket.create_connection_exception = ConnectionRefusedError
+
+        p = lux.read_parameters()
+        assert p is None
+
+        FakeSocket.create_connection_exception = OSError
+
+        p = lux.read_parameters()
+        assert p is None
+
+        FakeSocket.create_connection_exception = ValueError
+
+        p = lux.read_parameters()
+        assert p is None
+
+        FakeSocket.create_connection_exception = None
