@@ -2,8 +2,8 @@
 
 import logging
 
-from luxtronik.collections import get_data_arr
 from luxtronik.common import classproperty, version_in_range
+from luxtronik.collections import get_data_arr
 from luxtronik.datatypes import Base
 from luxtronik.definitions import (
     LuxtronikDefinition,

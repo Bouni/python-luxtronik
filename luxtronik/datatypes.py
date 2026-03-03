@@ -93,7 +93,7 @@ class Base:
             f"name: {self.name}, "
             f"writeable: {self.writeable}, "
             f"value: {self.value}, "
-            f"raw: {self._raw}, "
+            f"raw: {self.raw}, "
             f"write_pending: {self.write_pending}, "
             f"class: {self.datatype_class}, "
             f"unit: {self.datatype_unit}"
@@ -115,7 +115,7 @@ class Base:
             return False
 
         return (
-            self.value == other.value
+            self._raw == other._raw
             and self.datatype_class == other.datatype_class
             and self.datatype_unit == other.datatype_unit
         )
@@ -124,7 +124,7 @@ class Base:
         """Compares two datatype objects and returns which one contains the lower value"""
 
         return (
-            self.value < other.value
+            self._raw < other._raw
             and self.datatype_class == other.datatype_class
             and self.datatype_unit == other.datatype_unit
         )

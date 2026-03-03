@@ -162,6 +162,9 @@ class LuxtronikSocketInterface:
         return self._read(data)
 
     def _write(self, parameters):
+        if not isinstance(parameters, Parameters):
+            LOGGER.error("Only parameters are writable!")
+            return
         for definition, field in parameters.items():
             if field.write_pending:
                 field.write_pending = False
