@@ -81,7 +81,6 @@ class LuxtronikDefinition:
                 names = ["_invalid_"]
             self._names = names
             self._successor = data_dict["successor"]
-            self._aliases = []
             since = str(data_dict["since"])
             self._since = parse_version(since)
             until = str(data_dict["until"])
@@ -194,10 +193,6 @@ class LuxtronikDefinition:
         return s
 
     @property
-    def aliases(self):
-        return self._aliases
-
-    @property
     def name(self):
         "Returns the preferred name."
         return self._names[0]
@@ -238,11 +233,7 @@ class LuxtronikDefinition:
 
 class LuxtronikDefinitionsDictionary:
     """
-    Dictionary of definitions that can be searched by index, name, or aliases.
-
-    To use aliases, they must first be registered here (locally =
-    only valid for this dictionary) or directly in the `LuxtronikDefinitionsList`
-    (globally = valid for all newly created dictionaries).
+    Dictionary of definitions that can be searched by index or name.
 
     This class is intended to speed up the lookup of definitions.
     Dictionaries are used instead of searching through a list of definitions
@@ -252,7 +243,6 @@ class LuxtronikDefinitionsDictionary:
     def __init__(self):
         self._index_dict = {}
         self._name_dict = {}
-        self._alias_dict = {}
 
     def __getitem__(self, name_or_idx):
         return self.get(name_or_idx)
@@ -262,51 +252,13 @@ class LuxtronikDefinitionsDictionary:
             return any(def_name_or_idx is d for d in self._name_dict.values())
         return self._get(def_name_or_idx) is not None
 
-    def _add_alias(self, definition, alias):
+    def add(self, definition):
         """
-        Register a single alias that references the given definition.
-
-        Args:
-            definition (LuxtronikDefinition): Definition that the alias should map to.
-            alias (Hashable): Alias to register (str will be normalized).
-        """
-        alias = alias.lower() if isinstance(alias, str) else alias
-        self._alias_dict[alias] = definition
-
-    def register_alias(self, def_name_or_idx, alias):
-        """
-        Register an alias (locally) that references a definition specified by
-        name, index, or the definition object.
-
-        Args:
-            def_name_or_idx (str | int | LuxtronikDefinition):
-                Name, index, or definition to alias.
-            alias (Hashable): Alias key to register (str will be normalized).
-
-        Returns:
-            LuxtronikDefinition | None: The resolved definition
-                when registration succeeded, otherwise None.
-        """
-        if alias is None:
-            return None
-        # look-up definition
-        if isinstance(def_name_or_idx, LuxtronikDefinition):
-            definition = self.get(def_name_or_idx.name)
-        else:
-            definition = self.get(def_name_or_idx)
-        if definition is None:
-            return None
-        self._add_alias(definition, alias)
-        return definition
-
-    def add(self, definition, alias=None):
-        """
-        Add a definition to internal lookup tables and register its aliases.
+        Add a definition to internal lookup tables.
         Existing entries will be overwritten.
 
         Args:
             definition (LuxtronikDefinition): Definition to add.
-            alias (Hashable): Optional additional alias to register for this definition.
         """
         # Add to indices-dictionary
         self._index_dict[definition.index] = definition
@@ -315,12 +267,6 @@ class LuxtronikDefinitionsDictionary:
         # Unique names has already been ensured by the pytest
         for name in definition.names:
             self._name_dict[name.lower()] = definition
-
-        # Add to alias-dictionary
-        for a in definition.aliases:
-            self._add_alias(definition, a)
-        if alias is not None:
-            self._add_alias(definition, alias)
 
     def get(self, name_or_idx, default=None):
         """
@@ -348,13 +294,6 @@ class LuxtronikDefinitionsDictionary:
                     + f"be removed soon! Please use '{successor}' instead.")
         return d if d is not None else default
 
-    def _is_hashable(self, x):
-        try:
-            hash(x)
-            return True
-        except TypeError:
-            return False
-
     def _get(self, name_or_idx):
         """
         Retrieve a definition by name or index.
@@ -369,24 +308,14 @@ class LuxtronikDefinitionsDictionary:
             If multiple definitions added for the same index/name, the last added takes precedence.
         """
         d = None
-        if self._is_hashable(name_or_idx):
-            d = self._get_definition_by_alias(name_or_idx)
-        if d is None:
-            if isinstance(name_or_idx, int):
-                d = self._get_definition_by_idx(name_or_idx)
-                if d is None:
-                    # search in alias-dict again with the index converted to a string
-                    d = self._get_definition_by_alias(str(name_or_idx))
-            if isinstance(name_or_idx, str):
-                try:
-                    # Numbers are not allowed as names, so it could be an index as string
-                    idx_from_str = int(name_or_idx)
-                    d = self._get_definition_by_idx(idx_from_str)
-                    if d is None:
-                        # search in alias-dict again with the string converted to an index
-                        d = self._get_definition_by_alias(str(name_or_idx))
-                except ValueError:
-                    d = self._get_definition_by_name(name_or_idx)
+        if isinstance(name_or_idx, int):
+            d = self._get_definition_by_idx(name_or_idx)
+        if isinstance(name_or_idx, str):
+            try:
+                # Numbers are not allowed as names, so it could be an index as string
+                d = self._get_definition_by_idx(int(name_or_idx))
+            except ValueError:
+                d = self._get_definition_by_name(name_or_idx)
         return d
 
     def _get_definition_by_idx(self, idx):
@@ -422,22 +351,6 @@ class LuxtronikDefinitionsDictionary:
             LOGGER.warning(f"'{name}' is outdated! Use '{definition.name}' instead.")
         return definition
 
-    def _get_definition_by_alias(self, alias):
-        """
-        Retrieve a definition by its alias (case-insensitive when using strings).
-
-        Args:
-            alias (Hashable): Alias for a definition.
-
-        Returns:
-            LuxtronikDefinition | None: The matching definition, or None if not found.
-
-        Note:
-            If multiple definitions added for the same alias, the last added takes precedence.
-        """
-        alias = alias.lower() if isinstance(alias, str) else alias
-        return self._alias_dict.get(alias, None)
-
 
 ###############################################################################
 # LuxtronikDefinitionsList
@@ -447,11 +360,7 @@ class LuxtronikDefinitionsList:
     """
     Container for Luxtronik definitions.
 
-    Provides lookup by index, name or alias.
-
-    To use aliases, they must first be registered here (globally = valid for
-    all newly created dictionaries) or within the `LuxtronikDefinitionsDictionary`
-    (locally = only valid for that dictionary).
+    Provides lookup by index or name.
     """
 
     def _init_instance(self, name, offset, default_data_type, version):
@@ -538,27 +447,6 @@ class LuxtronikDefinitionsList:
             LuxtronikDefinition: A definition marked as unknown.
         """
         return LuxtronikDefinition.unknown(index, self._name, self._offset, self._default_data_type)
-
-    def register_alias(self, def_name_or_idx, alias):
-        """
-        Register an alias (globally) that references a definition specified by
-        name, index, or the definition object.
-
-        Args:
-            def_name_or_idx (str | int | LuxtronikDefinition):
-                Name, index, or definition to alias.
-            alias (any): (Hashable) Alias key to register (str will be normalized).
-
-        Returns:
-            LuxtronikDefinition | None: The resolved definition
-                when registration succeeded, otherwise None.
-        """
-        # "local" registration to be able to find the definition again
-        definition = self._lookup.register_alias(def_name_or_idx, alias)
-        # "global" registration that is used in newly created definition-dictionaries
-        if definition is not None:
-            definition.aliases.append(alias)
-        return definition
 
     @property
     def name(self):

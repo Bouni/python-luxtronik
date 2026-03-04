@@ -18,10 +18,7 @@ class DataVector:
     """
     Class that holds a vector of data fields.
 
-    Provides access to fields by name, index or alias.
-    To use aliases, they must first be registered here (locally = only valid
-    for this vector) or directly in the `LuxtronikDefinitionsList`
-    (globally = valid for all newly created vector).
+    Provides access to fields by name or index.
     """
 
     name = "DataVector"
@@ -170,16 +167,6 @@ class DataVector:
         Please check its documentation.
         """
         return iter(self._data.items())
-
-
-# Alias methods ###############################################################
-
-    def register_alias(self, def_field_name_or_idx, alias):
-        """
-        Forward the `LuxtronikFieldsDictionary.register_alias` method.
-        Please check its documentation.
-        """
-        return self._data.register_alias(def_field_name_or_idx, alias)
 
 
 # Get and set methods #########################################################

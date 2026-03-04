@@ -281,7 +281,7 @@ class TestLuxtronikFieldsDictionary:
             "type": Base,
             "names": ["base3"],
         }, "test", 0)
-        d.add(b, b.create_field(), "base4")
+        d.add(b, b.create_field())
         return d, u, f
 
     def test_len(self):
@@ -304,8 +304,6 @@ class TestLuxtronikFieldsDictionary:
         assert d["base2"].name == "base2"
         assert "base3" in d
         assert d.get("base3").name == "base3"
-        assert "base4" in d
-        assert d.get("base4").name == "base3"
         assert u in d
         assert d[u].name == "unknown_test_2"
         assert f in d
@@ -366,24 +364,3 @@ class TestLuxtronikFieldsDictionary:
 
     class MyTestClass:
         pass
-
-    def test_alias(self):
-        d, u, f = self.create_instance()
-        my = self.MyTestClass()
-
-        d.register_alias(0, "abc")
-        assert d["abc"] is d[0]
-
-        field = d.register_alias("unknown_test_1", 6)
-        assert d[6] is field
-
-        field = d.register_alias(u, my)
-        assert d[my] is d[u]
-
-        d.register_alias(f, my)
-        assert d[my] is not d[u]
-        assert d[my] is d[f]
-
-        field = d.register_alias(9, my)
-        assert field is None
-        assert d[my] is d[f]
