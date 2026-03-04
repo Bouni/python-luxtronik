@@ -17,6 +17,7 @@ class TestDefinition:
         'type': Base,
         'writeable': True,
         'names': ['test1', 'test2'],
+        'successor': 'abcd',
         'datatype': 'INT16',
         'since': '1.1',
         'until': '3.16.7',
@@ -36,6 +37,8 @@ class TestDefinition:
         assert definition.writeable == self.TEST_DATA['writeable']
         assert definition.names == names
         assert definition.name == names[0]
+        assert definition.successor == 'abcd'
+        assert definition.successor is None
         assert definition.data_type == 'INT16'
         assert definition.valid
         assert definition

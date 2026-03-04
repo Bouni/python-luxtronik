@@ -36,6 +36,7 @@ class LuxtronikDefinition:
         "type": Unknown,
         "writeable": False,
         "names": [],
+        "successor": None,
         "since": "",
         "until": "",
         "datatype": "",
@@ -79,6 +80,7 @@ class LuxtronikDefinition:
             if not names:
                 names = ["_invalid_"]
             self._names = names
+            self._successor = data_dict["successor"]
             self._aliases = []
             since = str(data_dict["since"])
             self._since = parse_version(since)
@@ -182,6 +184,14 @@ class LuxtronikDefinition:
     @property
     def names(self):
         return self._names
+
+    @property
+    def successor(self):
+        # Clear the successor after first use,
+        # not to generate a lot of warnings
+        s = self._successor
+        self._successor = None
+        return s
 
     @property
     def aliases(self):
@@ -328,7 +338,14 @@ class LuxtronikDefinitionsDictionary:
         """
         d = self._get(name_or_idx)
         if d is None:
-            LOGGER.debug(f"Definition for '{name_or_idx}' not found", )
+            LOGGER.debug(f"Definition for '{name_or_idx}' not found")
+        else:
+            # The successor is returned only once for each definition,
+            # not to generate a lot of warnings
+            successor = d.successor
+            if successor is not None:
+                LOGGER.warning(f"Definition for '{name_or_idx}' is outdated and will " \
+                    + f"be removed soon! Please use '{successor}' instead.")
         return d if d is not None else default
 
     def _is_hashable(self, x):
