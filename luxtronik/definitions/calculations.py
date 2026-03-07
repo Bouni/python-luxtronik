@@ -2388,6 +2388,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 232,
         "names": ['Unknown_Calculation_232'],
         "type": Unknown,
+        "successor": 'Vapourisation_Temperature',
     },
     {
         "index": 232,
@@ -2403,6 +2404,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 233,
         "names": ['Unknown_Calculation_233'],
         "type": Unknown,
+        "successor": 'Liquefaction_Temperature',
     },
     {
         "index": 233,
@@ -2438,6 +2440,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 236,
         "names": ['Unknown_Calculation_236'],
         "type": Unknown,
+        "successor": 'ID_WEB_Freq_VD_Soll',
     },
     {
         "index": 236,
@@ -2453,6 +2456,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 237,
         "names": ['Unknown_Calculation_237'],
         "type": Unknown,
+        "successor": 'ID_WEB_Freq_VD_Min',
     },
     {
         "index": 237,
@@ -2468,6 +2472,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 238,
         "names": ['Unknown_Calculation_238'],
         "type": Unknown,
+        "successor": 'ID_WEB_Freq_VD_Max',
     },
     {
         "index": 238,
@@ -2483,6 +2488,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 239,
         "names": ['Unknown_Calculation_239'],
         "type": Unknown,
+        "successor": 'VBO_Temp_Spread_Soll',
     },
     {
         "index": 239,
@@ -2498,6 +2504,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 240,
         "names": ['Unknown_Calculation_240'],
         "type": Unknown,
+        "successor": 'VBO_Temp_Spread_Ist',
     },
     {
         "index": 240,
@@ -2523,6 +2530,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 242,
         "names": ['Unknown_Calculation_242'],
         "type": Unknown,
+        "successor": 'HUP_Temp_Spread_Soll',
     },
     {
         "index": 242,
@@ -2538,6 +2546,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 243,
         "names": ['Unknown_Calculation_243'],
         "type": Unknown,
+        "successor": 'HUP_Temp_Spread_Ist',
     },
     {
         "index": 243,
@@ -2693,6 +2702,7 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
         "index": 258,
         "names": ['Unknown_Calculation_258'],
         "type": Unknown,
+        "successor": 'RBE_Version',
     },
     {
         "index": 258,

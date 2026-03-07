@@ -13,6 +13,7 @@ from luxtronik.definitions.visibilities import VISIBILITIES_DEFINITIONS_LIST
 KEY_IDX = "index"
 KEY_COUNT = "count"
 KEY_NAMES = "names"
+KEY_SUCCESSOR = "successor"
 KEY_TYPE = "type"
 KEY_WRT = "writeable"
 KEY_DATATYPE = "datatype"
@@ -63,6 +64,12 @@ class RunTestDefinitionList:
                     for name in definition[KEY_NAMES]:
                         assert isinstance(name, str), f"Entry of {KEY_NAMES} " \
                             f"must be of type 'int': {definition}"
+
+            # successor
+            if KEY_SUCCESSOR in definition:
+                if definition[KEY_SUCCESSOR] is not None:
+                    assert isinstance(definition[KEY_SUCCESSOR], str), \
+                        f"{KEY_SUCCESSOR} must be of type 'str': {definition}"
 
             # field_type
             if KEY_TYPE in definition:
