@@ -75,7 +75,7 @@ class DataVectorSmartHome(DataVector):
     def version(self):
         return self._version
 
-    def add(self, def_field_name_or_idx, alias=None):
+    def add(self, def_field_name_or_idx):
         """
         Adds an additional version-dependent field (= included in class variable
         `cls.definitions` and is valid for `self.version`) to this data vector.
@@ -85,7 +85,6 @@ class DataVectorSmartHome(DataVector):
         Args:
             def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
                 Field to add. Either by definition, name or index, or the field itself.
-            alias (Hashable | None): Alias, which can be used to access the field again.
 
         Returns:
             Base | None: The added field object if this could be added or
@@ -112,7 +111,7 @@ class DataVectorSmartHome(DataVector):
             if field is None:
                 field = definition.create_field()
             self._read_blocks_up_to_date = False
-            self._data.add_sorted(definition, field, alias)
+            self._data.add_sorted(definition, field)
             return field
         return None
 
@@ -128,4 +127,3 @@ class DataVectorSmartHome(DataVector):
             for definition, field in self._data.pairs:
                 self._read_blocks.collect(definition, field)
         self._read_blocks_up_to_date = True
-

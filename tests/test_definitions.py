@@ -46,7 +46,6 @@ class TestDefinition:
         assert definition.offset == 20
         assert definition.addr == 20 + self.TEST_DATA['index']
         assert definition.num_bits == 16
-        assert definition.aliases == []
         assert definition.since == (1, 1, 0, 0)
         assert definition.until == (3, 16, 7, 0)
 
@@ -74,7 +73,6 @@ class TestDefinition:
         assert definition.type_name == 'foo'
         assert definition.offset == 30
         assert definition.addr == 30 + 2
-        assert definition.aliases == []
         assert definition.since is None
         assert definition.until is None
 
@@ -199,102 +197,6 @@ class TestDefinitionsDict:
         d_out = def_dict.get(list())
         assert d_out is None
 
-    def test_alias(self):
-        def_dict = LuxtronikDefinitionsDictionary()
-
-        # add via "global"
-        d1 = LuxtronikDefinition.unknown(1, 'def', 0)
-        d1._aliases = [0xDEAD, 123456, 'Unknown_Def_2']
-        def_dict.add(d1)
-        assert len(def_dict._alias_dict) == 3
-
-        # override via "global"
-        d2 = LuxtronikDefinition.unknown(2, 'def', 0)
-        d2._aliases = [123456]
-        def_dict.add(d2, 'foo')
-        assert len(def_dict._alias_dict) == 4
-
-        # add nothing
-        d_alias = def_dict.register_alias(d2, None)
-        assert d_alias is None
-        assert len(def_dict._alias_dict) == 4
-
-        # add via method
-        d_alias = def_dict.register_alias('UNKNOWN_DEF_1', 'abc')
-        assert d_alias == d1
-        assert len(def_dict._alias_dict) == 5
-
-        # use a number as alias (which covers the original index)
-        d_alias = def_dict.register_alias(2, 1)
-        assert d_alias == d2
-        assert len(def_dict._alias_dict) == 6
-
-        # add nothing
-        d_alias = def_dict.register_alias(3, 0xAFFE)
-        assert d_alias is None
-        assert len(def_dict._alias_dict) == 6
-
-        # get via alias (which covers the original index)
-        assert 1 in def_dict
-        d_out = def_dict.get(1)
-        assert d_out == d2
-
-        # get via index
-        assert 2 in def_dict
-        d_out = def_dict.get(2)
-        assert d_out == d2
-
-        # get non-existing
-        assert 3 not in def_dict
-        d_out = def_dict.get(3)
-        assert d_out is None
-
-        # get via name
-        assert 'unknown_def_1' in def_dict
-        d_out = def_dict.get('unknown_def_1')
-        assert d_out == d1
-
-        # get via name
-        assert 'foo' in def_dict
-        d_out = def_dict.get('foo')
-        assert d_out == d2
-
-        # get via alias (which covers the original name)
-        assert 'unknown_def_2' in def_dict
-        d_out = def_dict.get('unknown_def_2')
-        assert d_out == d1
-
-        # get via string-alias
-        assert 'abc' in def_dict
-        d_out = def_dict.get('abc')
-        assert d_out == d1
-
-        # get via hex-alias
-        assert 0xDEAD in def_dict
-        d_out = def_dict.get(0xDEAD)
-        assert d_out == d1
-
-        # get via int-alias
-        assert 123456 in def_dict
-        d_out = def_dict.get(123456)
-        assert d_out == d2
-
-        # get non-existing
-        assert 0xBEEF not in def_dict
-        d_out = def_dict.get(0xBEEF)
-        assert d_out is None
-
-        # add via definition object
-        d_alias = def_dict.register_alias(d1, 'foo')
-        assert d_alias == d1
-        assert len(def_dict._alias_dict) == 6
-
-        # get via overwritten alias
-        assert 'foo' in def_dict
-        d_out = def_dict.get('foo')
-        assert d_out == d1
-
-
 class TestDefinitionsList:
 
     def_list = [
@@ -407,24 +309,8 @@ class TestDefinitionsList:
         assert definition.type_name == 'foo'
         assert definition.offset == 100
         assert definition.addr == 100 + 4
-        assert definition.aliases == []
         assert definition.since is None
         assert definition.until is None
-
-    def test_alias(self):
-        definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')
-
-        # add alias
-        d = definitions.register_alias(5, 'bar')
-        assert d.name == 'field_5'
-
-        # get via alias
-        d = definitions[5]
-        assert d.name == 'field_5'
-
-        # add nothing
-        d = definitions.register_alias(4, 'baz')
-        assert d is None
 
     def test_add(self):
         definitions = LuxtronikDefinitionsList(self.def_list, 'foo', 100, '')

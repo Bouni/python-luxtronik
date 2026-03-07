@@ -206,11 +206,10 @@ class LuxtronikDefFieldPair:
 class LuxtronikFieldsDictionary:
     """
     Dictionary that maps definitions, names or indices to added fields.
-    Aliases are also supported.
     """
 
     def __init__(self):
-        # There may be several names or alias that points to one definition and field.
+        # There may be several names that points to one definition and field.
         # So in order to spare memory we split the name/index-to-field-lookup
         # into a name/index-to-definition-lookup and a definition-to-field-lookup
         self._def_lookup = LuxtronikDefinitionsDictionary()
@@ -289,60 +288,33 @@ class LuxtronikFieldsDictionary:
         """
         return self._field_lookup
 
-    def add(self, definition, field, alias=None):
+    def add(self, definition, field):
         """
         Add a definition-field-pair to the internal dictionaries.
 
         Args:
             definition (LuxtronikDefinition): Definition related to the field.
             field (Base): Field to add.
-            alias (Hashable | None): Alias, which can be used to access the field again.
 
         Note: Only use this method if the definitions order is already correct.
         """
         if definition.valid:
-            self._def_lookup.add(definition, alias)
+            self._def_lookup.add(definition)
             self._field_lookup[definition] = field
             self._pairs.append(LuxtronikDefFieldPair(definition, field))
 
-    def add_sorted(self, definition, field, alias=None):
+    def add_sorted(self, definition, field):
         """
         Behaves like the normal `add` but then sorts the pairs.
 
         Args:
             definition (LuxtronikDefinition): Definition related to the field.
             field (Base): Field to add.
-            alias (Hashable | None): Alias, which can be used to access the field again.
         """
         if definition.valid:
-            self.add(definition, field, alias)
+            self.add(definition, field)
             # sort _pairs by definition.index
             self._pairs.sort(key=lambda pair: pair.definition.index)
-
-    def register_alias(self, def_field_name_or_idx, alias):
-        """
-        Add an alternative name (or anything hashable else)
-        that can be used to access a specific field.
-
-        Args:
-            def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
-                Field to which the alias is to be added.
-                Either by definition, name, register index, or the field itself.
-            alias (Hashable): Alias, which can be used to access the field again.
-
-        Returns:
-            Base | None: The field to which the alias was added,
-                or None if not possible
-        """
-        def_name_or_idx = def_field_name_or_idx
-        # Resolve a field argument
-        if isinstance(def_name_or_idx, Base):
-            def_name_or_idx = def_name_or_idx.name
-        # register alias
-        definition = self._def_lookup.register_alias(def_name_or_idx, alias)
-        if definition is None:
-            return None
-        return self._field_lookup.get(definition, None)
 
     def get(self, def_field_name_or_idx, default=None):
         """

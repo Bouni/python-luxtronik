@@ -45,7 +45,7 @@ class DataVectorConfig(DataVector):
         obj._init_instance(safe)
         return obj
 
-    def add(self, def_field_name_or_idx, alias=None):
+    def add(self, def_field_name_or_idx):
         """
         Adds an additional field to this data vector.
         Mainly used for data vectors created via `empty()`
@@ -54,7 +54,6 @@ class DataVectorConfig(DataVector):
         Args:
             def_field_name_or_idx (LuxtronikDefinition | Base | str | int):
                 Field to add. Either by definition, name or index, or the field itself.
-            alias (Hashable | None): Alias, which can be used to access the field again.
 
         Returns:
             Base | None: The added field object if this could be added or
@@ -79,5 +78,5 @@ class DataVectorConfig(DataVector):
         # Add a (new) field
         if field is None:
             field = definition.create_field()
-        self._data.add_sorted(definition, field, alias)
+        self._data.add_sorted(definition, field)
         return field

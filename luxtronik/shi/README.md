@@ -17,12 +17,11 @@ Not every function can be explained in detail or even listed in the readme file.
     3. [Read](#read)
     4. [Write](#write)
     5. [Collect](#collect)
-2. [Using aliases](#using-aliases)
-3. [Alternative use cases](#alternative-use-cases)
+2. [Alternative use cases](#alternative-use-cases)
     1. [Latest or specific version](#latest-or-specific-version)
     2. [Trial-and-error mode](#trial-and-error-mode)
-4. [Customization](#customization)
-5. [Implementation Details](#implementation-details)
+3. [Customization](#customization)
+4. [Implementation Details](#implementation-details)
 
 ## Common Usage
 
@@ -203,43 +202,6 @@ success = shi.send()
 Attention:
 
 It is technically possible to collect the same instance of a data field multiple times. However, this practice is discouraged, as it can lead to ambiguous behavior. During a write operation, the value is not extracted from the field until the actual transmission occurs. Similarly, during a read, the results are written into the field’s single memory location multiple times. If the same field is collected multiple times, the last value assigned before transmission will take precedence and overwrite any previous ones. To ensure clarity and avoid unintended side effects, each field should be collected only once per transmission, or using multiple instances of the same data field. This ensures that each collected field maintains its own memory space and avoids conflicts during read or write operations. By using distinct field objects, values can be managed independently, and the outcome of each transmission remains predictable and clearly scoped.
-
-## Using aliases
-
-Instead of the predefined names, any (hashable) values can also be used.
-However, these must be registered beforehand. This also makes it possible
-to "overwrite" existing names or register indices.
-
-There are two ways to register:
-
-**global:**
-
-The aliases are registered in the `LuxtronikDefinitionsList`. They are then available in every newly created data vector.
-
-```python
-from luxtronik.shi import create_modbus_tcp
-
-shi = create_modbus_tcp('your.lux.ip.addr')
-shi.inputs.register_alias(input_definition_to_alias, any_hashable_alias)
-
-data = shi.read()
-print(data.inputs[any_hashable_alias].value)
-```
-
-**local:**
-
-The aliases can also only be registered in a specific data vector.
-
-```python
-from luxtronik.shi import create_modbus_tcp
-
-shi = create_modbus_tcp('your.lux.ip.addr')
-
-data = shi.read()
-data.holdings.register_alias(holding_definition_to_alias, any_hashable_alias)
-
-print(data.holdings[any_hashable_alias].value)
-```
 
 ## Alternative use cases
 

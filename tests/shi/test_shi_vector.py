@@ -321,56 +321,6 @@ class TestDataVector:
         assert field_9.value == 6
         assert field_9.write_pending
 
-    def test_alias(self):
-        TEST_DEFINITIONS.register_alias('field_9a', 10)
-        data_vector = DataVectorTest(parse_version("1.1.2"))
-
-        # global alias
-        def_9a = TEST_DEFINITIONS[10]
-        field_9a = data_vector[10]
-        assert def_9a is not None
-        assert field_9a is not None
-        assert field_9a.name == 'field_9a'
-
-        # local alias
-        data_vector.register_alias(5, 6)
-        def_5 = TEST_DEFINITIONS[6]
-        field_5 = data_vector[6]
-        assert def_5 is None
-        assert field_5 is not None
-        assert field_5.name == 'field_5'
-
-        # alias of alias
-        data_vector.register_alias(6, 7)
-        field_5 = data_vector[7]
-        assert field_5 is not None
-        assert field_5.name == 'field_5'
-
-        # alias of field
-        data_vector.register_alias(field_9a, 11)
-        field_9a = data_vector[11]
-        assert field_9a is not None
-        assert field_9a.name == 'field_9a'
-
-        # alias of field
-        field = data_vector.register_alias(2, 7)
-        assert field is None
-
-        # alias 7 still valid
-        field_5 = data_vector[7]
-        assert field_5 is not None
-        assert field_5.name == 'field_5'
-
-    def test_global_alias(self):
-        data_vector = DataVectorTest(parse_version("1.1.2"))
-
-        # persistent alias
-        def_9a = TEST_DEFINITIONS[10]
-        field_9a = data_vector[10]
-        assert def_9a is not None
-        assert field_9a is not None
-        assert field_9a.name == 'field_9a'
-
     def test_read_blocks(self):
         data_vector = DataVectorTest(parse_version("1.1.2"))
         assert not data_vector._read_blocks_up_to_date
@@ -416,7 +366,7 @@ class TestDataVector:
         assert len(data_vector) == 3
         data_vector.add("field_invalid")
         assert len(data_vector) == 3
-        data_vector.add(10) # field_9a alias
+        data_vector.add('field_9a')
         assert len(data_vector) == 4
         assert len(data_vector.data.pairs) == 4
 
