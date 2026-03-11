@@ -1130,6 +1130,14 @@ class OnOffMode(SelectionBase):
 
 class LevelMode(SelectionBase):
     """LevelMode datatype, converts from and to list of LevelMode codes."""
+    """ This chapter refers to SmartGrid States"""
+    """ the two inputs EVU1 and EVU2 represent 4 states """
+    """ |EVU1| EVU2   |  mode +/-               | mode SG1.0         | mode SG1.1           |"""
+    """ |----|--------|-------------------------|--------------------|----------------------|"""
+    """ |1   |  0     | -> EVU lock             | EVU lock           | limitation active  (stat1)    """
+    """ |0   |  0     | -> lowered operation    | normal operation   |  normal operation (stat2)    |"""
+    """ |0   |  1     | -> normal operation     | increased operation | increased operation (stat3) |"""
+    """ |1   |  1     | -> increased operation  | limitation active   |limitation active (stat1)    |"""
 
     codes = {
         0: "Normal",     # No correction
