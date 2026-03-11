@@ -526,6 +526,14 @@ class Errorcode(SelectionBase):
         805: "sensor desuperheater",
         806: "Modbus SEC",
         807: "Lost modbus connection",
+        808: "Nicht unterstützte Hardware",
+        809: "Heißgasüberhitzungs-Fehler (DSH)",
+        810: "Version Parallelbetrieb",
+        811: "Überlaufschutz Kondensatwanne",
+        812: "Maximaler Durchfluss",
+        813: "Inverter nicht kompatibel",
+        814: "Fühler Abtauen",
+        815: "Modbus Verbindung verloren HZIO2",
     }
 
 
