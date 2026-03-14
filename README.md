@@ -13,16 +13,14 @@ that the user can interact with locally via display and setting dial.
 
 The (permanent) configuration of the heat pump is addressed via a TCP socket
 that is exposed via network (typically on port 8889)
-and is referred to here as config interface (cfi). Values can be read from
+and is referred to here as config interface (CFI). Values can be read from
 and written to the heat pump, essentially making it
 controllable from within a Python program.
 
 Additional (volatile) control and status registers are also available
 specifically for integration into a smart home system. To use this, you must
-first activate the smart home interface (shi) in the settings, after which
+first activate the smart home interface (SHI) in the settings, after which
 they can be accessed via Modbus TCP (port 502, No BMS/GLT license required).
-More detailed documentation on this API can be found at
-[luxtronik/shi/README.md](luxtronik/shi/README.md).
 
 This allows you, for example, to change the temperature settings of your heat
 pump or get current temperature values from the heat pump, similar to what you
@@ -49,6 +47,124 @@ with the following command:
 ```shell
 pip install git+https://github.com/Bouni/python-luxtronik.git@main
 ```
+
+## MODULE STRUCTURE
+
+```mermaid
+classDiagram
+    direction BT
+
+    %% Classes
+
+    class cfi["Config interface (CFI)"] {
+      + read()
+      + write()
+      + write_and_read()
+    }
+
+    class shi["Smart home interface (SHI)"] {
+      + read()
+      + write()
+      + write_and_read()
+    }
+
+    class lti["Luxtronik interface"]
+
+    class lux["Luxtronik"] {
+      + read()
+      + write()
+      + write_and_read()
+    }
+
+    class LuxtronikAllData["LuxtronikAllData (see below)"]
+
+    %% Relations
+
+    lti --|> cfi : inherits
+    lti --|> shi : inherits
+
+    lux "1" --* "1" lti : creates
+    lux --|> LuxtronikAllData : inherits
+```
+
+The library has a modular structure, so that all interfaces
+can be used separately. The basic functionality of both is provided
+as a common `LuxtronikInterface` or, with integrated data vectors,
+as `Luxtronik`. These should be suitable for most applications.
+
+The further documentation here refers to the general interface.
+Details on the additional functions and the API of the config interface
+and the smart home interface can be found in their separate README files
+[luxtronik/cfi/README.md](luxtronik/cfi/README.md) and
+[luxtronik/shi/README.md](luxtronik/shi/README.md).
+
+## DATA STRUCTURE
+
+A concise overview of the data structures that users typically use:
+
+```mermaid
+classDiagram
+    direction BT
+
+    %% Classes
+
+    class field["field (fka. 'Base')"] {
+      + unit
+      + name
+      + value
+    }
+
+    class data_vector {
+      + get()
+      + set()
+    }
+
+    class Parameters
+    class Calculations
+    class Visibilities
+    class Holdings
+    class Inputs
+
+    class LuxtronikData {
+      + parameters
+      + calculations
+      + visibilities
+    }
+
+    class LuxtronikSmartHomeData {
+      + holdings
+      + inputs
+    }
+
+    class LuxtronikAllData
+
+    %% Relations
+
+    data_vector "1" --* "0..*" field
+
+    Parameters --|> data_vector : inherits
+    Calculations --|> data_vector : inherits
+    Visibilities --|> data_vector : inherits
+    Holdings --|> data_vector : inherits
+    Inputs --|> data_vector : inherits
+
+    LuxtronikData "1" --* "1" Parameters : creates
+    LuxtronikData "1" --* "1" Calculations : creates
+    LuxtronikData "1" --* "1" Visibilities : creates
+
+    LuxtronikSmartHomeData "1" --* "1" Holdings : creates
+    LuxtronikSmartHomeData "1" --* "1" Inputs : creates
+
+    LuxtronikAllData --|> LuxtronikData : inherits
+    LuxtronikAllData --|> LuxtronikSmartHomeData : inherits
+```
+
+The heat pump data is stored in so-called `fields` and can be retrieved
+from there in a user-friendly format. Several fields of the same type are
+combined into a `data_vector`, which works like a field-dictionary.
+
+The CFI uses `LuxtronikData`, the SHI uses `LuxtronikSmartHomeData`,
+and the general interfaces uses `LuxtronikAllData`.
 
 ## DOCUMENTATION
 
@@ -86,6 +202,7 @@ The following example reads in data from the heat pump:
 from luxtronik import Luxtronik
 
 l = Luxtronik('192.168.1.23', 8889, True, 502)
+# There is an initial reading during creation
 heating_limit = l.parameters.get("ID_Einst_Heizgrenze_Temp")
 
 # Do something else here...
@@ -114,13 +231,27 @@ or `read_holdings()` can be used.
 
 Note that an initial read operation is carried out in the constructor.
 
+Similarly, only the interface can be used:
+
+```python
+from luxtronik import LuxtronikInterface
+
+l = LuxtronikInterface('192.168.1.23', 8889, 502)
+# Read all data from the heatpump
+data = l.read()
+
+t_forerun = data.calculations["ID_WEB_Temperatur_TVL"]
+if t_forerun.value > 30:
+#...
+```
+
 ### SCRIPTS AND COMMAND LINE INTERFACE (CLI)
 
 Once installed, the luxtronik package provides several scripts that can be used
 to interact with your heatpump. Those scripts can be invoked like regular
 commands from the command line.
 
-### DISCOVERY OF AVAILABLE HEATPUMPS WITHIN THE NETWORK
+#### DISCOVERY OF AVAILABLE HEATPUMPS WITHIN THE NETWORK
 
 Heat pumps can be discovered in a network by sending broadcast packages that
 the Luxtronik controller will reply to. This can be done with the `discover`
@@ -135,7 +266,7 @@ luxtronik discover
 Heat pump #0 -> IP address: 192.168.178.123 port: 8889
 ```
 
-### DUMP ALL DATA
+#### DUMP ALL DATA
 
 To get all data available you can either use the CLI:
 
@@ -186,7 +317,7 @@ Number: 16    Name: ID_Einst_HzMK1ABS_akt                                       
 ...
 ```
 
-### SHOW CHANGED VALUES ONLY
+#### SHOW CHANGED VALUES ONLY
 
 There is another sub-command (`watch-cfi`, `watch-shi`) and/or script
 (`watch_cfi.py`, `watch_shi.py`) that will only show values that have
@@ -278,8 +409,23 @@ from luxtronik import Luxtronik
 l = Luxtronik('192.168.1.23', 8889, safe=False)
 ```
 
+Again, only the interface can be used here:
+
+```python
+from luxtronik import LuxtronikInterface
+
+l = LuxtronikInterface('192.168.1.23', 8889, 502)
+# To write the SHI values, it is important to use the data vector constructor function of the interface, as the firmware version used must be known here
+data = l.create_all_data()
+
+# Set the value of the heating circuit target temperature offset field to 2.
+data.holdings["heating_offset"] = 2.0
+# Write down the values to the heat pump.
+l.write(data)
+```
+
 **NOTE:** The heat pump controller uses a NAND memory chip as
-persistent storage for the permanent configuration.
+persistent storage for the permanent configuration (CFI).
 This technology has only a limited number of erase cycles.
 Every change of a parameter will eventually induce some file changes on the controller,
 hence **frequent parameter changes may limit the lifetime of your heat pump**.
