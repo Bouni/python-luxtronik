@@ -15,6 +15,7 @@ This changelog follows the "Keep a Changelog" format and Semantic Versioning.
 is required for this. See README for further information. [#190]
 - Add a command-line-interface (CLI) with the following commands:
 `dump`, `dump-cfi`, `dump.shi`, `changes`, `watch-cfi`, `watch-shi`, `discover`
+- Provide an automatically generated documentation for the data fields. [#189]
 
 ### Changed
 

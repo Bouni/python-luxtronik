@@ -213,6 +213,10 @@ class LuxtronikDefinition:
     def until(self):
         return self._until
 
+    @property
+    def description(self):
+        return self._description
+
     def create_field(self):
         """
         Create a data field instance from this definition.
