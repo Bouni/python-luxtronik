@@ -5,9 +5,11 @@ This changelog follows the "Keep a Changelog" format and Semantic Versioning.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-03-xx
+
 ### Added
 
-- Support multiple data fields on one index. [TODO]
+- Support multiple data fields on one index. [#221]
 - Support an array style access to the data vector fields like
 `parameters['ID_Einst_BWS_akt']`. [#221, #233]
 - Support unknown codes in SelectionBase. [#197]
@@ -27,7 +29,7 @@ instead of `measurement_type`
 ### Removed
 
 - Remove outdated property to access the internal dictionary
-like `parameters.parameters`. [TODO]
+like `parameters.parameters`. [#221]
 
 ### Parameters
 

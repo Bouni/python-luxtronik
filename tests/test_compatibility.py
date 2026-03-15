@@ -1220,7 +1220,7 @@ class TestCompatibility:
             "Unknown_Parameter_1123": (1123, Unknown),
             "Unknown_Parameter_1124": (1124, Unknown),
             "Unknown_Parameter_1125": (1125, Unknown),
-            # New in 'main' branch:
+            # New 1.0.0:
             "SILENT_MODE": (1087, OnOffMode),
             "ID_Einst_SuSilence": (1092, TimerProgram),
             "ID_Einst_SilenceTimer_0": (1093, TimeOfDay2),
@@ -1580,7 +1580,7 @@ class TestCompatibility:
             "Heat_Output": (257, Power),
             "Unknown_Calculation_258": (258, Unknown),
             "Unknown_Calculation_259": (259, Unknown),
-            # New in 'main' branch:
+            # New in 1.0.0:
             "ID_WEB_SoftStand_0": (81, Character),
             "ID_WEB_SoftStand_1": (82, Character),
             "ID_WEB_SoftStand_2": (83, Character),
@@ -2002,7 +2002,7 @@ class TestCompatibility:
             "Unknown_Parameter_377": (377, Unknown),
             "Unknown_Parameter_378": (378, Unknown),
             "Unknown_Parameter_379": (379, Unknown),
-            # New in 'main' branch:
+            # New 1.0.0:
             "ID_Visi_Heizung_Zeitschaltprogramm": (182, Unknown),
             "Unknown_Visibility_355": (355, Unknown),
             "Unknown_Visibility_356": (356, Unknown),
@@ -2054,6 +2054,7 @@ class TestCompatibility:
         }
 
         inputs = {
+            # Status of 1.0.0:
             "heatpump_vd1_status": (0, Bool),
             "heatpump_vd2_status": (0, Bool),
             "heatpump_zwe1_status": (0, Bool),
@@ -2150,7 +2151,7 @@ class TestCompatibility:
         }
 
         holdings = {
-            # New in 'main' branch:
+            # Status of 1.0.0:
             "heating_mode": (0, ControlMode),
             "heating_setpoint": (1, CelsiusUInt16),
             "heating_offset": (2, KelvinInt16),
