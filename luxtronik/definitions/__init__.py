@@ -69,6 +69,8 @@ class LuxtronikDefinition:
               that have been checked for correctness using pytest.
               This eliminates the need for type tests here.
         """
+        self.report_successor = True
+        self.report_outdated_name = True
         try:
             data_dict = self.DEFAULT_DATA | data_dict
             index = int(data_dict["index"])
@@ -194,11 +196,7 @@ class LuxtronikDefinition:
 
     @property
     def successor(self):
-        # Clear the successor after first use,
-        # not to generate a lot of warnings
-        s = self._successor
-        self._successor = None
-        return s
+        return self._successor
 
     @property
     def name(self):
@@ -301,12 +299,12 @@ class LuxtronikDefinitionsDictionary:
         if d is None:
             LOGGER.debug(f"Definition for '{name_or_idx}' not found")
         else:
-            # The successor is returned only once for each definition,
-            # not to generate a lot of warnings
-            successor = d.successor
-            if successor is not None:
-                LOGGER.warning(f"Definition for '{name_or_idx}' is outdated and will " \
-                    + f"be removed soon! Please use '{successor}' instead.")
+            # Report a successor only once per definition instance
+            # to avoid generating too many warnings
+            if d.successor is not None and d.report_successor:
+                d.report_successor = False
+                LOGGER.warning(f"'{d.type_name}' definition for '{name_or_idx}' is outdated and will " \
+                    + f"be removed soon! Please use '{d.successor}' instead.")
         return d if d is not None else default
 
     def _get(self, name_or_idx):
@@ -362,8 +360,14 @@ class LuxtronikDefinitionsDictionary:
             If multiple definitions added for the same name, the last added takes precedence.
         """
         definition = self._name_dict.get(name.lower(), None)
-        if definition is not None and definition.valid and name.lower() != definition.name.lower():
-            LOGGER.warning(f"'{name}' is outdated! Use '{definition.name}' instead.")
+        # Report an outdated name only once per definition instance
+        # to avoid generating too many warnings
+        if definition is not None and definition.valid \
+                and name.lower() != definition.name.lower() \
+                and definition.report_outdated_name:
+            definition.report_outdated_name = False
+            LOGGER.warning(f"'{definition.type_name}' name '{name}' is outdated! " \
+                + f"Use '{definition.name}' instead.")
         return definition
 
 

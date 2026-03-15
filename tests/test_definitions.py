@@ -38,7 +38,6 @@ class TestDefinition:
         assert definition.names == names
         assert definition.name == names[0]
         assert definition.successor == 'abcd'
-        assert definition.successor is None
         assert definition.data_type == 'INT16'
         assert definition.valid
         assert definition
