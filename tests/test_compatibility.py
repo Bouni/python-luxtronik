@@ -1617,6 +1617,10 @@ class TestCompatibility:
             "Unknown_Calculation_272": (272, Unknown),
             "Unknown_Calculation_273": (273, Unknown),
             "Unknown_Calculation_274": (274, Unknown),
+            # New in 'main' branch (after next release):
+            "ID_WEB_Temperatur_THG_max": (252, Celsius),
+            "cooling_active": (259, Bool),
+            "ID_WEB_Time_ena_cooling": (260, Seconds),
         }
 
         visis = {
