@@ -6,6 +6,8 @@ class FakeModbus:
     result = True
 
     def __init__(self, host="", port="", timeout=0):
+        self._host = host
+        self._port = port
         self._connected = False
         self._blocking = False
 

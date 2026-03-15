@@ -76,7 +76,7 @@ class LuxtronikSocketInterface:
                 ret_val = None
                 with socket.create_connection((self._host, self._port)) as sock:
                     self._socket = sock
-                    LOGGER.info("Connected to Luxtronik heat pump %s:%s", self._host, self._port)
+                    LOGGER.info("Connected to CFI of Luxtronik heat pump %s:%s", self._host, self._port)
                     ret_val = func(*args, **kwargs)
             except socket.gaierror as e:
                 LOGGER.error("Failed to connect to Luxtronik heat pump %s:%s. %s.",
@@ -166,6 +166,7 @@ class LuxtronikSocketInterface:
         if not isinstance(parameters, Parameters):
             LOGGER.error("Only parameters are writable!")
             return
+        count = 0
         for definition, field in parameters.items():
             if field.write_pending:
                 field.write_pending = False
@@ -178,12 +179,14 @@ class LuxtronikSocketInterface:
                         value,
                     )
                     continue
-                LOGGER.info("%s: Parameter '%d' set to '%s'", self._host, definition.index, value)
+                LOGGER.debug("%s: Parameter '%d' set to '%s'", self._host, definition.index, value)
                 self._send_ints(LUXTRONIK_PARAMETERS_WRITE, definition.index, value)
                 cmd = self._read_int()
                 LOGGER.debug("%s: Command %s", self._host, cmd)
                 val = self._read_int()
                 LOGGER.debug("%s: Value %s", self._host, val)
+                count += 1
+        LOGGER.info("%s: Write %d parameters", self._host, count)
         # Give the heatpump a short time to handle the value changes/calculations:
         time.sleep(WAIT_TIME_AFTER_PARAMETER_WRITE)
 

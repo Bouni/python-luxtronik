@@ -53,6 +53,8 @@ class LuxtronikModbusTcpInterface:
         self._lock = get_host_lock(host)
 
         # Create the Modbus client (connection is not opened/closed automatically)
+        self._host = host
+        self._port = port
         self._client = ModbusClient(
             host=host,
             port=port,
@@ -86,6 +88,8 @@ class LuxtronikModbusTcpInterface:
                 + f"{self._client.last_error_as_txt}")
             self._client.close()
             return False
+        else:
+            LOGGER.info(f"Connected to SHI of Luxtronik heat pump {self._host}:{self._port}")
 
         return True
 
@@ -295,7 +299,6 @@ class LuxtronikModbusTcpInterface:
 
         # Exit the function if no operation is necessary
         if total_count <= 0:
-            LOGGER.warning("No data requested/provided. Abort operation.")
             return False
 
         # Acquire lock, connect and read/write data. Disconnect afterwards.

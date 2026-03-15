@@ -506,6 +506,25 @@ class LuxtronikSmartHomeInterface:
         # Send all telegrams. The retrieved data is returned within the telegrams
         telegrams = [data[1] for data in telegrams_data]
         success = self._interface.send(telegrams)
+        # Report send/received data
+        count = {'hr': 0, 'hw': 0, 'ir': 0, 'u': 0}
+        for t in telegrams:
+            if isinstance(t, LuxtronikSmartHomeReadHoldingsTelegram):
+                count['hr'] += t.count
+            elif isinstance(t, LuxtronikSmartHomeReadInputsTelegram):
+                count['ir'] += t.count
+            elif isinstance(t, LuxtronikSmartHomeWriteHoldingsTelegram):
+                count['hw'] += t.count
+            else:
+                count['u'] += t.count
+        if count['hr'] > 0:
+            LOGGER.info(f"{self._interface._host}: Read {count['hr']} holdings")
+        if count['ir'] > 0:
+            LOGGER.info(f"{self._interface._host}: Read {count['ir']} inputs")
+        if count['hw'] > 0:
+            LOGGER.info(f"{self._interface._host}: Write {count['hw']} holdings")
+        if count['u'] > 0:
+            LOGGER.info(f"{self._interface._host}: Write {count['u']} unknowns?")
         # Transfer the data from the telegrams into the fields
         success &= self._integrate_data(telegrams_data)
         return success
