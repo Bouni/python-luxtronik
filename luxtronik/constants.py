@@ -20,4 +20,4 @@ LUXTRONIK_16BIT_FUNCTION_NOT_AVAILABLE: Final = 0x7FFF
 LUXTRONIK_32BIT_FUNCTION_NOT_AVAILABLE: Final = 0x7FFFFFFF
 
 # If True, preserve the last set field value on clear and assign `None` to raw
-LUXTRONIK_PRESERVE_LAST_VALUE = True
+LUXTRONIK_PRESERVE_LAST_VALUE: Final = True
