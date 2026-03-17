@@ -1328,6 +1328,10 @@ from `Unknown`to `Energy`
 - Add `POWER_LIMIT_SWITCH` (index `1158`) of type `Unknown`
 - Add `Unknown_Parameter_1159` (index `1159`) of type `Unknown`
 - Add `POWER_LIMIT_VALUE` (index `1159`) of type `Unknown`
+- Add `THERMAL_POWER_LIMIT_SWITCH` (index `1175`) of type `Unknown`
+- Add `THERMAL_POWER_LIMIT_HEATING` (index `1176`) of type `Unknown`
+- Add `THERMAL_POWER_LIMIT_WATER` (index `1177`) of type `Unknown`
+- Add `THERMAL_POWER_LIMIT_COOLING` (index `1178`) of type `Unknown`
 
 ### Calculations
 
@@ -1372,6 +1376,7 @@ from `IPAddress`to `IPv4Address`
 - Add `Unknown_Calculation_265` (index `265`) of type `Unknown`
 - Add `Unknown_Calculation_266` (index `266`) of type `Unknown`
 - Add `Desired_Room_Temperature` (index `267`) of type `Celsius`
+- Add `Unknown_Calculation_268` (index `268`) of type `Unknown`
 - Add `AC_Power_Input` (index `268`) of type `Power`
 
 ### Visibilities
