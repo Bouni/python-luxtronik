@@ -157,7 +157,7 @@ class TestModbusInterface:
 
         # Read zero holdings
         result = self.modbus_interface.send(data_list)
-        assert not result
+        assert result # no error when there is no data
         assert data_list[0].data == []
         assert data_list[1].data == []
 
@@ -167,7 +167,7 @@ class TestModbusInterface:
 
         # Write zero holdings
         result = self.modbus_interface.send(data_list)
-        assert not result
+        assert result # no error when there is no data
 
 
     def test_no_inputs_read_data(self):
@@ -175,7 +175,7 @@ class TestModbusInterface:
 
         # Read zero inputs
         result = self.modbus_interface.send(data_list)
-        assert not result
+        assert result # no error when there is no data
         assert data_list[0].data == []
         assert data_list[1].data == []
 
@@ -185,7 +185,7 @@ class TestModbusInterface:
         [
             (1,    2, True,  [1, 2]),
             (5,    3, True,  [5, 6, 7]),
-            (0,    0, False, []),
+            (0,    0, True, []),    # no error when there is no data
             (1000, 2, False, None), # client has read error
             (1001, 3, False, None), # client returns to less data
             (1002, 4, False, None), # client returns to much data
@@ -213,7 +213,7 @@ class TestModbusInterface:
         [
             (1,    2,  True, [1, 2]),
             (5,    3,  True, [5, 6, 7]),
-            (0,    0, False, []),
+            (0,    0,  True, []),   # no error when there is no data
             (1000, 2, False, None), # client has read error
             (1001, 3, False, None), # client returns to less data
             (1002, 4, False, None), # client returns to much data
@@ -241,7 +241,7 @@ class TestModbusInterface:
         [
             (1,       [1, 2],  True),
             (5,    [5, 6, 7],  True),
-            (0,           [], False),
+            (0,           [],  True), # no error when there is no data
             (1000,    [8, 9], False), # Write error
             (1001,      [11], False), # Exception
         ]
