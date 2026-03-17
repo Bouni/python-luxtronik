@@ -601,7 +601,7 @@ class Voltage(ScalingBase):
 
     datatype_class = "voltage"
     datatype_unit = "V"
-    scaling_factor = 0.1
+    scaling_factor = 0.01
 
 
 class Hours(ScalingBase):
