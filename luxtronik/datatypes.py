@@ -588,6 +588,14 @@ class Energy(ScalingBase):
     scaling_factor = 0.1
 
 
+class Energy2(ScalingBase):
+    """Energy datatype, converts from and to Energy."""
+
+    datatype_class = "energy"
+    datatype_unit = "kWh"
+    scaling_factor = 0.01
+
+
 class Voltage(ScalingBase):
     """Voltage datatype, converts from and to Voltage."""
 
