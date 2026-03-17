@@ -299,7 +299,7 @@ class LuxtronikModbusTcpInterface:
 
         # Exit the function if no operation is necessary
         if total_count <= 0:
-            return False
+            return True
 
         # Acquire lock, connect and read/write data. Disconnect afterwards.
         success = False
