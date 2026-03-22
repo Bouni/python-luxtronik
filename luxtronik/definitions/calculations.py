@@ -2806,6 +2806,12 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 268,
+        "names": ['Unknown_Calculation_268'],
+        "type": Unknown,
+        "successor": 'AC_Power_Input',
+    },
+    {
+        "index": 268,
         "count": 1,
         "names": ['AC_Power_Input'],
         "type": Power,
