@@ -1622,6 +1622,9 @@ class TestCompatibility:
             "Unknown_Calculation_272": (272, Unknown),
             "Unknown_Calculation_273": (273, Unknown),
             "Unknown_Calculation_274": (274, Unknown),
+            # New in 'main' branch (after next release):
+            "flow_temp_limit": (244, Celsius),
+            "hot_gas_temp_limit": (252, Celsius),
         }
 
         visis = {
