@@ -166,21 +166,44 @@ class RunTestDefinitionList:
                 except Exception:
                     pass
 
+    def do_unique_self_check(self, definition):
+        names = self.get_names(definition)
+        length = len(names)
+        for i in range(length):
+            name_i = names[i]
+            for j in range(i + 1, length):
+                name_j = names[j]
+                assert (name_i != name_j), \
+                    "All names of the same definition must be unique. " \
+                    f"definition  = {definition}"
+
+    def do_unique_compare_check(self, def_a, def_b):
+        names_a = self.get_names(def_a)
+        index_a = def_a.get(KEY_IDX, -1)
+        names_b = self.get_names(def_b)
+        index_b = def_a.get(KEY_IDX, -2)
+
+        # We allow duplicate names at the same index
+        duplicated_allowed = (index_a == index_b)
+
+        for name_a in names_a:
+            for name_b in names_b:
+                assert (name_a != name_b) or duplicated_allowed, \
+                    "All names of the same definition type must be unique " \
+                    "(except for the same index). " \
+                    f"this  = {def_a}" \
+                    f"other = {def_b}"
+        return True
+
     def test_name_unique(self):
         length = len(self.definitions)
 
         for i in range(length):
-            i_def = self.definitions[i]
-            i_names = self.get_names(i_def)
+            def_i = self.definitions[i]
+            self.do_unique_self_check(def_i)
             for j in range(i + 1, length):
-                j_def = self.definitions[j]
-                j_names = self.get_names(j_def)
-                for i_name in i_names:
-                    for j_name in j_names:
-                        assert i_name!= j_name, \
-                            "All names of the same type must be unique. " \
-                            f"this  = {i_def}" \
-                            f"other = {j_def}"
+                def_j = self.definitions[j]
+                self.do_unique_compare_check(def_i, def_j)
 
     def test_field_type(self):
         for definition in self.definitions:

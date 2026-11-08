@@ -24,6 +24,7 @@ from luxtronik.datatypes import (
     Power,
     PowerKW,
     Energy,
+    Energy2,
     Voltage,
     Hours,
     Hours2,
@@ -871,6 +872,36 @@ class TestEnergy:
         assert Energy.to_heatpump("g") is None
 
 
+class TestEnergy2:
+    """Test suite for Energy datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = Energy2("energy")
+        assert a.name == "energy"
+        assert a.datatype_class == "energy"
+        assert a.datatype_unit == "kWh"
+
+    def test_energy_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        assert Energy2.from_heatpump(None) is None
+
+        assert Energy2.from_heatpump(10) == 0.1
+        assert Energy2.from_heatpump(11) == 0.11
+
+    def test_energy_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        assert Energy2.to_heatpump(1) == 100
+        assert Energy2.to_heatpump(1.1) == 110
+
+        assert Energy2.to_heatpump(None) is None
+        assert Energy2.to_heatpump("5") == 500
+        assert Energy2.to_heatpump("g") is None
+
+
 class TestVoltage:
     """Test suite for Voltage datatype"""
 
@@ -887,17 +918,17 @@ class TestVoltage:
 
         assert Voltage.from_heatpump(None) is None
 
-        assert Voltage.from_heatpump(10) == 1
-        assert Voltage.from_heatpump(11) == 1.1
+        assert Voltage.from_heatpump(10) == 0.1
+        assert Voltage.from_heatpump(11) == 0.11
 
     def test_voltage_to_heatpump(self):
         """Test cases for to_heatpump function"""
 
-        assert Voltage.to_heatpump(1) == 10
-        assert Voltage.to_heatpump(1.1) == 11
+        assert Voltage.to_heatpump(1) == 100
+        assert Voltage.to_heatpump(1.1) == 110
 
         assert Voltage.to_heatpump(None) is None
-        assert Voltage.to_heatpump("6") == 60
+        assert Voltage.to_heatpump("6") == 600
         assert Voltage.to_heatpump("h") is None
 
 
