@@ -23,7 +23,6 @@ from luxtronik.datatypes import (
     LpcMode,
     OnOffMode,
     PowerKW,
-    Unknown,
 )
 
 # Offset which must be added to the holding indices
@@ -96,7 +95,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the heating temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1189 (decrease) "
+            "and 1190 (increase)."
         )
     },
     {
@@ -160,7 +161,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the hot water temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1197 (decrease) "
+            "and 1198 (increase)."
         )
     },
     {
@@ -224,7 +227,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the mixing circuit 1 temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1191 (decrease) "
+            "and 1192 (increase)."
         )
     },
     {
@@ -340,7 +345,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the mixing circuit 2 temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1193 (decrease) "
+            "and 1194 (increase)."
         )
     },
     {
@@ -456,7 +463,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the mixing circuit 3 temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1195 (decrease) "
+            "and 1196 (increase)."
         )
     },
     {
@@ -609,11 +618,19 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
     {
         "index": 60,
         "count": 1,
-        "names": ["unknown_holding_60"],
-        "type": Unknown,
-        "writeable": False,
+        "names": ["room_temperature_setpoint"],
+        "type": CelsiusUInt16,
+        "writeable": True,
+        "datatype": "UINT16",
+        "unit": "°C/10",
         "since": "3.92.1",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": (
+            "Room temperature setpoint of the RBE room control unit. "
+            "Writes the persisted device parameter 1148 (HEATING_TARGET_TEMP_ROOM_THERMOSTAT) directly. "
+            "Only available with an RBE installed and connected (firmware V3.92.3). "
+            "The value range is unknown, so no range is defined here. "
+            "When the SHI watchdog expires, the parameter is reset to its persisted value."
+        )
     },
     {
         "index": 65,
@@ -631,11 +648,11 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "type": KelvinInt16,
         "writeable": True,
         "datatype": "INT16",
-        "range": {"min": -200, "max": 200},
+        "range": {"min": -50, "max": 50},
         "since": "3.92.0",
         "description": (
             "Temperature correction in Kelvin "
-            "for all heating functions"
+            "for all heating functions (firmware V3.92.3 limits it to +/-5.0 K)"
         )
     },
     {
@@ -647,7 +664,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease all heating temperatures "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1187 (decrease) "
+            "and 1188 (increase)."
         )
     },
     {
