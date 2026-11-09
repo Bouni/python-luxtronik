@@ -23,6 +23,7 @@ from luxtronik.datatypes import (
     Errorcode,
     FullVersion,
     HeatPumpStatus,
+    HoursUInt32,
     Minutes,
     ModeStatus,
     OnOffMode,
@@ -310,8 +311,9 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "unit": "°C/10",
         "since": "3.90.1",
         "description": (
-            "Heating limit temperature. "
-            "If undershot (heating curve setpoint - hysteresis), soft-limit power control is ignored."
+            "Heating demand border: current heating setpoint minus hysteresis "
+            "(firmware text 'Heating demand border'). "
+            "If undershot, soft-limit power control is ignored."
         )
     },
     {
@@ -370,11 +372,13 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 113,
         "count": 1,
-        "names": ["unknown_input_113"],
-        "type": Unknown,
+        "names": ["calculated_max_flow_temp", "unknown_input_113"],
+        "type": CelsiusInt16,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Calculated maximum flow temperature (firmware text 'TVL calc max')",
     },
     {
         "index": 120,
@@ -430,8 +434,9 @@ INPUTS_DEFINITIONS_LIST: Final = [
         "unit": "°C/10",
         "since": "3.90.1",
         "description": (
-            "DHW limit temperature. "
-            "If undershot (desired regulation value), soft-limit power control is ignored."
+            "DHW demand border: current DHW setpoint minus hysteresis "
+            "(firmware text 'DHW Demand border'). "
+            "If undershot, soft-limit power control is ignored."
         )
     },
     {
@@ -956,21 +961,14 @@ INPUTS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 410,
-        "count": 1,
-        "names": ["unknown_input_410"],
-        "type": Unknown,
+        "count": 2,
+        "names": ["operating_hours_cooling", "unknown_input_410"],
+        "type": HoursUInt32,
         "writeable": False,
+        "datatype": "UINT32",
+        "unit": "h",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
-    },
-    {
-        "index": 411,
-        "count": 1,
-        "names": ["unknown_input_411"],
-        "type": Unknown,
-        "writeable": False,
-        "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Operating hours of the cooling mode (UINT32, high word first)",
     },
     {
         "index": 412,
@@ -992,47 +990,46 @@ INPUTS_DEFINITIONS_LIST: Final = [
     },
     {
         "index": 416,
-        "count": 1,
-        "names": ["unknown_input_416"],
-        "type": Unknown,
+        "count": 2,
+        "names": ["operating_hours_solar", "unknown_input_416"],
+        "type": HoursUInt32,
         "writeable": False,
+        "datatype": "UINT32",
+        "unit": "h",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
-    },
-    {
-        "index": 417,
-        "count": 1,
-        "names": ["unknown_input_417"],
-        "type": Unknown,
-        "writeable": False,
-        "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Operating hours of the solar function (UINT32, high word first)",
     },
     {
         "index": 500,
         "count": 1,
-        "names": ["unknown_input_500"],
-        "type": Unknown,
+        "names": ["hot_water_extra_setpoint", "unknown_input_500"],
+        "type": CelsiusInt16,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "°C/10",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Setpoint of the extra DHW function (device parameter 1146)",
     },
     {
         "index": 501,
         "count": 1,
-        "names": ["unknown_input_501"],
-        "type": Unknown,
+        "names": ["hot_water_extra_duration", "unknown_input_501"],
+        "type": Minutes,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "min",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Duration of the extra DHW function (device parameter 1147)",
     },
     {
         "index": 502,
         "count": 1,
-        "names": ["unknown_input_502"],
-        "type": Unknown,
+        "names": ["hot_water_extra_remaining", "unknown_input_502"],
+        "type": Minutes,
         "writeable": False,
+        "datatype": "INT16",
+        "unit": "min",
         "since": "3.92.0",
-        "description": "TODO: Function unknown – requires further analysis",
+        "description": "Remaining run time of the extra DHW function",
     },
 ]

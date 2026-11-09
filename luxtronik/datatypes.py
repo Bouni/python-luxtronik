@@ -604,6 +604,14 @@ class Hours(ScalingBase):
     scaling_factor = 0.1
 
 
+class HoursUInt32(Hours):
+    """Hours 32-bit unsigned, converts from and to whole hours."""
+
+    data_width = 32
+    data_type = "unsigned"
+    scaling_factor = 1
+
+
 class Hours2(Base):
     """Hours datatype, converts from and to Hours with a different scaling factor."""
 

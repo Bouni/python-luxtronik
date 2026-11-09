@@ -26,6 +26,7 @@ from luxtronik.datatypes import (
     Energy,
     Voltage,
     Hours,
+    HoursUInt32,
     Hours2,
     Minutes,
     Flow,
@@ -929,6 +930,37 @@ class TestHours:
         assert Hours.to_heatpump(None) is None
         assert Hours.to_heatpump("7") == 70
         assert Hours.to_heatpump("i") is None
+
+
+class TestHoursUInt32:
+    """Test suite for HoursUInt32 datatype"""
+
+    def test_init(self):
+        """Test cases for initialization"""
+
+        a = HoursUInt32("hours")
+        assert a.name == "hours"
+        assert a.datatype_class == "timespan"
+        assert a.datatype_unit == "h"
+
+    def test_hours_from_heatpump(self):
+        """Test cases for from_heatpump function"""
+
+        assert HoursUInt32.from_heatpump(None) is None
+
+        assert HoursUInt32.from_heatpump(0) == 0
+        assert HoursUInt32.from_heatpump(1234) == 1234
+        # unsigned: values above the signed 32-bit range stay positive
+        assert HoursUInt32.from_heatpump(0x80000000) == 0x80000000
+
+    def test_hours_to_heatpump(self):
+        """Test cases for to_heatpump function"""
+
+        assert HoursUInt32.to_heatpump(1234) == 1234
+
+        assert HoursUInt32.to_heatpump(None) is None
+        assert HoursUInt32.to_heatpump("7") == 7
+        assert HoursUInt32.to_heatpump("i") is None
 
 
 class TestHours2:
