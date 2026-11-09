@@ -1125,9 +1125,7 @@ class LevelMode(SelectionBase):
     LevelMode datatype, converts from and to list of LevelMode codes.
 
     On firmware V3.92.3, 1 and 2 behave identically (both apply
-    the "increase" value), 3 applies the "decrease" value. The amounts are
-    the device parameters 1187 to 1198 (menu "Offsets"), one decrease/increase
-    pair each for heating general, heating, MC1, MC2, MC3 and DHW.
+    the "increase" amount), 3 applies the "decrease" amount.
     """
 
     codes = {

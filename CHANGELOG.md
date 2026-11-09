@@ -24,8 +24,8 @@ of in a separate queue. [#221, #237]
 - The field objects now provide `datatype_class` and `datatype_unit`
 instead of `measurement_type`
 - SHI holding `60` is now `room_temperature_setpoint` (type `CelsiusUInt16`,
-writeable, only with an RBE room control unit). `unknown_holding_60` remains
-as alias.
+writeable, only with an RBE room control unit). `unknown_holding_60` was
+never released and has been replaced.
 - SHI holding `66` (`heat_overall_offset`): the documented range is now
 -50..50 (+/-5.0 K) instead of -200..200.
 - Document that `LevelMode` values 1 and 2 are identical on firmware V3.92.3.

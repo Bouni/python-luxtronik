@@ -2196,7 +2196,6 @@ class TestCompatibility:
             "lock_cooling": (52, LockMode),
             "lock_swimming_pool": (53, LockMode),
             "room_temperature_setpoint": (60, CelsiusUInt16),
-            "unknown_holding_60": (60, Unknown, True), # type intentionally changed
             "heat_overall_mode": (65, ControlMode),
             "heat_overall_offset": (66, KelvinInt16),
             "heat_overall_level": (67, LevelMode),

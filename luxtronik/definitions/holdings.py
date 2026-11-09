@@ -95,7 +95,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the heating temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1189 (decrease) "
+            "and 1190 (increase)."
         )
     },
     {
@@ -159,7 +161,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the hot water temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1197 (decrease) "
+            "and 1198 (increase)."
         )
     },
     {
@@ -223,7 +227,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the mixing circuit 1 temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1191 (decrease) "
+            "and 1192 (increase)."
         )
     },
     {
@@ -339,7 +345,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the mixing circuit 2 temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1193 (decrease) "
+            "and 1194 (increase)."
         )
     },
     {
@@ -455,7 +463,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease the mixing circuit 3 temperature "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1195 (decrease) "
+            "and 1196 (increase)."
         )
     },
     {
@@ -608,7 +618,7 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
     {
         "index": 60,
         "count": 1,
-        "names": ["room_temperature_setpoint", "unknown_holding_60"],
+        "names": ["room_temperature_setpoint"],
         "type": CelsiusUInt16,
         "writeable": True,
         "datatype": "UINT16",
@@ -654,7 +664,9 @@ HOLDINGS_DEFINITIONS_LIST: Final = [
         "since": "3.92.0",
         "description": (
             "Increase or decrease all heating temperatures "
-            "using the SHI offset settings."
+            "using the SHI offset settings. "
+            "The amounts are the device parameters 1187 (decrease) "
+            "and 1188 (increase)."
         )
     },
     {
