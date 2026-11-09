@@ -1,12 +1,13 @@
 import re
 
 from luxtronik.common import parse_version
-from luxtronik.datatypes import Base
+from luxtronik.datatypes import Base, CelsiusUInt16
 from luxtronik.definitions import LuxtronikDefinition
 from luxtronik.definitions.calculations import CALCULATIONS_DEFINITIONS_LIST
 from luxtronik.definitions.holdings import HOLDINGS_DEFINITIONS_LIST
 from luxtronik.definitions.inputs import INPUTS_DEFINITIONS_LIST
 from luxtronik.definitions.parameters import PARAMETERS_DEFINITIONS_LIST
+from luxtronik.shi.holdings import Holdings
 from luxtronik.definitions.visibilities import VISIBILITIES_DEFINITIONS_LIST
 
 
@@ -243,3 +244,35 @@ class TestVisibilitiesDefinitionList(RunTestDefinitionList):
 
     definitions = VISIBILITIES_DEFINITIONS_LIST
     do_lower_case_test = False
+
+class TestHoldingsFirmware3923:
+    """Holding definitions confirmed by the analysis of firmware V3.92.3."""
+
+    @staticmethod
+    def get_definition(index):
+        return next(d for d in HOLDINGS_DEFINITIONS_LIST if d[KEY_IDX] == index)
+
+    def test_room_temperature_setpoint(self):
+        definition = self.get_definition(60)
+        assert definition[KEY_NAMES][0] == "room_temperature_setpoint"
+        # the former name stays available as alias
+        assert "unknown_holding_60" in definition[KEY_NAMES]
+        assert definition[KEY_TYPE] is CelsiusUInt16
+        assert definition[KEY_WRT]
+        # the value range is unknown: no range must be claimed
+        assert KEY_RANGE not in definition
+
+    def test_heat_overall_offset_range(self):
+        definition = self.get_definition(66)
+        assert definition[KEY_NAMES] == ["heat_overall_offset"]
+        assert definition[KEY_RANGE] == {KEY_MIN: -50, KEY_MAX: 50}
+
+    def test_room_temperature_setpoint_field(self):
+        holdings = Holdings()
+        for name in ("room_temperature_setpoint", "unknown_holding_60", 60):
+            assert holdings.get(name) is holdings.get("room_temperature_setpoint")
+        field = holdings.get("room_temperature_setpoint")
+        assert field.writeable
+        field.value = 21.5
+        assert field.raw == 215
+        assert field.value == 21.5

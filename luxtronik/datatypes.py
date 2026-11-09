@@ -1121,19 +1121,22 @@ class OnOffMode(SelectionBase):
 
 
 class LevelMode(SelectionBase):
-    """LevelMode datatype, converts from and to list of LevelMode codes."""
+    """
+    LevelMode datatype, converts from and to list of LevelMode codes.
+
+    On firmware V3.92.3, 1 and 2 behave identically (both apply
+    the "increase" value), 3 applies the "decrease" value. The amounts are
+    the device parameters 1187 to 1198 (menu "Offsets"), one decrease/increase
+    pair each for heating general, heating, MC1, MC2, MC3 and DHW.
+    """
 
     codes = {
         0: "Normal",     # No correction
         1: "Increased",  # Increase the temperature by the values
                          # within the smart home interface settings
-                         # TODO: Function unknown – requires further analysis
-        2: "Increased2", # Increase the temperature by the values
-                         # within the smart home interface settings
-                         # TODO: Function unknown – requires further analysis
+        2: "Increased2", # Same as 1 (identical on firmware V3.92.3)
         3: "Decreased",  # Decrease the temperature by the values
                          # within the smart home interface settings
-                         # TODO: Function unknown – requires further analysis
     }
 
 
