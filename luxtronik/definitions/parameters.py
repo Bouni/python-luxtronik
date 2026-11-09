@@ -11976,7 +11976,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 3 (decrease) for all heating functions',
+        "description": 'Amount applied by SHI level "Decreased" for all heating functions',
     },
     {
         "index": 1188,
@@ -11984,7 +11984,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 1/2 (increase) for all heating functions',
+        "description": 'Amount applied by SHI level "Increased" for all heating functions',
     },
     {
         "index": 1189,
@@ -11992,7 +11992,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 3 (decrease) for heating',
+        "description": 'Amount applied by SHI level "Decreased" for heating',
     },
     {
         "index": 1190,
@@ -12000,7 +12000,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 1/2 (increase) for heating',
+        "description": 'Amount applied by SHI level "Increased" for heating',
     },
     {
         "index": 1191,
@@ -12008,7 +12008,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 3 (decrease) for MC1',
+        "description": 'Amount applied by SHI level "Decreased" for MC1',
     },
     {
         "index": 1192,
@@ -12016,7 +12016,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 1/2 (increase) for MC1',
+        "description": 'Amount applied by SHI level "Increased" for MC1',
     },
     {
         "index": 1193,
@@ -12024,7 +12024,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 3 (decrease) for MC2',
+        "description": 'Amount applied by SHI level "Decreased" for MC2',
     },
     {
         "index": 1194,
@@ -12032,7 +12032,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 1/2 (increase) for MC2',
+        "description": 'Amount applied by SHI level "Increased" for MC2',
     },
     {
         "index": 1195,
@@ -12040,7 +12040,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 3 (decrease) for MC3',
+        "description": 'Amount applied by SHI level "Decreased" for MC3',
     },
     {
         "index": 1196,
@@ -12048,7 +12048,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 1/2 (increase) for MC3',
+        "description": 'Amount applied by SHI level "Increased" for MC3',
     },
     {
         "index": 1197,
@@ -12056,7 +12056,7 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 3 (decrease) for DHW',
+        "description": 'Amount applied by SHI level "Decreased" for DHW',
     },
     {
         "index": 1198,
@@ -12064,6 +12064,6 @@ PARAMETERS_DEFINITIONS_LIST: Final = [
         "type": Kelvin,
         "datatype": 'INT32',
         "unit": 'K/10',
-        "description": 'Amount applied by SHI level 1/2 (increase) for DHW',
+        "description": 'Amount applied by SHI level "Increased" for DHW',
     },
 ]

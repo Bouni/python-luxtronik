@@ -1321,8 +1321,6 @@ from `Unknown`to `Energy`
 - Add `Unknown_Parameter_1143` (index `1143`) of type `Unknown`
 - Add `Unknown_Parameter_1144` (index `1144`) of type `Unknown`
 - Add `Unknown_Parameter_1145` (index `1145`) of type `Unknown`
-- Add `Unknown_Parameter_1146` (index `1146`) of type `Unknown`
-- Add `Unknown_Parameter_1147` (index `1147`) of type `Unknown`
 - Add `EXTRA_DHW_TEMPERATURE_SETPOINT` (index `1146`) of type `Celsius`
 - Add `EXTRA_DHW_DURATION_SETPOINT` (index `1147`) of type `Seconds`
 - Add `Unknown_Parameter_1148` (index `1148`) of type `Unknown`
