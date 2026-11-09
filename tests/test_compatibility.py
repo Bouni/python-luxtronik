@@ -1271,9 +1271,7 @@ class TestCompatibility:
             "Unknown_Parameter_1144": (1144, Unknown),
             "Unknown_Parameter_1145": (1145, Unknown),
             "EXTRA_DHW_TEMPERATURE_SETPOINT": (1146, Celsius),
-            "Unknown_Parameter_1146": (1146, Unknown, True), # type intentionally changed
             "EXTRA_DHW_DURATION_SETPOINT": (1147, Seconds),
-            "Unknown_Parameter_1147": (1147, Unknown, True), # type intentionally changed
             "Unknown_Parameter_1148": (1148, Unknown),
             "HEATING_TARGET_TEMP_ROOM_THERMOSTAT": (1148, Celsius),
             "Unknown_Parameter_1149": (1149, Unknown),
@@ -1321,29 +1319,17 @@ class TestCompatibility:
             "Unknown_Parameter_1185": (1185, Unknown),
             "Unknown_Parameter_1186": (1186, Unknown),
             "SHI_LEVEL_HEATING_OVERALL_DECREASE": (1187, Kelvin),
-            "Unknown_Parameter_1187": (1187, Unknown, True), # type intentionally changed
             "SHI_LEVEL_HEATING_OVERALL_INCREASE": (1188, Kelvin),
-            "Unknown_Parameter_1188": (1188, Unknown, True), # type intentionally changed
             "SHI_LEVEL_HEATING_DECREASE": (1189, Kelvin),
-            "Unknown_Parameter_1189": (1189, Unknown, True), # type intentionally changed
             "SHI_LEVEL_HEATING_INCREASE": (1190, Kelvin),
-            "Unknown_Parameter_1190": (1190, Unknown, True), # type intentionally changed
             "SHI_LEVEL_MC1_DECREASE": (1191, Kelvin),
-            "Unknown_Parameter_1191": (1191, Unknown, True), # type intentionally changed
             "SHI_LEVEL_MC1_INCREASE": (1192, Kelvin),
-            "Unknown_Parameter_1192": (1192, Unknown, True), # type intentionally changed
             "SHI_LEVEL_MC2_DECREASE": (1193, Kelvin),
-            "Unknown_Parameter_1193": (1193, Unknown, True), # type intentionally changed
             "SHI_LEVEL_MC2_INCREASE": (1194, Kelvin),
-            "Unknown_Parameter_1194": (1194, Unknown, True), # type intentionally changed
             "SHI_LEVEL_MC3_DECREASE": (1195, Kelvin),
-            "Unknown_Parameter_1195": (1195, Unknown, True), # type intentionally changed
             "SHI_LEVEL_MC3_INCREASE": (1196, Kelvin),
-            "Unknown_Parameter_1196": (1196, Unknown, True), # type intentionally changed
             "SHI_LEVEL_DHW_DECREASE": (1197, Kelvin),
-            "Unknown_Parameter_1197": (1197, Unknown, True), # type intentionally changed
             "SHI_LEVEL_DHW_INCREASE": (1198, Kelvin),
-            "Unknown_Parameter_1198": (1198, Unknown, True), # type intentionally changed
         }
 
         calcs = {
@@ -2100,7 +2086,6 @@ class TestCompatibility:
             "heat_source_output": (111, CelsiusInt16),
             "max_flow_temp": (112, CelsiusUInt16),
             "calculated_max_flow_temp": (113, CelsiusInt16),
-            "unknown_input_113": (113, Unknown, True), # type intentionally changed
             "hot_water_temp": (120, CelsiusInt16),
             "dhw_temp": (120, CelsiusInt16),
             "hot_water_target": (121, CelsiusUInt16),
@@ -2160,17 +2145,12 @@ class TestCompatibility:
             "unknown_input_408": (408, Unknown),
             "unknown_input_409": (409, Unknown),
             "operating_hours_cooling": (410, HoursUInt32),
-            "unknown_input_410": (410, Unknown, True), # type intentionally changed
             "unknown_input_412": (412, Unknown),
             "unknown_input_413": (413, Unknown),
             "operating_hours_solar": (416, HoursUInt32),
-            "unknown_input_416": (416, Unknown, True), # type intentionally changed
             "hot_water_extra_setpoint": (500, CelsiusInt16),
-            "unknown_input_500": (500, Unknown, True), # type intentionally changed
             "hot_water_extra_duration": (501, Minutes),
-            "unknown_input_501": (501, Unknown, True), # type intentionally changed
             "hot_water_extra_remaining": (502, Minutes),
-            "unknown_input_502": (502, Unknown, True), # type intentionally changed
         }
 
         holdings = {

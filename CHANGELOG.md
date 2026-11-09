@@ -26,9 +26,10 @@ instead of `measurement_type`
 - Name and describe SHI inputs of firmware V3.92.3: `calculated_max_flow_temp`
 (`113`), `operating_hours_cooling` (`410`), `operating_hours_solar` (`416`),
 `hot_water_extra_setpoint`, `hot_water_extra_duration` and
-`hot_water_extra_remaining` (`500` to `502`). The former `unknown_input_*`
-names remain as aliases. `unknown_input_411` and `unknown_input_417` are
-removed: they are the second register of the 32-bit counters `410` and `416`.
+`hot_water_extra_remaining` (`500` to `502`). They replace the former
+`unknown_input_*` names, which were never released. `unknown_input_411` and
+`unknown_input_417` are removed: they are the second register of the 32-bit
+counters `410` and `416`.
 - Describe `heating_limit` (`107`) and `hot_water_limit` (`124`) as demand
 border (setpoint minus hysteresis).
 - Add the datatype `HoursUInt32`.

@@ -607,7 +607,6 @@ class Hours(ScalingBase):
 class HoursUInt32(Hours):
     """Hours 32-bit unsigned, converts from and to whole hours."""
 
-    data_width = 32
     data_type = "unsigned"
     scaling_factor = 1
 

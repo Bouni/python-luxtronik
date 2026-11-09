@@ -372,7 +372,7 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 113,
         "count": 1,
-        "names": ["calculated_max_flow_temp", "unknown_input_113"],
+        "names": ["calculated_max_flow_temp"],
         "type": CelsiusInt16,
         "writeable": False,
         "datatype": "INT16",
@@ -962,7 +962,7 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 410,
         "count": 2,
-        "names": ["operating_hours_cooling", "unknown_input_410"],
+        "names": ["operating_hours_cooling"],
         "type": HoursUInt32,
         "writeable": False,
         "datatype": "UINT32",
@@ -991,7 +991,7 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 416,
         "count": 2,
-        "names": ["operating_hours_solar", "unknown_input_416"],
+        "names": ["operating_hours_solar"],
         "type": HoursUInt32,
         "writeable": False,
         "datatype": "UINT32",
@@ -1002,7 +1002,7 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 500,
         "count": 1,
-        "names": ["hot_water_extra_setpoint", "unknown_input_500"],
+        "names": ["hot_water_extra_setpoint"],
         "type": CelsiusInt16,
         "writeable": False,
         "datatype": "INT16",
@@ -1013,7 +1013,7 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 501,
         "count": 1,
-        "names": ["hot_water_extra_duration", "unknown_input_501"],
+        "names": ["hot_water_extra_duration"],
         "type": Minutes,
         "writeable": False,
         "datatype": "INT16",
@@ -1024,7 +1024,7 @@ INPUTS_DEFINITIONS_LIST: Final = [
     {
         "index": 502,
         "count": 1,
-        "names": ["hot_water_extra_remaining", "unknown_input_502"],
+        "names": ["hot_water_extra_remaining"],
         "type": Minutes,
         "writeable": False,
         "datatype": "INT16",

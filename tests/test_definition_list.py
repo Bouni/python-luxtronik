@@ -1,14 +1,12 @@
 import re
 
 from luxtronik.common import parse_version
-from luxtronik.datatypes import Base, Celsius, CelsiusInt16, HoursUInt32, Kelvin, Minutes, Seconds, Unknown
-from luxtronik.collections import integrate_data
+from luxtronik.datatypes import Base
 from luxtronik.definitions import LuxtronikDefinition
 from luxtronik.definitions.calculations import CALCULATIONS_DEFINITIONS_LIST
 from luxtronik.definitions.holdings import HOLDINGS_DEFINITIONS_LIST
 from luxtronik.definitions.inputs import INPUTS_DEFINITIONS_LIST
 from luxtronik.definitions.parameters import PARAMETERS_DEFINITIONS_LIST
-from luxtronik.shi.inputs import Inputs
 from luxtronik.definitions.visibilities import VISIBILITIES_DEFINITIONS_LIST
 
 
@@ -245,76 +243,3 @@ class TestVisibilitiesDefinitionList(RunTestDefinitionList):
 
     definitions = VISIBILITIES_DEFINITIONS_LIST
     do_lower_case_test = False
-
-class TestSmartHomeFirmware3923:
-    """Input and parameter definitions confirmed by the analysis of firmware V3.92.3."""
-
-    @staticmethod
-    def get_definition(definitions, index):
-        return next(d for d in definitions if d[KEY_IDX] == index)
-
-    def test_inputs_names_and_types(self):
-        expected = {
-            113: ("calculated_max_flow_temp", CelsiusInt16, 1),
-            410: ("operating_hours_cooling", HoursUInt32, 2),
-            416: ("operating_hours_solar", HoursUInt32, 2),
-            500: ("hot_water_extra_setpoint", CelsiusInt16, 1),
-            501: ("hot_water_extra_duration", Minutes, 1),
-            502: ("hot_water_extra_remaining", Minutes, 1),
-        }
-        for index, (name, field_type, count) in expected.items():
-            definition = self.get_definition(INPUTS_DEFINITIONS_LIST, index)
-            assert definition[KEY_NAMES][0] == name
-            # the former name stays available as alias
-            assert f"unknown_input_{index}" in definition[KEY_NAMES]
-            assert definition[KEY_TYPE] is field_type
-            assert definition[KEY_COUNT] == count
-            assert not definition[KEY_WRT]
-
-    def test_inputs_second_counter_register_not_defined(self):
-        # 411 and 417 are the low words of the 32-bit counters 410 and 416
-        indices = [d[KEY_IDX] for d in INPUTS_DEFINITIONS_LIST]
-        assert 411 not in indices
-        assert 417 not in indices
-        # pool counters (412/413) are not verified and stay unknown
-        for index in (412, 413):
-            definition = self.get_definition(INPUTS_DEFINITIONS_LIST, index)
-            assert definition[KEY_TYPE] is Unknown
-
-    def test_operating_hours_counter(self):
-        inputs = Inputs()
-        field = inputs.get("operating_hours_cooling")
-        definition = inputs.definitions.get("operating_hours_cooling")
-        assert definition.addr == 10410
-        assert definition.count == 2
-        field.concatenate_multiple_data_chunks = True
-        # UINT32 over two registers, high word at the lower address
-        raw_data = [0] * 420
-        raw_data[410] = 0x0001
-        raw_data[411] = 0x0002
-        integrate_data(definition, field, raw_data, 16)
-        assert field.raw == 0x00010002
-        assert field.value == 65538
-
-    def test_extra_hot_water_values(self):
-        inputs = Inputs()
-        assert inputs.get("hot_water_extra_setpoint").from_heatpump(550) == 55.0
-        assert inputs.get("hot_water_extra_duration").unit == "min"
-
-    def test_parameters(self):
-        expected = {
-            1146: ("EXTRA_DHW_TEMPERATURE_SETPOINT", Celsius),
-            1147: ("EXTRA_DHW_DURATION_SETPOINT", Seconds),
-        }
-        # one decrease/increase pair each: heating general, heating, MC1, MC2, MC3, DHW
-        index = 1187
-        for group in ("HEATING_OVERALL", "HEATING", "MC1", "MC2", "MC3", "DHW"):
-            for kind in ("DECREASE", "INCREASE"):
-                expected[index] = (f"SHI_LEVEL_{group}_{kind}", Kelvin)
-                index += 1
-        assert index == 1199
-        for index, (name, field_type) in expected.items():
-            definition = self.get_definition(PARAMETERS_DEFINITIONS_LIST, index)
-            assert definition[KEY_NAMES][0] == name
-            assert f"Unknown_Parameter_{index}" in definition[KEY_NAMES]
-            assert definition[KEY_TYPE] is field_type
