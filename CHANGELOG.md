@@ -33,6 +33,12 @@ counters `410` and `416`.
 - Describe `heating_limit` (`107`) and `hot_water_limit` (`124`) as demand
 border (setpoint minus hysteresis).
 - Add the datatype `HoursUInt32`.
+- SHI holding `60` is now `room_temperature_setpoint` (type `CelsiusUInt16`,
+writeable, only with an RBE room control unit). `unknown_holding_60` was
+never released and has been replaced.
+- SHI holding `66` (`heat_overall_offset`): the documented range is now
+-50..50 (+/-5.0 K) instead of -200..200.
+- Document that `LevelMode` values 1 and 2 are identical on firmware V3.92.3.
 
 ### Removed
 
