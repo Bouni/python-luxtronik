@@ -15,6 +15,12 @@ from luxtronik.scripts.watch_cfi import (
 from luxtronik.scripts.watch_shi import (
     watch_shi,
 )  # pylint: disable=unused-import # noqa: F401
+from luxtronik.scripts.debug_cfi import (
+    debug_cfi,
+)  # pylint: disable=unused-import # noqa: F401
+from luxtronik.scripts.debug_shi import (
+    debug_shi,
+)  # pylint: disable=unused-import # noqa: F401
 
 
 def discover():
@@ -37,6 +43,8 @@ def main() -> int:
         changes    Watch all config interface value changes of the Luxtronik controller
         watch-cfi  Watch all config interface value changes of the Luxtronik controller
         watch-shi  Watch all smart home interface value changes of the Luxtronik controller
+        debug-cfi  Debug interface for testing the config interface of the Luxtronik controller
+        debug-shi  Debug interface for testing the smart-home interface of the Luxtronik controller
         discover   Discover Luxtronik controllers on the network (via magic packet) and output results
         """,
     )
@@ -51,6 +59,8 @@ def main() -> int:
         "changes": watch_cfi,
         "watch-cfi": watch_cfi,
         "watch-shi": watch_shi,
+        "debug-cfi": debug_cfi,
+        "debug-shi": debug_shi,
         "discover": discover,
     }
     if args.command not in commands:

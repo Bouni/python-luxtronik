@@ -14,7 +14,8 @@ This changelog follows the "Keep a Changelog" format and Semantic Versioning.
 - Support smart-home-interface. Luxtronik firmware v3.90.1 or higher
 is required for this. See README for further information. [#190]
 - Add a command-line-interface (CLI) with the following commands:
-`dump`, `dump-cfi`, `dump.shi`, `changes`, `watch-cfi`, `watch-shi`, `discover`
+`dump`, `dump-cfi`, `dump.shi`, `changes`, `watch-cfi`, `watch-shi`,
+`debug-cfi`, `debug-shi`, `discover`
 - Provide an automatically generated documentation for the data fields. [#189]
 
 ### Changed

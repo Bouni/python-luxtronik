@@ -3,17 +3,25 @@
 import argparse
 
 
-def create_default_args_parser(func_desc, default_port):
+def create_default_args_parser(func_desc, default_port, with_port=True):
     parser = argparse.ArgumentParser(description=func_desc)
-    parser.add_argument("ip", help="IP address of Luxtronik controller to connect to")
-    parser.add_argument(
-        "port",
-        nargs="?",
-        type=int,
-        default=default_port,
-        help="Port to use to connect to Luxtronik controller",
-    )
+    parser.add_argument("ip", help="IP address of Luxtronik controller to connect to. Add :port to specify a custom port to use.")
+    if with_port:
+        parser.add_argument(
+            "port",
+            nargs="?",
+            type=int,
+            default=default_port,
+            help="Port to use to connect to Luxtronik controller",
+        )
     return parser
+
+def get_port_from_ip_string(args, default_port):
+    vals = args.ip.split(":")
+    if len(vals) > 1:
+        return vals[1]
+    else:
+        return default_port
 
 def print_dump_header(caption):
     print("=" * 130)
