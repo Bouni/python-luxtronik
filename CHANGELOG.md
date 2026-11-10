@@ -23,6 +23,16 @@ is required for this. See README for further information. [#190]
 of in a separate queue. [#221, #237]
 - The field objects now provide `datatype_class` and `datatype_unit`
 instead of `measurement_type`
+- Name and describe SHI inputs of firmware V3.92.3: `calculated_max_flow_temp`
+(`113`), `operating_hours_cooling` (`410`), `operating_hours_solar` (`416`),
+`hot_water_extra_setpoint`, `hot_water_extra_duration` and
+`hot_water_extra_remaining` (`500` to `502`). They replace the former
+`unknown_input_*` names, which were never released. `unknown_input_411` and
+`unknown_input_417` are removed: they are the second register of the 32-bit
+counters `410` and `416`.
+- Describe `heating_limit` (`107`) and `hot_water_limit` (`124`) as demand
+border (setpoint minus hysteresis).
+- Add the datatype `HoursUInt32`.
 - SHI holding `60` is now `room_temperature_setpoint` (type `CelsiusUInt16`,
 writeable, only with an RBE room control unit). `unknown_holding_60` was
 never released and has been replaced.
@@ -1317,8 +1327,8 @@ from `Unknown`to `Energy`
 - Add `Unknown_Parameter_1143` (index `1143`) of type `Unknown`
 - Add `Unknown_Parameter_1144` (index `1144`) of type `Unknown`
 - Add `Unknown_Parameter_1145` (index `1145`) of type `Unknown`
-- Add `Unknown_Parameter_1146` (index `1146`) of type `Unknown`
-- Add `Unknown_Parameter_1147` (index `1147`) of type `Unknown`
+- Add `EXTRA_DHW_TEMPERATURE_SETPOINT` (index `1146`) of type `Celsius`
+- Add `EXTRA_DHW_DURATION_SETPOINT` (index `1147`) of type `Seconds`
 - Add `Unknown_Parameter_1148` (index `1148`) of type `Unknown`
 - Add `HEATING_TARGET_TEMP_ROOM_THERMOSTAT` (index `1148`) of type `Celsius`
 - Add `Unknown_Parameter_1149` (index `1149`) of type `Unknown`
@@ -1338,6 +1348,18 @@ from `Unknown`to `Energy`
 - Add `THERMAL_POWER_LIMIT_HEATING` (index `1176`) of type `Unknown`
 - Add `THERMAL_POWER_LIMIT_WATER` (index `1177`) of type `Unknown`
 - Add `THERMAL_POWER_LIMIT_COOLING` (index `1178`) of type `Unknown`
+- Add `SHI_LEVEL_HEATING_OVERALL_DECREASE` (index `1187`) of type `Kelvin`
+- Add `SHI_LEVEL_HEATING_OVERALL_INCREASE` (index `1188`) of type `Kelvin`
+- Add `SHI_LEVEL_HEATING_DECREASE` (index `1189`) of type `Kelvin`
+- Add `SHI_LEVEL_HEATING_INCREASE` (index `1190`) of type `Kelvin`
+- Add `SHI_LEVEL_MC1_DECREASE` (index `1191`) of type `Kelvin`
+- Add `SHI_LEVEL_MC1_INCREASE` (index `1192`) of type `Kelvin`
+- Add `SHI_LEVEL_MC2_DECREASE` (index `1193`) of type `Kelvin`
+- Add `SHI_LEVEL_MC2_INCREASE` (index `1194`) of type `Kelvin`
+- Add `SHI_LEVEL_MC3_DECREASE` (index `1195`) of type `Kelvin`
+- Add `SHI_LEVEL_MC3_INCREASE` (index `1196`) of type `Kelvin`
+- Add `SHI_LEVEL_DHW_DECREASE` (index `1197`) of type `Kelvin`
+- Add `SHI_LEVEL_DHW_INCREASE` (index `1198`) of type `Kelvin`
 
 ### Calculations
 
