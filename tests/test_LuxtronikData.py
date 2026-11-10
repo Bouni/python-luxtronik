@@ -1,6 +1,6 @@
 """Test suite for LuxtronikData"""
 
-from luxtronik import LuxtronikData, Parameters, Calculations, Visibilities
+from luxtronik import Calculations, LuxtronikData, Parameters, Visibilities
 
 
 class TestLuxtronikData:

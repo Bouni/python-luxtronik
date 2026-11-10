@@ -2,13 +2,14 @@
 
 import argparse
 import sys
+
 from luxtronik.discover import discover as _discover
-from luxtronik.scripts.dump_luxtronik import (
-    dump_luxtronik,
-)  # pylint: disable=unused-import # noqa: F401
 from luxtronik.scripts.dump_changes import (
     dump_changes,
-)  # pylint: disable=unused-import # noqa: F401
+)  # pylint: disable=unused-import
+from luxtronik.scripts.dump_luxtronik import (
+    dump_luxtronik,
+)  # pylint: disable=unused-import
 
 
 def discover():

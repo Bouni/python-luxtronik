@@ -11,19 +11,19 @@ import threading
 import time
 
 from luxtronik.calculations import Calculations
+from luxtronik.constants import (
+    LUXTRONIK_CALCULATIONS_READ,
+    LUXTRONIK_DEFAULT_PORT,
+    LUXTRONIK_PARAMETERS_READ,
+    LUXTRONIK_PARAMETERS_WRITE,
+    LUXTRONIK_SOCKET_READ_SIZE_CHAR,
+    LUXTRONIK_SOCKET_READ_SIZE_INTEGER,
+    LUXTRONIK_SOCKET_READ_SIZE_PEEK,
+    LUXTRONIK_VISIBILITIES_READ,
+)
+from luxtronik.discover import discover  # noqa: F401
 from luxtronik.parameters import Parameters
 from luxtronik.visibilities import Visibilities
-from luxtronik.discover import discover  # noqa: F401
-from luxtronik.constants import (
-    LUXTRONIK_DEFAULT_PORT,
-    LUXTRONIK_PARAMETERS_WRITE,
-    LUXTRONIK_PARAMETERS_READ,
-    LUXTRONIK_CALCULATIONS_READ,
-    LUXTRONIK_VISIBILITIES_READ,
-    LUXTRONIK_SOCKET_READ_SIZE_PEEK,
-    LUXTRONIK_SOCKET_READ_SIZE_INTEGER,
-    LUXTRONIK_SOCKET_READ_SIZE_CHAR,
-)
 
 # endregion Imports
 
@@ -204,7 +204,7 @@ class LuxtronikSocketInterface:
         LOGGER.debug("%s: Command %s", self._host, cmd)
         length = self._read_int()
         LOGGER.debug("%s: Length %s", self._host, length)
-        for _ in range(0, length):
+        for _ in range(length):
             data.append(self._read_int())
         LOGGER.info("%s: Read %d parameters", self._host, length)
         parameters.parse(data)
@@ -219,7 +219,7 @@ class LuxtronikSocketInterface:
         LOGGER.debug("%s: Stat %s", self._host, stat)
         length = self._read_int()
         LOGGER.debug("%s: Length %s", self._host, length)
-        for _ in range(0, length):
+        for _ in range(length):
             data.append(self._read_int())
         LOGGER.info("%s: Read %d calculations", self._host, length)
         calculations.parse(data)
@@ -232,7 +232,7 @@ class LuxtronikSocketInterface:
         LOGGER.debug("%s: Command %s", self._host, cmd)
         length = self._read_int()
         LOGGER.debug("%s: Length %s", self._host, length)
-        for _ in range(0, length):
+        for _ in range(length):
             data.append(self._read_char())
         LOGGER.info("%s: Read %d visibilities", self._host, length)
         visibilities.parse(data)
@@ -251,16 +251,18 @@ class LuxtronikSocketInterface:
         while len(total_reading) is not count:
             missing = count - len(total_reading)
 
-            reading = self._socket.recv( missing )
+            reading = self._socket.recv(missing)
 
             if len(reading) == 0:
                 LOGGER.error("%s: Connection died.", self._host)
-                raise ConnectionError("Connection to %s died." % self._host)
+                raise ConnectionError(f"Connection to {self._host} died.")
 
             total_reading += reading
 
             if len(reading) is not missing:
-                LOGGER.debug("%s: received %s bytes out of %s bytes. Will read again.", self._host, len(reading), missing)
+                LOGGER.debug(
+                    "%s: received %s bytes out of %s bytes. Will read again.", self._host, len(reading), missing
+                )
 
         return total_reading
 

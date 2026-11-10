@@ -3,7 +3,6 @@
 import logging
 
 from luxtronik.data_vector import DataVector
-
 from luxtronik.datatypes import Unknown
 
 

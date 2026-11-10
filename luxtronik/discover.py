@@ -6,10 +6,10 @@ import logging
 import socket
 
 from luxtronik.constants import (
-    LUXTRONIK_DISCOVERY_PORTS,
-    LUXTRONIK_DISCOVERY_TIMEOUT,
     LUXTRONIK_DISCOVERY_MAGIC_PACKET,
+    LUXTRONIK_DISCOVERY_PORTS,
     LUXTRONIK_DISCOVERY_RESPONSE_PREFIX,
+    LUXTRONIK_DISCOVERY_TIMEOUT,
 )
 
 LOGGER = logging.getLogger("Luxtronik.Discover")

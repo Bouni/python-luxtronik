@@ -4,9 +4,9 @@
 
 """Script to dump all value changes from Luxtronik controller"""
 
+import argparse
 import os
 import time
-import argparse
 
 from luxtronik import LuxtronikSocketInterface
 from luxtronik.constants import LUXTRONIK_DEFAULT_PORT

@@ -1,11 +1,10 @@
 """Test suite for the socket interaction of LuxtronikSocketInterface and Luxtronik"""
 
-import unittest.mock as mock
-
 import socket
 import struct
+from unittest import mock
 
-from luxtronik import Luxtronik, LuxtronikSocketInterface, Parameters, Calculations, Visibilities
+from luxtronik import Calculations, Luxtronik, LuxtronikSocketInterface, Parameters, Visibilities
 
 
 def fake_parameter_value(i):

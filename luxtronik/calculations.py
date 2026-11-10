@@ -3,7 +3,6 @@
 import logging
 
 from luxtronik.data_vector import DataVector
-
 from luxtronik.datatypes import (
     BivalenceLevel,
     Bool,
@@ -22,6 +21,7 @@ from luxtronik.datatypes import (
     MainMenuStatusLine1,
     MainMenuStatusLine2,
     MainMenuStatusLine3,
+    MajorMinorVersion,
     OperationMode,
     Percent2,
     Power,
@@ -32,7 +32,6 @@ from luxtronik.datatypes import (
     SwitchoffFile,
     Timestamp,
     Unknown,
-    MajorMinorVersion,
     Voltage,
 )
 

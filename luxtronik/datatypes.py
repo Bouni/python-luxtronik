@@ -3,8 +3,8 @@
 import datetime
 import socket
 import struct
-
 from functools import total_ordering
+from typing import ClassVar
 
 
 @total_ordering
@@ -102,7 +102,7 @@ class SelectionBase(Base):
 
     datatype_class = "selection"
 
-    codes = {}
+    codes: ClassVar[dict[int, str]] = {}
 
     @classmethod
     def options(cls):
@@ -216,7 +216,7 @@ class Errorcode(SelectionBase):
 
     datatype_class = "errorcode"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         700: "sensor external return",
         701: "error low pressure",
         702: "low pressure blockade",
@@ -464,7 +464,7 @@ class HeatingMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "Automatic",
         1: "Second heatsource",
         2: "Party",
@@ -478,7 +478,7 @@ class CoolingMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {0: "Off", 1: "Automatic"}
+    codes: ClassVar[dict[int, str]] = {0: "Off", 1: "Automatic"}
 
 
 class HotWaterMode(SelectionBase):
@@ -486,7 +486,7 @@ class HotWaterMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "Automatic",
         1: "Second heatsource",
         2: "Party",
@@ -500,7 +500,7 @@ class PoolMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
+    codes: ClassVar[dict[int, str]] = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
 
 class MixedCircuitMode(SelectionBase):
@@ -508,7 +508,7 @@ class MixedCircuitMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
+    codes: ClassVar[dict[int, str]] = {0: "Automatic", 2: "Party", 3: "Holidays", 4: "Off"}
 
 
 class SolarMode(SelectionBase):
@@ -516,7 +516,7 @@ class SolarMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "Automatic",
         1: "Second heatsource",
         2: "Party",
@@ -530,7 +530,7 @@ class VentilationMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {0: "Automatic", 1: "Party", 2: "Holidays", 3: "Off"}
+    codes: ClassVar[dict[int, str]] = {0: "Automatic", 1: "Party", 2: "Holidays", 3: "Off"}
 
 
 class HeatpumpCode(SelectionBase):
@@ -538,7 +538,7 @@ class HeatpumpCode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "ERC",
         1: "SW1",
         2: "SW2",
@@ -636,7 +636,7 @@ class BivalenceLevel(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         1: "one compressor allowed to run",
         2: "two compressors allowed to run",
         3: "additional heat generator allowed to run",
@@ -648,7 +648,7 @@ class OperationMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "heating",
         1: "hot water",
         2: "swimming pool/solar",
@@ -665,7 +665,7 @@ class SwitchoffFile(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "heatpump error",
         1: "system error",
         2: "operation mode second heat generator",
@@ -675,22 +675,22 @@ class SwitchoffFile(SelectionBase):
         7: "minimal usage temperature",
         8: "lower usage limit",
         9: "no request",
-        10 : "external energy source",
+        10: "external energy source",
         11: "flow rate",
-        12 : "low pressure pause",
-        13 : "superheating pause",
-        14 : "inverter pause",
-        15 : "desuperheater pause",
-        16 : "operation mode for switching over",
-        17 : "other shutdown",
-        18 : "min.flow cooling",
+        12: "low pressure pause",
+        13: "superheating pause",
+        14: "inverter pause",
+        15: "desuperheater pause",
+        16: "operation mode for switching over",
+        17: "other shutdown",
+        18: "min.flow cooling",
         19: "PV max",
-        20 : "hot gas pause",
-        21 : "overheating hot gas pause",
-        22 : "no request",
-        23 : "min. heat source out cooling",
-        24 : "LPC",
-        25 : "restart",
+        20: "hot gas pause",
+        21: "overheating hot gas pause",
+        22: "no request",
+        23: "min. heat source out cooling",
+        24: "LPC",
+        25: "restart",
     }
 
 
@@ -699,7 +699,7 @@ class MainMenuStatusLine1(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "heatpump running",
         1: "heatpump idle",
         2: "heatpump coming",
@@ -716,7 +716,7 @@ class MainMenuStatusLine2(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {0: "since", 1: "in"}
+    codes: ClassVar[dict[int, str]] = {0: "since", 1: "in"}
 
 
 class MainMenuStatusLine3(SelectionBase):
@@ -724,7 +724,7 @@ class MainMenuStatusLine3(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "heating",
         1: "no request",
         2: "grid switch on delay",
@@ -749,7 +749,7 @@ class SecOperationMode(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "off",
         1: "cooling",
         2: "heating",
@@ -771,7 +771,7 @@ class AccessLevel(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "user",
         1: "after sales service",
         2: "manufacturer",
@@ -784,7 +784,7 @@ class TimerProgram(SelectionBase):
 
     datatype_class = "selection"
 
-    codes = {
+    codes: ClassVar[dict[int, str]] = {
         0: "week",
         1: "5+2",
         2: "days",

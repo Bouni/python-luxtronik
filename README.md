@@ -59,7 +59,7 @@ The following example reads in data from the heat pump:
 ```python
 from luxtronik import Luxtronik
 
-l = Luxtronik('192.168.1.23', 8889)
+l = Luxtronik("192.168.1.23", 8889)
 heating_limit = l.parameters.get("ID_Einst_Heizgrenze_Temp")
 
 # Do something else here...
@@ -72,8 +72,8 @@ t_outside = l.calculations.get("ID_WEB_Temperatur_TA")
 # alternatively get also works with numerical ID values
 t_forerun = l.calculations.get(10)
 
-print(t_forerun) # this returns the temperature value of the forerun, 22.7 for example
-print(t_forerun.unit) # gives you the unit of the value if known, °C for example
+print(t_forerun)  # this returns the temperature value of the forerun, 22.7 for example
+print(t_forerun.unit)  # gives you the unit of the value if known, °C for example
 
 # calculations holds measurement values
 # check https://github.com/Bouni/python-luxtronik/blob/master/luxtronik/calculations.py for values you might need
@@ -204,7 +204,7 @@ The following example writes data to the heat pump:
 ```python
 from luxtronik import Luxtronik, Parameters
 
-l = Luxtronik('192.168.1.23', 8889)
+l = Luxtronik("192.168.1.23", 8889)
 
 # Queue a parameter change
 # In this example, the domestic hot water temperature is set to 45 degrees.
@@ -220,7 +220,9 @@ l.write(parameters)
 
 # If you're not sure what values to write, you can get all available options:
 
-print(parameters.get("ID_Ba_Hz_akt").options()) # returns a list of possible values to write, ['Automatic', 'Second heatsource', 'Party', 'Holidays', 'Off'] for example
+print(
+    parameters.get("ID_Ba_Hz_akt").options()
+)  # returns a list of possible values to write, ['Automatic', 'Second heatsource', 'Party', 'Holidays', 'Off'] for example
 ```
 
 **NOTE:** Writing values to the heat pump is particulary dangerous as this is
@@ -233,7 +235,7 @@ during initialization:
 ```python
 from luxtronik import Luxtronik
 
-l = Luxtronik('192.168.1.23', 8889, safe=False)
+l = Luxtronik("192.168.1.23", 8889, safe=False)
 ```
 
 **NOTE:** The heat pump controller uses a NAND memory chip as persistent storage.

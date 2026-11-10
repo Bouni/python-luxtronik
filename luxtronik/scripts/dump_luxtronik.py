@@ -3,6 +3,7 @@
 # pylint: disable=invalid-name
 
 """Script to dump all available values from Luxtronik controller"""
+
 import argparse
 
 from luxtronik import Luxtronik
