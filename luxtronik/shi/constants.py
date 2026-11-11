@@ -23,9 +23,3 @@ LUXTRONIK_SHI_REGISTER_BIT_SIZE: Final = 16
 
 # First Luxtronik firmware version that supports the smart home interface (SHI)
 LUXTRONIK_FIRST_VERSION_WITH_SHI: Final = (3, 90, 1, 0)
-
-# Latest supported Luxtronik firmware version
-# Note:
-# No checks are performed against this version.
-# This is merely the default value if no version is specified.
-LUXTRONIK_LATEST_SHI_VERSION: Final = (3, 92, 1, 0)

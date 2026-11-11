@@ -5,13 +5,18 @@ via the smart home interface. Powered by Guzz-T.
 
 import logging
 
+from luxtronik.constants import (
+    LUXTRONIK_VERSION_DETECT,
+    LUXTRONIK_VERSION_LATEST,
+    LUXTRONIK_VERSION_IGNORE,
+    LUXTRONIK_LATEST_VERSION,
+)
 from luxtronik.collections import integrate_data
 from luxtronik.version import parse_version
 from luxtronik.datatypes import FullVersion, MajorMinorVersion
 from luxtronik.shi.constants import (
     LUXTRONIK_DEFAULT_MODBUS_PORT,
     LUXTRONIK_DEFAULT_MODBUS_TIMEOUT,
-    LUXTRONIK_LATEST_SHI_VERSION,
     LUXTRONIK_SHI_REGISTER_BIT_SIZE,
 )
 from luxtronik.shi.inputs import INPUTS_DEFINITIONS, Inputs  # noqa: F401
@@ -22,8 +27,6 @@ from luxtronik.shi.interface import LuxtronikSmartHomeData, LuxtronikSmartHomeIn
 
 LOGGER = logging.getLogger(__name__)
 
-VERSION_DETECT = "detect"
-VERSION_LATEST = "latest"
 
 
 ###############################################################################
@@ -77,7 +80,7 @@ def determine_version(interface):
         + "Switch to trial-and-error mode.")
     return None
 
-def resolve_version(interface, version=VERSION_DETECT):
+def resolve_version(interface, version=LUXTRONIK_VERSION_DETECT):
     """
     Resolve the version input.
 
@@ -85,22 +88,22 @@ def resolve_version(interface, version=VERSION_DETECT):
         interface (LuxtronikModbusTcpInterface):
             Simple read/write interface to read out the version.
         version (tuple[int] | str | None): Version used to initialize the interface.
-            If VERSION_DETECT is passed, the function will attempt to determine the version.
+            If LUXTRONIK_VERSION_DETECT is passed, the function will attempt to determine the version.
             If a str is passed, the string will be parsed into a version tuple.
             If None is passed, trial-and-error mode is activated.
-            (default: VERSION_DETECT)
+            (default: LUXTRONIK_VERSION_DETECT)
 
     Returns:
         tuple[int] | None: The version of the controller on success,
             or None if no version could be determined.
     """
     resolved_version = version
-    if resolved_version == VERSION_DETECT:
+    if resolved_version == LUXTRONIK_VERSION_DETECT:
         # return None in case of an error -> trial-and-error mode
         resolved_version = determine_version(interface)
     elif isinstance(resolved_version, str):
-        if resolved_version.lower() == VERSION_LATEST:
-            resolved_version = LUXTRONIK_LATEST_SHI_VERSION
+        if resolved_version.lower() == LUXTRONIK_VERSION_LATEST:
+            resolved_version = LUXTRONIK_LATEST_VERSION
         else:
             # return None in case of an error -> trial-and-error mode
             resolved_version = parse_version(resolved_version)
@@ -117,15 +120,15 @@ def create_modbus_tcp(
     host,
     port=LUXTRONIK_DEFAULT_MODBUS_PORT,
     timeout=LUXTRONIK_DEFAULT_MODBUS_TIMEOUT,
-    version=VERSION_DETECT
+    version=LUXTRONIK_VERSION_DETECT
 ):
     """
     Create a LuxtronikSmartHomeInterface using a Modbus TCP connection.
 
     The function constructs a Modbus TCP low-level interface and resolves the
     controller version according to the supplied `version` argument:
-      - If `version` equals VERSION_DETECT, attempt to determine the version.
-      - If `version` equals VERSION_LATEST, use LUXTRONIK_LATEST_SHI_VERSION as version.
+      - If `version` equals LUXTRONIK_VERSION_DETECT, attempt to determine the version.
+      - If `version` equals LUXTRONIK_VERSION_LATEST, use LUXTRONIK_LATEST_VERSION as version.
       - If `version` is a string, parse it into a version tuple.
       - If `version` is None, the interface is initialized in trial-and-error mode.
       - Otherwise assume `version` is already a parsed version tuple.
@@ -135,7 +138,7 @@ def create_modbus_tcp(
         port (int): TCP port for the Modbus connection.
         timeout (float): Timeout in seconds for the Modbus connection.
         version (tuple[int] | str | None): Version used to initialize the interface.
-            If VERSION_DETECT is passed, the function will attempt to determine the version.
+            If LUXTRONIK_VERSION_DETECT is passed, the function will attempt to determine the version.
             If a str is passed, the string will be parsed into a version tuple.
             If None is passed, trial-and-error mode is activated.
 

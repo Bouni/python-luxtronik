@@ -1,3 +1,7 @@
+"""Methods and classes for supporting different firmware versions"""
+
+VERSION_DELIMITER = "."
+
 ###############################################################################
 # Version methods
 ###############################################################################
@@ -25,7 +29,7 @@ def parse_version(version):
     if isinstance(version, tuple) and all(type(p) is int for p in version):
         return (version + (0, 0, 0, 0))[:4]
     elif isinstance(version, str):
-        parts = version.strip().split(".")
+        parts = version.strip().split(VERSION_DELIMITER)
         if not parts or any(not p.isdigit() for p in parts):
             return None
         nums = [int(p) for p in parts]

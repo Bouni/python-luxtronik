@@ -10,7 +10,7 @@ from luxtronik.common import get_host_lock
 from luxtronik.discover import discover  # noqa: F401
 
 from luxtronik.cfi import (
-    LUXTRONIK_DEFAULT_PORT,
+    LUXTRONIK_DEFAULT_CFI_PORT,
     Calculations,  # noqa: F401
     Parameters,  # noqa: F401
     Visibilities,  # noqa: F401
@@ -92,7 +92,7 @@ class LuxtronikInterface(LuxtronikSocketInterface, LuxtronikSmartHomeInterface):
     def __init__(
         self,
         host,
-        port_config=LUXTRONIK_DEFAULT_PORT,
+        port_config=LUXTRONIK_DEFAULT_CFI_PORT,
         port_shi=LUXTRONIK_DEFAULT_MODBUS_PORT
     ):
         """
@@ -101,7 +101,7 @@ class LuxtronikInterface(LuxtronikSocketInterface, LuxtronikSmartHomeInterface):
         Args:
             host (str): Hostname or IP address of the heat pump.
             port_config (int): TCP port for the config interface
-                  (default: LUXTRONIK_DEFAULT_PORT).
+                  (default: LUXTRONIK_DEFAULT_CFI_PORT).
             port_shi (int): TCP port for the smart home interface (via modbusTCP)
                   (default: LUXTRONIK_DEFAULT_MODBUS_PORT).
         """
@@ -232,7 +232,7 @@ class Luxtronik(LuxtronikAllData):
     def __init__(
         self,
         host,
-        port=LUXTRONIK_DEFAULT_PORT,
+        port=LUXTRONIK_DEFAULT_CFI_PORT,
         safe=True,
         port_shi=LUXTRONIK_DEFAULT_MODBUS_PORT
     ):

@@ -8,7 +8,7 @@ import time
 from luxtronik.collections import integrate_data
 from luxtronik.common import get_host_lock
 from luxtronik.cfi.constants import (
-    LUXTRONIK_DEFAULT_PORT,
+    LUXTRONIK_DEFAULT_CFI_PORT,
     LUXTRONIK_PARAMETERS_WRITE,
     LUXTRONIK_PARAMETERS_READ,
     LUXTRONIK_CALCULATIONS_READ,
@@ -50,7 +50,7 @@ class LuxtronikData:
 class LuxtronikSocketInterface:
     """Luxtronik read/write interface via socket."""
 
-    def __init__(self, host, port=LUXTRONIK_DEFAULT_PORT):
+    def __init__(self, host, port=LUXTRONIK_DEFAULT_CFI_PORT):
         # Acquire a lock object for this host to ensure thread safety
         self._lock = get_host_lock(host)
 

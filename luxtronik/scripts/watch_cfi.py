@@ -7,7 +7,7 @@ Script to watch all config interface value changes of the Luxtronik controller
 
 from collections import OrderedDict
 
-from luxtronik import LuxtronikSocketInterface, LuxtronikData, LUXTRONIK_DEFAULT_PORT
+from luxtronik import LuxtronikSocketInterface, LuxtronikData, LUXTRONIK_DEFAULT_CFI_PORT
 from luxtronik.scripts.update_screen import UpdateScreen
 from luxtronik.scripts import (
     create_default_args_parser,
@@ -49,7 +49,7 @@ def dump_repeated(client):
 def watch_cfi():
     parser = create_default_args_parser(
         "Watch all config interface value changes of the Luxtronik controller",
-        LUXTRONIK_DEFAULT_PORT
+        LUXTRONIK_DEFAULT_CFI_PORT
     )
     args = parser.parse_args()
     client = LuxtronikSocketInterface(args.ip, args.port)

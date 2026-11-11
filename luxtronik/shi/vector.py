@@ -1,10 +1,10 @@
 
 import logging
 
+from luxtronik.constants import LUXTRONIK_LATEST_VERSION
 from luxtronik.version import version_in_range
 from luxtronik.data_vector import DataVector
 
-from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
 from luxtronik.shi.contiguous import ContiguousDataBlockList
 
 
@@ -27,7 +27,7 @@ class DataVectorSmartHome(DataVector):
         self._read_blocks_up_to_date = False
         self._read_blocks = ContiguousDataBlockList(self.name, True)
 
-    def __init__(self, version=LUXTRONIK_LATEST_SHI_VERSION, safe=True):
+    def __init__(self, version=LUXTRONIK_LATEST_VERSION, safe=True):
         """
         Initialize the data-vector instance.
 
@@ -40,7 +40,7 @@ class DataVectorSmartHome(DataVector):
                 Version to be used for creating the field objects.
                 This ensures that the data vector only contain valid fields.
                 If None is passed, all available fields are added.
-                (default: LUXTRONIK_LATEST_SHI_VERSION)
+                (default: LUXTRONIK_LATEST_VERSION)
             safe (bool): If true, prevent fields marked as
                 not secure from being written to.
         """
@@ -54,7 +54,7 @@ class DataVectorSmartHome(DataVector):
                 self._data.add(d, d.create_field())
 
     @classmethod
-    def empty(cls, version=LUXTRONIK_LATEST_SHI_VERSION, safe=True):
+    def empty(cls, version=LUXTRONIK_LATEST_VERSION, safe=True):
         """
         Initialize the data-vector instance without any fields.
 
@@ -63,7 +63,7 @@ class DataVectorSmartHome(DataVector):
                 Version to be used for creating the field objects afterwards.
                 This ensures that the data vector only contain valid fields.
                 If None is passed, all available fields can be added.
-                (default: LUXTRONIK_LATEST_SHI_VERSION)
+                (default: LUXTRONIK_LATEST_VERSION)
             safe (bool): If true, prevent fields marked as
                 not secure from being written to.
         """
