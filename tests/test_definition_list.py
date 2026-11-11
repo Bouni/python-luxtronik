@@ -1,6 +1,6 @@
 import re
 
-from luxtronik.common import parse_version
+from luxtronik.version import parse_version
 from luxtronik.datatypes import Base
 from luxtronik.definitions import LuxtronikDefinition
 from luxtronik.definitions.calculations import CALCULATIONS_DEFINITIONS_LIST

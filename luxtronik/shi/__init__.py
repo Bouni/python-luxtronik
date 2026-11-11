@@ -6,7 +6,7 @@ via the smart home interface. Powered by Guzz-T.
 import logging
 
 from luxtronik.collections import integrate_data
-from luxtronik.common import parse_version
+from luxtronik.version import parse_version
 from luxtronik.datatypes import FullVersion, MajorMinorVersion
 from luxtronik.shi.constants import (
     LUXTRONIK_DEFAULT_MODBUS_PORT,

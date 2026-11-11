@@ -1,7 +1,7 @@
 
 import logging
 
-from luxtronik.common import version_in_range
+from luxtronik.version import version_in_range
 from luxtronik.data_vector import DataVector
 
 from luxtronik.shi.constants import LUXTRONIK_LATEST_SHI_VERSION
