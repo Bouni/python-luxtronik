@@ -48,7 +48,8 @@ dev = [
   "pyflakes",
   "pyupgrade",
   "ruff",
-  "yamllint"
+  "yamllint",
+  "pre-commit"
 ]
 
 [tool.setuptools]
