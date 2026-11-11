@@ -1,3 +1,4 @@
+---
 name: Generate and deploy docs to GH pages
 
 "on":
@@ -43,3 +44,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+...
