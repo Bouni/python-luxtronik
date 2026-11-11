@@ -1,6 +1,6 @@
 ---
 name: PR coverage comment
-on: # yamllint disable-line rule:truthy
+"on":
   workflow_run:
     workflows: ["Run unit tests"]
     types:

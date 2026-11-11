@@ -1,6 +1,6 @@
 ---
 name: Lint source files
-on: # yamllint disable-line rule:truthy
+"on":
   push:
 
     branches:
