@@ -1,6 +1,6 @@
 ---
 name: Run unit tests
-on: # yamllint disable-line rule:truthy
+"on":
   push:
     branches:
       - main
