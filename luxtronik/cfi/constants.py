@@ -3,7 +3,7 @@
 from typing import Final
 
 # Default port to be used to connect to Luxtronik controller.
-LUXTRONIK_DEFAULT_PORT: Final = 8889
+LUXTRONIK_DEFAULT_CFI_PORT: Final = 8889
 
 LUXTRONIK_PARAMETERS_WRITE: Final = 3002
 LUXTRONIK_PARAMETERS_READ: Final = 3003

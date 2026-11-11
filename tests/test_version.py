@@ -1,6 +1,6 @@
 import pytest
 
-from luxtronik.common import (
+from luxtronik.version import (
     parse_version,
     version_in_range
 )

@@ -1,14 +1,15 @@
 import pytest
 from unittest.mock import patch
 
-from luxtronik.constants import LUXTRONIK_16BIT_FUNCTION_NOT_AVAILABLE
+from luxtronik.constants import (
+    LUXTRONIK_LATEST_VERSION,
+    LUXTRONIK_16BIT_FUNCTION_NOT_AVAILABLE,
+)
 from luxtronik.datatypes import Base, Unknown
 from luxtronik.definitions import LuxtronikDefinition
 
-from luxtronik.shi.constants import (
-    LUXTRONIK_LATEST_SHI_VERSION,
-    LUXTRONIK_FIRST_VERSION_WITH_SHI,
-)
+from luxtronik.shi.constants import LUXTRONIK_FIRST_VERSION_WITH_SHI
+
 from luxtronik.shi.common import (
     LuxtronikSmartHomeReadHoldingsTelegram,
     LuxtronikSmartHomeReadInputsTelegram,
@@ -38,10 +39,10 @@ class TestLuxtronikSmartHomeData:
     def test_init(self):
         data1 = LuxtronikSmartHomeData()
         assert data1.holdings is not None
-        assert data1.holdings.version == LUXTRONIK_LATEST_SHI_VERSION
+        assert data1.holdings.version == LUXTRONIK_LATEST_VERSION
         assert data1.holdings.safe
         assert data1.inputs is not None
-        assert data1.inputs.version == LUXTRONIK_LATEST_SHI_VERSION
+        assert data1.inputs.version == LUXTRONIK_LATEST_VERSION
         assert data1.inputs.safe
 
         data2 = LuxtronikSmartHomeData(data1.holdings)
@@ -1320,7 +1321,7 @@ class TestLuxtronikSmartHomeInterface:
         self.check_definitions(interface)
 
         interface = create_modbus_tcp('host', version="latest")
-        assert interface.version == LUXTRONIK_LATEST_SHI_VERSION
+        assert interface.version == LUXTRONIK_LATEST_VERSION
         self.check_definitions(interface)
 
         interface = create_modbus_tcp('host', version=LUXTRONIK_FIRST_VERSION_WITH_SHI)

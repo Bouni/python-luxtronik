@@ -13,7 +13,7 @@ from luxtronik.constants import (
     LUXTRONIK_16BIT_FUNCTION_NOT_AVAILABLE,
     LUXTRONIK_32BIT_FUNCTION_NOT_AVAILABLE,
 )
-from luxtronik.common import (
+from luxtronik.version import (
     parse_version,
     version_in_range
 )

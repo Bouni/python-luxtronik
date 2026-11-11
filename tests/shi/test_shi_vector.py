@@ -1,4 +1,4 @@
-from luxtronik.common import parse_version
+from luxtronik.version import parse_version
 from luxtronik.datatypes import Base, Unknown
 from luxtronik.definitions import LuxtronikDefinitionsList
 from luxtronik.shi.vector import DataVectorSmartHome

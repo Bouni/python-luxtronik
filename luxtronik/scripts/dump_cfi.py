@@ -5,7 +5,7 @@
 Script to dump all available config interface values of the Luxtronik controller
 """
 
-from luxtronik import Luxtronik, LUXTRONIK_DEFAULT_PORT
+from luxtronik import Luxtronik, LUXTRONIK_DEFAULT_CFI_PORT
 from luxtronik.scripts import create_default_args_parser, dump_fields
 
 
@@ -17,7 +17,7 @@ def dump_all(client):
 def dump_cfi():
     parser = create_default_args_parser(
         "Dumps all config interface values of the Luxtronik controller",
-        LUXTRONIK_DEFAULT_PORT
+        LUXTRONIK_DEFAULT_CFI_PORT
     )
     args = parser.parse_args()
     print(f"Dump CFI of {args.ip}:{args.port}")

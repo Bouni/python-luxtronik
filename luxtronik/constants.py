@@ -21,3 +21,13 @@ LUXTRONIK_32BIT_FUNCTION_NOT_AVAILABLE: Final = 0x7FFFFFFF
 
 # If True, preserve the last set field value on clear and assign `None` to raw
 LUXTRONIK_PRESERVE_LAST_VALUE: Final = True
+
+LUXTRONIK_VERSION_DETECT: Final = "detect"
+LUXTRONIK_VERSION_LATEST: Final = "latest"
+LUXTRONIK_VERSION_IGNORE: Final = "ignore"
+
+# Latest supported Luxtronik firmware version
+# Note:
+# No checks are performed against this version.
+# This is merely the default value if no version is specified.
+LUXTRONIK_LATEST_VERSION: Final = (3, 92, 1, 0)
