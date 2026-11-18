@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.11"
       - name: Install pytest
@@ -31,7 +31,7 @@ jobs:
           echo ${{ github.event.number }} > ./pr/PR-number.txt
           cp ./pytest-coverage.txt ./pr/pytest-coverage.txt
           cp ./pytest.xml ./pr/pytest.xml
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: pr
           path: pr/

@@ -78,3 +78,7 @@ disable = [
 
 [tool.ruff]
 line-length = 120
+
+[tool.ruff.lint]
+# Keep the rule set of ruff < 0.17 (its former default)
+select = ["E4", "E7", "E9", "F"]
