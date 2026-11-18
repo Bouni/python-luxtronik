@@ -448,6 +448,7 @@ The fastest way to provide improvements to the code is is to use
 
 The use of [pre-commit](https://pre-commit.com/) is highly recommended in
 order to keep the quality of your contribution as high as possible.
+You can either run the included `setup.sh` script or install the packages manually:
 
 After cloning this repository, change directory (`cd`) into it and simply type
 `pre-commit` in order to install the pre-commit hooks.

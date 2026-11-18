@@ -1,0 +1,20 @@
+# Auto-detect text files and normalize them to LF (Linux line endings)
+* text=auto eol=lf
+
+# Enforce LF for shell scripts, Python, and config files (critical for Git Bash on Windows)
+*.sh text eol=lf
+*.py text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Keep CRLF for native Windows scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Do not modify binary files
+*.png binary
+*.jpg binary
+*.exe binary
+*.whl binary

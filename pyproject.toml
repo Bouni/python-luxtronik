@@ -5,7 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "luxtronik"
 version = "0.0.0-dev"
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE*"]
 readme = "README.md"
 authors = [
   {name = "Bouni", email = "bouni-luxtronik@owee.de"}
@@ -15,7 +16,6 @@ keywords    = ["heatpump", "luxtronik2"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Topic :: Heatpump interface",
@@ -48,7 +48,8 @@ dev = [
   "pyflakes",
   "pyupgrade",
   "ruff",
-  "yamllint"
+  "yamllint",
+  "pre-commit"
 ]
 
 [tool.setuptools]

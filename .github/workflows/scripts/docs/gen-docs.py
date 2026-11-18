@@ -36,7 +36,7 @@ def get_git_version():
         return None
 
 def get_string(string):
-    return f'"{str(string)}"'
+    return '"' + str(string).replace('"', '\\"') + '"'
 
 def get_writeable(writeable):
     return get_string("y" if writeable else "")
