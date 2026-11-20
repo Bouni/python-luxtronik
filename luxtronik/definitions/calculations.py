@@ -2641,6 +2641,16 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 252,
         "count": 1,
+        "names": ['ID_WEB_Temperatur_THG_max'],
+        "type": Celsius,
+        "writeable": False,
+        "datatype": 'UINT32',
+        "unit": '',
+        "description": 'TODO: Provisional new description based on #180',
+    },
+    {
+        "index": 252,
+        "count": 1,
         "names": ['Unknown_Calculation_252'],
         "type": Unknown,
         "writeable": False,
@@ -2717,12 +2727,41 @@ CALCULATIONS_DEFINITIONS_LIST: Final = [
     {
         "index": 259,
         "count": 1,
+        "names": ['cooling_active'],
+        "type": Bool,
+        "writeable": False,
+        "datatype": 'UINT32',
+        "unit": '',
+        "description": (
+            "Pin 9 on the main board. "
+            "Signal to the room thermostat to switch between heating and cooling. "
+            "If the expansion board is installed, "
+            "this signal comes from calculation 140 `ID_WEB_FP3out`.\n\n"
+            "TODO: Provisional new description based on #180"
+        )
+    },
+    {
+        "index": 259,
+        "count": 1,
         "names": ['Unknown_Calculation_259'],
         "type": Unknown,
         "writeable": False,
         "datatype": 'UINT32',
         "unit": '',
         "description": '',
+    },
+    {
+        "index": 260,
+        "count": 1,
+        "names": ['ID_WEB_Time_ena_cooling'],
+        "type": Seconds,
+        "writeable": False,
+        "datatype": 'UINT32',
+        "unit": '',
+        "description": (
+            "Time in seconds until cooling is enabled\n\n"
+            "TODO: Provisional new description based on #180"
+        )
     },
     {
         "index": 260,
