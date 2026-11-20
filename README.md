@@ -363,6 +363,33 @@ calc: Number: 10    Name: ID_WEB_Temperatur_TVL                                 
 calc: Number: 13    Name: ID_WEB_Temperatur_TRL_ext                                    Value: 26.2 -> 26.1
 ```
 
+#### Debug luxtronik interface
+
+Similar to the other features, some interface commands are available via the following:
+
+```sh
+luxtronik debug-cfi 192.168.178.123 read-calc ID_WEB_Temperatur_TA
+
+# or analog for Modbus TCP register (port is optional)
+luxtronik debug-shi 192.168.178.123:502 read-input 0
+```
+
+or call the script that comes with the python package:
+
+```python
+PYTHONPATH=. ./luxtronik/scripts/debug_cfi.py 192.168.178.123:8889 write-param ID_Ba_Bw_akt Party
+
+# or from the base folder of luxtronik
+python -m luxtronik debug-shi 192.168.178.123 write-holding heating_setpoint 30.5
+```
+
+Currently implemented:
+
+- CFI: `write-param`, `read-param`, `read-calc`, `read-visi`
+- SHI: `write-holding`, `read-holding`, `read-input`
+
+For more information, you'll need to look at the source code.
+
 ### WRITING VALUES TO HEAT PUMP
 
 The following example writes data to the heat pump:
