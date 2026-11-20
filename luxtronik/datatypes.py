@@ -526,6 +526,8 @@ class Errorcode(SelectionBase):
         805: "sensor desuperheater",
         806: "Modbus SEC",
         807: "Lost modbus connection",
+        810: "Parallel-Operation Version",
+        816: "Multiple SHI data sources",
     }
 
 
